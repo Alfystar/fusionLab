@@ -1,0 +1,10 @@
+# Stm32 Cube ide ignore:
+**/Debug/
+**/Release/
+
+# Cmake ignore
+**/cmake-build-*/
+
+
+# General ignore
+**/build/
