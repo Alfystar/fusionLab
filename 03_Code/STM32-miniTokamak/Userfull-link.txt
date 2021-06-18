@@ -1,0 +1,5 @@
+PWM create
+https://stm32f4-discovery.net/2014/05/stm32f4-stm32f429-discovery-pwm-tutorial/
+
+Analog read
+https://controllerstech.com/stm32-adc-multiple-channels/
