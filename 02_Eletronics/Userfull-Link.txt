@@ -3,3 +3,6 @@ https://www.ne555.it/da-alimentazione-singola-a-duale/
 
 Pin-out discovery
 https://microcontrollerslab.com/stm32f4-discovery-board-pinout-features-examples/
+
+Filtro low-pass 2° ordine
+https://www.electronics-tutorials.ws/filter/second-order-filters.html
