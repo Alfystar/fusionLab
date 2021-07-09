@@ -27,10 +27,10 @@
 #include "tim.h"
 #include "usb_device.h"
 #include "gpio.h"
-
+#include "myMain.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-#include "myMain.h"
+
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -97,15 +97,16 @@ int main(void)
   MX_I2S3_Init();
   MX_SPI1_Init();
   MX_USB_DEVICE_Init();
-  MX_TIM4_Init();
   MX_ADC1_Init();
   MX_ADC2_Init();
+  MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
-  setup();
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+  setup();
   while (1)
   {
 	  loop();
