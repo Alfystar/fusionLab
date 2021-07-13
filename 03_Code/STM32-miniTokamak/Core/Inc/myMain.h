@@ -17,6 +17,13 @@ extern uint32_t a1_read;
 extern uint32_t v2_read;
 extern int val;
 
+
+// PWM period 2Khz, TIMER 3 USED
+void pwmSetUp();
+void pwmSet(int pwm); // val 0 -> 999 (0% to 100%)
+void HIGH_PWM();
+void LOW_PWM();
+
 void setup(void);
 
 void loop(void);
