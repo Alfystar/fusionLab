@@ -6,15 +6,14 @@
  */
 
 #include "myMain.h"
-#include "stm32f4xx.h"
+using namespace EMP;
 
 uint32_t adc[2];
 uint32_t a1_read = 0;
 uint32_t v2_read = 0;
 
-uint32_t periodCount=0;
-#define SampleEventperiodCount 21
-
+uint32_t periodCount = 0;
+#define SampleEventperiodCount 21	// SampleTime/Tperiod = 21 cycle
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 
@@ -23,7 +22,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 		if (__HAL_TIM_GET_COMPARE(&htim3, TIM_CHANNEL_1) != 0)
 			//	Reload the High level at the end of the period, ready for new count
 			HIGH_PWM();
-		if(periodCount == 0)
+		if (periodCount == 0)
 			sampleEvent();
 
 //			if (__HAL_TIM_GET_COMPARE(&htim3, TIM_CHANNEL_2) != 0)
@@ -31,7 +30,6 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
 	}
 
 }
-
 
 void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim) {
 //	On the pulse compare, change the state to LOW and wait the end of the period
@@ -47,33 +45,34 @@ void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim) {
 	}
 }
 
-void setup(void) {
-	pwmSetUp();
+MP_ST_usb<packLinux2STM, packSTM2Linux, STM32MP_templateDefault()> MP_St;
+packLinux2STM pRead;
+packSTM2Linux pWrite;
 
+void setup(void) {
 	memset(adc, 0, sizeof(adc));
 	HAL_ADC_Start_DMA(&hadc1, adc, 2); // start adc in DMA mode (PA2)
 //	HAL_ADC_Start_DMA(&hadc1, &a1_read, 1); // start adc in DMA mode (PA2)
 //	HAL_ADC_Start_DMA(&hadc2, &v2_read, 1); // start adc in DMA mode (PA3)
 
+	memset(&pRead, 0, sizeof(packLinux2STM));
+	memset(&pWrite, 0, sizeof(packSTM2Linux));
+	HAL_Delay(1000);
+
+	pwmSetUp();
+
 }
 
-int val = 0;
-int adcRead = 0;
-char buf[16];
 void loop(void) {
-	//flash_green_led_forever();
-	HAL_Delay(1);
-	val += 1;
-	val = val % (TIM3->ARR); // auto-reload register
-	pwmSet(val);
-	sprintf(buf, "ADC:%ld\t%ld\n", adc[0], adc[1]);
-//	sprintf(buf, "ADC:%ld\t%ld\n", a1_read, v2_read);
-	CDC_Transmit_FS((uint8_t*) buf, strlen(buf));
-
+	MP_St.getData_wait(&pRead);
+	pwmSet(pRead.pwm);
 }
 
-void sampleEvent(){
+void sampleEvent() {
 	HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_13);	// Orange led (GPIOD, GPIO_PIN_13)
+	pWrite.A1_read = (float) adc[0];
+	pWrite.V2_read = (float) adc[1];
+	MP_St.packSend(&pWrite);
 }
 
 void pwmSetUp() {
@@ -83,7 +82,7 @@ void pwmSetUp() {
 }
 
 void pwmSet(int pwm) {
-	__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, pwm); 	// Green led (GPIOD, GPIO_PIN_12)
+	__HAL_TIM_SET_COMPARE(&htim3, TIM_CHANNEL_1, abs(pwm)); 	// Green led (GPIOD, GPIO_PIN_12)
 }
 
 void HIGH_PWM() {
