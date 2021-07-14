@@ -62,4 +62,10 @@ Funzioni creabili o in Logica HW, o tramite una funzione nel Micro-Controllore
 
 Per leggere i 2 parametri di interesse della scheda (A1 e V2) vengono campionati i segnali analogici generati, per la corrente attraverso un sensore di corrente a effetto HALL, che trasforma la corrente in tensione, per la Tensione sul secondario si era provato inizialmente usando un INA126, che per motivi sconosciuti, ha un ouptut sbagliato [Problemi V2](V2 problem/problemV2.md), si è optato quindi per una misura diretta della tensione sul secondario.
 
-![SamplingDiagram](/home/alfy/Documents/uniGitHub/FusionLab/02_Eletronics/img/SamplingDiagram.jpg)
+![SamplingDiagram](img/SamplingDiagram.jpg)
+
+
+
+---
+
+[HOME](/)
