@@ -68,4 +68,4 @@ Per leggere i 2 parametri di interesse della scheda (A1 e V2) vengono campionati
 
 ---
 
-[HOME](/)
+[HOME](/README.md)
