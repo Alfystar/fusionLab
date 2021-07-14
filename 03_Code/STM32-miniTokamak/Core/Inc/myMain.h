@@ -18,6 +18,8 @@ extern uint32_t v2_read;
 extern int val;
 
 
+void sampleEvent();
+
 // PWM period 2Khz, TIMER 3 USED
 void pwmSetUp();
 void pwmSet(int pwm); // val 0 -> 999 (0% to 100%)

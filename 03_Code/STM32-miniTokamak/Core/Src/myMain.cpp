@@ -12,19 +12,24 @@ uint32_t adc[2];
 uint32_t a1_read = 0;
 uint32_t v2_read = 0;
 
+uint32_t periodCount=0;
+#define SampleEventperiodCount 21
+
+
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) {
-//	Reload the High level at the end of the period, ready for new count
 
 	if (htim->Instance == TIM3) {
+		periodCount = (periodCount + 1) % SampleEventperiodCount;
 		if (__HAL_TIM_GET_COMPARE(&htim3, TIM_CHANNEL_1) != 0)
+			//	Reload the High level at the end of the period, ready for new count
 			HIGH_PWM();
+		if(periodCount == 0)
+			sampleEvent();
+
 //			if (__HAL_TIM_GET_COMPARE(&htim3, TIM_CHANNEL_2) != 0)
 //				HAL_GPIO_WritePin(GPIOD, GPIO_PIN_13, GPIO_PIN_SET);	// Orange led (GPIOD, GPIO_PIN_13)
 	}
 
-	if (htim->Instance == TIM4) {
-		HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_13);	// Orange led (GPIOD, GPIO_PIN_13)
-	}
 }
 
 
@@ -44,8 +49,6 @@ void HAL_TIM_PWM_PulseFinishedCallback(TIM_HandleTypeDef *htim) {
 
 void setup(void) {
 	pwmSetUp();
-//	HAL_TIM_Base_Start_IT(&htim4);
-//	HAL_TIM_PWM_Start_IT(&htim4, TIM_CHANNEL_1);
 
 	memset(adc, 0, sizeof(adc));
 	HAL_ADC_Start_DMA(&hadc1, adc, 2); // start adc in DMA mode (PA2)
@@ -67,6 +70,10 @@ void loop(void) {
 //	sprintf(buf, "ADC:%ld\t%ld\n", a1_read, v2_read);
 	CDC_Transmit_FS((uint8_t*) buf, strlen(buf));
 
+}
+
+void sampleEvent(){
+	HAL_GPIO_TogglePin(GPIOD, GPIO_PIN_13);	// Orange led (GPIOD, GPIO_PIN_13)
 }
 
 void pwmSetUp() {
