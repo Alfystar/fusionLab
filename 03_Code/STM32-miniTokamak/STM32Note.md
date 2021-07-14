@@ -46,7 +46,7 @@ Le seguenti specifiche:
 
 ### PWM Generation
 
-Poichè in questa situazione, il controllo del motore passa per 4 pin che devono essere mossi contemporaneamente e nella giusta configurazione ([Vedi note  elettriche](/02_Eletronics/ElettricNote.md) ), è stato necessario catturare 2 diversi segnali di interrupt:
+Poichè in questa situazione, il controllo del motore passa per 4 pin che devono essere mossi contemporaneamente e nella giusta configurazione ([Vedi note  elettriche](/02_Eletronics/ElettronicNote.md) ), è stato necessario catturare 2 diversi segnali di interrupt:
 
 ![PWM-operation](00_noteImg/PWM-operation.png)
 
