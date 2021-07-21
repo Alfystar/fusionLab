@@ -6,10 +6,12 @@
 #include <iostream>
 #include <unistd.h>
 
+int sign = 1;
 void controller(packLinux2STM *pWrite, packSTM2Linux *pRead){
-  pWrite->pwm++;
-  if(pWrite->pwm > 999)
-    pWrite->pwm=-999;
+  if(abs(pWrite->pwm) > 399)
+    sign *= -1;
+  pWrite->pwm+= sign;
+  pWrite->pwm = -20;
 }
 
 int main(int argc, char *argv[]) {
@@ -51,9 +53,9 @@ int main(int argc, char *argv[]) {
 //    std::cout << "Sending response pack..." << endl;
     controller(&pWrite,&pRead);
     uart->packSend(&pWrite);
-
+    usleep(40000);
     std::cout << "Pack send: {pwm = " << pWrite.pwm << "}|\t|";
-    std::cout << "Pack recive: {A1_read = " << pRead.A1_read << "\tV2_read = " << pRead.V2_read << "}|\t|";
+    std::cout << "Pack recive: {A1_read = " << pRead.A1_read << "\tV2_read = " << pRead.V2_read <<  "\tpwm = " << pRead.pwm << "}|\t|";
     timeSpecPrint(diff, "diff");
   }
   delete uart;

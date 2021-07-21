@@ -42,6 +42,8 @@ Per i nostri scopi di linearizzazione le Configurazioni di interesse sono:
 
 ![image-20210618180532267](img/Flow-interest.png)
 
+(Dir 1 --> 0 , Dir 2 --> 1 nel codice)
+
 Da qui è possibile creare una funzione : `F(PWM,Dir) --> (IN1,IN2)` la cui tabella di verità è:
 
 | PWM  | Dir  | IN1  | IN2  |

@@ -23,12 +23,15 @@ void setup(void);
 
 void loop(void);
 
+// ADC OP
+void adcSetup();
 // Event to send ADC read to the Companion
 void sampleEvent();
 
+
 // PWM period 2Khz, TIMER 3 USED
 void pwmSetUp();
-void pwmSet(int pwm); // val 0 -> 999 (0% to 100%)
+void pwmSet(int16_t pwm); // val 0 -> 999 (0% to 100%)
 void HIGH_PWM();
 void LOW_PWM();
 

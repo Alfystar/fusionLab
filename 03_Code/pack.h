@@ -12,6 +12,7 @@ typedef struct _packLinux2STM packLinux2STM;
 struct _packSTM2Linux {
   float V2_read;
   float A1_read;
+  int16_t pwm;
 } __attribute__((packed));
 typedef struct _packSTM2Linux packSTM2Linux;
 
