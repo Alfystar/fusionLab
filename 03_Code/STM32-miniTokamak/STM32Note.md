@@ -19,13 +19,17 @@ Possiamo vedere di seguito il diagramma dell'evoluzione temporale di questo regi
 Esso conta un `Value` alla volta fino a ragiungere il `period` dove il timer in automatico si resetta e ricomincia a contare.
 
 Unendo i dati a nostra disposizione (86Mhz frequenza base, Periodo desiderato ~40Khz) bisogna risolvere la seguente funzione:
+
 $$
 UpdateEvent = \frac{1}{Clock[Hz]} \cdot (Prescaler + 1) \cdot (Period + 1)
 $$
+
 da cui deriva:
+
 $$
 Prescaler(Period) = \frac{UpdateEvent \cdot Clock[Hz]}{Period + 1} - 1
 $$
+
 E per le quali siamo interessati alle soluzioni intere per il `Prescaler ` e il `Period`
 
 ![SolutionInteger](00_noteImg/SolutionInteger.png)
