@@ -28,28 +28,28 @@ ISR(TIMER2_COMPA_vect) { tic++; }
 
 using namespace EMP;
 
-EMP::MP_Serial<packLinux2Ard, packArd2Linux, ArduinoMP_templateDefault()> mpSerial(Serial);
+MP_Serial<packLinux2Ard, packArd2Linux, ArduinoMP_templateDefault()> mpSerial(Serial);
 DCdriver *mot;
 
 void setup() {
   // write your initialization code here
-   Serial.begin(2000000);
-//  mpSerial.begin(2000000);
+//   Serial.begin(2000000);
+  mpSerial.begin(2000000);
 
   pinMode(13, OUTPUT);
 
   // Motori
-//  setMotFreq(hz4k);
-//  mot = new DCdriver(enPwm, inA, inB);
+  setMotFreq(hz4k);
+  mot = new DCdriver(enPwm, inA, inB);
 
-//  periodicTask(1000);
-//  sei();
+  periodicTask(1000);
+  sei();
 
 //  digitalWrite(13, !digitalRead(13));
 //  delay(500);
 
   /// Print in serial order of coulums
-    Serial.println("Mini-Tokamac Attivazione");
+//    Serial.println("Mini-Tokamac Attivazione");
   //  Serial.print("PWM");
   //  Serial.print("\tV2");
   //  Serial.print("\tA1");
@@ -82,7 +82,7 @@ void loop() {
   mot->drive_motor(pwm);
   pWrite.pwm = pwm;
 
-//  mpSerial.packSend(&pWrite);
+  mpSerial.packSend(&pWrite);
 
   // write your code here
 }
