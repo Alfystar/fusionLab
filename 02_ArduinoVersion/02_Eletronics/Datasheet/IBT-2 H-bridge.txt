@@ -1,0 +1,38 @@
+https://www.amazon.it/H-Bridge-Bts7960-Corrente-Componenti-Elettrici/dp/B08NW5JNZ3/ref=asc_df_B08NW5JNZ3/?tag=googshopit-21&linkCode=df0&hvadid=535512758604&hvpos=&hvnetw=g&hvrand=3593556781351850583&hvpone=&hvptwo=&hvqmt=&hvdev=c&hvdvcmdl=&hvlocint=&hvlocphy=1008736&hvtargid=pla-1386459163157&psc=1
+
+Specifiche:
+Tipo di elemento: modulo di azionamento del motore
+Caratteristica:
+Doppio driver H-bridge BTS7960 ad alta corrente (43 A);
+5V è isolato dall'MCU per proteggere efficacemente l'MCU;
+Indicatore di alimentazione a 5 V integrato;
+Indicazione della tensione all'uscita del driver del motore;
+Il radiatore può essere saldato;
+Definizione PIN:
+1. RPWM: gira a destra su PWM
+2. LPWM: gira a sinistra PWM
+3. R_EN: gira a destra per abilitare (attivo alto)
+4. L_EN: Abilita svolta a sinistra (attiva alta)
+5. R_IS: avviso corrente svolta a destra (può fluttuare)
+6. L_IS: avviso di corrente svolta a sinistra (può fluttuare)
+7. VCC: (5V)
+8. GND
+Metodo di connessione:
+Metodo 1:
+VCC: 5 V da microcomputer a chip singolo (MCU)
+GND: GND del microcontrollore (MCU)
+L_PWM: PWM o 5V dal microcontrollore (MCU) per giri CCW (CW)
+R_PWM: PWM o 5V dal microcontrollore (MCU) per giri CW (CCW)
+R_EN e L_EN: 5 V dal microcontrollore (MCU)
+Metodo 2:
+VCC: 5 V da microcomputer a chip singolo (MCU)
+GND: GND del microcontrollore (MCU)
+L_PWM: 5V dal microcontrollore (MCU) per giri in senso antiorario (CW)
+R_PWM: 5V dal microcontrollore (MCU) per giri CW (CCW)
+R_EN e L_EN: PWM dal microcontrollore (MCU)
+Sono necessari solo quattro fili (GND. 5V. PWM1. PWM2) dall'MCU al modulo driver;
+Chip di isolamento 5 V di alimentazione (può essere condiviso con MCU 5 V);
+Può far ruotare il motore in avanti, due frequenze di ingresso PWM fino a 25kHZ;
+Due flussi di calore attraverso un'uscita del segnale di errore;
+Alimentatore 5V con chip di isolamento (può essere condiviso con MCU 5V), puoi anche utilizzare l'alimentatore 5V integrato;
+Tensione di alimentazione da 5,5 V a 27 V;
