@@ -42,7 +42,6 @@ int main(int argc, char *argv[]) {
   uartOpen();
 
   std::ofstream outfile("capture.txt");
-  outfile << "PWM\tV2_read\tIsense_read" << std::endl;
 
   packArd2Linux pRead;
   packLinux2Ard pWrite {0}; // Start Pack
@@ -50,13 +49,17 @@ int main(int argc, char *argv[]) {
   clock_gettime(CLOCK_MONOTONIC_RAW, &old);
 
   uart->packSend(&pWrite);
+  uart->getData_wait(&pRead);
+  outfile << "V2_mean\tIsense_mean" << std::endl;
+  outfile << pRead.mean.V2_mean << "\t" << pRead.mean.Isense_mean << std::endl;
+  outfile << "PWM\tV2_read\tIsense_read" << std::endl;
 
   while (true) {
     uart->getData_wait(&pRead);
     clock_gettime(CLOCK_MONOTONIC_RAW, &now);
     timeSpecSub(now, old, diff);
     old = now;
-    outfile << pRead.pwm << "\t" << pRead.V2_read << "\t" << pRead.Isense_read << std::endl;
+    outfile << pRead.read.pwm << "\t" << pRead.read.V2_read << "\t" << pRead.read.Isense_read << std::endl;
     timeSpecPrint(diff, "diff");
   }
   outfile.close();

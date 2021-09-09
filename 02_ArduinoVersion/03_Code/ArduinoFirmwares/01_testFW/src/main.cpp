@@ -25,18 +25,19 @@ volatile u32 tic = 0;
 
 ISR(TIMER2_COMPA_vect) { tic++; }
 
-
 using namespace EMP;
 
 MP_Serial<packLinux2Ard, packArd2Linux, ArduinoMP_templateDefault()> mpSerial(Serial);
 DCdriver *mot;
 
 packLinux2Ard pRead;
+packArd2Linux pWrite;
 
 void setup() {
-  // write your initialization code here
-//   Serial.begin(2000000);
+
   mpSerial.begin(2000000);
+  memset(&pRead, 0, sizeof(pRead));
+  memset(&pWrite, 0, sizeof(pWrite));
 
   pinMode(13, OUTPUT);
 
@@ -44,9 +45,26 @@ void setup() {
   setMotFreq(hz4k);
   mot = new DCdriver(enPwm, inA, inB);
 
-
+  // Wait start Request
   mpSerial.getData_wait(&pRead);
+
+  pWrite.type = meanOffsetType;
+  // Calculate offset
+  long read = 0;
+  for (int i = 0; i < 1 << 5; i++)
+    read += analogRead(V2);
+  read = read >> 5;
+  pWrite.mean.V2_mean = read;
+
+  read = 0;
+  for (int i = 0; i < 1 << 5; i++)
+    read += analogRead(Isense);
+  read = read >> 5;
+  pWrite.mean.Isense_mean = read;
+  mpSerial.packSend(&pWrite, sizeof(pWrite.type) + sizeof(pWrite.mean));
+
   // Start Delay
+  pWrite.type = sampleType;
   delay(1000);
 
   periodicTask(500);
@@ -58,15 +76,13 @@ int V2_read, Isense_read;
 int pwm = 0;
 int add = 1;
 
-packArd2Linux pWrite;
-
 void loop() {
   while (tic == oldTic)
     ;
   digitalWrite(13, !digitalRead(13));
   oldTic = tic;
-  pWrite.V2_read = analogRead(V2);
-  pWrite.Isense_read = analogRead(Isense);
+  pWrite.read.V2_read = analogRead(V2);
+  pWrite.read.Isense_read = analogRead(Isense);
 
   if (oldTic % 10 == 0)
     pwm += add;
@@ -75,9 +91,9 @@ void loop() {
     add *= -1;
   }
   mot->drive_motor(pwm);
-  pWrite.pwm = pwm;
+  pWrite.read.pwm = pwm;
 
-  mpSerial.packSend(&pWrite);
+  mpSerial.packSend(&pWrite); // Is the biggest pack, no need size
 
   // write your code here
 }

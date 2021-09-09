@@ -7,10 +7,28 @@ struct _packLinux2Ard {
 } __attribute__((packed));
 typedef struct _packLinux2Ard packLinux2Ard;
 
-struct _packArd2Linux {
+
+enum ardSendType:uint8_t {
+  sampleType, meanOffsetType
+};
+struct sample{
   int16_t pwm;
   int16_t V2_read;
   int16_t Isense_read;
+} __attribute__((packed));
+
+struct meanOffset{
+  int16_t V2_mean;
+  int16_t Isense_mean;
+} __attribute__((packed));
+
+
+struct _packArd2Linux {
+  ardSendType type;
+  union {
+    struct sample read;
+    struct meanOffset mean;
+  };
 } __attribute__((packed));
 typedef struct _packArd2Linux packArd2Linux;
 

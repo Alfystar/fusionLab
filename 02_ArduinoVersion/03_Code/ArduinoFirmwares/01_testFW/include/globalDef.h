@@ -24,8 +24,8 @@ enum pwmFreq
 
 // H-bridge Define
 #define enPwm 5
-#define inA 7
-#define inB 6
+#define inA 6
+#define inB 7
 
 
 #endif /* MYLIB_GLOBALDEF_H_ */
