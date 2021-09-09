@@ -42,24 +42,24 @@ int main(int argc, char *argv[]) {
   uartOpen();
 
   std::ofstream outfile("test.txt");
-  outfile << "my text here!" << std::endl;
-  outfile.close();
+  outfile << "PWM\tV2_read\tIsense_read" << std::endl;
 
   packArd2Linux pRead;
-  //  packLinux2Ard pWrite {0, "Hoy Arduino"};
+  packLinux2Ard pWrite {0}; // Start Pack
   struct timespec now, old, diff;
   clock_gettime(CLOCK_MONOTONIC_RAW, &old);
 
-
+  uart->packSend(&pWrite);
 
   while (true) {
     uart->getData_wait(&pRead);
     clock_gettime(CLOCK_MONOTONIC_RAW, &now);
     timeSpecSub(now, old, diff);
     old = now;
-
+    outfile << pRead.pwm << "\t" << pRead.V2_read << "\t" << pRead.Isense_read << std::endl;
     timeSpecPrint(diff, "diff");
   }
+  outfile.close();
   delete uart;
   return 0;
 }
