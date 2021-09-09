@@ -1,6 +1,6 @@
-[submodule "03_Code/00_otherRepo/EMP"]
-	path = 01_STM32Version/03_Code/00_otherRepo/EMP
-	url = https://github.com/Alfystar/EMP.git
 [submodule "02_ArduinoVersion/03_Code/ArduinoFirmwares/01_testFW/lib/EMP"]
 	path = 02_ArduinoVersion/03_Code/otherRepo/EMP
+	url = https://github.com/Alfystar/EMP.git
+[submodule "01_STM32Version/03_Code/00_otherRepo/EMP"]
+	path = 01_STM32Version/03_Code/00_otherRepo/EMP
 	url = https://github.com/Alfystar/EMP.git
