@@ -49,7 +49,7 @@ void setup() {
   // Start Delay
   delay(1000);
 
-  periodicTask(1000);
+  periodicTask(500);
   sei();
 }
 

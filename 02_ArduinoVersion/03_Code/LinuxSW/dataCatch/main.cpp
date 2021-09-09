@@ -41,7 +41,7 @@ void uartOpen(){
 int main(int argc, char *argv[]) {
   uartOpen();
 
-  std::ofstream outfile("test.txt");
+  std::ofstream outfile("capture.txt");
   outfile << "PWM\tV2_read\tIsense_read" << std::endl;
 
   packArd2Linux pRead;
