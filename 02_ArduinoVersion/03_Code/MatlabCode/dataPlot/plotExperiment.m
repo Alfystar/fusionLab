@@ -5,8 +5,12 @@ close all
 % experiment("experiment/06-RapidShot-EX354T.txt",3.5)
 % experiment("experiment/11-triangle-Trasformatore.txt",0.25)
 % experiment("experiment/12-rapidShot-Trasformatore.txt", 1.5)
-experiment("experiment/13-rapidShot-30Khz.txt",1.5)
 
+% experiment("experiment/13-rapidShot-30Khz.txt",1.5)
+% experiment("experiment/14-rapidShot-30Khz-Condensatore.txt",1.5)
+% experiment("experiment/15-rapidShot-30Khz-Condensatore-24V.txt",3.5)
+
+experiment("experiment/16-rapidShot-30Khz-Condensatore-UpDeadZone.txt",1.5)
 %% Functions block
 
 function experiment(filepath, tLim)

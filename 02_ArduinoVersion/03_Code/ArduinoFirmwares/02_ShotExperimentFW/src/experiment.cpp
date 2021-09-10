@@ -57,7 +57,9 @@ int triangleSignal(uint64_t t, int msQuartPeriod) {
 #define t3 ticConvert(100) + t2  // falling Ramp
 #define t4 tQuiet + t3           // 0 set
 
-#define addRampCalc(valStart, valEnd, msEnd) (valEnd - valStart) / msEnd
+#define UpLimit 128
+#define downLimit 0
+
 int rapidShot(uint64_t t) {
   static uint64_t startTic = 0;
   int pwmRapidShot;
@@ -69,14 +71,14 @@ int rapidShot(uint64_t t) {
   }
 
   if (dTic <= t1) {
-    pwmRapidShot = ramp(dTic, 0, 0, 255, t1);
+    pwmRapidShot = ramp(dTic, downLimit, 0, UpLimit, t1);
   } else if (dTic <= t2) {
-    pwmRapidShot = 255;
+    pwmRapidShot = UpLimit;
   } else if (dTic <= t3) {
     // falling ramp
-    pwmRapidShot = ramp(dTic, 255, t2, 0, t3);
+    pwmRapidShot = ramp(dTic, UpLimit, t2, downLimit, t3);
   } else if (dTic <= t4) {
-    pwmRapidShot = 0;
+    pwmRapidShot = downLimit;
   }
 
   return pwmRapidShot;
