@@ -1,25 +1,26 @@
 clear variables
 close all
-% experiment("capture.txt")
 
-% experiment("experiment/06-RapidShot-EX354T.txt",3.5)
-% experiment("experiment/11-triangle-Trasformatore.txt",0.25)
-% experiment("experiment/12-rapidShot-Trasformatore.txt", 1.5)
-experiment("experiment/13-rapidShot-30Khz.txt",1.5)
+% experiment("experiment/05-500Us-Home.dat")
+% experiment("experiment/06-RapidShot-EX354T.dat")
+% experiment("experiment/08-triangle-Trasformatore.txt")
+% experiment("capture.txt")
+% experiment("experiment/11-triangle-Trasformatore.txt")
+experiment("experiment/12-rapidShot-Trasformatore.txt")
 
 %% Functions block
 
 function experiment(filepath, tLim)
-if nargin < 2
-    tLim = inf;
-end
 [home_500us, Info]= importExperiment(filepath);
 home_500usRescale = tableRescale(home_500us, Info);
 figure()
-plotTable(home_500usRescale, Info, tLim);
+plotTable(home_500usRescale, Info);
 end
 
 function plotTable(table, Info, tLim)
+if nargin < 3
+    tLim = inf;
+end
 V2Mean = Info.V2_mean;
 IsenseMean = Info.Isense_mean;
 dt = Info.dt;
@@ -37,7 +38,7 @@ plot(t,table.Isense_read)
 legend("PWM", "V2-read", "Isense-read")
 title("Experiment: "+name+ "   SampleTime: " + mat2str(dt * 1000000) + "µs")
 xlabel("time [s]")
-xlim([0 tLim])
+xlim([0,tLim])
 
 % Figure Export and Save
 savePath = "./img/";

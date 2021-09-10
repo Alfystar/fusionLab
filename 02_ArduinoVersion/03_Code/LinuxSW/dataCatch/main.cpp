@@ -11,6 +11,13 @@
 #include <fstream>
 #include <iostream>
 
+// Signal include
+#include <signal.h>
+
+
+
+
+
 EMP::MP_Uart<packArd2Linux, packLinux2Ard, LinuxMP_ConfMed(true)> *uart;
 void uartOpen(){
   std::cout << "Uart Start" << std::endl;
@@ -37,9 +44,18 @@ void uartOpen(){
 
 }
 
+void intHandler(int dummy) {
+  cout << "\n Ctrl+c catch, send stop pack" << std::endl;
+  packLinux2Ard pWrite {1}; // End Pack
+  uart->packSend(&pWrite);
+  uart->packSend(&pWrite);
+  sleep(1);
+  exit(-1);
+}
 
 int main(int argc, char *argv[]) {
   uartOpen();
+  signal(SIGINT, intHandler);
 
   std::ofstream outfile("capture.txt");
 

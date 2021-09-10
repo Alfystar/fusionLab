@@ -18,11 +18,11 @@ void periodicTask(int time) {
   OCR2A = (int)(16UL * time / 256);
   TIMSK2 = (1 << OCIE2A); // attivo solo l'interrupt di OC2A
 
-//  Serial.print("(dt=");
-//  Serial.print(time);
-//  Serial.print(", OCR2A=");
-//  Serial.print(OCR2A);
-//  Serial.println(", Prescaler=256)");
+  //  Serial.print("(dt=");
+  //  Serial.print(time);
+  //  Serial.print(", OCR2A=");
+  //  Serial.print(OCR2A);
+  //  Serial.println(", Prescaler=256)");
 }
 
 volatile u32 tic = 0;
@@ -46,7 +46,7 @@ void setup() {
   pinMode(13, OUTPUT);
 
   // Motori
-  setMotFreq(hz4k);
+  setMotFreq(hz30k);
   mot = new DCdriver(enPwm, inA, inB);
 
   // Wait start Request
@@ -73,6 +73,7 @@ void setup() {
   pWrite.type = sampleType;
   delay(1000);
 
+  mpSerial.bufClear();
   periodicTask(pWrite.mean.dt);
   sei();
 }
@@ -80,14 +81,21 @@ void setup() {
 volatile u32 oldTic = tic;
 
 void loop() {
-  while (tic == oldTic)
-    ;
+  mpSerial.updateState();
+  while (tic == oldTic) {
+    mpSerial.updateState();
+  }
+  if (mpSerial.dataAvailable()) {
+    mot->freeRun();
+    while (true) {
+      delay(1000);
+    };
+  }
   digitalWrite(13, !digitalRead(13));
   oldTic = tic;
   pWrite.read.V2_read = analogRead(V2);
   pWrite.read.Isense_read = analogRead(Isense);
-  mot->drive_motor(controll(&pWrite,oldTic));
+  mot->drive_motor(controll(&pWrite, oldTic));
 
   mpSerial.packSend(&pWrite, sizeof(pWrite.type) + sizeof(pWrite.read));
-
 }
