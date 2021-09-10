@@ -2,8 +2,11 @@ clear variables
 close all
 
 % experiment("experiment/05-500Us-Home.dat")
-experiment("experiment/06-RapidShot-EX354T.dat")
-
+% experiment("experiment/06-RapidShot-EX354T.dat")
+% experiment("experiment/08-triangle-Trasformatore.txt")
+% experiment("capture.txt")
+% experiment("experiment/11-triangle-Trasformatore.txt")
+experiment("experiment/12-rapidShot-Trasformatore.txt")
 
 %% Functions block
 

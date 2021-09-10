@@ -8,10 +8,15 @@
 #include "pack.h"
 #include "globalDef.h"
 
+#define ticConvert(ms) (ms * 1000UL) / dtExperiment
+
 // Have to set pwm in pWrite
 int controll(packArd2Linux *pWrite, unsigned long tic);
 
-int ramp(uint64_t t);
+/// Base Signal
+int ramp(uint64_t t, int vStart, uint64_t tStart, int vEnd, uint64_t tEnd);
 
+/// Complex signal
+int triangleSignal(uint64_t t, int msQuartPeriod);
 int rapidShot(uint64_t t);
 #endif // INC_01_TESTFW_SRC_EXPERIMENT_H
