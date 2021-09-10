@@ -1,4 +1,4 @@
-function [table,V2Mean, IsenseMean] = importExperiment(filename, dataLines)
+function [Table,Info] = importExperiment(filename, dataLines)
 %IMPORTFILE Import data from a text file
 %  MSHOME = IMPORTFILE(FILENAME) reads data from text file FILENAME for
 %  the default selection.  Returns the data as a table.
@@ -38,19 +38,19 @@ opts.ExtraColumnsRule = "ignore";
 opts.EmptyLineRule = "read";
 
 % Import the data
-table = readtable(filename, opts);
+Table = readtable(filename, opts);
 
 %% Mean Import
-opts = delimitedTextImportOptions("NumVariables", 2);
+opts = delimitedTextImportOptions("NumVariables", 3);
 
 % Specify range and delimiter
 opts.DataLines = [2, 2];
 opts.Delimiter = "\t";
 
 % Specify column names and types
-opts.VariableNames = ["V2_mean", "Isense_mean"];
-opts.SelectedVariableNames = ["V2_mean", "Isense_mean"];
-opts.VariableTypes = ["double", "double"];
+opts.VariableNames = ["V2_mean", "Isense_mean", "dt"];
+opts.SelectedVariableNames = ["V2_mean", "Isense_mean", "dt"];
+opts.VariableTypes = ["double", "double", "double"];
 
 % Specify file level properties
 opts.ExtraColumnsRule = "ignore";
@@ -58,8 +58,9 @@ opts.EmptyLineRule = "read";
 
 
 % Import the data
-Mean = readtable(filename, opts);
-V2Mean = Mean.V2_mean;
-IsenseMean = Mean.Isense_mean;
+Info = readtable(filename, opts);
+Info.dt = Info.dt * 1E-6; % dt shuld be in second
+[filepath,name,ext] = fileparts(filename);
+Info.Properties.Description = name;
 
 end
