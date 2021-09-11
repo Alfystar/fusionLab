@@ -12,6 +12,10 @@
 \usepackage{fancyhdr}
 \usepackage{tesisty}
 
+% CUSTOM PACKAGE
+\usepackage{hyperref}
+
+
 %-------------------------------
 % DEFINIZIONE DEGLI ENVIRONMENT
 %-------------------------------
@@ -35,6 +39,16 @@
 \newenvironment{de}
     {\begin{defn}\begin{normalfont}}
     {\hfill $\clubsuit$ \end{normalfont}\end{defn}}
+
+% CUSTOM PACKAGE ENVIROMENT SET
+\hypersetup{
+	colorlinks=true,
+	linkcolor=blue,
+	filecolor=magenta,      
+	urlcolor=cyan,
+	pdftitle={Tesi Magistrale Alfano},
+	pdfpagemode=FullScreen,
+}
 
 %-----------------------------
 % CONFIGURAZIONE DELLA PAGINA
@@ -72,9 +86,23 @@
 
 \begin{document}
 
-\dedicate{Inserire la dedica}
+\dedicate{{
+		Questa tesi è stata resa possibile dal contributo nella mia vita di tante persone, che giorno per giorno mi hanno sempre dato il loro sostegno, a voi dedico questa mia Tesi.\\
+		Un ringraziamento speciale alla mia famiglia, in particolare a mia \textbf{Madre} e mio \textbf{Padre}: è grazie al vostro sostegno e incoraggiamento se oggi sono riuscito a raggiungere questo traguardo.\\
+		La forza di arrivare qui, oggi, però non è dovuta solo a loro, devo per forza ringraziare dell'affetto e il sostegno speciale da parte dei miei cari amici, che ogni giorno hanno condiviso con me gioie, sacrifici e successi, senza voltarmi mai le spalle, mi hanno dato la forza di arrivare a questo prezioso traguardo.
+		\textbf{Filippo}, \textbf{Gabriele}, \textbf{Marta}, grazie di TUTTO.\\
+		Un pensiero in particolare vola verso la mia dolce \textbf{\textit{Nicoleta}}, è sicuramente grazie all'affetto e le attenzioni che mi hai donato che sono riuscito a tenere dritto il timone ed arrivare qui oggi.
+		Per terminare voglio ringraziare tutti i professori che negli ultimi 18 anni hanno guidato il mio cammino, loro che hanno sempre creduto in me e nelle mie capacità. Un ringraziamento più speciale va però alla mia professoressa e mentore \textbf{Beniamina Rauch} che fu la prima a vedere il mio potenziale e coltivarlo.\\
+		Oltre a lei ringrazio il mio relatore \textbf{Daniele Carnevale} che in questi anni universitari, da quando mi ha conosciuto, ha sempre creduto in me e mi ha permesso di fare esperienze che mai avevo immaginato.\\ \\
+		Un sentito grazie a tutti voi.\\
+		Emanuele
+		%TODO: Aggiungere firma con tavoletta frafica
+}}
 
-\corso{DELL'AUTOMAZIONE} \titoloTesi{COME USARE LATEX\\ PER SCRIVERE UNA TESI} \anno{2020/2021}
+\corso{DELL'AUTOMAZIONE}
+\titoloTesi{
+	Sviluppo di algoritmi di controllo delle correnti nelle bobine poloidali di macchine per la fusione Tokamak, con riguardo al design	sistemico per la cooperazione tra sistemi embedded per l'attuazione, misurazione e centrali di controllo.
+} \anno{2020/2021}
 \relatore{Daniele Carnevale}
  \autore{Emanuele Alfano}
 \correlatore{Marco Passeri}
@@ -105,7 +133,8 @@
 \renewcommand{\headrulewidth}{0.3pt}   % spessore della linea dell'intestazione
 \renewcommand{\footrulewidth}{0.3pt}   % spessore della linea del piï¿½di pagina
 
-\pagenumbering{Roman} \tableofcontents
+\pagenumbering{Roman}
+\tableofcontents
 \newpage
 
 \pagenumbering{arabic}
