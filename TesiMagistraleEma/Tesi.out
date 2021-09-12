@@ -1,28 +1,28 @@
 \BOOKMARK [0][-]{chapter*.2}{Ringraziamenti}{}% 1
 \BOOKMARK [0][-]{chapter*.3}{Introduzione}{}% 2
-\BOOKMARK [0][-]{chapter.1}{Alcune regole fondamentali}{}% 3
-\BOOKMARK [1][-]{section.1.1}{Come iniziare}{chapter.1}% 4
-\BOOKMARK [1][-]{section.1.2}{Questioni di impostazione}{chapter.1}% 5
-\BOOKMARK [2][-]{subsection.1.2.1}{La terza persona}{section.1.2}% 6
-\BOOKMARK [2][-]{subsection.1.2.2}{La lingua}{section.1.2}% 7
-\BOOKMARK [2][-]{subsection.1.2.3}{La punteggiatura}{section.1.2}% 8
-\BOOKMARK [2][-]{subsection.1.2.4}{Gli accenti}{section.1.2}% 9
-\BOOKMARK [2][-]{subsection.1.2.5}{Le virgolette}{section.1.2}% 10
-\BOOKMARK [2][-]{subsection.1.2.6}{Posizione delle figure}{section.1.2}% 11
-\BOOKMARK [2][-]{subsection.1.2.7}{Caption e note a pi\351 di pagina}{section.1.2}% 12
-\BOOKMARK [0][-]{chapter.2}{Basi di latex}{}% 13
-\BOOKMARK [1][-]{section.2.1}{Sezionamento}{chapter.2}% 14
-\BOOKMARK [1][-]{section.2.2}{Le immagini}{chapter.2}% 15
-\BOOKMARK [1][-]{section.2.3}{Le tabelle}{chapter.2}% 16
-\BOOKMARK [1][-]{section.2.4}{Osservazioni, teoremi et similia}{chapter.2}% 17
-\BOOKMARK [1][-]{section.2.5}{La bibliografia}{chapter.2}% 18
-\BOOKMARK [1][-]{section.2.6}{Note a pi\350 di pagina}{chapter.2}% 19
-\BOOKMARK [1][-]{section.2.7}{Suggerimenti vari per la scrittura della tesi}{chapter.2}% 20
-\BOOKMARK [0][-]{chapter.3}{Programmi utili}{}% 21
-\BOOKMARK [1][-]{section.3.1}{Linux}{chapter.3}% 22
-\BOOKMARK [1][-]{section.3.2}{Windows}{chapter.3}% 23
-\BOOKMARK [0][-]{chapter.4}{Conclusioni e sviluppi futuri}{}% 24
-\BOOKMARK [0][-]{chapter*.4}{Appendice A - Questa \350 un'appendice}{}% 25
-\BOOKMARK [0][-]{chapter*.5}{Appendice B - Seconda appendice}{}% 26
-\BOOKMARK [0][-]{chapter*.5}{Elenco delle figure}{}% 27
-\BOOKMARK [0][-]{chapter*.6}{Bibliografia}{}% 28
+\BOOKMARK [0][-]{chapter.1}{Hardware}{}% 3
+\BOOKMARK [1][-]{section.1.1}{Trasformatore}{chapter.1}% 4
+\BOOKMARK [1][-]{section.1.2}{Driver di Corrente - IBT-2}{chapter.1}% 5
+\BOOKMARK [2][-]{subsection.1.2.1}{Non linearit\340 presenti}{section.1.2}% 6
+\BOOKMARK [1][-]{section.1.3}{Sensore di Corrente}{chapter.1}% 7
+\BOOKMARK [2][-]{subsection.1.3.1}{Metodo di acquisizione}{section.1.3}% 8
+\BOOKMARK [0][-]{chapter.2}{Catena di Acquisizione}{}% 9
+\BOOKMARK [1][-]{section.2.1}{Schema di acquisizione}{chapter.2}% 10
+\BOOKMARK [2][-]{subsection.2.1.1}{Sample and Hold alla frequenza di campionamento}{section.2.1}% 11
+\BOOKMARK [2][-]{subsection.2.1.2}{Storage su file delle informazioni}{section.2.1}% 12
+\BOOKMARK [1][-]{section.2.2}{Embedded Message Pack \(EMP\)}{chapter.2}% 13
+\BOOKMARK [2][-]{subsection.2.2.1}{Metodo di codifica}{section.2.2}% 14
+\BOOKMARK [2][-]{subsection.2.2.2}{Struttura del codice}{section.2.2}% 15
+\BOOKMARK [2][-]{subsection.2.2.3}{Benchmark}{section.2.2}% 16
+\BOOKMARK [1][-]{section.2.3}{Post Elaborazione con Matlab}{chapter.2}% 17
+\BOOKMARK [0][-]{chapter.3}{Modello teorico}{}% 18
+\BOOKMARK [1][-]{section.3.1}{Modellazione Fisica}{chapter.3}% 19
+\BOOKMARK [1][-]{section.3.2}{Funzione di trasferimento}{chapter.3}% 20
+\BOOKMARK [0][-]{chapter.4}{Controllo in Retroazione dall'uscita}{}% 21
+\BOOKMARK [1][-]{section.4.1}{Modello di controllore}{chapter.4}% 22
+\BOOKMARK [1][-]{section.4.2}{Esperimenti}{chapter.4}% 23
+\BOOKMARK [0][-]{chapter.5}{Conclusioni e sviluppi futuri}{}% 24
+\BOOKMARK [0][-]{chapter*.4}{Appendice A - Codice Arduino}{}% 25
+\BOOKMARK [0][-]{chapter*.5}{Appendice B - Codice EMP}{}% 26
+\BOOKMARK [0][-]{chapter*.6}{Appendice C - Matlab Post Elaboration}{}% 27
+\BOOKMARK [0][-]{chapter*.6}{Elenco delle figure}{}% 28
