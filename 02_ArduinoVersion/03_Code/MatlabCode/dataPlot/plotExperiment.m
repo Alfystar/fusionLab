@@ -58,7 +58,7 @@ V2Mean = Info.V2_mean;
 IsenseMean = Info.Isense_mean;
 dt = Info.dt;
 
-vScale = 5/(2^10-1);    % ADC sensitivity
+vScale = 5/(2^10-1);        % ADC sensitivity
 IScale = vScale / 0.020;    % Isensitivity = 20mv/A    
 
 tableRescale = table;

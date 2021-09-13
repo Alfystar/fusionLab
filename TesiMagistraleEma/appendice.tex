@@ -1,7 +1,65 @@
 \chapter*{Appendice A\\ Arduino Code}\label{ArduinoCode}
 \addcontentsline{toc}{chapter}{Appendice A - Codice Arduino}
 
-\section{Setup Registri}
+\section{Set-up Registri}
+
+\subsubsection{Tic Timer}
+
+\begin{lstlisting}[style=cppStyle,caption={Tic Timer},label=lst:ticTimer] 
+	void periodicTask(int time) { 		// time in micro secondi
+		// PWM pin Disable, motalita CTC(pt1)
+		TCCR2A = (0x0 << COM2A0) | (0x0 << COM2B0) | (0x2 << WGM20);
+		// CTC(pt2), Prescalere 256
+		TCCR2B = (0 << WGM22) | (0x6 << CS20);                       
+		// T_cklock * Twant / Prescaler = valore Registro
+		OCR2A = (int)(16UL * time / 256);
+		TIMSK2 = (1 << OCIE2A); // attivo solo l'interrupt di OC2A
+	}
+\end{lstlisting}
+Questa funzione imposta il TIMER2 in modalità Fast PWM, ovvero che si resetta quando arriva al conteggio finale, e calcola il valore da mettere nel registro affinchè il conteggio sia il più vicino possibile a tempo desiderato
+
+\subsubsection{Frequenza PWM}
+
+\begin{lstlisting}[style=cppStyle,caption={Frequenza PWM},label=lst:pwmFreq] 
+enum pwmFreq: char {
+	hz30, hz120, hz490, hz4k, hz30k
+};
+
+void setMotFreq(pwmFreq freq) {
+	// TCCR0B is for Timer 0
+	#define myTimer TCCR0B
+	switch (freq) {
+		// set timer 3 divisor to  1024 for PWM frequency of    30.64 Hz
+		case hz30:
+			myTimer = (myTimer & B11111000) | B00000101;
+		break;
+		case hz120:
+		// set timer 3 divisor to   256 for PWM frequency of   122.55 Hz
+			myTimer = (myTimer & B11111000) | B00000100;
+		break;
+		case hz490:
+		// set timer 3 divisor to    64 for PWM frequency of   490.20 Hz
+			myTimer = (myTimer & B11111000) | B00000011;
+		break;
+		case hz4k:
+		// set timer 3 divisor to     8 for PWM frequency of  3921.16 Hz
+			myTimer = (myTimer & B11111000) | B00000010;
+		break;
+		case hz30k:
+		// set timer 3 divisor to     1 for PWM frequency of 31372.55 Hz
+			myTimer = (myTimer & B11111000) | B00000001;
+		break;
+		default:
+			setMotFreq(hz4k);
+		break;
+	}
+	#undef myTimer
+}
+\end{lstlisting}
+Mediante questa funzione si modifica il valore del Prescaler per il TIMER 0, modificando la velocità di conteggio si ottiene un PWM con una periodo, e quindi frequenza, che varia.
+
+
+\newpage
 
 \section{Generatore di Segnale}
 
@@ -26,13 +84,13 @@ int ramp(uint64_t t, int vStart, uint64_t tStart, int vEnd, uint64_t tEnd) {
 }
 \end{lstlisting}
 La rampa è descritta come una retta nell'intervallo di interesse, saturata prima e dopo il tempo desiderato\\
-$ RampaSat(t) = 
-\left \{ \begin{array}{l c}
-	v_{start} + \frac{v_{end}-v_{start}}{t_{end}-t_{start}} * (t - t_{start}) &\forall t \in [t_{start},t_{end}] \\
-	v_{start} & t<t_{start}\\
-	v_{end}& t>t_{start}
-\end{array}
-\right.
+$ RampaSat(t) =
+	\left \{ \begin{array}{l c}
+		v_{start} + \frac{v_{end}-v_{start}}{t_{end}-t_{start}} * (t - t_{start}) & \forall t \in [t_{start},t_{end}] \\
+		v_{start}                                                                 & t<t_{start}                       \\
+		v_{end}                                                                   & t>t_{start}
+	\end{array}
+	\right.
 $
 
 \newpage

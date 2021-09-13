@@ -67,12 +67,17 @@
 style=numeric-comp,
 useprefix,
 style=reading,
-backend=bibtex]{biblatex}
+backend=biber]{biblatex}
 \addbibresource{BibliografiaTesi.bib}
+\usepackage{csquotes}
+
+%\usepackage{natbib}
+%\bibliographystyle{unsrtnat}
+%\bibliography{BibliografiaTesi}
 
 %% Enumeration personalization Package
-\usepackage{enumitem}
-\setlist[enumerate]{itemsep=-4mm}
+%\usepackage{enumitem}
+%\setlist[enumerate]{itemsep=-4mm}
 
 %% Coding Package
 \usepackage{listings}
@@ -178,7 +183,11 @@ backend=bibtex]{biblatex}
 \renewcommand{\footrulewidth}{0.3pt}   % spessore della linea del piï¿½di pagina
 
 \pagenumbering{Roman}
-\tableofcontents
+%Indice, senza link colorati
+{
+	\hypersetup{hidelinks}
+	\tableofcontents
+}
 \newpage
 
 \pagenumbering{arabic}

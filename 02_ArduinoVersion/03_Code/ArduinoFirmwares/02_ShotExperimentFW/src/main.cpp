@@ -95,7 +95,7 @@ void loop() {
   oldTic = tic;
   pWrite.read.V2_read = analogRead(V2);
   pWrite.read.Isense_read = analogRead(Isense);
-  mot->drive_motor(controll(&pWrite, oldTic));
+  pWrite.read.pwm = mot->drive_motor(controll(&pWrite, oldTic));
 
   mpSerial.packSend(&pWrite, sizeof(pWrite.type) + sizeof(pWrite.read));
 }

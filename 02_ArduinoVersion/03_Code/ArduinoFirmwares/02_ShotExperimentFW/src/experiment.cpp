@@ -4,11 +4,9 @@
 
 #include "experiment.h"
 
-// Have to set pwm in pWrite
 int controll(packArd2Linux *pWrite, unsigned long tic) {
-  //  pWrite->read.pwm = triangleSignal(tic, 100);
-  pWrite->read.pwm = rapidShot(tic);
-  return pWrite->read.pwm;
+  //  return = triangleSignal(tic, 100);
+  return rapidShot(tic);
 }
 
 /// Base Signal

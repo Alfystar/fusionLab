@@ -84,9 +84,11 @@ void DCdriver::updateMot() {
   }
 }
 
-void DCdriver::drive_motor(int speed) {
-  if(speed == 0 || speed == 100)
-    this->speed = speed;
+int DCdriver::drive_motor(int speed) {
+  if(speed == 0)
+    this->speed = 0;
+  else if(speed == 100)
+    this->speed = 255;
   else
     this->speed = sign(speed) * map(abs(speed),1,99,downLimitSat,upLimitSat);
 
@@ -98,13 +100,15 @@ void DCdriver::drive_motor(int speed) {
     this->clockWise();
     analogWrite(this->pwm, this->speed);
   }
+  return this->speed;
 }
 
-void DCdriver::drive_motor(int speed, unsigned int delay_time) {
+int DCdriver::drive_motor(int speed, unsigned int delay_time) {
   this->drive_motor(speed);
   this->delay_time = delay_time;
   this->time = millis();
   this->state = movingTiming;
+  return this->speed;
 }
 
 void DCdriver::reversDir() { drive_motor(-this->speed, 500); }

@@ -14,9 +14,38 @@ La tesi va scritta usando la terza persona, per quanto possibile, tranne casi ve
 
 
 \section{Sensore di Corrente}\label{CurrentSense}
+Benché per gli obiettivi di controllo la lettura della corrente sul primario non è indispensabile, si è però preferito poter misurare cosa stia succedendo all'interno del sistema.\\
+Per allo scopo di misurare la corrente è stato messo in serie al primario il sensore di Corrente \cite{ACS770}
+Le scelte che hanno portato alla sua scelta sono: \vspace{-8mm}
+\begin{center}
+	\begin{tabular}[t]{|l r|}
+		\hline
+		Bandwidth:                             & 120 kHz                               \\
+		Output rise time :                     & 4.1 $ \mu s $                         \\
+		Ultralow power loss:                   & 100 $ \mu \Omega $ Resistenza Interna \\
+		Single supply operation                & 4.5 to 5.5 V                          \\
+		Extremely stable output offset voltage &                                       \\
+		\hline
+	\end{tabular}
+\end{center}
 
-In questa sezione vengono commentate alcune questioni estetiche e di
-forma legate alla tesi.
+\noindent
+Delle tante varianti presenti, si è scelto di usare la \citefield{ACS770}{series}\\
+Le caratteristiche chiave di questa variante sono:
+\begin{center}
+	\begin{tabular}[t]{|l r|}
+		\hline
+		Primary Sampled Current: & $\pm$ 100 A     \\
+		Sensitivity Sens (Typ.)  & 20(mV/A)        \\
+		Current Directionality   & Bidirectional   \\
+		$T_{OP}$                 & –40 to 150 (°C) \\
+		\hline
+	\end{tabular}
+\end{center}
+
+
+
+
 
 
 \subsection{Metodo di acquisizione}
@@ -30,14 +59,13 @@ Per l'attuazione del controllo di corrente nella bobina primaria del trasformato
 %todo modificare con Paint.net Per mettere trasformatore e levare linea nera
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.6\textwidth]{IBT-2/TopView.jpg}
+	\includegraphics[width=1\textwidth]{IBT-2/TopView.jpg}
 	\caption[Driver Motori IBT-2 TopView \& PinOut]{IBT-2 TopView.}
 \end{figure}
 
 \noindent
 Esso non è un comune Ponte-H integrato, per poter gestire potenze superiori è stato costruito usando 2 Half-Bridge collegati insieme mediante una opportuna logica per ricreare un normale Ponte-H.\\
-Questa scheda in particola ha prestazioni interessanti per gli scopi di questa tesi, i principali sono elencati di seguito:
-
+Questa scheda in particola ha prestazioni interessanti per gli scopi di questa tesi, i principali sono elencati di seguito:\vspace{-8mm}
 \begin{center}
 	\begin{tabular}[t]{|l r|}
 		\hline
@@ -73,27 +101,20 @@ Il driver sulla carta à buone prestazioni, ma non sono descritte le sue Non-Lin
 	\item \nameref{lst:ondaTriangloare} \\ \vspace{-11mm}
 	      \begin{figure}[h]
 		      \centering
-		      	      %Todo: Ricampionare l'onda triangolare senza filtro deadzone
+		      %Todo: Ricampionare l'onda triangolare senza filtro deadzone
 		      \includegraphics[height=0.5\textheight]{IBT-2/11-triangle-Trasformatore.pdf}
 		      \caption[Esperimento con Onda Triangolare]{Onda Triangolare}
-	      \end{figure}\\
-      Molto utile per far risaltare la Dead-Zone inferiore del driver, dovuta ai tempi di ritardo introdotti dai 2 Half-Bridge per evitare di cortocircuitare le alimentazioni.
-	\newpage
+	      \end{figure}\vspace{-10mm}
+	      \paragraph{Dead-Zone Inferiore} L'onda triangolare si presta bene per far risaltare la problematica della Dead-Zone Inferiore, infatti in tutti gli intorni in cui il segnale passa per 0, è possibile vedere come la corrente non vari minimamente, è però possibile notare che i 2 lati non sono simmetrici tra di loro, questo è facilmente spiegabile dal fatto che il primo ha una condizione iniziale $ \neq $ 0 e di fatto stiamo ancora osservando l'esaurimento del transitorio, la soglia di Dead-Zone Inferiore è quindi calcolata vedendo il primo valore di PWM  per cui il sistema risponde a destra degli 0.      
+	      
+	      \newpage
 	\item \nameref{lst:ondaTrapezoidale} \\
 	      \begin{figure}[h]
 		      \centering
 		      \includegraphics[height=0.5\textheight]{IBT-2/12-rapidShot-Trasformatore.pdf}
 		      \caption[Esperimento con Onda Trapezoidale]{Onda Trapezoidale}
-	      \end{figure}
+	      \end{figure}  \vspace{-10mm}
+	      \paragraph{Dead-Zone Superiore} Con questo secondo segnale, si vuole mettere in evidenza il ritardo durante la discesa della rampa, pari a circa 20ms {\small \textit{(guarda 1.1s)}}, questo ritardo è in realtà dovuto da una seconda Dead-Zone presente però ai Duty-Cycle alti del PWM.
+	      \vspace{-5mm}
+	      \paragraph{Disturbo 50Hz} Essendo in oltre presente un segnale costante per un pò, quando i transitori terminano risulta evidente la presenza della 50hz nel segnale della corrente proveniente dall'alimentatore, questo disturbo è però dovuto alla fonte della corrente, ovvero la 220Vac del laboratorio, il medesimo esperimento realizzato con una batteria non ha disturbi così marcati.
 \end{enumerate}
-
-\noindent
-Vediamo ora di analizzare i 2 segnali di controllo e come si riflettono sul sistema:
-
-\subsubsection{Deadzone}
-Nel prim
-
-
-\subsubsection{Disturbo della 50Hz}
-
-

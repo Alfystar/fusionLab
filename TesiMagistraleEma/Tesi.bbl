@@ -17,6 +17,32 @@
 \endgroup
 
 \datalist[entry]{nty/global//global/global}
+  \entry{ACS770}{manual}{}
+    \name{author}{1}{}{%
+      {{hash=A}{%
+         family={Allegro},
+         familyi={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{A1}
+    \strng{fullhash}{A1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{series}{ACS770LCB-100B-PFF-T}
+    \field{title}{High-Precision Linear Current Sensor}
+    \verb{url}
+    \verb https://www.allegromicro.com/~/media/Files/Datasheets/ACS770-Datashee
+    \verb t.pdf
+    \endverb
+    \list{institution}{1}{%
+      {Allegro Microsystems}%
+    }
+    \field{type}{Datasheet}
+    \field{year}{31 May 2019}
+  \endentry
+
   \entry{IBT-2}{manual}{}
     \name{author}{1}{}{%
       {{hash=H}{%

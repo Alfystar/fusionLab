@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.9.11)  13 SEP 2021 13:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.9.11)  13 SEP 2021 15:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -498,20 +498,10 @@ Package biblatex Info: ... file 'blx-compat.def' found.
 (/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-compat.def
 File: blx-compat.def 2020/12/31 v3.16 biblatex compatibility (PK/MW)
 )
-Package biblatex Info: Trying to load BibTeX backend compatibility...
-Package biblatex Info: ... file 'blx-bibtex.def' found.
-
-(/usr/share/texlive/texmf-dist/tex/latex/biblatex/blx-bibtex.def
-File: blx-bibtex.def 2020/12/31 v3.16 biblatex compatibility (PK/MW)
-
-
-Package biblatex Warning: Using fall-back BibTeX(8) backend:
-(biblatex)                functionality may be reduced/unavailable.
-
-)
 Package biblatex Info: Trying to load generic definitions...
 Package biblatex Info: ... file 'biblatex.def' found.
- (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.def
+
+(/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.def
 File: biblatex.def 2020/12/31 v3.16 biblatex compatibility (PK/MW)
 \c@textcitecount=\count399
 \c@textcitetotal=\count400
@@ -564,50 +554,58 @@ Package biblatex Info: ... file 'biblatex.cfg' found.
 (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.cfg
 File: biblatex.cfg 
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/enumitem/enumitem.sty
-Package: enumitem 2019/06/20 v3.9 Customized lists
-\labelindent=\skip78
-\enit@outerparindent=\dimen156
-\enit@toks=\toks31
-\enit@inbox=\box51
-\enit@count@id=\count410
-\enitdp@description=\count411
+(/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.sty
+Package: csquotes 2021-01-04 v5.2k context-sensitive quotations (JAW)
+\csq@reset=\count410
+\csq@gtype=\count411
+\csq@glevel=\count412
+\csq@qlevel=\count413
+\csq@maxlvl=\count414
+\csq@tshold=\count415
+\csq@ltx@everypar=\toks31
+
+(/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.def
+File: csquotes.def 2021-01-04 v5.2k csquotes generic definitions (JAW)
 )
+Package csquotes Info: Trying to load configuration file 'csquotes.cfg'...
+Package csquotes Info: ... configuration file loaded successfully.
+
+(/usr/share/texlive/texmf-dist/tex/latex/csquotes/csquotes.cfg
+File: csquotes.cfg 
+))
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count412
-\lst@gtempboxa=\box52
+\lst@mode=\count416
+\lst@gtempboxa=\box51
 \lst@token=\toks32
-\lst@length=\count413
-\lst@currlwidth=\dimen157
-\lst@column=\count414
-\lst@pos=\count415
-\lst@lostspace=\dimen158
-\lst@width=\dimen159
-\lst@newlines=\count416
-\lst@lineno=\count417
-\lst@maxwidth=\dimen160
+\lst@length=\count417
+\lst@currlwidth=\dimen156
+\lst@column=\count418
+\lst@pos=\count419
+\lst@lostspace=\dimen157
+\lst@width=\dimen158
+\lst@newlines=\count420
+\lst@lineno=\count421
+\lst@maxwidth=\dimen159
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
-\c@lstnumber=\count418
-\lst@skipnumbers=\count419
-\lst@framebox=\box53
+\c@lstnumber=\count422
+\lst@skipnumbers=\count423
+\lst@framebox=\box52
 )
 (/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2020/03/24 1.8d listings configuration
 ))
 Package: listings 2020/03/24 1.8d (Carsten Heinz)
+Package csquotes Info: Checking for multilingual support...
+Package csquotes Info: ... found 'babel' package.
+Package csquotes Info: Adjusting default style.
+Package csquotes Info: Redefining alias 'default' -> 'italian'.
 
-
-Package biblatex Warning: 'babel/polyglossia' detected but 'csquotes' missing.
-(biblatex)                Loading 'csquotes' recommended.
-
-\@quotelevel=\count420
-\@quotereset=\count421
 (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2020-01-29 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count422
-\l__pdf_internal_box=\box54
+\l__color_backend_stack_int=\count424
+\l__pdf_internal_box=\box53
 )
 
 LaTeX Warning: Unused global option(s):
@@ -618,37 +616,37 @@ LaTeX Warning: Unused global option(s):
 (./capitolo4-Controllo.aux) (./conclusioni.aux) (./appendice.aux))
 \openout1 = `Tesi.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 140.
-LaTeX Font Info:    ... okay on input line 140.
-LaTeX Info: Redefining \it@ocap on input line 140.
-LaTeX Info: Redefining \it@ccap on input line 140.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 145.
+LaTeX Font Info:    ... okay on input line 145.
+LaTeX Info: Redefining \it@ocap on input line 145.
+LaTeX Info: Redefining \it@ccap on input line 145.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count423
-\scratchdimen=\dimen161
-\scratchbox=\box55
-\nofMPsegments=\count424
-\nofMParguments=\count425
+\scratchcounter=\count425
+\scratchdimen=\dimen160
+\scratchbox=\box54
+\nofMPsegments=\count426
+\nofMParguments=\count427
 \everyMPshowfont=\toks33
-\MPscratchCnt=\count426
-\MPscratchDim=\dimen162
-\MPnumerator=\count427
-\makeMPintoPDFobject=\count428
+\MPscratchCnt=\count428
+\MPscratchDim=\dimen161
+\MPnumerator=\count429
+\makeMPintoPDFobject=\count430
 \everyMPtoPDFconversion=\toks34
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -659,7 +657,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring ON on input line 140.
+Package hyperref Info: Link coloring ON on input line 145.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -670,11 +668,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count429
+\c@section@level=\count431
 )
-LaTeX Info: Redefining \ref on input line 140.
-LaTeX Info: Redefining \pageref on input line 140.
-LaTeX Info: Redefining \nameref on input line 140.
+LaTeX Info: Redefining \ref on input line 145.
+LaTeX Info: Redefining \pageref on input line 145.
+LaTeX Info: Redefining \nameref on input line 145.
 
 (./Tesi.out) (./Tesi.out)
 \@outlinefile=\write4
@@ -689,9 +687,6 @@ File: italian.lbx 2020/12/31 v3.16 biblatex localization (PK/MW)
 Package biblatex Info: Input encoding 'utf8' detected.
 Package biblatex Info: Automatic encoding selection.
 (biblatex)             Assuming data encoding 'utf8'.
-Package biblatex Info: Input encoding 'utf8' specified.
-Package biblatex Info: Data encoding 'utf8' specified.
-(biblatex)             No need to reencode data.
 Package biblatex Info: Document encoding is UTF8 ....
 
 (/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
@@ -709,27 +704,27 @@ Package: xparse 2020-10-27 L3 Experimental document command parser
 (/usr/share/texlive/texmf-dist/tex/latex/l3packages/xparse/xparse-generic.tex))
 Package: blx-case-expl3 2020/12/31 v3.16 expl3 case changing code for biblatex
 )
-\openout3 = `Tesi-blx.bib'.
+\openout3 = `Tesi.bcf'.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Tesi.bbl' found.
  (./Tesi.bbl)
-Package biblatex Info: Reference section=0 on input line 140.
-Package biblatex Info: Reference segment=0 on input line 140.
-\c@lstlisting=\count430
-LaTeX Font Info:    Trying to load font information for U+msa on input line 156
+Package biblatex Info: Reference section=0 on input line 145.
+Package biblatex Info: Reference segment=0 on input line 145.
+\c@lstlisting=\count432
+LaTeX Font Info:    Trying to load font information for U+msa on input line 161
 .
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 156
+LaTeX Font Info:    Trying to load font information for U+msb on input line 161
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 15
-6.
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 16
+1.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
@@ -742,13 +737,13 @@ Package epstopdf Info: Source file: <imgs/ulogo-Green.eps>
 (epstopdf)                    size: 2917 bytes
 (epstopdf)             Command: <repstopdf --outfile=imgs/ulogo-Green-eps-conve
 rted-to.pdf imgs/ulogo-Green.eps>
-(epstopdf)             \includegraphics on input line 156.
+(epstopdf)             \includegraphics on input line 161.
 Package epstopdf Info: Output file is already uptodate.
 <imgs/ulogo-Green-eps-converted-to.pdf, id=135, 46.1725pt x 62.2325pt>
 File: imgs/ulogo-Green-eps-converted-to.pdf Graphic file (type pdf)
 <use imgs/ulogo-Green-eps-converted-to.pdf>
 Package pdftex.def Info: imgs/ulogo-Green-eps-converted-to.pdf  used on input l
-ine 156.
+ine 161.
 (pdftex.def)             Requested size: 42.22133pt x 56.9055pt.
  [1
 
@@ -803,24 +798,24 @@ Capitolo 1.
 
 
 ] [5]
-<imgs//IBT-2/TopView.jpg, id=224, 1284.8pt x 722.7pt>
+<imgs//IBT-2/TopView.jpg, id=231, 1284.8pt x 722.7pt>
 File: imgs//IBT-2/TopView.jpg Graphic file (type jpg)
 <use imgs//IBT-2/TopView.jpg>
-Package pdftex.def Info: imgs//IBT-2/TopView.jpg  used on input line 33.
-(pdftex.def)             Requested size: 261.00266pt x 146.8091pt.
+Package pdftex.def Info: imgs//IBT-2/TopView.jpg  used on input line 62.
+(pdftex.def)             Requested size: 435.0pt x 244.68918pt.
  [6 <./imgs//IBT-2/TopView.jpg>] [7]
-<imgs//IBT-2/11-triangle-Trasformatore.pdf, id=236, 794.97pt x 614.295pt>
+<imgs//IBT-2/11-triangle-Trasformatore.pdf, id=243, 794.97pt x 614.295pt>
 File: imgs//IBT-2/11-triangle-Trasformatore.pdf Graphic file (type pdf)
 <use imgs//IBT-2/11-triangle-Trasformatore.pdf>
 Package pdftex.def Info: imgs//IBT-2/11-triangle-Trasformatore.pdf  used on inp
-ut line 77.
+ut line 105.
 (pdftex.def)             Requested size: 401.18375pt x 310.0pt.
  [8 <./imgs//IBT-2/11-triangle-Trasformatore.pdf>]
-<imgs//IBT-2/12-rapidShot-Trasformatore.pdf, id=261, 794.97pt x 614.295pt>
+<imgs//IBT-2/12-rapidShot-Trasformatore.pdf, id=269, 794.97pt x 614.295pt>
 File: imgs//IBT-2/12-rapidShot-Trasformatore.pdf Graphic file (type pdf)
 <use imgs//IBT-2/12-rapidShot-Trasformatore.pdf>
 Package pdftex.def Info: imgs//IBT-2/12-rapidShot-Trasformatore.pdf  used on in
-put line 85.
+put line 114.
 (pdftex.def)             Requested size: 401.18375pt x 310.0pt.
 ) [9 <./imgs//IBT-2/12-rapidShot-Trasformatore.pdf>]
 \openout2 = `capitolo2-Acquisizione.aux'.
@@ -877,32 +872,32 @@ File: lstlang1.sty 2020/03/24 1.8d listings language file
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 )
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 16.
+nput line 8.
  [14
 
 
 
 
 ] [15]
-[16
+[16] [17] [18
 
-]) [17
+]) [19
 
 ] (./Tesi.lof)
 \tf@lof=\write6
 \openout6 = `Tesi.lof'.
 
- [18
+ [20
 
 
 
 ]
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 2
-24.
+33.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-) [19
+) [21
 
 ] (./Tesi.aux
 (./Introduzione.aux) (./capitolo1-HW.aux) (./capitolo2-Acquisizione.aux)
@@ -912,19 +907,19 @@ File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `Tesi.out' has not changed.
-(rerunfilecheck)             Checksum: 412CE3C1F29DCC68302647CAE6C06D78;2225.
+(rerunfilecheck)             Checksum: 37FD034CC3FDDCBB6991CBE8355084C2;2226.
 Package logreq Info: Writing requests to 'Tesi.run.xml'.
 \openout1 = `Tesi.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 17882 strings out of 479304
- 294669 string characters out of 5869779
- 1198466 words of memory out of 5000000
- 34627 multiletter control sequences out of 15000+600000
- 418856 words of font info for 57 fonts, out of 8000000 for 9000
+ 18166 strings out of 479304
+ 298766 string characters out of 5869779
+ 1267937 words of memory out of 5000000
+ 34857 multiletter control sequences out of 15000+600000
+ 419191 words of font info for 58 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 71i,11n,78p,1855b,1684s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 71i,12n,78p,737b,2003s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf/
 fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
@@ -946,10 +941,10 @@ frm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/sh
 are/texmf/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf/fonts/type
 1/public/cm-super/sfti0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sf
 ti1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on Tesi.pdf (23 pages, 613642 bytes).
+Output written on Tesi.pdf (25 pages, 633838 bytes).
 PDF statistics:
- 511 PDF objects out of 1000 (max. 8388607)
- 453 compressed objects within 5 object streams
- 122 named destinations out of 1000 (max. 500000)
+ 583 PDF objects out of 1000 (max. 8388607)
+ 522 compressed objects within 6 object streams
+ 173 named destinations out of 1000 (max. 500000)
  285 words of extra memory for PDF output out of 10000 (max. 10000000)
 

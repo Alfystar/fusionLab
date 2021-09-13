@@ -30,8 +30,8 @@ class DCdriver {
 		void updateMot();               //no stopping Call, to update status
 
 		/*State change motor*/
-		void drive_motor(int speed);
-		void drive_motor(int speed, unsigned int delay_time);
+		int drive_motor(int speed);
+		int drive_motor(int speed, unsigned int delay_time);
 		void reversDir();
 		void soft_stop();
 		void soft_stop(unsigned int delay_time);
