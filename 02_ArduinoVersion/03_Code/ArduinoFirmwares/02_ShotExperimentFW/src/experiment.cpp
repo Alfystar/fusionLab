@@ -6,7 +6,7 @@
 
 // Have to set pwm in pWrite
 int controll(packArd2Linux *pWrite, unsigned long tic) {
-//  pWrite->read.pwm = triangleSignal(tic, 100);
+  //  pWrite->read.pwm = triangleSignal(tic, 100);
   pWrite->read.pwm = rapidShot(tic);
   return pWrite->read.pwm;
 }
@@ -19,11 +19,12 @@ int controll(packArd2Linux *pWrite, unsigned long tic) {
 //  Satura ai valori Vstart e Vend prima e dopo l'intervallo di interesse
 
 int ramp(uint64_t t, int vStart, uint64_t tStart, int vEnd, uint64_t tEnd) {
+  // Saturazione
   if (t < tStart)
     return vStart;
   else if (t > tEnd)
     return vEnd;
-
+  // Retta
   unsigned int dt = t - tStart;
   return vStart + int((vEnd - vStart) / float(tEnd - tStart) * dt);
 }
@@ -35,11 +36,11 @@ int triangleSignal(uint64_t t, int msQuartPeriod) {
   int dTic = t - startTic;
   int pwm = 0;
   if (dTic < ticConvert(msQuartPeriod))
-    pwm = ramp(dTic, 0, 0, 255, ticConvert(msQuartPeriod));
+    pwm = ramp(dTic, 0, 0, 100, ticConvert(msQuartPeriod));
   else if (dTic < (ticConvert(msQuartPeriod) * 3))
-    pwm = ramp(dTic, 255, ticConvert(msQuartPeriod), -255, ticConvert(msQuartPeriod) * 3);
+    pwm = ramp(dTic, 100, ticConvert(msQuartPeriod), -100, ticConvert(msQuartPeriod) * 3);
   else if (dTic < (ticConvert(msQuartPeriod) * 4))
-    pwm = ramp(dTic, -255, ticConvert(msQuartPeriod) * 3, 0, ticConvert(msQuartPeriod) * 4);
+    pwm = ramp(dTic, -100, ticConvert(msQuartPeriod) * 3, 0, ticConvert(msQuartPeriod) * 4);
   else {
     pwm = 0;
     startTic = t;
@@ -57,9 +58,6 @@ int triangleSignal(uint64_t t, int msQuartPeriod) {
 #define t3 ticConvert(100) + t2  // falling Ramp
 #define t4 tQuiet + t3           // 0 set
 
-#define UpLimit 128
-#define downLimit 0
-
 int rapidShot(uint64_t t) {
   static uint64_t startTic = 0;
   int pwmRapidShot;
@@ -71,14 +69,14 @@ int rapidShot(uint64_t t) {
   }
 
   if (dTic <= t1) {
-    pwmRapidShot = ramp(dTic, downLimit, 0, UpLimit, t1);
+    pwmRapidShot = ramp(dTic, 0, 0, 100, t1);
   } else if (dTic <= t2) {
-    pwmRapidShot = UpLimit;
+    pwmRapidShot = 100;
   } else if (dTic <= t3) {
     // falling ramp
-    pwmRapidShot = ramp(dTic, UpLimit, t2, downLimit, t3);
+    pwmRapidShot = ramp(dTic, 100, t2, 0, t3);
   } else if (dTic <= t4) {
-    pwmRapidShot = downLimit;
+    pwmRapidShot = 0;
   }
 
   return pwmRapidShot;

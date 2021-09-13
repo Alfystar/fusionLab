@@ -40,14 +40,14 @@ Questa scheda in particola ha prestazioni interessanti per gli scopi di questa t
 
 \begin{center}
 	\begin{tabular}[t]{|l r|}
-		\hline
-		Power Input Voltage:                                     & 6 -- 27 V \\
-		Peak current:                                            & 43 A      \\
-		Massima Frequenza di PWM:                                & 25 kHz    \\
-		Protezione Sovra Tensioni                                &           \\
-		Disaccoppiamento Ingresso di Potenza/Logica di controllo &           \\
-		\hline
-	\end{tabular}
+	\hline
+	Power Input Voltage:                                     & 6 -- 27 V \\
+	Peak current:                                            & 43 A      \\
+	Massima Frequenza di PWM:                                & 25 kHz    \\
+	Protezione Sovra Tensioni                                &           \\
+	Disaccoppiamento Ingresso di Potenza/Logica di controllo &           \\
+	\hline
+\end{tabular}
 \end{center}
 \noindent
 Di particolare interesse per l'esperimento è proprio la corrente di picco gestibile:
@@ -58,33 +58,31 @@ la scheda perfetta per i nostri scopi.
 Il driver permette 2 modalità di funzionamento:
 \begin{description}
 	\item[Doppio PWM] Modalità operativa che richiede l'uso di 2 PWM\\
-	      Ciascun PWM controlla uno dei 2 Half-Bridge, e per evitare di bruciare i driver devono essere controllati singolarmente, il vantaggio di questa configurazione è la possibilità di usare 2 frequenze di controllo diverse.
+		Ciascun PWM controlla uno dei 2 Half-Bridge, e per evitare di bruciare i driver devono essere controllati singolarmente, il vantaggio di questa configurazione è la possibilità di usare 2 frequenze di controllo diverse.
 	\item[Singolo PWM] Modalità operativa classica di un normale Ponte-H\\
-	      In questa modalità, la porta nand presente sulla scheda attua la logica di controllo opportuna per governare i 2 Half-Brige come fossero un normale Ponte-H.
+		In questa modalità, la porta nand presente sulla scheda attua la logica di controllo opportuna per governare i 2 Half-Brige come fossero un normale Ponte-H.
 \end{description}
 
 \noindent
 Per il nostro esperimento si è scelto di usare il collegamento Singolo PWM così da evitare spiacevoli sorprese e avere il PWM di controllo sempre sincronizzato.	
 
-\newpage
+
 \subsection{Benchmark Driver}
-Il driver sulla carta à buone prestazioni, ma non sono descritte le sue Non-Linearità, per farle risaltare si sono effettuati 2 esperimenti usando differenti input di controllo:
+Il driver sulla carta à buone prestazioni, per testarle sul sistema effettivo si è scelto di usare 2 segnali di controllo:
 \begin{enumerate}
-	\item \nameref{lst:ondaTriangloare} \\ \vspace{-11mm}
-	      \begin{figure}[h]
-		      \centering
-		      	      %Todo: Ricampionare l'onda triangolare senza filtro deadzone
-		      \includegraphics[height=0.5\textheight]{IBT-2/11-triangle-Trasformatore.pdf}
-		      \caption[Esperimento con Onda Triangolare]{Onda Triangolare}
-	      \end{figure}\\
-      Molto utile per far risaltare la Dead-Zone inferiore del driver, dovuta ai tempi di ritardo introdotti dai 2 Half-Bridge per evitare di cortocircuitare le alimentazioni.
-	\newpage
+	\item \nameref{lst:ondaTriangloare} \\
+\begin{figure}[h]
+	\centering
+		\includegraphics[height=0.35\textheight]{IBT-2/11-triangle-Trasformatore.pdf}
+	\caption[Esperimento con Onda Triangolare]{Onda Triangolare}
+\end{figure}
+	%Todo: Ricampionare l'onda triangolare senza filtro deadzone
 	\item \nameref{lst:ondaTrapezoidale} \\
-	      \begin{figure}[h]
-		      \centering
-		      \includegraphics[height=0.5\textheight]{IBT-2/12-rapidShot-Trasformatore.pdf}
-		      \caption[Esperimento con Onda Trapezoidale]{Onda Trapezoidale}
-	      \end{figure}
+\begin{figure}[h]
+	\centering
+		\includegraphics[height=0.35\textheight]{IBT-2/12-rapidShot-Trasformatore.pdf}
+	\caption[Esperimento con Onda Trapezoidale]{Onda Trapezoidale}
+\end{figure}
 \end{enumerate}
 
 \noindent

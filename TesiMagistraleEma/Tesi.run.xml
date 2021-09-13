@@ -56,9 +56,9 @@
       <file>blx-bibtex.def</file>
       <file>biblatex.def</file>
       <file>standard.bbx</file>
-      <file>numeric.bbx</file>
-      <file>numeric-comp.bbx</file>
-      <file>numeric-comp.cbx</file>
+      <file>reading.bbx</file>
+      <file>authortitle.cbx</file>
+      <file>reading.cbx</file>
       <file>biblatex.cfg</file>
       <file>italian.lbx</file>
     </requires>

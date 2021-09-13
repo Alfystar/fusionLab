@@ -12,7 +12,11 @@
 
 #include <Arduino.h>
 #include <globalDef.h>
-//typedef bool (funcBool_t)(); // pointer to function with no args and bool return
+
+#define upLimitSat 200
+#define downLimitSat 20
+#define sign(x) (x > 0) ? 1 : ((x < 0) ? -1 : 0)
+
 
 void setMotFreq(pwmFreq freq);
 

@@ -13,17 +13,6 @@
 \usepackage{fancyhdr}
 \usepackage{tesisty}
 
-% CUSTOM PACKAGE
-\usepackage{hyperref}
-\usepackage{graphicx}
-
-\usepackage[
-style=numeric-comp,
-useprefix,
-backend=bibtex]{biblatex}
-
-
-
 %-------------------------------
 % DEFINIZIONE DEGLI ENVIRONMENT
 %-------------------------------
@@ -48,10 +37,20 @@ backend=bibtex]{biblatex}
     {\begin{defn}\begin{normalfont}}
     {\hfill $\clubsuit$ \end{normalfont}\end{defn}}
 
-% CUSTOM PACKAGE ENVIROMENT SET
+
+% CUSTOM PACKAGE && ENVIROMENT SET
+% Custom Color Package
+\usepackage{xcolor}
+\definecolor{dkgreen}{rgb}{.133,.545,.133}
+\definecolor{mauve}{rgb}{0.224, 0.176, 0.255}
+\definecolor{NavyBlue}{HTML}{000080}
+\definecolor{Azure}{HTML}{007FFF}
+
+%% Link Package
+\usepackage{hyperref}
 \hypersetup{
 	colorlinks=true,
-	linkcolor=black, %blue,
+	linkcolor=Azure, %black, %blue,
 	filecolor=black, %magenta,      
 	urlcolor=cyan,
 	citecolor=cyan,
@@ -59,9 +58,50 @@ backend=bibtex]{biblatex}
 	pdfpagemode=FullScreen,
 }
 
+%% Graphics Package
+\usepackage{graphicx}
 \graphicspath{{imgs/}}
 
+%% Bibliografia Package
+\usepackage[
+style=numeric-comp,
+useprefix,
+style=reading,
+backend=bibtex]{biblatex}
 \addbibresource{BibliografiaTesi.bib}
+
+%% Enumeration personalization Package
+\usepackage{enumitem}
+\setlist[enumerate]{itemsep=-4mm}
+
+%% Coding Package
+\usepackage{listings}
+
+% define general style
+\lstdefinestyle{defaultStyle}
+{
+	basicstyle=\footnotesize,
+	tabsize=2,
+	captionpos=b,
+	frame=lines,
+	breaklines=true,
+	keepspaces=true
+}
+% define C++ style
+\lstdefinestyle{cppStyle}
+{
+	style=defaultStyle,
+	% language related
+	language=C++,
+	keywordstyle=\color{blue},
+	commentstyle=\color{dkgreen},
+	stringstyle=\color{mauve},
+	showstringspaces=false,
+	%otherkeywords={\#include}, % do not uncomment!
+	% numbering
+	numbers=left,
+	numberstyle=\tiny
+}
 
 %-----------------------------
 % CONFIGURAZIONE DELLA PAGINA

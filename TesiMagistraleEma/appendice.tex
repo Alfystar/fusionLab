@@ -1,6 +1,89 @@
 \chapter*{Appendice A\\ Arduino Code}\label{ArduinoCode}
 \addcontentsline{toc}{chapter}{Appendice A - Codice Arduino}
 
+\section{Setup Registri}
+
+\section{Generatore di Segnale}
+
+Per generare i segnali di controllo in Feed-Forward usati nel sistema, sono stati usati 2 diversi livelli di programmazione.\\
+Un primo livello segnali di base, definiti su tutto $\mathbb{R}$, e usabili a piacere, e dei segnali compositi e periodici da mandare durante l'esperimento.
+Tutti i segnali sono pensati per andare da -100\% <-> 100\%, è compito dell'attuazione
+eliminare le deadzone e traslare il controllo al valore più opportuno
+
+\subsection{Segnali Base}
+
+\subsubsection{Rampa}
+\begin{lstlisting}[style=cppStyle,caption={Rampa Saturata},label=lst:rampa] 
+int ramp(uint64_t t, int vStart, uint64_t tStart, int vEnd, uint64_t tEnd) {
+	// Saturazione
+	if (t < tStart)
+		return vStart;
+	else if (t > tEnd)
+		return vEnd;
+	// Retta
+	unsigned int dt = t - tStart;
+	return vStart + int((vEnd - vStart) / float(tEnd - tStart) * dt);
+}
+\end{lstlisting}
+La rampa è descritta come una retta nell'intervallo di interesse, saturata prima e dopo il tempo desiderato\\
+$ RampaSat(t) = 
+\left \{ \begin{array}{l c}
+	v_{start} + \frac{v_{end}-v_{start}}{t_{end}-t_{start}} * (t - t_{start}) &\forall t \in [t_{start},t_{end}] \\
+	v_{start} & t<t_{start}\\
+	v_{end}& t>t_{start}
+\end{array}
+\right.
+$
+
+\newpage
+\subsection{Segnali Composti}
+
+\subsubsection{Onda Triangloare}
+\begin{lstlisting}[style=cppStyle,caption={Onda Triangolare Periodica},label=lst:ondaTriangloare] 
+int triangleSignal(uint64_t t, int msQuartPeriod) {
+	static uint64_t startTic = 0;
+	int dTic = t - startTic;
+	int pwm = 0;
+	if (dTic < ticConvert(msQuartPeriod))
+		pwm = ramp(dTic, 0, 0, 100, ticConvert(msQuartPeriod));
+	else if (dTic < (ticConvert(msQuartPeriod) * 3))
+		pwm = ramp(dTic, 100, ticConvert(msQuartPeriod), -100, ticConvert(msQuartPeriod) * 3);
+	else if (dTic < (ticConvert(msQuartPeriod) * 4))
+		pwm = ramp(dTic, -100, ticConvert(msQuartPeriod) * 3, 0, ticConvert(msQuartPeriod) * 4);
+	else {
+		pwm = 0;
+		startTic = t;
+	}
+	return pwm;
+}
+\end{lstlisting}
+
+\subsubsection{Onda Trapezoidale}
+\begin{lstlisting}[style=cppStyle,caption={Onda Trapezoidale Periodica},label=lst:ondaTrapezoidale] 
+int rapidShot(uint64_t t) {
+	static uint64_t startTic = 0;
+	int pwmRapidShot;
+	long dTic = t - startTic;
+	if (dTic > t4) {
+		startTic = t;
+		pwmRapidShot = 0;
+		dTic = t - startTic;
+	}
+	
+	if (dTic <= t1) {
+		pwmRapidShot = ramp(dTic, 0, 0, 100, t1);
+	} else if (dTic <= t2) {
+		pwmRapidShot = 100;
+	} else if (dTic <= t3) {
+		// falling ramp
+		pwmRapidShot = ramp(dTic, 100, t2, 0, t3);
+	} else if (dTic <= t4) {
+		pwmRapidShot = 0;
+	}	
+	return pwmRapidShot;
+}
+\end{lstlisting}
+
 
 \chapter*{Appendice B\\ EMP Code}\label{EMPCode}
 \addcontentsline{toc}{chapter}{Appendice B - Codice EMP}
