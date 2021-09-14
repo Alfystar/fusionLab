@@ -99,6 +99,8 @@ void loop() {
   pWrite.read.V2_read = analogRead(V2);
   pWrite.read.Isense_read = analogRead(Isense);
   pWrite.read.pwm = mot->drive_motor(controll(&pMean, &pWrite.read, oldTic));
+
+//  pWrite.read.pwm = mot->actuate(rapidShotEps(oldTic)); //controllo diretto di rapidShotEps
   oldTic++; // Suppose no over time
 
   mpSerial.packSend(&pWrite, sizeof(pWrite.type) + sizeof(pWrite.read));

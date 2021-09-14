@@ -16,11 +16,13 @@ int controll(struct meanOffset *pMean, struct sample *pRead, unsigned long tic);
 
 /// Base Signal
 int ramp(uint64_t t, int vStart, uint64_t tStart, int vEnd, uint64_t tEnd);
+int rampEps(uint64_t t, int vStart, uint64_t tStart, int vEnd, unsigned int eps);
 
 /// Complex signal
 int triangleSignal(uint64_t t, int msQuartPeriod);
 int rapidShot(uint64_t t);
+int rapidShotEps(uint64_t t);
 
 /// Controll
-int prop(uint64_t t, int v2);
+int ctrl(uint64_t t, int v2);
 #endif // INC_01_TESTFW_SRC_EXPERIMENT_H

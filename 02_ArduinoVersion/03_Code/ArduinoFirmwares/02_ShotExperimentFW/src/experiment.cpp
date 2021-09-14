@@ -5,9 +5,9 @@
 #include "experiment.h"
 
 int controll(struct meanOffset *pMean, struct sample *pRead, unsigned long tic) {
-//    return triangleSignal(tic, 200);
-//  return rapidShot(tic);
-  return prop(tic,pRead->V2_read - pMean->V2_mean);
+  //    return triangleSignal(tic, 200);
+  //    return rapidShot(tic);
+  return ctrl(tic, pRead->V2_read - pMean->V2_mean);
 }
 
 /// Base Signal
@@ -28,6 +28,26 @@ int ramp(uint64_t t, int vStart, uint64_t tStart, int vEnd, uint64_t tEnd) {
   return vStart + int((vEnd - vStart) / float(tEnd - tStart) * dt);
 }
 
+int rampEps(uint64_t t, int vStart, uint64_t tStart, int vEnd, unsigned int eps) {
+  // Saturazione
+  if (t < tStart)
+    return vStart;
+  // Retta-eps
+  unsigned int dt = t - tStart;
+  int val;
+  if (sign(vEnd - vStart) == 1) {
+    val = vStart + eps * dt;
+    if (val > vEnd)
+      val = vEnd;
+  } else {
+    val = vStart - eps * dt;
+    if (val < vEnd)
+      val = vEnd;
+  }
+
+  return val;
+}
+
 /// Complex signal
 
 int triangleSignal(uint64_t t, int msQuartPeriod) {
@@ -35,11 +55,11 @@ int triangleSignal(uint64_t t, int msQuartPeriod) {
   int dTic = t - startTic;
   int pwm = 0;
   if (dTic < ticConvert(msQuartPeriod))
-    pwm = ramp(dTic, 0, 0, 100, ticConvert(msQuartPeriod));
+    pwm = ramp(dTic, 0, 0, 1000, ticConvert(msQuartPeriod));
   else if (dTic < (ticConvert(msQuartPeriod) * 3))
-    pwm = ramp(dTic, 100, ticConvert(msQuartPeriod), -100, ticConvert(msQuartPeriod) * 3);
+    pwm = ramp(dTic, 1000, ticConvert(msQuartPeriod), -1000, ticConvert(msQuartPeriod) * 3);
   else if (dTic < (ticConvert(msQuartPeriod) * 4))
-    pwm = ramp(dTic, -100, ticConvert(msQuartPeriod) * 3, 0, ticConvert(msQuartPeriod) * 4);
+    pwm = ramp(dTic, -1000, ticConvert(msQuartPeriod) * 3, 0, ticConvert(msQuartPeriod) * 4);
   else {
     pwm = 0;
     startTic = t;
@@ -52,10 +72,11 @@ int triangleSignal(uint64_t t, int msQuartPeriod) {
 //: poi giù in 0.1s e ripeti. Poi mi chiami.
 #define tQuiet ticConvert(1000)
 
-#define t1 ticConvert(500)       // Rise Ramp
+#define t0 ticConvert(100)      // waiting start
+#define t1 ticConvert(100) + t0 // Rise Ramp
 #define t2 ticConvert(200) + t1 // High set
-#define t3 ticConvert(500) + t2  // falling Ramp
-#define t4 tQuiet + t3           // 0 set
+#define t3 ticConvert(100) + t2 // falling Ramp
+#define t4 tQuiet + t3          // 0 set
 
 int rapidShot(uint64_t t) {
   static uint64_t startTic = 0;
@@ -67,14 +88,55 @@ int rapidShot(uint64_t t) {
     dTic = t - startTic;
   }
 
-  if (dTic <= t1) {
-    pwmRapidShot = ramp(dTic, 0, 0, 100, t1);
+  if (dTic <= t0) {
+    pwmRapidShot = 0;
+  } else if (dTic <= t1) {
+    // rising ramp
+    pwmRapidShot = ramp(dTic, 0, t0, 1000, t1);
   } else if (dTic <= t2) {
-    pwmRapidShot = 100;
+    pwmRapidShot = 1000;
   } else if (dTic <= t3) {
     // falling ramp
-    pwmRapidShot = ramp(dTic, 100, t2, 0, t3);
+    pwmRapidShot = ramp(dTic, 1000, t2, 0, t3);
   } else if (dTic <= t4) {
+    pwmRapidShot = 0;
+  }
+
+  return pwmRapidShot;
+}
+
+#define upLimitSat 224  // 223 from matlab graph
+#define downLimitSat 39 // 40 from matlab graph
+
+#define t0Eps ticConvert(300)         // waiting start
+#define t1Eps ticConvert(300) + t0Eps // Rise Ramp
+#define t2Eps ticConvert(300) + t1Eps // High set
+#define t3Eps ticConvert(300) + t2Eps // falling Ramp
+#define t4Eps tQuiet + t3Eps          // 0 set
+
+int rapidShotEps(uint64_t t) {
+  static uint64_t startTic = 0;
+  static int pwmRapidShot = 0;
+  static int pwmAdd = 1;
+  long dTic = t - startTic;
+
+  if (dTic > t4Eps) {
+    startTic = t;
+    pwmRapidShot = 0;
+    dTic = t - startTic;
+  }
+
+  if (dTic <= t0Eps) {
+    pwmRapidShot = 0;
+  } else if (dTic <= t1Eps) {
+    // rising ramp
+    pwmRapidShot = min(255, pwmRapidShot + 1);
+  } else if (dTic <= t2Eps) {
+    pwmRapidShot = 255;
+  } else if (dTic <= t3Eps) {
+    // falling ramp
+    pwmRapidShot = max(0, pwmRapidShot - 1);
+  } else if (dTic <= t4Eps) {
     pwmRapidShot = 0;
   }
 
@@ -83,15 +145,26 @@ int rapidShot(uint64_t t) {
 
 // Controllo
 #define V2Ref volt2adc(1)
-#define tcStart ticConvert(100)       // start Experiment
+#define tcStart ticConvert(100)          // start Experiment
 #define tcEnd ticConvert(1000) + tcStart // stop Experiment
 
-int e;
-int prop(uint64_t t, int v2){
-  if(t<tcStart || t>tcEnd)
+#define k 0.001
+#define dk 0.01
+
+long integral = 0;
+
+long  dIntegral1 = 0;
+long  dIntegral2 = 0;
+
+int ctrl(uint64_t t, int v2) {
+  if (t < tcStart || t > tcEnd)
     return 0;
 
-  e = v2 - V2Ref;
-  long pwmCtrl = -(e)/15;
+  double e = (V2Ref - v2)/20;
+  integral += e;
+  dIntegral1 += dIntegral1 + dIntegral2;
+  dIntegral2 += dIntegral2 +  dk * e;
+
+  int pwmCtrl = (int)(integral + dIntegral1);
   return pwmCtrl;
 }

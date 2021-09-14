@@ -18,6 +18,7 @@ enum pwmFreq
 		hz30, hz120, hz490, hz4k, hz30k
 };
 #define dtExperiment 500UL // us
+#define sign(x) (((x) > 0) ? (1) : (((x) < 0) ? (-1) : (0)))
 
 // AnalogRead
 #define V2 A0

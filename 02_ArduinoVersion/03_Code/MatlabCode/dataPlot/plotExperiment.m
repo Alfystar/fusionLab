@@ -1,31 +1,32 @@
 clear variables
 close all
-experiment("experiment/capture.txt",1, 1.2)
-% 
-% experiment("experiment/06-RapidShot-EX354T.txt",3.5)
-% experiment("experiment/11-triangle-Trasformatore.txt",0.25)
-% experiment("experiment/12-rapidShot-Trasformatore.txt", 1.5)
-% experiment("experiment/13-rapidShot-30Khz.txt",1.5)
-% experiment("experiment/14-rapidShot-30Khz-Condensatore.txt",1.5)
-% experiment("experiment/15-rapidShot-30Khz-Condensatore-24V.txt",3.5)
+experiment("experiment/capture.txt",1, 0.5)
 
-% experiment("experiment/16-rapidShot-30Khz-Condensatore-UpDeadZone.txt",1.5)
-% experiment("experiment/17-triangle-Trasformatore.txt",1)
+% experiment("experiment/06-RapidShot-EX354T.txt",0,3.5)
+% experiment("experiment/11-triangle-Trasformatore.txt",0,0.25)
+% experiment("experiment/12-rapidShot-Trasformatore.txt",0, 1.5)
+% experiment("experiment/13-rapidShot-30Khz.txt",0,1.5)
+% experiment("experiment/14-rapidShot-30Khz-Condensatore.txt",0,1.5)
+% experiment("experiment/15-rapidShot-30Khz-Condensatore-24V.txt",0,3.5)
+% 
+% experiment("experiment/16-rapidShot-30Khz-Condensatore-UpDeadZone.txt",0,1.5)
+% experiment("experiment/17-triangle-Trasformatore.txt",0,1)
 % experiment("experiment/18-triangle-slow-Trasformatore.txt")
 % experiment("experiment/19-triangle-mean-Trasformatore.txt")
-
-% experiment("experiment/20-triangle-mean-Trasformatore-deadzoneDelete.txt",1)
-% experiment("experiment/21-rapidShot-30Khz-Condensatore-deadzoneDelete.txt",0.5)
-% experiment("experiment/22-rapidShot-30Khz-Condensatore-deadzoneDelete-RapidRamp.txt",0.5)
-% experiment("experiment/23-rapidShot-30Khz-Condensatore-deadzoneDelete-SlowRamp.txt")
-% experiment("experiment/24-Ctrl-prop.txt")
+% 
+% experiment("experiment/20-triangle-mean-Trasformatore-deadzoneDelete.txt",0,1)
+% experiment("experiment/21-rapidShot-30Khz-Condensatore-deadzoneDelete.txt",0,0.5)
+% experiment("experiment/22-rapidShot-30Khz-Condensatore-deadzoneDelete-RapidRamp.txt",0,0.5)
+% experiment("experiment/23-rapidShot-30Khz-Condensatore-deadzoneDelete-SlowRamp.txt",0)
+% experiment("experiment/24-Ctrl-prop-trasformatore.txt",1,1.2)
 
 %% Functions block
 
 function experiment(filepath, vRef, tLim)
 if nargin < 2
     vRef = 0;
-elseif nargin < 3
+end
+if nargin < 3
     tLim = inf;
 end
 

@@ -15,7 +15,6 @@
 
 #define upLimitSat 224  // 223 from matlab graph
 #define downLimitSat 39 // 40 from matlab graph
-#define sign(x) (((x) > 0) ? (1) : (((x) < 0) ? (-1) : (0)))
 
 void setMotFreq(pwmFreq freq);
 
@@ -27,6 +26,7 @@ public:
   void updateMot(); // no stopping Call, to update status
 
   /*State change motor*/
+  int actuate(int pwm);
   int drive_motor(int speed);
   int drive_motor(int speed, unsigned int delay_time);
   void reversDir();

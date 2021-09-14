@@ -84,16 +84,10 @@ void DCdriver::updateMot() {
   }
 }
 
-int DCdriver::drive_motor(int speed) {
-  if(speed == 0)
-    this->speed = 0;
-  else if(abs(speed) >= 100)
-    this->speed = sign(speed) * 255;
-  else
-    this->speed = sign(speed) * map(abs(speed),1,99,downLimitSat,upLimitSat);
-//  this->speed = speed;
+int DCdriver::actuate(int pwm){
+  this->speed = pwm;
   this->state = moving;
-  if (speed < 0) {
+  if (this->speed < 0) {
     this->anticlockwise();
     analogWrite(this->pwm, -this->speed);
   } else {
@@ -101,6 +95,22 @@ int DCdriver::drive_motor(int speed) {
     analogWrite(this->pwm, this->speed);
   }
   return this->speed;
+}
+
+long map_f(long x, long in_min, long in_max, long out_min, long out_max)
+{
+  return (long)((x - in_min) * (out_max - out_min) / (float)(in_max - in_min) + out_min);
+}
+
+// speed +-1000
+int DCdriver::drive_motor(int speed) {
+  if(speed == 0)
+    this->speed = 0;
+  else if(abs(speed) >= 1000)
+    this->speed = sign(speed) * 255;
+  else
+    this->speed = sign(speed) * map_f(abs(speed),1,999,downLimitSat,upLimitSat);
+  return this->actuate(this->speed);
 }
 
 int DCdriver::drive_motor(int speed, unsigned int delay_time) {
