@@ -4,9 +4,10 @@
 
 #include "experiment.h"
 
-int controll(packArd2Linux *pWrite, unsigned long tic) {
-  //  return = triangleSignal(tic, 100);
-  return rapidShot(tic);
+int controll(struct meanOffset *pMean, struct sample *pRead, unsigned long tic) {
+//    return triangleSignal(tic, 200);
+//  return rapidShot(tic);
+  return prop(tic,pRead->V2_read - pMean->V2_mean);
 }
 
 /// Base Signal
@@ -51,9 +52,9 @@ int triangleSignal(uint64_t t, int msQuartPeriod) {
 //: poi giù in 0.1s e ripeti. Poi mi chiami.
 #define tQuiet ticConvert(1000)
 
-#define t1 ticConvert(100)       // Rise Ramp
-#define t2 ticConvert(1000) + t1 // High set
-#define t3 ticConvert(100) + t2  // falling Ramp
+#define t1 ticConvert(500)       // Rise Ramp
+#define t2 ticConvert(200) + t1 // High set
+#define t3 ticConvert(500) + t2  // falling Ramp
 #define t4 tQuiet + t3           // 0 set
 
 int rapidShot(uint64_t t) {
@@ -78,4 +79,19 @@ int rapidShot(uint64_t t) {
   }
 
   return pwmRapidShot;
+}
+
+// Controllo
+#define V2Ref volt2adc(1)
+#define tcStart ticConvert(100)       // start Experiment
+#define tcEnd ticConvert(1000) + tcStart // stop Experiment
+
+int e;
+int prop(uint64_t t, int v2){
+  if(t<tcStart || t>tcEnd)
+    return 0;
+
+  e = v2 - V2Ref;
+  long pwmCtrl = -(e)/15;
+  return pwmCtrl;
 }

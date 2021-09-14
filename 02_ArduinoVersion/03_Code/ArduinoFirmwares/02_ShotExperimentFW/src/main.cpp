@@ -36,10 +36,12 @@ DCdriver *mot;
 
 packLinux2Ard pRead;
 packArd2Linux pWrite;
+struct meanOffset pMean;
 
 void setup() {
 
   mpSerial.begin(2000000);
+
   memset(&pRead, 0, sizeof(pRead));
   memset(&pWrite, 0, sizeof(pWrite));
 
@@ -67,6 +69,8 @@ void setup() {
   pWrite.mean.Isense_mean = read;
 
   pWrite.mean.dt = dtExperiment;
+
+  pMean = pWrite.mean;
   mpSerial.packSend(&pWrite, sizeof(pWrite.type) + sizeof(pWrite.mean));
 
   // Start Delay
@@ -92,10 +96,10 @@ void loop() {
     };
   }
   digitalWrite(13, !digitalRead(13));
-  oldTic = tic;
   pWrite.read.V2_read = analogRead(V2);
   pWrite.read.Isense_read = analogRead(Isense);
-  pWrite.read.pwm = mot->drive_motor(controll(&pWrite, oldTic));
+  pWrite.read.pwm = mot->drive_motor(controll(&pMean, &pWrite.read, oldTic));
+  oldTic++; // Suppose no over time
 
   mpSerial.packSend(&pWrite, sizeof(pWrite.type) + sizeof(pWrite.read));
 }

@@ -1,23 +1,36 @@
 clear variables
 close all
-% experiment("capture.txt")
-
+experiment("experiment/capture.txt",1, 1.2)
+% 
 % experiment("experiment/06-RapidShot-EX354T.txt",3.5)
-experiment("experiment/11-triangle-Trasformatore.txt",0.25)
+% experiment("experiment/11-triangle-Trasformatore.txt",0.25)
 % experiment("experiment/12-rapidShot-Trasformatore.txt", 1.5)
 % experiment("experiment/13-rapidShot-30Khz.txt",1.5)
 % experiment("experiment/14-rapidShot-30Khz-Condensatore.txt",1.5)
 % experiment("experiment/15-rapidShot-30Khz-Condensatore-24V.txt",3.5)
 
-experiment("experiment/16-rapidShot-30Khz-Condensatore-UpDeadZone.txt",1.5)
+% experiment("experiment/16-rapidShot-30Khz-Condensatore-UpDeadZone.txt",1.5)
+% experiment("experiment/17-triangle-Trasformatore.txt",1)
+% experiment("experiment/18-triangle-slow-Trasformatore.txt")
+% experiment("experiment/19-triangle-mean-Trasformatore.txt")
+
+% experiment("experiment/20-triangle-mean-Trasformatore-deadzoneDelete.txt",1)
+% experiment("experiment/21-rapidShot-30Khz-Condensatore-deadzoneDelete.txt",0.5)
+% experiment("experiment/22-rapidShot-30Khz-Condensatore-deadzoneDelete-RapidRamp.txt",0.5)
+% experiment("experiment/23-rapidShot-30Khz-Condensatore-deadzoneDelete-SlowRamp.txt")
+% experiment("experiment/24-Ctrl-prop.txt")
+
 %% Functions block
 
-function experiment(filepath, tLim)
+function experiment(filepath, vRef, tLim)
 if nargin < 2
+    vRef = 0;
+elseif nargin < 3
     tLim = inf;
 end
+
 [home_500us, Info]= importExperiment(filepath);
-home_500usRescale = tableRescale(home_500us, Info);
+home_500usRescale = tableRescale(home_500us, Info, vRef);
 figure()
 plotTable(home_500usRescale, Info, tLim);
 end
@@ -37,7 +50,8 @@ hold on
 plot(t,table.PWM)
 plot(t,table.V2_read)
 plot(t,table.Isense_read)
-legend("PWM", "V2-read", "Isense-read")
+plot(t,table.error)
+legend("PWM%", "V_{secondary}", "I_{primary}", "e")
 title("Experiment: "+name+ "   SampleTime: " + mat2str(dt * 1000000) + "µs")
 xlabel("time [s]")
 xlim([0 tLim])
@@ -53,7 +67,7 @@ saveas(gcf,savePath + name + '.pdf')
 end
 
 
-function tableRescale = tableRescale(table,Info)
+function tableRescale = tableRescale(table,Info,vRef)
 V2Mean = Info.V2_mean;
 IsenseMean = Info.Isense_mean;
 dt = Info.dt;
@@ -65,5 +79,5 @@ tableRescale = table;
 tableRescale.PWM = table.PWM/255;
 tableRescale.V2_read = (table.V2_read - V2Mean) * vScale;
 tableRescale.Isense_read = (table.Isense_read - IsenseMean) * IScale;
-
+tableRescale.error = tableRescale.V2_read - vRef;
 end

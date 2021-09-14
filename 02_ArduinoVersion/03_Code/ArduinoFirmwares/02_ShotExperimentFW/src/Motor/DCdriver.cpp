@@ -87,11 +87,11 @@ void DCdriver::updateMot() {
 int DCdriver::drive_motor(int speed) {
   if(speed == 0)
     this->speed = 0;
-  else if(speed == 100)
-    this->speed = 255;
+  else if(abs(speed) >= 100)
+    this->speed = sign(speed) * 255;
   else
     this->speed = sign(speed) * map(abs(speed),1,99,downLimitSat,upLimitSat);
-
+//  this->speed = speed;
   this->state = moving;
   if (speed < 0) {
     this->anticlockwise();

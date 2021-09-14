@@ -13,40 +13,39 @@
 #include <Arduino.h>
 #include <globalDef.h>
 
-#define upLimitSat 200
-#define downLimitSat 20
-#define sign(x) (x > 0) ? 1 : ((x < 0) ? -1 : 0)
-
+#define upLimitSat 224  // 223 from matlab graph
+#define downLimitSat 39 // 40 from matlab graph
+#define sign(x) (((x) > 0) ? (1) : (((x) < 0) ? (-1) : (0)))
 
 void setMotFreq(pwmFreq freq);
 
-enum motState {
-	moving, movingTiming, H_brake, S_brake, alwaysBrake, free_Mot
-};
+enum motState { moving, movingTiming, H_brake, S_brake, alwaysBrake, free_Mot };
 
 class DCdriver {
-	public:
-		DCdriver(byte ena, byte in1, byte in2);
-		void updateMot();               //no stopping Call, to update status
+public:
+  DCdriver(byte ena, byte in1, byte in2);
+  void updateMot(); // no stopping Call, to update status
 
-		/*State change motor*/
-		int drive_motor(int speed);
-		int drive_motor(int speed, unsigned int delay_time);
-		void reversDir();
-		void soft_stop();
-		void soft_stop(unsigned int delay_time);
-		void hard_stop(unsigned int delay_time); //MAKE HARD STOP FOR DELAYED TIME
-		void freeRun();
-	protected:
-		byte in1, in2, pwm;
-		motState state;
-		int speed;
-		unsigned int delay_time;
-		unsigned long time;
-	private:
-		void clockWise();
-		void anticlockwise();
-		void setup_motor(byte in1, byte in2);
+  /*State change motor*/
+  int drive_motor(int speed);
+  int drive_motor(int speed, unsigned int delay_time);
+  void reversDir();
+  void soft_stop();
+  void soft_stop(unsigned int delay_time);
+  void hard_stop(unsigned int delay_time); // MAKE HARD STOP FOR DELAYED TIME
+  void freeRun();
+
+protected:
+  byte in1, in2, pwm;
+  motState state;
+  int speed;
+  unsigned int delay_time;
+  unsigned long time;
+
+private:
+  void clockWise();
+  void anticlockwise();
+  void setup_motor(byte in1, byte in2);
 };
 
-#endif //DCdriver_h
+#endif // DCdriver_h
