@@ -1,0 +1,7 @@
+27-primoInseguimento:
+
+#define k 0.01
+#define dk 0.001
+#define V2Ref volt2adc(0.2)
+
+Un primo inseguimento rumoroso è stato ottenuto, per un pò non si è allontanato

@@ -144,12 +144,12 @@ int rapidShotEps(uint64_t t) {
 }
 
 // Controllo
-#define V2Ref volt2adc(1)
+#define V2Ref volt2adc(0.2)
 #define tcStart ticConvert(100)          // start Experiment
 #define tcEnd ticConvert(1000) + tcStart // stop Experiment
 
-#define k 0.001
-#define dk 0.01
+#define k 0.01
+#define dk 0.001
 
 long integral = 0;
 
@@ -160,8 +160,8 @@ int ctrl(uint64_t t, int v2) {
   if (t < tcStart || t > tcEnd)
     return 0;
 
-  double e = (V2Ref - v2)/20;
-  integral += e;
+  double e = (V2Ref - v2);
+  integral += k*e;
   dIntegral1 += dIntegral1 + dIntegral2;
   dIntegral2 += dIntegral2 +  dk * e;
 

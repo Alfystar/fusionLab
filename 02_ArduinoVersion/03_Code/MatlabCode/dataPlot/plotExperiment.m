@@ -1,6 +1,6 @@
 clear variables
 close all
-experiment("experiment/capture.txt",1, 0.5)
+experiment("experiment/capture.txt",0.2, 0.5)
 
 % experiment("experiment/06-RapidShot-EX354T.txt",0,3.5)
 % experiment("experiment/11-triangle-Trasformatore.txt",0,0.25)
