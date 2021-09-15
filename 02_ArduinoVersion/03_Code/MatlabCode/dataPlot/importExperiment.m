@@ -41,16 +41,16 @@ opts.EmptyLineRule = "read";
 Table = readtable(filename, opts);
 
 %% Mean Import
-opts = delimitedTextImportOptions("NumVariables", 3);
+opts = delimitedTextImportOptions("NumVariables", 4);
 
 % Specify range and delimiter
 opts.DataLines = [2, 2];
 opts.Delimiter = "\t";
 
 % Specify column names and types
-opts.VariableNames = ["V2_mean", "Isense_mean", "dt"];
-opts.SelectedVariableNames = ["V2_mean", "Isense_mean", "dt"];
-opts.VariableTypes = ["double", "double", "double"];
+opts.VariableNames = ["V2_mean", "Isense_mean", "dt", "V2Ref_set"];
+opts.SelectedVariableNames = ["V2_mean", "Isense_mean", "dt", "V2Ref_set"];
+opts.VariableTypes = ["double", "double", "double", "double" ];
 
 % Specify file level properties
 opts.ExtraColumnsRule = "ignore";
@@ -60,7 +60,7 @@ opts.EmptyLineRule = "read";
 % Import the data
 Info = readtable(filename, opts);
 Info.dt = Info.dt * 1E-6; % dt shuld be in second
-[filepath,name,ext] = fileparts(filename);
+[~ , name, ~] = fileparts(filename);
 Info.Properties.Description = name;
 
 end

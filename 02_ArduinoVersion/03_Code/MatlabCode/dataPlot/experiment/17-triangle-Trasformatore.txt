@@ -1,5 +1,5 @@
 V2_mean	Isense_mean	dt
-509	509	500
+509	509	500	0
 PWM	V2_read	Isense_read
 0	510	510
 1	510	510

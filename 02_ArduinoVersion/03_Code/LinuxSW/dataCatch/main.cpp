@@ -14,12 +14,8 @@
 // Signal include
 #include <signal.h>
 
-
-
-
-
 EMP::MP_Uart<packArd2Linux, packLinux2Ard, LinuxMP_ConfMed(true)> *uart;
-void uartOpen(){
+void uartOpen() {
   std::cout << "Uart Start" << std::endl;
   auto list = EMP::UartDeviceList();
   if (list.empty()) {
@@ -41,12 +37,11 @@ void uartOpen(){
   }
   uart = new EMP::MP_Uart<packArd2Linux, packLinux2Ard, LinuxMP_ConfMed(true)>(list[chose], B2000000, false);
   sleep(1); // Device can be reset after the connection
-
 }
 
 void intHandler(int dummy) {
   cout << "\n Ctrl+c catch, send stop pack" << std::endl;
-  packLinux2Ard pWrite {1}; // End Pack
+  packLinux2Ard pWrite{1}; // End Pack
   uart->packSend(&pWrite);
   uart->packSend(&pWrite);
   sleep(1);
@@ -60,14 +55,18 @@ int main(int argc, char *argv[]) {
   std::ofstream outfile("capture.txt");
 
   packArd2Linux pRead;
-  packLinux2Ard pWrite {0}; // Start Pack
+  packLinux2Ard pWrite{0}; // Start Pack
   struct timespec now, old, diff;
   clock_gettime(CLOCK_MONOTONIC_RAW, &old);
 
   uart->packSend(&pWrite);
   uart->getData_wait(&pRead);
-  outfile << "V2_mean\tIsense_mean\tdt" << std::endl;
-  outfile << pRead.mean.V2_mean << "\t" << pRead.mean.Isense_mean << "\t" << pRead.mean.dt << std::endl;
+  outfile << "V2_mean\tIsense_mean\tdt\tV2Ref_set" << std::endl;
+  outfile << pRead.setUp.V2_mean << "\t"
+          << pRead.setUp.Isense_mean << "\t"
+          << pRead.setUp.dt << "\t"
+          << pRead.setUp.V2Ref_set
+          << std::endl;
   outfile << "PWM\tV2_read\tIsense_read" << std::endl;
 
   while (true) {
@@ -75,7 +74,7 @@ int main(int argc, char *argv[]) {
     clock_gettime(CLOCK_MONOTONIC_RAW, &now);
     timeSpecSub(now, old, diff);
     old = now;
-    outfile << pRead.read.pwm << "\t" << pRead.read.V2_read << "\t" << pRead.read.Isense_read  << std::endl;
+    outfile << pRead.read.pwm << "\t" << pRead.read.V2_read << "\t" << pRead.read.Isense_read << std::endl;
     timeSpecPrint(diff, "diff");
   }
   outfile.close();

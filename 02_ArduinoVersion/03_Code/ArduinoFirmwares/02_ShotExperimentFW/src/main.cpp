@@ -36,7 +36,7 @@ DCdriver *mot;
 
 packLinux2Ard pRead;
 packArd2Linux pWrite;
-struct meanOffset pMean;
+struct setUpPack pMean;
 
 void setup() {
 
@@ -54,31 +54,32 @@ void setup() {
   // Wait start Request
   mpSerial.getData_wait(&pRead);
 
-  pWrite.type = meanOffsetType;
+  pWrite.type = setUpPackType;
   // Calculate offset
   long read = 0;
   for (int i = 0; i < 1 << 5; i++)
     read += analogRead(V2);
   read = read >> 5;
-  pWrite.mean.V2_mean = read;
+  pWrite.setUp.V2_mean = read;
 
   read = 0;
   for (int i = 0; i < 1 << 5; i++)
     read += analogRead(Isense);
   read = read >> 5;
-  pWrite.mean.Isense_mean = read;
+  pWrite.setUp.Isense_mean = read;
 
-  pWrite.mean.dt = dtExperiment;
+  pWrite.setUp.dt = dtExperiment;
+  pWrite.setUp.V2Ref_set = V2Ref;
 
-  pMean = pWrite.mean;
-  mpSerial.packSend(&pWrite, sizeof(pWrite.type) + sizeof(pWrite.mean));
+  pMean = pWrite.setUp;
+  mpSerial.packSend(&pWrite, sizeof(pWrite.type) + sizeof(pWrite.setUp));
 
   // Start Delay
   pWrite.type = sampleType;
   delay(1000);
 
   mpSerial.bufClear();
-  periodicTask(pWrite.mean.dt);
+  periodicTask(pWrite.setUp.dt);
   sei();
 }
 

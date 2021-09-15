@@ -9,10 +9,12 @@
 #include <Arduino.h>
 
 #define ticConvert(ms) (ms * 1000UL) / dtExperiment
-#define volt2adc(x) ((int)(((x+2.5)/(5.0/(1023)) + 0.5 )))
+#define volt2adc(x) ((int)(((x)/(5.0/(1023)) + 0.5 )))
+
+#define V2Ref volt2adc(1)
 
 // Have to set pwm in pWrite
-int controll(struct meanOffset *pMean, struct sample *pRead, unsigned long tic);
+int controll(struct setUpPack *pMean, struct sample *pRead, unsigned long tic);
 
 /// Base Signal
 int ramp(uint64_t t, int vStart, uint64_t tStart, int vEnd, uint64_t tEnd);
