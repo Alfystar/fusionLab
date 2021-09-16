@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.9.11)  16 SEP 2021 14:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.9.11)  16 SEP 2021 14:22
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -753,7 +753,7 @@ Package epstopdf Info: Source file: <imgs/ulogo-Green.eps>
 rted-to.pdf imgs/ulogo-Green.eps>
 (epstopdf)             \includegraphics on input line 163.
 Package epstopdf Info: Output file is already uptodate.
-<imgs/ulogo-Green-eps-converted-to.pdf, id=171, 46.1725pt x 62.2325pt>
+<imgs/ulogo-Green-eps-converted-to.pdf, id=176, 46.1725pt x 62.2325pt>
 File: imgs/ulogo-Green-eps-converted-to.pdf Graphic file (type pdf)
 <use imgs/ulogo-Green-eps-converted-to.pdf>
 Package pdftex.def Info: imgs/ulogo-Green-eps-converted-to.pdf  used on input l
@@ -800,26 +800,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 20--21
 
  []
 
-<imgs//ACS770/ACS770-Fig.png, id=256, 703.87968pt x 280.04625pt>
+<imgs//ACS770/ACS770-Fig.png, id=262, 703.87968pt x 280.04625pt>
 File: imgs//ACS770/ACS770-Fig.png Graphic file (type png)
 <use imgs//ACS770/ACS770-Fig.png>
 Package pdftex.def Info: imgs//ACS770/ACS770-Fig.png  used on input line 39.
 (pdftex.def)             Requested size: 435.0pt x 173.06708pt.
 [3 <./imgs//ACS770/ACS770-Fig.png>]
-<imgs//ACS770/ACS770-SchemaBlocchi.png, id=272, 737.00343pt x 525.46312pt>
+<imgs//ACS770/ACS770-SchemaBlocchi.png, id=278, 737.00343pt x 525.46312pt>
 File: imgs//ACS770/ACS770-SchemaBlocchi.png Graphic file (type png)
 <use imgs//ACS770/ACS770-SchemaBlocchi.png>
 Package pdftex.def Info: imgs//ACS770/ACS770-SchemaBlocchi.png  used on input l
 ine 67.
 (pdftex.def)             Requested size: 435.0pt x 310.14082pt.
  [4 <./imgs//ACS770/ACS770-SchemaBlocchi.png (PNG copy)>]
-<imgs//ACS770/ACS770-Sensibilità.png, id=278, 642.14906pt x 555.57562pt>
+<imgs//ACS770/ACS770-Sensibilità.png, id=284, 642.14906pt x 555.57562pt>
 File: imgs//ACS770/ACS770-Sensibilità.png Graphic file (type png)
 <use imgs//ACS770/ACS770-Sensibilità.png>
 Package pdftex.def Info: imgs//ACS770/ACS770-Sensibilità.png  used on input li
 ne 77.
 (pdftex.def)             Requested size: 261.00266pt x 225.82071pt.
-<imgs//ACS770/ACS770-NonLin.png, id=279, 735.74875pt x 439.6425pt>
+<imgs//ACS770/ACS770-NonLin.png, id=285, 735.74875pt x 439.6425pt>
 File: imgs//ACS770/ACS770-NonLin.png Graphic file (type png)
 <use imgs//ACS770/ACS770-NonLin.png>
 Package pdftex.def Info: imgs//ACS770/ACS770-NonLin.png  used on input line 87.
@@ -827,7 +827,7 @@ Package pdftex.def Info: imgs//ACS770/ACS770-NonLin.png  used on input line 87.
 (pdftex.def)             Requested size: 239.25133pt x 142.96262pt.
  [5 <./imgs//ACS770/ACS770-Sensibilità.png (PNG copy)> <./imgs//ACS770/ACS770-
 NonLin.png>]
-<imgs//ACS770/ACS770-Schema.png, id=287, 463.7325pt x 281.55188pt>
+<imgs//ACS770/ACS770-Schema.png, id=293, 463.7325pt x 281.55188pt>
 File: imgs//ACS770/ACS770-Schema.png Graphic file (type png)
 <use imgs//ACS770/ACS770-Schema.png>
 Package pdftex.def Info: imgs//ACS770/ACS770-Schema.png  used on input line 98.
@@ -849,20 +849,20 @@ Underfull \hbox (badness 10000) in paragraph at lines 143--144
  []
 
 [7]
-<imgs//IBT-2/TopView.jpg, id=311, 1284.8pt x 722.7pt>
-File: imgs//IBT-2/TopView.jpg Graphic file (type jpg)
-<use imgs//IBT-2/TopView.jpg>
-Package pdftex.def Info: imgs//IBT-2/TopView.jpg  used on input line 161.
-(pdftex.def)             Requested size: 435.0pt x 244.68918pt.
- [8 <./imgs//IBT-2/TopView.jpg>] [9]
-<imgs//IBT-2/17-triangle-Trasformatore.pdf, id=324, 794.97pt x 614.295pt>
+<imgs//IBT-2/TopView.png, id=317, 1083.29718pt x 538.26094pt>
+File: imgs//IBT-2/TopView.png Graphic file (type png)
+<use imgs//IBT-2/TopView.png>
+Package pdftex.def Info: imgs//IBT-2/TopView.png  used on input line 161.
+(pdftex.def)             Requested size: 435.0pt x 216.1383pt.
+ [8 <./imgs//IBT-2/TopView.png>] [9]
+<imgs//IBT-2/17-triangle-Trasformatore.pdf, id=331, 794.97pt x 614.295pt>
 File: imgs//IBT-2/17-triangle-Trasformatore.pdf Graphic file (type pdf)
 <use imgs//IBT-2/17-triangle-Trasformatore.pdf>
 Package pdftex.def Info: imgs//IBT-2/17-triangle-Trasformatore.pdf  used on inp
 ut line 204.
 (pdftex.def)             Requested size: 401.18375pt x 310.0pt.
  [10 <./imgs//IBT-2/17-triangle-Trasformatore.pdf>]
-<imgs//IBT-2/12-rapidShot-Trasformatore.pdf, id=359, 794.97pt x 614.295pt>
+<imgs//IBT-2/12-rapidShot-Trasformatore.pdf, id=366, 794.97pt x 614.295pt>
 File: imgs//IBT-2/12-rapidShot-Trasformatore.pdf Graphic file (type pdf)
 <use imgs//IBT-2/12-rapidShot-Trasformatore.pdf>
 Package pdftex.def Info: imgs//IBT-2/12-rapidShot-Trasformatore.pdf  used on in
@@ -966,23 +966,17 @@ File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 (./Introduzione.aux) (./capitolo1-HW.aux) (./capitolo2-Acquisizione.aux)
 (./capitolo3-ModelloMatematico.aux) (./capitolo4-Controllo.aux)
 (./conclusioni.aux) (./appendice.aux))
-
-LaTeX Warning: There were undefined references.
-
 Package rerunfilecheck Info: File `Tesi.out' has not changed.
-(rerunfilecheck)             Checksum: DD6D6D78E9FFCBE3DA7797257181128D;2935.
-
-Package biblatex Warning: Please rerun LaTeX.
-
+(rerunfilecheck)             Checksum: D33277434AFC0CCAD34B46F669669D7D;2985.
 Package logreq Info: Writing requests to 'Tesi.run.xml'.
 \openout1 = `Tesi.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 18374 strings out of 479304
- 302434 string characters out of 5869779
- 1211650 words of memory out of 5000000
- 35010 multiletter control sequences out of 15000+600000
+ 18376 strings out of 479304
+ 302478 string characters out of 5869779
+ 1211724 words of memory out of 5000000
+ 35013 multiletter control sequences out of 15000+600000
  425873 words of font info for 86 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  71i,12n,78p,1855b,2003s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1015,10 +1009,10 @@ lic/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm144
 0.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti0900.pfb></usr/share/te
 xmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/publ
 ic/cm-super/sftt1000.pfb>
-Output written on Tesi.pdf (29 pages, 1147798 bytes).
+Output written on Tesi.pdf (29 pages, 1903493 bytes).
 PDF statistics:
- 722 PDF objects out of 1000 (max. 8388607)
- 641 compressed objects within 7 object streams
+ 727 PDF objects out of 1000 (max. 8388607)
+ 645 compressed objects within 7 object streams
  202 named destinations out of 1000 (max. 500000)
- 382 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 390 words of extra memory for PDF output out of 10000 (max. 10000000)
 
