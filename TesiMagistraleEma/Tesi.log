@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.9.11)  13 SEP 2021 15:58
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.9.11)  16 SEP 2021 14:01
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -186,7 +186,8 @@ LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
 \c@pro=\count272
 \c@teor=\count273
 \c@defn=\count274
- (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+ (./specialWord.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
 (/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg
@@ -329,7 +330,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip55
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 59.
+Package hyperref Info: Option `colorlinks' set `true' on input line 61.
 
 (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.sty
 Package: biblatex 2020/12/31 v3.16 programmable bibliographies (PK/MW)
@@ -616,24 +617,24 @@ LaTeX Warning: Unused global option(s):
 (./capitolo4-Controllo.aux) (./conclusioni.aux) (./appendice.aux))
 \openout1 = `Tesi.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 145.
-LaTeX Font Info:    ... okay on input line 145.
-LaTeX Info: Redefining \it@ocap on input line 145.
-LaTeX Info: Redefining \it@ccap on input line 145.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 147.
+LaTeX Font Info:    ... okay on input line 147.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 147.
+LaTeX Font Info:    ... okay on input line 147.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 147.
+LaTeX Font Info:    ... okay on input line 147.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 147.
+LaTeX Font Info:    ... okay on input line 147.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 147.
+LaTeX Font Info:    ... okay on input line 147.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 147.
+LaTeX Font Info:    ... okay on input line 147.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 147.
+LaTeX Font Info:    ... okay on input line 147.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 147.
+LaTeX Font Info:    ... okay on input line 147.
+LaTeX Info: Redefining \it@ocap on input line 147.
+LaTeX Info: Redefining \it@ccap on input line 147.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -657,7 +658,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring ON on input line 145.
+Package hyperref Info: Link coloring ON on input line 147.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -670,9 +671,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count431
 )
-LaTeX Info: Redefining \ref on input line 145.
-LaTeX Info: Redefining \pageref on input line 145.
-LaTeX Info: Redefining \nameref on input line 145.
+LaTeX Info: Redefining \ref on input line 147.
+LaTeX Info: Redefining \pageref on input line 147.
+LaTeX Info: Redefining \nameref on input line 147.
 
 (./Tesi.out) (./Tesi.out)
 \@outlinefile=\write4
@@ -709,22 +710,22 @@ Package: blx-case-expl3 2020/12/31 v3.16 expl3 case changing code for biblatex
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Tesi.bbl' found.
  (./Tesi.bbl)
-Package biblatex Info: Reference section=0 on input line 145.
-Package biblatex Info: Reference segment=0 on input line 145.
+Package biblatex Info: Reference section=0 on input line 147.
+Package biblatex Info: Reference segment=0 on input line 147.
 \c@lstlisting=\count432
-LaTeX Font Info:    Trying to load font information for U+msa on input line 161
+LaTeX Font Info:    Trying to load font information for U+msa on input line 163
 .
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 161
+LaTeX Font Info:    Trying to load font information for U+msb on input line 163
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+lasy on input line 16
-1.
+3.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
@@ -737,13 +738,13 @@ Package epstopdf Info: Source file: <imgs/ulogo-Green.eps>
 (epstopdf)                    size: 2917 bytes
 (epstopdf)             Command: <repstopdf --outfile=imgs/ulogo-Green-eps-conve
 rted-to.pdf imgs/ulogo-Green.eps>
-(epstopdf)             \includegraphics on input line 161.
+(epstopdf)             \includegraphics on input line 163.
 Package epstopdf Info: Output file is already uptodate.
-<imgs/ulogo-Green-eps-converted-to.pdf, id=135, 46.1725pt x 62.2325pt>
+<imgs/ulogo-Green-eps-converted-to.pdf, id=171, 46.1725pt x 62.2325pt>
 File: imgs/ulogo-Green-eps-converted-to.pdf Graphic file (type pdf)
 <use imgs/ulogo-Green-eps-converted-to.pdf>
 Package pdftex.def Info: imgs/ulogo-Green-eps-converted-to.pdf  used on input l
-ine 161.
+ine 163.
 (pdftex.def)             Requested size: 42.22133pt x 56.9055pt.
  [1
 
@@ -751,79 +752,143 @@ ine 161.
 verted-to.pdf>]
 [2] (./Tesi.toc [1
 
-])
+] [2])
 \tf@toc=\write5
 \openout5 = `Tesi.toc'.
 
- [2]
+ [3]
 \openout2 = `Introduzione.aux'.
 
- (./Introduzione.tex
-Underfull \hbox (badness 10000) in paragraph at lines 3--12
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 3--12
-
- []
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
-been already used, duplicate ignored
+ (./Introduzione.tex)pdfTeX warning (ext4): destination with the same identifie
+r (name{page.1}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.13 \chapter
-             *{Introduzione} [1
+l.200 \include{Introduzione.tex}
+                                 [1
 
-
-]pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has
- been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.13 \chapter
-             *{Introduzione} [2]
-
-LaTeX Warning: Reference `cap:primo' on page 3 undefined on input line 23.
-
-) [3
 
 ]
 \openout2 = `capitolo1-HW.aux'.
 
  (./capitolo1-HW.tex
 Capitolo 1.
-[4
+pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.16 \newpage
+              [2
 
 
 
 
-] [5]
-<imgs//IBT-2/TopView.jpg, id=231, 1284.8pt x 722.7pt>
+]
+Underfull \hbox (badness 10000) in paragraph at lines 20--21
+
+ []
+
+
+LaTeX Warning: Citation 'ACS770' on page 3 undefined on input line 23.
+
+<imgs//ACS770/ACS770-Fig.png, id=255, 703.87968pt x 280.04625pt>
+File: imgs//ACS770/ACS770-Fig.png Graphic file (type png)
+<use imgs//ACS770/ACS770-Fig.png>
+Package pdftex.def Info: imgs//ACS770/ACS770-Fig.png  used on input line 39.
+(pdftex.def)             Requested size: 435.0pt x 173.06708pt.
+
+LaTeX Warning: Citation 'ACS770' on page 3 undefined on input line 45.
+
+[3 <./imgs//ACS770/ACS770-Fig.png>]
+
+LaTeX Warning: Citation 'ACS770' on page 4 undefined on input line 63.
+
+<imgs//ACS770/ACS770-SchemaBlocchi.png, id=269, 737.00343pt x 525.46312pt>
+File: imgs//ACS770/ACS770-SchemaBlocchi.png Graphic file (type png)
+<use imgs//ACS770/ACS770-SchemaBlocchi.png>
+Package pdftex.def Info: imgs//ACS770/ACS770-SchemaBlocchi.png  used on input l
+ine 67.
+(pdftex.def)             Requested size: 435.0pt x 310.14082pt.
+<imgs//ACS770/ACS770-Sensibilità.png, id=270, 642.14906pt x 555.57562pt>
+File: imgs//ACS770/ACS770-Sensibilità.png Graphic file (type png)
+<use imgs//ACS770/ACS770-Sensibilità.png>
+Package pdftex.def Info: imgs//ACS770/ACS770-Sensibilità.png  used on input li
+ne 77.
+(pdftex.def)             Requested size: 261.00266pt x 225.82071pt.
+[4 <./imgs//ACS770/ACS770-SchemaBlocchi.png (PNG copy)>]
+<imgs//ACS770/ACS770-NonLin.png, id=276, 735.74875pt x 439.6425pt>
+File: imgs//ACS770/ACS770-NonLin.png Graphic file (type png)
+<use imgs//ACS770/ACS770-NonLin.png>
+Package pdftex.def Info: imgs//ACS770/ACS770-NonLin.png  used on input line 87.
+
+(pdftex.def)             Requested size: 239.25133pt x 142.96262pt.
+ [5 <./imgs//ACS770/ACS770-Sensibilità.png (PNG copy)> <./imgs//ACS770/ACS770-
+NonLin.png>]
+<imgs//ACS770/ACS770-Schema.png, id=284, 463.7325pt x 281.55188pt>
+File: imgs//ACS770/ACS770-Schema.png Graphic file (type png)
+<use imgs//ACS770/ACS770-Schema.png>
+Package pdftex.def Info: imgs//ACS770/ACS770-Schema.png  used on input line 98.
+
+(pdftex.def)             Requested size: 435.0pt x 264.11317pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 102--104
+
+ []
+
+
+LaTeX Warning: Citation 'ACS770' on page 6 undefined on input line 107.
+
+[6 <./imgs//ACS770/ACS770-Schema.png (PNG copy)>]
+Underfull \hbox (badness 10000) in paragraph at lines 137--138
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 143--144
+
+ []
+
+[7]
+
+LaTeX Warning: Citation 'IBT-2' on page 8 undefined on input line 156.
+
+<imgs//IBT-2/TopView.jpg, id=307, 1284.8pt x 722.7pt>
 File: imgs//IBT-2/TopView.jpg Graphic file (type jpg)
 <use imgs//IBT-2/TopView.jpg>
-Package pdftex.def Info: imgs//IBT-2/TopView.jpg  used on input line 62.
+Package pdftex.def Info: imgs//IBT-2/TopView.jpg  used on input line 161.
 (pdftex.def)             Requested size: 435.0pt x 244.68918pt.
- [6 <./imgs//IBT-2/TopView.jpg>] [7]
-<imgs//IBT-2/11-triangle-Trasformatore.pdf, id=243, 794.97pt x 614.295pt>
-File: imgs//IBT-2/11-triangle-Trasformatore.pdf Graphic file (type pdf)
-<use imgs//IBT-2/11-triangle-Trasformatore.pdf>
-Package pdftex.def Info: imgs//IBT-2/11-triangle-Trasformatore.pdf  used on inp
-ut line 105.
+[8 <./imgs//IBT-2/TopView.jpg>] [9]
+<imgs//IBT-2/17-triangle-Trasformatore.pdf, id=319, 794.97pt x 614.295pt>
+File: imgs//IBT-2/17-triangle-Trasformatore.pdf Graphic file (type pdf)
+<use imgs//IBT-2/17-triangle-Trasformatore.pdf>
+Package pdftex.def Info: imgs//IBT-2/17-triangle-Trasformatore.pdf  used on inp
+ut line 204.
 (pdftex.def)             Requested size: 401.18375pt x 310.0pt.
- [8 <./imgs//IBT-2/11-triangle-Trasformatore.pdf>]
-<imgs//IBT-2/12-rapidShot-Trasformatore.pdf, id=269, 794.97pt x 614.295pt>
+ [10 <./imgs//IBT-2/17-triangle-Trasformatore.pdf>]
+<imgs//IBT-2/12-rapidShot-Trasformatore.pdf, id=354, 794.97pt x 614.295pt>
 File: imgs//IBT-2/12-rapidShot-Trasformatore.pdf Graphic file (type pdf)
 <use imgs//IBT-2/12-rapidShot-Trasformatore.pdf>
 Package pdftex.def Info: imgs//IBT-2/12-rapidShot-Trasformatore.pdf  used on in
-put line 114.
+put line 213.
 (pdftex.def)             Requested size: 401.18375pt x 310.0pt.
-) [9 <./imgs//IBT-2/12-rapidShot-Trasformatore.pdf>]
+) [11 <./imgs//IBT-2/12-rapidShot-Trasformatore.pdf>]
 \openout2 = `capitolo2-Acquisizione.aux'.
 
 
 (./capitolo2-Acquisizione.tex
 Capitolo 2.
-) [10
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 17.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\Leftrightarrow' on input line 17.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 17.
+
+) [12
 
 
 
@@ -833,7 +898,7 @@ Capitolo 2.
 
  (./capitolo3-ModelloMatematico.tex
 Capitolo 3.
-) [11
+) [13
 
 
 
@@ -843,7 +908,7 @@ Capitolo 3.
 
  (./capitolo4-Controllo.tex
 Capitolo 4.
-) [12
+) [14
 
 
 
@@ -853,7 +918,7 @@ Capitolo 4.
 
  (./conclusioni.tex
 Capitolo 5.
-) [13
+) [15
 
 
 
@@ -873,78 +938,84 @@ File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 )
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 8.
- [14
+ [16
 
 
 
 
-] [15]
-[16] [17] [18
+] [17]
+[18] [19] [20] [21
 
-]) [19
+]) [22
 
 ] (./Tesi.lof)
 \tf@lof=\write6
 \openout6 = `Tesi.lof'.
 
- [20
+
+
+LaTeX Warning: Empty bibliography on input line 235.
+
+[23
 
 
 
-]
-LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 2
-33.
-
-(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
-File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-) [21
-
-] (./Tesi.aux
-(./Introduzione.aux) (./capitolo1-HW.aux) (./capitolo2-Acquisizione.aux)
-(./capitolo3-ModelloMatematico.aux) (./capitolo4-Controllo.aux)
-(./conclusioni.aux) (./appendice.aux))
+] (./Tesi.aux (./Introduzione.aux) (./capitolo1-HW.aux)
+(./capitolo2-Acquisizione.aux) (./capitolo3-ModelloMatematico.aux)
+(./capitolo4-Controllo.aux) (./conclusioni.aux) (./appendice.aux))
 
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `Tesi.out' has not changed.
-(rerunfilecheck)             Checksum: 37FD034CC3FDDCBB6991CBE8355084C2;2226.
+(rerunfilecheck)             Checksum: DD6D6D78E9FFCBE3DA7797257181128D;2935.
+
+Package biblatex Warning: Please (re)run Biber on the file:
+(biblatex)                Tesi
+(biblatex)                and rerun LaTeX afterwards.
+
 Package logreq Info: Writing requests to 'Tesi.run.xml'.
 \openout1 = `Tesi.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 18166 strings out of 479304
- 298766 string characters out of 5869779
- 1267937 words of memory out of 5000000
- 34857 multiletter control sequences out of 15000+600000
- 419191 words of font info for 58 fonts, out of 8000000 for 9000
+ 18254 strings out of 479304
+ 299875 string characters out of 5869779
+ 1268096 words of memory out of 5000000
+ 34907 multiletter control sequences out of 15000+600000
+ 424887 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  71i,12n,78p,737b,2003s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf/
-fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/
+{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.enc}{/usr/share/texmf
+/fonts/enc/dvips/cm-super/cm-super-t1.enc}</usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/c
-mr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr
-/share/texmf/fonts/type1/public/cm-super/sfbi1000.pfb></usr/share/texmf/fonts/t
-ype1/public/cm-super/sfbx1000.pfb></usr/share/texmf/fonts/type1/public/cm-super
-/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/
-share/texmf/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf/fonts/ty
-pe1/public/cm-super/sfbx2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/
-sfcc1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0500.pfb></usr/s
-hare/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fonts/typ
-e1/public/cm-super/sfrm0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/s
-frm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/sh
-are/texmf/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf/fonts/type
-1/public/cm-super/sfti0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sf
-ti1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on Tesi.pdf (25 pages, 633838 bytes).
+/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.p
+fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/ms
+bm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share
+/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/p
+ublic/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2
+074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/
+texmf/fonts/type1/public/cm-super/sfrm0500.pfb></usr/share/texmf/fonts/type1/pu
+blic/cm-super/sfrm0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm09
+00.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/t
+exmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/pub
+lic/cm-super/sfrm1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti090
+0.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb>
+Output written on Tesi.pdf (28 pages, 1104826 bytes).
 PDF statistics:
- 583 PDF objects out of 1000 (max. 8388607)
- 522 compressed objects within 6 object streams
- 173 named destinations out of 1000 (max. 500000)
- 285 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 701 PDF objects out of 1000 (max. 8388607)
+ 623 compressed objects within 7 object streams
+ 198 named destinations out of 1000 (max. 500000)
+ 382 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -58,9 +58,24 @@ void setMotFreq(pwmFreq freq) {
 \end{lstlisting}
 Mediante questa funzione si modifica il valore del Prescaler per il TIMER 0, modificando la velocità di conteggio si ottiene un PWM con una periodo, e quindi frequenza, che varia.
 
+\subsubsection{Offset Calculation}
+
+\begin{lstlisting}[style=cppStyle,caption={Macro per calcolo Offset},label=lst:offsetCalc] 
+#define offsetCalc(pin,n)            \
+({                                   \
+	long read = 0;                     \
+	for (int i = 0; i < 1 << n; i++) { \
+		read += analogRead(pin);         \
+		delay(1);                        \
+	}                                  \
+	read = read >> 5;                  \
+	read;                              \
+})
+\end{lstlisting}
+\noindent
+La macro misura con una distanza temporale di 1 ms $2^n$-volte, la misura del Pin, e successivamente ne fa la media eseguendo un revers shift, questa tecnica di divisione semplicemente minimizza il tempo di calcolo, poiché ogni revers shift equivale a una divisione per 2, e si ha l'effetto di dividere per $\frac{read}{2^n}$ in $O(n)$ con un operazione per il processore molto semplice.
 
 \newpage
-
 \section{Generatore di Segnale}
 
 Per generare i segnali di controllo in Feed-Forward usati nel sistema, sono stati usati 2 diversi livelli di programmazione.\\
@@ -141,6 +156,10 @@ int rapidShot(uint64_t t) {
 	return pwmRapidShot;
 }
 \end{lstlisting}
+
+\newpage
+
+\section{Codici Controllore}
 
 
 \chapter*{Appendice B\\ EMP Code}\label{EMPCode}

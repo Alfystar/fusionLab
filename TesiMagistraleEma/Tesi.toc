@@ -4,82 +4,106 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {chapter}{Ringraziamenti}{1}{chapter*.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Introduzione}{3}{chapter*.3}%
+\contentsline {chapter}{\numberline {1}Elementi Costitutivi}{2}{chapter.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {1}Elementi Costitutivi}{4}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Trasformatore - Modello di Tokamak}{2}{section.1.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.1}Trasformatore}{4}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Modellazione Fisica}{2}{subsection.1.1.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.2}Sensore di Corrente}{5}{section.1.2}%
+\contentsline {subsection}{\numberline {1.1.2}Funzione di Trasferimento}{2}{subsection.1.1.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.2.1}Metodo di acquisizione}{5}{subsection.1.2.1}%
+\contentsline {section}{\numberline {1.2}Sensore di Corrente}{3}{section.1.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {1.3}Driver di Corrente - IBT-2}{6}{section.1.3}%
+\contentsline {subsection}{\numberline {1.2.1}Regime di funzionamento}{3}{subsection.1.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.3.1}Connessione di Controllo}{7}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.2.2}Funzionamento Interno}{4}{subsection.1.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {1.3.2}Benchmark Driver}{8}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.2.3}Connessione elettrica}{6}{subsection.1.2.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Dead-Zone Inferiore}{8}{section*.4}%
+\contentsline {subsection}{\numberline {1.2.4}Misura}{6}{subsection.1.2.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Dead-Zone Superiore}{9}{section*.5}%
+\contentsline {paragraph}{Offset}{7}{section*.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {paragraph}{Disturbo 50Hz}{9}{section*.6}%
+\contentsline {paragraph}{Sensibilità}{7}{section*.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {2}Catena di Acquisizione}{10}{chapter.2}%
+\contentsline {section}{\numberline {1.3}Driver di Corrente - IBT-2}{8}{section.1.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.1}Schema di acquisizione}{10}{section.2.1}%
+\contentsline {subsection}{\numberline {1.3.1}Connessione di Controllo}{9}{subsection.1.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.1}Sample and Hold alla frequenza di campionamento}{10}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {1.3.2}Benchmark Driver}{10}{subsection.1.3.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.1.2}Storage su file delle informazioni}{10}{subsection.2.1.2}%
+\contentsline {paragraph}{Dead-Zone Inferiore}{10}{section*.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.2}Embedded Message Pack (EMP)}{10}{section.2.2}%
+\contentsline {paragraph}{Dead-Zone Superiore}{11}{section*.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.1}Metodo di codifica}{10}{subsection.2.2.1}%
+\contentsline {paragraph}{Disturbo 50Hz}{11}{section*.7}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.2}Struttura del codice}{10}{subsection.2.2.2}%
+\contentsline {chapter}{\numberline {2}Architettura di Sistema}{12}{chapter.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {2.2.3}Benchmark}{10}{subsection.2.2.3}%
+\contentsline {section}{\numberline {2.1}Architettura ad alto livello}{12}{section.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {2.3}Post Elaborazione con Matlab}{10}{section.2.3}%
+\contentsline {section}{\numberline {2.2}Protocollo di Comunicazione - EMP}{12}{section.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {3}Modello teorico}{11}{chapter.3}%
+\contentsline {subsection}{\numberline {2.2.1}Metodo di codifica}{12}{subsection.2.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.1}Modellazione Fisica}{11}{section.3.1}%
+\contentsline {subsection}{\numberline {2.2.2}Struttura del codice}{12}{subsection.2.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Funzione di trasferimento}{11}{section.3.2}%
+\contentsline {subsection}{\numberline {2.2.3}Benchmark}{12}{subsection.2.2.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Controllo in Retroazione dall'uscita}{12}{chapter.4}%
+\contentsline {section}{\numberline {2.3}Online Sampling}{12}{section.2.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Modello di controllore}{12}{section.4.1}%
+\contentsline {subsection}{\numberline {2.3.1}Interconnessione Arduino $\Leftrightarrow $ Companion}{12}{subsection.2.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Esperimenti}{12}{section.4.2}%
+\contentsline {subsection}{\numberline {2.3.2}Storage su file delle informazioni}{12}{subsection.2.3.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Conclusioni e sviluppi futuri}{13}{chapter.5}%
+\contentsline {section}{\numberline {2.4}Post Elaborazione con Matlab}{12}{section.2.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Appendice A - Codice Arduino}{14}{chapter*.7}%
+\contentsline {subsection}{\numberline {2.4.1}Conversioni Dati}{12}{subsection.2.4.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Set-up Registri}{14}{section.5.1}%
+\contentsline {subsection}{\numberline {2.4.2}Creazione dei grafici e Filtraggio}{12}{subsection.2.4.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Tic Timer}{14}{section*.8}%
+\contentsline {chapter}{\numberline {3}Modello teorico di Controllo}{13}{chapter.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Frequenza PWM}{14}{section*.9}%
+\contentsline {section}{\numberline {3.1}Controllo a Errore Nullo}{13}{section.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}Generatore di Segnale}{16}{section.5.2}%
+\contentsline {section}{\numberline {3.2}Simulazione Qualitativa su Simulink}{13}{section.3.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.1}Segnali Base}{16}{subsection.5.2.1}%
+\contentsline {chapter}{\numberline {4}Sviluppo Controllo reale}{14}{chapter.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Rampa}{16}{section*.10}%
+\contentsline {section}{\numberline {4.1}Codifica del controllore}{14}{section.4.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {5.2.2}Segnali Composti}{17}{subsection.5.2.2}%
+\contentsline {section}{\numberline {4.2}Tuning delle costanti}{14}{section.4.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Onda Triangloare}{17}{section*.11}%
+\contentsline {section}{\numberline {4.3}Esperimenti}{14}{section.4.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Onda Trapezoidale}{17}{section*.12}%
+\contentsline {chapter}{\numberline {5}Conclusioni e sviluppi futuri}{15}{chapter.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Appendice B - Codice EMP}{18}{chapter*.13}%
+\contentsline {chapter}{Appendice A - Codice Arduino}{16}{chapter*.8}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Appendice C - Matlab Post Elaboration}{19}{chapter*.14}%
+\contentsline {section}{\numberline {5.1}Set-up Registri}{16}{section.5.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Elenco delle figure}{20}{chapter*.14}%
+\contentsline {subsubsection}{Tic Timer}{16}{section*.9}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Frequenza PWM}{16}{section*.10}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Offset Calculation}{17}{section*.11}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.2}Generatore di Segnale}{18}{section.5.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2.1}Segnali Base}{18}{subsection.5.2.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Rampa}{18}{section*.12}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsection}{\numberline {5.2.2}Segnali Composti}{19}{subsection.5.2.2}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Onda Triangloare}{19}{section*.13}%
+\defcounter {refsection}{0}\relax 
+\contentsline {subsubsection}{Onda Trapezoidale}{19}{section*.14}%
+\defcounter {refsection}{0}\relax 
+\contentsline {section}{\numberline {5.3}Codici Controllore}{20}{section.5.3}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Appendice B - Codice EMP}{21}{chapter*.15}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Appendice C - Matlab Post Elaboration}{22}{chapter*.16}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Elenco delle figure}{23}{chapter*.16}%

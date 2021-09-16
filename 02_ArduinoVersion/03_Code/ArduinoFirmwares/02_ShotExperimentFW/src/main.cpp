@@ -38,6 +38,17 @@ packLinux2Ard pRead;
 packArd2Linux pWrite;
 struct setUpPack pMean;
 
+#define offsetCalc(pin, n)                                                                                             \
+  ({                                                                                                                   \
+    long read = 0;                                                                                                     \
+    for (int i = 0; i < 1 << n; i++) {                                                                                 \
+      read += analogRead(pin);                                                                                         \
+      delay(1);                                                                                                        \
+    }                                                                                                                  \
+    read = read >> 5;                                                                                                  \
+    read;                                                                                                              \
+  })
+
 void setup() {
 
   mpSerial.begin(2000000);
@@ -56,17 +67,18 @@ void setup() {
 
   pWrite.type = setUpPackType;
   // Calculate offset
-  long read = 0;
-  for (int i = 0; i < 1 << 5; i++)
-    read += analogRead(V2);
-  read = read >> 5;
-  pWrite.setUp.V2_mean = read;
-
-  read = 0;
-  for (int i = 0; i < 1 << 5; i++)
-    read += analogRead(Isense);
-  read = read >> 5;
-  pWrite.setUp.Isense_mean = read;
+  //  long read = 0;
+  //  for (int i = 0; i < 1 << 5; i++)
+  //    read += analogRead(V2);
+  //  read = read >> 5;
+  //  pWrite.setUp.V2_mean = read;
+  pWrite.setUp.V2_mean = offsetCalc(V2, 5);
+  //  read = 0;
+  //  for (int i = 0; i < 1 << 5; i++)
+  //    read += analogRead(Isense);
+  //  read = read >> 5;
+  //  pWrite.setUp.Isense_mean = read;
+  pWrite.setUp.Isense_mean = offsetCalc(Isense, 5);
 
   pWrite.setUp.dt = dtExperiment;
   pWrite.setUp.V2Ref_set = V2Ref;
@@ -101,7 +113,7 @@ void loop() {
   pWrite.read.Isense_read = analogRead(Isense);
   pWrite.read.pwm = mot->drive_motor(controll(&pMean, &pWrite.read, oldTic));
 
-//  pWrite.read.pwm = mot->actuate(rapidShotEps(oldTic)); //controllo diretto di rapidShotEps
+  //  pWrite.read.pwm = mot->actuate(rapidShotEps(oldTic)); //controllo diretto di rapidShotEps
   oldTic++; // Suppose no over time
 
   mpSerial.packSend(&pWrite, sizeof(pWrite.type) + sizeof(pWrite.read));

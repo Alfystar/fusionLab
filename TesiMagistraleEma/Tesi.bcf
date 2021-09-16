@@ -2361,7 +2361,9 @@
   <bcf:section number="0">
     <bcf:citekey order="1">ACS770</bcf:citekey>
     <bcf:citekey order="2">ACS770</bcf:citekey>
-    <bcf:citekey order="3">IBT-2</bcf:citekey>
+    <bcf:citekey order="3">ACS770</bcf:citekey>
+    <bcf:citekey order="4">ACS770</bcf:citekey>
+    <bcf:citekey order="5">IBT-2</bcf:citekey>
   </bcf:section>
   <!-- SORTING TEMPLATES -->
   <bcf:sortingtemplate name="nty">

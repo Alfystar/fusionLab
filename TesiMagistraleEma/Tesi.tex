@@ -37,8 +37,10 @@
     {\begin{defn}\begin{normalfont}}
     {\hfill $\clubsuit$ \end{normalfont}\end{defn}}
 
-
+%-----------------------------------
 % CUSTOM PACKAGE && ENVIROMENT SET
+%-----------------------------------
+\usepackage{specialWord}
 % Custom Color Package
 \usepackage{xcolor}
 \definecolor{dkgreen}{rgb}{.133,.545,.133}
@@ -145,9 +147,9 @@ backend=biber]{biblatex}
 \begin{document}
 
 \dedicate{{
-		Dedico questa tesi ai miei cari nonni.\\
-		Grazie per aver sempre creduto in me.
-}}
+			Dedico questa tesi ai miei cari nonni.\\
+			Grazie per aver sempre creduto in me.
+		}}
 \corso{DELL'AUTOMAZIONE}
 \titoloTesi{
 	Sviluppo di algoritmi di controllo delle correnti nelle bobine poloidali di macchine per la fusione Tokamak, con riguardo al design	sistemico per la cooperazione tra sistemi embedded per l'attuazione, misurazione e centrali di controllo.
@@ -195,7 +197,7 @@ backend=biber]{biblatex}
 \fancyhead[R]{Introduzione} \fancyfoot[L]{Introduzione}
 \fancyfoot[R]{\thepage}
 
-\include{Introduzione}
+\include{Introduzione.tex}
 
 \fancyhf{} %elimina header/footer vecchi
 
@@ -221,8 +223,8 @@ backend=biber]{biblatex}
 \include{capitolo2-Acquisizione.tex}
 \include{capitolo3-ModelloMatematico.tex}
 \include{capitolo4-Controllo.tex}
-\include{conclusioni}
-\include{appendice}
+\include{conclusioni.tex}
+\include{appendice.tex}
 
 % ELENCO DELLE FIGURE (OPZIONALE)
 \addcontentsline{toc}{chapter}{Elenco delle figure}
