@@ -10,17 +10,23 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {1.3}{\ignorespaces \citefield {ACS770}{series} Sensibilità rispetto Temperatura}}{5}{figure.1.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {1.4}{\ignorespaces \citefield {ACS770}{series} \textit {Non-Linearità}}}{5}{figure.1.4}%
+\contentsline {figure}{\numberline {1.4}{\ignorespaces \citefield {ACS770}{series} \textit {Non-Linearità}\xspace }}{5}{figure.1.4}%
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {1.5}{\ignorespaces \citefield {ACS770}{series} Schema di collegamento}}{6}{figure.1.5}%
 \defcounter {refsection}{0}\relax 
 \contentsline {figure}{\numberline {1.6}{\ignorespaces Driver Motori IBT-2 TopView \& PinOut}}{8}{figure.1.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {1.7}{\ignorespaces Esperimento con Onda Triangolare}}{10}{figure.1.7}%
+\contentsline {figure}{\numberline {1.7}{\ignorespaces IBT-2 Schema Elettrico}}{9}{figure.1.7}%
 \defcounter {refsection}{0}\relax 
-\contentsline {figure}{\numberline {1.8}{\ignorespaces Esperimento con Onda Trapezoidale}}{11}{figure.1.8}%
+\contentsline {figure}{\numberline {1.8}{\ignorespaces Esperimento con Onda Triangolare}}{11}{figure.1.8}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {1.9}{\ignorespaces Esperimento con Onda Trapezoidale}}{12}{figure.1.9}%
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Schema finale dell'archiettettura di controllo}}{13}{figure.2.1}%
+\defcounter {refsection}{0}\relax 
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Esempio di COBS}}{16}{figure.2.2}%
 \defcounter {refsection}{0}\relax 
 \addvspace {10\p@ }
 \defcounter {refsection}{0}\relax 

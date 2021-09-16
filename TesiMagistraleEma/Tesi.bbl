@@ -67,5 +67,51 @@
     \field{type}{Datasheet}
     \field{year}{18 Sep 2019}
   \endentry
+
+  \entry{COBS}{report}{}
+    \name{author}{1}{}{%
+      {{hash=I}{%
+         family={IEEE},
+         familyi={I\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{I1}
+    \strng{fullhash}{I1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{I}
+    \field{sortinithash}{I}
+    \field{title}{Consistent Overhead Byte Stuffing (COBS)}
+    \list{institution}{1}{%
+      {IEEE}%
+    }
+    \field{type}{techreport}
+  \endentry
+
+  \entry{BTS7960b}{manual}{}
+    \name{author}{1}{}{%
+      {{hash=I}{%
+         family={Infineon},
+         familyi={I\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{I2}
+    \strng{fullhash}{I2}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{I}
+    \field{sortinithash}{I}
+    \field{series}{BTS7960b}
+    \field{title}{BTS7960B High Current PN Half Bridge NovalithIC T}
+    \verb{url}
+    \verb https://www.infineon.com/dgdl/bts7960b-pb-final.pdf?folderId=db3a3043
+    \verb 156fd5730116144c5d101c30&fileId=db3a30431ed1d7b2011efe782ebd6b60
+    \endverb
+    \list{institution}{1}{%
+      {Infineon Technologies}%
+    }
+    \field{type}{Datasheet}
+    \field{year}{12 Jul 2016}
+  \endentry
 \enddatalist
 \endinput

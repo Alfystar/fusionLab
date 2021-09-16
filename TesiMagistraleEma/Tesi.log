@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.9.11)  16 SEP 2021 14:22
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.9.11)  16 SEP 2021 19:37
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -186,7 +186,10 @@ LaTeX Font Info:    Overwriting symbol font `lasy' in version `bold'
 \c@pro=\count272
 \c@teor=\count273
 \c@defn=\count274
- (./specialWord.sty)
+ (./specialWord.sty
+(/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty
+Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
+))
 (/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2016/05/11 v2.12 LaTeX color extensions (UK)
 
@@ -753,7 +756,7 @@ Package epstopdf Info: Source file: <imgs/ulogo-Green.eps>
 rted-to.pdf imgs/ulogo-Green.eps>
 (epstopdf)             \includegraphics on input line 163.
 Package epstopdf Info: Output file is already uptodate.
-<imgs/ulogo-Green-eps-converted-to.pdf, id=176, 46.1725pt x 62.2325pt>
+<imgs/ulogo-Green-eps-converted-to.pdf, id=184, 46.1725pt x 62.2325pt>
 File: imgs/ulogo-Green-eps-converted-to.pdf Graphic file (type pdf)
 <use imgs/ulogo-Green-eps-converted-to.pdf>
 Package pdftex.def Info: imgs/ulogo-Green-eps-converted-to.pdf  used on input l
@@ -800,26 +803,26 @@ Underfull \hbox (badness 10000) in paragraph at lines 20--21
 
  []
 
-<imgs//ACS770/ACS770-Fig.png, id=262, 703.87968pt x 280.04625pt>
+<imgs//ACS770/ACS770-Fig.png, id=272, 703.87968pt x 280.04625pt>
 File: imgs//ACS770/ACS770-Fig.png Graphic file (type png)
 <use imgs//ACS770/ACS770-Fig.png>
 Package pdftex.def Info: imgs//ACS770/ACS770-Fig.png  used on input line 39.
 (pdftex.def)             Requested size: 435.0pt x 173.06708pt.
 [3 <./imgs//ACS770/ACS770-Fig.png>]
-<imgs//ACS770/ACS770-SchemaBlocchi.png, id=278, 737.00343pt x 525.46312pt>
+<imgs//ACS770/ACS770-SchemaBlocchi.png, id=288, 737.00343pt x 525.46312pt>
 File: imgs//ACS770/ACS770-SchemaBlocchi.png Graphic file (type png)
 <use imgs//ACS770/ACS770-SchemaBlocchi.png>
 Package pdftex.def Info: imgs//ACS770/ACS770-SchemaBlocchi.png  used on input l
 ine 67.
 (pdftex.def)             Requested size: 435.0pt x 310.14082pt.
  [4 <./imgs//ACS770/ACS770-SchemaBlocchi.png (PNG copy)>]
-<imgs//ACS770/ACS770-Sensibilità.png, id=284, 642.14906pt x 555.57562pt>
+<imgs//ACS770/ACS770-Sensibilità.png, id=294, 642.14906pt x 555.57562pt>
 File: imgs//ACS770/ACS770-Sensibilità.png Graphic file (type png)
 <use imgs//ACS770/ACS770-Sensibilità.png>
 Package pdftex.def Info: imgs//ACS770/ACS770-Sensibilità.png  used on input li
 ne 77.
 (pdftex.def)             Requested size: 261.00266pt x 225.82071pt.
-<imgs//ACS770/ACS770-NonLin.png, id=285, 735.74875pt x 439.6425pt>
+<imgs//ACS770/ACS770-NonLin.png, id=295, 735.74875pt x 439.6425pt>
 File: imgs//ACS770/ACS770-NonLin.png Graphic file (type png)
 <use imgs//ACS770/ACS770-NonLin.png>
 Package pdftex.def Info: imgs//ACS770/ACS770-NonLin.png  used on input line 87.
@@ -827,7 +830,7 @@ Package pdftex.def Info: imgs//ACS770/ACS770-NonLin.png  used on input line 87.
 (pdftex.def)             Requested size: 239.25133pt x 142.96262pt.
  [5 <./imgs//ACS770/ACS770-Sensibilità.png (PNG copy)> <./imgs//ACS770/ACS770-
 NonLin.png>]
-<imgs//ACS770/ACS770-Schema.png, id=293, 463.7325pt x 281.55188pt>
+<imgs//ACS770/ACS770-Schema.png, id=303, 463.7325pt x 281.55188pt>
 File: imgs//ACS770/ACS770-Schema.png Graphic file (type png)
 <use imgs//ACS770/ACS770-Schema.png>
 Package pdftex.def Info: imgs//ACS770/ACS770-Schema.png  used on input line 98.
@@ -849,54 +852,93 @@ Underfull \hbox (badness 10000) in paragraph at lines 143--144
  []
 
 [7]
-<imgs//IBT-2/TopView.png, id=317, 1083.29718pt x 538.26094pt>
+<imgs//IBT-2/TopView.png, id=327, 1083.29718pt x 538.26094pt>
 File: imgs//IBT-2/TopView.png Graphic file (type png)
 <use imgs//IBT-2/TopView.png>
 Package pdftex.def Info: imgs//IBT-2/TopView.png  used on input line 161.
 (pdftex.def)             Requested size: 435.0pt x 216.1383pt.
- [8 <./imgs//IBT-2/TopView.png>] [9]
-<imgs//IBT-2/17-triangle-Trasformatore.pdf, id=331, 794.97pt x 614.295pt>
+ [8 <./imgs//IBT-2/TopView.png>]
+<imgs//IBT-2/elettricScheme.png, id=337, 563.60562pt x 396.48125pt>
+File: imgs//IBT-2/elettricScheme.png Graphic file (type png)
+<use imgs//IBT-2/elettricScheme.png>
+Package pdftex.def Info: imgs//IBT-2/elettricScheme.png  used on input line 189
+.
+(pdftex.def)             Requested size: 440.677pt x 310.0pt.
+
+Overfull \hbox (5.677pt too wide) in paragraph at lines 189--190
+ [][] 
+ []
+
+[9 <./imgs//IBT-2/elettricScheme.png>] [10]
+<imgs//IBT-2/17-triangle-Trasformatore.pdf, id=352, 794.97pt x 614.295pt>
 File: imgs//IBT-2/17-triangle-Trasformatore.pdf Graphic file (type pdf)
 <use imgs//IBT-2/17-triangle-Trasformatore.pdf>
 Package pdftex.def Info: imgs//IBT-2/17-triangle-Trasformatore.pdf  used on inp
-ut line 204.
+ut line 216.
 (pdftex.def)             Requested size: 401.18375pt x 310.0pt.
- [10 <./imgs//IBT-2/17-triangle-Trasformatore.pdf>]
-<imgs//IBT-2/12-rapidShot-Trasformatore.pdf, id=366, 794.97pt x 614.295pt>
+ [11 <./imgs//IBT-2/17-triangle-Trasformatore.pdf>]
+<imgs//IBT-2/12-rapidShot-Trasformatore.pdf, id=386, 794.97pt x 614.295pt>
 File: imgs//IBT-2/12-rapidShot-Trasformatore.pdf Graphic file (type pdf)
 <use imgs//IBT-2/12-rapidShot-Trasformatore.pdf>
 Package pdftex.def Info: imgs//IBT-2/12-rapidShot-Trasformatore.pdf  used on in
-put line 213.
+put line 225.
 (pdftex.def)             Requested size: 401.18375pt x 310.0pt.
-) [11 <./imgs//IBT-2/12-rapidShot-Trasformatore.pdf>]
+) [12 <./imgs//IBT-2/12-rapidShot-Trasformatore.pdf>]
 \openout2 = `capitolo2-Acquisizione.aux'.
 
 
 (./capitolo2-Acquisizione.tex
 Capitolo 2.
+<imgs//Architettura/SystemArchitetture.png, id=414, 963.6pt x 542.025pt>
+File: imgs//Architettura/SystemArchitetture.png Graphic file (type png)
+<use imgs//Architettura/SystemArchitetture.png>
+Package pdftex.def Info: imgs//Architettura/SystemArchitetture.png  used on inp
+ut line 13.
+(pdftex.def)             Requested size: 435.0pt x 244.68643pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--19
+
+ []
+
+[13
+
+
+
+
+ <./imgs//Architettura/SystemArchitetture.png>] [14]
+<imgs//EMP/EMP-Logo-Background.png, id=429, 385.44pt x 243.15843pt>
+File: imgs//EMP/EMP-Logo-Background.png Graphic file (type png)
+<use imgs//EMP/EMP-Logo-Background.png>
+Package pdftex.def Info: imgs//EMP/EMP-Logo-Background.png  used on input line 
+33.
+(pdftex.def)             Requested size: 435.0pt x 274.42448pt.
+ [15 <./imgs//EMP/EMP-Logo-Background.png>]
+<imgs//EMP/Cobs_encoding_with_example.png, id=439, 1498.59875pt x 125.46875pt>
+File: imgs//EMP/Cobs_encoding_with_example.png Graphic file (type png)
+<use imgs//EMP/Cobs_encoding_with_example.png>
+Package pdftex.def Info: imgs//EMP/Cobs_encoding_with_example.png  used on inpu
+t line 51.
+(pdftex.def)             Requested size: 435.0pt x 36.41945pt.
+
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 17.
+(hyperref)                removing `math shift' on input line 63.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\Leftrightarrow' on input line 17.
+(hyperref)                removing `\Leftrightarrow' on input line 63.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 17.
+(hyperref)                removing `math shift' on input line 63.
 
-) [12
-
-
-
-
-]
+) [16 <./imgs//EMP/Cobs_encoding_with_example.png>]
 \openout2 = `capitolo3-ModelloMatematico.aux'.
 
- (./capitolo3-ModelloMatematico.tex
+
+(./capitolo3-ModelloMatematico.tex
 Capitolo 3.
-) [13
+) [17
 
 
 
@@ -906,7 +948,7 @@ Capitolo 3.
 
  (./capitolo4-Controllo.tex
 Capitolo 4.
-) [14
+) [18
 
 
 
@@ -916,7 +958,7 @@ Capitolo 4.
 
  (./conclusioni.tex
 Capitolo 5.
-) [15
+) [19
 
 
 
@@ -936,21 +978,21 @@ File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 )
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 8.
- [16
+ [20
 
 
 
 
-] [17]
-[18] [19] [20] [21
+] [21]
+[22] [23] [24] [25
 
-]) [22
+]) [26
 
 ] (./Tesi.lof)
 \tf@lof=\write6
 \openout6 = `Tesi.lof'.
 
- [23
+ [27
 
 
 
@@ -960,26 +1002,32 @@ LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 2
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-) [24
+)
+Overfull \hbox (81.6685pt too wide) in paragraph at lines 236--236
+\T1/cmr/m/sc/10 url\T1/cmr/m/n/10 : [][]$\T1/cmtt/m/n/10 https : / / www . infi
+neon . com / dgdl / bts7960b -[] pb -[] final . pdf ? folderId = db3a3043156fd5
+730116144c5d101c30 &
+ []
 
-] (./Tesi.aux
-(./Introduzione.aux) (./capitolo1-HW.aux) (./capitolo2-Acquisizione.aux)
-(./capitolo3-ModelloMatematico.aux) (./capitolo4-Controllo.aux)
-(./conclusioni.aux) (./appendice.aux))
+[28
+
+] (./Tesi.aux (./Introduzione.aux) (./capitolo1-HW.aux)
+(./capitolo2-Acquisizione.aux) (./capitolo3-ModelloMatematico.aux)
+(./capitolo4-Controllo.aux) (./conclusioni.aux) (./appendice.aux))
 Package rerunfilecheck Info: File `Tesi.out' has not changed.
-(rerunfilecheck)             Checksum: D33277434AFC0CCAD34B46F669669D7D;2985.
+(rerunfilecheck)             Checksum: D1CC99139D89281A5DE4437CB3D28F06;3134.
 Package logreq Info: Writing requests to 'Tesi.run.xml'.
 \openout1 = `Tesi.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 18376 strings out of 479304
- 302478 string characters out of 5869779
- 1211724 words of memory out of 5000000
- 35013 multiletter control sequences out of 15000+600000
- 425873 words of font info for 86 fonts, out of 8000000 for 9000
+ 18471 strings out of 479304
+ 304648 string characters out of 5869779
+ 1213471 words of memory out of 5000000
+ 35077 multiletter control sequences out of 15000+600000
+ 426574 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 71i,12n,78p,1855b,2003s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 71i,12n,78p,1855b,2004s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf/
 fonts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/
 type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
@@ -997,22 +1045,23 @@ nts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type
 /amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
 nts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/ms
-bm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share
-/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/p
-ublic/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2
-074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/
-texmf/fonts/type1/public/cm-super/sfcc1000.pfb></usr/share/texmf/fonts/type1/pu
-blic/cm-super/sfrm0500.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm08
-00.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/t
-exmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/pub
-lic/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm144
-0.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti0900.pfb></usr/share/te
-xmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/publ
-ic/cm-super/sftt1000.pfb>
-Output written on Tesi.pdf (29 pages, 1903493 bytes).
+bm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbi1000.pfb></usr/share
+/texmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/fonts/type1/p
+ublic/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1
+440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/
+texmf/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf/fonts/type1/pu
+blic/cm-super/sfcc1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm05
+00.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/t
+exmf/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf/fonts/type1/pub
+lic/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm120
+0.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share/te
+xmf/fonts/type1/public/cm-super/sfti0900.pfb></usr/share/texmf/fonts/type1/publ
+ic/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000
+.pfb>
+Output written on Tesi.pdf (33 pages, 2351772 bytes).
 PDF statistics:
- 727 PDF objects out of 1000 (max. 8388607)
- 645 compressed objects within 7 object streams
- 202 named destinations out of 1000 (max. 500000)
- 390 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 793 PDF objects out of 1000 (max. 8388607)
+ 699 compressed objects within 7 object streams
+ 218 named destinations out of 1000 (max. 500000)
+ 426 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,4 +1,4 @@
-\chapter{Elementi Costitutivi}\label{Hardware}
+\chapter{Elementi Costitutivi}\label{cap:1}
 
 \begin{minipage}{12cm}\textit{Se lo si desidera, utilizzare questo spazio per inserire un breve riassunto di ci\`o che verr\`a detto in questo capitolo. Inserire solo i punti salienti.}
 \end{minipage}
@@ -16,7 +16,7 @@ La tesi va scritta usando la terza persona, per quanto possibile, tranne casi ve
 \newpage
 
 
-\section{Sensore di Corrente}\label{CurrentSense}
+\section{Trasduttore di Corrente}\label{CurrentSense}
 Benché per gli obiettivi di controllo la lettura della corrente sul primario non è indispensabile, si è però preferito poter misurare cosa stia succedendo all'interno del sistema.\\
 
 \subsection{Regime di funzionamento}
@@ -103,7 +103,7 @@ La connessione del sensore è particolarmente semplice, richiedendo esternamente
 Rispetto allo schema proposto dal datasheet, però, si è anche deciso di omettere il filtro passa-basso sulla \textbf{VIOUT}, questa scelta è stata presa per minimizzare il più possibile ritardi di misura della corrente istantanea, poiché le dinamiche del sistema sul secondario, come visto, sono di tipo derivativo, e quindi estremamente rapide.\\
 
 \subsection{Misura}
-La misura della corrente viene riportata sotto forma di tensione, la quale varia in base alla \textbf{Sensibilità} del modello in uso. 
+Il transduttore, misura della corrente sotto forma di tensione, la quale varia in base alla \textbf{Sensibilità} del modello in uso. 
 Avendo noi il \citefield{ACS770}{series}, il datasheet riporta:
 \begin{center}
 	\begin{tabular}[t]{|l r|}
@@ -134,7 +134,7 @@ Al fine di poter misurare l'offset effettivo, durante il set-up viene eseguito a
 Il risultato della computazione, oltre ad essere usato nel controllo è inviato al computer per la post elaborazione dei dati nei grafici.
 
 \paragraph{Sensibilità}
-Usando nell'esperimento un ADC a 10Bit con tensione di riferimento a 5V, abbiamo che la massima sensibilità del $\mu$Controllore, ovvero il suo bit meno significativo è pari a:\\
+Usando nell'esperimento un ADC a 10Bit con tensione di riferimento a 5V, abbiamo che la massima sensibilità del \microC, ovvero il suo bit meno significativo è pari a:\\
 
 {\large\begin{center}
 	$V_{step}=\frac{Vcc}{2^{10}-1} = 4,887mV$.\\
@@ -181,6 +181,19 @@ Di particolare interesse per l'esperimento è proprio la corrente di picco gesti
 avendo le dinamiche del sistema tempi inferiori ai 5 secondi, poter reggere correnti di picco così elevate rende
 la scheda perfetta per i nostri scopi.
 
+\newpage
+\subsection{Schema Elettrico}
+Al suo interno il driver è composto da 2 Half-Bridge \cite{BTS7960b}, connesse secondo lo schema:
+\begin{figure}[h]
+	\centering
+	\includegraphics[height=0.5\textheight]{IBT-2/elettricScheme.png}
+	\caption[IBT-2 Schema Elettrico]{IBT-2 Schema Elettrico}
+\end{figure}\vspace{-5mm}
+
+\noindent
+Il \microC è protetto dal carico connesso all'interno del \citefield{BTS7960b}{series}, lasciando al \microC solo il compito di controllare i segnali.
+
+
 \subsection{Connessione di Controllo}
 Il driver permette 2 modalità di funzionamento:
 \begin{description}
@@ -200,7 +213,6 @@ Il driver sulla carta à buone prestazioni, ma non sono descritte le sue \nonLin
 	\item \nameref{lst:ondaTriangloare} \\ \vspace{-11mm}
 	      \begin{figure}[h]
 		      \centering
-		      %Todo: Ricampionare l'onda triangolare senza filtro deadzone
 		      \includegraphics[height=0.5\textheight]{IBT-2/17-triangle-Trasformatore.pdf}
 		      \caption[Esperimento con Onda Triangolare]{Onda Triangolare}
 	      \end{figure}\vspace{-10mm}
