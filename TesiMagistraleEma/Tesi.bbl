@@ -1,0 +1,71 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{nty/global//global/global}
+  \entry{ACS770}{manual}{}
+    \name{author}{1}{}{%
+      {{hash=A}{%
+         family={Allegro},
+         familyi={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{A1}
+    \strng{fullhash}{A1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{series}{ACS770LCB-100B-PFF-T}
+    \field{title}{High-Precision Linear Current Sensor}
+    \verb{url}
+    \verb https://www.allegromicro.com/~/media/Files/Datasheets/ACS770-Datashee
+    \verb t.pdf
+    \endverb
+    \list{institution}{1}{%
+      {Allegro Microsystems}%
+    }
+    \field{type}{Datasheet}
+    \field{year}{31 May 2019}
+  \endentry
+
+  \entry{IBT-2}{manual}{}
+    \name{author}{1}{}{%
+      {{hash=H}{%
+         family={Handsontec},
+         familyi={H\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{H1}
+    \strng{fullhash}{H1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{title}{BTS7960 High Current 43A H-Bridge Motor Driver}
+    \verb{url}
+    \verb https://www.handsontec.com/dataspecs/module/BTS7960%20Motor%20Driver.
+    \verb pdf
+    \endverb
+    \list{institution}{1}{%
+      {Handson Technology}%
+    }
+    \field{type}{Datasheet}
+    \field{year}{18 Sep 2019}
+  \endentry
+\enddatalist
+\endinput
