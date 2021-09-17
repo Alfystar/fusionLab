@@ -1,7 +1,7 @@
 clear variables
 close all
 
-experiment("experiment/capture.txt", [60,500],[-6,12])
+experiment("experiment/capture.txt", 10500,[-6,12])
 
 % experiment("experiment/06-RapidShot-EX354T.txt",3.5)
 % experiment("experiment/11-triangle-Trasformatore.txt",0.25)
@@ -27,8 +27,11 @@ experiment("experiment/capture.txt", [60,500],[-6,12])
 % experiment("experiment/30-Inseguimento-NoCap.txt", 0.5)
 % experiment("experiment/31-Inseguimento-Cap.txt", 0.5)
 
-% experiment("experiment/32-V2-Filter-PWMBigCap.txt", [60,180],[-6,12])
+experiment("experiment/32-V2-Filter-PWMBigCap.txt", [60,500],[-6,12])
 experiment("experiment/33-V2-Filter-PWM-NoBigCap.txt", [60,500],[-6,12])
+experiment("experiment/34-V2-Filter-PWM-NoBigCap-all.txt", [60,500],[-6,12])
+experiment("experiment/35-no-V2-Filter-PWM-NoBigCap-all.txt", [60,500],[-6,12])
+experiment("experiment/36-no-V2-Filter-PWM-BigCap-all.txt", [60,500],[-6,12])
 
 %% Functions block
 

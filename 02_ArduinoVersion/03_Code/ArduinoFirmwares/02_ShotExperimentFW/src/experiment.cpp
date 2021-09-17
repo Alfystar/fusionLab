@@ -74,7 +74,7 @@ int triangleSignal(uint64_t t, int msQuartPeriod) {
 
 #define t0 ticConvert(100)      // waiting start
 #define t1 ticConvert(100) + t0 // Rise Ramp
-#define t2 ticConvert(200) + t1 // High set
+#define t2 ticConvert(1000) + t1 // High set
 #define t3 ticConvert(100) + t2 // falling Ramp
 #define t4 tQuiet + t3          // 0 set
 
@@ -145,7 +145,7 @@ int rapidShotEps(uint64_t t) {
 
 // Controllo
 #define tcStart ticConvert(100)          // start Experiment
-#define tcEnd ticConvert(300) + tcStart // stop Experiment
+#define tcEnd ticConvert(10000) + tcStart // stop Experiment
 
 #define vScale (5.0 / 1023.0)
 #define k  0.8
