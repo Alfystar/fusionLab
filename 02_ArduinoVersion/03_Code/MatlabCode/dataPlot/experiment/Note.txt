@@ -1,7 +1,26 @@
+###############################à
 27-primoInseguimento:
-
+###############################à
 #define k 0.01
 #define dk 0.001
 #define V2Ref volt2adc(0.2)
 
 Un primo inseguimento rumoroso è stato ottenuto, per un pò non si è allontanato
+
+Post-Note:
+Ha funzionato per caso, in realtà la dinamica era divergente, colpa di un "+=" nel codice
+si è trovato una finestra fortunata con dei coefficienti fortunati.
+
+###############################à
+32-V2-Filter-PWMBigCap
+###############################à
+#define V2Ref volt2adc(0.15)
+#define k  0.8
+#define dk 0.05
+
+Il primo inseguimento con il codice corretto che ha dato soluzione corretta.
+La V2 viene letta usando un filtro a 2.334Khz(31Kohm, 2.2nF) il quale ha permesso di far convergere il controllo alla vera soluzione
+invece di quello che succedeva prima, che a causa della ridotta velocità di campionamento, l'errore oscillava attorno a 0, perchè la V2
+oscillava attorno a vRef per picchi positivi e negativi dovuti ai ritardi di attuazione del PWM.
+
+Oltre al filtro sulla V2 infatti, sono stati messi 5mF in parallelo al primario, che hanno aiutato a rendere più uniforme la corrente.
