@@ -11,7 +11,7 @@
 #define ticConvert(ms) (ms * 1000UL) / dtExperiment
 #define volt2adc(x) ((int)(((x)/(5.0/(1023)) + 0.5 )))
 
-#define V2Ref volt2adc(1)
+#define V2Ref volt2adc(0.15)
 
 // Have to set pwm in pWrite
 int controll(struct setUpPack *pMean, struct sample *pRead, unsigned long tic);

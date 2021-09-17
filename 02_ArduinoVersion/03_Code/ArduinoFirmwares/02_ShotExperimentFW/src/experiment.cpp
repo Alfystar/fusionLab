@@ -145,11 +145,11 @@ int rapidShotEps(uint64_t t) {
 
 // Controllo
 #define tcStart ticConvert(100)          // start Experiment
-#define tcEnd ticConvert(1000) + tcStart // stop Experiment
+#define tcEnd ticConvert(300) + tcStart // stop Experiment
 
 #define vScale (5.0 / 1023.0)
-#define k  0.2
-#define dk 0.002
+#define k  0.8
+#define dk 0.05
 
 long integral = 0;
 long dIntegral1 = 0;

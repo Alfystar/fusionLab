@@ -26,24 +26,24 @@ close all
 % experiment("experiment/30-Inseguimento-NoCap.txt", 0.5)
 % experiment("experiment/31-Inseguimento-Cap.txt", 0.5)
 
-experiment("experiment/32-V2-Filter-PWMBigCap.txt", [60,180],[-6,12])
+experiment("experiment/32-V2-Filter-PWMBigCap.txt", [0.06,0.18])
 
 %% Functions block
 
-function experiment(filepath, tLim, yLim)
+function experiment(filepath, tLim)
 if nargin < 2
-    tLim = [0,inf];
+    tLim = inf;
 elseif nargin < 3
-    yLim = [-inf,inf];
+    yLim = inf
 end
 
 [home_500us, Info]= importExperiment(filepath);
 home_500usRescale = tableRescale(home_500us, Info);
 figure()
-plotTable(home_500usRescale, Info, tLim, yLim);
+plotTable(home_500usRescale, Info, tLim);
 end
 
-function plotTable(table, Info, tLim, yLim)
+function plotTable(table, Info, tLim)
 V2Mean = Info.V2_mean;
 IsenseMean = Info.Isense_mean;
 dt = Info.dt;
@@ -52,7 +52,7 @@ vRef = Info.V2Ref_set;
 name = Info.Properties.Description;
 [len , ~ ] = size(table);
 
-t = [0:len-1]' * dt * 1000;
+t = [0:len-1]' * dt ;
 
 
 d = designfilt('lowpassfir', ...
@@ -75,7 +75,7 @@ else
     legend("PWM%", "V_{secondary}", "I_{primary}")
 end
 title("Experiment: "+name+ "   SampleTime: " + mat2str(dt * 1000000) + "µs")
-xlabel("time [ms]")
+xlabel("time [s]")
 
 ax1 = gca;
 % Second SubPlot
@@ -99,13 +99,15 @@ else
     legend("PWM%", "V_{secondary}", "I_{primary}")
 end
 title("Data Filtering")
-xlabel("time [ms]")
+xlabel("time [s]")
 ax2 = gca;
 
 linkaxes([ax1 ax2],'xy')
-
-xlim(gca, tLim)
-ylim(gca, yLim)
+if(length(tLim) == 1)
+    xlim(gca, [0 tLim])
+else
+    xlim(gca, tLim)
+end
 
 
 % Figure Export and Save
