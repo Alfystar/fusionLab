@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.9.11)  20 SEP 2021 15:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.9.11)  20 SEP 2021 15:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1058,7 +1058,7 @@ LaTeX Warning: Unused global option(s):
     [15pt].
 
 (./Tesi.aux (./Introduzione.aux) (./capitolo1-HW.aux)
-(./capitolo2-Acquisizione.aux) (./capitolo3-ModelloMatematico.aux)
+(./capitolo2-Architettura.aux) (./capitolo3-ModelloMatematico.aux)
 (./capitolo4-Controllo.aux) (./conclusioni.aux) (./appendice.aux))
 \openout1 = `Tesi.aux'.
 
@@ -1181,7 +1181,7 @@ Package epstopdf Info: Source file: <imgs/ulogo-Green.eps>
 rted-to.pdf imgs/ulogo-Green.eps>
 (epstopdf)             \includegraphics on input line 170.
 Package epstopdf Info: Output file is already uptodate.
-<imgs/ulogo-Green-eps-converted-to.pdf, id=252, 46.1725pt x 62.2325pt>
+<imgs/ulogo-Green-eps-converted-to.pdf, id=256, 46.1725pt x 62.2325pt>
 File: imgs/ulogo-Green-eps-converted-to.pdf Graphic file (type pdf)
 <use imgs/ulogo-Green-eps-converted-to.pdf>
 Package pdftex.def Info: imgs/ulogo-Green-eps-converted-to.pdf  used on input l
@@ -1232,7 +1232,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--20
 
  []
 
-<imgs//Trasformatore/tokamak_scheme.jpg, id=356, 803.0pt x 451.6875pt>
+<imgs//Trasformatore/tokamak_scheme.jpg, id=361, 803.0pt x 451.6875pt>
 File: imgs//Trasformatore/tokamak_scheme.jpg Graphic file (type jpg)
 <use imgs//Trasformatore/tokamak_scheme.jpg>
 Package pdftex.def Info: imgs//Trasformatore/tokamak_scheme.jpg  used on input 
@@ -1243,7 +1243,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 27--31
 
  []
 
-<imgs//Trasformatore/PlasmaCircuit-PlasmaCircuit.png, id=358, 525.965pt x 227.8
+<imgs//Trasformatore/PlasmaCircuit-PlasmaCircuit.png, id=363, 525.965pt x 227.8
 5126pt>
 File: imgs//Trasformatore/PlasmaCircuit-PlasmaCircuit.png Graphic file (type pn
 g)
@@ -1252,7 +1252,7 @@ Package pdftex.def Info: imgs//Trasformatore/PlasmaCircuit-PlasmaCircuit.png  u
 sed on input line 37.
 (pdftex.def)             Requested size: 435.0pt x 188.45242pt.
 [4 <./imgs//Trasformatore/tokamak_scheme.jpg>]
-<imgs//Trasformatore/PlasmaCircuit-EquivalentCalc.png, id=367, 626.34pt x 227.8
+<imgs//Trasformatore/PlasmaCircuit-EquivalentCalc.png, id=372, 626.34pt x 227.8
 5126pt>
 File: imgs//Trasformatore/PlasmaCircuit-EquivalentCalc.png Graphic file (type p
 ng)
@@ -1262,34 +1262,34 @@ used on input line 45.
 (pdftex.def)             Requested size: 435.0pt x 158.2501pt.
  [5 <./imgs//Trasformatore/PlasmaCircuit-PlasmaCircuit.png> <./imgs//Trasformat
 ore/PlasmaCircuit-EquivalentCalc.png>] [6]
-<imgs//ACS770/ACS770-Fig.png, id=381, 703.87968pt x 280.04625pt>
+<imgs//ACS770/ACS770-Fig.png, id=386, 703.87968pt x 280.04625pt>
 File: imgs//ACS770/ACS770-Fig.png Graphic file (type png)
 <use imgs//ACS770/ACS770-Fig.png>
 Package pdftex.def Info: imgs//ACS770/ACS770-Fig.png  used on input line 61.
 (pdftex.def)             Requested size: 435.0pt x 173.06708pt.
  [7 <./imgs//ACS770/ACS770-Fig.png>]
-<imgs//ACS770/ACS770-SchemaBlocchi.png, id=392, 737.00343pt x 525.46312pt>
+<imgs//ACS770/ACS770-SchemaBlocchi.png, id=397, 737.00343pt x 525.46312pt>
 File: imgs//ACS770/ACS770-SchemaBlocchi.png Graphic file (type png)
 <use imgs//ACS770/ACS770-SchemaBlocchi.png>
 Package pdftex.def Info: imgs//ACS770/ACS770-SchemaBlocchi.png  used on input l
 ine 106.
 (pdftex.def)             Requested size: 348.00133pt x 248.11426pt.
  [8 <./imgs//ACS770/ACS770-SchemaBlocchi.png (PNG copy)>]
-<imgs//ACS770/ACS770-Sensibilità.png, id=402, 642.14906pt x 555.57562pt>
+<imgs//ACS770/ACS770-Sensibilità.png, id=407, 642.14906pt x 555.57562pt>
 File: imgs//ACS770/ACS770-Sensibilità.png Graphic file (type png)
 <use imgs//ACS770/ACS770-Sensibilità.png>
 Package pdftex.def Info: imgs//ACS770/ACS770-Sensibilità.png  used on input li
 ne 116.
 (pdftex.def)             Requested size: 435.0pt x 376.36221pt.
  [9 <./imgs//ACS770/ACS770-Sensibilità.png (PNG copy)>]
-<imgs//ACS770/ACS770-NonLin.png, id=408, 735.74875pt x 439.6425pt>
+<imgs//ACS770/ACS770-NonLin.png, id=413, 735.74875pt x 439.6425pt>
 File: imgs//ACS770/ACS770-NonLin.png Graphic file (type png)
 <use imgs//ACS770/ACS770-NonLin.png>
 Package pdftex.def Info: imgs//ACS770/ACS770-NonLin.png  used on input line 126
 .
 (pdftex.def)             Requested size: 435.0pt x 259.9369pt.
 [10 <./imgs//ACS770/ACS770-NonLin.png>]
-<imgs//ACS770/ACS770-Schema.png, id=415, 463.7325pt x 281.55188pt>
+<imgs//ACS770/ACS770-Schema.png, id=420, 463.7325pt x 281.55188pt>
 File: imgs//ACS770/ACS770-Schema.png Graphic file (type png)
 <use imgs//ACS770/ACS770-Schema.png>
 Package pdftex.def Info: imgs//ACS770/ACS770-Schema.png  used on input line 137
@@ -1306,13 +1306,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 157--159
  []
 
 [12]
-<imgs//IBT-2/TopView.png, id=437, 1083.29718pt x 538.26094pt>
+<imgs//IBT-2/TopView.png, id=442, 1083.29718pt x 538.26094pt>
 File: imgs//IBT-2/TopView.png Graphic file (type png)
 <use imgs//IBT-2/TopView.png>
 Package pdftex.def Info: imgs//IBT-2/TopView.png  used on input line 199.
 (pdftex.def)             Requested size: 435.0pt x 216.1383pt.
  [13 <./imgs//IBT-2/TopView.png>]
-<imgs//IBT-2/elettricScheme.png, id=448, 563.60562pt x 396.48125pt>
+<imgs//IBT-2/elettricScheme.png, id=453, 563.60562pt x 396.48125pt>
 File: imgs//IBT-2/elettricScheme.png Graphic file (type png)
 <use imgs//IBT-2/elettricScheme.png>
 Package pdftex.def Info: imgs//IBT-2/elettricScheme.png  used on input line 227
@@ -1324,26 +1324,26 @@ Overfull \hbox (5.677pt too wide) in paragraph at lines 227--228
  []
 
 [14 <./imgs//IBT-2/elettricScheme.png>] [15]
-<imgs//IBT-2/17-triangle-Trasformatore.pdf, id=462, 794.97pt x 614.295pt>
+<imgs//IBT-2/17-triangle-Trasformatore.pdf, id=467, 794.97pt x 614.295pt>
 File: imgs//IBT-2/17-triangle-Trasformatore.pdf Graphic file (type pdf)
 <use imgs//IBT-2/17-triangle-Trasformatore.pdf>
 Package pdftex.def Info: imgs//IBT-2/17-triangle-Trasformatore.pdf  used on inp
 ut line 255.
 (pdftex.def)             Requested size: 401.18375pt x 310.0pt.
  [16 <./imgs//IBT-2/17-triangle-Trasformatore.pdf>]
-<imgs//IBT-2/12-rapidShot-Trasformatore.pdf, id=497, 794.97pt x 614.295pt>
+<imgs//IBT-2/12-rapidShot-Trasformatore.pdf, id=502, 794.97pt x 614.295pt>
 File: imgs//IBT-2/12-rapidShot-Trasformatore.pdf Graphic file (type pdf)
 <use imgs//IBT-2/12-rapidShot-Trasformatore.pdf>
 Package pdftex.def Info: imgs//IBT-2/12-rapidShot-Trasformatore.pdf  used on in
 put line 265.
 (pdftex.def)             Requested size: 401.18375pt x 310.0pt.
 ) [17 <./imgs//IBT-2/12-rapidShot-Trasformatore.pdf>]
-\openout2 = `capitolo2-Acquisizione.aux'.
+\openout2 = `capitolo2-Architettura.aux'.
 
 
-(./capitolo2-Acquisizione.tex
+(./capitolo2-Architettura.tex
 Capitolo 3.
-<imgs//Architettura/SystemArchitetture.png, id=525, 963.6pt x 542.025pt>
+<imgs//Architettura/SystemArchitetture.png, id=530, 963.6pt x 542.025pt>
 File: imgs//Architettura/SystemArchitetture.png Graphic file (type png)
 <use imgs//Architettura/SystemArchitetture.png>
 Package pdftex.def Info: imgs//Architettura/SystemArchitetture.png  used on inp
@@ -1354,20 +1354,23 @@ Underfull \hbox (badness 10000) in paragraph at lines 17--19
 
  []
 
+
+LaTeX Warning: Reference `cap:1' on page 18 undefined on input line 20.
+
 [18
 
 
 
 
  <./imgs//Architettura/SystemArchitetture.png>] [19]
-<imgs//EMP/EMP-Logo-Background.png, id=539, 385.44pt x 243.15843pt>
+<imgs//EMP/EMP-Logo-Background.png, id=543, 385.44pt x 243.15843pt>
 File: imgs//EMP/EMP-Logo-Background.png Graphic file (type png)
 <use imgs//EMP/EMP-Logo-Background.png>
 Package pdftex.def Info: imgs//EMP/EMP-Logo-Background.png  used on input line 
 33.
 (pdftex.def)             Requested size: 435.0pt x 274.42448pt.
  [20 <./imgs//EMP/EMP-Logo-Background.png>]
-<imgs//EMP/Cobs_encoding_with_example.png, id=550, 1498.59875pt x 125.46875pt>
+<imgs//EMP/Cobs_encoding_with_example.png, id=554, 1498.59875pt x 125.46875pt>
 File: imgs//EMP/Cobs_encoding_with_example.png Graphic file (type png)
 <use imgs//EMP/Cobs_encoding_with_example.png>
 Package pdftex.def Info: imgs//EMP/Cobs_encoding_with_example.png  used on inpu
@@ -1390,19 +1393,20 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 \openout2 = `capitolo3-ModelloMatematico.aux'.
 
 
-(./capitolo3-ModelloMatematico.tex
+(./capitolo3-ModelloMatematico.tex [22
+
+
+
+]
 Capitolo 4.
-) [22
-
-
-
+) [23
 
 ]
 \openout2 = `capitolo4-Controllo.aux'.
 
  (./capitolo4-Controllo.tex
 Capitolo 5.
-) [23
+) [24
 
 
 
@@ -1412,7 +1416,7 @@ Capitolo 5.
 
  (./conclusioni.tex
 Capitolo 6.
-) [24
+) [25
 
 
 
@@ -1432,21 +1436,21 @@ File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 )
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
 nput line 8.
- [25
+ [26
 
 
 
 
-] [26]
-[27] [28] [29] [30
+] [27]
+[28] [29] [30] [31
 
-]) [31
+]) [32
 
 ] (./Tesi.lof)
 \tf@lof=\write9
 \openout9 = `Tesi.lof'.
 
- [32
+ [33
 
 
 
@@ -1463,28 +1467,29 @@ neon . com / dgdl / bts7960b -[] pb -[] final . pdf ? folderId = db3a3043156fd5
 730116144c5d101c30 &
  []
 
-[33
+[34
+
+]
+Capitolo 7.
+[35
 
 ] (./Tesi.aux (./Introduzione.aux) (./capitolo1-HW.aux)
-(./capitolo2-Acquisizione.aux) (./capitolo3-ModelloMatematico.aux)
+(./capitolo2-Architettura.aux) (./capitolo3-ModelloMatematico.aux)
 (./capitolo4-Controllo.aux) (./conclusioni.aux) (./appendice.aux))
 
-Package rerunfilecheck Warning: File `Tesi.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
+LaTeX Warning: There were undefined references.
 
-Package rerunfilecheck Info: Checksums for `Tesi.out':
-(rerunfilecheck)             Before: 7C1CE732D3CD7FCE2EBD7DA0074629CF;3591
-(rerunfilecheck)             After:  0D1479D36B485CEA7F530F883E597CEF;3591.
+Package rerunfilecheck Info: File `Tesi.out' has not changed.
+(rerunfilecheck)             Checksum: 4C2AF5A47059AD532D7D9F4F02841A21;3657.
 Package logreq Info: Writing requests to 'Tesi.run.xml'.
 \openout1 = `Tesi.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 34004 strings out of 479304
- 670052 string characters out of 5869779
- 1597887 words of memory out of 5000000
- 50280 multiletter control sequences out of 15000+600000
+ 34010 strings out of 479304
+ 670127 string characters out of 5869779
+ 1598070 words of memory out of 5000000
+ 50283 multiletter control sequences out of 15000+600000
  426574 words of font info for 87 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  101i,12n,108p,1855b,2004s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1516,10 +1521,10 @@ m-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1440.pfb
 ></usr/share/texmf/fonts/type1/public/cm-super/sfti0900.pfb></usr/share/texmf/f
 onts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm
 -super/sftt1000.pfb>
-Output written on Tesi.pdf (38 pages, 2439826 bytes).
+Output written on Tesi.pdf (40 pages, 2447320 bytes).
 PDF statistics:
- 908 PDF objects out of 1000 (max. 8388607)
- 781 compressed objects within 8 object streams
- 237 named destinations out of 1000 (max. 500000)
- 653 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 922 PDF objects out of 1000 (max. 8388607)
+ 793 compressed objects within 8 object streams
+ 240 named destinations out of 1000 (max. 500000)
+ 661 words of extra memory for PDF output out of 10000 (max. 10000000)
 

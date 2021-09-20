@@ -4,7 +4,7 @@ The top-level auxiliary file: Tesi.aux
 The style file: biblatex.bst
 A level-1 auxiliary file: Introduzione.aux
 A level-1 auxiliary file: capitolo1-HW.aux
-A level-1 auxiliary file: capitolo2-Acquisizione.aux
+A level-1 auxiliary file: capitolo2-Architettura.aux
 A level-1 auxiliary file: capitolo3-ModelloMatematico.aux
 A level-1 auxiliary file: capitolo4-Controllo.aux
 A level-1 auxiliary file: conclusioni.aux
@@ -26,53 +26,47 @@ Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Database file #1: Tesi-blx.bib
 Database file #2: BibliografiaTesi.bib
-I was expecting a `,' or a `}'---line 79 of file BibliografiaTesi.bib
- :  
- :  year = {29 Jun 2002}
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
 Biblatex version: 3.16
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 You've used 6 entries,
             6393 wiz_defined-function locations,
-            1244 strings with 10009 characters,
-and the built_in function-call counts, 28841 in all, are:
+            1246 strings with 10094 characters,
+and the built_in function-call counts, 28925 in all, are:
 = -- 1890
 > -- 605
 < -- 191
 + -- 694
-- -- 201
-* -- 1789
-:= -- 3022
+- -- 205
+* -- 1805
+:= -- 3026
 add.period$ -- 0
 call.type$ -- 6
-change.case$ -- 112
+change.case$ -- 113
 chr.to.int$ -- 48
 cite$ -- 10
-duplicate$ -- 3187
-empty$ -- 2647
+duplicate$ -- 3196
+empty$ -- 2659
 format.name$ -- 344
-if$ -- 5977
+if$ -- 5991
 int.to.chr$ -- 0
 int.to.str$ -- 16
 missing$ -- 0
-newline$ -- 187
+newline$ -- 192
 num.names$ -- 286
-pop$ -- 1801
+pop$ -- 1797
 preamble$ -- 1
-purify$ -- 136
+purify$ -- 137
 quote$ -- 0
-skip$ -- 1088
+skip$ -- 1087
 stack$ -- 0
-substring$ -- 2848
-swap$ -- 781
+substring$ -- 2853
+swap$ -- 793
 text.length$ -- 152
 text.prefix$ -- 5
 top$ -- 1
 type$ -- 179
 warning$ -- 0
-while$ -- 455
+while$ -- 456
 width$ -- 0
-write$ -- 182
-(There was 1 error message)
+write$ -- 187

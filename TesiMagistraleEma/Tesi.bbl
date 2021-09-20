@@ -82,10 +82,15 @@
     \field{sortinit}{I}
     \field{sortinithash}{I}
     \field{title}{Consistent Overhead Byte Stuffing (COBS)}
+    \verb{url}
+    \verb https://www.ieee802.org/3/efm/public/jul02/copper/oksman_copper_1_070
+    \verb 2.pdf
+    \endverb
     \list{institution}{1}{%
       {IEEE}%
     }
     \field{type}{techreport}
+    \field{year}{29 Jun 2002}
   \endentry
 
   \entry{BTS7960b}{manual}{}
