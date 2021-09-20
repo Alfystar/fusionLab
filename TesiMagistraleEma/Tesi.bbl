@@ -113,5 +113,75 @@
     \field{type}{Datasheet}
     \field{year}{12 Jul 2016}
   \endentry
+
+  \entry{TokamakCircuit}{article}{}
+    \name{author}{8}{}{%
+      {{hash=RJ}{%
+         family={Romero},
+         familyi={R\bibinitperiod},
+         given={Jesús},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=dlCJ}{%
+         prefix={de\bibnamedelima la},
+         prefixi={d\bibinitperiod\bibinitdelim l\bibinitperiod},
+         family={Cruz},
+         familyi={C\bibinitperiod},
+         given={Jesús},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=DT}{%
+         family={Dobbing},
+         familyi={D\bibinitperiod},
+         given={T.},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=EJ}{%
+         family={Ellis},
+         familyi={E\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=FB}{%
+         family={Fisher},
+         familyi={F\bibinitperiod},
+         given={B.},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=KQ}{%
+         family={King},
+         familyi={K\bibinitperiod},
+         given={Queen},
+         giveni={Q\bibinitperiod},
+      }}%
+      {{hash=SF}{%
+         family={Söldner},
+         familyi={S\bibinitperiod},
+         given={F.},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=ZN}{%
+         family={Zornig},
+         familyi={Z\bibinitperiod},
+         given={N.},
+         giveni={N\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{RJ+1}
+    \strng{fullhash}{RJdlCJDTEJFBKQSFZN1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \verb{doi}
+    \verb 10.1016/S0920-3796(98)00261-0
+    \endverb
+    \field{pages}{37\bibrangedash 58}
+    \field{title}{Real time current profile control at JET}
+    \field{volume}{43}
+    \field{journaltitle}{Fusion Engineering and Design}
+    \field{month}{02}
+    \field{year}{1998}
+  \endentry
 \enddatalist
 \endinput

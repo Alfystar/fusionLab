@@ -73,14 +73,6 @@ backend=bibtex]{biblatex}
 \addbibresource{BibliografiaTesi.bib}
 \usepackage{csquotes}
 
-%\usepackage{natbib}
-%\bibliographystyle{unsrtnat}
-%\bibliography{BibliografiaTesi}
-
-%% Enumeration personalization Package
-%\usepackage{enumitem}
-%\setlist[enumerate]{itemsep=-4mm}
-
 %% Coding Package
 \usepackage{listings}
 
@@ -110,6 +102,21 @@ backend=bibtex]{biblatex}
 	numberstyle=\tiny
 }
 
+% Packge per Box Colorati alle Equazioni
+\usepackage{amsmath}
+\usepackage{empheq}
+\usepackage[most]{tcolorbox}
+\newtcbox{\mathCalc}[1][]{
+	nobeforeafter, math upper, tcbox raise base,
+	enhanced, colframe=blue!30!black,
+	colback=cyan!20, boxrule=1pt,#1
+}
+
+\newtcbox{\mathResult}[1][]{
+	nobeforeafter, math upper, tcbox raise base,
+	enhanced, colframe=blue!30!black,
+	colback=Azure!20, boxrule=1pt,#1
+}
 %-----------------------------
 % CONFIGURAZIONE DELLA PAGINA
 %-----------------------------
