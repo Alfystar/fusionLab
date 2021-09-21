@@ -1,9 +1,9 @@
 \chapter*{Appendice A\\ Arduino Code}\label{ArduinoCode}
 \addcontentsline{toc}{chapter}{Appendice A - Codice Arduino}
+\setcounter{chapter}{\thechapter + 1}
 
 \section{Set-up Registri}
-
-\subsubsection{Tic Timer}
+\subsection{Tic Timer}
 
 \begin{lstlisting}[style=cppStyle,caption={Tic Timer},label=lst:ticTimer] 
 	void periodicTask(int time) { 		// time in micro secondi
@@ -18,7 +18,7 @@
 \end{lstlisting}
 Questa funzione imposta il TIMER2 in modalità Fast PWM, ovvero che si resetta quando arriva al conteggio finale, e calcola il valore da mettere nel registro affinchè il conteggio sia il più vicino possibile a tempo desiderato
 
-\subsubsection{Frequenza PWM}
+\subsection{Frequenza PWM}
 
 \begin{lstlisting}[style=cppStyle,caption={Frequenza PWM},label=lst:pwmFreq] 
 enum pwmFreq: char {
@@ -164,6 +164,8 @@ int rapidShot(uint64_t t) {
 
 \chapter*{Appendice B\\ EMP Code}\label{EMPCode}
 \addcontentsline{toc}{chapter}{Appendice B - Codice EMP}
+\setcounter{chapter}{\thechapter + 1}
 
 \chapter*{Appendice C\\ Matlab Post Elaborazione}\label{MatlabCode}
 \addcontentsline{toc}{chapter}{Appendice C - Matlab Post Elaboration}
+\setcounter{chapter}{\thechapter + 1}
