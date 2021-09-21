@@ -1,5 +1,4 @@
 \documentclass[a4paper, 15pt]{report}
-%\usepackage[latin1]{inputenc}
 \usepackage[utf8]{inputenc}
 \usepackage[italian]{babel}
 \usepackage[T1]{fontenc}
@@ -13,30 +12,6 @@
 \usepackage{fancyhdr}
 \usepackage{tesisty}
 
-%-------------------------------
-% DEFINIZIONE DEGLI ENVIRONMENT
-%-------------------------------
-
-\newtheorem{obs}{Osservazione}[section]
-\newenvironment{oss}
-    {\begin{obs}\begin{normalfont}}
-    {\hfill $\square \!\!\!\!\checkmark$ \end{normalfont}\end{obs}}
-
-\newtheorem{pro}{Problema}[chapter]
-\newenvironment{prob}
-    {\begin{pro}\begin{normalfont}}
-    {\hfill $\spadesuit$ \end{normalfont}\end{pro}}
-
-\newtheorem{teor}{Teorema}[section]
-\newenvironment{teorema}
-    {\begin{teor}\textit }
-    {\hfill  \end{teor}}
-
-\newtheorem{defn}{Definizione}[section]
-\newenvironment{de}
-    {\begin{defn}\begin{normalfont}}
-    {\hfill $\clubsuit$ \end{normalfont}\end{defn}}
-
 %-----------------------------------
 % CUSTOM PACKAGE && ENVIROMENT SET
 %-----------------------------------
@@ -47,8 +22,9 @@
 \definecolor{mauve}{rgb}{0.224, 0.176, 0.255}
 \definecolor{NavyBlue}{HTML}{000080}
 \definecolor{Azure}{HTML}{007FFF}
-
-%% Link Package
+\definecolor{ProcessBlue}{HTML}{0085CA}
+\definecolor{columbiablue}{rgb}{0.61, 0.87, 1.0}
+%% Link Package	---------------------
 \usepackage{hyperref}
 \hypersetup{
 	colorlinks=true,
@@ -60,11 +36,11 @@
 	pdfpagemode=FullScreen,
 }
 
-%% Graphics Package
+%% Graphics Package ---------------------------------------
 \usepackage{graphicx}
 \graphicspath{{imgs/}}
 
-%% Bibliografia Package
+%% Bibliografia Package -----------------------------------
 \usepackage[
 style=numeric-comp,
 useprefix,
@@ -73,7 +49,7 @@ backend=bibtex]{biblatex}
 \addbibresource{BibliografiaTesi.bib}
 \usepackage{csquotes}
 
-%% Coding Package
+%% Coding Package -----------------------------------------
 \usepackage{listings}
 
 % define general style
@@ -102,9 +78,11 @@ backend=bibtex]{biblatex}
 	numberstyle=\tiny
 }
 
-% Packge per Box Colorati alle Equazioni
+% Package per Box Colorati alle Equazioni ------------------
 \usepackage{amsmath}
 \usepackage{empheq}
+\usepackage{mathtools}
+
 \usepackage[most]{tcolorbox}
 \newtcbox{\mathCalc}[1][]{
 	nobeforeafter, math upper, tcbox raise base,
@@ -117,6 +95,54 @@ backend=bibtex]{biblatex}
 	enhanced, colframe=blue!30!black,
 	colback=Azure!20, boxrule=1pt,#1
 }
+
+\newtcbox{\mathStep}[1][]{
+	nobeforeafter, math upper, tcbox raise base,
+	enhanced, colframe=blue!30!black,
+	colback=ProcessBlue!40, boxrule=1pt,#1
+}
+
+% Package per Liste -----------------------------------------
+\usepackage{enumitem}
+
+% Package per aggiungere il tab -----------------------------
+\usepackage{tabto}   
+
+
+% Package per aggiungere box colorati -----------------------
+\usepackage{mdframed}
+
+
+
+%-------------------------------
+% DEFINIZIONE DEGLI ENVIRONMENT
+%-------------------------------
+\usepackage{setspace}
+
+\newtheorem{obs}{Osservazione}[section]
+\newenvironment{oss}
+{\begin{mdframed}[backgroundcolor=columbiablue!10]\begin{obs}\begin{normalfont}}
+			{\hfill $\square \!\!\!\!\checkmark$ \end{normalfont}\end{obs}\end{mdframed}}
+
+\newtheorem{pro}{Problema}[chapter]
+\newenvironment{prob}
+{\begin{pro}\begin{normalfont}}
+		{\hfill $\spadesuit$ \end{normalfont}\end{pro}}
+
+\newtheorem{teor}{Teorema}[section]
+\newenvironment{teorema}[1][thName]
+{\begin{mdframed}[backgroundcolor=gray!10]\begin{teor}[#1]\hfill\textit\break }
+		{\hfill $\blacksquare$ \end{teor}\end{mdframed}}
+
+\newtheorem{defn}{Definizione}[section]
+\newenvironment{de}[1][defName]
+{\begin{mdframed}[backgroundcolor=blue!10] \begin{defn}[#1]\hfill\begin{spacing}{1.0}\begin{normalfont}}
+				{\hfill $\clubsuit$ \end{normalfont}\end{spacing}\end{defn}\end{mdframed}}
+
+\newenvironment{leg}
+{\begin{mdframed}[backgroundcolor=cyan!10]\begin{itemize} [topsep=0pt,itemsep=0mm, leftmargin=2mm]}
+		{\end{itemize}\end{mdframed}}
+
 %-----------------------------
 % CONFIGURAZIONE DELLA PAGINA
 %-----------------------------
@@ -231,6 +257,10 @@ backend=bibtex]{biblatex}
 \include{capitolo3-ModelloMatematico.tex}
 \include{capitolo4-Controllo.tex}
 \include{conclusioni.tex}
+
+% Programmi usati
+\chapter{Software, Toolchain, Strumenti}\label{cap:strumenti}
+Per la realizzazione di questa tesi sono stati usati:
 \include{appendice.tex}
 
 % ELENCO DELLE FIGURE (OPZIONALE)
@@ -243,8 +273,7 @@ backend=bibtex]{biblatex}
 \addcontentsline{toc}{chapter}{Bibliografia}
 
 
-% Programmi
-\chapter{Software, Toolchain, Strumenti}\label{cap:strumenti}
+
 
 %\addcontentsline{toc}{chapter}{Bibliografia}
 %\begin{thebibliography}{99}

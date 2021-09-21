@@ -188,5 +188,19 @@
     \field{month}{02}
     \field{year}{1998}
   \endentry
+
+  \entry{Transformatore}{booklet}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{T}
+    \field{sortinithash}{T}
+    \field{title}{Trasformatore Monofase}
+    \verb{url}
+    \verb https://www.docenti.unina.it/webdocenti-be/allegati/materiale-didatti
+    \verb co/34030176
+    \endverb
+    \list{institution}{1}{%
+      {UNIVERSITA' DEGLI STUDI DI NAPOLI, FEDERICO II}%
+    }
+  \endentry
 \enddatalist
 \endinput

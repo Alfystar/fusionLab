@@ -3,18 +3,18 @@
 \begin{minipage}{12cm}\textit{
 		In questo capitolo si vogliono descrivere e caratterizzare i 3 elementi salienti dell'esperimento:
 		\begin{enumerate}
-			\item \nameref{TrasformatoreModelloTokamak}
+			\item \nameref{Trasformatore}
 			\item \nameref{CurrentSense}
 			\item \nameref{CurrentDriver}
 		\end{enumerate}
 	}
-	Verranno analizzate le loro caratteristiche chiavi per mettere in luce il perché della scelta, e si evidenzieranno eventuali problemi che affliggono in componenti, problemi di cui si è tenuto conto nello sviluppo del progetto per poterli annullare. 
+Verranno analizzate le loro caratteristiche chiavi per mettere in luce il perché della scelta, e si evidenzieranno eventuali problemi che affliggono in componenti, problemi di cui si è tenuto conto nello sviluppo del progetto per poterli annullare. 
 \end{minipage}
 
 %\vspace*{1cm}
 \newpage
 
-\section{Trasformatore $\Rightarrow$ Modello di Tokamak}\label{TrasformatoreModelloTokamak}
+\section{Trasformatore $\Rightarrow$ Modello di Tokamak}\label{Trasformatore}
 
 Come visto nell'introduzione, la tesi ha come obiettivo la prototipazione del sistema di controllo per le bobine poloidali presenti in impianti tokamak.\\
 
@@ -29,243 +29,125 @@ Le bobine (poloidali e toroidali) servono a controllare il plasma presente nel \
 L'interazione tra le \textbf{Bobine e Plasma}, ha un modello matematico non dissimile da quello di \textbf{Trasformatore Elettrico} nella relazione \textit{Primario-Secondario} (con i dovuti paragoni e le ovvie \nonLinearita presenti nel caso di un impianto Tokamak reale).\\
 Grazie a questa similitudine è stato possibile replicare in sicurezza la fisica presente all'interno di un Tokamak, nell'ambiente controllato del laboratorio.\\
 
-\subsection{Richiami di elettronica}
-Prima di modellare ed analizzare l'esperimento della tesi, è necessario richiamare qualche proprietà/concetto di elettronica per poter comprendere i passaggi matematici e fisici:
-\vspace{-5mm}
-\NumTabs{7}
-\begin{itemize}[itemsep=-4mm]
-	\item \nameref{th:KirchhoffNodi}
-	\item \nameref{th:KirchhoffMaglie}
-	\item \nameref{def:induttoreIdeale}
-	\item \nameref{def:induttanza}
-	\item \nameref{def:trasformatoreIdeale}
-\end{itemize}
-
-
-\begin{teorema}[Prima legge di Kirchhoff (legge dei nodi)\label{th:KirchhoffNodi}]
-	La somma algebrica delle intensità di corrente nei rami facenti capo allo stesso nodo è nulla.
-	\begin{empheq}[box=\mathStep]{equation} \label{eq:KirchhoffNodi}
-		\sum I_k = 0
-	\end{empheq}
-\end{teorema}
-
-\begin{teorema}[Seconda legge di Kirchhoff (legge delle maglie)\label{th:KirchhoffMaglie}]
-	La somma algebrica delle f.e.m. agenti lungo i rami di una maglia è uguale alla somma algebrica dei prodotti delle intensità di corrente di ramo per le rispettive resistenze (del ramo).
-	\begin{empheq}[box=\mathStep]{equation} \label{eq:KirchhoffMaglie}
-		\sum_{\forall k} V_k = \sum_{\forall k} f_{em_k}
-	\end{empheq}
-\end{teorema}
-\vspace{-5mm}
-\noindent
-Oltre ai teoremi di Kirchhoff, che ci serviranno per ricavare le equazioni della dinamica, enunciamo ora le proprietà degli induttori, indispensabili per poter definire la loro relazione Corrente/Tensione.
-
-\begin{de}[Induttore Ideale\label{def:induttoreIdeale}]
-	Un Induttore Ideale si oppone solo alle variazioni di corrente, variando la tensione ai suoi capi di conseguenza, non presenta nessuna resistenza elettrica in caso di correnti costanti ai suoi capi.\\
-	Il suo valore è dato dal \textbf{coefficiente di autoinduzione}, tipicamente espresso con il simbolo $L$, la cui unità di è l'Henry [$H$].\\
-	Un Induttore accumula energia all'interno di un campo magnetico, e questa relazione è descritta dall'equazione:
-	\begin{empheq}[box=\mathStep]{equation} \label{eq:flussoMagnetico}
-		\Phi _{B}=Li
-	\end{empheq}
-	$ \Phi _{B} $ := \textbf{Flusso magnetico}; $L$ := \textbf{Coefficiente di autoinduzione}\\
-	Dalla legge di Faraday(ignorando momentaneamente la conservazione dell'energia, ovvero la legge di Lenz), applicata alla circuitazione del circuito costituito dalla induttanza stessa, si ha:
-	\begin{empheq}[box=\mathStep]{equation}
-		\displaystyle {\frac {d\Phi _{B}}{dt}}=V
-	\end{empheq}
-	Dove V è il potenziale indotto ai morsetti del circuito in questione. Perciò, derivando l'equazione \ref{eq:flussoMagnetico} ad entrambi i membri rispetto al tempo, si ottiene:
-	\begin{empheq}[box=\mathStep]{equation}
-		\displaystyle \frac {d\Phi _{B}}{dt}=L{\frac  {di}{dt}}+i{\frac  {dL}{dt}}
-	\end{empheq}
-	In molti casi fisici, però, l'induttanza può essere considerata costante rispetto al tempo (o tempo-invariante), da cui:
-	\begin{empheq}[box=\mathStep]{equation}
-		\displaystyle {\frac {d\Phi _{B}}{dt}}=L{\frac {di}{dt}}
-	\end{empheq}
-	Combinando le equazioni precedenti si ha:
-	\begin{empheq}[box=\mathCalc]{equation}
-		{\displaystyle V(t)={L{\frac {di(t)}{dt}}}} \Leftrightarrow i(t) = \frac{1}{L} \int V(t) dt
-	\end{empheq}
-\end{de}
-
-\noindent
-Nel calcolo della \ref{eq:flussoMagnetico}, abbiamo omesso la legge di Lenz, poichè per parametrizzare l'induttore il segno "-" complica inutilmente i calcoli essendo assegnato dalla polarizzazione del circuito esaminato.\\
-Essa al contrario, prende un importanza notevole in presenza di fenomeni di \textbf{Induttanza}:
-\begin{de} [Induttanza\label{def:induttanza}]
-	L'induttanza è la proprietà dei circuiti elettrici tale per cui la corrente (intesa variabile nel tempo) che li attraversa induce una \textbf{Forza ElettroMotrice} (f.e.m.) Indotta che si oppone alla variazione di corrente, per la legge di Lenz.
-	In questi scenari (vedi Trasformatore Elettrico ad esempio), 2 ciruiti sono accoppiati magneticamente tra di loro attraverso 2 induttori, si ottiene quindi che, la variazione del flusso magnetico da parte del primo induttore, crea una \textbf{Forza ElettroMotrice} (f.e.m.) indotta contraria:
-	\begin{empheq}[box=\mathCalc]{equation}
-		{\displaystyle -{\frac {d\Phi _{B}}{dt}}={\mathcal {E}}=V}
-	\end{empheq}
-	Dove $ \mathcal{E} $ è la \textbf{Forza ElettroMotrice} (f.e.m.) indotta.
-\end{de}
-\noindent
-Per finire, unendo insieme i concetti di \nameref{def:induttoreIdeale} e \nameref{def:induttanza} è possibile ottenere la descrizione matematica di un Trasformatore Monofase Ideale (\cite{Transformatore}\footnote{Senso di misura del secondario opposto nell'articolo a quello qui presentato}):
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=0.8\textwidth]{Trasformatore/trasformatore.png}
-	\caption[Trasformatore ideale con Campo magnetico]{Trasformatore Ideale}
-\end{figure}
-
-\begin{de}[Trasformatore Ideale Monofase\label{def:trasformatoreIdeale}]
-	Il Trasformatore è una macchina elettrica, basata sul fenomeno dell'induzione elettromagnetica, destinata a trasformare, tra il circuito primario (ingresso) e il circuito secondario (uscita) del trasformatore, i fattori tensione e corrente della potenza elettrica.\\
-	Trasferisce quindi energia elettrica da un circuito elettrico a un altro che ha una tensione diversa, accoppiandoli induttivamente, senza che siano a contatto tra loro gli avvolgimenti del trasformatore.
-	Il trasformatore è una macchina reversibile.\\
-	
-	Il Trasformatore è costruito affinché il circuito Primario e il Secondario condividano lo stesso campo magnetico, e quindi lo stesso flusso $\Phi _{B}$.\\
-	Nel caso ideale, quindi, si ha che:\\
-	\begin{empheq}[box=\mathCalc]{equation}
-				\Phi_{B} = \Phi_{B_P} - \Phi_{B_S}
-	\end{empheq}
-	Siccome tale flusso varia nel tempo, induce nei due avvolgimenti le f.e.m.(\nameref{def:induttanza}):
-	\begin{empheq}[box=\mathCalc]{equation}
-		e_p = N_1 \frac{d \Phi_{B}}{dt} ; e_s = -N_2 \frac{d \Phi_{B}}{dt}
-	\end{empheq}
-	I segni non sono entrambi concordi a causa del verso del flusso, che nel primario è concorde e nel secondario discorde (e qui torna la forza di Lenz).\\
-	Viste dai morsetti del trasformatore, abbiamo che le tensioni istantanee (dovute alle correnti presenti nei 2 rami) sono pari a:
-	\begin{empheq}[box=\mathCalc]{equation} \label{eq:tensioneTrasformatore}
-		\displaystyle \left \{ \begin{array}{l}
-	V_{P} = R_P I_P + L_{PP} \dot I_P - L_{SP} \dot I_S \\
-	V_{S} = R_S I_S - L_{PS} \dot I_P + L_{SS} \dot I_S                                             \\
-\end{array}
-\right.
-	\end{empheq}
-	Dove $R_P$ e $R_S$ rappresentano le resistenze equivalenti viste dai morsetti (i carichi).\\
-	Con i coefficienti di mutua induttanza che si ricavano dalla Def di \nameref{def:induttoreIdeale}:
-	
-	\begin{center}
-		\begin{tabular}[t]{c c}	
-		$ \displaystyle L_{pp} = \frac{N_P  \Phi_{B_P} }{i_P} $ & $ \displaystyle L_{ps} = \frac{N_S  \Phi_{B_P} }{i_P} $\\[5mm]
-		$ \displaystyle L_{sp} = \frac{N_P  \Phi_{B_S} }{i_S} $ & $ \displaystyle L_{ps} = \frac{N_S  \Phi_{B_S} }{i_S} $
-	\end{tabular}
-	\end{center}
-\end{de}
-
-\noindent
-Arrivati a questo punto abbiamo gli strumenti necessari per poter modellare matematicamente l'esperimento.
-\newpage
-
 \subsection{Modellazione Fisica}
 %La fisica che descrive la dinamica di un Plasma passa per la soluzione della \textbf{Equazioni alle derivate parziali di Grad-Shafranov} (\textit{Grad-Shafranov PDE}).
-Usando i concetti esposti, vediamo ora una buona approssimazione con modello lineare della dinamica tra \textbf{Bobina e Plasma}.\\
-Come descritto nell'articolo di \cite{TokamakCircuit}, è possibile modellare la dinamica \textbf{Bobina - Plasma} come fosse il circuito di un
-\nameref{def:trasformatoreIdeale}:
+Come primo passo, vedremo ora una buona approssimazione mediante modello lineare di questa dinamica tra \textbf{Bobina e Plasma}: come descritto nell'articolo di \cite{TokamakCircuit}, è possibile modellare la dinamica \textbf{Bobina - Plasma} come fosse il circuito di un Trasformatore elettrico ideale.
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1\textwidth]{Trasformatore/PlasmaCircuit-PlasmaCircuit.png}
 	\caption[Circuito Equivalente Bobina/Plasma all'interno di un Tokamak]{Circuito Equivalente Bobina/Plasma}
 \end{figure}
 \NumTabs{11}
-\begin{leg}
-	\item $V(t)$\tab:= Tensione di controllo della Corrente $I_T$
+ \begin{leg}
+	\item $V(t)$\tab:= Input di Controllo della Corrente $I_T$
 	\item $I_T$\tab:= Corrente del Trasformatore
 	\item $R_T$\tab:= Resistenza equivalente Trasformatore
 	\item $I_p$\tab:= Corrente di Plasma
 	\item $R_p$\tab:= Resistenza di Plasma
-	\item $M_{Tp}$\tab:= Coefficiente di Induttanza Trasformatore $\rightarrow$ Plasma
+	\item $M_{Tp}$\tab:= Coefficiente di mutua induttanza
 \end{leg}
 \paragraph{Difformità dalla realtà} Nella realtà $R_p$ e $M_{Tp}$ sono dei parametri che variano in funzione dello stato del plasma (Temperatura, Energia, Evoluzione dell'esperimento, ecc\ldots), ma per ovvie ragioni di difficoltà nel riprodurre in laboratorio simili \nonLinearita, noi prenderemo per costanti questi parametri.
 
 \subsection{Semplificazione Primario - Secondario}
 Sempre dallo stesso articolo di \cite{TokamakCircuit}, si evince che è possibile modellare questa relazione tra i 2 circuiti prendendo in considerazione \textbf{solo} le forze di induzione dovute alla corrente che il Primario trasferisce sul Secondario, ciò permette di semplificare ulteriormente il circuito trascurando le correnti indotte dal Plasma dentro la Bobina del Primario.\\
 Usando queste osservazioni si ottiene quindi il circuito equivalente:
-\begin{figure}[h]	\label{fig:PlasmaSemplificato}
+\begin{figure}[h]
 	\centering
 	\includegraphics[width=1\textwidth]{Trasformatore/PlasmaCircuit-EquivalentCalc.png}
 	\caption[Circuito Equivalente Bobina/Plasma all'interno di un Tokamak trascurando l'induzione del plasma verso la bobina]{Circuito equivalente Bobina/Plasma semplificato}
-
+	\label{fig:PlasmaSemplificato}
 \end{figure}
 
 \NumTabs{11}
 \begin{leg}
-	\item $V(t)$\tab:= Tensione di controllo della corrente $I_T$
+	\item $V(t)$\tab:= Input di Controllo della Corrente $I_T$
 	\item $I_T$\tab:= Corrente del Trasformatore
 	\item $R_T$\tab:= Resistenza equivalente Trasformatore
 	\item $I_p$\tab:= Corrente di Plasma
 	\item $R_p$\tab:= Resistenza di Plasma
-	\item $M_{Tp}$\tab:= Coefficiente di Induttanza Trasformatore $\rightarrow$ Plasma
+	\item $M_{Tp}$\tab:= Coefficiente di mutua induttanza
 	\begin{itemize} [topsep=-1mm,itemsep=0mm]
 		\item $L_T$\tab:= Induttanza equivalente Trasformatore
 		\item $L_p$\tab:= Induttanza equivalente Plasma
 	\end{itemize}
 \end{leg}
-\noindent
-Usando questa semplificazione dall'equazione \ref{eq:tensioneTrasformatore} del trasformatore ignoriamo che la tensione sul Primario è influenzata dal Secondario; in questa condizione il circuito del Primario evolve come sistema indipendente rispetto al Secondario, e la sua evoluzione influenza il Secondario.
 
 \newpage
-\subsection{Dal circuito alla dinamica}\label{subsec:dinamicaCircuito}
-Analizziamo ora la dinamica del circuito \ref{fig:PlasmaSemplificato}.
-\subsubsection{Dinamica di Plasma}	
-\vspace{-5mm}
- Iniziando dal calcolare la dinamica nella corrente di Plasma usando la \nameref{th:KirchhoffMaglie}:
- 	\begin{empheq}[box=\mathStep]{equation*}
- 		F_{em} = L_p \dot I_p + I_p R_p
- 	\end{empheq}
-Sappiamo in oltre che la $F_{em}$, grazie all'\nameref{def:induttanza} del circuito è pari a: 
- 	\begin{empheq}[box=\mathStep]{equation*} 
-	F_{em} = -M_{Tp} \dot I_T
-\end{empheq}
-Da cui otteniamo:
-\begin{empheq}[box=\mathCalc]{equation} \label{eq:correntePlasmaDinamica}
-	-M_{Tp} \dot I_T = L_p \dot I_p + I_p R_p
-\end{empheq}
-{\footnotesize Da notare la somiglianza con l'equazione del trasformatore \ref{eq:tensioneTrasformatore}}
+\subsection{Dal circuito alla dinamica}
+Per poter analizzare la Figura \ref{fig:PlasmaSemplificato}, è necessario richiamare 3 proprietà/concetti di elettronica:
+\NumTabs{7}
+\begin{itemize}[itemsep=-4mm]
+	\item \nameref{th:KirchhoffNodi}
+	\item \nameref{th:KirchhoffMaglie} 
+	\item \nameref{def:induttoreIdeale} 
+	\item \nameref{def:induttanza} 
+	\item \nameref{def:trasformatoreIdeale} 
+\end{itemize}
 
-\subsubsection{Dinamica del Trasformatore}
-\vspace{-5mm}
-Vediamo ora la dinamica della corrente del Trasformatore, in funzione della \textit{Tensione di controllo}:\\
-Sempre grazie alla \nameref{th:KirchhoffMaglie} scriviamo:
-\begin{empheq}[box=\mathCalc]{equation} \label{eq:correnteTrasformatoreDinamica}
-	V(t) = L_T \dot I_T + I_T R_T
+
+\begin{teorema}[Prima legge di Kirchhoff (legge dei nodi)\label{th:KirchhoffNodi}] 
+	La somma algebrica delle intensità di corrente nei rami facenti capo allo stesso nodo è nulla.
+	\begin{empheq}[box=\mathStep]{equation} \label{eq:KirchhoffNodi}
+		\sum I_k = 0
+	\end{empheq}
+\end{teorema}
+
+\begin{teorema}[Seconda legge di Kirchhoff (legge delle maglie)\label{th:KirchhoffMaglie}]	
+	La somma algebrica delle f.e.m. agenti lungo i rami di una maglia è uguale alla somma algebrica dei prodotti delle intensità di corrente di ramo per le rispettive resistenze (del ramo).
+	\begin{empheq}[box=\mathStep]{equation} \label{eq:KirchhoffMaglie}
+		\sum_{\forall k} V_k = \sum_{\forall k} f_{em_k}
+	\end{empheq}
+\end{teorema}
+
+\noindent
+Oltre ai teoremi di Kirchhoff, che ci serviranno per ricavare le equazioni della dinamica, enunciamo ora le proprietà degli induttori, indispensabili per poter definire la loro relazione Corrente/Tensione.
+
+\begin{de}[Induttore Ideale\label{def:induttoreIdeale}]
+Un Induttore Ideale si oppone solo alle variazioni di corrente, variando la tensione ai suoi capi di conseguenza, non presenta nessuna resistenza elettrica in caso di correnti costanti ai suoi capi.\\
+Il suo valore è dato dal \textbf{coefficiente di autoinduzione}, tipicamente espresso con il simbolo $L$, la cui unità di è l'Henry [$H$].\\
+Un Induttore accumula energia all'interno di un campo magnetico, e questa relazione è descritta dall'equazione:
+\begin{empheq}[box=\mathStep]{equation} \label{eq:flussoMagnetico}
+\Phi _{B}=Li
 \end{empheq}
+$ \Phi _{B} $ := \textbf{Flusso magnetico}; $L$ := \textbf{Coefficiente di autoinduzione}\\
+Dalla legge di Faraday(ignorando momentaneamente la conservazione dell'energia, ovvero la legge di Lenz), applicata alla circuitazione del circuito costituito dalla induttanza stessa, si ha:
+\begin{empheq}[box=\mathStep]{equation}
+\displaystyle {\frac {d\Phi _{B}}{dt}}=V
+\end{empheq}
+Dove V è il potenziale indotto ai morsetti del circuito in questione. Perciò, derivando l'equazione \ref{eq:flussoMagnetico} ad entrambi i membri rispetto al tempo, si ottiene:
+\begin{empheq}[box=\mathStep]{equation}
+\displaystyle \frac {d\Phi _{B}}{dt}=L{\frac  {di}{dt}}+i{\frac  {dL}{dt}}
+\end{empheq}
+In molti casi fisici, però, l'induttanza può essere considerata costante rispetto al tempo (o tempo-invariante), da cui:
+\begin{empheq}[box=\mathStep]{equation}
+	\displaystyle {\frac {d\Phi _{B}}{dt}}=L{\frac {di}{dt}}
+\end{empheq}
+Combinando le equazioni precedenti si ha:
+\begin{empheq}[box=\mathCalc]{equation}
+{\displaystyle V(t)={L{\frac {di(t)}{dt}}}} \Leftrightarrow i(t) = \frac{1}{L} \int V(t) dt
+\end{empheq}
+\end{de}
+
+\noindent
+Nel calcolo della \ref{eq:flussoMagnetico}, abbiamo omesso la legge di Lenz, poichè per parametrizzare l'induttore il segno "-" complica inutilmente i calcoli essendo assegnato dalla polarizzazione del circuito esaminato.\\
+Essa al contrario, prende un importanza notevole in presenza di fenomeni di \textbf{Induttanza}:
+\begin{de} [Induttanza\label{def:induttanza}]
+ 	L'induttanza è la proprietà dei circuiti elettrici tale per cui la corrente (intesa variabile nel tempo) che li attraversa induce una \textbf{Forza ElettroMotrice} (f.e.m.) Indotta che si oppone alla variazione di corrente, per la legge di Lenz.
+ 	In questi scenari (vedi Trasformatore Elettrico ad esempio), 2 ciruiti sono accoppiati magneticamente tra di loro attraverso 2 induttori, si ottiene quindi che, la variazione del flusso magnetico da parte del primo induttore, crea una \textbf{Forza ElettroMotrice} (f.e.m.) indotta contraria:
+ 	\begin{empheq}[box=\mathCalc]{equation}
+ {\displaystyle -{\frac {d\Phi _{B}}{dt}}={\mathcal {E}}=V}	
+\end{empheq}
+Dove $ \mathcal{E} $ è la \textbf{Forza ElettroMotrice} (f.e.m.) indotta.
+ \end{de}
+
+Per finire,
+ \begin{de}[Trasformatore Ideale Monofase\label{def:trasformatoreIdeale}]
+ 	\cite{Transformatore}
+ 	
+ \end{de}
+
 
 \subsection{Funzione di Trasferimento}
-Nella sezione \ref{subsec:dinamicaCircuito} abbiamo ottenuto la dinamica istantanea dei 2 rami del circuito \ref{fig:PlasmaSemplificato}, ricaveremo ora le funzioni di trasferimento dei 2 rami e troveremo la dinamica del Trasformatore.
-\subsubsection{Funzione di Trasferimento Plasma}
-\vspace{-5mm}
-Partendo dall'equazione \ref{eq:correntePlasmaDinamica}, supponendo condizioni iniziali nulle, abbiamo:
-\begin{empheq}[box=\mathStep]{equation*} 
-	s I_p L_p  + I_p R_p = -s I_T M_{Tp} \Rightarrow I_p( s L_p + R_p) = -s I_T M_{Tp} \Rightarrow I_p(s) = \frac{-s M_{Tp}}{( s L_p + R_p)} I_T(s)
-\end{empheq}
-La cui, funzione di trasferimento risulta essere:
-\begin{empheq}[box=\mathCalc]{equation} \label{eq:correntePlasmaLaplace}
-\frac{I_p(s)}{I_T(s)}  = \frac{-s M_{Tp}}{( s L_p + R_p)}
-\end{empheq}
-
-\subsubsection{Funzione di Trasferimento Trasformatore}
-\vspace{-5mm}
-Similmente, partendo dall'equazione \ref{eq:correnteTrasformatoreDinamica} si ricava:
-\begin{empheq}[box=\mathStep]{equation*} 
-	s I_T L_T  + I_T R_T = V(s) \Rightarrow I_T( s L_T + R_T) = V(s) \Rightarrow I_T(s) = \frac{1}{(s L_T + R_T)} V(s)
-\end{empheq}
-
-La cui, funzione di trasferimento risulta essere:
-\begin{empheq}[box=\mathCalc]{equation} \label{eq:correnteTrasformatoreLaplace}
-	\frac{I_T(s)}{V(s)}  = \frac{1}{(s L_T + R_T)}
-\end{empheq}
-
-\begin{oss} \label{oss:Iref}
-	La funzione di trasferimento che abbiamo ottenuto rispecchia il circuito dell'esperimento, noi però abbiamo un sistema che si controlla in corrente e che ha un uscita in corrente potremmo allora riassegnare l'ingresso come:
-	\begin{empheq}[box=\mathCalc]{equation*} 
-		V(t)=I_{ref}(t) \cdot R_T \Rightarrow I_{ref}(t) = \frac{V(t)}{R_T}
-	\end{empheq}
-	Ottenendo così: 
-	\begin{empheq}[box=\mathStep]{equation}
-		I_T(s) = \frac{R_T}{(s L_T + R_T)} I_{ref}(s) = \frac{1}{(s \frac{L_T}{R_T} + 1)} I_{ref}(t)
-	\end{empheq}
-	In questa forma possiamo osservare che, per $I_{ref}(t)=I_{ref}$ costante, superato il transitorio, si ottiene $I_T = I_{ref}$, da cui abbiamo che la corrente sul trasformatore viene attuata con un certo ritardo dovuto alla costante di tempo $\tau = \frac{L_T}{R_T}$
-\end{oss}
-
-\subsubsection{Funzione di Trasferimento Complessiva}\label{subsubsec:FuncTrasfImpianto}
-\vspace{-5mm}
-Connettendo in serie i 2 blocchi e tenendo conto dell'osservazione \ref{oss:Iref} si ottiene:
-\vspace{-3mm}
-\begin{empheq}[box=\mathCalc]{equation} \label{eq:correnteTrasformatoreLaplace}
-	\frac{I_p}{I_{ref}(s)} = \frac{I_T(s)}{I_{ref}(s)} \cdot \frac{I_p(s)}{I_T(s)}  = -\frac{s M_{Tp}}{( s L_p + R_p)(s L_T + R_T)}
-\end{empheq}
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=1\textwidth]{Trasformatore/PlasmaCircuit-SchemaBlocchi.png}
-	\caption[Schema a Blocchi della funzione di trasferimento della corrente di Plasma]{Schema a Blocchi Corrente di Plasma}
-\end{figure}
 
 \newpage
 
@@ -393,7 +275,7 @@ Il risultato della computazione, oltre ad essere usato nel controllo è inviato 
 Usando nell'esperimento un ADC a 10Bit con tensione di riferimento a 5V, abbiamo che la massima sensibilità del \microC, ovvero il suo bit meno significativo è pari a:
 %\vspace{-5mm}
 \begin{empheq}[box=\mathResult]{equation*}
-	V_{step}=\frac{Vcc}{2^{10}-1} = 4,887mV
+V_{step}=\frac{Vcc}{2^{10}-1} = 4,887mV
 \end{empheq}
 \noindent
 Il che equivale a una \textbf{Sensibilità di Corrente} del $\mu$Controllore pari a:
@@ -461,12 +343,12 @@ Il driver permette 2 modalità di funzionamento:
 Per il nostro esperimento si è scelto di usare il collegamento \textbf{\underline{Singolo PWM}} così da evitare spiacevoli sorprese e avere il PWM di controllo sempre sincronizzato.	
 
 \newpage
-\subsection{Benchmark del Driver}
+\subsection{Benchmark Driver}
 Il driver sulla carta à buone prestazioni, ma non sono descritte le sue \nonLinearita, per farle risaltare si sono effettuati 2 esperimenti usando differenti input di controllo:
 \begin{enumerate}
 	\item \nameref{lst:ondaTriangloare} \\ \vspace{-11mm}
 	      \begin{figure}[h]
-		      % TODO: Creare grafico 17 senza Errore e Zoomando meglio la deadzone
+% TODO: Creare grafico 17 senza Errore e Zoomando meglio la deadzone
 		      \centering
 		      \includegraphics[height=0.5\textheight]{IBT-2/17-triangle-Trasformatore.pdf}
 		      \caption[Esperimento con Onda Triangolare]{Onda Triangolare}
@@ -477,7 +359,7 @@ Il driver sulla carta à buone prestazioni, ma non sono descritte le sue \nonLin
 	\item \nameref{lst:ondaTrapezoidale} \\
 	      \begin{figure}[h]
 		      \centering
-		      % TODO: Creare grafico 12 senza Errore e Zoomando meglio la deadzone
+% TODO: Creare grafico 12 senza Errore e Zoomando meglio la deadzone
 		      \includegraphics[height=0.5\textheight]{IBT-2/12-rapidShot-Trasformatore.pdf}
 		      \caption[Esperimento con Onda Trapezoidale]{Onda Trapezoidale}
 	      \end{figure}  \vspace{-10mm}
