@@ -22,6 +22,8 @@ int rampEps(uint64_t t, int vStart, uint64_t tStart, int vEnd, unsigned int eps)
 
 /// Complex signal
 int triangleSignal(uint64_t t, int msQuartPeriod);
+int triangleSignalEps(uint64_t t);
+
 int rapidShot(uint64_t t);
 int rapidShotEps(uint64_t t);
 

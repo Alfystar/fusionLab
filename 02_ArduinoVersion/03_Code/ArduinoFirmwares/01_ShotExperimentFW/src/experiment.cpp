@@ -5,9 +5,9 @@
 #include "experiment.h"
 
 int controll(struct setUpPack *pMean, struct sample *pRead, unsigned long tic) {
-  //    return triangleSignal(tic, 200);
-//      return rapidShot(tic);
-  return ctrl(tic, pRead->V2_read - pMean->V2_mean);
+//  return triangleSignal(tic, 200);
+  //      return rapidShot(tic);
+    return ctrl(tic, pRead->V2_read - pMean->V2_mean);
 }
 
 /// Base Signal
@@ -67,16 +67,24 @@ int triangleSignal(uint64_t t, int msQuartPeriod) {
   return pwm;
 }
 
+int triangleSignalEps(uint64_t t) {
+  static int pwm = 0;
+  static int add = 1;
+  pwm = constrain(pwm + add, -255, 255);
+  if (abs(pwm) == 255)
+    add *= -1;
+  return pwm;
+}
 //: fai una variazione molto più rapida del PWM:
 // da 0 dufy cycle passi a 100% in 100ms, rimani su per 1 s e
 //: poi giù in 0.1s e ripeti. Poi mi chiami.
 #define tQuiet ticConvert(1000)
 
-#define t0 ticConvert(100)      // waiting start
-#define t1 ticConvert(100) + t0 // Rise Ramp
+#define t0 ticConvert(100)       // waiting start
+#define t1 ticConvert(100) + t0  // Rise Ramp
 #define t2 ticConvert(1000) + t1 // High set
-#define t3 ticConvert(100) + t2 // falling Ramp
-#define t4 tQuiet + t3          // 0 set
+#define t3 ticConvert(100) + t2  // falling Ramp
+#define t4 tQuiet + t3           // 0 set
 
 int rapidShot(uint64_t t) {
   static uint64_t startTic = 0;
@@ -144,11 +152,11 @@ int rapidShotEps(uint64_t t) {
 }
 
 // Controllo
-#define tcStart ticConvert(100)          // start Experiment
+#define tcStart ticConvert(100)           // start Experiment
 #define tcEnd ticConvert(10000) + tcStart // stop Experiment
 
 #define vScale (5.0 / 1023.0)
-#define k  0.8
+#define k 0.8
 #define dk 0.05
 
 long integral = 0;
@@ -160,17 +168,17 @@ long dIntegral3 = 0;
 int ctrl(uint64_t t, int v2) {
   if (t < tcStart || t > tcEnd)
     return 0;
-  long e = (V2Ref - v2);// * vScale;
+  long e = (V2Ref - v2); // * vScale;
   //  integral +=  e;
 
   dIntegral1 = dIntegral1 + dIntegral2;
   dIntegral2 = dIntegral2 + e;
 
-//  dIntegral1 = dIntegral1 + dIntegral2;
-//  dIntegral2 = dIntegral2 + dIntegral3;
-//  dIntegral3 = dIntegral3 + e;
-//  int pwmCtrl = 200;
-    int pwmCtrl = (int)((dk * dIntegral1 + k * dIntegral2));
+  //  dIntegral1 = dIntegral1 + dIntegral2;
+  //  dIntegral2 = dIntegral2 + dIntegral3;
+  //  dIntegral3 = dIntegral3 + e;
+  //  int pwmCtrl = 200;
+  int pwmCtrl = (int)((dk * dIntegral1 + k * dIntegral2));
   pwmCtrl = constrain(pwmCtrl, -1000, 1000);
   return pwmCtrl;
 }

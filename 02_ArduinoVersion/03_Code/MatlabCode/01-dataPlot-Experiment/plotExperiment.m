@@ -1,43 +1,15 @@
 clear variables
 close all
 
-experiment("experiment/capture.txt", 300,[-6,12])
+% Esperimenti Tesi
+% TODO: Creare funzione esperimento che non mostri errore e sia ben
+% formattato
+experiment("experiment/T1-Triangolare.txt", 900)
+experiment("experiment/T2-RapidShot.txt", [200, 1200])
+experiment("experiment/T3-ControllBackup-100Ohm.txt", [90, 260],[-6,12])
 
-% experiment("experiment/06-RapidShot-EX354T.txt",3.5)
-% experiment("experiment/11-triangle-Trasformatore.txt",0.25)
-% experiment("experiment/12-rapidShot-Trasformatore.txt", 1.5)
-% experiment("experiment/13-rapidShot-30Khz.txt",1.5)
-% experiment("experiment/14-rapidShot-30Khz-Condensatore.txt",1.5)
-% experiment("experiment/15-rapidShot-30Khz-Condensatore-24V.txt",3.5)
-%
-% experiment("experiment/16-rapidShot-30Khz-Condensatore-UpDeadZone.txt",1.5)
-% experiment("experiment/17-triangle-Trasformatore.txt",1)
-% experiment("experiment/18-triangle-slow-Trasformatore.txt")
-% experiment("experiment/19-triangle-mean-Trasformatore.txt")
-%
-% experiment("experiment/20-triangle-mean-Trasformatore-deadzoneDelete.txt",1)
-% experiment("experiment/21-rapidShot-30Khz-Condensatore-deadzoneDelete.txt",0.5)
-% experiment("experiment/22-rapidShot-30Khz-Condensatore-deadzoneDelete-RapidRamp.txt",0.5)
-% experiment("experiment/23-rapidShot-30Khz-Condensatore-deadzoneDelete-SlowRamp.txt",0.5)
-% experiment("experiment/24-Ctrl-prop-trasformatore.txt",1.2)
-% experiment("experiment/27-primoInseguimento.txt",0.5)
-
-% experiment("experiment/28-Inseguimento-noCap.txt", 0.5)
-% experiment("experiment/29-Inseguimento-Cap.txt", 0.5)
-% experiment("experiment/30-Inseguimento-NoCap.txt", 0.5)
-% experiment("experiment/31-Inseguimento-Cap.txt", 0.5)
-
-% experiment("experiment/32-V2-Filter-PWMBigCap.txt", [60,500],[-6,12])
-% experiment("experiment/33-V2-Filter-PWM-NoBigCap.txt", [60,500],[-6,12])
-% experiment("experiment/34-V2-Filter-PWM-NoBigCap-all.txt", [60,500],[-6,12])
-% experiment("experiment/35-no-V2-Filter-PWM-NoBigCap-all.txt", [60,500],[-6,12])
-% experiment("experiment/36-no-V2-Filter-PWM-BigCap-all.txt", [60,500],[-6,12])
-
-% experiment("experiment/37-V2-Filter-Rp10k.txt", [60,500],[-6,12])
-% experiment("experiment/38-V2-Filter-Rp2k.txt", [60,500],[-6,12])
-% experiment("experiment/39-V2-Filter-Rp100.txt", [60,500],[-6,12])
-% experiment("experiment/40-V2-Filter-Rp1M.txt", [60,500],[-6,12])
-
+% General Experiment Block
+experiment("experiment/capture.txt", 900)
 
 
 %% Functions block

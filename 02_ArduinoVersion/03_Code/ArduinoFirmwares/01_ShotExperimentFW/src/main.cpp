@@ -111,9 +111,11 @@ void loop() {
   digitalWrite(13, !digitalRead(13));
   pWrite.read.V2_read = analogRead(V2);
   pWrite.read.Isense_read = analogRead(Isense);
-  pWrite.read.pwm = mot->drive_motor(controll(&pMean, &pWrite.read, oldTic));
 
-  //  pWrite.read.pwm = mot->actuate(rapidShotEps(oldTic)); //controllo diretto di rapidShotEps
+//   pWrite.read.pwm = mot->actuate(rapidShotEps(oldTic)); //controllo diretto di rapidShotEps
+//  pWrite.read.pwm = mot->actuate(triangleSignalEps(oldTic)); //controllo diretto di triangleSignalEps
+    pWrite.read.pwm = mot->drive_motor(controll(&pMean, &pWrite.read, oldTic));
+
   oldTic++; // Suppose no over time
 
   mpSerial.packSend(&pWrite, sizeof(pWrite.type) + sizeof(pWrite.read));
