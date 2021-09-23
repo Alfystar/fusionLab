@@ -41,7 +41,9 @@ void uartOpen() {
 
 void intHandler(int dummy) {
   cout << "\n Ctrl+c catch, send stop pack" << std::endl;
-  packLinux2Ard pWrite{1}; // End Pack
+  packLinux2Ard pWrite; // End Pack
+  pWrite.type=newRefType;
+  pWrite.ref.newRef=0;
   uart->packSend(&pWrite);
   uart->packSend(&pWrite);
   sleep(1);
@@ -57,13 +59,18 @@ int main(int argc, char *argv[]) {
   std::ofstream outfile("capture.txt");
 
   packArd2Linux pRead;
-  packLinux2Ard pWrite{actualRef}; // Start Pack
+  packLinux2Ard pWrite{startType}; // Start Pack
+
+  struct setUpPack setUp;
   struct timespec now {
   }, old{}, diff{};
-  clock_gettime(CLOCK_MONOTONIC_RAW, &old);
-  uart->packSend(&pWrite);
 
+  clock_gettime(CLOCK_MONOTONIC_RAW, &old);
+  //start handshake
+  uart->packSend(&pWrite);
+  //end handshake
   uart->getData_wait(&pRead);
+  setUp = pRead.setUp;
   outfile << "V2_mean\tIsense_mean\tdt" << std::endl;
   outfile << pRead.setUp.V2_mean << "\t" << pRead.setUp.Isense_mean << "\t" << pRead.setUp.dt << std::endl;
   outfile << "PWM\tV2_read\tIsense_read\te" << std::endl;
@@ -74,17 +81,19 @@ int main(int argc, char *argv[]) {
     clock_gettime(CLOCK_MONOTONIC_RAW, &now);
     timeSpecSub(now, old, diff);
     old = now;
-    eCalc = actualRef - (pRead.read.V2_read - pRead.setUp.V2_mean);
-    outfile << pRead.read.pwm << "\t" << pRead.read.V2_read << "\t" << pRead.read.Isense_read << "\t" << eCalc
-            << std::endl;
+    eCalc = actualRef - (pRead.read.V2_read - setUp.V2_mean);
+    outfile << pRead.read.pwm << "\t"
+            << pRead.read.V2_read << "\t"
+            << pRead.read.Isense_read << "\t"
+            << eCalc << std::endl;
     timeSpecPrint(diff, "diff");
     ticExp++;
     if (ticExp > ticConvert(1000)) {
       ticExp = 0;
-      if (pWrite.newRef == 0)
-        pWrite.newRef = volt2adc(0.5);
+      if (pWrite.ref.newRef == 0)
+        pWrite.ref.newRef = volt2adc(0.5);
       else
-        pWrite.newRef = -pWrite.newRef;
+        pWrite.ref.newRef = -pWrite.ref.newRef;
       uart->packSend(&pWrite);
     }
   }

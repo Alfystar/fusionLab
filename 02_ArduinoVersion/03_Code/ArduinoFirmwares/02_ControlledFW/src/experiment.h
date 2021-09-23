@@ -11,9 +11,6 @@
 
 #define V2Ref volt2adc(0.5)
 
-// Have to set pwm in pWrite
-int controll(struct setUpPack *pMean, struct sample *pRead, unsigned long tic);
-
 /// Base Signal
 int ramp(uint64_t t, int vStart, uint64_t tStart, int vEnd, uint64_t tEnd);
 int rampEps(uint64_t t, int vStart, uint64_t tStart, int vEnd, unsigned int eps);
@@ -32,17 +29,18 @@ class doubleIntCTRL {
   uint64_t tcEnd = 0;   // stop Experiment
 
 #define vScale (5.0 / 1023.0)
-  float k = 0.8;
-  float dk = 0.05;
+  float kp = 0.0;
+  float k1 = 0.8;
+  float k2 = 0.05;
 
   int V2currRef = 0;
-  long dIntegral1 = 0;
   long dIntegral2 = 0;
+  long dIntegral1 = 0;
   unsigned int ticSatCount = 0;
 
 public:
   doubleIntCTRL();
-  doubleIntCTRL(float k, float dk);
+  doubleIntCTRL(float kp, float k1, float k2);
 
   void setNewRef(uint64_t ticSet, int v2AdcNewRef);
   int ctrlStep(uint64_t t, int v2Adc); // v2Add già senza offset

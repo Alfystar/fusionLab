@@ -5,9 +5,9 @@
 #include "experiment.h"
 
 int controll(struct setUpPack *pMean, struct sample *pRead, unsigned long tic) {
-//  return triangleSignal(tic, 200);
+  //  return triangleSignal(tic, 200);
   //      return rapidShot(tic);
-    return ctrl(tic, pRead->V2_read - pMean->V2_mean);
+  return ctrl(tic, pRead->V2_read - pMean->V2_mean);
 }
 
 /// Base Signal
@@ -153,32 +153,42 @@ int rapidShotEps(uint64_t t) {
 
 // Controllo
 #define tcStart ticConvert(100)           // start Experiment
-#define tcEnd ticConvert(10000) + tcStart // stop Experiment
+#define tcEnd ticConvert(150) + tcStart // stop Experiment
 
 #define vScale (5.0 / 1023.0)
-#define k 0.8
-#define dk 0.05
+//// K Test0
+//#define kp 0.0
+//#define k1 0.8
+//#define k2 0.05
 
-long integral = 0;
-long dIntegral1 = 0;
+// K Test1
+#define kp 0.0
+#define k1 0.55
+#define k2 0.2
+
+// K Test2
+//#define kp 0.3
+//#define k1 0.7
+//#define k2 0.4
+
+//// K Test3
+//#define kp 0.8
+//#define k1 1.0
+//#define k2 0.8
+
 long dIntegral2 = 0;
-long dIntegral3 = 0;
+long dIntegral1 = 0;
 
 // Driver motor take value from -1000 to 1000
 int ctrl(uint64_t t, int v2) {
   if (t < tcStart || t > tcEnd)
     return 0;
   long e = (V2Ref - v2); // * vScale;
-  //  integral +=  e;
 
-  dIntegral1 = dIntegral1 + dIntegral2;
-  dIntegral2 = dIntegral2 + e;
+  dIntegral2 = dIntegral2 + dIntegral1;
+  dIntegral1 = dIntegral1 + e;
 
-  //  dIntegral1 = dIntegral1 + dIntegral2;
-  //  dIntegral2 = dIntegral2 + dIntegral3;
-  //  dIntegral3 = dIntegral3 + e;
-  //  int pwmCtrl = 200;
-  int pwmCtrl = (int)((dk * dIntegral1 + k * dIntegral2));
+  int pwmCtrl = (int)((e * kp + k1 * dIntegral1 + k2 * dIntegral2));
   pwmCtrl = constrain(pwmCtrl, -1000, 1000);
   return pwmCtrl;
 }

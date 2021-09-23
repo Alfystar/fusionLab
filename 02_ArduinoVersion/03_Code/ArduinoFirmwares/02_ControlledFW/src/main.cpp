@@ -53,9 +53,11 @@ void setup() {
   mot = new DCdriver(enPwm, inA, inB);
 
   // Wait start Request (hand-shake)
-  mpSerial.getData_wait(&pRead);
+  do{
+    mpSerial.getData_wait(&pRead);
+  } while (pRead.type==startType);
 
-  Ctrl.setNewRef(tic, pRead.newRef);
+  Ctrl.setNewRef(tic, 0);
 
 
   pWrite.type = setUpPackType;
@@ -84,15 +86,13 @@ void loop() {
     readData = mpSerial.getData_try(&pRead);
   } while (tic == oldTic);
   if (readData >= 0) {
-    Ctrl.setNewRef(oldTic, pRead.newRef);
+    Ctrl.setNewRef(oldTic, pRead.ref.newRef + pMean.V2_mean);
   }
   digitalWrite(13, !digitalRead(13));
   pWrite.read.V2_read = analogRead(V2);
   pWrite.read.Isense_read = analogRead(Isense);
 
   pWrite.read.pwm = mot->drive_motor(Ctrl.ctrlStep(oldTic, pWrite.read.V2_read - pMean.V2_mean));
-
-  //  pWrite.read.pwm = mot->actuate(rapidShotEps(oldTic)); //controllo diretto di rapidShotEps
   oldTic++; // Suppose no over time
 
   mpSerial.packSend(&pWrite, sizeof(pWrite.type) + sizeof(pWrite.read));

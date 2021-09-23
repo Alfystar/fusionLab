@@ -2,12 +2,26 @@
 #define PACK_H
 #include <stdint.h>
 
-struct _packLinux2Ard {
+struct newRef {
   int16_t newRef;
+} __attribute__((packed));
+
+struct startPack {
+  int8_t padding;
+} __attribute__((packed));
+
+enum LinuxSendType : uint8_t { newRefType, startType };
+
+
+struct _packLinux2Ard {
+  LinuxSendType type;
+  union {
+    struct newRef ref;
+    struct startPack start;
+  };
 } __attribute__((packed));
 typedef struct _packLinux2Ard packLinux2Ard;
 
-enum ardSendType : uint8_t { sampleType, setUpPackType };
 struct sample {
   int16_t pwm;
   int16_t V2_read;
@@ -19,6 +33,7 @@ struct setUpPack {
   int16_t Isense_mean; // Adc read
   int16_t dt;          // Time in us (10^-6)
 } __attribute__((packed));
+enum ardSendType : uint8_t { sampleType, setUpPackType };
 
 struct _packArd2Linux {
   ardSendType type;

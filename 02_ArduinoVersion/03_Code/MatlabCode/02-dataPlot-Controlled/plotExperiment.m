@@ -1,7 +1,7 @@
 clear variables
 close all
 
-experiment("experimentControlled/capture.txt", [60,500],[-6,12])
+experiment("experimentControlled/capture.txt")
 
 
 
@@ -10,7 +10,8 @@ experiment("experimentControlled/capture.txt", [60,500],[-6,12])
 function experiment(filepath, tLim, yLim)
 if nargin < 2
     tLim = [0,inf];
-elseif nargin < 3
+end
+if nargin < 3
     yLim = [-inf,inf];
 end
 if(length(tLim)==1)

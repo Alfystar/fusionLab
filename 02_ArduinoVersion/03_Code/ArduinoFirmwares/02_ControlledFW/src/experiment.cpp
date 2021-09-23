@@ -4,12 +4,6 @@
 
 #include "experiment.h"
 
-int controll(struct setUpPack *pMean, struct sample *pRead, unsigned long tic) {
-  //    return triangleSignal(tic, 200);
-  //      return rapidShot(tic);
-  return ctrl(tic, pRead->V2_read - pMean->V2_mean);
-}
-
 /// Base Signal
 
 // Equazione retta con valori e tempi:
@@ -143,10 +137,11 @@ int rapidShotEps(uint64_t t) {
   return pwmRapidShot;
 }
 
-doubleIntCTRL::doubleIntCTRL() : doubleIntCTRL(0.8, 0.05) {}
-doubleIntCTRL::doubleIntCTRL(float k, float dk) {
-  this->k = k;
-  this->dk = dk;
+doubleIntCTRL::doubleIntCTRL() : doubleIntCTRL(0, 0.8, 0.05) {}
+doubleIntCTRL::doubleIntCTRL(float kp, float k1, float k2) {
+  this->kp = kp;
+  this->k1 = k1;
+  this->k2 = k2;
   setNewRef(0, 0);
 }
 void doubleIntCTRL::setNewRef(uint64_t ticSet, int v2AdcNewRef) {
@@ -165,10 +160,10 @@ int doubleIntCTRL::ctrlStep(uint64_t t, int v2Adc) {
     return 0;
   long e = (V2currRef - v2Adc);
 
-  dIntegral1 = dIntegral1 + dIntegral2;
-  dIntegral2 = dIntegral2 + e;
+  dIntegral2 = dIntegral2 + dIntegral1;
+  dIntegral1 = dIntegral1 + e;
 
-  int pwmCtrl = (int)((dk * (float)dIntegral1 + k * (float)dIntegral2));
+  int pwmCtrl = (int)(((float)e * kp + k1 * (float)dIntegral1 + k2 * (float)dIntegral2));
   pwmCtrl = constrain(pwmCtrl, -1000, 1000);
   if (abs(pwmCtrl) == 1000) {
     ticSatCount++;
@@ -178,7 +173,7 @@ int doubleIntCTRL::ctrlStep(uint64_t t, int v2Adc) {
   return pwmCtrl;
 }
 void doubleIntCTRL::stateReset(int setOutput) {
-  float rap = (float)dIntegral1 / (float)dIntegral2;
-  dIntegral2 = (int)((float)setOutput / (rap * dk + k));
-  dIntegral1 = (int)(rap * (float)dIntegral1);
+  float rap = (float)dIntegral2 / (float)dIntegral1;
+  dIntegral1 = (int)((float)setOutput / (rap * k2 + k1));
+  dIntegral2 = (int)(rap * (float)dIntegral1);
 }

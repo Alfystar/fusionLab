@@ -1,32 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
+    <generated>
+      <config projectName="Marte2Moc" targetName="EMPlibs" />
+      <config projectName="Marte2Moc" targetName="Marte2Moc" />
+      <config projectName="Marte2Moc" targetName="MPcore" />
+      <config projectName="Marte2Moc" targetName="circularBuffer" />
+      <config projectName="Marte2Moc" targetName="src" />
+      <config projectName="Marte2Moc" targetName="timeOp" />
+    </generated>
+  </component>
   <component name="CMakeSettings">
     <configurations>
       <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+      <configuration PROFILE_NAME="Release" ENABLED="true" CONFIG_NAME="Release" />
     </configurations>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31dadc64-383b-4374-b0e1-edbf6e357369" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../ArduinoFirmwares/02_ControlledFW/include/pack.h" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ArduinoFirmwares/01_ShotExperimentFW/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ArduinoFirmwares/01_ShotExperimentFW/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../ArduinoFirmwares/01_ShotExperimentFW/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ArduinoFirmwares/01_ShotExperimentFW/src/experiment.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../ArduinoFirmwares/01_ShotExperimentFW/src/experiment.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ArduinoFirmwares/02_ControlledFW/.idea/.name" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ArduinoFirmwares/02_ControlledFW/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../ArduinoFirmwares/02_ControlledFW/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ArduinoFirmwares/02_ControlledFW/src/experiment.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../ArduinoFirmwares/02_ControlledFW/src/experiment.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../ArduinoFirmwares/02_ControlledFW/src/experiment.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../ArduinoFirmwares/02_ControlledFW/src/experiment.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../ArduinoFirmwares/02_ControlledFW/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../ArduinoFirmwares/02_ControlledFW/src/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../01_dataCatchShotExperimentFW/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../01_dataCatchShotExperimentFW/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/LinuxSide.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pack.h" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../../otherRepo/EMP" beforeDir="false" afterPath="$PROJECT_DIR$/../../otherRepo/EMP" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../pack-Controll.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../pack-Controll.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
   </component>
@@ -43,8 +56,14 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="cf.advertisement.text.overridden" value="true" />
     <property name="cf.first.check.clang-format" value="false" />
     <property name="cidr.known.project.marker" value="true" />
+    <property name="cmake.loaded.for.project" value="true" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RunManager" selected="CMake Application.Marte2Moc">
     <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
@@ -104,8 +123,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1632401846615</updated>
-      <workItem from="1632401847946" duration="1000" />
+      <workItem from="1632401847946" duration="5010000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>
