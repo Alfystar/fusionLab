@@ -52,18 +52,36 @@ Si tratta di un algoritmo per la codifica di byte, progettato per essere al temp
 	\caption[Esempio di COBS]{Esempio di COBS}
 \end{figure}
 
-\subsubsection{title}
-
-
 \subsection{Metodo di codifica}
+L'algoritmo di COBS trasforma una stringa arbitraria di byte, ciascuno dei quali ha un Range di valori da \textbf{[0:255]} in una nuova stringa di byte dove però ogni byte va da \textbf{[{\color{red}1}:255]}. La dimensione della nuova stringa è sempre pari alla dimensione della precedente + 1.\\
+L'obiettivo di questo metodo di codifica è di eliminare tutti i possibili byte \zeroByte dal pacchetto in maniera reversibile.\\
+Questo processo rende il carattere \textbf{\zeroByte (byte zero)} ottimo candidato per essere usato come terminatore di stringa durante l'invio, rendendo un pacchetto COBS-Encoded mai ambiguo e sempre \textbf{Auto-delimitato}.\\
+L'algoritmo di codifica consiste nel:
+\begin{enumerate} [itemsep=-3mm]
+	\item Inserire un byte \zeroByte all'inizio del pacchetto
+	\item Individuare tutti gli altri byte \zeroByte
+	\item Inserire un byte \zeroByte alla fine del pacchetto
+	\item Sostituire tutti gli \zeroByte con la distanza dal successivo \zeroByte nella stringa, ignorando l'ultimo
+\end{enumerate}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\textwidth]{EMP/Cobs_encoding_with_example-dist.png}
+	\caption[Esempio di COBS con distanza]{Esempio di COBS con distanza}
+\end{figure}
+
+La versione usata per questo progetto, che comunque non ha l'obiettivo di trasmettere quantità infinite di byte, ha il limite di non poter codificare blocchi di byte che hanno una distanza tra 2 \zeroByte superiore a 255, questo limite è potenzialmente rimovibile usando un algoritmo più sofisticato.
+
 \subsection{Struttura del codice}
+
 \subsection{Benchmark}
 
+\newpage
 \section{Online Sampling}
 \subsection{Interconnessione Arduino $\Leftrightarrow$ Companion}
 \subsection{Storage su file delle informazioni}
 
-
+\newpage
 \section{Post Elaborazione con Matlab}
 \subsection{Conversioni Dati}
 \subsection{Creazione dei grafici e Filtraggio}
