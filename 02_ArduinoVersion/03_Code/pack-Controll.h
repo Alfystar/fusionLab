@@ -6,26 +6,32 @@ struct newRef {
   int16_t newRef;
 } __attribute__((packed));
 
-struct startPack {
+struct setUpPackAsk {
   int8_t padding;
 } __attribute__((packed));
 
-enum LinuxSendType : uint8_t { newRefType, startType };
+enum LinuxSendType : uint8_t { newRefType, askType };
 
 
 struct _packLinux2Ard {
   LinuxSendType type;
   union {
     struct newRef ref;
-    struct startPack start;
+    struct setUpPackAsk ask;
   };
 } __attribute__((packed));
 typedef struct _packLinux2Ard packLinux2Ard;
+
+//struct _packLinux2Ard {
+//  struct newRef ref;
+//} __attribute__((packed));
+//typedef struct _packLinux2Ard packLinux2Ard;
 
 struct sample {
   int16_t pwm;
   int16_t V2_read;
   int16_t Isense_read;
+  int16_t err;
 } __attribute__((packed));
 
 struct setUpPack {

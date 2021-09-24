@@ -39,10 +39,12 @@ class doubleIntCTRL {
   unsigned int ticSatCount = 0;
 
 public:
+  int lastCtrl;
+  int lastErr;
   doubleIntCTRL();
   doubleIntCTRL(float kp, float k1, float k2);
 
-  void setNewRef(uint64_t ticSet, int v2AdcNewRef);
+  void setNewRef(uint64_t ticSet, int v2AdcNewRef); //v2AdcNewRef senza offset
   int ctrlStep(uint64_t t, int v2Adc); // v2Add già senza offset
 
 private:

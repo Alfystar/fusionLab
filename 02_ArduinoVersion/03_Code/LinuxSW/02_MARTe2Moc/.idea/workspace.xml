@@ -21,12 +21,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="31dadc64-383b-4374-b0e1-edbf6e357369" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../../ArduinoFirmwares/01_ShotExperimentFW/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ArduinoFirmwares/01_ShotExperimentFW/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../ArduinoFirmwares/01_ShotExperimentFW/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ArduinoFirmwares/01_ShotExperimentFW/src/experiment.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../ArduinoFirmwares/01_ShotExperimentFW/src/experiment.cpp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ArduinoFirmwares/02_ControlledFW/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ArduinoFirmwares/02_ControlledFW/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../ArduinoFirmwares/02_ControlledFW/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../ArduinoFirmwares/02_ControlledFW/src/experiment.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../ArduinoFirmwares/02_ControlledFW/src/experiment.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../ArduinoFirmwares/02_ControlledFW/src/experiment.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../ArduinoFirmwares/02_ControlledFW/src/experiment.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../ArduinoFirmwares/02_ControlledFW/src/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../ArduinoFirmwares/02_ControlledFW/src/main.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
@@ -66,11 +60,6 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
   </component>
   <component name="RunManager" selected="CMake Application.Marte2Moc">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="EMPlibs" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Marte2Moc" TARGET_NAME="EMPlibs" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -82,6 +71,11 @@
       </method>
     </configuration>
     <configuration name="Marte2Moc" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Marte2Moc" TARGET_NAME="Marte2Moc" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Marte2Moc" RUN_TARGET_NAME="Marte2Moc">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -124,6 +118,7 @@
       <option name="presentableId" value="Default" />
       <updated>1632401846615</updated>
       <workItem from="1632401847946" duration="5010000" />
+      <workItem from="1632474591087" duration="1611000" />
     </task>
     <servers />
   </component>

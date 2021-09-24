@@ -109,5 +109,5 @@ tableRescale = table;
 tableRescale.PWM = table.PWM/255 * zoom;
 tableRescale.V2_read = (table.V2_read - V2Mean) * vScale;
 tableRescale.Isense_read = (table.Isense_read - IsenseMean) * IScale;
-tableRescale.error = table.e * zoom;
+tableRescale.error = table.e * vScale;
 end

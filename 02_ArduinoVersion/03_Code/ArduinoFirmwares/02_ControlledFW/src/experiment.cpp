@@ -158,19 +158,19 @@ int doubleIntCTRL::ctrlStep(uint64_t t, int v2Adc) {
     return 0;
   if (V2currRef == 0)
     return 0;
-  long e = (V2currRef - v2Adc);
+  lastErr = (V2currRef - v2Adc);
 
   dIntegral2 = dIntegral2 + dIntegral1;
-  dIntegral1 = dIntegral1 + e;
+  dIntegral1 = dIntegral1 + lastErr;
 
-  int pwmCtrl = (int)(((float)e * kp + k1 * (float)dIntegral1 + k2 * (float)dIntegral2));
-  pwmCtrl = constrain(pwmCtrl, -1000, 1000);
-  if (abs(pwmCtrl) == 1000) {
+  lastCtrl = (int)(((float)lastErr * kp + k1 * (float)dIntegral1 + k2 * (float)dIntegral2));
+  lastCtrl = constrain(lastCtrl, -1000, 1000);
+  if (abs(lastCtrl) == 1000) {
     ticSatCount++;
-    stateReset(pwmCtrl);
+    stateReset(lastCtrl);
   } else
     ticSatCount = 0;
-  return pwmCtrl;
+  return lastCtrl;
 }
 void doubleIntCTRL::stateReset(int setOutput) {
   float rap = (float)dIntegral2 / (float)dIntegral1;
