@@ -25,14 +25,14 @@ Nella sua forma finale, il progetto prevede la riproduzione in serie di questo s
 
 \newpage
 
-\section*{EMP - Libreria di Comunicazione Seriale\\Embedded Message Pack }\label{EMP}
+\section*{EMP - Libreria di Comunicazione Seriale\\Embedded Message Pack }\label{sec:EMP}
 \addcontentsline{toc}{section}{\protect\numberline{\thesection} EMP - Libreria di Comunicazione Seriale}
 
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1\textwidth]{EMP/EMP-Logo-Background.png}
 \end{figure}
-\paragraph{EMP (Embedded Message Pack)} nasce con l’obiettivo di standardizzare un protocollo e creare una libreria C++ basata su classi Template, che permetta di automatizzare e standardizzare tutto il lavoro di programmazione necessario all’invio/ricezione di dei pacchetti dal formato Pre-Concordati tra 2 Device connessi Peer2Peer (Nessuna pretesa di network-ing).\\
+\paragraph{\citefield{EMP}{title}} nasce con l’obiettivo di standardizzare un protocollo e creare una libreria C++ basata su classi Template, che permetta di automatizzare e standardizzare tutto il lavoro di programmazione necessario all’invio/ricezione di dei pacchetti dal formato Pre-Concordati tra 2 Device connessi Peer2Peer (Nessuna pretesa di network-ing). (\cite{EMP})\\
 Il raggiungimento dei suoi obiettivi, si sposa con la possibilità di supportare altre features interessanti:
 
 \paragraph{Multiple-Package} Il protocollo di comunicazione che si è deciso di usare per EMP ha permesso di estendere il suo funzionamento e permettere il trasporto, attraverso lo stesso mezzo, di \textit{\textbf{pacchetti di tipologia e dimensione diversa}} all’interno della stessa libreria, evitando al contempo di inviare per ogni pacchetto più byte di quelli strettamente necessario. $\Rightarrow$ \textbf{Alta Efficienza}
@@ -74,7 +74,6 @@ La versione usata per questo progetto, che comunque non ha l'obiettivo di trasme
 
 \subsection{Caratteristiche chiave}
 Prima caratteristica vincente della libreria è il suo alto grado di adattabilità, essa infatti per poter funzionare richiede solo \textbf{2 informazioni critiche} (e altre di contorno per l'allocazione opportuna dei buffer), esse sono i tipi dei pacchetti in \textbf{ Input} (\textit{pIn}) e in \textbf{Output} (\textit{pOut}) ovvero sia delle strutture in C, con i dati organizzati in base al messaggio da trasferire (\nameref{lst:EMPpackDef}).\\
-%lst:EMPmultiplePack
 In secondo luogo, la codifica \citefield{COBS}{title}, che abbiamo appena visto permette di avere pacchetti \textbf{Auto-delimitati}, ciò permette quindi di scambiare pacchetti diversi tra loro (sia per tipologia che per lunghezza) lungo \textbf{lo stesso} \textit{Stream} di dati.\\
 L'unica condizione neccessaria è che il destinatario sia capace di determinare la tipologia di contenuto trasportato nel pacchetto semplicemente leggendolo.\\
 Questo può essere facilmente risolto in più modi:
@@ -95,13 +94,14 @@ In ogni caso, la codifica \citefield{COBS}{title} aggiunge 2 byte extra al pacch
 	\end{center}
 	\begin{spacing}{1.25}
 		\begin{enumerate}[itemsep=-1mm]
-			\item Pacchetti Self-Delimited
-			\item Canale Multi-Packet ready
-			\item Protocollo Senza Negoziazioni
-			\item All’utilizzatore è richiesto solo diPre-Concordare il formato del pacchetto con l’altro lato dello stream
-			\item Prerequisiti implementativi minimale (mezzo di comunicazione a bytes di tipo peer2peer asincrono)
+			\item Pacchetti {\color{Azure}\textbf{Self-Delimited}}
+			\item Canale {\color{Azure}\textbf{Multi-Packet ready}}
+			\item Protocollo {\color{Azure}\textbf{Senza Negoziazioni}}
+			\item All’utilizzatore è richiesto solo di Pre-Concordare il formato del pacchetto con l’altro lato dello stream
+			\item Prerequisiti implementativi minimale (mezzo di comunicazione a bytes di tipo \textit{peer2peer} asincrono)
 		\end{enumerate}
 	\end{spacing}
+	\vfill
 	\columnbreak
 	\begin{center}
 		{\large Svantaggi:}
@@ -112,11 +112,33 @@ In ogni caso, la codifica \citefield{COBS}{title} aggiunge 2 byte extra al pacch
 			\item Richiede O(n) elaborazione sia in codifica che decodifica
 		\end{enumerate}
 	\end{spacing}
-
+	\vspace*{\fill}
 \end{multicols}
 
-\subsection{Struttura del codice}
+\newpage
 
+\subsection{Integrità dei pacchetti}
+Per aumentare ulteriormente i campi d’uso e garantire un layer minimale di \textbf{integrità} sui pacchetti in transito, la libreria è stata progettata per include in maniera trasparente anche un un check di errore calcolato usando \cite{CRC8}, aggiunto in trasmissione e rimosso in ricezione.\\
+L'aggiunta e il calcolo del CRC8 viene fatta sul pacchetto non ancora \textit{COBS-Encodato}, ciò garantisce la possibilità di inviare il pacchetto a prescindere da quale sia il risultato del CRC8, e viene quindi verificato dopo aver de-\textit{COBS-Encodato} il pacchetto in ricezione.\\
+Questa features deve essere attiva o disattivata da entrambi i lati della libreria (ne consegue che anche lei deve essere pre-concordata tra i 2 estremi).\\
+La libreria, se attiva, è in grado di capire se il pacchetto ha subito degli errori (ovviamente nei limiti del CRC8) e in tal caso scarta il pacchetto ricevuto in maniera totalmente trasparente all'utilizzatore.\\
+L’aver usato COBS come sistema di codifica per la trasmissione, garantisce che la decodifica debba avvenire solo nei byte compresi tra 2 zeri, e se questa decodifica presenta un errore, toglie ogni ambiguità sul da farsi poiché il pacchetto viene scartato e si attende un successivo 0 mentre si memorizzano i byte ricevuti nel frattempo.
+
+\newpage
+\subsection{Struttura del codice}
+Lo sviluppo del codice è qui riassunto nel \textbf{Class Diagram} fatto in UML, del codice:
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\textwidth]{EMP/EMP-Hierarchy.png}
+	\caption[Class Diagram UML di EMP]{Class Diagram UML}
+\end{figure}
+\noindent
+Senza entrare eccessivamente nel dettaglio di \citefield{EMP}{title}, poichè tutti i codici, esempi e lavori aggiornati, sono reperibili nel repositori di \cite*{EMP}, possiamo iniziare osservando che il codice è diviso in 2 macro blocchi (\textbf{MPCore}, \textbf{MP}) più una classe di supporto per il buffer circolare.\\
+Questa organizzazione del codice è stata pensata per far compilare su tutte le piattaforme di interesse lo stesso codice attivo, presente in \textbf{MPCore}, mentre le particolarizzazioni dovute alle varie piattaforme o al mezzo di comunicazione sono demandate alle classi concrete che però, come si vede, discendono tutte dallo stesso padre.\\
+Questo metodo di sviluppo ha minimizzato enormemente i tempi di sviluppo, poiché una volta testato il codice \textbf{Core} funzionante, non è rimasto che adattare i dettagli per estenderne l'ambiente di sviluppo. Con questa tecnica è virtualmente possibile estendere su qualsiasi piattaforma la libreria, avendo \textbf{MPCore} delle richieste per compilare estremamente esigue, senza troppe complicazioni, e, se la piattaforma lo concede come nel caso di Linux, raccogliere ulteriormente delle funzionalità comuni e scrivere così, via via, sempre meno codice.
+
+
+\newpage
 \subsection{Benchmark}
 
 \newpage

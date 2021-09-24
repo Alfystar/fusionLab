@@ -1,0 +1,247 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.1 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated as
+% required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+\datalist[entry]{nty/global//global/global}
+  \entry{EMP}{manual}{}
+    \name{author}{1}{}{%
+      {{hash=AE}{%
+         family={Alfano},
+         familyi={A\bibinitperiod},
+         given={Emanuele},
+         giveni={E\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{AE1}
+    \strng{fullhash}{AE1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{title}{Embedded Message Pack(EMP)}
+    \verb{url}
+    \verb https://github.com/Alfystar/EMP
+    \endverb
+    \list{institution}{1}{%
+      {Personal work}%
+    }
+    \field{type}{Repository}
+    \field{year}{24 Sep 2021}
+  \endentry
+
+  \entry{ACS770}{manual}{}
+    \name{author}{1}{}{%
+      {{hash=A}{%
+         family={Allegro},
+         familyi={A\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{A1}
+    \strng{fullhash}{A1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{A}
+    \field{sortinithash}{A}
+    \field{series}{ACS770LCB-100B-PFF-T}
+    \field{title}{High-Precision Linear Current Sensor}
+    \verb{url}
+    \verb https://www.allegromicro.com/~/media/Files/Datasheets/ACS770-Datashee
+    \verb t.pdf
+    \endverb
+    \list{institution}{1}{%
+      {Allegro Microsystems}%
+    }
+    \field{type}{Datasheet}
+    \field{year}{31 May 2019}
+  \endentry
+
+  \entry{CRC8}{report}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{title}{Checksum Calculation 8 Bit (CRC8)}
+    \verb{url}
+    \verb https://www.mouser.com/pdfDocs/SFM4100_CRC_Checksum_Calculation.pdf
+    \endverb
+    \list{institution}{1}{%
+      {Mouser Elettronics}%
+    }
+    \field{type}{techreport}
+    \field{year}{15 Apr 2019}
+  \endentry
+
+  \entry{IBT-2}{manual}{}
+    \name{author}{1}{}{%
+      {{hash=H}{%
+         family={Handsontec},
+         familyi={H\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{H1}
+    \strng{fullhash}{H1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{H}
+    \field{sortinithash}{H}
+    \field{title}{BTS7960 High Current 43A H-Bridge Motor Driver}
+    \verb{url}
+    \verb https://www.handsontec.com/dataspecs/module/BTS7960%20Motor%20Driver.
+    \verb pdf
+    \endverb
+    \list{institution}{1}{%
+      {Handson Technology}%
+    }
+    \field{type}{Datasheet}
+    \field{year}{18 Sep 2019}
+  \endentry
+
+  \entry{COBS}{report}{}
+    \name{author}{1}{}{%
+      {{hash=I}{%
+         family={IEEE},
+         familyi={I\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{I1}
+    \strng{fullhash}{I1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{I}
+    \field{sortinithash}{I}
+    \field{title}{Consistent Overhead Byte Stuffing (COBS)}
+    \verb{url}
+    \verb https://www.ieee802.org/3/efm/public/jul02/copper/oksman_copper_1_070
+    \verb 2.pdf
+    \endverb
+    \list{institution}{1}{%
+      {IEEE}%
+    }
+    \field{type}{techreport}
+    \field{year}{29 Jun 2002}
+  \endentry
+
+  \entry{BTS7960b}{manual}{}
+    \name{author}{1}{}{%
+      {{hash=I}{%
+         family={Infineon},
+         familyi={I\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{I2}
+    \strng{fullhash}{I2}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{I}
+    \field{sortinithash}{I}
+    \field{series}{BTS7960b}
+    \field{title}{BTS7960B High Current PN Half Bridge NovalithIC T}
+    \verb{url}
+    \verb https://www.infineon.com/dgdl/bts7960b-pb-final.pdf?folderId=db3a3043
+    \verb 156fd5730116144c5d101c30&fileId=db3a30431ed1d7b2011efe782ebd6b60
+    \endverb
+    \list{institution}{1}{%
+      {Infineon Technologies}%
+    }
+    \field{type}{Datasheet}
+    \field{year}{12 Jul 2016}
+  \endentry
+
+  \entry{TokamakCircuit}{article}{}
+    \name{author}{8}{}{%
+      {{hash=RJ}{%
+         family={Romero},
+         familyi={R\bibinitperiod},
+         given={Jesús},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=dlCJ}{%
+         prefix={de\bibnamedelima la},
+         prefixi={d\bibinitperiod\bibinitdelim l\bibinitperiod},
+         family={Cruz},
+         familyi={C\bibinitperiod},
+         given={Jesús},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=DT}{%
+         family={Dobbing},
+         familyi={D\bibinitperiod},
+         given={T.},
+         giveni={T\bibinitperiod},
+      }}%
+      {{hash=EJ}{%
+         family={Ellis},
+         familyi={E\bibinitperiod},
+         given={J.},
+         giveni={J\bibinitperiod},
+      }}%
+      {{hash=FB}{%
+         family={Fisher},
+         familyi={F\bibinitperiod},
+         given={B.},
+         giveni={B\bibinitperiod},
+      }}%
+      {{hash=KQ}{%
+         family={King},
+         familyi={K\bibinitperiod},
+         given={Queen},
+         giveni={Q\bibinitperiod},
+      }}%
+      {{hash=SF}{%
+         family={Söldner},
+         familyi={S\bibinitperiod},
+         given={F.},
+         giveni={F\bibinitperiod},
+      }}%
+      {{hash=ZN}{%
+         family={Zornig},
+         familyi={Z\bibinitperiod},
+         given={N.},
+         giveni={N\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{RJ+1}
+    \strng{fullhash}{RJdlCJDTEJFBKQSFZN1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \verb{doi}
+    \verb 10.1016/S0920-3796(98)00261-0
+    \endverb
+    \field{pages}{37\bibrangedash 58}
+    \field{title}{Real time current profile control at JET}
+    \field{volume}{43}
+    \field{journaltitle}{Fusion Engineering and Design}
+    \field{month}{02}
+    \field{year}{1998}
+  \endentry
+
+  \entry{Transformatore}{booklet}{}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{T}
+    \field{sortinithash}{T}
+    \field{title}{Trasformatore Monofase}
+    \verb{url}
+    \verb https://www.docenti.unina.it/webdocenti-be/allegati/materiale-didatti
+    \verb co/34030176
+    \endverb
+    \list{institution}{1}{%
+      {UNIVERSITA' DEGLI STUDI DI NAPOLI, FEDERICO II}%
+    }
+  \endentry
+\enddatalist
+\endinput
