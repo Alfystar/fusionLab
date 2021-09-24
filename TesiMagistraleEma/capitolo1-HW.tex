@@ -112,7 +112,7 @@ Per finire, unendo insieme i concetti di \nameref{def:induttoreIdeale} e \namere
 	Il Trasformatore è costruito affinché il circuito Primario e il Secondario condividano lo stesso campo magnetico, e quindi lo stesso flusso $\Phi _{B}$.\\
 	Nel caso ideale, quindi, si ha che:\\
 	\begin{empheq}[box=\mathCalc]{equation}
-				\Phi_{B} = \Phi_{B_P} - \Phi_{B_S}
+		\Phi_{B} = \Phi_{B_P} - \Phi_{B_S}
 	\end{empheq}
 	Siccome tale flusso varia nel tempo, induce nei due avvolgimenti le f.e.m.(\nameref{def:induttanza}):
 	\begin{empheq}[box=\mathCalc]{equation}
@@ -122,19 +122,19 @@ Per finire, unendo insieme i concetti di \nameref{def:induttoreIdeale} e \namere
 	Viste dai morsetti del trasformatore, abbiamo che le tensioni istantanee (dovute alle correnti presenti nei 2 rami) sono pari a:
 	\begin{empheq}[box=\mathCalc]{equation} \label{eq:tensioneTrasformatore}
 		\displaystyle \left \{ \begin{array}{l}
-	V_{P} = R_P I_P + L_{PP} \dot I_P - L_{SP} \dot I_S \\
-	V_{S} = R_S I_S - L_{PS} \dot I_P + L_{SS} \dot I_S                                             \\
-\end{array}
-\right.
+			V_{P} = R_P I_P + L_{PP} \dot I_P - L_{SP} \dot I_S \\
+			V_{S} = R_S I_S - L_{PS} \dot I_P + L_{SS} \dot I_S \\
+		\end{array}
+		\right.
 	\end{empheq}
 	Dove $R_P$ e $R_S$ rappresentano le resistenze equivalenti viste dai morsetti (i carichi).\\
 	Con i coefficienti di mutua induttanza che si ricavano dalla Def di \nameref{def:induttoreIdeale}:
 	
 	\begin{center}
-		\begin{tabular}[t]{c c}	
-		$ \displaystyle L_{pp} = \frac{N_P  \Phi_{B_P} }{i_P} $ & $ \displaystyle L_{ps} = \frac{N_S  \Phi_{B_P} }{i_P} $\\[5mm]
-		$ \displaystyle L_{sp} = \frac{N_P  \Phi_{B_S} }{i_S} $ & $ \displaystyle L_{ps} = \frac{N_S  \Phi_{B_S} }{i_S} $
-	\end{tabular}
+		\begin{tabular}[t]{c c}
+			$ \displaystyle L_{pp} = \frac{N_P  \Phi_{B_P} }{i_P} $ & $ \displaystyle L_{ps} = \frac{N_S  \Phi_{B_P} }{i_P} $ \\[5mm]
+			$ \displaystyle L_{sp} = \frac{N_P  \Phi_{B_S} }{i_S} $ & $ \displaystyle L_{ps} = \frac{N_S  \Phi_{B_S} }{i_S} $
+		\end{tabular}
 	\end{center}
 \end{de}
 
@@ -170,7 +170,7 @@ Usando queste osservazioni si ottiene quindi il circuito equivalente:
 	\centering
 	\includegraphics[width=1\textwidth]{Trasformatore/PlasmaCircuit-EquivalentCalc.png}
 	\caption[Circuito Equivalente Bobina/Plasma all'interno di un Tokamak trascurando l'induzione del plasma verso la bobina]{Circuito equivalente Bobina/Plasma semplificato}
-
+	
 \end{figure}
 
 \NumTabs{11}
@@ -192,14 +192,14 @@ Usando questa semplificazione dall'equazione \ref{eq:tensioneTrasformatore} del 
 \newpage
 \subsection{Dal circuito alla dinamica}\label{subsec:dinamicaCircuito}
 Analizziamo ora la dinamica del circuito \ref{fig:PlasmaSemplificato}.
-\subsubsection{Dinamica di Plasma}	
+\subsubsection{Dinamica di Plasma}
 \vspace{-5mm}
- Iniziando dal calcolare la dinamica nella corrente di Plasma usando la \nameref{th:KirchhoffMaglie}:
- 	\begin{empheq}[box=\mathStep]{equation*}
- 		F_{em} = L_p \dot I_p + I_p R_p
- 	\end{empheq}
+Iniziando dal calcolare la dinamica nella corrente di Plasma usando la \nameref{th:KirchhoffMaglie}:
+\begin{empheq}[box=\mathStep]{equation*}
+	F_{em} = L_p \dot I_p + I_p R_p
+\end{empheq}
 Sappiamo in oltre che la $F_{em}$, grazie all'\nameref{def:induttanza} del circuito è pari a: 
- 	\begin{empheq}[box=\mathStep]{equation*} 
+\begin{empheq}[box=\mathStep]{equation*}
 	F_{em} = -M_{Tp} \dot I_T
 \end{empheq}
 Da cui otteniamo:
@@ -222,18 +222,18 @@ Nella sezione \ref{subsec:dinamicaCircuito} abbiamo ottenuto la dinamica istanta
 \subsubsection{Funzione di Trasferimento Plasma}
 \vspace{-5mm}
 Partendo dall'equazione \ref{eq:correntePlasmaDinamica}, supponendo condizioni iniziali nulle, abbiamo:
-\begin{empheq}[box=\mathStep]{equation*} 
+\begin{empheq}[box=\mathStep]{equation*}
 	s I_p L_p  + I_p R_p = -s I_T M_{Tp} \Rightarrow I_p( s L_p + R_p) = -s I_T M_{Tp} \Rightarrow I_p(s) = \frac{-s M_{Tp}}{( s L_p + R_p)} I_T(s)
 \end{empheq}
 La cui, funzione di trasferimento risulta essere:
 \begin{empheq}[box=\mathCalc]{equation} \label{eq:correntePlasmaLaplace}
-\frac{I_p(s)}{I_T(s)}  = \frac{-s M_{Tp}}{( s L_p + R_p)}
+	\frac{I_p(s)}{I_T(s)}  = \frac{-s M_{Tp}}{( s L_p + R_p)}
 \end{empheq}
 
 \subsubsection{Funzione di Trasferimento Trasformatore}
 \vspace{-5mm}
 Similmente, partendo dall'equazione \ref{eq:correnteTrasformatoreDinamica} si ricava:
-\begin{empheq}[box=\mathStep]{equation*} 
+\begin{empheq}[box=\mathStep]{equation*}
 	s I_T L_T  + I_T R_T = V(s) \Rightarrow I_T( s L_T + R_T) = V(s) \Rightarrow I_T(s) = \frac{1}{(s L_T + R_T)} V(s)
 \end{empheq}
 
@@ -244,7 +244,7 @@ La cui, funzione di trasferimento risulta essere:
 
 \begin{oss} \label{oss:Iref}
 	La funzione di trasferimento che abbiamo ottenuto rispecchia il circuito dell'esperimento, noi però abbiamo un sistema che si controlla in corrente e che ha un uscita in corrente potremmo allora riassegnare l'ingresso come:
-	\begin{empheq}[box=\mathCalc]{equation*} 
+	\begin{empheq}[box=\mathCalc]{equation*}
 		V(t)=I_{ref}(t) \cdot R_T \Rightarrow I_{ref}(t) = \frac{V(t)}{R_T}
 	\end{empheq}
 	Ottenendo così: 
@@ -475,7 +475,7 @@ Il driver sulla carta à buone prestazioni, ma non sono descritte le sue \nonLin
 \begin{enumerate}
 	\item \nameref{lst:ondaTriangloare} \\ \vspace{-11mm}
 	      \begin{figure}[h]
-		      % TODO: Creare grafico 17 senza Errore e Zoomando meglio la deadzone
+		      
 		      \centering
 		      \includegraphics[height=0.5\textheight]{IBT-2/T1-Triangolare.pdf}
 		      \caption[Esperimento con Onda Triangolare]{Onda Triangolare}
@@ -486,11 +486,10 @@ Il driver sulla carta à buone prestazioni, ma non sono descritte le sue \nonLin
 	\item \nameref{lst:ondaTrapezoidale} \\
 	      \begin{figure}[h]
 		      \centering
-		      % TODO: Creare grafico 12 senza Errore e Zoomando meglio la deadzone
 		      \includegraphics[height=0.5\textheight]{IBT-2/T2-RapidShot.pdf}
 		      \caption[Esperimento con Onda Trapezoidale]{Onda Trapezoidale}
 	      \end{figure}  \vspace{-10mm}
 	      \paragraph{Dead-Zone Superiore} Con questo secondo segnale, si vuole mettere in evidenza il ritardo durante la discesa della rampa, pari a circa 20ms {\small \textit{(guarda 900ms)}}, questo ritardo è in realtà dovuto da una seconda Dead-Zone presente però ai Duty-Cycle alti del PWM.
-%	      \vspace{-5mm}
-%	      \paragraph{Disturbo 50Hz} Essendo in oltre presente un segnale costante per un pò, quando i transitori terminano risulta evidente la presenza della 50hz nel segnale della corrente proveniente dall'alimentatore, questo disturbo è però dovuto alla fonte della corrente, ovvero la 220Vac del laboratorio, il medesimo esperimento realizzato con una batteria ovviamente non ha simili disturbi, ma in fase di test del driver, si è preferito usare un alimentatore da laboratorio.
+	      %	      \vspace{-5mm}
+	      %	      \paragraph{Disturbo 50Hz} Essendo in oltre presente un segnale costante per un pò, quando i transitori terminano risulta evidente la presenza della 50hz nel segnale della corrente proveniente dall'alimentatore, questo disturbo è però dovuto alla fonte della corrente, ovvero la 220Vac del laboratorio, il medesimo esperimento realizzato con una batteria ovviamente non ha simili disturbi, ma in fase di test del driver, si è preferito usare un alimentatore da laboratorio.
 \end{enumerate}

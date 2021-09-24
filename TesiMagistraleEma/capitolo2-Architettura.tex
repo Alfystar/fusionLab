@@ -72,6 +72,49 @@ L'algoritmo di codifica consiste nel:
 
 La versione usata per questo progetto, che comunque non ha l'obiettivo di trasmettere quantità infinite di byte, ha il limite di non poter codificare blocchi di byte che hanno una distanza tra 2 \zeroByte superiore a 255, questo limite è potenzialmente rimovibile usando un algoritmo più sofisticato.
 
+\subsection{Caratteristiche chiave}
+Prima caratteristica vincente della libreria è il suo alto grado di adattabilità, essa infatti per poter funzionare richiede solo \textbf{2 informazioni critiche} (e altre di contorno per l'allocazione opportuna dei buffer), esse sono i tipi dei pacchetti in \textbf{ Input} (\textit{pIn}) e in \textbf{Output} (\textit{pOut}) ovvero sia delle strutture in C, con i dati organizzati in base al messaggio da trasferire (\nameref{lst:EMPpackDef}).\\
+%lst:EMPmultiplePack
+In secondo luogo, la codifica \citefield{COBS}{title}, che abbiamo appena visto permette di avere pacchetti \textbf{Auto-delimitati}, ciò permette quindi di scambiare pacchetti diversi tra loro (sia per tipologia che per lunghezza) lungo \textbf{lo stesso} \textit{Stream} di dati.\\
+L'unica condizione neccessaria è che il destinatario sia capace di determinare la tipologia di contenuto trasportato nel pacchetto semplicemente leggendolo.\\
+Questo può essere facilmente risolto in più modi:
+\begin{spacing}{1.5}
+	\begin{description}
+		\item[Lunghezza Univoca] Ogni possibile pacchetto ha una lunghezza diversa da tutti gli altri, $\Rightarrow$ la lunghezza implica il contenuto
+		\item[Aggiunta di un campo Tipologia] Aggiungendo al’inizio della trasmissione un \textit{type byte}, ovviamente Pre-Concordato, diventa possibile per chiunque sapere come interpretare il contenuto del pacchetto.
+	\end{description}
+\end{spacing}
+\noindent
+Il metodo più universale è sicuramente l'aggiunta di un campo fisso per il tipo, di cui un esempio è visibile nell'appendice al listato \ref{lst:EMPmultiplePack}. (\nameref{lst:EMPmultiplePack})
+
+In ogni caso, la codifica \citefield{COBS}{title} aggiunge 2 byte extra al pacchetto che si vuole inviare, e tanto per la codifica quanto per la decodifica in ricezione, il \textbf{costo} è sempre pari a \textbf{O(n)}.
+
+\begin{multicols}{2}
+	\begin{center}
+		{\large Vantaggi:}
+	\end{center}
+	\begin{spacing}{1.25}
+		\begin{enumerate}[itemsep=-1mm]
+			\item Pacchetti Self-Delimited
+			\item Canale Multi-Packet ready
+			\item Protocollo Senza Negoziazioni
+			\item All’utilizzatore è richiesto solo diPre-Concordare il formato del pacchetto con l’altro lato dello stream
+			\item Prerequisiti implementativi minimale (mezzo di comunicazione a bytes di tipo peer2peer asincrono)
+		\end{enumerate}
+	\end{spacing}
+	\columnbreak
+	\begin{center}
+		{\large Svantaggi:}
+	\end{center}
+	\begin{spacing}{1.25}
+		\begin{enumerate}[itemsep=-1mm]
+			\item Aggiunge 2 byte fissi
+			\item Richiede O(n) elaborazione sia in codifica che decodifica
+		\end{enumerate}
+	\end{spacing}
+
+\end{multicols}
+
 \subsection{Struttura del codice}
 
 \subsection{Benchmark}

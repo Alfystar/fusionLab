@@ -166,6 +166,61 @@ int rapidShot(uint64_t t) {
 \addcontentsline{toc}{chapter}{Appendice B - Codice EMP}
 \setcounter{chapter}{\thechapter + 1}
 
+\section{Pacchetti EMP}
+\subsection{Definizione dei Pacchetti}
+\subsubsection{Esempio di Definizione}
+\begin{lstlisting}[style=cppStyle,caption={esempio di definizione Pacchetto in EMP},label=lst:EMPpackDef] 
+#include <stdint.h>	// To be sure for the footPrint in any platform
+struct _packLinux2Ard {
+	int16_t num;
+	char buf[20];
+} __attribute__((packed));
+typedef struct _packLinux2Ard packLinux2Ard;
+
+struct _packArd2Linux {
+	int16_t num;
+	char buf[10];
+} __attribute__((packed));
+typedef struct _packArd2Linux packArd2Linux;
+\end{lstlisting}
+
+Il sistema non necessita di alcun formato particolare per la definizione dei pacchetti, essi sono delle semplici strutture in C, con l'attributo \verb|__attribute__((packed))| per eliminare Padding e ottimizzare la memoria.
+Come è possibile notare, le regole non vietano la definizione di 2 pacchetti diversi e asimmetrici.
+\newpage
+
+\subsubsection{Pacchetti Multipli}
+Per definire un pacchetto di pacchetti, il metodo migliore è creare un \verb|enum| per numerare univocamente il tipo (nell'esempio \verb|uint8_t| ma può essere reso maggiore all'occorrenza), e una \verb|union| con tutti i tipi in fila.\\
+Il pacchetto di interesse per EMP è \verb|dataSend|, ed è responsabilità dell'utente della libreria riempire correttamente i campi.
+\begin{lstlisting}[style=cppStyle,caption={definizione Pacchetti Multipli},label=lst:EMPmultiplePack] 
+//DataType1 ,DataType2, DataType3 typedef above;
+enum packTypeSend : uint8_t{
+	DataType1code,
+	DataType2code,
+	DataType3code,
+};
+typedef union{
+	DataType1 t1;
+	DataType2 t2;
+	DataType3 t3;
+}  __attribute__((packed)) dataSendUnion;
+
+typedef struct{
+	packTypeSend type;
+	dataSendUnion pack;
+}  __attribute__((packed)) dataSend;
+\end{lstlisting}
+\noindent
+Per ottimizzare l'invio al minimo strettamente necessario si può quindi usare la variante nel metodo di \verb|packSend(...)|, in cui viene specificata la dimensione:
+
+\begin{lstlisting}[style=cppStyle,caption={definizione Pacchetti Multipli},label=lst:EMPsendOptimize] 
+//...
+dataSend.type = DataType2code;
+dataSend.pack.t2 = /*{data}*/ // fill correctly dataSend
+//...    
+MP->packSend(&data, sizeof(packTypeSend) + sizeof(DataType2));
+//...
+
+\end{lstlisting}
 \chapter*{Appendice C\\ Matlab Post Elaborazione}\label{MatlabCode}
 \addcontentsline{toc}{chapter}{Appendice C - Matlab Post Elaboration}
 \setcounter{chapter}{\thechapter + 1}
