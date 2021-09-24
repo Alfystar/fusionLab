@@ -146,19 +146,27 @@ doubleIntCTRL::doubleIntCTRL(float kp, float k1, float k2) {
 }
 void doubleIntCTRL::setNewRef(uint64_t ticSet, int v2AdcNewRef) {
   V2currRef = v2AdcNewRef;
-  tcStart = ticSet;
-  tcEnd = ticConvert(500) + tcStart;
+//  tcStart = ticSet;
+//  tcEnd = ticConvert(1000) + ticSet;
   ticSatCount = 0;
   stateReset(0);
 }
 
 int doubleIntCTRL::ctrlStep(uint64_t t, int v2Adc) {
 
-  if (t < tcStart || t > tcEnd || ticSatCount >= ticConvert(50))
+  if( ticSatCount >= ticConvert(100))
     return 0;
+
+  //La finestra temporale crea problemi
+//  if (t < tcStart || t > tcEnd)
+//    return 0;
+
+  lastErr = (V2currRef - v2Adc);
+
   if (V2currRef == 0)
     return 0;
-  lastErr = (V2currRef - v2Adc);
+  digitalWrite(13, !digitalRead(13));
+
 
   dIntegral2 = dIntegral2 + dIntegral1;
   dIntegral1 = dIntegral1 + lastErr;
@@ -176,4 +184,5 @@ void doubleIntCTRL::stateReset(int setOutput) {
   float rap = (float)dIntegral2 / (float)dIntegral1;
   dIntegral1 = (int)((float)setOutput / (rap * k2 + k1));
   dIntegral2 = (int)(rap * (float)dIntegral1);
+
 }

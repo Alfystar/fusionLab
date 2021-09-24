@@ -53,6 +53,6 @@ typedef struct _packArd2Linux packArd2Linux;
 // Common define
 #define volt2adc(x) ((int)(((x) / (5.0 / (1023)) + 0.5)))
 #define dtExperiment 500UL // us
-#define ticConvert(ms) (ms * 1000UL) / dtExperiment
+#define ticConvert(ms) ((ms * 1000UL) / dtExperiment)
 
 #endif

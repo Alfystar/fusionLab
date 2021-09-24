@@ -24,9 +24,6 @@ void periodicTask(int time) {
   //  Serial.println(", Prescaler=256)");
 }
 
-
-
-
 volatile u32 tic = 0;
 
 ISR(TIMER2_COMPA_vect) { tic++; }
@@ -42,20 +39,21 @@ struct setUpPack pMean;
 
 doubleIntCTRL Ctrl = doubleIntCTRL();
 
-void serialExe(packLinux2Ard *p){
+void serialExe(packLinux2Ard *p) {
   packArd2Linux send;
   switch (p->type) {
   case newRefType:
-    Ctrl.setNewRef(tic,p->ref.newRef);
+    Ctrl.setNewRef(tic, p->ref.newRef);
     break;
   case askType:
-    send.type=setUpPackType;
-    send.setUp=pMean;
-    mpSerial.packSend(&send,sizeof(pWrite.type) + sizeof(pWrite.setUp));
+    send.type = setUpPackType;
+    send.setUp = pMean;
+    mpSerial.packSend(&send, sizeof(pWrite.type) + sizeof(pWrite.setUp));
+    break;
+  default:
     break;
   }
 }
-
 
 void setup() {
 
@@ -81,7 +79,7 @@ void setup() {
   // ################# Start Experiment #################
   mpSerial.bufClear();
   // Start Delay
-  memset(&pWrite,0,sizeof(pWrite));
+  memset(&pWrite, 0, sizeof(pWrite));
   pWrite.type = sampleType;
   delay(1000);
   periodicTask(pMean.dt);
@@ -100,7 +98,7 @@ void loop() {
     }
   } while (tic == oldTic);
 
-  digitalWrite(13, !digitalRead(13));
+//  digitalWrite(13, !digitalRead(13));
   pWrite.read.V2_read = analogRead(V2);
   pWrite.read.Isense_read = analogRead(Isense);
   pwm = mot->drive_motor(Ctrl.ctrlStep(oldTic, pWrite.read.V2_read - pMean.V2_mean));

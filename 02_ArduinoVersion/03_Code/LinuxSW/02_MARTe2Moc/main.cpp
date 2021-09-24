@@ -86,6 +86,7 @@ int main(int argc, char *argv[]) {
   uart->packSend(&pWrite);
 
   ulong ticExp = 0;
+  int swingSign = 1;
   while (true) {
     do {
       uart->getData_wait(&pRead);
@@ -94,23 +95,22 @@ int main(int argc, char *argv[]) {
     timeSpecSub(now, old, diff);
     old = now;
 
-    outfile << pRead.read.pwm << "\t"
-            << pRead.read.V2_read << "\t"
-            << pRead.read.Isense_read << "\t"
-            << pRead.read.err
+    outfile << pRead.read.pwm << "\t" << pRead.read.V2_read << "\t" << pRead.read.Isense_read << "\t" << pRead.read.err
             << std::endl;
 
     timeSpecPrint(diff, "diff");
-
     ticExp++;
-    if (ticExp > ticConvert(1000)) {
+
+    if (ticExp > ticConvert(500)) {
       ticExp = 0;
-      pWrite.type= newRefType;
-      if (pWrite.ref.newRef == 0)
-        pWrite.ref.newRef = volt2adc(0.5);
-      else
-        pWrite.ref.newRef = -pWrite.ref.newRef;
-      uart->packSend(&pWrite);
+      memset(&pWrite, 0, sizeof(pWrite));
+      pWrite.type = newRefType;
+      pWrite.ref.newRef = volt2adc(0.5) * swingSign;
+      swingSign *= -1;
+      float randRef = ((rand()%1200)-600)/1000.0; // +- 0.6 ref
+      pWrite.ref.newRef = volt2adc(randRef);
+
+      uart->packSend(&pWrite, sizeof(LinuxSendType) + sizeof(struct newRef));
     }
   }
   outfile.close();

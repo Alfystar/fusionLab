@@ -4,6 +4,10 @@ close all
 experiment("experimentControlled/capture.txt")
 
 
+experiment("experimentControlled/Bi-FrontCapture.txt")
+experiment("experimentControlled/RandomCapture.txt")
+
+
 
 %% Functions block
 
