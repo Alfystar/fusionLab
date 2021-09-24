@@ -154,7 +154,7 @@ void doubleIntCTRL::setNewRef(uint64_t ticSet, int v2AdcNewRef) {
 
 int doubleIntCTRL::ctrlStep(uint64_t t, int v2Adc) {
 
-  if( ticSatCount >= ticConvert(100))
+  if( ticSatCount >= ticConvert(200))
     return 0;
 
   //La finestra temporale crea problemi

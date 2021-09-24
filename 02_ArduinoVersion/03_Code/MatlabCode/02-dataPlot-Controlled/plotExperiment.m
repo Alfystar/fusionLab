@@ -4,8 +4,9 @@ close all
 experiment("experimentControlled/capture.txt")
 
 
-experiment("experimentControlled/Bi-FrontCapture.txt")
-experiment("experimentControlled/RandomCapture.txt")
+experiment("experimentControlled/01-RandomCapture.txt",[2900,4800],[-11,11])
+experiment("experimentControlled/02-Bi-FrontCapture.txt",[450,1200],[-11,11])
+experiment("experimentControlled/03-PosNeg-capture.txt",[450,1150],[-11,11])
 
 
 

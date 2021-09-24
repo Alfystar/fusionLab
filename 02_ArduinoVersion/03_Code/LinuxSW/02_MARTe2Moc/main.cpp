@@ -86,6 +86,7 @@ int main(int argc, char *argv[]) {
   uart->packSend(&pWrite);
 
   ulong ticExp = 0;
+  ulong ticSat = 0;
   int swingSign = 1;
   while (true) {
     do {
@@ -101,17 +102,39 @@ int main(int argc, char *argv[]) {
     timeSpecPrint(diff, "diff");
     ticExp++;
 
-    if (ticExp > ticConvert(500)) {
-      ticExp = 0;
+    if (ticExp == ticConvert(500)){
       memset(&pWrite, 0, sizeof(pWrite));
       pWrite.type = newRefType;
       pWrite.ref.newRef = volt2adc(0.5) * swingSign;
       swingSign *= -1;
-      float randRef = ((rand()%1200)-600)/1000.0; // +- 0.6 ref
-      pWrite.ref.newRef = volt2adc(randRef);
-
       uart->packSend(&pWrite, sizeof(LinuxSendType) + sizeof(struct newRef));
     }
+
+    if (abs(pRead.read.pwm) == 255)
+      ticSat++;
+    else
+      ticSat = 0;
+
+    if (ticSat > ticConvert(50)) {
+      ticSat = 0;
+      memset(&pWrite, 0, sizeof(pWrite));
+      pWrite.type = newRefType;
+      pWrite.ref.newRef = volt2adc(0.5) * swingSign;
+      swingSign *= -1;
+      uart->packSend(&pWrite, sizeof(LinuxSendType) + sizeof(struct newRef));
+    }
+
+//        if (ticExp > ticConvert(500)) {
+//          ticExp = 0;
+//          memset(&pWrite, 0, sizeof(pWrite));
+//          pWrite.type = newRefType;
+//    //      pWrite.ref.newRef = volt2adc(0.5) * swingSign;
+//    //      swingSign *= -1;
+//          float randRef = ((rand()%1200)-600)/1000.0; // +- 0.6 ref
+//          pWrite.ref.newRef = volt2adc(randRef);
+//
+//          uart->packSend(&pWrite, sizeof(LinuxSendType) + sizeof(struct newRef));
+//        }
   }
   outfile.close();
   delete uart;
