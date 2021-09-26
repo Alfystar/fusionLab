@@ -29,33 +29,34 @@
 \BOOKMARK [2][-]{subsection.3.1.2}{Caratteristiche chiave}{section*.37}% 29
 \BOOKMARK [2][-]{subsection.3.1.3}{Integrit\340 dei pacchetti}{section*.37}% 30
 \BOOKMARK [2][-]{subsection.3.1.4}{Struttura del codice}{section*.37}% 31
-\BOOKMARK [2][-]{subsection.3.1.5}{Benchmark}{section*.37}% 32
-\BOOKMARK [1][-]{section.3.2}{Online Sampling}{chapter.3}% 33
-\BOOKMARK [2][-]{subsection.3.2.1}{Interconnessione Arduino \040Companion}{section.3.2}% 34
-\BOOKMARK [2][-]{subsection.3.2.2}{Storage su file delle informazioni}{section.3.2}% 35
-\BOOKMARK [1][-]{section.3.3}{Post Elaborazione con Matlab}{chapter.3}% 36
-\BOOKMARK [2][-]{subsection.3.3.1}{Conversioni Dati}{section.3.3}% 37
-\BOOKMARK [2][-]{subsection.3.3.2}{Creazione dei grafici e Filtraggio}{section.3.3}% 38
-\BOOKMARK [0][-]{chapter.4}{Modello teorico di Controllo}{}% 39
-\BOOKMARK [1][-]{section.4.1}{Controllo a Errore Nullo}{chapter.4}% 40
-\BOOKMARK [1][-]{section.4.2}{Simulazione Qualitativa su Simulink}{chapter.4}% 41
-\BOOKMARK [0][-]{chapter.5}{Sviluppo Controllo reale}{}% 42
-\BOOKMARK [1][-]{section.5.1}{Codifica del controllore}{chapter.5}% 43
-\BOOKMARK [1][-]{section.5.2}{Tuning delle costanti}{chapter.5}% 44
-\BOOKMARK [1][-]{section.5.3}{Esperimenti}{chapter.5}% 45
-\BOOKMARK [0][-]{chapter.6}{Conclusioni e sviluppi futuri}{}% 46
-\BOOKMARK [0][-]{chapter.7}{Software, Toolchain, Strumenti}{}% 47
-\BOOKMARK [0][-]{chapter*.38}{Appendice A - Codice Arduino}{}% 48
-\BOOKMARK [1][-]{section.8.1}{Set-up Registri}{chapter*.38}% 49
-\BOOKMARK [2][-]{subsection.8.1.1}{Tic Timer}{section.8.1}% 50
-\BOOKMARK [2][-]{subsection.8.1.2}{Frequenza PWM}{section.8.1}% 51
-\BOOKMARK [1][-]{section.8.2}{Generatore di Segnale}{chapter*.38}% 52
-\BOOKMARK [2][-]{subsection.8.2.1}{Segnali Base}{section.8.2}% 53
-\BOOKMARK [2][-]{subsection.8.2.2}{Segnali Composti}{section.8.2}% 54
-\BOOKMARK [1][-]{section.8.3}{Codici Controllore}{chapter*.38}% 55
-\BOOKMARK [0][-]{chapter*.43}{Appendice B - Codice EMP}{}% 56
-\BOOKMARK [1][-]{section.9.4}{Pacchetti EMP}{chapter*.43}% 57
-\BOOKMARK [2][-]{subsection.9.4.1}{Definizione dei Pacchetti}{section.9.4}% 58
-\BOOKMARK [0][-]{chapter*.46}{Appendice C - Matlab Post Elaboration}{}% 59
-\BOOKMARK [0][-]{chapter*.47}{Elenco delle figure}{}% 60
-\BOOKMARK [0][-]{chapter*.48}{Bibliografia}{}% 61
+\BOOKMARK [2][-]{subsection.3.1.5}{Code Flow}{section*.37}% 32
+\BOOKMARK [2][-]{subsection.3.1.6}{Benchmark}{section*.37}% 33
+\BOOKMARK [1][-]{section.3.2}{Online Sampling}{chapter.3}% 34
+\BOOKMARK [2][-]{subsection.3.2.1}{Interconnessione Arduino \040Companion}{section.3.2}% 35
+\BOOKMARK [2][-]{subsection.3.2.2}{Storage su file delle informazioni}{section.3.2}% 36
+\BOOKMARK [1][-]{section.3.3}{Post Elaborazione con Matlab}{chapter.3}% 37
+\BOOKMARK [2][-]{subsection.3.3.1}{Conversioni Dati}{section.3.3}% 38
+\BOOKMARK [2][-]{subsection.3.3.2}{Creazione dei grafici e Filtraggio}{section.3.3}% 39
+\BOOKMARK [0][-]{chapter.4}{Modello teorico di Controllo}{}% 40
+\BOOKMARK [1][-]{section.4.1}{Controllo a Errore Nullo}{chapter.4}% 41
+\BOOKMARK [1][-]{section.4.2}{Simulazione Qualitativa su Simulink}{chapter.4}% 42
+\BOOKMARK [0][-]{chapter.5}{Sviluppo Controllo reale}{}% 43
+\BOOKMARK [1][-]{section.5.1}{Codifica del controllore}{chapter.5}% 44
+\BOOKMARK [1][-]{section.5.2}{Tuning delle costanti}{chapter.5}% 45
+\BOOKMARK [1][-]{section.5.3}{Esperimenti}{chapter.5}% 46
+\BOOKMARK [0][-]{chapter.6}{Conclusioni e sviluppi futuri}{}% 47
+\BOOKMARK [0][-]{chapter.7}{Software, Toolchain, Strumenti}{}% 48
+\BOOKMARK [0][-]{chapter*.39}{Appendice A - Codice Arduino}{}% 49
+\BOOKMARK [1][-]{section.8.1}{Set-up Registri}{chapter*.39}% 50
+\BOOKMARK [2][-]{subsection.8.1.1}{Tic Timer}{section.8.1}% 51
+\BOOKMARK [2][-]{subsection.8.1.2}{Frequenza PWM}{section.8.1}% 52
+\BOOKMARK [1][-]{section.8.2}{Generatore di Segnale}{chapter*.39}% 53
+\BOOKMARK [2][-]{subsection.8.2.1}{Segnali Base}{section.8.2}% 54
+\BOOKMARK [2][-]{subsection.8.2.2}{Segnali Composti}{section.8.2}% 55
+\BOOKMARK [1][-]{section.8.3}{Codici Controllore}{chapter*.39}% 56
+\BOOKMARK [0][-]{chapter*.44}{Appendice B - Codice EMP}{}% 57
+\BOOKMARK [1][-]{section.9.4}{Pacchetti EMP}{chapter*.44}% 58
+\BOOKMARK [2][-]{subsection.9.4.1}{Definizione dei Pacchetti}{section.9.4}% 59
+\BOOKMARK [0][-]{chapter*.47}{Appendice C - Matlab Post Elaboration}{}% 60
+\BOOKMARK [0][-]{chapter*.48}{Elenco delle figure}{}% 61
+\BOOKMARK [0][-]{chapter*.49}{Bibliografia}{}% 62

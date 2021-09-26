@@ -160,6 +160,33 @@
     \field{year}{12 Jul 2016}
   \endentry
 
+  \entry{CircularBuffer}{manual}{}
+    \name{author}{1}{}{%
+      {{hash=JP}{%
+         family={Johnston},
+         familyi={J\bibinitperiod},
+         given={Phillip},
+         giveni={P\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{JP1}
+    \strng{fullhash}{JP1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{J}
+    \field{sortinithash}{J}
+    \field{title}{Creating a Circular Buffer in C and C++}
+    \verb{url}
+    \verb https://embeddedartistry.com/blog/2017/05/17/creating-a-circular-buff
+    \verb er-in-c-and-c/
+    \endverb
+    \list{institution}{1}{%
+      {Embedded Artistry}%
+    }
+    \field{type}{Online Page}
+    \field{year}{10 JUNE 2021}
+  \endentry
+
   \entry{TokamakCircuit}{article}{}
     \name{author}{8}{}{%
       {{hash=RJ}{%

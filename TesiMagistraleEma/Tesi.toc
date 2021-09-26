@@ -92,74 +92,78 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {subsection}{\numberline {3.1.4}Struttura del codice}{32}{subsection.3.1.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.1.5}Benchmark}{34}{subsection.3.1.5}%
+\contentsline {subsection}{\numberline {3.1.5}Code Flow}{34}{subsection.3.1.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.2}Online Sampling}{35}{section.3.2}%
+\contentsline {subsection}{\numberline {3.1.6}Benchmark}{35}{subsection.3.1.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.1}Interconnessione Arduino $\Leftrightarrow $ Companion}{35}{subsection.3.2.1}%
+\contentsline {subsubsection}{Arduino Benckmark}{35}{section*.38}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.2.2}Storage su file delle informazioni}{35}{subsection.3.2.2}%
+\contentsline {section}{\numberline {3.2}Online Sampling}{36}{section.3.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.3}Post Elaborazione con Matlab}{36}{section.3.3}%
+\contentsline {subsection}{\numberline {3.2.1}Interconnessione Arduino $\Leftrightarrow $ Companion}{36}{subsection.3.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.1}Conversioni Dati}{36}{subsection.3.3.1}%
+\contentsline {subsection}{\numberline {3.2.2}Storage su file delle informazioni}{36}{subsection.3.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {3.3.2}Creazione dei grafici e Filtraggio}{36}{subsection.3.3.2}%
+\contentsline {section}{\numberline {3.3}Post Elaborazione con Matlab}{37}{section.3.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Modello teorico di Controllo}{38}{chapter.4}%
+\contentsline {subsection}{\numberline {3.3.1}Conversioni Dati}{37}{subsection.3.3.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Controllo a Errore Nullo}{38}{section.4.1}%
+\contentsline {subsection}{\numberline {3.3.2}Creazione dei grafici e Filtraggio}{37}{subsection.3.3.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Simulazione Qualitativa su Simulink}{38}{section.4.2}%
+\contentsline {chapter}{\numberline {4}Modello teorico di Controllo}{39}{chapter.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Sviluppo Controllo reale}{39}{chapter.5}%
+\contentsline {section}{\numberline {4.1}Controllo a Errore Nullo}{39}{section.4.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.1}Codifica del controllore}{39}{section.5.1}%
+\contentsline {section}{\numberline {4.2}Simulazione Qualitativa su Simulink}{39}{section.4.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.2}Tuning delle costanti}{39}{section.5.2}%
+\contentsline {chapter}{\numberline {5}Sviluppo Controllo reale}{40}{chapter.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {5.3}Esperimenti}{39}{section.5.3}%
+\contentsline {section}{\numberline {5.1}Codifica del controllore}{40}{section.5.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Conclusioni e sviluppi futuri}{40}{chapter.6}%
+\contentsline {section}{\numberline {5.2}Tuning delle costanti}{40}{section.5.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {7}Software, Toolchain, Strumenti}{41}{chapter.7}%
+\contentsline {section}{\numberline {5.3}Esperimenti}{40}{section.5.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Appendice A - Codice Arduino}{42}{chapter*.38}%
+\contentsline {chapter}{\numberline {6}Conclusioni e sviluppi futuri}{41}{chapter.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8.1}Set-up Registri}{42}{section.8.1}%
+\contentsline {chapter}{\numberline {7}Software, Toolchain, Strumenti}{42}{chapter.7}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.1.1}Tic Timer}{42}{subsection.8.1.1}%
+\contentsline {chapter}{Appendice A - Codice Arduino}{43}{chapter*.39}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.1.2}Frequenza PWM}{42}{subsection.8.1.2}%
+\contentsline {section}{\numberline {8.1}Set-up Registri}{43}{section.8.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Offset Calculation}{43}{section*.39}%
+\contentsline {subsection}{\numberline {8.1.1}Tic Timer}{43}{subsection.8.1.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8.2}Generatore di Segnale}{44}{section.8.2}%
+\contentsline {subsection}{\numberline {8.1.2}Frequenza PWM}{43}{subsection.8.1.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.2.1}Segnali Base}{44}{subsection.8.2.1}%
+\contentsline {subsubsection}{Offset Calculation}{44}{section*.40}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Rampa}{44}{section*.40}%
+\contentsline {section}{\numberline {8.2}Generatore di Segnale}{45}{section.8.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.2.2}Segnali Composti}{45}{subsection.8.2.2}%
+\contentsline {subsection}{\numberline {8.2.1}Segnali Base}{45}{subsection.8.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Onda Triangloare}{45}{section*.41}%
+\contentsline {subsubsection}{Rampa}{45}{section*.41}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Onda Trapezoidale}{45}{section*.42}%
+\contentsline {subsection}{\numberline {8.2.2}Segnali Composti}{46}{subsection.8.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8.3}Codici Controllore}{46}{section.8.3}%
+\contentsline {subsubsection}{Onda Triangloare}{46}{section*.42}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Appendice B - Codice EMP}{47}{chapter*.43}%
+\contentsline {subsubsection}{Onda Trapezoidale}{46}{section*.43}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {9.4}Pacchetti EMP}{47}{section.9.4}%
+\contentsline {section}{\numberline {8.3}Codici Controllore}{47}{section.8.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {9.4.1}Definizione dei Pacchetti}{47}{subsection.9.4.1}%
+\contentsline {chapter}{Appendice B - Codice EMP}{48}{chapter*.44}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Esempio di Definizione}{47}{section*.44}%
+\contentsline {section}{\numberline {9.4}Pacchetti EMP}{48}{section.9.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Pacchetti Multipli}{48}{section*.45}%
+\contentsline {subsection}{\numberline {9.4.1}Definizione dei Pacchetti}{48}{subsection.9.4.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Appendice C - Matlab Post Elaboration}{49}{chapter*.46}%
+\contentsline {subsubsection}{Esempio di Definizione}{48}{section*.45}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Elenco delle figure}{51}{chapter*.47}%
+\contentsline {subsubsection}{Pacchetti Multipli}{49}{section*.46}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliografia}{52}{chapter*.48}%
+\contentsline {chapter}{Appendice C - Matlab Post Elaboration}{50}{chapter*.47}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Elenco delle figure}{52}{chapter*.48}%
+\defcounter {refsection}{0}\relax 
+\contentsline {chapter}{Bibliografia}{54}{chapter*.49}%

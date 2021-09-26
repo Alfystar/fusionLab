@@ -126,20 +126,60 @@ L’aver usato COBS come sistema di codifica per la trasmissione, garantisce che
 
 \newpage
 \subsection{Struttura del codice}
-Lo sviluppo del codice è qui riassunto nel \textbf{Class Diagram} fatto in UML, del codice:
+Lo sviluppo del codice è qui riassunto nel \textbf{Class Diagram} fatto in UML, del codice:\\
 \begin{figure}[h]
 	\centering
 	\includegraphics[width=1\textwidth]{EMP/EMP-Hierarchy.png}
 	\caption[Class Diagram UML di EMP]{Class Diagram UML}
 \end{figure}
-\noindent
-Senza entrare eccessivamente nel dettaglio di \citefield{EMP}{title}, poichè tutti i codici, esempi e lavori aggiornati, sono reperibili nel repositori di \cite*{EMP}, possiamo iniziare osservando che il codice è diviso in 2 macro blocchi (\textbf{MPCore}, \textbf{MP}) più una classe di supporto per il buffer circolare.\\
-Questa organizzazione del codice è stata pensata per far compilare su tutte le piattaforme di interesse lo stesso codice attivo, presente in \textbf{MPCore}, mentre le particolarizzazioni dovute alle varie piattaforme o al mezzo di comunicazione sono demandate alle classi concrete che però, come si vede, discendono tutte dallo stesso padre.\\
-Questo metodo di sviluppo ha minimizzato enormemente i tempi di sviluppo, poiché una volta testato il codice \textbf{Core} funzionante, non è rimasto che adattare i dettagli per estenderne l'ambiente di sviluppo. Con questa tecnica è virtualmente possibile estendere su qualsiasi piattaforma la libreria, avendo \textbf{MPCore} delle richieste per compilare estremamente esigue, senza troppe complicazioni, e, se la piattaforma lo concede come nel caso di Linux, raccogliere ulteriormente delle funzionalità comuni e scrivere così, via via, sempre meno codice.
 
+\noindent
+Senza entrare eccessivamente nel dettaglio di \citefield{EMP}{title}, essendo tutto reperibile nella versione più aggiornata all'interno del repository di \cite*{EMP}, osserviamo che il codice è diviso in 2 macro blocchi (\textbf{MPCore}, \textbf{MP}) più una classe di supporto per il buffer circolare.\\
+Questa organizzazione del codice è stata pensata per far compilare su tutte le piattaforme di interesse lo stesso \textit{codice attivo}(codifica e decodifica dei pacchetti + accumulo), e demandare le particolarizzazioni dovute alle varie piattaforme o al mezzo di comunicazione usato nel caso specifico a delle classi figlie.\\
+\begin{spacing}{1.25}
+\begin{description}
+	\item[MPCore] Il \textit{Codice attivo} è presente all'interno del package \textbf{MPCore}. Tutto il codice contenuto in questo package è scritto in C++11 e per essere compilato necessita di un set minimale di librerie standard, sicuramente presenti in ogni piattaforma di sviluppo.
+	\item[EMP] Il package più generico comprende le classi figlie che concretizzano le operazioni di invio e ricezione, facendo poi elaborare i byte al codice che ereditano dalla classe \textbf{MP}.\\
+	Le classi sono scritte e pensate per funzionare su una piattaforma specifica, e su essa essere ottimizzate.\\
+	Se la piattaforma lo concede come nel caso di Linux, è quindi possibili fattorizzare ulteriormente delle funzionalità comuni e scrivere così, via via, sempre meno codice sicuri che quello in comune, se funziona su una classe, deve funzionare anche per l'altra.
+	\item[Buffer Circolare] La classe \textit{CircularBuffer} è una classe di supporto che implementa un buffer circolare con logica "\textit{One Slot Open}"(\cite{CircularBuffer}) attraverso una classe template.\\
+	Il motivo di questa scelta, molto forte e vincolante, essendo principalmente lei la causa per cui tutte le altre sono anch'esse template, è dovuta alla possibilità di istanziare in fase di compilazione, tutta la memoria richiesta per il funzionamento del programma.\\
+	Una simile necessità nasce dal dover compilare la classe anche su schede embedded, le quali, notoriamente, non hanno a disposizione un heap in ram spazioso per la memoria dinamica, e beneficiano nelle prestazioni se in fase di compilazione gli indirizzi di memoria sono fissi.
+\end{description}
+\end{spacing}
 
 \newpage
+\subsection{Code Flow}\label{sub:codeFlow}
+Vediamo ora come la libreria si frappone tra 2 device che vogliono comunicare mediante questo sequence diagram:\\
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\textwidth]{EMP/Message Pack Sending Flow.png}
+	\caption[Sequence Diagram UML di EMP]{Sequence Diagram UML}
+\end{figure}
+
+\noindent
+In questo esempio generico i 2 device non sono definiti, ovviamente nessuno dei 2 può istanziare concretamente una classe \textbf{MP}(essendo una classe virtuale), ma come detto prima, tutti i \textit{Codici attivi} sono racchiusi lì dentro.\\
+Come si può osservare, eccetto il riempire i dati, inviarli e attendere che arrivi qualcosa, per gli attori il lavoro finisce subito, internamente alla libreria, invece, a parti invertite, abbiamo il calcolo del CRC8 (\cite{CRC8}) e la codifica usando COBS (\cite{COBS}), e l'omologo dall'altro lato, dopo aver ricevuto i byte, procede alla de-codifica e check per l'integrità.\\
+
 \subsection{Benchmark}
+La serie di passi descritta nel \nameref{sub:codeFlow} dà luogo a un codice altamente efficiente, che si avvicina moltissimo al massimo teorico trasmissibile sul mezzo:
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.8\textwidth]{EMP/TestFlow.png}
+	\caption[EMP Benchmark Testing Flow]{Testing Flow}
+\end{figure}
+
+\noindent
+I test vengono avviati da \textbf{Linux} e misurano il tempo il round-trip time tra l'invio del pacchetto e ricezione la ricezione della risposta corretta da parte del device.
+In tutti i testi i pacchetti usati erano asincroni e consistevano in:
+\begin{description}
+	\item[22 Byte] Pacchetto da Linux $\Rightarrow$ Device
+	\item[12 Byte] Pacchetto dal Device $\Rightarrow$Linux
+\end{description} 
+
+\subsubsection{Arduino Benckmark}
+Con una 
+
 
 \newpage
 \section{Online Sampling}
