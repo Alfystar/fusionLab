@@ -84,6 +84,35 @@
     \field{year}{15 Apr 2019}
   \endentry
 
+  \entry{MagneticDiagnostics}{inproceedings}{}
+    \name{author}{1}{}{%
+      {{hash=CC}{%
+         family={Cianfarani},
+         familyi={C\bibinitperiod},
+         given={Cesidio},
+         giveni={C\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {Associazione Euratom-ENEA sulla Fusione}%
+    }
+    \strng{namehash}{CC1}
+    \strng{fullhash}{CC1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{booktitle}{MAGNETIC DIAGNOSTICS FOR FUSION MACHINES}
+    \field{title}{MAGNETIC DIAGNOSTICS FOR FUSION MACHINES}
+    \verb{url}
+    \verb https://www.fsn-fusphy.enea.it/Intranet/index.php/seminari-interni/do
+    \verb wnload-file?path=Seminari-Workshop-WIP-Corsi+Interni%2FCorsi+Interni%
+    \verb 2FCorso+RdO+2015%2FSLIDES+%26+AUDIO%2F13+Diagnostiche+Magnetiche+%28C
+    \verb ianfarani%29%2FMagnetic+Diagnostics+2.2+-+Cianfarani.pdf
+    \endverb
+    \field{year}{11 apr 2013}
+  \endentry
+
   \entry{IBT-2}{manual}{}
     \name{author}{1}{}{%
       {{hash=H}{%
@@ -184,7 +213,31 @@
       {Embedded Artistry}%
     }
     \field{type}{Online Page}
-    \field{year}{10 JUNE 2021}
+    \field{year}{10 june 2021}
+  \endentry
+
+  \entry{modulazionePWM}{manual}{}
+    \name{author}{1}{}{%
+      {{hash=R}{%
+         family={Redazione},
+         familyi={R\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{R1}
+    \strng{fullhash}{R1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{title}{Nozioni di PWM}
+    \verb{url}
+    \verb https://www.ingegnerando.it/nozioni-di-pwm/
+    \endverb
+    \list{institution}{1}{%
+      {Ingegnerando}%
+    }
+    \field{type}{Online Page}
+    \field{year}{20 october 2019}
   \endentry
 
   \entry{TokamakCircuit}{article}{}

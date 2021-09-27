@@ -161,14 +161,69 @@ int rapidShot(uint64_t t) {
 
 \section{Codici Controllore}
 
+\subsubsection{Setup dell'esperimento}
+\begin{lstlisting}[style=cppStyle,caption={Loop di Controllo},label=lst:controlSetup] 
+void setup() {
+	mpSerial.begin(2000000);
+	
+	memset(&pRead, 0, sizeof(pRead));
+	memset(&pWrite, 0, sizeof(pWrite));
+	
+	// Motori
+	setMotFreq(hz30k);
+	mot = new DCdriver(enPwm, inA, inB);
+	
+	// Mean find
+	pMean.V2_mean = offsetCalc(V2, 5);
+	pMean.Isense_mean = offsetCalc(Isense, 5);
+	pMean.dt = dtExperiment;
+	
+	// Ctrl Reference
+	Ctrl.setNewRef(tic, 0);
+	
+	// ################# Start Experiment #################
+	mpSerial.bufClear();
+	// Start Delay
+	memset(&pWrite, 0, sizeof(pWrite));
+	pWrite.type = sampleType;
+	delay(1000);
+	periodicTask(pMean.dt);
+	sei();
+}
+\end{lstlisting}
+
+\subsubsection{Loop di Controllo}
+\begin{lstlisting}[style=cppStyle,caption={Loop di Controllo},label=lst:controlLoop] 
+volatile u32 oldTic = tic;
+int readData;
+int pwm;
+void loop() {
+	mpSerial.updateState();
+	do {
+		readData = mpSerial.getData_try(&pRead);
+		if (readData >= 0) {
+			serialExe(&pRead);
+		}
+	} while (tic == oldTic);
+	
+	pWrite.read.V2_read = analogRead(V2);
+	pWrite.read.Isense_read = analogRead(Isense);
+	pwm = mot->drive_motor(Ctrl.ctrlStep(oldTic, pWrite.read.V2_read - pMean.V2_mean));
+	pWrite.read.pwm = pwm;
+	pWrite.read.err = Ctrl.lastErr;
+	
+	oldTic++; // Suppose no over time
+	mpSerial.packSend(&pWrite, sizeof(pWrite.type) + sizeof(pWrite.read));
+}
+\end{lstlisting}
 
 \chapter*{Appendice B\\ EMP Code}\label{EMPCode}
 \addcontentsline{toc}{chapter}{Appendice B - Codice EMP}
 \setcounter{chapter}{\thechapter + 1}
 
-\section{Pacchetti EMP}
-\subsection{Definizione dei Pacchetti}
-\subsubsection{Esempio di Definizione}
+\section{Pacchetti in EMP}
+\subsection{Definizione di 2 Pacchetti}
+Ecco di seguito un esempio di definizione asimmetrica per pacchetti da un Device (Linux), verso un altro (Arduino), e viceversa:\\
 \begin{lstlisting}[style=cppStyle,caption={esempio di definizione Pacchetto in EMP},label=lst:EMPpackDef] 
 #include <stdint.h>	// To be sure for the footPrint in any platform
 struct _packLinux2Ard {
@@ -183,14 +238,14 @@ struct _packArd2Linux {
 } __attribute__((packed));
 typedef struct _packArd2Linux packArd2Linux;
 \end{lstlisting}
-
-Il sistema non necessita di alcun formato particolare per la definizione dei pacchetti, essi sono delle semplici strutture in C, con l'attributo \verb|__attribute__((packed))| per eliminare Padding e ottimizzare la memoria.
+\noindent
+Come si può osservare, il sistema non necessita di alcun formato particolare per la definizione dei pacchetti, essi sono delle semplici strutture in C, con l'attributo \verb|__attribute__((packed))| per eliminare Padding e ottimizzare la memoria.
 Come è possibile notare, le regole non vietano la definizione di 2 pacchetti diversi e asimmetrici.
 \newpage
 
-\subsubsection{Pacchetti Multipli}
+\subsection{Pacchetti Multipli}
 Per definire un pacchetto di pacchetti, il metodo migliore è creare un \verb|enum| per numerare univocamente il tipo (nell'esempio \verb|uint8_t| ma può essere reso maggiore all'occorrenza), e una \verb|union| con tutti i tipi in fila.\\
-Il pacchetto di interesse per EMP è \verb|dataSend|, ed è responsabilità dell'utente della libreria riempire correttamente i campi.
+Il pacchetto di interesse per \citefield{EMP}{title} è \verb|dataSend|, ed è responsabilità dell'utente della libreria riempire correttamente i campi.\\
 \begin{lstlisting}[style=cppStyle,caption={definizione Pacchetti Multipli},label=lst:EMPmultiplePack] 
 //DataType1 ,DataType2, DataType3 typedef above;
 enum packTypeSend : uint8_t{
