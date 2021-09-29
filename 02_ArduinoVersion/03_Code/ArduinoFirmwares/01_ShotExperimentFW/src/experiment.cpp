@@ -6,7 +6,7 @@
 
 int controll(struct setUpPack *pMean, struct sample *pRead, unsigned long tic) {
   //  return triangleSignal(tic, 200);
-  //      return rapidShot(tic);
+  //  return rapidShot(tic);
   return ctrl(tic, pRead->V2_read - pMean->V2_mean);
 }
 
@@ -48,7 +48,33 @@ int rampEps(uint64_t t, int vStart, uint64_t tStart, int vEnd, unsigned int eps)
   return val;
 }
 
-/// Complex signal
+// Onda quadra a 3 stati, Delay, High, Zero, NegHigh
+int square3StateDHZN(uint64_t dt, int msDelay, int msHigh, int msZero, int msNegHigh) {
+  if (dt < ticConvert(msDelay))
+    return 0;
+  else if (dt < ticConvert(msDelay + msHigh))
+    return 255;
+  else if (dt < ticConvert(msDelay + msHigh + msZero))
+    return 0;
+  else if (dt < ticConvert(msDelay + msHigh + msZero + msNegHigh))
+    return -255;
+  else
+    return 0;
+}
+
+// Onda quadra a 3 stati, Zero, High, NegHigh
+int square3StateZHN(uint64_t dt, int msZero, int msHigh, int msNegHigh) {
+  if (dt < ticConvert(msZero))
+    return 0;
+  else if (dt < ticConvert(msZero + msHigh))
+    return 255;
+  else if (dt < ticConvert(msZero + msHigh + msNegHigh))
+    return -255;
+  else
+    return 0;
+}
+
+/// Periodic signal
 
 int triangleSignal(uint64_t t, int msQuartPeriod) {
   static uint64_t startTic = 0;
@@ -75,10 +101,8 @@ int triangleSignalEps(uint64_t t) {
     add *= -1;
   return pwm;
 }
-//: fai una variazione molto più rapida del PWM:
-// da 0 dufy cycle passi a 100% in 100ms, rimani su per 1 s e
-//: poi giù in 0.1s e ripeti. Poi mi chiami.
-#define tQuiet ticConvert(1000)
+
+// Rapid Shot
 
 #define t0 ticConvert(100)       // waiting start
 #define t1 ticConvert(100) + t0  // Rise Ramp
@@ -151,8 +175,21 @@ int rapidShotEps(uint64_t t) {
   return pwmRapidShot;
 }
 
+int estimateSignalSquare(uint64_t t, int msZero, int msHigh, int msNegHigh) {
+  static uint64_t startTic = 0;
+  int dt = ticConvert(t - startTic);
+  if (dt < msZero + msHigh + msZero + msNegHigh)
+    return square3StateDHZN(dt, msZero, msHigh, msZero, msNegHigh);
+  else if (dt < msZero + msHigh + msZero + msNegHigh + msZero + msHigh + msNegHigh)
+    return square3StateZHN(dt, msZero, msHigh, msNegHigh);
+  else {
+    startTic = t;
+    return estimateSignalSquare(t, msZero, msHigh, msNegHigh);
+  }
+}
+
 // Controllo
-#define tcStart ticConvert(100)           // start Experiment
+#define tcStart ticConvert(100)         // start Experiment
 #define tcEnd ticConvert(150) + tcStart // stop Experiment
 
 #define vScale (5.0 / 1023.0)

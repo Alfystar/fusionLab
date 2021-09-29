@@ -112,9 +112,17 @@ void loop() {
   pWrite.read.V2_read = analogRead(V2);
   pWrite.read.Isense_read = analogRead(Isense);
 
-//   pWrite.read.pwm = mot->actuate(rapidShotEps(oldTic)); //controllo diretto di rapidShotEps
-//  pWrite.read.pwm = mot->actuate(triangleSignalEps(oldTic)); //controllo diretto di triangleSignalEps
-    pWrite.read.pwm = mot->drive_motor(controll(&pMean, &pWrite.read, oldTic));
+//  // controllo diretto di rapidShotEps
+//  pWrite.read.pwm = mot->actuate(rapidShotEps(oldTic));
+//
+//  // controllo diretto di triangleSignalEps
+//  pWrite.read.pwm = mot->actuate(triangleSignalEps(oldTic));
+
+  // controllo diretto di estimateSignalSquare
+  pWrite.read.pwm = mot->actuate(estimateSignalSquare(oldTic, 200, 150, 215));
+
+//  // Sistem Controll with deadzone filter active
+//  pWrite.read.pwm = mot->drive_motor(controll(&pMean, &pWrite.read, oldTic));
 
   oldTic++; // Suppose no over time
 

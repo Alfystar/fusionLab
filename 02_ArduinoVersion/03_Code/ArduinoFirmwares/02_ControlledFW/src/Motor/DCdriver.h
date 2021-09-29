@@ -13,8 +13,8 @@
 #include <Arduino.h>
 #include <globalDef.h>
 
-#define upLimitSat 224  // 223 from matlab graph
-#define downLimitSat 39 // 40 from matlab graph
+#define upLimitSat 220  // 219.9 from matlab graph
+#define downLimitSat 41 // 40.8 from matlab graph
 
 void setMotFreq(pwmFreq freq);
 
