@@ -2,12 +2,13 @@ clear variables
 clc
 
 
-% [experiment, Info]= importExperiment("ExtimateExperiment/T2-RapidShot.txt");
-[experiment, Info]= importExperiment("ExtimateExperiment/T1-Triangolare.txt");
-experimentRescale = tableRescale(experiment, Info);
-
+% [experiment,  Info]= importExperiment("ExtimateExperiment/T2-RapidShot.txt");
+[experiment,  Info]= importExperiment("ExtimateExperiment/T1-Triangolare.txt");
+% [experiment,  Info]= importExperiment("ExtimateExperiment/T3-ControllBackup-100Ohm.txt");
+% [experiment,  Info]= importExperiment("ExtimateExperiment/E01-EstimateShot.txt");
+% [experiment,  Info]= importExperiment("ExtimateExperiment/E02-EstimateShotHalfFlip.txt");
 % DAT = iddata(Y,U,Ts)
-ExperimentFrameData = iddata(experimentRescale.V2_read, experimentRescale.PWM, Info.dt);
+ExperimentFrameData = iddata(experiment.V2_read, experiment.PWMDead, Info.dt);
 
 % SYS = tfest(DATA, NP, NZ, IODELAY)
 tfTansformerEst = tfest(ExperimentFrameData, 2, 1, NaN)
@@ -16,7 +17,7 @@ num = tfTansformerEst.num;
 den = tfTansformerEst.den;
 
 
-[len , ~ ] = size(experimentRescale);
+[len , ~ ] = size(experiment);
 t = [0:len-1]' * Info.dt;
 
 tfTansformer = tf(num, den);
@@ -24,64 +25,32 @@ tfTansformer = tf(num, den);
 num(2) = 0;
 tfTansformerRmZero = tf(num, den);
 
-ySim = lsim(tfTansformer,experimentRescale.PWM,t);
-ySimRmZero = lsim(tfTansformerRmZero,experimentRescale.PWM,t);
+ySim = lsim(tfTansformer,experiment.PWMDead,t);
+ySimRmZero = lsim(tfTansformerRmZero,experiment.PWMDead,t);
 
 
-eySim = 100*(1-goodnessOfFit(experimentRescale.V2_read, ySim,'NRMSE'));
-eySimOnlyZero = 100*(1-goodnessOfFit(experimentRescale.V2_read, ySimRmZero,'NRMSE'));
+
+eySim = 100*(1-goodnessOfFit(experiment.V2_readFilter, ySim,'NRMSE'));
+eySimOnlyZero = 100*(1-goodnessOfFit(experiment.V2_readFilter, ySimRmZero,'NRMSE'));
 
 fprintf("Simulation with tfest Coeffitient generate a:\n\t%.4f %%\tFit to estimation data\n", eySim)
 fprintf("Simulation with tfest Coeffitient removing the costant term in numerator generate a:\n\t%.4f %%\tFit to estimation data\n", eySimOnlyZero)
+% plotTable(experiment,Info, [ySim, ySimRmZero], {'tfEst','tfEst-zero'});
 
-plotTable(experimentRescale,Info, [ySim, ySimRmZero], {'tfEst','tfEst-zero'});
+%% 
 
+
+%% Manual Estimation
+tfPrimario = tf([100000], [1000, 10000]); 
+yManualSimPrimario = lsim(tfPrimario,experiment.PWMDead,t);
+
+
+plotTable(experiment,Info, yManualSimPrimario, {'ManualPrimario'});
+xlim([0,0.500])
 % #############################
 % #      Functions Block      #
 % #############################
 
-function tableRescale = tableRescale(table,Info)
-vScale = 5/(2^10-1);        % ADC sensitivity
-IScale = vScale / 0.020;    % Isensitivity = 20mv/A
-
-V2Mean = Info.V2_mean;
-IsenseMean = Info.Isense_mean;
-dt = Info.dt;
-vRef = Info.V2Ref_set;
-
-tableRescale = table;
-for i = 1 : length(tableRescale.PWM)
-    tableRescale.PWM(i) = pwm2duty(table.PWM(i),41,220);
-end
-tableRescale.V2_read = (table.V2_read - V2Mean) * vScale;
-tableRescale.Isense_read = (table.Isense_read - IsenseMean) * IScale;
-tableRescale.error = (tableRescale.V2_read - vRef*vScale);
-end
-
-function u = pwm2duty(pwm, downDead, upDead)
-u = 0;
-if(abs(pwm)>=upDead)
-    u=sign(pwm);
-    return
-end
-if(abs(pwm)<=downDead)
-    u = 0;
-    return
-end
-if(pwm>0)
-    u = map(pwm,downDead,upDead,0,1);
-    return
-else
-    u = -map(-pwm,downDead,upDead,0,1);
-    return
-end
-
-end
-
-function u = map (var, varMin, varMax, outMin , outMax)
-u = ((var-varMin)/(varMax-varMin));
-u = (u * outMax) + ((1-u)*outMin);
-end
 
 function plotTable(table, Info, ySim, ySimLegend)
 % ySimLegend have to be a cel array {'Jan','Feb','Mar'}
@@ -98,13 +67,17 @@ t = [0:len-1]' * dt;
 clf
 grid on
 hold on
-plot(t,table.PWM)
-plot(t,table.V2_read)
+plot(t,table.PWMDead)
+% plot(t,table.PWM)
+% plot(t,table.V2_read)
+plot(t,table.V2_readFilter)
 plot(t,table.Isense_read)
 for y = ySim
     plot(t,y);
 end
-legNorm = {'PWM%', 'V_{secondary}', 'I_{primary}'};
+legNorm = {'PWM%-DeadFilter','V_{secondaryFilter}','I_{primary}'};
+
+% legNorm = {'PWM%-DeadFilter', 'PWM%-Real', 'V_{secondary}', 'V_{secondaryFilter}','I_{primary}'};
 legend(cat(2,legNorm,ySimLegend));
 
 title("Experiment: "+name+ "   SampleTime: " + mat2str(dt * 1000000) + "µs")

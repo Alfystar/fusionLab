@@ -66,18 +66,7 @@ void setup() {
   mpSerial.getData_wait(&pRead);
 
   pWrite.type = setUpPackType;
-  // Calculate offset
-  //  long read = 0;
-  //  for (int i = 0; i < 1 << 5; i++)
-  //    read += analogRead(V2);
-  //  read = read >> 5;
-  //  pWrite.setUp.V2_mean = read;
   pWrite.setUp.V2_mean = offsetCalc(V2, 5);
-  //  read = 0;
-  //  for (int i = 0; i < 1 << 5; i++)
-  //    read += analogRead(Isense);
-  //  read = read >> 5;
-  //  pWrite.setUp.Isense_mean = read;
   pWrite.setUp.Isense_mean = offsetCalc(Isense, 5);
 
   pWrite.setUp.dt = dtExperiment;
@@ -97,6 +86,11 @@ void setup() {
 
 volatile u32 oldTic = tic;
 
+#define faseTicChange ticConvert(300)
+unsigned int Fase = 5; // Rotating Phase
+unsigned int counterSat = 0;
+unsigned long ticChange;
+
 void loop() {
   mpSerial.updateState();
   while (tic == oldTic) {
@@ -108,20 +102,61 @@ void loop() {
       delay(1000);
     };
   }
-  digitalWrite(13, !digitalRead(13));
   pWrite.read.V2_read = analogRead(V2);
   pWrite.read.Isense_read = analogRead(Isense);
 
-//  // controllo diretto di rapidShotEps
-//  pWrite.read.pwm = mot->actuate(rapidShotEps(oldTic));
-//
-//  // controllo diretto di triangleSignalEps
-//  pWrite.read.pwm = mot->actuate(triangleSignalEps(oldTic));
+  switch (Fase) {
+  case 0:
+    // Reference following
+    pWrite.read.pwm = mot->drive_motor(controll(&pMean, &pWrite.read, oldTic));
+    if(oldTic>ticChange+ticConvert(350)){
+      Fase++;
+      ticChange = oldTic;
+    }
+    break;
+  case 1:
+    // controllo diretto di rapidShotEps
+    pWrite.read.pwm = mot->actuate(rapidShotEps(oldTic));
+    if(oldTic>ticChange+ticConvert(1000)){
+      Fase++;
+      ticChange = oldTic;
+    }
+    break;
+  case 2:
+    // controllo diretto di triangleSignalEps
+    pWrite.read.pwm = mot->actuate(triangleSignalEps(oldTic));
+    if(oldTic>ticChange+ticConvert(3000)){
+      Fase++;
+      ticChange = oldTic;
+    }
+    break;
+  case 3:
+    // controllo Filtrato di rapidShot
+    pWrite.read.pwm = mot->drive_motor(rapidShot(oldTic));
+    if(oldTic>ticChange+ticConvert(1000)){
+      Fase++;
+      ticChange = oldTic;
+    }
+    break;
+  case 4:
+    // controllo Filtrato di triangleSignal
+    pWrite.read.pwm = mot->drive_motor(triangleSignal(oldTic, 200));
+    if(oldTic>ticChange+ticConvert(3000)){
+      Fase++;
+      ticChange = oldTic;
+    }
+    break;
+  default:
+  case 5:
+    digitalWrite(13, !digitalRead(13));
 
-  // controllo diretto di estimateSignalSquare
-  pWrite.read.pwm = mot->actuate(estimateSignalSquare(oldTic, 200, 150, 215));
+    // controllo diretto di estimateSignalSquare
+//    pWrite.read.pwm = mot->actuate(estimateSignalSquare(oldTic, 200, 400, 600));
+    pWrite.read.pwm = mot->actuate(halfFlop(oldTic, 500));
 
-//  // Sistem Controll with deadzone filter active
+
+    break;
+  }
 //  pWrite.read.pwm = mot->drive_motor(controll(&pMean, &pWrite.read, oldTic));
 
   oldTic++; // Suppose no over time

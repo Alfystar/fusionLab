@@ -137,9 +137,6 @@ int rapidShot(uint64_t t) {
   return pwmRapidShot;
 }
 
-#define upLimitSat 224  // 223 from matlab graph
-#define downLimitSat 39 // 40 from matlab graph
-
 #define t0Eps ticConvert(300)         // waiting start
 #define t1Eps ticConvert(300) + t0Eps // Rise Ramp
 #define t2Eps ticConvert(300) + t1Eps // High set
@@ -177,16 +174,30 @@ int rapidShotEps(uint64_t t) {
 
 int estimateSignalSquare(uint64_t t, int msZero, int msHigh, int msNegHigh) {
   static uint64_t startTic = 0;
-  int dt = ticConvert(t - startTic);
-  if (dt < msZero + msHigh + msZero + msNegHigh)
+  unsigned int dt = (t - startTic);
+  if (dt < ticConvert(msZero + msHigh + msZero + msNegHigh))
     return square3StateDHZN(dt, msZero, msHigh, msZero, msNegHigh);
-  else if (dt < msZero + msHigh + msZero + msNegHigh + msZero + msHigh + msNegHigh)
+  else if (dt < ticConvert(msZero + msHigh + msZero + msNegHigh + msZero + msHigh + msNegHigh))
     return square3StateZHN(dt, msZero, msHigh, msNegHigh);
   else {
     startTic = t;
     return estimateSignalSquare(t, msZero, msHigh, msNegHigh);
   }
 }
+
+int halfFlop(uint64_t t, int msFlop){
+  static uint64_t startTic = 0;
+  static int pwm = 115;
+  unsigned int dt = (t - startTic);
+  if (dt < ticConvert(msFlop))
+    return pwm;
+  else {
+    startTic = t;
+    pwm *= -1;
+    return halfFlop(t, msFlop);
+  }
+}
+
 
 // Controllo
 #define tcStart ticConvert(100)         // start Experiment

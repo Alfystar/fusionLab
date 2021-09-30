@@ -31,6 +31,7 @@ int rapidShot(uint64_t t);
 int rapidShotEps(uint64_t t);
 
 int estimateSignalSquare(uint64_t t, int msZero, int msHigh, int msNegHigh);
+int halfFlop(uint64_t t, int msFlop);
 
 /// Controll
 int ctrl(uint64_t t, int v2);
