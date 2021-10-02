@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.9.11)  27 SEP 2021 15:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.9.11)  2 OCT 2021 14:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -202,6 +202,10 @@ Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1369.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1370.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1371.
 )
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip17
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
 Package: hyperref 2020-05-15 v7.00e Hypertext links for LaTeX
 
@@ -267,11 +271,6 @@ Package hyperref Info: Backreferencing OFF on input line 4484.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4717.
 \c@Hy@tempcnt=\count274
-
-(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
-\Urlmuskip=\muskip17
-Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
-)
 LaTeX Info: Redefining \url on input line 5076.
 \XeTeXLinkMargin=\dimen153
 
@@ -328,7 +327,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip55
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 37.
+Package hyperref Info: Option `colorlinks' set `true' on input line 41.
 
 (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.sty
 Package: biblatex 2020/12/31 v3.16 programmable bibliographies (PK/MW)
@@ -1233,13 +1232,51 @@ Package: multicol 2019/12/09 v1.8y multicolumn formatting (FMi)
 \colbreak@box=\box131
 \mc@col@check@num=\count476
 )
+(/usr/share/texlive/texmf-dist/tex/latex/vwcol/vwcol.sty
+Package: vwcol 2015/02/10 v0.2 Variable-width multicolumn text
+
+(/usr/share/texlive/texmf-dist/tex/latex/ragged2e/ragged2e.sty
+Package: ragged2e 2019/07/28 v2.2 ragged2e Package (MS)
+
+(/usr/share/texlive/texmf-dist/tex/latex/everysel/everysel.sty
+Package: everysel 2021/01/20 v2.1 EverySelectfont Package (MS)
+
+(/usr/share/texlive/texmf-dist/tex/latex/everysel/everysel-2011-10-28.sty))
+\CenteringLeftskip=\skip152
+\RaggedLeftLeftskip=\skip153
+\RaggedRightLeftskip=\skip154
+\CenteringRightskip=\skip155
+\RaggedLeftRightskip=\skip156
+\RaggedRightRightskip=\skip157
+\CenteringParfillskip=\skip158
+\RaggedLeftParfillskip=\skip159
+\RaggedRightParfillskip=\skip160
+\JustifyingParfillskip=\skip161
+\CenteringParindent=\skip162
+\RaggedLeftParindent=\skip163
+\RaggedRightParindent=\skip164
+\JustifyingParindent=\skip165
+)
+\vwcol@sep=\skip166
+\vwcol@rule=\skip167
+\vwcol@totalwidth=\skip168
+\vwcol@averagewidth=\skip169
+\vwcol@parindent=\skip170
+\vwcol@last=\count477
+\vwcol@Ncols=\count478
+\vwcol@Nlines=\count479
+\vwcol@maxrecursion=\count480
+\vwcol@box=\box132
+\vwcol@plainbox=\box133
+\vwcol@outputbox=\box134
+)
 (/usr/share/texlive/texmf-dist/tex/latex/setspace/setspace.sty
 Package: setspace 2011/12/19 v6.7a set line spacing
 )
-\c@obs=\count477
-\c@pro=\count478
-\c@teor=\count479
-\c@defn=\count480
+\c@obs=\count481
+\c@pro=\count482
+\c@teor=\count483
+\c@defn=\count484
 Package csquotes Info: Checking for multilingual support...
 Package csquotes Info: ... found 'babel' package.
 Package csquotes Info: Adjusting default style.
@@ -1254,37 +1291,37 @@ LaTeX Warning: Unused global option(s):
 (./capitolo-Controllo.aux) (./conclusioni.aux) (./appendice.aux))
 \openout1 = `Tesi.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 182.
-LaTeX Font Info:    ... okay on input line 182.
-LaTeX Info: Redefining \it@ocap on input line 182.
-LaTeX Info: Redefining \it@ccap on input line 182.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 210.
+LaTeX Font Info:    ... okay on input line 210.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 210.
+LaTeX Font Info:    ... okay on input line 210.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 210.
+LaTeX Font Info:    ... okay on input line 210.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 210.
+LaTeX Font Info:    ... okay on input line 210.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 210.
+LaTeX Font Info:    ... okay on input line 210.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 210.
+LaTeX Font Info:    ... okay on input line 210.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 210.
+LaTeX Font Info:    ... okay on input line 210.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 210.
+LaTeX Font Info:    ... okay on input line 210.
+LaTeX Info: Redefining \it@ocap on input line 210.
+LaTeX Info: Redefining \it@ccap on input line 210.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count481
+\scratchcounter=\count485
 \scratchdimen=\dimen301
-\scratchbox=\box132
-\nofMPsegments=\count482
-\nofMParguments=\count483
+\scratchbox=\box135
+\nofMPsegments=\count486
+\nofMParguments=\count487
 \everyMPshowfont=\toks48
-\MPscratchCnt=\count484
+\MPscratchCnt=\count488
 \MPscratchDim=\dimen302
-\MPnumerator=\count485
-\makeMPintoPDFobject=\count486
+\MPnumerator=\count489
+\makeMPintoPDFobject=\count490
 \everyMPtoPDFconversion=\toks49
 ) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
@@ -1295,7 +1332,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring ON on input line 182.
+Package hyperref Info: Link coloring ON on input line 210.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -1306,11 +1343,11 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count487
+\c@section@level=\count491
 )
-LaTeX Info: Redefining \ref on input line 182.
-LaTeX Info: Redefining \pageref on input line 182.
-LaTeX Info: Redefining \nameref on input line 182.
+LaTeX Info: Redefining \ref on input line 210.
+LaTeX Info: Redefining \pageref on input line 210.
+LaTeX Info: Redefining \nameref on input line 210.
 
 (./Tesi.out) (./Tesi.out)
 \@outlinefile=\write7
@@ -1343,22 +1380,25 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Tesi.bbl' found.
 
 (./Tesi.bbl)
-Package biblatex Info: Reference section=0 on input line 182.
-Package biblatex Info: Reference segment=0 on input line 182.
-\c@lstlisting=\count488
-LaTeX Font Info:    Trying to load font information for U+msa on input line 198
+Package biblatex Info: Reference section=0 on input line 210.
+Package biblatex Info: Reference segment=0 on input line 210.
+\c@lstlisting=\count492
+ ABD: EverySelectfont initializing macros
+LaTeX Info: Redefining \selectfont on input line 210.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 226
 .
- (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 198
+LaTeX Font Info:    Trying to load font information for U+msb on input line 226
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+lasy on input line 19
-8.
+LaTeX Font Info:    Trying to load font information for U+lasy on input line 22
+6.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
@@ -1372,14 +1412,14 @@ Package epstopdf Info: Source file: <imgs/TorVergata_logo_cmyk.eps>
 (epstopdf)                    size: 12231 bytes
 (epstopdf)             Command: <repstopdf --outfile=imgs/TorVergata_logo_cmyk-
 eps-converted-to.pdf imgs/TorVergata_logo_cmyk.eps>
-(epstopdf)             \includegraphics on input line 198.
+(epstopdf)             \includegraphics on input line 226.
 Package epstopdf Info: Output file is already uptodate.
-<imgs/TorVergata_logo_cmyk-eps-converted-to.pdf, id=304, 454.69875pt x 104.39pt
+<imgs/TorVergata_logo_cmyk-eps-converted-to.pdf, id=316, 454.69875pt x 104.39pt
 >
 File: imgs/TorVergata_logo_cmyk-eps-converted-to.pdf Graphic file (type pdf)
 <use imgs/TorVergata_logo_cmyk-eps-converted-to.pdf>
 Package pdftex.def Info: imgs/TorVergata_logo_cmyk-eps-converted-to.pdf  used o
-n input line 198.
+n input line 226.
 (pdftex.def)             Requested size: 371.8216pt x 85.35826pt.
  [1
 
@@ -1393,29 +1433,74 @@ k-eps-converted-to.pdf>] [2] (./Tesi.toc [1
  [4]
 \openout2 = `Introduzione.aux'.
 
- (./Introduzione.texpdfTeX warning (ext4): destination with the same identifier
- (name{page.1}) has been already used, duplicate ignored
+ (./Introduzione.tex
+Underfull \hbox (badness 10000) in paragraph at lines 4--14
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 4--14
+
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
 <to be read again> 
                    \relax 
 l.14 \chapter
-             {Introduzione} [1
+             *{Introduzione} [1
 
 
-]
-Capitolo 1.
-)pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has
+]pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.235 \include{Introduzione.tex}
-                                 [2
+l.14 \chapter
+             *{Introduzione} [2] [3
 
-]
+] [4]
+<imgs//Introduzione/K-DEMO_device_core_design_features.jpg, id=447, 827.09pt x 
+543.02875pt>
+File: imgs//Introduzione/K-DEMO_device_core_design_features.jpg Graphic file (t
+ype jpg)
+<use imgs//Introduzione/K-DEMO_device_core_design_features.jpg>
+Package pdftex.def Info: imgs//Introduzione/K-DEMO_device_core_design_features.
+jpg  used on input line 47.
+(pdftex.def)             Requested size: 282.74734pt x 185.6382pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 51--69
+
+ []
+
+[5 <./imgs//Introduzione/K-DEMO_device_core_design_features.jpg>]
+Underfull \vbox (badness 10000) detected at line 69
+ []
+
+
+Overfull \hbox (204.53186pt too wide) detected at line 69
+[] []|[] []
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 69
+ []
+
+
+Overfull \hbox (146.43481pt too wide) detected at line 69
+[] []|[] []
+ []
+
+)
+Underfull \hbox (badness 10000) in paragraph at lines 77--267
+
+ []
+
+[6]
 \openout2 = `capitolo-HW.aux'.
 
  (./capitolo-HW.tex
-Capitolo 2.
-[3
+Capitolo 1.
+[7
 
 
 
@@ -1425,7 +1510,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--20
 
  []
 
-<imgs//Trasformatore/tokamak_scheme.jpg, id=426, 803.0pt x 451.6875pt>
+<imgs//Trasformatore/tokamak_scheme.jpg, id=473, 803.0pt x 451.6875pt>
 File: imgs//Trasformatore/tokamak_scheme.jpg Graphic file (type jpg)
 <use imgs//Trasformatore/tokamak_scheme.jpg>
 Package pdftex.def Info: imgs//Trasformatore/tokamak_scheme.jpg  used on input 
@@ -1436,7 +1521,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 27--31
 
  []
 
-[4 <./imgs//Trasformatore/tokamak_scheme.jpg>]
+[8 <./imgs//Trasformatore/tokamak_scheme.jpg>]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 45.
@@ -1446,17 +1531,17 @@ Package mdframed Info: mdframed detected package amsthm
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 62.
- [5]
+ [9]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 91.
-<imgs//Trasformatore/trasformatore.png, id=467, 1927.2pt x 1447.4075pt>
+<imgs//Trasformatore/trasformatore.png, id=511, 1927.2pt x 1447.4075pt>
 File: imgs//Trasformatore/trasformatore.png Graphic file (type png)
 <use imgs//Trasformatore/trasformatore.png>
 Package pdftex.def Info: imgs//Trasformatore/trasformatore.png  used on input l
 ine 103.
 (pdftex.def)             Requested size: 348.00133pt x 261.36136pt.
- [6]
+ [10]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 107.
@@ -1470,8 +1555,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 112--116
 
  []
 
-[7 <./imgs//Trasformatore/trasformatore.png>] [8]
-<imgs//Trasformatore/PlasmaCircuit-PlasmaCircuit.png, id=509, 2629.825pt x 1289
+[11 <./imgs//Trasformatore/trasformatore.png>] [12]
+<imgs//Trasformatore/PlasmaCircuit-PlasmaCircuit.png, id=550, 2629.825pt x 1289
 .81876pt>
 File: imgs//Trasformatore/PlasmaCircuit-PlasmaCircuit.png Graphic file (type pn
 g)
@@ -1482,7 +1567,7 @@ sed on input line 152.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 156.
-<imgs//Trasformatore/PlasmaCircuit-EquivalentCalc.png, id=512, 3031.325pt x 129
+<imgs//Trasformatore/PlasmaCircuit-EquivalentCalc.png, id=553, 3031.325pt x 129
 4.8375pt>
 File: imgs//Trasformatore/PlasmaCircuit-EquivalentCalc.png Graphic file (type p
 ng)
@@ -1490,15 +1575,15 @@ ng)
 Package pdftex.def Info: imgs//Trasformatore/PlasmaCircuit-EquivalentCalc.png  
 used on input line 171.
 (pdftex.def)             Requested size: 435.0pt x 185.8005pt.
- [9 <./imgs//Trasformatore/PlasmaCircuit-PlasmaCircuit.png>]
+ [13 <./imgs//Trasformatore/PlasmaCircuit-PlasmaCircuit.png>]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 177.
- [10 <./imgs//Trasformatore/PlasmaCircuit-EquivalentCalc.png>] [11]
+ [14 <./imgs//Trasformatore/PlasmaCircuit-EquivalentCalc.png>] [15]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 245.
-<imgs//Trasformatore/PlasmaCircuit-SchemaBlocchi.png, id=550, 1485.55pt x 306.1
+<imgs//Trasformatore/PlasmaCircuit-SchemaBlocchi.png, id=592, 1485.55pt x 306.1
 4375pt>
 File: imgs//Trasformatore/PlasmaCircuit-SchemaBlocchi.png Graphic file (type pn
 g)
@@ -1506,8 +1591,8 @@ g)
 Package pdftex.def Info: imgs//Trasformatore/PlasmaCircuit-SchemaBlocchi.png  u
 sed on input line 269.
 (pdftex.def)             Requested size: 435.0pt x 89.6436pt.
- [12] [13 <./imgs//Trasformatore/PlasmaCircuit-SchemaBlocchi.png>]
-<imgs//Trasformatore/PlasmaCircuit-MisureCircuit.png, id=580, 3733.95pt x 1395.
+ [16] [17 <./imgs//Trasformatore/PlasmaCircuit-SchemaBlocchi.png>]
+<imgs//Trasformatore/PlasmaCircuit-MisureCircuit.png, id=621, 3733.95pt x 1395.
 2125pt>
 File: imgs//Trasformatore/PlasmaCircuit-MisureCircuit.png Graphic file (type pn
 g)
@@ -1515,197 +1600,191 @@ g)
 Package pdftex.def Info: imgs//Trasformatore/PlasmaCircuit-MisureCircuit.png  u
 sed on input line 290.
 (pdftex.def)             Requested size: 435.0pt x 162.52176pt.
- [14 <./imgs//Trasformatore/PlasmaCircuit-MisureCircuit.png>]
-<imgs//ACS770/ACS770-Fig.png, id=593, 703.87968pt x 280.04625pt>
+ [18 <./imgs//Trasformatore/PlasmaCircuit-MisureCircuit.png>]
+<imgs//ACS770/ACS770-Fig.png, id=635, 703.87968pt x 280.04625pt>
 File: imgs//ACS770/ACS770-Fig.png Graphic file (type png)
 <use imgs//ACS770/ACS770-Fig.png>
 Package pdftex.def Info: imgs//ACS770/ACS770-Fig.png  used on input line 309.
 (pdftex.def)             Requested size: 435.0pt x 173.06708pt.
- [15 <./imgs//ACS770/ACS770-Fig.png>]
-<imgs//ACS770/ACS770-SchemaBlocchi.png, id=602, 737.00343pt x 525.46312pt>
+ [19 <./imgs//ACS770/ACS770-Fig.png>] [20]
+<imgs//ACS770/ACS770-SchemaBlocchi.png, id=651, 737.00343pt x 525.46312pt>
 File: imgs//ACS770/ACS770-SchemaBlocchi.png Graphic file (type png)
 <use imgs//ACS770/ACS770-SchemaBlocchi.png>
 Package pdftex.def Info: imgs//ACS770/ACS770-SchemaBlocchi.png  used on input l
-ine 354.
-(pdftex.def)             Requested size: 348.00133pt x 248.11426pt.
- [16 <./imgs//ACS770/ACS770-SchemaBlocchi.png (PNG copy)>]
-<imgs//ACS770/ACS770-Sensibilità.png, id=609, 642.14906pt x 555.57562pt>
+ine 357.
+(pdftex.def)             Requested size: 435.0pt x 310.14082pt.
+ [21 <./imgs//ACS770/ACS770-SchemaBlocchi.png (PNG copy)>]
+<imgs//ACS770/ACS770-Sensibilità.png, id=658, 642.14906pt x 555.57562pt>
 File: imgs//ACS770/ACS770-Sensibilità.png Graphic file (type png)
 <use imgs//ACS770/ACS770-Sensibilità.png>
 Package pdftex.def Info: imgs//ACS770/ACS770-Sensibilità.png  used on input li
-ne 364.
-(pdftex.def)             Requested size: 435.0pt x 376.36221pt.
- [17 <./imgs//ACS770/ACS770-Sensibilità.png (PNG copy)>]
-<imgs//ACS770/ACS770-NonLin.png, id=615, 735.74875pt x 439.6425pt>
+ne 367.
+(pdftex.def)             Requested size: 282.74734pt x 244.63205pt.
+<imgs//ACS770/ACS770-NonLin.png, id=659, 735.74875pt x 439.6425pt>
 File: imgs//ACS770/ACS770-NonLin.png Graphic file (type png)
 <use imgs//ACS770/ACS770-NonLin.png>
-Package pdftex.def Info: imgs//ACS770/ACS770-NonLin.png  used on input line 374
+Package pdftex.def Info: imgs//ACS770/ACS770-NonLin.png  used on input line 375
 .
-(pdftex.def)             Requested size: 435.0pt x 259.9369pt.
- [18 <./imgs//ACS770/ACS770-NonLin.png>]
-<imgs//ACS770/ACS770-Schema.png, id=623, 463.7325pt x 281.55188pt>
+(pdftex.def)             Requested size: 278.39973pt x 166.3615pt.
+ [22 <./imgs//ACS770/ACS770-Sensibilità.png (PNG copy)> <./imgs//ACS770/ACS770
+-NonLin.png>]
+<imgs//ACS770/ACS770-Schema.png, id=667, 463.7325pt x 281.55188pt>
 File: imgs//ACS770/ACS770-Schema.png Graphic file (type png)
 <use imgs//ACS770/ACS770-Schema.png>
-Package pdftex.def Info: imgs//ACS770/ACS770-Schema.png  used on input line 385
+Package pdftex.def Info: imgs//ACS770/ACS770-Schema.png  used on input line 390
 .
-(pdftex.def)             Requested size: 435.0pt x 264.11317pt.
+(pdftex.def)             Requested size: 369.75266pt x 224.49857pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 389--391
-
- []
-
-[19 <./imgs//ACS770/ACS770-Schema.png (PNG copy)>]
-Underfull \hbox (badness 10000) in paragraph at lines 405--407
+Underfull \hbox (badness 10000) in paragraph at lines 412--414
 
  []
 
-[20]
-<imgs//IBT-2/TopView.png, id=648, 1083.29718pt x 538.26094pt>
+[23 <./imgs//ACS770/ACS770-Schema.png (PNG copy)>] [24]
+<imgs//IBT-2/TopView.png, id=691, 1083.29718pt x 538.26094pt>
 File: imgs//IBT-2/TopView.png Graphic file (type png)
 <use imgs//IBT-2/TopView.png>
-Package pdftex.def Info: imgs//IBT-2/TopView.png  used on input line 447.
+Package pdftex.def Info: imgs//IBT-2/TopView.png  used on input line 454.
 (pdftex.def)             Requested size: 435.0pt x 216.1383pt.
- [21 <./imgs//IBT-2/TopView.png>]
-<imgs//IBT-2/elettricScheme.png, id=659, 563.60562pt x 396.48125pt>
+ [25 <./imgs//IBT-2/TopView.png>]
+<imgs//IBT-2/elettricScheme.png, id=704, 563.60562pt x 396.48125pt>
 File: imgs//IBT-2/elettricScheme.png Graphic file (type png)
 <use imgs//IBT-2/elettricScheme.png>
-Package pdftex.def Info: imgs//IBT-2/elettricScheme.png  used on input line 475
+Package pdftex.def Info: imgs//IBT-2/elettricScheme.png  used on input line 484
 .
 (pdftex.def)             Requested size: 440.677pt x 310.0pt.
 
-Overfull \hbox (5.677pt too wide) in paragraph at lines 475--476
+Overfull \hbox (5.677pt too wide) in paragraph at lines 484--485
  [][] 
  []
 
-[22 <./imgs//IBT-2/elettricScheme.png>] [23]
-<imgs//IBT-2/T1-Triangolare.pdf, id=672, 794.97pt x 614.295pt>
+[26 <./imgs//IBT-2/elettricScheme.png>] [27]
+<imgs//IBT-2/T1-Triangolare.pdf, id=717, 794.97pt x 614.295pt>
 File: imgs//IBT-2/T1-Triangolare.pdf Graphic file (type pdf)
 <use imgs//IBT-2/T1-Triangolare.pdf>
-Package pdftex.def Info: imgs//IBT-2/T1-Triangolare.pdf  used on input line 503
+Package pdftex.def Info: imgs//IBT-2/T1-Triangolare.pdf  used on input line 512
 .
 (pdftex.def)             Requested size: 401.18375pt x 310.0pt.
- [24 <./imgs//IBT-2/T1-Triangolare.pdf>]
-<imgs//IBT-2/T2-RapidShot.pdf, id=715, 794.97pt x 614.295pt>
+ [28 <./imgs//IBT-2/T1-Triangolare.pdf>]
+<imgs//IBT-2/T2-RapidShot.pdf, id=761, 794.97pt x 614.295pt>
 File: imgs//IBT-2/T2-RapidShot.pdf Graphic file (type pdf)
 <use imgs//IBT-2/T2-RapidShot.pdf>
-Package pdftex.def Info: imgs//IBT-2/T2-RapidShot.pdf  used on input line 512.
+Package pdftex.def Info: imgs//IBT-2/T2-RapidShot.pdf  used on input line 521.
 (pdftex.def)             Requested size: 401.18375pt x 310.0pt.
-) [25 <./imgs//IBT-2/T2-RapidShot.pdf>]
+) [29 <./imgs//IBT-2/T2-RapidShot.pdf>]
 \openout2 = `capitolo-Architettura.aux'.
 
  (./capitolo-Architettura.tex
-Capitolo 3.
-<imgs//Architettura/SystemArchitetture.png, id=763, 963.6pt x 542.025pt>
+Capitolo 2.
+<imgs//Architettura/SystemArchitetture.png, id=809, 963.6pt x 542.025pt>
 File: imgs//Architettura/SystemArchitetture.png Graphic file (type png)
 <use imgs//Architettura/SystemArchitetture.png>
 Package pdftex.def Info: imgs//Architettura/SystemArchitetture.png  used on inp
-ut line 13.
+ut line 15.
 (pdftex.def)             Requested size: 435.0pt x 244.68643pt.
-
-Underfull \hbox (badness 10000) in paragraph at lines 17--19
-
- []
-
-
-LaTeX Warning: Reference `cap:1' on page 26 undefined on input line 20.
-
-
-LaTeX Warning: Reference `EMP' on page 26 undefined on input line 21.
-
-[26
+<imgs//Architettura/ArduinoUno.png, id=811, 416.55624pt x 327.2225pt>
+File: imgs//Architettura/ArduinoUno.png Graphic file (type png)
+<use imgs//Architettura/ArduinoUno.png>
+Package pdftex.def Info: imgs//Architettura/ArduinoUno.png  used on input line 
+24.
+(pdftex.def)             Requested size: 326.25pt x 256.29602pt.
+[30
 
 
 
 
- <./imgs//Architettura/SystemArchitetture.png>] [27]
-<imgs//EMP/EMP-Logo-Background.png, id=773, 385.44pt x 243.15843pt>
+ <./imgs//Architettura/SystemArchitetture.png>]
+
+LaTeX Warning: Reference `EMP' on page 31 undefined on input line 29.
+
+[31 <./imgs//Architettura/ArduinoUno.png>]
+<imgs//EMP/EMP-Logo-Background.png, id=824, 385.44pt x 243.15843pt>
 File: imgs//EMP/EMP-Logo-Background.png Graphic file (type png)
 <use imgs//EMP/EMP-Logo-Background.png>
 Package pdftex.def Info: imgs//EMP/EMP-Logo-Background.png  used on input line 
-33.
+41.
 (pdftex.def)             Requested size: 435.0pt x 274.42448pt.
- [28 <./imgs//EMP/EMP-Logo-Background.png>]
-<imgs//EMP/Cobs_encoding_with_example.png, id=786, 1498.59875pt x 125.46875pt>
+ [32 <./imgs//EMP/EMP-Logo-Background.png>]
+<imgs//EMP/Cobs_encoding_with_example.png, id=836, 1498.59875pt x 125.46875pt>
 File: imgs//EMP/Cobs_encoding_with_example.png Graphic file (type png)
 <use imgs//EMP/Cobs_encoding_with_example.png>
 Package pdftex.def Info: imgs//EMP/Cobs_encoding_with_example.png  used on inpu
-t line 51.
+t line 57.
 (pdftex.def)             Requested size: 435.0pt x 36.41945pt.
- [29 <./imgs//EMP/Cobs_encoding_with_example.png>]
-<imgs//EMP/Cobs_encoding_with_example-dist.png, id=796, 512.022pt x 79.716pt>
+ [33 <./imgs//EMP/Cobs_encoding_with_example.png>]
+<imgs//EMP/Cobs_encoding_with_example-dist.png, id=846, 512.022pt x 79.716pt>
 File: imgs//EMP/Cobs_encoding_with_example-dist.png Graphic file (type png)
 <use imgs//EMP/Cobs_encoding_with_example-dist.png>
 Package pdftex.def Info: imgs//EMP/Cobs_encoding_with_example-dist.png  used on
- input line 69.
+ input line 75.
 (pdftex.def)             Requested size: 435.0pt x 67.72728pt.
- [30 <./imgs//EMP/Cobs_encoding_with_example-dist.png>] [31] [32]
-<imgs//EMP/EMP-Hierarchy.png, id=831, 1363.0122pt x 933.7284pt>
+ [34 <./imgs//EMP/Cobs_encoding_with_example-dist.png>] [35] [36]
+<imgs//EMP/EMP-Hierarchy.png, id=881, 1363.0122pt x 933.7284pt>
 File: imgs//EMP/EMP-Hierarchy.png Graphic file (type png)
 <use imgs//EMP/EMP-Hierarchy.png>
-Package pdftex.def Info: imgs//EMP/EMP-Hierarchy.png  used on input line 132.
+Package pdftex.def Info: imgs//EMP/EMP-Hierarchy.png  used on input line 138.
 (pdftex.def)             Requested size: 435.0pt x 297.98708pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 136--139
+Underfull \hbox (badness 10000) in paragraph at lines 142--145
 
  []
 
-[33 <./imgs//EMP/EMP-Hierarchy.png (PNG copy)>]
+[37 <./imgs//EMP/EMP-Hierarchy.png (PNG copy)>]
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
-53.
+59.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-) [34]
-<imgs//EMP/Message Pack Sending Flow.png, id=846, 646.0938pt x 531.1845pt>
+) [38]
+<imgs//EMP/Message Pack Sending Flow.png, id=897, 646.0938pt x 531.1845pt>
 File: imgs//EMP/Message Pack Sending Flow.png Graphic file (type png)
 <use imgs//EMP/Message Pack Sending Flow.png>
 Package pdftex.def Info: imgs//EMP/Message Pack Sending Flow.png  used on input
- line 162.
+ line 168.
 (pdftex.def)             Requested size: 435.0pt x 357.65059pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 166--169
+Underfull \hbox (badness 10000) in paragraph at lines 172--175
 
  []
 
-[35 <./imgs//EMP/Message Pack Sending Flow.png (PNG copy)>]
-<imgs//EMP/TestFlow.png, id=855, 2473.24pt x 1682.285pt>
+[39 <./imgs//EMP/Message Pack Sending Flow.png (PNG copy)>]
+<imgs//EMP/TestFlow.png, id=906, 2473.24pt x 1682.285pt>
 File: imgs//EMP/TestFlow.png Graphic file (type png)
 <use imgs//EMP/TestFlow.png>
-Package pdftex.def Info: imgs//EMP/TestFlow.png  used on input line 174.
+Package pdftex.def Info: imgs//EMP/TestFlow.png  used on input line 180.
 (pdftex.def)             Requested size: 348.00133pt x 236.6991pt.
- [36 <./imgs//EMP/TestFlow.png>]
-<imgs//Trasformatore/PlasmaCircuit-MisureCircuitOffset.png, id=868, 3733.95pt x
+ [40 <./imgs//EMP/TestFlow.png>]
+<imgs//Trasformatore/PlasmaCircuit-MisureCircuitOffset.png, id=919, 3733.95pt x
  1595.9625pt>
 File: imgs//Trasformatore/PlasmaCircuit-MisureCircuitOffset.png Graphic file (t
 ype png)
 <use imgs//Trasformatore/PlasmaCircuit-MisureCircuitOffset.png>
 Package pdftex.def Info: imgs//Trasformatore/PlasmaCircuit-MisureCircuitOffset.
-png  used on input line 190.
+png  used on input line 196.
 (pdftex.def)             Requested size: 435.0pt x 185.90619pt.
- [37 <./imgs//Trasformatore/PlasmaCircuit-MisureCircuitOffset.png>]
+ [41 <./imgs//Trasformatore/PlasmaCircuit-MisureCircuitOffset.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 198.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mu' on input line 198.
+(hyperref)                removing `math shift' on input line 204.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 198.
+(hyperref)                removing `\mu' on input line 204.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 198.
+(hyperref)                removing `math shift' on input line 204.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\Leftrightarrow' on input line 198.
+(hyperref)                removing `math shift' on input line 204.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 198.
+(hyperref)                removing `\Leftrightarrow' on input line 204.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 204.
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
@@ -1717,18 +1796,18 @@ File: lstlang1.sty 2020/03/24 1.8d listings language file
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 )
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 200.
+nput line 206.
 
-Underfull \hbox (badness 10000) in paragraph at lines 251--255
+Underfull \hbox (badness 10000) in paragraph at lines 257--261
 
  []
 
-[38] [39]) [40]
+[42] [43]) [44]
 \openout2 = `capitolo-ModelloMatematico.aux'.
 
  (./capitolo-ModelloMatematico.tex
-Capitolo 4.
-) [41
+Capitolo 3.
+) [45
 
 
 
@@ -1737,8 +1816,8 @@ Capitolo 4.
 \openout2 = `capitolo-Controllo.aux'.
 
  (./capitolo-Controllo.tex
-Capitolo 5.
-) [42
+Capitolo 4.
+) [46
 
 
 
@@ -1747,39 +1826,42 @@ Capitolo 5.
 \openout2 = `conclusioni.aux'.
 
  (./conclusioni.tex
-Capitolo 6.
-) [43
+Capitolo 5.
+) [47
 
 
 
 
 ]
-Capitolo 7.
-[44
+Capitolo 6.
+[48
 
 
 
 ]
 \openout2 = `appendice.aux'.
 
- (./appendice.tex [45
+ (./appendice.tex [49
 
 
-] [46] [47] [48] [49]
+] [50] [51] [52] [53]
 Underfull \hbox (badness 10000) in paragraph at lines 226--227
 
  []
 
-[50
+[54
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 247--249
 
  []
 
-[51]) [52
+[55] (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2020/03/24 1.8d listings language file
+) [56
 
-] (./Tesi.lof [53
+])
+[57] (./Tesi.lof [58
 
 
 
@@ -1787,38 +1869,37 @@ Underfull \hbox (badness 10000) in paragraph at lines 247--249
 \tf@lof=\write9
 \openout9 = `Tesi.lof'.
 
- [54]
-Overfull \hbox (11.14105pt too wide) in paragraph at lines 276--276
+ [59] (./Tesi.lol)
+\tf@lol=\write10
+\openout10 = `Tesi.lol'.
+
+ [60
+
+]
+Overfull \hbox (11.14105pt too wide) in paragraph at lines 300--300
 \T1/cmtt/m/n/10 RdO + 2015 % 2FSLIDES + %26 + AUDIO % 2F13 + Diagnostiche + Mag
 netiche + %28Cianfarani % 29 % 2FMagnetic +
  []
 
+[61
 
-Overfull \hbox (81.6685pt too wide) in paragraph at lines 276--276
-\T1/cmr/m/sc/10 url\T1/cmr/m/n/10 : [][]$\T1/cmtt/m/n/10 https : / / www . infi
-neon . com / dgdl / bts7960b -[] pb -[] final . pdf ? folderId = db3a3043156fd5
-730116144c5d101c30 &
- []
-
-[55
-
-] [56] (./Tesi.aux (./Introduzione.aux) (./capitolo-HW.aux)
+] [62] (./Tesi.aux (./Introduzione.aux) (./capitolo-HW.aux)
 (./capitolo-Architettura.aux) (./capitolo-ModelloMatematico.aux)
 (./capitolo-Controllo.aux) (./conclusioni.aux) (./appendice.aux))
 
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `Tesi.out' has not changed.
-(rerunfilecheck)             Checksum: D2171EE22F25D09C59113E2D0E3F3B78;4627.
+(rerunfilecheck)             Checksum: C2F00A1C84F36B6123A1B912C6C81816;4831.
 Package logreq Info: Writing requests to 'Tesi.run.xml'.
 \openout1 = `Tesi.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 35881 strings out of 479304
- 703985 string characters out of 5869779
- 1649241 words of memory out of 5000000
- 51853 multiletter control sequences out of 15000+600000
+ 36952 strings out of 479304
+ 719063 string characters out of 5869779
+ 1700444 words of memory out of 5000000
+ 52786 multiletter control sequences out of 15000+600000
  428108 words of font info for 89 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  101i,19n,108p,1855b,2004s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1839,27 +1920,28 @@ texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-d
 ist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/font
 s/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbi1000.pfb
-></usr/share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/f
-onts/type1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm
--super/sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2074.pfb>
-</usr/share/texmf/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf/fo
-nts/type1/public/cm-super/sfcc1000.pfb></usr/share/texmf/fonts/type1/public/cm-
-super/sfrm0500.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0600.pfb><
-/usr/share/texmf/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf/fon
-ts/type1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fonts/type1/public/cm-s
-uper/sfrm0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></
-usr/share/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/font
-s/type1/public/cm-super/sfrm1440.pfb></usr/share/texmf/fonts/type1/public/cm-su
-per/sfrm1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti0900.pfb></u
-sr/share/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts
-/type1/public/cm-super/sftt1000.pfb>
-Output written on Tesi.pdf (62 pages, 7267572 bytes).
+/amsfonts/cm/cmsy6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symb
+ols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbo
+ls/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbi1000.pfb></usr/
+share/texmf/fonts/type1/public/cm-super/sfbx1000.pfb></usr/share/texmf/fonts/ty
+pe1/public/cm-super/sfbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/
+sfbx1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx2074.pfb></usr/s
+hare/texmf/fonts/type1/public/cm-super/sfbx2488.pfb></usr/share/texmf/fonts/typ
+e1/public/cm-super/sfcc1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/s
+frm0500.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0600.pfb></usr/sh
+are/texmf/fonts/type1/public/cm-super/sfrm0700.pfb></usr/share/texmf/fonts/type
+1/public/cm-super/sfrm0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sf
+rm0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/sha
+re/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1
+/public/cm-super/sfrm1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfr
+m1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti0900.pfb></usr/shar
+e/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/
+public/cm-super/sftt1000.pfb>
+Output written on Tesi.pdf (68 pages, 7553768 bytes).
 PDF statistics:
- 1475 PDF objects out of 1728 (max. 8388607)
- 1301 compressed objects within 14 object streams
- 485 named destinations out of 1000 (max. 500000)
- 797 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1675 PDF objects out of 1728 (max. 8388607)
+ 1490 compressed objects within 15 object streams
+ 599 named destinations out of 1000 (max. 500000)
+ 831 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,9 +1,11 @@
 \chapter{Architettura di Sistema}\label{cap:Architettura}
 
-%\begin{minipage}{12cm}\textit{Se lo si desidera, utilizzare questo spazio per inserire un breve riassunto di ci\`o che verr\`a detto in questo capitolo. Inserire solo i punti salienti.}
-%\end{minipage}
+\begin{minipage}{12cm}\textit{
+		In questo capitolo verranno affrontati gli aspetti progettuali e i problemi realizzativi per poter campionare l'esperimento e trasferire i dati campionati a un dispositivo esterno collegato alla scheda principale (l'Arduino).
+	}
+\end{minipage}
 
-%\vspace*{1cm}
+\vspace*{1cm}
 
 \section{Architettura ad alto livello}\label{sec:architettura}
 Il progetto finale ha come obiettivo la realizzazione di un architettura di controllo per le bobine poloidali presenti nei reattori tokamak.
@@ -15,9 +17,15 @@ Il progetto finale ha come obiettivo la realizzazione di un architettura di cont
 \end{figure}
 
 \noindent
-Lo schema proposto realizza l'obiettivo è controllare una singola bobina, il progetto finale prevederà la ripetizione in serie del medesimo schema per il numero di bobine necessarie.\\
+Lo schema proposto realizza l'obiettivo per una singola bobina, il progetto finale prevederà la ripetizione in serie del medesimo schema per il numero di bobine necessarie.\\
+Dallo schema risulta evidente che tutti i componenti visti nel capitolo "\nameref{cap:Hardware}" si relazionano con lo stesso \microControllore: l'\ArduinoUno.
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.75\textwidth]{Architettura/ArduinoUno.png}
+	\caption[Scheda Arduino Uno]{Scheda Arduino Uno}
+\end{figure}
 
-Dallo schema risulta evidente che tutti i componenti visti nel capitolo "\nameref{cap:1}" si relazionano con lo stesso \microControllore: l'\ArduinoUno.\\
+\noindent
 Per riportare i dati fuori e ricevere il riferimento da inseguire nella $V_2$, è stata realizzato il \nameref{EMP}, essa è stata scritta in C++ affinché possa essere Cross-Platform.\\
 Il suo compito specifico, in questo progetto, è di mettere in comunicazione l'\ArduinoUno con un nodo \MARTe installato su di una \Rasp.\\
 Quest'ultimo nodo ha il compito di mettere in rete il feedback dell'esperimento, e comunicare all'\ArduinoUno eventuali cambio di riferimento. Questo ultimo tratto è realizzato mediante il protocollo \textbf{SDN}, che viaggia sopra Ethernet e dà garanzie Real-time.\\
@@ -294,8 +302,20 @@ Essi sono salvati sotto forma di testo ascii normale, separando i campi con un \
 
 \newpage
 \section{Post Elaborazione con Matlab}
-I dati salvati su hardisk, come visto della sezione \nameref{subsec:experimentStorage}, vengono presi in ingresso da Matlab.
-
+I dati salvati su Hard Disk, come visto della sezione \nameref{subsec:experimentStorage}, vengono presi in ingresso da Matlab e convertiti dal valore del DAC.
 
 \subsection{Conversioni Dati}
-\subsection{Creazione dei grafici e Filtraggio}
+Per ottenere la tensione reale letta il cambio è molto semplice:
+\begin{empheq}[box=\mathResult]{equation*}
+	V_{read} = ADC_{Read} \cdot V_{step}= ADC_{Read} \frac{Vcc}{2^{10}-1} = ADC \cdot 4,887mV
+\end{empheq}
+
+\noindent 
+Partendo da questa equivalenza, per la corrente del primario usiamo l'equazione \ref{eq:Iread}, mentre la tensione sul secondario necessita solo della cancellazione dell'offset:
+\begin{empheq}[box=\mathCalc]{equation} \label{eq:V2Read}
+	V_2 = V_{read} - V_{2_{offset}}
+\end{empheq}
+
+\subsection{Filtraggio senza distorsioni di fase}
+Essendo i dati letti affetti naturalmente da rumore, essi vengono post-filtrati per rendere i dati più puliti e mettere in evidenza le tendenze del sistema. Questo filtraggio è stato realizzato usando un \textit{Filtro digitale a senza distorsione di fase}(\cite{zeroPhaseShiftFilter}), come fa intuire il nome, la caratteristica di questo filtro è che non introduce nessun ritardo o anticipazione al segnale filtrato, permettendo di confrontarlo direttamente con i dati puri, eliminando rumori a bassa ed alta frequenza.\\
+Questo filtraggio viene eseguito direttamente nell'importazione della tabella salvata con la struttura vista nella sezione \nameref{subsec:experimentStorage}, di cui il codice è in appendice \nameref{subsec:tabParsing}.

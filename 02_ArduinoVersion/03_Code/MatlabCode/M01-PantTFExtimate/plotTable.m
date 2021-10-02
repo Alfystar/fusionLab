@@ -15,13 +15,13 @@ grid on
 hold on
 plot(t,table.PWMDead)
 % plot(t,table.PWM)
-% plot(t,table.V2_read)
-plot(t,table.V2_readFilter)
+plot(t,table.V2_read)
+% plot(t,table.V2_readFilter)
 plot(t,table.Isense_read)
 for y = ySim
     plot(t,y);
 end
-legNorm = {'PWM%-DeadFilter','V_{secondaryFilter}','I_{primary}'};
+legNorm = {'PWM%-DeadFilter','V_{secondary}','I_{primary}'};
 
 % legNorm = {'PWM%-DeadFilter', 'PWM%-Real', 'V_{secondary}', 'V_{secondaryFilter}','I_{primary}'};
 legend(cat(2,legNorm,ySimLegend));

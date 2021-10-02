@@ -26,7 +26,7 @@ Come visto nell'introduzione, la tesi ha come obiettivo la prototipazione del si
 
 \noindent
 Le bobine (poloidali e toroidali) servono a controllare il plasma presente nel \textit{Vessel} dell'impianto e confinare il Plasma all'interno di un flusso compresso dentro la camera, le alte temperature e la forte compressione a cui è sottoposto il Plasma, permette di realizzare eventi di \textbf{Fusione Nucleare} tra gli atomi di idrogeno a base del plasma.\\
-L'interazione tra le \textbf{Bobine e Plasma}, ha un modello matematico non dissimile da quello di \textbf{Trasformatore Elettrico} nella relazione \textit{Primario-Secondario} (con i dovuti paragoni e le ovvie \nonLinearita presenti nel caso di un impianto Tokamak reale).\\
+L'interazione tra le \textbf{Bobine e Plasma}, ha un modello matematico non dissimile da quello di \textbf{Trasformatore Elettrico} nella relazione \textit{Primario-Secondario} (con i dovuti paragoni e le ovvie \nonLinearita presenti nel caso di un impianto Tokamak reale qui semplificate a costanti).\\
 Grazie a questa similitudine è stato possibile replicare in sicurezza la fisica presente all'interno di un Tokamak, nell'ambiente controllato del laboratorio.\\
 
 \subsection{Richiami di elettronica}
@@ -312,8 +312,9 @@ Come detto nell'introduzione, l'obiettivo della tesi è di controllare la corren
 %\vspace{-1cm}
 \subsection{Sensore scelto}
 Per misurare la corrente del primario, si è posizionato in serie allo stesso il sensore di Corrente \cite{ACS770}.\\
-La famiglia di sensori ha in generale le seguenti caratteristiche: \vspace{-5mm}
-\begin{center}
+La famiglia di sensori ha in generale le seguenti caratteristiche:
+\begin{table}[h]
+	\centering
 	\begin{tabular}[t]{|l r|}
 		\hline
 		Bandwidth:                             & 120 kHz                               \\
@@ -323,12 +324,14 @@ La famiglia di sensori ha in generale le seguenti caratteristiche: \vspace{-5mm}
 		Extremely stable output offset voltage &                                       \\
 		\hline
 	\end{tabular}
-\end{center}
+	\caption[\cite{ACS770} Tabella Riassuntiva]{Tabella Riassuntiva}
+\end{table}
 
 \noindent
 In oltre, delle tante varianti presenti, si è scelto di usare la \citefield{ACS770}{series}, le cui caratteristiche chiave sono:
 
-\begin{center}
+\begin{table}[h]
+	\centering
 	\begin{tabular}[t]{|l r|}
 		\hline
 		Primary Sampled Current: & $\pm$ 100 A     \\
@@ -337,43 +340,45 @@ In oltre, delle tante varianti presenti, si è scelto di usare la \citefield{ACS
 		$T_{OP}$                 & –40 to 150 (°C) \\
 		\hline
 	\end{tabular}
-\end{center}
+	\caption[\citefield{ACS770}{series} Particolarità]{\citefield{ACS770}{series} Particolarità}
+\end{table}
 
 \noindent
 L'ampio margine di misura, e la robustezza alle variazioni di temperatura rendono rendono il dispositivo perfetto per misurare i nostri esperimenti.\\
-L'ampio margine di misura permette di comprendere tutti i possibili valori di corrente ottenibili in laboratorio, rendendo il prototipo adatto a scopi futuri.\\
-\vspace{-8mm}
-
+L'ampio margine di misura permette di comprendere tutti i possibili valori di corrente ottenibili in laboratorio, rendendo il prototipo adatto a scopi futuri.
 \subsection{Criticità}
 Unico punto dolente è il suo principio di funzionamento: essendo il sensore basato su un l'effetto Hall, ovvero una misura diretta del campo magnetico indotto dalla corrente nel conduttore, è importante tenere distante il sensore dal Trasformatore Centrale che nei suoi momenti di massimo flusso di corrente, genera ovviamente un campo magnetico non indifferente.
 
+\newpage
 \subsection{Funzionamento Interno}
 \vspace{-5mm}
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.8\textwidth]{ACS770/ACS770-SchemaBlocchi.png}
+	\includegraphics[width=1\textwidth]{ACS770/ACS770-SchemaBlocchi.png}
 	\caption[\citefield{ACS770}{series} Schema a Blocchi]{Schema a Blocchi}
 \end{figure}
 \noindent
 Tra le caratteristiche chiave dell'\cite{ACS770}, troviamo il disaccoppiamento fisico tra la corrente da misurare e il circuito di misura.\\
 Questa caratteristica chiave, garantisce la salvaguardia del circuito logico a valle, dai possibili eventi catastrofici a monte.\\
-Esso è in oltre fornito di sensori di temperatura e sistemi di \textit{Signal Recovery} che permettono all'Hardware stesso di compensare parzialmente \nonLinearita termiche e nella misura dell'effetto Hall, ottenendo un output assimilabile a un segnale lineare:
-
+Esso è in oltre fornito di sensori di temperatura e sistemi di \textit{Signal Recovery} che permettono all'Hardware stesso di compensare parzialmente \nonLinearita termiche e nella misura dell'effetto Hall, ottenendo un output assimilabile a un segnale lineare:\newpage
+\vspace{-5mm}
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=1\textwidth]{ACS770/ACS770-Sensibilità.png}
+	\includegraphics[width=0.65\textwidth]{ACS770/ACS770-Sensibilità.png}
 	\caption[\citefield{ACS770}{series} Sensibilità rispetto Temperatura]{Sensibilità}
+\end{figure}
+\vspace{-5mm}
+\noindent
+Come si può vedere dal grafico, gli errori sono tanto più marcati quanto maggiore è la corrente da misurare, ma leggendo dal datasheet risulta che il costruttore avverte che l'errore dipende si fortemente dalle temperature di esercizio dell'esperimento, come è possibile vedere nel seguente grafico:\\\vspace{-18mm}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.64\textwidth]{ACS770/ACS770-NonLin.png}
+	\caption[\citefield{ACS770}{series} \nonLinearita]{Temperatura/NonLinearità}
 \end{figure}
 
 \noindent
-Come si può vedere dal grafico, gli errori sono tanto più marcati quanto maggiore è la corrente da misurare, ma leggendo dal datasheet abbiamo che questo errore, che dipende si fortemente dalle temperature di esercizio dell'esperimento, non è mai, neanche negli esperimenti più sfortunati, superiore al $\pm2\%$.\\
+Esso però non è mai, neanche negli esperimenti più sfortunati, superiore al $\pm2\%$.\\
 Anzi, alle temperature $\approx$ 25°, si mantiene contenuto tra $\pm0.5\%$.
-
-\begin{figure}[h]
-	\centering
-	\includegraphics[width=1\textwidth]{ACS770/ACS770-NonLin.png}
-	\caption[\citefield{ACS770}{series} \nonLinearita]{Temperatura/NonLinearità}
-\end{figure}
 
 \newpage
 
@@ -382,17 +387,18 @@ Anzi, alle temperature $\approx$ 25°, si mantiene contenuto tra $\pm0.5\%$.
 La connessione del sensore è particolarmente semplice, richiedendo esternamente solo un alimentazione stabilizzata e portando subito in uscita la misura.
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=1\textwidth]{ACS770/ACS770-Schema.png}
+	\includegraphics[width=0.85\textwidth]{ACS770/ACS770-Schema.png}
 	\caption[\citefield{ACS770}{series} Schema di collegamento dal Datasheet]{Collegamento dal Datasheet}
 \end{figure}
 
 \noindent
-Rispetto allo schema proposto dal datasheet, però, si è anche deciso di omettere il filtro passa-basso sulla \textbf{VIOUT}, questa scelta è stata presa per minimizzare il più possibile ritardi di misura della corrente istantanea, poiché le dinamiche del sistema sul secondario, come visto, sono di tipo derivativo, e quindi estremamente rapide.\\
+Rispetto allo schema proposto dal datasheet, però, si è anche deciso di omettere il filtro passa-basso sulla \textbf{VIOUT}, questa scelta è stata presa per minimizzare il più possibile ritardi di misura della corrente istantanea, poiché le dinamiche del sistema sul secondario, come visto, sono di tipo derivativo, e quindi estremamente rapide.
 
 \subsection{Misura}
-Il transduttore, misura della corrente sotto forma di tensione, la quale varia in base alla \textbf{Sensibilità} del modello in uso. 
-Avendo noi il \citefield{ACS770}{series}, il datasheet riporta:
-\begin{center}
+Il trasduttore, misura della corrente sotto forma di tensione, la quale varia in base alla \textbf{Sensibilità} del modello in uso. 
+Avendo noi il \citefield{ACS770}{series}, il datasheet riporta:\\
+\begin{table}[h]
+	\centering
 	\begin{tabular}[t]{|l r|}
 		\hline
 		Primary Sampled Current: & $\pm$ 100 A   \\
@@ -400,7 +406,8 @@ Avendo noi il \citefield{ACS770}{series}, il datasheet riporta:
 		Current Directionality   & Bidirectional \\
 		\hline
 	\end{tabular}
-\end{center}
+	\caption[\citefield{ACS770}{series} Parametri di \textbf{Interesse}]{Parametri di \textbf{Interesse}}
+\end{table}
 
 \noindent
 Ciò implica che la corrente misurata, è calcolabile come:\\
@@ -450,8 +457,9 @@ Per l'attuazione del controllo di corrente nella bobina primaria del trasformato
 
 \noindent
 Esso non è un comune Ponte-H integrato: per poter gestire potenze superiori è stato costruito usando 2 Half-Bridge (\cite{BTS7960b}) collegati assieme mediante una opportuna logica per ricreare un normale Ponte-H.\\
-Questa scheda in particola ha prestazioni interessanti per gli scopi di questa tesi, i principali sono elencati di seguito:\vspace{-8mm}
-\begin{center}
+Questa scheda in particola ha prestazioni interessanti per gli scopi di questa tesi, i principali sono elencati di seguito:
+\begin{table}[h]
+	\centering
 	\begin{tabular}[t]{|l r|}
 		\hline
 		Power Input Voltage:                                     & 6 -- 27 V \\
@@ -461,7 +469,8 @@ Questa scheda in particola ha prestazioni interessanti per gli scopi di questa t
 		Disaccoppiamento Ingresso di Potenza/Logica di controllo &           \\
 		\hline
 	\end{tabular}
-\end{center}
+	\caption[IBT-2 Specifiche]{IBT-2 Specifiche}
+\end{table}
 \noindent
 Di particolare interesse per l'esperimento è proprio la corrente di picco gestibile:
 avendo le dinamiche del sistema tempi inferiori ai 5 secondi, poter reggere correnti di picco così elevate rende
@@ -513,6 +522,19 @@ Il driver sulla carta à buone prestazioni, ma non sono descritte le sue \nonLin
 		      \caption[Esperimento con Onda Trapezoidale]{Onda Trapezoidale}
 	      \end{figure}  \vspace{-10mm}
 	      \paragraph{Dead-Zone Superiore} Con questo secondo segnale, si vuole mettere in evidenza il ritardo durante la discesa della rampa, pari a circa 20ms {\small \textit{(guarda 900ms)}}, questo ritardo è in realtà dovuto da una seconda Dead-Zone presente però ai Duty-Cycle alti del PWM.
+	      
 	      %	      \vspace{-5mm}
 	      %	      \paragraph{Disturbo 50Hz} Essendo in oltre presente un segnale costante per un pò, quando i transitori terminano risulta evidente la presenza della 50hz nel segnale della corrente proveniente dall'alimentatore, questo disturbo è però dovuto alla fonte della corrente, ovvero la 220Vac del laboratorio, il medesimo esperimento realizzato con una batteria ovviamente non ha simili disturbi, ma in fase di test del driver, si è preferito usare un alimentatore da laboratorio.
 \end{enumerate}
+\noindent
+Sapendo della presenza di queste 2 Dead-Zone, andando a vedere l'inizio della risposta del secondario, essendo il primario troppo poco sensibile come abbiamo avuto modo di analizzare nella sezione "\nameref{CurrentSense}", è possibile risalire ai valori limite della Dead-Zone di questo Ponte-H:
+\begin{table}[h]
+	\centering
+	\begin{tabular}[t]{|c r|}
+		\hline
+		Dead-Zone Superiore & $\pm$ 210 PWM\\
+		Dead-Zone Inferiore & $\pm$ 60  PWM\\
+		\hline
+	\end{tabular}
+	\caption[Fasce della Dead-Zone]{Fasce della Dead-Zone}
+\end{table}

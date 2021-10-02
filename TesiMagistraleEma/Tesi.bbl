@@ -179,8 +179,7 @@
     \field{series}{BTS7960b}
     \field{title}{BTS7960B High Current PN Half Bridge NovalithIC T}
     \verb{url}
-    \verb https://www.infineon.com/dgdl/bts7960b-pb-final.pdf?folderId=db3a3043
-    \verb 156fd5730116144c5d101c30&fileId=db3a30431ed1d7b2011efe782ebd6b60
+    \verb shorturl.at/cwOZ8
     \endverb
     \list{institution}{1}{%
       {Infineon Technologies}%
@@ -214,6 +213,30 @@
     }
     \field{type}{Online Page}
     \field{year}{10 june 2021}
+  \endentry
+
+  \entry{zeroPhaseShiftFilter}{manual}{}
+    \name{author}{1}{}{%
+      {{hash=M}{%
+         family={Matlab},
+         familyi={M\bibinitperiod},
+      }}%
+    }
+    \strng{namehash}{M1}
+    \strng{fullhash}{M1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{M}
+    \field{sortinithash}{M}
+    \field{title}{Zero-phase digital filtering}
+    \verb{url}
+    \verb https://it.mathworks.com/help/signal/ref/filtfilt.html
+    \endverb
+    \list{institution}{1}{%
+      {Matlab}%
+    }
+    \field{type}{Online Manual}
+    \field{year}{2006}
   \endentry
 
   \entry{modulazionePWM}{manual}{}
