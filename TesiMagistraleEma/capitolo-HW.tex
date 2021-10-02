@@ -20,8 +20,8 @@ Come visto nell'introduzione, la tesi ha come obiettivo la prototipazione del si
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=1\textwidth]{Trasformatore/tokamak_scheme.jpg}
 	\caption[Schema interno di un Tokamak]{Interno Tokamak}
+	\includegraphics[width=1\textwidth]{Trasformatore/tokamak_scheme.jpg}
 \end{figure}
 
 \noindent
@@ -100,8 +100,8 @@ Essa al contrario, prende un importanza notevole in presenza di fenomeni di \tex
 Per finire, unendo insieme i concetti di \nameref{def:induttoreIdeale} e \nameref{def:induttanza} è possibile ottenere la descrizione matematica di un Trasformatore Monofase Ideale (\cite{Transformatore}\footnote{Senso di misura del secondario opposto nell'articolo a quello qui presentato}):
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.8\textwidth]{Trasformatore/trasformatore.png}
 	\caption[Trasformatore ideale con Campo magnetico]{Trasformatore Ideale}
+	\includegraphics[width=0.8\textwidth]{Trasformatore/trasformatore.png}
 \end{figure}
 
 \begin{de}[Trasformatore Ideale Monofase\label{def:trasformatoreIdeale}]
@@ -149,8 +149,8 @@ Come descritto nell'articolo di \cite{TokamakCircuit}, è possibile modellare la
 \nameref{def:trasformatoreIdeale}:
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=1\textwidth]{Trasformatore/PlasmaCircuit-PlasmaCircuit.png}
 	\caption[Circuito Equivalente Bobina/Plasma all'interno di un Tokamak]{Circuito Equivalente Bobina/Plasma}
+	\includegraphics[width=1\textwidth]{Trasformatore/PlasmaCircuit-PlasmaCircuit.png}
 \end{figure}
 \NumTabs{11}
 \begin{leg}
@@ -168,9 +168,8 @@ Sempre dallo stesso articolo di \cite{TokamakCircuit}, si evince che è possibil
 Usando queste osservazioni si ottiene quindi il circuito equivalente:
 \begin{figure}[h]	\label{fig:PlasmaSemplificato}
 	\centering
-	\includegraphics[width=1\textwidth]{Trasformatore/PlasmaCircuit-EquivalentCalc.png}
 	\caption[Circuito Equivalente Bobina/Plasma all'interno di un Tokamak trascurando l'induzione del plasma verso la bobina]{Circuito equivalente Bobina/Plasma semplificato}
-	
+	\includegraphics[width=1\textwidth]{Trasformatore/PlasmaCircuit-EquivalentCalc.png}
 \end{figure}
 
 \NumTabs{11}
@@ -266,8 +265,8 @@ Connettendo in serie i 2 blocchi e tenendo conto dell'osservazione \ref{oss:Iref
 Che vista come schema a blocchi diventa:
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=1\textwidth]{Trasformatore/PlasmaCircuit-SchemaBlocchi.png}
 	\caption[Schema a Blocchi della funzione di trasferimento della corrente di Plasma]{Schema a Blocchi Corrente di Plasma}
+	\includegraphics[width=1\textwidth]{Trasformatore/PlasmaCircuit-SchemaBlocchi.png}
 \end{figure}
 
 \noindent
@@ -287,8 +286,8 @@ Proprio per questo, come descritto da \cite{MagneticDiagnostics},a pagina 12, si
 Perciò il circuito reale usato nell'esperimento della tesi, comprensivo di misure è:\\
 \begin{figure}[h] \label{fig:circuitoDiMisura}
 	\centering
-	\includegraphics[width=1\textwidth]{Trasformatore/PlasmaCircuit-MisureCircuit.png}
 	\caption[Circuito reale di misura dell'esperimento]{Circuito di misura}
+	\includegraphics[width=1\textwidth]{Trasformatore/PlasmaCircuit-MisureCircuit.png}
 \end{figure}
 
 Abbiamo quindi, tra ingresso e uscite i parametri di:
@@ -306,14 +305,15 @@ Abbiamo quindi, tra ingresso e uscite i parametri di:
 Come detto nell'introduzione, l'obiettivo della tesi è di controllare la corrente sul secondario usando il campo elettrico del secondario, la misura della corrente scorrente sul primario in tale ottica non sarebbe una misura di interesse. Essendo però un lavoro di ricerca, si è preferito poter misurare la corrente effettivamente circolante nel Primario del trasformatore, così da poter meglio interpretare i dati di misura senza ambiguità.\\
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=1\textwidth]{ACS770/ACS770-Fig.png}
 	\caption[Sensore di Corrente \citefield{ACS770}{series}]{Sensore di Corrente}
+	\includegraphics[width=1\textwidth]{ACS770/ACS770-Fig.png}
 \end{figure}
 %\vspace{-1cm}
 \subsection{Sensore scelto}
 Per misurare la corrente del primario, si è posizionato in serie allo stesso il sensore di Corrente \cite{ACS770}.\\
 La famiglia di sensori ha in generale le seguenti caratteristiche:
 \begin{table}[h]
+	\caption[\cite{ACS770}  Riassunto caratteristiche]{Riassunto caratteristiche}
 	\centering
 	\begin{tabular}[t]{|l r|}
 		\hline
@@ -324,7 +324,7 @@ La famiglia di sensori ha in generale le seguenti caratteristiche:
 		Extremely stable output offset voltage &                                       \\
 		\hline
 	\end{tabular}
-	\caption[\cite{ACS770} Tabella Riassuntiva]{Tabella Riassuntiva}
+	
 \end{table}
 
 \noindent
@@ -332,6 +332,7 @@ In oltre, delle tante varianti presenti, si è scelto di usare la \citefield{ACS
 
 \begin{table}[h]
 	\centering
+	\caption[\citefield{ACS770}{series} Particolarità]{\citefield{ACS770}{series} Particolarità}
 	\begin{tabular}[t]{|l r|}
 		\hline
 		Primary Sampled Current: & $\pm$ 100 A     \\
@@ -340,7 +341,7 @@ In oltre, delle tante varianti presenti, si è scelto di usare la \citefield{ACS
 		$T_{OP}$                 & –40 to 150 (°C) \\
 		\hline
 	\end{tabular}
-	\caption[\citefield{ACS770}{series} Particolarità]{\citefield{ACS770}{series} Particolarità}
+	
 \end{table}
 
 \noindent
@@ -354,8 +355,8 @@ Unico punto dolente è il suo principio di funzionamento: essendo il sensore bas
 \vspace{-5mm}
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=1\textwidth]{ACS770/ACS770-SchemaBlocchi.png}
 	\caption[\citefield{ACS770}{series} Schema a Blocchi]{Schema a Blocchi}
+	\includegraphics[width=1\textwidth]{ACS770/ACS770-SchemaBlocchi.png}
 \end{figure}
 \noindent
 Tra le caratteristiche chiave dell'\cite{ACS770}, troviamo il disaccoppiamento fisico tra la corrente da misurare e il circuito di misura.\\
@@ -364,16 +365,16 @@ Esso è in oltre fornito di sensori di temperatura e sistemi di \textit{Signal R
 \vspace{-5mm}
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.65\textwidth]{ACS770/ACS770-Sensibilità.png}
 	\caption[\citefield{ACS770}{series} Sensibilità rispetto Temperatura]{Sensibilità}
+	\includegraphics[width=0.65\textwidth]{ACS770/ACS770-Sensibilità.png}
 \end{figure}
 \vspace{-5mm}
 \noindent
 Come si può vedere dal grafico, gli errori sono tanto più marcati quanto maggiore è la corrente da misurare, ma leggendo dal datasheet risulta che il costruttore avverte che l'errore dipende si fortemente dalle temperature di esercizio dell'esperimento, come è possibile vedere nel seguente grafico:\\\vspace{-18mm}
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.64\textwidth]{ACS770/ACS770-NonLin.png}
 	\caption[\citefield{ACS770}{series} \nonLinearita]{Temperatura/NonLinearità}
+	\includegraphics[width=0.64\textwidth]{ACS770/ACS770-NonLin.png}
 \end{figure}
 
 \noindent
@@ -387,8 +388,8 @@ Anzi, alle temperature $\approx$ 25°, si mantiene contenuto tra $\pm0.5\%$.
 La connessione del sensore è particolarmente semplice, richiedendo esternamente solo un alimentazione stabilizzata e portando subito in uscita la misura.
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.85\textwidth]{ACS770/ACS770-Schema.png}
 	\caption[\citefield{ACS770}{series} Schema di collegamento dal Datasheet]{Collegamento dal Datasheet}
+	\includegraphics[width=0.85\textwidth]{ACS770/ACS770-Schema.png}
 \end{figure}
 
 \noindent
@@ -399,6 +400,7 @@ Il trasduttore, misura della corrente sotto forma di tensione, la quale varia in
 Avendo noi il \citefield{ACS770}{series}, il datasheet riporta:\\
 \begin{table}[h]
 	\centering
+	\caption[\citefield{ACS770}{series} Parametri di \textbf{Interesse}]{Parametri di \textbf{Interesse}}
 	\begin{tabular}[t]{|l r|}
 		\hline
 		Primary Sampled Current: & $\pm$ 100 A   \\
@@ -406,7 +408,6 @@ Avendo noi il \citefield{ACS770}{series}, il datasheet riporta:\\
 		Current Directionality   & Bidirectional \\
 		\hline
 	\end{tabular}
-	\caption[\citefield{ACS770}{series} Parametri di \textbf{Interesse}]{Parametri di \textbf{Interesse}}
 \end{table}
 
 \noindent
@@ -451,8 +452,8 @@ Per l'attuazione del controllo di corrente nella bobina primaria del trasformato
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=1\textwidth]{IBT-2/TopView.png}
 	\caption[Driver Motori IBT-2 TopView \& PinOut]{IBT-2 TopView.}
+	\includegraphics[width=1\textwidth]{IBT-2/TopView.png}
 \end{figure}
 
 \noindent
@@ -460,6 +461,7 @@ Esso non è un comune Ponte-H integrato: per poter gestire potenze superiori è 
 Questa scheda in particola ha prestazioni interessanti per gli scopi di questa tesi, i principali sono elencati di seguito:
 \begin{table}[h]
 	\centering
+	\caption[IBT-2 Specifiche]{IBT-2 Specifiche}
 	\begin{tabular}[t]{|l r|}
 		\hline
 		Power Input Voltage:                                     & 6 -- 27 V \\
@@ -469,7 +471,6 @@ Questa scheda in particola ha prestazioni interessanti per gli scopi di questa t
 		Disaccoppiamento Ingresso di Potenza/Logica di controllo &           \\
 		\hline
 	\end{tabular}
-	\caption[IBT-2 Specifiche]{IBT-2 Specifiche}
 \end{table}
 \noindent
 Di particolare interesse per l'esperimento è proprio la corrente di picco gestibile:
@@ -481,8 +482,8 @@ la scheda perfetta per i nostri scopi.
 Al suo interno il driver è composto da 2 Half-Bridge \cite{BTS7960b}, connesse secondo lo schema:
 \begin{figure}[h]
 	\centering
-	\includegraphics[height=0.5\textheight]{IBT-2/elettricScheme.png}
 	\caption[IBT-2 Schema Elettrico]{IBT-2 Schema Elettrico}
+	\includegraphics[height=0.5\textheight]{IBT-2/elettricScheme.png}
 \end{figure}\vspace{-5mm}
 
 \noindent
@@ -507,19 +508,17 @@ Il driver sulla carta à buone prestazioni, ma non sono descritte le sue \nonLin
 \begin{enumerate}
 	\item \nameref{lst:ondaTriangloare} \\ \vspace{-11mm}
 	      \begin{figure}[h]
-		      
+		      \caption[Esperimento con Onda Triangolare]{Onda Triangolare}
 		      \centering
 		      \includegraphics[height=0.5\textheight]{IBT-2/T1-Triangolare.pdf}
-		      \caption[Esperimento con Onda Triangolare]{Onda Triangolare}
 	      \end{figure}\vspace{-10mm}
 	      \paragraph{Dead-Zone Inferiore} L'onda triangolare si presta bene per far risaltare la problematica della Dead-Zone Inferiore, infatti in tutti gli intorni in cui il segnale passa per 0, è possibile vedere come la corrente non vari minimamente, è però possibile notare che i 2 lati non sono simmetrici tra di loro, questo è facilmente spiegabile dal fatto che il primo ha una condizione iniziale $ \neq $ 0 e di fatto stiamo ancora osservando l'esaurimento del transitorio, la soglia di Dead-Zone Inferiore è quindi calcolata vedendo il primo valore di PWM  per cui il sistema risponde a destra degli 0.      
-	      
 	      \newpage
 	\item \nameref{lst:ondaTrapezoidale} \\
 	      \begin{figure}[h]
 		      \centering
-		      \includegraphics[height=0.5\textheight]{IBT-2/T2-RapidShot.pdf}
 		      \caption[Esperimento con Onda Trapezoidale]{Onda Trapezoidale}
+		      \includegraphics[height=0.5\textheight]{IBT-2/T2-RapidShot.pdf}
 	      \end{figure}  \vspace{-10mm}
 	      \paragraph{Dead-Zone Superiore} Con questo secondo segnale, si vuole mettere in evidenza il ritardo durante la discesa della rampa, pari a circa 20ms {\small \textit{(guarda 900ms)}}, questo ritardo è in realtà dovuto da una seconda Dead-Zone presente però ai Duty-Cycle alti del PWM.
 	      
@@ -530,11 +529,11 @@ Il driver sulla carta à buone prestazioni, ma non sono descritte le sue \nonLin
 Sapendo della presenza di queste 2 Dead-Zone, andando a vedere l'inizio della risposta del secondario, essendo il primario troppo poco sensibile come abbiamo avuto modo di analizzare nella sezione "\nameref{CurrentSense}", è possibile risalire ai valori limite della Dead-Zone di questo Ponte-H:
 \begin{table}[h]
 	\centering
-	\begin{tabular}[t]{|c r|}
+	\caption[Fasce della Dead-Zone]{Fasce della Dead-Zone}
+	\begin{tabular}[t]{||c r||}
 		\hline
-		Dead-Zone Superiore & $\pm$ 210 PWM\\
-		Dead-Zone Inferiore & $\pm$ 60  PWM\\
+		Dead-Zone Superiore & $\pm$ 210 PWM \\
+		Dead-Zone Inferiore & $\pm$ 60  PWM \\
 		\hline
 	\end{tabular}
-	\caption[Fasce della Dead-Zone]{Fasce della Dead-Zone}
 \end{table}

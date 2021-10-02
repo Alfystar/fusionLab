@@ -177,7 +177,8 @@ backend=bibtex]{biblatex}
 		{\end{itemize}\end{mdframed}}
 
 
-\renewcommand{\listtablename}{Tables}
+\renewcommand\lstlistlistingname{Elenco dei codici}
+
 
 %-----------------------------
 % CONFIGURAZIONE DELLA PAGINA
@@ -298,11 +299,14 @@ Per la realizzazione di questa tesi sono stati usati:
 \listoffigures
 \addcontentsline{toc}{chapter}{Elenco delle figure}
 
-\listtablename
+% ELENCO DELLE TABELLE (OPZIONALE)
+\listoftables
+\addcontentsline{toc}{chapter}{Elenco delle tabelle}
+
 
 % ELENCO DEI CODICI (OPZIONALE)
 \lstlistoflistings
-\addcontentsline{toc}{chapter}{Elenco dei Codici}
+\addcontentsline{toc}{chapter}{Elenco dei codici}
 
 % BIBLIOGRAFIA
 \printbibliography

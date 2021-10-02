@@ -1,0 +1,322 @@
+\chapter{Architettura di Sistema}\label{cap:Architettura}
+
+\begin{minipage}{12cm}\textit{
+		In questo capitolo verranno affrontati gli aspetti progettuali e i problemi realizzativi per poter campionare l'esperimento e trasferire i dati campionati a un dispositivo esterno collegato alla scheda principale (l'Arduino).
+	}
+\end{minipage}
+
+\vspace*{1cm}
+
+\section{Architettura ad alto livello}\label{sec:architettura}
+Il progetto finale ha come obiettivo la realizzazione di un architettura di controllo per le bobine poloidali presenti nei reattori tokamak.
+
+\begin{figure}[h] \label{fig:archietturaControllo}
+	\centering
+		\caption[Schema finale dell'archiettettura di controllo]{Architettura di controllo}
+	\includegraphics[width=1\textwidth]{Architettura/SystemArchitetture.png}
+\end{figure}
+
+\noindent
+Lo schema proposto realizza l'obiettivo per una singola bobina, il progetto finale prevederà la ripetizione in serie del medesimo schema per il numero di bobine necessarie.\\
+Dallo schema risulta evidente che tutti i componenti visti nel capitolo "\nameref{cap:Hardware}" si relazionano con lo stesso \microControllore: l'\ArduinoUno.
+\begin{figure}[h]
+	\centering
+		\caption[Scheda Arduino Uno]{Scheda Arduino Uno}
+	\includegraphics[width=0.6\textwidth]{Architettura/ArduinoUno.png}
+\end{figure}
+
+\noindent
+Per riportare i dati fuori e ricevere il riferimento da inseguire nella $V_2$, è stata realizzata da me la libreria \cite*{EMP}, essa è stata scritta in C++ usando classi template, e progettata affinché possa essere Cross-Platform.\\
+Il suo compito specifico, in questo progetto, è di mettere in comunicazione l'\ArduinoUno con un nodo \MARTe installato su di una \Rasp.\\
+Quest'ultimo nodo ha il compito di mettere in rete il feedback dell'esperimento, e comunicare all'\ArduinoUno eventuali cambio di riferimento. Questo ultimo tratto è realizzato mediante il protocollo \textbf{SDN}, che viaggia sopra Ethernet e dà garanzie Real-time.\\
+Nella sua forma finale, il progetto prevede la riproduzione in serie di questo schema di controllo per arrivare a controllare tutte le bobine poloidali presenti in un tokamak.
+
+\newpage
+
+\section*{EMP - Libreria di Comunicazione Seriale\\Embedded Message Pack }\label{sec:EMP}
+\addcontentsline{toc}{section}{\protect\numberline{\thesection} EMP - Libreria di Comunicazione Seriale}
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=1\textwidth]{EMP/EMP-Logo-Background.png}
+\end{figure}
+\paragraph{\citefield{EMP}{title}} nasce con l’obiettivo di standardizzare un protocollo e creare una libreria C++ basata su classi Template, che permetta di automatizzare e standardizzare tutto il lavoro di programmazione necessario all’invio/ricezione di dei pacchetti dal formato Pre-Concordati tra 2 Device connessi Peer2Peer (Nessuna pretesa di network-ing). (\cite*{EMP})\\
+Il raggiungimento dei suoi obiettivi, si sposa con la possibilità di supportare altre features interessanti:
+
+\paragraph{Multiple-Package} Il protocollo di comunicazione che si è deciso di usare per EMP ha permesso di estendere il suo funzionamento e permettere il trasporto, attraverso lo stesso mezzo, di \textit{\textbf{pacchetti di tipologia e dimensione diversa}} all’interno della stessa libreria, evitando al contempo di inviare per ogni pacchetto più byte di quelli strettamente necessario. $\Rightarrow$ \textbf{Alta Efficienza}
+
+\paragraph{Zero Tempo di negoziazione} Sempre grazie al protocollo di comunicazione, EMP è adatto ad un uso ‘Streaming’, questo perché non è necessario alcuna fase di sincronizzazione iniziale o durante la trasmissione in caso di perdita di dati, in aggiunta a ciò, EMP è in grado di scartare pacchetti errati in maniera trasparente all’utilizzatore. Tutto questo grazie al protocollo che \textbf{Auto-delimita i singoli pacchetti}. $\Rightarrow$ \textbf{Trasparenza Totale}
+
+\paragraph{Responsabilità} Le uniche responsabilità a carico degli utilizzatori sono il riempimento dei pacchetti e la definizione degli stessi tra i 2 estremi della comunicazione.
+
+\subsection*{Consistent Overhead Byte Stuffing (COBS)}
+\addcontentsline{toc}{section}{\protect\numberline{\thesection} Protocollo - COBS}
+Il protocollo di comunicazione che permette l’invio di \textbf{pacchetti diversi} e \textbf{senza fasi di negoziazione} alla base della libreria è \textbf{COBS}(\cite{COBS}).\\
+Si tratta di un algoritmo per la codifica di byte, progettato per essere al tempo stesso efficiente e non ambiguo, che permette la definizione di \textit{data-pack frame} \textbf{Auto-delimiti} .
+
+\begin{figure}[h]
+	\centering
+		\caption[Esempio di COBS]{Esempio di COBS}
+	\includegraphics[width=1\textwidth]{EMP/Cobs_encoding_with_example.png}
+\end{figure}
+
+\subsection{Metodo di codifica}
+L'algoritmo di COBS trasforma una stringa arbitraria di byte, ciascuno dei quali ha un Range di valori da \textbf{[0:255]} in una nuova stringa di byte dove però ogni byte va da \textbf{[{\color{red}1}:255]}. La dimensione della nuova stringa è sempre pari alla dimensione della precedente + 1.\\
+L'obiettivo di questo metodo di codifica è di eliminare tutti i possibili byte \zeroByte dal pacchetto in maniera reversibile.\\
+Questo processo rende il carattere \textbf{\zeroByte (byte zero)} ottimo candidato per essere usato come terminatore di stringa durante l'invio, rendendo un pacchetto COBS-Encoded mai ambiguo e sempre \textbf{Auto-delimitato}.\\
+L'algoritmo di codifica consiste nel:
+\begin{enumerate} [itemsep=-3mm]
+	\item Inserire un byte \zeroByte all'inizio del pacchetto
+	\item Individuare tutti gli altri byte \zeroByte
+	\item Inserire un byte \zeroByte alla fine del pacchetto
+	\item Sostituire tutti gli \zeroByte con la distanza dal successivo \zeroByte nella stringa, ignorando l'ultimo
+\end{enumerate}
+
+\begin{figure}[h]
+	\centering
+		\caption[Esempio di COBS con distanza]{Esempio di COBS con distanza}
+	\includegraphics[width=1\textwidth]{EMP/Cobs_encoding_with_example-dist.png}
+\end{figure}
+
+La versione usata per questo progetto, che comunque non ha l'obiettivo di trasmettere quantità infinite di byte, ha il limite di non poter codificare blocchi di byte che hanno una distanza tra 2 \zeroByte superiore a 255, questo limite è potenzialmente rimovibile usando un algoritmo più sofisticato.
+
+\subsection{Caratteristiche chiave}
+Prima caratteristica vincente della libreria è il suo alto grado di adattabilità, essa infatti per poter funzionare richiede solo \textbf{2 informazioni critiche} (e altre di contorno per l'allocazione opportuna dei buffer), esse sono i tipi dei pacchetti in \textbf{ Input} (\textit{pIn}) e in \textbf{Output} (\textit{pOut}) ovvero sia delle strutture in C, con i dati organizzati in base al messaggio da trasferire (\nameref{lst:EMPpackDef}).\\
+In secondo luogo, la codifica \citefield{COBS}{title}, che abbiamo appena visto permette di avere pacchetti \textbf{Auto-delimitati}, ciò permette quindi di scambiare pacchetti diversi tra loro (sia per tipologia che per lunghezza) lungo \textbf{lo stesso} \textit{Stream} di dati.\\
+L'unica condizione neccessaria è che il destinatario sia capace di determinare la tipologia di contenuto trasportato nel pacchetto semplicemente leggendolo.\\
+Questo può essere facilmente risolto in più modi:
+\begin{spacing}{1.5}
+	\begin{description}
+		\item[Lunghezza Univoca] Ogni possibile pacchetto ha una lunghezza diversa da tutti gli altri, $\Rightarrow$ la lunghezza implica il contenuto
+		\item[Aggiunta di un campo Tipologia] Aggiungendo al’inizio della trasmissione un \textit{type byte}, ovviamente Pre-Concordato, diventa possibile per chiunque sapere come interpretare il contenuto del pacchetto.
+	\end{description}
+\end{spacing}
+\noindent
+Il metodo più universale è sicuramente l'aggiunta di un campo fisso per il tipo, di cui un esempio è visibile nell'appendice al listato \ref{lst:EMPmultiplePack}(\nameref{lst:EMPmultiplePack}).\\
+In ogni caso, la codifica \cite*{COBS} aggiunge 2 byte extra al pacchetto che si vuole inviare, e tanto per la codifica quanto per la decodifica in ricezione, il \textbf{costo} è sempre pari a \textbf{O(n)}.
+
+\begin{multicols}{2}
+	\begin{center}
+		{\large Vantaggi:}
+	\end{center}
+	\begin{spacing}{1.25}
+		\begin{enumerate}[itemsep=-1mm]
+			\item Pacchetti {\color{Azure}\textbf{Self-Delimited}}
+			\item Canale {\color{Azure}\textbf{Multi-Packet ready}}
+			\item Protocollo {\color{Azure}\textbf{Senza Negoziazioni}}
+			\item All’utilizzatore è richiesto solo di Pre-Concordare il formato del pacchetto con l’altro lato dello stream
+			\item Prerequisiti implementativi minimale (mezzo di comunicazione a bytes di tipo \textit{peer2peer} asincrono)
+		\end{enumerate}
+	\end{spacing}
+	\vfill
+	\columnbreak
+	\begin{center}
+		{\large Svantaggi:}
+	\end{center}
+	\begin{spacing}{1.25}
+		\begin{enumerate}[itemsep=-1mm]
+			\item Aggiunge 2 byte fissi
+			\item Richiede O(n) elaborazione sia in codifica che decodifica
+		\end{enumerate}
+	\end{spacing}
+	\vspace*{\fill}
+\end{multicols}
+
+\newpage
+
+\subsection{Integrità dei pacchetti}
+Per aumentare ulteriormente i campi d’uso e garantire un layer minimale di \textbf{integrità} sui pacchetti in transito, la libreria è stata progettata per include in maniera trasparente anche un un check di errore calcolato usando \cite{CRC8}, aggiunto in trasmissione e rimosso in ricezione.\\
+L'aggiunta e il calcolo del CRC8 viene fatta sul pacchetto non ancora \textit{COBS-Encodato}, ciò garantisce la possibilità di inviare il pacchetto a prescindere da quale sia il risultato del CRC8, e viene quindi verificato dopo aver de-\textit{COBS-Encodato} il pacchetto in ricezione.\\
+Questa features deve essere attiva o disattivata da entrambi i lati della libreria (ne consegue che anche lei deve essere pre-concordata tra i 2 estremi).\\
+La libreria, se attiva, è in grado di capire se il pacchetto ha subito degli errori (ovviamente nei limiti del CRC8) e in tal caso scarta il pacchetto ricevuto in maniera totalmente trasparente all'utilizzatore.\\
+L’aver usato COBS come sistema di codifica per la trasmissione, garantisce che la decodifica debba avvenire solo nei byte compresi tra 2 zeri, e se questa decodifica presenta un errore, toglie ogni ambiguità sul da farsi poiché il pacchetto viene scartato e si attende un successivo 0 mentre si memorizzano i byte ricevuti nel frattempo.
+
+\newpage
+\subsection{Struttura del codice}
+Lo sviluppo del codice è qui riassunto nel \textbf{Class Diagram} fatto in UML, del codice:\\
+\begin{figure}[h]
+	\centering
+		\caption[Class Diagram UML di EMP]{Class Diagram UML}
+	\includegraphics[width=1\textwidth]{EMP/EMP-Hierarchy.png}
+\end{figure}
+
+\noindent
+Senza entrare eccessivamente nel dettaglio di \citefield{EMP}{title}, essendo tutto reperibile nella versione più aggiornata all'interno del repository di \cite*{EMP}, osserviamo che il codice è diviso in 2 macro blocchi (\textbf{MPCore}, \textbf{MP}) più una classe di supporto per il buffer circolare.\\
+Questa organizzazione del codice è stata pensata per far compilare su tutte le piattaforme di interesse lo stesso \textit{codice attivo}(codifica e decodifica dei pacchetti + accumulo), e demandare le particolarizzazioni dovute alle varie piattaforme o al mezzo di comunicazione usato nel caso specifico a delle classi figlie.\\
+\begin{spacing}{1.25}
+	\begin{description}
+		\item[MPCore] Il \textit{Codice attivo} è presente all'interno del package \textbf{MPCore}. Tutto il codice contenuto in questo package è scritto in C++11 e per essere compilato necessita di un set minimale di librerie standard, sicuramente presenti in ogni piattaforma di sviluppo.
+		\item[EMP] Il package più generico comprende le classi figlie che concretizzano le operazioni di invio e ricezione, facendo poi elaborare i byte al codice che ereditano dalla classe \textbf{MP}.\\
+		      Le classi sono scritte e pensate per funzionare su una piattaforma specifica, e su essa essere ottimizzate.\\
+		      Se la piattaforma lo concede come nel caso di Linux, è quindi possibili fattorizzare ulteriormente delle funzionalità comuni e scrivere così, via via, sempre meno codice sicuri che quello in comune, se funziona su una classe, deve funzionare anche per l'altra.
+		\item[Buffer Circolare] La classe \textit{CircularBuffer} è una classe di supporto che implementa un buffer circolare con logica "\textit{One Slot Open}"(\cite{CircularBuffer}) attraverso una classe template.\\
+		      Il motivo di questa scelta, molto forte e vincolante, essendo principalmente lei la causa per cui tutte le altre sono anch'esse template, è dovuta alla possibilità di istanziare in fase di compilazione, tutta la memoria richiesta per il funzionamento del programma.\\
+		      Una simile necessità nasce dal dover compilare la classe anche su schede embedded, le quali, notoriamente, non hanno a disposizione un heap in ram spazioso per la memoria dinamica, e beneficiano nelle prestazioni se in fase di compilazione gli indirizzi di memoria sono fissi.
+	\end{description}
+\end{spacing}
+\vspace{0mm}
+\subsection{Logica di Comunicazione}
+\vspace{-5mm}
+La libreria è pensata per automatizzare la trasmissione e la ricezione di 2 tipologie di pacchetti \textit{Pre-concordati} tra 2 realizzazioni di \textbf{MP}, ovviamente non necessariamente sullo stesso dispositivo.\\
+Come riportato in Appendice B (\ref{EMPCode}), la definizione dei pacchetti è pensata per essere molto comoda e naturale. In oltre usando un campo per distinguere il tipo di pacchetto e una \verb|union| per unire in un unica area pacchetti differenti, è anche possibile gestire la comunicazione di pacchetti multipli tra i 2 lati della comunicazione, basterà invertire l'ordine dei tipi tra le 2 classi ai 2 estremi della comunicazione.\\
+Il riempimento corretto dei dati nel pacchetto, il calcolo della size utile e il riconoscimento in ricezione del pacchetto trasmesso, è tutto a carico dell'utilizzatore della libreria, essa garantisce la corretta ricetrasmissione e di svegliare un ascoltatore al ricevimento di un pacchetto, qualunque sia la sua lunghezza.
+
+
+\newpage
+\subsection{Code Flow}\label{sub:codeFlow}
+Vediamo ora come la libreria si frappone tra 2 device che vogliono comunicare mediante questo sequence diagram:\\
+\begin{figure}[h]
+	\centering
+		\caption[Sequence Diagram UML di EMP]{Sequence Diagram UML}
+	\includegraphics[width=1\textwidth]{EMP/Message Pack Sending Flow.png}
+\end{figure}
+
+\noindent
+In questo esempio generico i 2 device non sono definiti, ovviamente nessuno dei 2 può istanziare concretamente una classe \textbf{MP}(essendo una classe virtuale), ma come detto prima, tutti i \textit{Codici attivi} sono racchiusi lì dentro.\\
+Come si può osservare, eccetto il riempire i dati, inviarli e attendere che arrivi qualcosa, per gli attori il lavoro finisce subito, internamente alla libreria, invece, a parti invertite, abbiamo il calcolo del CRC8 (\cite{CRC8}) e la codifica usando COBS (\cite{COBS}), e l'omologo dall'altro lato, dopo aver ricevuto i byte, procede alla de-codifica e check per l'integrità.\\
+
+\subsection{Test di Codifica/Decodifica su ogni Device}
+La serie di passi descritta nel \nameref{sub:codeFlow} è stato testato su i vari dispositivi per cui la libreria è stata sviluppata usando il seguente schema:
+\begin{figure}[h]
+	\centering
+		\caption[EMP Benchmark Testing Flow]{Testing Flow}
+	\includegraphics[width=0.8\textwidth]{EMP/TestFlow.png}
+\end{figure}
+
+\noindent
+I test vengono avviati da \textbf{Linux} e puntano a testare la perdita la correttezza della trasmissione usando \citefield{EMP}{title}, e il funzionamento di Encoding e Decoding delle classi sulle entrambe le architetture.\\
+Ad ora, sulle 3 Piattaforme di sviluppo (Linux, Arduino, STM32) i test sono stati un pieno successo.
+
+\newpage
+\section{Online Sampling}
+Come descritto in figura \ref{fig:archietturaControllo}, il sistema controlla internamente la corrente, ma comunica con il mondo fuori l'attuale stato della bobina.\\
+Per comunicare i Sample (e ricevere le Reference) è stata infatti sviluppata \citefield{EMP}{title}(Sezione \ref{sec:EMP}).\\
+Come visto nella sezione "\nameref{sub:parametriMisurati}", il circuito di misura è quello riportato in figura \ref{fig:circuitoDiMisura}.\\
+E, come per il \nameref{CurrentSense}, in realtà anche il voltmetro $V_2$ possiede un offset a $\frac{V_{cc}}{2}$, aggiunto per poter misurare tanto le correnti positive, quanto quelle negative.
+\begin{figure}[h]
+	\centering
+		\caption[Circuito equivalente del Plasma con l'offset delle Misure]{Circuito reale con Misure}
+	\includegraphics[width=1\textwidth]{Trasformatore/PlasmaCircuit-MisureCircuitOffset.png}
+\end{figure}
+
+\noindent
+Controllo e misure avvengo alla massima frequenza che l'Arduino è riuscito effettivamente a gestire, ovvero 0.5ms (2Khz), nei quali campiona lo stato del sistema, genera il nuovo valore del PWM per il controllo di $V(t)$, e invia i dati attraverso \citefield{EMP}{title}.
+
+\newpage
+\subsection{Interconnessione \microControllore $\Leftrightarrow$ Companion}
+Per raggiungere gli obiettivi descritti nella sezione dell'\nameref{sec:architettura}, i seguenti pacchetti multipli sono stati concordati tra le 2 parti:
+\begin{lstlisting}[style=cppStyle,caption={Pacchetti Companion $\Rightarrow$ \microControllore   },label=lst:Companion2ArdPack]
+// #######################################################
+// ########        Companion to Arduino           ########
+// #######################################################
+struct newRef {
+	int16_t newRef;
+} __attribute__((packed));
+
+struct setUpPackAsk {
+	int8_t padding;
+} __attribute__((packed));
+
+enum LinuxSendType : uint8_t { newRefType, askType };
+
+struct _packLinux2Ard {
+	LinuxSendType type;
+	union {
+		struct newRef ref;
+		struct setUpPackAsk ask;
+	};
+} __attribute__((packed));
+typedef struct _packLinux2Ard packLinux2Ard;
+\end{lstlisting}
+
+\begin{lstlisting}[style=cppStyle,caption={Pacchetti \microControllore $\Rightarrow$ Companion },label=lst:Ard2CompanionPack] 
+// #######################################################
+// ########        Arduino to Companion           ########
+// #######################################################
+struct sample {
+	int16_t pwm;
+	int16_t V2_read;
+	int16_t Isense_read;
+	int16_t err;
+} __attribute__((packed));
+
+struct setUpPack {
+	int16_t V2_mean;     // Adc read
+	int16_t Isense_mean; // Adc read
+	int16_t dt;          // Time in us (10^-6)
+} __attribute__((packed));
+enum ardSendType : uint8_t { sampleType, setUpPackType };
+
+struct _packArd2Linux {
+	ardSendType type;
+	union {
+		struct sample read;
+		struct setUpPack setUp;
+	};
+} __attribute__((packed));
+typedef struct _packArd2Linux packArd2Linux;
+\end{lstlisting}
+\noindent
+Essi permettono al Companion di conoscere tutto quello che sta succedendo nel \microC, con un piccolo ritardo dovuto alla trasmissione ed eventuali ritardi interni (nel caso di Linux dovuti allo scheduler).
+Le informazioni riguardanti offset e parametri dell'esperimento (\verb|struct setUpPack|), sono raccolti a macchina spenta, all'accensione della scheda nel \nameref{lst:controlSetup}.\\
+Successivamente la scheda evolve per tic di 0.5ms, dove nel tempo morto resta in ascolto di eventuali pacchetti di richiesta da parte del Companion all'interno del \nameref{lst:controlLoop}.\\
+
+\subsection{Storage su file delle informazioni}\label{subsec:experimentStorage}
+Le informazioni ricevute dal Companion, vengono salvate all'interno di un file di testo contenente 2 tabelle, disposte una sotto l'altra.\\
+La prima delle 2, tabula i dati del pacchetto \verb|struct setUpPack|, il quale risulta utile per poter interpretare i dati successivamente.
+\begin{table}[h]
+	\centering
+		\caption[Salvataggio di "struct setUpPack"]{Salvataggio di "struct setUpPack"}
+	\begin{tabular}[t]{|c|c|c|}
+		\hline
+		$ V_{2_{mean}} $ & $ I_{sense_{mean}}$ & dt  \\
+		\hline
+		510              & 510                 & 500 \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\noindent
+La seconda invece è lo streaming dei dati \verb|raw|, ottenuti dalla scheda:
+\begin{table}[h]
+	\centering
+		\caption[Salvataggio di "struct sample" $\forall$ dt]{Salvataggio di "struct sample" $\forall$ dt}
+	\begin{tabular}[t]{|c|c|c|c|}
+		\hline
+		PWM   & $ V_{2_{read}}$ & $ I_{sense_{read}}$ & e     \\
+		\hline
+		0     & 509             & 510                 & 1     \\
+		0     & 509             & 511                 & 1     \\
+		\dots & \dots           & \dots               & \dots \\
+		0     & 509             & 510                 & 59    \\
+		44    & 510             & 510                 & 36    \\
+		48    & 518             & 510                 & 28    \\
+		53    & 514             & 510                 & 32    \\
+		59    & 513             & 510                 & 33    \\
+		\dots & \dots           & \dots               & \dots \\
+		\hline
+	\end{tabular}
+
+\end{table}
+\noindent
+Essi sono salvati sotto forma di testo ascii normale, separando i campi con un \verb|'tab'|.
+
+\newpage
+\section{Post Elaborazione con Matlab}
+I dati salvati su Hard Disk, come visto della sezione \nameref{subsec:experimentStorage}, vengono presi in ingresso da Matlab e convertiti dal valore del DAC.
+
+\subsection{Conversioni Dati}
+Per ottenere la tensione reale letta il cambio è molto semplice:
+\begin{empheq}[box=\mathResult]{equation*}
+	V_{read} = ADC_{Read} \cdot V_{step}= ADC_{Read} \frac{Vcc}{2^{10}-1} = ADC \cdot 4,887mV
+\end{empheq}
+
+\noindent 
+Partendo da questa equivalenza, per la corrente del primario usiamo l'equazione \ref{eq:Iread}, mentre la tensione sul secondario necessita solo della cancellazione dell'offset:
+\begin{empheq}[box=\mathCalc]{equation} \label{eq:V2Read}
+	V_2 = V_{read} - V_{2_{offset}}
+\end{empheq}
+
+\subsection{Filtraggio senza distorsioni di fase}
+Essendo i dati letti affetti naturalmente da rumore, essi vengono post-filtrati per rendere i dati più puliti e mettere in evidenza le tendenze del sistema. Questo filtraggio è stato realizzato usando un \textit{Filtro digitale a senza distorsione di fase}(\cite{zeroPhaseShiftFilter}), come fa intuire il nome, la caratteristica di questo filtro è che non introduce nessun ritardo o anticipazione al segnale filtrato, permettendo di confrontarlo direttamente con i dati puri, eliminando rumori a bassa ed alta frequenza.\\
+Questo filtraggio viene eseguito direttamente nell'importazione della tabella salvata con la struttura vista nella sezione \nameref{subsec:experimentStorage}, di cui il codice è in appendice \nameref{subsec:tabParsing}.

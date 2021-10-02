@@ -12,8 +12,8 @@ Il progetto finale ha come obiettivo la realizzazione di un architettura di cont
 
 \begin{figure}[h] \label{fig:archietturaControllo}
 	\centering
-	\includegraphics[width=1\textwidth]{Architettura/SystemArchitetture.png}
 	\caption[Schema finale dell'archiettettura di controllo]{Architettura di controllo}
+	\includegraphics[width=1\textwidth]{Architettura/SystemArchitetture.png}
 \end{figure}
 
 \noindent
@@ -21,8 +21,8 @@ Lo schema proposto realizza l'obiettivo per una singola bobina, il progetto fina
 Dallo schema risulta evidente che tutti i componenti visti nel capitolo "\nameref{cap:Hardware}" si relazionano con lo stesso \microControllore: l'\ArduinoUno.
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.6\textwidth]{Architettura/ArduinoUno.png}
 	\caption[Scheda Arduino Uno]{Scheda Arduino Uno}
+	\includegraphics[width=0.6\textwidth]{Architettura/ArduinoUno.png}
 \end{figure}
 
 \noindent
@@ -56,8 +56,8 @@ Si tratta di un algoritmo per la codifica di byte, progettato per essere al temp
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=1\textwidth]{EMP/Cobs_encoding_with_example.png}
 	\caption[Esempio di COBS]{Esempio di COBS}
+	\includegraphics[width=1\textwidth]{EMP/Cobs_encoding_with_example.png}
 \end{figure}
 
 \subsection{Metodo di codifica}
@@ -74,8 +74,8 @@ L'algoritmo di codifica consiste nel:
 
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=1\textwidth]{EMP/Cobs_encoding_with_example-dist.png}
 	\caption[Esempio di COBS con distanza]{Esempio di COBS con distanza}
+	\includegraphics[width=1\textwidth]{EMP/Cobs_encoding_with_example-dist.png}
 \end{figure}
 
 La versione usata per questo progetto, che comunque non ha l'obiettivo di trasmettere quantità infinite di byte, ha il limite di non poter codificare blocchi di byte che hanno una distanza tra 2 \zeroByte superiore a 255, questo limite è potenzialmente rimovibile usando un algoritmo più sofisticato.
@@ -136,8 +136,8 @@ L’aver usato COBS come sistema di codifica per la trasmissione, garantisce che
 Lo sviluppo del codice è qui riassunto nel \textbf{Class Diagram} fatto in UML, del codice:\\
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=1\textwidth]{EMP/EMP-Hierarchy.png}
 	\caption[Class Diagram UML di EMP]{Class Diagram UML}
+	\includegraphics[width=1\textwidth]{EMP/EMP-Hierarchy.png}
 \end{figure}
 
 \noindent
@@ -167,8 +167,8 @@ Il riempimento corretto dei dati nel pacchetto, il calcolo della size utile e il
 Vediamo ora come la libreria si frappone tra 2 device che vogliono comunicare mediante questo sequence diagram:\\
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=1\textwidth]{EMP/Message Pack Sending Flow.png}
 	\caption[Sequence Diagram UML di EMP]{Sequence Diagram UML}
+	\includegraphics[width=1\textwidth]{EMP/Message Pack Sending Flow.png}
 \end{figure}
 
 \noindent
@@ -179,8 +179,8 @@ Come si può osservare, eccetto il riempire i dati, inviarli e attendere che arr
 La serie di passi descritta nel \nameref{sub:codeFlow} è stato testato su i vari dispositivi per cui la libreria è stata sviluppata usando il seguente schema:
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.8\textwidth]{EMP/TestFlow.png}
 	\caption[EMP Benchmark Testing Flow]{Testing Flow}
+	\includegraphics[width=0.8\textwidth]{EMP/TestFlow.png}
 \end{figure}
 
 \noindent
@@ -195,8 +195,8 @@ Come visto nella sezione "\nameref{sub:parametriMisurati}", il circuito di misur
 E, come per il \nameref{CurrentSense}, in realtà anche il voltmetro $V_2$ possiede un offset a $\frac{V_{cc}}{2}$, aggiunto per poter misurare tanto le correnti positive, quanto quelle negative.
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=1\textwidth]{Trasformatore/PlasmaCircuit-MisureCircuitOffset.png}
 	\caption[Circuito equivalente del Plasma con l'offset delle Misure]{Circuito reale con Misure}
+	\includegraphics[width=1\textwidth]{Trasformatore/PlasmaCircuit-MisureCircuitOffset.png}
 \end{figure}
 
 \noindent
@@ -266,6 +266,7 @@ Le informazioni ricevute dal Companion, vengono salvate all'interno di un file d
 La prima delle 2, tabula i dati del pacchetto \verb|struct setUpPack|, il quale risulta utile per poter interpretare i dati successivamente.
 \begin{table}[h]
 	\centering
+	\caption[Salvataggio di "struct setUpPack"]{Salvataggio di "struct setUpPack"}
 	\begin{tabular}[t]{|c|c|c|}
 		\hline
 		$ V_{2_{mean}} $ & $ I_{sense_{mean}}$ & dt  \\
@@ -273,13 +274,13 @@ La prima delle 2, tabula i dati del pacchetto \verb|struct setUpPack|, il quale 
 		510              & 510                 & 500 \\
 		\hline
 	\end{tabular}
-	\caption[Salvataggio di "struct setUpPack"]{Salvataggio di "struct setUpPack"}
 \end{table}
 
 \noindent
 La seconda invece è lo streaming dei dati \verb|raw|, ottenuti dalla scheda:
 \begin{table}[h]
 	\centering
+	\caption[Salvataggio di "struct sample" $\forall$ dt]{Salvataggio di "struct sample" $\forall$ dt}
 	\begin{tabular}[t]{|c|c|c|c|}
 		\hline
 		PWM   & $ V_{2_{read}}$ & $ I_{sense_{read}}$ & e     \\
@@ -295,7 +296,7 @@ La seconda invece è lo streaming dei dati \verb|raw|, ottenuti dalla scheda:
 		\dots & \dots           & \dots               & \dots \\
 		\hline
 	\end{tabular}
-	\caption[Salvataggio di "struct sample" $\forall$ dt]{Salvataggio di "struct sample" $\forall$ dt}
+
 \end{table}
 \noindent
 Essi sono salvati sotto forma di testo ascii normale, separando i campi con un \verb|'tab'|.
@@ -310,7 +311,7 @@ Per ottenere la tensione reale letta il cambio è molto semplice:
 	V_{read} = ADC_{Read} \cdot V_{step}= ADC_{Read} \frac{Vcc}{2^{10}-1} = ADC \cdot 4,887mV
 \end{empheq}
 
-\noindent 
+\noindent
 Partendo da questa equivalenza, per la corrente del primario usiamo l'equazione \ref{eq:Iread}, mentre la tensione sul secondario necessita solo della cancellazione dell'offset:
 \begin{empheq}[box=\mathCalc]{equation} \label{eq:V2Read}
 	V_2 = V_{read} - V_{2_{offset}}

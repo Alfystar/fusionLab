@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.9.11)  2 OCT 2021 15:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.9.11)  2 OCT 2021 15:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1290,24 +1290,24 @@ LaTeX Warning: Unused global option(s):
 (./capitolo-Controllo.aux) (./conclusioni.aux) (./appendice.aux))
 \openout1 = `Tesi.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 216.
-LaTeX Font Info:    ... okay on input line 216.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 216.
-LaTeX Font Info:    ... okay on input line 216.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 216.
-LaTeX Font Info:    ... okay on input line 216.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 216.
-LaTeX Font Info:    ... okay on input line 216.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 216.
-LaTeX Font Info:    ... okay on input line 216.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 216.
-LaTeX Font Info:    ... okay on input line 216.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 216.
-LaTeX Font Info:    ... okay on input line 216.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 216.
-LaTeX Font Info:    ... okay on input line 216.
-LaTeX Info: Redefining \it@ocap on input line 216.
-LaTeX Info: Redefining \it@ccap on input line 216.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 217.
+LaTeX Font Info:    ... okay on input line 217.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 217.
+LaTeX Font Info:    ... okay on input line 217.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 217.
+LaTeX Font Info:    ... okay on input line 217.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 217.
+LaTeX Font Info:    ... okay on input line 217.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 217.
+LaTeX Font Info:    ... okay on input line 217.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 217.
+LaTeX Font Info:    ... okay on input line 217.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 217.
+LaTeX Font Info:    ... okay on input line 217.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 217.
+LaTeX Font Info:    ... okay on input line 217.
+LaTeX Info: Redefining \it@ocap on input line 217.
+LaTeX Info: Redefining \it@ccap on input line 217.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1331,7 +1331,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring ON on input line 216.
+Package hyperref Info: Link coloring ON on input line 217.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -1344,9 +1344,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count491
 )
-LaTeX Info: Redefining \ref on input line 216.
-LaTeX Info: Redefining \pageref on input line 216.
-LaTeX Info: Redefining \nameref on input line 216.
+LaTeX Info: Redefining \ref on input line 217.
+LaTeX Info: Redefining \pageref on input line 217.
+LaTeX Info: Redefining \nameref on input line 217.
 
 (./Tesi.out) (./Tesi.out)
 \@outlinefile=\write7
@@ -1379,25 +1379,25 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Tesi.bbl' found.
 
 (./Tesi.bbl)
-Package biblatex Info: Reference section=0 on input line 216.
-Package biblatex Info: Reference segment=0 on input line 216.
+Package biblatex Info: Reference section=0 on input line 217.
+Package biblatex Info: Reference segment=0 on input line 217.
 \c@lstlisting=\count492
  ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 216.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 232
+LaTeX Info: Redefining \selectfont on input line 217.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 233
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 232
+LaTeX Font Info:    Trying to load font information for U+msb on input line 233
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+lasy on input line 23
-2.
+3.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
@@ -1411,14 +1411,14 @@ Package epstopdf Info: Source file: <imgs/TorVergata_logo_cmyk.eps>
 (epstopdf)                    size: 12231 bytes
 (epstopdf)             Command: <repstopdf --outfile=imgs/TorVergata_logo_cmyk-
 eps-converted-to.pdf imgs/TorVergata_logo_cmyk.eps>
-(epstopdf)             \includegraphics on input line 232.
+(epstopdf)             \includegraphics on input line 233.
 Package epstopdf Info: Output file is already uptodate.
-<imgs/TorVergata_logo_cmyk-eps-converted-to.pdf, id=316, 454.69875pt x 104.39pt
+<imgs/TorVergata_logo_cmyk-eps-converted-to.pdf, id=320, 454.69875pt x 104.39pt
 >
 File: imgs/TorVergata_logo_cmyk-eps-converted-to.pdf Graphic file (type pdf)
 <use imgs/TorVergata_logo_cmyk-eps-converted-to.pdf>
 Package pdftex.def Info: imgs/TorVergata_logo_cmyk-eps-converted-to.pdf  used o
-n input line 232.
+n input line 233.
 (pdftex.def)             Requested size: 371.8216pt x 85.35826pt.
  [1
 
@@ -1458,13 +1458,13 @@ l.14 \chapter
              *{Introduzione} [2] [3
 
 ] [4]
-<imgs//Introduzione/K-DEMO_device_core_design_features.jpg, id=447, 827.09pt x 
+<imgs//Introduzione/K-DEMO_device_core_design_features.jpg, id=452, 827.09pt x 
 543.02875pt>
 File: imgs//Introduzione/K-DEMO_device_core_design_features.jpg Graphic file (t
 ype jpg)
 <use imgs//Introduzione/K-DEMO_device_core_design_features.jpg>
 Package pdftex.def Info: imgs//Introduzione/K-DEMO_device_core_design_features.
-jpg  used on input line 47.
+jpg  used on input line 48.
 (pdftex.def)             Requested size: 282.74734pt x 185.6382pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 51--69
@@ -1490,7 +1490,7 @@ Overfull \hbox (146.43481pt too wide) detected at line 69
  []
 
 )
-Underfull \hbox (badness 10000) in paragraph at lines 77--273
+Underfull \hbox (badness 10000) in paragraph at lines 77--274
 
  []
 
@@ -1509,11 +1509,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 19--20
 
  []
 
-<imgs//Trasformatore/tokamak_scheme.jpg, id=473, 803.0pt x 451.6875pt>
+<imgs//Trasformatore/tokamak_scheme.jpg, id=478, 803.0pt x 451.6875pt>
 File: imgs//Trasformatore/tokamak_scheme.jpg Graphic file (type jpg)
 <use imgs//Trasformatore/tokamak_scheme.jpg>
 Package pdftex.def Info: imgs//Trasformatore/tokamak_scheme.jpg  used on input 
-line 23.
+line 24.
 (pdftex.def)             Requested size: 435.0pt x 244.69331pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 27--31
@@ -1534,11 +1534,11 @@ Package mdframed Info: mdframed detected package amsthm
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 91.
-<imgs//Trasformatore/trasformatore.png, id=511, 1927.2pt x 1447.4075pt>
+<imgs//Trasformatore/trasformatore.png, id=517, 1927.2pt x 1447.4075pt>
 File: imgs//Trasformatore/trasformatore.png Graphic file (type png)
 <use imgs//Trasformatore/trasformatore.png>
 Package pdftex.def Info: imgs//Trasformatore/trasformatore.png  used on input l
-ine 103.
+ine 104.
 (pdftex.def)             Requested size: 348.00133pt x 261.36136pt.
  [10]
 Package mdframed Info: mdframed detected package amsthm 
@@ -1554,35 +1554,38 @@ Underfull \hbox (badness 10000) in paragraph at lines 112--116
 
  []
 
+Package mdframed Info: Box was splittet wrong
+ starting loop to iterate the splitting point
+(mdframed)              on input line 139.
 [11 <./imgs//Trasformatore/trasformatore.png>] [12]
-<imgs//Trasformatore/PlasmaCircuit-PlasmaCircuit.png, id=550, 2629.825pt x 1289
+<imgs//Trasformatore/PlasmaCircuit-PlasmaCircuit.png, id=555, 2629.825pt x 1289
 .81876pt>
 File: imgs//Trasformatore/PlasmaCircuit-PlasmaCircuit.png Graphic file (type pn
 g)
 <use imgs//Trasformatore/PlasmaCircuit-PlasmaCircuit.png>
 Package pdftex.def Info: imgs//Trasformatore/PlasmaCircuit-PlasmaCircuit.png  u
-sed on input line 152.
+sed on input line 153.
 (pdftex.def)             Requested size: 435.0pt x 213.3423pt.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 156.
-<imgs//Trasformatore/PlasmaCircuit-EquivalentCalc.png, id=553, 3031.325pt x 129
+<imgs//Trasformatore/PlasmaCircuit-EquivalentCalc.png, id=558, 3031.325pt x 129
 4.8375pt>
 File: imgs//Trasformatore/PlasmaCircuit-EquivalentCalc.png Graphic file (type p
 ng)
 <use imgs//Trasformatore/PlasmaCircuit-EquivalentCalc.png>
 Package pdftex.def Info: imgs//Trasformatore/PlasmaCircuit-EquivalentCalc.png  
-used on input line 171.
+used on input line 172.
 (pdftex.def)             Requested size: 435.0pt x 185.8005pt.
  [13 <./imgs//Trasformatore/PlasmaCircuit-PlasmaCircuit.png>]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 177.
+(mdframed)              on input line 176.
  [14 <./imgs//Trasformatore/PlasmaCircuit-EquivalentCalc.png>] [15]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 245.
-<imgs//Trasformatore/PlasmaCircuit-SchemaBlocchi.png, id=592, 1485.55pt x 306.1
+(mdframed)              on input line 244.
+<imgs//Trasformatore/PlasmaCircuit-SchemaBlocchi.png, id=597, 1485.55pt x 306.1
 4375pt>
 File: imgs//Trasformatore/PlasmaCircuit-SchemaBlocchi.png Graphic file (type pn
 g)
@@ -1591,7 +1594,7 @@ Package pdftex.def Info: imgs//Trasformatore/PlasmaCircuit-SchemaBlocchi.png  u
 sed on input line 269.
 (pdftex.def)             Requested size: 435.0pt x 89.6436pt.
  [16] [17 <./imgs//Trasformatore/PlasmaCircuit-SchemaBlocchi.png>]
-<imgs//Trasformatore/PlasmaCircuit-MisureCircuit.png, id=621, 3733.95pt x 1395.
+<imgs//Trasformatore/PlasmaCircuit-MisureCircuit.png, id=627, 3733.95pt x 1395.
 2125pt>
 File: imgs//Trasformatore/PlasmaCircuit-MisureCircuit.png Graphic file (type pn
 g)
@@ -1600,71 +1603,75 @@ Package pdftex.def Info: imgs//Trasformatore/PlasmaCircuit-MisureCircuit.png  u
 sed on input line 290.
 (pdftex.def)             Requested size: 435.0pt x 162.52176pt.
  [18 <./imgs//Trasformatore/PlasmaCircuit-MisureCircuit.png>]
-<imgs//ACS770/ACS770-Fig.png, id=635, 703.87968pt x 280.04625pt>
+<imgs//ACS770/ACS770-Fig.png, id=640, 703.87968pt x 280.04625pt>
 File: imgs//ACS770/ACS770-Fig.png Graphic file (type png)
 <use imgs//ACS770/ACS770-Fig.png>
 Package pdftex.def Info: imgs//ACS770/ACS770-Fig.png  used on input line 309.
 (pdftex.def)             Requested size: 435.0pt x 173.06708pt.
  [19 <./imgs//ACS770/ACS770-Fig.png>] [20]
-<imgs//ACS770/ACS770-SchemaBlocchi.png, id=651, 737.00343pt x 525.46312pt>
+<imgs//ACS770/ACS770-SchemaBlocchi.png, id=656, 737.00343pt x 525.46312pt>
 File: imgs//ACS770/ACS770-SchemaBlocchi.png Graphic file (type png)
 <use imgs//ACS770/ACS770-SchemaBlocchi.png>
 Package pdftex.def Info: imgs//ACS770/ACS770-SchemaBlocchi.png  used on input l
-ine 357.
+ine 359.
 (pdftex.def)             Requested size: 435.0pt x 310.14082pt.
  [21 <./imgs//ACS770/ACS770-SchemaBlocchi.png (PNG copy)>]
-<imgs//ACS770/ACS770-Sensibilità.png, id=658, 642.14906pt x 555.57562pt>
+<imgs//ACS770/ACS770-Sensibilità.png, id=663, 642.14906pt x 555.57562pt>
 File: imgs//ACS770/ACS770-Sensibilità.png Graphic file (type png)
 <use imgs//ACS770/ACS770-Sensibilità.png>
 Package pdftex.def Info: imgs//ACS770/ACS770-Sensibilità.png  used on input li
-ne 367.
+ne 369.
 (pdftex.def)             Requested size: 282.74734pt x 244.63205pt.
-<imgs//ACS770/ACS770-NonLin.png, id=659, 735.74875pt x 439.6425pt>
+<imgs//ACS770/ACS770-NonLin.png, id=664, 735.74875pt x 439.6425pt>
 File: imgs//ACS770/ACS770-NonLin.png Graphic file (type png)
 <use imgs//ACS770/ACS770-NonLin.png>
-Package pdftex.def Info: imgs//ACS770/ACS770-NonLin.png  used on input line 375
+Package pdftex.def Info: imgs//ACS770/ACS770-NonLin.png  used on input line 377
 .
 (pdftex.def)             Requested size: 278.39973pt x 166.3615pt.
  [22 <./imgs//ACS770/ACS770-Sensibilità.png (PNG copy)> <./imgs//ACS770/ACS770
 -NonLin.png>]
-<imgs//ACS770/ACS770-Schema.png, id=667, 463.7325pt x 281.55188pt>
+<imgs//ACS770/ACS770-Schema.png, id=672, 463.7325pt x 281.55188pt>
 File: imgs//ACS770/ACS770-Schema.png Graphic file (type png)
 <use imgs//ACS770/ACS770-Schema.png>
-Package pdftex.def Info: imgs//ACS770/ACS770-Schema.png  used on input line 390
+Package pdftex.def Info: imgs//ACS770/ACS770-Schema.png  used on input line 392
 .
 (pdftex.def)             Requested size: 369.75266pt x 224.49857pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 412--414
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 413--415
 
  []
 
 [23 <./imgs//ACS770/ACS770-Schema.png (PNG copy)>] [24]
-<imgs//IBT-2/TopView.png, id=691, 1083.29718pt x 538.26094pt>
+<imgs//IBT-2/TopView.png, id=696, 1083.29718pt x 538.26094pt>
 File: imgs//IBT-2/TopView.png Graphic file (type png)
 <use imgs//IBT-2/TopView.png>
-Package pdftex.def Info: imgs//IBT-2/TopView.png  used on input line 454.
+Package pdftex.def Info: imgs//IBT-2/TopView.png  used on input line 456.
 (pdftex.def)             Requested size: 435.0pt x 216.1383pt.
  [25 <./imgs//IBT-2/TopView.png>]
-<imgs//IBT-2/elettricScheme.png, id=704, 563.60562pt x 396.48125pt>
+<imgs//IBT-2/elettricScheme.png, id=709, 563.60562pt x 396.48125pt>
 File: imgs//IBT-2/elettricScheme.png Graphic file (type png)
 <use imgs//IBT-2/elettricScheme.png>
-Package pdftex.def Info: imgs//IBT-2/elettricScheme.png  used on input line 484
+Package pdftex.def Info: imgs//IBT-2/elettricScheme.png  used on input line 486
 .
 (pdftex.def)             Requested size: 440.677pt x 310.0pt.
 
-Overfull \hbox (5.677pt too wide) in paragraph at lines 484--485
+Overfull \hbox (5.677pt too wide) in paragraph at lines 486--487
  [][] 
  []
 
 [26 <./imgs//IBT-2/elettricScheme.png>] [27]
-<imgs//IBT-2/T1-Triangolare.pdf, id=717, 794.97pt x 614.295pt>
+<imgs//IBT-2/T1-Triangolare.pdf, id=722, 794.97pt x 614.295pt>
 File: imgs//IBT-2/T1-Triangolare.pdf Graphic file (type pdf)
 <use imgs//IBT-2/T1-Triangolare.pdf>
-Package pdftex.def Info: imgs//IBT-2/T1-Triangolare.pdf  used on input line 512
+Package pdftex.def Info: imgs//IBT-2/T1-Triangolare.pdf  used on input line 513
 .
 (pdftex.def)             Requested size: 401.18375pt x 310.0pt.
  [28 <./imgs//IBT-2/T1-Triangolare.pdf>]
-<imgs//IBT-2/T2-RapidShot.pdf, id=761, 794.97pt x 614.295pt>
+<imgs//IBT-2/T2-RapidShot.pdf, id=766, 794.97pt x 614.295pt>
 File: imgs//IBT-2/T2-RapidShot.pdf Graphic file (type pdf)
 <use imgs//IBT-2/T2-RapidShot.pdf>
 Package pdftex.def Info: imgs//IBT-2/T2-RapidShot.pdf  used on input line 521.
@@ -1674,17 +1681,17 @@ Package pdftex.def Info: imgs//IBT-2/T2-RapidShot.pdf  used on input line 521.
 
  (./capitolo-Architettura.tex
 Capitolo 2.
-<imgs//Architettura/SystemArchitetture.png, id=809, 963.6pt x 542.025pt>
+<imgs//Architettura/SystemArchitetture.png, id=814, 963.6pt x 542.025pt>
 File: imgs//Architettura/SystemArchitetture.png Graphic file (type png)
 <use imgs//Architettura/SystemArchitetture.png>
 Package pdftex.def Info: imgs//Architettura/SystemArchitetture.png  used on inp
-ut line 15.
+ut line 16.
 (pdftex.def)             Requested size: 435.0pt x 244.68643pt.
-<imgs//Architettura/ArduinoUno.png, id=811, 416.55624pt x 327.2225pt>
+<imgs//Architettura/ArduinoUno.png, id=816, 416.55624pt x 327.2225pt>
 File: imgs//Architettura/ArduinoUno.png Graphic file (type png)
 <use imgs//Architettura/ArduinoUno.png>
 Package pdftex.def Info: imgs//Architettura/ArduinoUno.png  used on input line 
-24.
+25.
 (pdftex.def)             Requested size: 261.00266pt x 205.03781pt.
 [30
 
@@ -1693,31 +1700,31 @@ Package pdftex.def Info: imgs//Architettura/ArduinoUno.png  used on input line
 
  <./imgs//Architettura/SystemArchitetture.png>] [31 <./imgs//Architettura/Ardui
 noUno.png>]
-<imgs//EMP/EMP-Logo-Background.png, id=826, 385.44pt x 243.15843pt>
+<imgs//EMP/EMP-Logo-Background.png, id=831, 385.44pt x 243.15843pt>
 File: imgs//EMP/EMP-Logo-Background.png Graphic file (type png)
 <use imgs//EMP/EMP-Logo-Background.png>
 Package pdftex.def Info: imgs//EMP/EMP-Logo-Background.png  used on input line 
 41.
 (pdftex.def)             Requested size: 435.0pt x 274.42448pt.
  [32 <./imgs//EMP/EMP-Logo-Background.png>]
-<imgs//EMP/Cobs_encoding_with_example.png, id=836, 1498.59875pt x 125.46875pt>
+<imgs//EMP/Cobs_encoding_with_example.png, id=841, 1498.59875pt x 125.46875pt>
 File: imgs//EMP/Cobs_encoding_with_example.png Graphic file (type png)
 <use imgs//EMP/Cobs_encoding_with_example.png>
 Package pdftex.def Info: imgs//EMP/Cobs_encoding_with_example.png  used on inpu
-t line 59.
+t line 60.
 (pdftex.def)             Requested size: 435.0pt x 36.41945pt.
  [33 <./imgs//EMP/Cobs_encoding_with_example.png>]
-<imgs//EMP/Cobs_encoding_with_example-dist.png, id=846, 512.022pt x 79.716pt>
+<imgs//EMP/Cobs_encoding_with_example-dist.png, id=851, 512.022pt x 79.716pt>
 File: imgs//EMP/Cobs_encoding_with_example-dist.png Graphic file (type png)
 <use imgs//EMP/Cobs_encoding_with_example-dist.png>
 Package pdftex.def Info: imgs//EMP/Cobs_encoding_with_example-dist.png  used on
- input line 77.
+ input line 78.
 (pdftex.def)             Requested size: 435.0pt x 67.72728pt.
  [34 <./imgs//EMP/Cobs_encoding_with_example-dist.png>] [35] [36]
-<imgs//EMP/EMP-Hierarchy.png, id=882, 1363.0122pt x 933.7284pt>
+<imgs//EMP/EMP-Hierarchy.png, id=887, 1363.0122pt x 933.7284pt>
 File: imgs//EMP/EMP-Hierarchy.png Graphic file (type png)
 <use imgs//EMP/EMP-Hierarchy.png>
-Package pdftex.def Info: imgs//EMP/EMP-Hierarchy.png  used on input line 139.
+Package pdftex.def Info: imgs//EMP/EMP-Hierarchy.png  used on input line 140.
 (pdftex.def)             Requested size: 435.0pt x 297.98708pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 143--146
@@ -1731,11 +1738,11 @@ LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 1
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 ) [38]
-<imgs//EMP/Message Pack Sending Flow.png, id=898, 646.0938pt x 531.1845pt>
+<imgs//EMP/Message Pack Sending Flow.png, id=903, 646.0938pt x 531.1845pt>
 File: imgs//EMP/Message Pack Sending Flow.png Graphic file (type png)
 <use imgs//EMP/Message Pack Sending Flow.png>
 Package pdftex.def Info: imgs//EMP/Message Pack Sending Flow.png  used on input
- line 170.
+ line 171.
 (pdftex.def)             Requested size: 435.0pt x 357.65059pt.
 
 Underfull \hbox (badness 10000) in paragraph at lines 174--177
@@ -1743,19 +1750,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 174--177
  []
 
 [39 <./imgs//EMP/Message Pack Sending Flow.png (PNG copy)>]
-<imgs//EMP/TestFlow.png, id=907, 2473.24pt x 1682.285pt>
+<imgs//EMP/TestFlow.png, id=912, 2473.24pt x 1682.285pt>
 File: imgs//EMP/TestFlow.png Graphic file (type png)
 <use imgs//EMP/TestFlow.png>
-Package pdftex.def Info: imgs//EMP/TestFlow.png  used on input line 182.
+Package pdftex.def Info: imgs//EMP/TestFlow.png  used on input line 183.
 (pdftex.def)             Requested size: 348.00133pt x 236.6991pt.
  [40 <./imgs//EMP/TestFlow.png>]
-<imgs//Trasformatore/PlasmaCircuit-MisureCircuitOffset.png, id=920, 3733.95pt x
+<imgs//Trasformatore/PlasmaCircuit-MisureCircuitOffset.png, id=925, 3733.95pt x
  1595.9625pt>
 File: imgs//Trasformatore/PlasmaCircuit-MisureCircuitOffset.png Graphic file (t
 ype png)
 <use imgs//Trasformatore/PlasmaCircuit-MisureCircuitOffset.png>
 Package pdftex.def Info: imgs//Trasformatore/PlasmaCircuit-MisureCircuitOffset.
-png  used on input line 198.
+png  used on input line 199.
 (pdftex.def)             Requested size: 435.0pt x 185.90619pt.
  [41 <./imgs//Trasformatore/PlasmaCircuit-MisureCircuitOffset.png>]
 
@@ -1865,37 +1872,43 @@ File: lstlang1.sty 2020/03/24 1.8d listings language file
 \tf@lof=\write9
 \openout9 = `Tesi.lof'.
 
- [59] (./Tesi.lol)
-\tf@lol=\write10
-\openout10 = `Tesi.lol'.
+ [59] (./Tesi.lot)
+\tf@lot=\write10
+\openout10 = `Tesi.lot'.
 
  [60
 
+] (./Tesi.lol)
+\tf@lol=\write11
+\openout11 = `Tesi.lol'.
+
+ [61
+
 ]
-Overfull \hbox (11.14105pt too wide) in paragraph at lines 309--309
+Overfull \hbox (11.14105pt too wide) in paragraph at lines 313--313
 \T1/cmtt/m/n/10 RdO + 2015 % 2FSLIDES + %26 + AUDIO % 2F13 + Diagnostiche + Mag
 netiche + %28Cianfarani % 29 % 2FMagnetic +
  []
 
-[61
+[62
 
-] [62] (./Tesi.aux (./Introduzione.aux) (./capitolo-HW.aux)
+] [63] (./Tesi.aux (./Introduzione.aux) (./capitolo-HW.aux)
 (./capitolo-Architettura.aux) (./capitolo-ModelloMatematico.aux)
 (./capitolo-Controllo.aux) (./conclusioni.aux) (./appendice.aux))
 Package rerunfilecheck Info: File `Tesi.out' has not changed.
-(rerunfilecheck)             Checksum: C2F00A1C84F36B6123A1B912C6C81816;4831.
+(rerunfilecheck)             Checksum: 103F82BCCE78133D115A7906BD8A72D9;4889.
 Package logreq Info: Writing requests to 'Tesi.run.xml'.
 \openout1 = `Tesi.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 36951 strings out of 479304
- 719058 string characters out of 5869779
- 1700390 words of memory out of 5000000
- 52785 multiletter control sequences out of 15000+600000
+ 36959 strings out of 479304
+ 719125 string characters out of 5869779
+ 1700405 words of memory out of 5000000
+ 52788 multiletter control sequences out of 15000+600000
  428108 words of font info for 89 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 101i,19n,108p,1855b,2004s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 101i,19n,108p,1855b,2089s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exi
 st, replaced by a fixed one
 
@@ -1931,10 +1944,10 @@ re/texmf/fonts/type1/public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1
 m1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti0900.pfb></usr/shar
 e/texmf/fonts/type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/
 public/cm-super/sftt1000.pfb>
-Output written on Tesi.pdf (68 pages, 7553914 bytes).
+Output written on Tesi.pdf (69 pages, 7555050 bytes).
 PDF statistics:
- 1676 PDF objects out of 1728 (max. 8388607)
- 1491 compressed objects within 15 object streams
- 599 named destinations out of 1000 (max. 500000)
- 831 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1695 PDF objects out of 1728 (max. 8388607)
+ 1508 compressed objects within 16 object streams
+ 601 named destinations out of 1000 (max. 500000)
+ 839 words of extra memory for PDF output out of 10000 (max. 10000000)
 
