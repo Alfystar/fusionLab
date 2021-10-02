@@ -21,12 +21,12 @@ Lo schema proposto realizza l'obiettivo per una singola bobina, il progetto fina
 Dallo schema risulta evidente che tutti i componenti visti nel capitolo "\nameref{cap:Hardware}" si relazionano con lo stesso \microControllore: l'\ArduinoUno.
 \begin{figure}[h]
 	\centering
-	\includegraphics[width=0.75\textwidth]{Architettura/ArduinoUno.png}
+	\includegraphics[width=0.6\textwidth]{Architettura/ArduinoUno.png}
 	\caption[Scheda Arduino Uno]{Scheda Arduino Uno}
 \end{figure}
 
 \noindent
-Per riportare i dati fuori e ricevere il riferimento da inseguire nella $V_2$, è stata realizzato il \nameref{EMP}, essa è stata scritta in C++ affinché possa essere Cross-Platform.\\
+Per riportare i dati fuori e ricevere il riferimento da inseguire nella $V_2$, è stata realizzata da me la libreria \cite*{EMP}, essa è stata scritta in C++ usando classi template, e progettata affinché possa essere Cross-Platform.\\
 Il suo compito specifico, in questo progetto, è di mettere in comunicazione l'\ArduinoUno con un nodo \MARTe installato su di una \Rasp.\\
 Quest'ultimo nodo ha il compito di mettere in rete il feedback dell'esperimento, e comunicare all'\ArduinoUno eventuali cambio di riferimento. Questo ultimo tratto è realizzato mediante il protocollo \textbf{SDN}, che viaggia sopra Ethernet e dà garanzie Real-time.\\
 Nella sua forma finale, il progetto prevede la riproduzione in serie di questo schema di controllo per arrivare a controllare tutte le bobine poloidali presenti in un tokamak.
@@ -40,7 +40,7 @@ Nella sua forma finale, il progetto prevede la riproduzione in serie di questo s
 	\centering
 	\includegraphics[width=1\textwidth]{EMP/EMP-Logo-Background.png}
 \end{figure}
-\paragraph{\citefield{EMP}{title}} nasce con l’obiettivo di standardizzare un protocollo e creare una libreria C++ basata su classi Template, che permetta di automatizzare e standardizzare tutto il lavoro di programmazione necessario all’invio/ricezione di dei pacchetti dal formato Pre-Concordati tra 2 Device connessi Peer2Peer (Nessuna pretesa di network-ing). (\cite{EMP})\\
+\paragraph{\citefield{EMP}{title}} nasce con l’obiettivo di standardizzare un protocollo e creare una libreria C++ basata su classi Template, che permetta di automatizzare e standardizzare tutto il lavoro di programmazione necessario all’invio/ricezione di dei pacchetti dal formato Pre-Concordati tra 2 Device connessi Peer2Peer (Nessuna pretesa di network-ing). (\cite*{EMP})\\
 Il raggiungimento dei suoi obiettivi, si sposa con la possibilità di supportare altre features interessanti:
 
 \paragraph{Multiple-Package} Il protocollo di comunicazione che si è deciso di usare per EMP ha permesso di estendere il suo funzionamento e permettere il trasporto, attraverso lo stesso mezzo, di \textit{\textbf{pacchetti di tipologia e dimensione diversa}} all’interno della stessa libreria, evitando al contempo di inviare per ogni pacchetto più byte di quelli strettamente necessario. $\Rightarrow$ \textbf{Alta Efficienza}
@@ -92,9 +92,8 @@ Questo può essere facilmente risolto in più modi:
 	\end{description}
 \end{spacing}
 \noindent
-Il metodo più universale è sicuramente l'aggiunta di un campo fisso per il tipo, di cui un esempio è visibile nell'appendice al listato \ref{lst:EMPmultiplePack}. (\nameref{lst:EMPmultiplePack})
-
-In ogni caso, la codifica \citefield{COBS}{title} aggiunge 2 byte extra al pacchetto che si vuole inviare, e tanto per la codifica quanto per la decodifica in ricezione, il \textbf{costo} è sempre pari a \textbf{O(n)}.
+Il metodo più universale è sicuramente l'aggiunta di un campo fisso per il tipo, di cui un esempio è visibile nell'appendice al listato \ref{lst:EMPmultiplePack}(\nameref{lst:EMPmultiplePack}).\\
+In ogni caso, la codifica \cite*{COBS} aggiunge 2 byte extra al pacchetto che si vuole inviare, e tanto per la codifica quanto per la decodifica in ricezione, il \textbf{costo} è sempre pari a \textbf{O(n)}.
 
 \begin{multicols}{2}
 	\begin{center}
@@ -155,10 +154,11 @@ Questa organizzazione del codice è stata pensata per far compilare su tutte le 
 		      Una simile necessità nasce dal dover compilare la classe anche su schede embedded, le quali, notoriamente, non hanno a disposizione un heap in ram spazioso per la memoria dinamica, e beneficiano nelle prestazioni se in fase di compilazione gli indirizzi di memoria sono fissi.
 	\end{description}
 \end{spacing}
-
+\vspace{0mm}
 \subsection{Logica di Comunicazione}
+\vspace{-5mm}
 La libreria è pensata per automatizzare la trasmissione e la ricezione di 2 tipologie di pacchetti \textit{Pre-concordati} tra 2 realizzazioni di \textbf{MP}, ovviamente non necessariamente sullo stesso dispositivo.\\
-Come riportato in appendice (\ref{EMPCode}), la definizione dei pacchetti è molto comoda, e usando un tipo e le \verb|union| è anche possibile gestire la comunicazione di pacchetti diversi tra i 2 lati della comunicazione, basterà invertire l'ordine dei pacchetti tra le 2 classi.\\
+Come riportato in Appendice B (\ref{EMPCode}), la definizione dei pacchetti è pensata per essere molto comoda e naturale. In oltre usando un campo per distinguere il tipo di pacchetto e una \verb|union| per unire in un unica area pacchetti differenti, è anche possibile gestire la comunicazione di pacchetti multipli tra i 2 lati della comunicazione, basterà invertire l'ordine dei tipi tra le 2 classi ai 2 estremi della comunicazione.\\
 Il riempimento corretto dei dati nel pacchetto, il calcolo della size utile e il riconoscimento in ricezione del pacchetto trasmesso, è tutto a carico dell'utilizzatore della libreria, essa garantisce la corretta ricetrasmissione e di svegliare un ascoltatore al ricevimento di un pacchetto, qualunque sia la sua lunghezza.
 
 

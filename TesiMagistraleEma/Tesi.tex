@@ -15,8 +15,8 @@
 %-----------------------------------
 % CUSTOM PACKAGE && ENVIROMENT SET
 %-----------------------------------
-\usepackage{specialWord}
-% Custom Color Package
+
+%% Color Package -------------------
 \usepackage{xcolor}
 \definecolor{dkgreen}{rgb}{.133,.545,.133}
 \definecolor{mauve}{rgb}{0.224, 0.176, 0.255}
@@ -26,6 +26,9 @@
 \definecolor{columbiablue}{rgb}{0.61, 0.87, 1.0}
 \definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
 \definecolor{mylilas}{RGB}{170,55,241}
+
+%% My special Word Package ----------
+\usepackage{specialWord}
 
 %% Link Package	---------------------
 \usepackage[hyphens]{url}
@@ -173,6 +176,9 @@ backend=bibtex]{biblatex}
 {\begin{mdframed}[backgroundcolor=cyan!10]\begin{itemize} [topsep=0pt,itemsep=0mm, leftmargin=2mm]}
 		{\end{itemize}\end{mdframed}}
 
+
+\renewcommand{\listtablename}{Tables}
+
 %-----------------------------
 % CONFIGURAZIONE DELLA PAGINA
 %-----------------------------
@@ -248,10 +254,10 @@ backend=bibtex]{biblatex}
 \renewcommand{\footrulewidth}{0.3pt}   % spessore della linea del piï¿½di pagina
 
 \pagenumbering{Roman}
-%Indice, senza link colorati
+
 {
-	\hypersetup{hidelinks}
-	\tableofcontents
+	\hypersetup{hidelinks} %Indice, senza link colorati
+ 	\tableofcontents
 }
 \newpage
 
@@ -292,6 +298,9 @@ Per la realizzazione di questa tesi sono stati usati:
 \listoffigures
 \addcontentsline{toc}{chapter}{Elenco delle figure}
 
+\listtablename
+
+% ELENCO DEI CODICI (OPZIONALE)
 \lstlistoflistings
 \addcontentsline{toc}{chapter}{Elenco dei Codici}
 

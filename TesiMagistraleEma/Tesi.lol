@@ -19,11 +19,11 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {lstlisting}{\numberline {7.8}Loop di Controllo}{53}{lstlisting.7.8}%
 \defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {8.9}esempio di definizione Pacchetto in EMP}{54}{lstlisting.8.9}%
+\contentsline {lstlisting}{\numberline {8.9}Esempio di definizione Pacchetto in EMP}{54}{lstlisting.8.9}%
 \defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {8.10}definizione Pacchetti Multipli}{55}{lstlisting.8.10}%
+\contentsline {lstlisting}{\numberline {8.10}Definizione Pacchetti Multipli}{55}{lstlisting.8.10}%
 \defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {8.11}definizione Pacchetti Multipli}{55}{lstlisting.8.11}%
+\contentsline {lstlisting}{\numberline {8.11}Definizione Pacchetti Multipli}{55}{lstlisting.8.11}%
 \defcounter {refsection}{0}\relax 
 \contentsline {lstlisting}{\numberline {9.12}Parsing delle tabelle}{56}{lstlisting.9.12}%
 \defcounter {refsection}{0}\relax 

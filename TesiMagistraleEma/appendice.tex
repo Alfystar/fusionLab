@@ -217,14 +217,14 @@ void loop() {
 }
 \end{lstlisting}
 
-\chapter*{Appendice B\\ EMP Code}\label{EMPCode}
-\addcontentsline{toc}{chapter}{Appendice B - Codice EMP}
+\chapter*{Appendice B\\ EMP Code} \label{EMPCode}
+\addcontentsline{toc}{chapter}{Appendice B - Codice EMP} 
 \setcounter{chapter}{\thechapter + 1}
 
 \section{Pacchetti in EMP}
 \subsection{Definizione di 2 Pacchetti}
 Ecco di seguito un esempio di definizione asimmetrica per pacchetti da un Device (Linux), verso un altro (Arduino), e viceversa:\\
-\begin{lstlisting}[style=cppStyle,caption={esempio di definizione Pacchetto in EMP},label=lst:EMPpackDef] 
+\begin{lstlisting}[style=cppStyle,caption={Esempio di definizione Pacchetto in EMP},label=lst:EMPpackDef] 
 #include <stdint.h>	// To be sure for the footPrint in any platform
 struct _packLinux2Ard {
 	int16_t num;
@@ -246,7 +246,7 @@ Come è possibile notare, le regole non vietano la definizione di 2 pacchetti di
 \subsection{Pacchetti Multipli}
 Per definire un pacchetto di pacchetti, il metodo migliore è creare un \verb|enum| per numerare univocamente il tipo (nell'esempio \verb|uint8_t| ma può essere reso maggiore all'occorrenza), e una \verb|union| con tutti i tipi in fila.\\
 Il pacchetto di interesse per \citefield{EMP}{title} è \verb|dataSend|, ed è responsabilità dell'utente della libreria riempire correttamente i campi.\\
-\begin{lstlisting}[style=cppStyle,caption={definizione Pacchetti Multipli},label=lst:EMPmultiplePack] 
+\begin{lstlisting}[style=cppStyle,caption={Definizione Pacchetti Multipli},label=lst:EMPmultiplePack] 
 //DataType1 ,DataType2, DataType3 typedef above;
 enum packTypeSend : uint8_t{
 	DataType1code,
@@ -267,7 +267,7 @@ typedef struct{
 \noindent
 Per ottimizzare l'invio al minimo strettamente necessario si può quindi usare la variante nel metodo di \verb|packSend(...)|, in cui viene specificata la dimensione:
 
-\begin{lstlisting}[style=cppStyle,caption={definizione Pacchetti Multipli},label=lst:EMPsendOptimize] 
+\begin{lstlisting}[style=cppStyle,caption={Definizione Pacchetti Multipli},label=lst:EMPsendOptimize] 
 //...
 dataSend.type = DataType2code;
 dataSend.pack.t2 = /*{data}*/ // fill correctly dataSend
