@@ -239,6 +239,30 @@
     \field{year}{2006}
   \endentry
 
+  \entry{Laplace}{inproceedings}{}
+    \name{author}{1}{}{%
+      {{hash=r}{%
+         family={rdavide},
+         familyi={r\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {Università di Pavia}%
+    }
+    \strng{namehash}{r1}
+    \strng{fullhash}{r1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{R}
+    \field{sortinithash}{R}
+    \field{title}{Trasformata di Laplace}
+    \verb{url}
+    \verb http://sisdin.unipv.it/labsisdin/teaching/courses/falt/files/Laplace.
+    \verb pdf
+    \endverb
+    \field{year}{2 Apr 2015}
+  \endentry
+
   \entry{modulazionePWM}{manual}{}
     \name{author}{1}{}{%
       {{hash=R}{%

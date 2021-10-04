@@ -39,31 +39,33 @@
 \BOOKMARK [2][-]{subsection.2.3.1}{Conversioni Dati}{section.2.3}% 39
 \BOOKMARK [2][-]{subsection.2.3.2}{Filtraggio senza distorsioni di fase}{section.2.3}% 40
 \BOOKMARK [0][-]{chapter.3}{Modello teorico di Controllo}{}% 41
-\BOOKMARK [1][-]{section.3.1}{Controllo a Errore Nullo}{chapter.3}% 42
-\BOOKMARK [1][-]{section.3.2}{Simulazione Qualitativa su Simulink}{chapter.3}% 43
-\BOOKMARK [0][-]{chapter.4}{Sviluppo Controllo reale}{}% 44
-\BOOKMARK [1][-]{section.4.1}{Codifica del controllore}{chapter.4}% 45
-\BOOKMARK [1][-]{section.4.2}{Tuning delle costanti}{chapter.4}% 46
-\BOOKMARK [1][-]{section.4.3}{Esperimenti}{chapter.4}% 47
-\BOOKMARK [0][-]{chapter.5}{Conclusioni e sviluppi futuri}{}% 48
-\BOOKMARK [0][-]{chapter.6}{Software, Toolchain, Strumenti}{}% 49
-\BOOKMARK [0][-]{chapter*.43}{Appendice A - Codice Arduino}{}% 50
-\BOOKMARK [1][-]{section.7.1}{Set-up Registri}{chapter*.43}% 51
-\BOOKMARK [2][-]{subsection.7.1.1}{Tic Timer}{section.7.1}% 52
-\BOOKMARK [2][-]{subsection.7.1.2}{Frequenza PWM}{section.7.1}% 53
-\BOOKMARK [1][-]{section.7.2}{Generatore di Segnale}{chapter*.43}% 54
-\BOOKMARK [2][-]{subsection.7.2.1}{Segnali Base}{section.7.2}% 55
-\BOOKMARK [2][-]{subsection.7.2.2}{Segnali Composti}{section.7.2}% 56
-\BOOKMARK [1][-]{section.7.3}{Codici Controllore}{chapter*.43}% 57
-\BOOKMARK [0][-]{chapter*.50}{Appendice B - Codice EMP}{}% 58
-\BOOKMARK [1][-]{section.8.4}{Pacchetti in EMP}{chapter*.50}% 59
-\BOOKMARK [2][-]{subsection.8.4.1}{Definizione di 2 Pacchetti}{section.8.4}% 60
-\BOOKMARK [2][-]{subsection.8.4.2}{Pacchetti Multipli}{section.8.4}% 61
-\BOOKMARK [0][-]{chapter*.51}{Appendice C - Matlab Post Elaboration}{}% 62
-\BOOKMARK [1][-]{section.9.5}{Importazione dei Dati}{chapter*.51}% 63
-\BOOKMARK [2][-]{subsection.9.5.1}{Parsing Tabelle}{section.9.5}% 64
-\BOOKMARK [2][-]{subsection.9.5.2}{Conversione dei Dati}{section.9.5}% 65
-\BOOKMARK [0][-]{chapter*.52}{Elenco delle figure}{}% 66
-\BOOKMARK [0][-]{chapter*.53}{Elenco delle tabelle}{}% 67
-\BOOKMARK [0][-]{chapter*.54}{Elenco dei codici}{}% 68
-\BOOKMARK [0][-]{chapter*.55}{Bibliografia}{}% 69
+\BOOKMARK [1][-]{section.3.1}{Obiettivo di controllo}{chapter.3}% 42
+\BOOKMARK [1][-]{section.3.2}{Teorema del valore iniziale e del valore finale}{chapter.3}% 43
+\BOOKMARK [1][-]{section.3.3}{Controllo a errore nullo}{chapter.3}% 44
+\BOOKMARK [1][-]{section.3.4}{Simulazione Qualitativa su Simulink}{chapter.3}% 45
+\BOOKMARK [0][-]{chapter.4}{Sviluppo Controllo reale}{}% 46
+\BOOKMARK [1][-]{section.4.1}{Codifica del controllore}{chapter.4}% 47
+\BOOKMARK [1][-]{section.4.2}{Tuning delle costanti}{chapter.4}% 48
+\BOOKMARK [1][-]{section.4.3}{Esperimenti}{chapter.4}% 49
+\BOOKMARK [0][-]{chapter.5}{Conclusioni e sviluppi futuri}{}% 50
+\BOOKMARK [0][-]{chapter.6}{Software, Toolchain, Strumenti}{}% 51
+\BOOKMARK [0][-]{chapter*.50}{Appendice A - Codice Arduino}{}% 52
+\BOOKMARK [1][-]{section.7.1}{Set-up Registri}{chapter*.50}% 53
+\BOOKMARK [2][-]{subsection.7.1.1}{Tic Timer}{section.7.1}% 54
+\BOOKMARK [2][-]{subsection.7.1.2}{Frequenza PWM}{section.7.1}% 55
+\BOOKMARK [1][-]{section.7.2}{Generatore di Segnale}{chapter*.50}% 56
+\BOOKMARK [2][-]{subsection.7.2.1}{Segnali Base}{section.7.2}% 57
+\BOOKMARK [2][-]{subsection.7.2.2}{Segnali Composti}{section.7.2}% 58
+\BOOKMARK [1][-]{section.7.3}{Codici Controllore}{chapter*.50}% 59
+\BOOKMARK [0][-]{chapter*.57}{Appendice B - Codice EMP}{}% 60
+\BOOKMARK [1][-]{section.8.4}{Pacchetti in EMP}{chapter*.57}% 61
+\BOOKMARK [2][-]{subsection.8.4.1}{Definizione di 2 Pacchetti}{section.8.4}% 62
+\BOOKMARK [2][-]{subsection.8.4.2}{Pacchetti Multipli}{section.8.4}% 63
+\BOOKMARK [0][-]{chapter*.58}{Appendice C - Matlab Post Elaboration}{}% 64
+\BOOKMARK [1][-]{section.9.5}{Importazione dei Dati}{chapter*.58}% 65
+\BOOKMARK [2][-]{subsection.9.5.1}{Parsing Tabelle}{section.9.5}% 66
+\BOOKMARK [2][-]{subsection.9.5.2}{Conversione dei Dati}{section.9.5}% 67
+\BOOKMARK [0][-]{chapter*.59}{Elenco delle figure}{}% 68
+\BOOKMARK [0][-]{chapter*.60}{Elenco delle tabelle}{}% 69
+\BOOKMARK [0][-]{chapter*.61}{Elenco dei codici}{}% 70
+\BOOKMARK [0][-]{chapter*.62}{Bibliografia}{}% 71

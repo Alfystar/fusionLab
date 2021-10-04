@@ -108,10 +108,16 @@ backend=bibtex]{biblatex}
 	%emph=[2]{word1,word2}, emphstyle=[2]{style},    
 }
 
-% Package per Box Colorati alle Equazioni ------------------
+% Package per Box Colorati alle Equazioni e altre utility --
 \usepackage{amsmath}
 \usepackage{empheq}
 \usepackage{mathtools}
+\usepackage{changes}
+\usepackage{cancel}
+\newcommand{\stkout}[1]{\ifmmode\text{\sout{\ensuremath{#1}}}\else\sout{#1}\fi}
+
+\setdeletedmarkup{\stkout{#1}}
+\setdeletedmarkup{\cancel{#1}}
 
 \usepackage[most]{tcolorbox}
 \newtcbox{\mathCalc}[1][]{
