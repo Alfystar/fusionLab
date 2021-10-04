@@ -26,7 +26,7 @@
 \definecolor{columbiablue}{rgb}{0.61, 0.87, 1.0}
 \definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
 \definecolor{mylilas}{RGB}{170,55,241}
-
+\definecolor{fireenginered}{rgb}{0.81, 0.09, 0.13}
 %% My special Word Package ----------
 \usepackage{specialWord}
 
@@ -262,17 +262,20 @@ backend=bibtex]{biblatex}
 
 \pagenumbering{Roman}
 
+%---------------------
+%     Inizio Tesi
+%---------------------
+
+% Indice SENZA link colorati
 {
-	\hypersetup{hidelinks} %Indice, senza link colorati
+	\hypersetup{hidelinks}% Rimuove la colorazione per i Link
  	\tableofcontents
 }
 \newpage
 
 \pagenumbering{arabic}
 
-%---------------------
-%     Inizio Tesi
-%---------------------
+
 
 \fancyhead[R]{Introduzione} \fancyfoot[L]{Introduzione}
 \fancyfoot[R]{\thepage}
@@ -302,17 +305,31 @@ Per la realizzazione di questa tesi sono stati usati:
 \include{appendice.tex}
 
 % ELENCO DELLE FIGURE (OPZIONALE)
-\listoffigures
-\addcontentsline{toc}{chapter}{Elenco delle figure}
+% Lista figure SENZA link colorati
+{
+	\hypersetup{hidelinks}% Rimuove la colorazione per i Link
+	\listoffigures
+	\addcontentsline{toc}{chapter}{Elenco delle figure}
+}
+
 
 % ELENCO DELLE TABELLE (OPZIONALE)
-\listoftables
-\addcontentsline{toc}{chapter}{Elenco delle tabelle}
+% Lista tabelle SENZA link colorati
+{
+	\hypersetup{hidelinks}% Rimuove la colorazione per i Link
+	\listoftables
+	\addcontentsline{toc}{chapter}{Elenco delle tabelle}
+}
 
 
 % ELENCO DEI CODICI (OPZIONALE)
-\lstlistoflistings
-\addcontentsline{toc}{chapter}{Elenco dei codici}
+
+% Lista Codici SENZA link colorati
+{
+	\hypersetup{hidelinks}% Rimuove la colorazione per i Link
+	\lstlistoflistings
+	\addcontentsline{toc}{chapter}{Elenco dei codici}
+}
 
 % BIBLIOGRAFIA
 \printbibliography

@@ -118,68 +118,68 @@
 \defcounter {refsection}{0}\relax 
 \contentsline {section}{\numberline {3.3}Controllo a errore nullo}{48}{section.3.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {3.4}Simulazione \textit {Qualitativa} su Simulink}{48}{section.3.4}%
+\contentsline {section}{\numberline {3.4}Simulazione \textit {Qualitativa} su Simulink}{49}{section.3.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {4}Sviluppo Controllo reale}{49}{chapter.4}%
+\contentsline {chapter}{\numberline {4}Sviluppo Controllo reale}{50}{chapter.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.1}Codifica del controllore}{49}{section.4.1}%
+\contentsline {section}{\numberline {4.1}Codifica del controllore}{50}{section.4.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.2}Tuning delle costanti}{49}{section.4.2}%
+\contentsline {section}{\numberline {4.2}Tuning delle costanti}{50}{section.4.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {4.3}Esperimenti}{49}{section.4.3}%
+\contentsline {section}{\numberline {4.3}Esperimenti}{50}{section.4.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {5}Conclusioni e sviluppi futuri}{50}{chapter.5}%
+\contentsline {chapter}{\numberline {5}Conclusioni e sviluppi futuri}{51}{chapter.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{\numberline {6}Software, Toolchain, Strumenti}{51}{chapter.6}%
+\contentsline {chapter}{\numberline {6}Software, Toolchain, Strumenti}{52}{chapter.6}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Appendice A - Codice Arduino}{52}{chapter*.50}%
+\contentsline {chapter}{Appendice A - Codice Arduino}{53}{chapter*.50}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.1}Set-up Registri}{52}{section.7.1}%
+\contentsline {section}{\numberline {7.1}Set-up Registri}{53}{section.7.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.1.1}Tic Timer}{52}{subsection.7.1.1}%
+\contentsline {subsection}{\numberline {7.1.1}Tic Timer}{53}{subsection.7.1.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.1.2}Frequenza PWM}{52}{subsection.7.1.2}%
+\contentsline {subsection}{\numberline {7.1.2}Frequenza PWM}{53}{subsection.7.1.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Offset Calculation}{53}{section*.51}%
+\contentsline {subsubsection}{Offset Calculation}{54}{section*.51}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.2}Generatore di Segnale}{54}{section.7.2}%
+\contentsline {section}{\numberline {7.2}Generatore di Segnale}{55}{section.7.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.2.1}Segnali Base}{54}{subsection.7.2.1}%
+\contentsline {subsection}{\numberline {7.2.1}Segnali Base}{55}{subsection.7.2.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Rampa}{54}{section*.52}%
+\contentsline {subsubsection}{Rampa}{55}{section*.52}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {7.2.2}Segnali Composti}{55}{subsection.7.2.2}%
+\contentsline {subsection}{\numberline {7.2.2}Segnali Composti}{56}{subsection.7.2.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Onda Triangloare}{55}{section*.53}%
+\contentsline {subsubsection}{Onda Triangloare}{56}{section*.53}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Onda Trapezoidale}{55}{section*.54}%
+\contentsline {subsubsection}{Onda Trapezoidale}{56}{section*.54}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {7.3}Codici Controllore}{56}{section.7.3}%
+\contentsline {section}{\numberline {7.3}Codici Controllore}{57}{section.7.3}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Setup dell'esperimento}{56}{section*.55}%
+\contentsline {subsubsection}{Setup dell'esperimento}{57}{section*.55}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsubsection}{Loop di Controllo}{56}{section*.56}%
+\contentsline {subsubsection}{Loop di Controllo}{57}{section*.56}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Appendice B - Codice EMP}{57}{chapter*.57}%
+\contentsline {chapter}{Appendice B - Codice EMP}{58}{chapter*.57}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {8.4}Pacchetti in EMP}{57}{section.8.4}%
+\contentsline {section}{\numberline {8.4}Pacchetti in EMP}{58}{section.8.4}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.4.1}Definizione di 2 Pacchetti}{57}{subsection.8.4.1}%
+\contentsline {subsection}{\numberline {8.4.1}Definizione di 2 Pacchetti}{58}{subsection.8.4.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {8.4.2}Pacchetti Multipli}{58}{subsection.8.4.2}%
+\contentsline {subsection}{\numberline {8.4.2}Pacchetti Multipli}{59}{subsection.8.4.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Appendice C - Matlab Post Elaboration}{59}{chapter*.58}%
+\contentsline {chapter}{Appendice C - Matlab Post Elaboration}{60}{chapter*.58}%
 \defcounter {refsection}{0}\relax 
-\contentsline {section}{\numberline {9.5}Importazione dei Dati}{59}{section.9.5}%
+\contentsline {section}{\numberline {9.5}Importazione dei Dati}{60}{section.9.5}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {9.5.1}Parsing Tabelle}{59}{subsection.9.5.1}%
+\contentsline {subsection}{\numberline {9.5.1}Parsing Tabelle}{60}{subsection.9.5.1}%
 \defcounter {refsection}{0}\relax 
-\contentsline {subsection}{\numberline {9.5.2}Conversione dei Dati}{60}{subsection.9.5.2}%
+\contentsline {subsection}{\numberline {9.5.2}Conversione dei Dati}{61}{subsection.9.5.2}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Elenco delle figure}{62}{chapter*.59}%
+\contentsline {chapter}{Elenco delle figure}{63}{chapter*.59}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Elenco delle tabelle}{63}{chapter*.60}%
+\contentsline {chapter}{Elenco delle tabelle}{64}{chapter*.60}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Elenco dei codici}{64}{chapter*.61}%
+\contentsline {chapter}{Elenco dei codici}{65}{chapter*.61}%
 \defcounter {refsection}{0}\relax 
-\contentsline {chapter}{Bibliografia}{66}{chapter*.62}%
+\contentsline {chapter}{Bibliografia}{67}{chapter*.62}%

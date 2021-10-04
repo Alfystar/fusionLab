@@ -50,7 +50,7 @@ Prima di procedere con il calcolo del controllore per i nostri scopi, è bene ri
 \begin{teorema}[Teorema del valore iniziale \label{th:valIniziale}]
 	Se una funzione reale $ f  $ ha trasformata razionale $ F(s) $ con grado del denominatore maggiore del grado del numeratore (vale comunque sotto ipotesi ancora più larghe , purché $ F $ sia non razionale e $ f(0^+) $ esista) allora:
 	\begin{empheq}[box=\mathResult]{equation} \label{eq:valIniziale}
-		f(0^+) = \lim\limits_{s \rightarrowtail \inf} s \cdot F(s)
+		f(0^+) = \lim\limits_{s \rightarrowtail \infty} s \cdot F(s)
 	\end{empheq}
 \end{teorema}
 
@@ -58,7 +58,7 @@ Prima di procedere con il calcolo del controllore per i nostri scopi, è bene ri
 	Se una funzione reale $ f  $ ha trasformata razionale $ F(s) $ con grado del denominatore maggiore del grado del numeratore e \underline{radici del denominatore (\textbf{poli}) nell’origine e o a parte reale negativa},\\
 	allora:
 	\begin{empheq}[box=\mathResult]{equation} \label{eq:valIniziale}
-		\lim\limits_{t \rightarrowtail \inf} f(t) = \lim\limits_{s \rightarrowtail 0} s \cdot F(s)
+		\lim\limits_{t \rightarrowtail \infty} f(t) = \lim\limits_{s \rightarrowtail 0} s \cdot F(s)
 	\end{empheq}
 \end{teorema}
 
@@ -72,7 +72,7 @@ Ne segue che la funzione di trasferimento complessiva è pari a:
 \begin{empheq}[box=\mathCalc]{equation}\label{eq:impiantoMisurato}
 	P_m(s)= \frac{V_2(s)}{I_{ref}(s)} = \frac{s M_{Tp} \cdot R_p}{( s L_p + R_p)(s L_T + R_T)} = \frac{s M_{Tp} \cdot R_p}{s^ 2L_p L_T + s(L_p R_T + L_T R_p) + R_p R_T}
 \end{empheq}
-Essendo il nostro obiettivo quello di portare $ e \rightarrowtail 0$ per $ t\rightarrowtail \inf $ con riferimenti $ r = cost $, ci calcoliamo la funzione sensitività $ W_{er}(s) $ (\textit{sensitivity transfer function}) e con il \nameref{th:valFinale} progetteremo il controllore $ C(s) $ che realizza l'obiettivo:\\
+Essendo il nostro obiettivo quello di portare $ e \rightarrowtail 0$ per $ t\rightarrowtail \infty $ con riferimenti $ r = cost $, ci calcoliamo la funzione sensitività $ W_{er}(s) $ (\textit{sensitivity transfer function}) e con il \nameref{th:valFinale} progetteremo il controllore $ C(s) $ che realizza l'obiettivo:\\
 \begin{vwcol}[widths={0.5,0.5}, sep=8mm, rule=0px]
 	\vspace{-12mm}
 	\begin{empheq}[box=\mathStep]{equation*}
@@ -92,26 +92,87 @@ Essendo il nostro obiettivo quello di portare $ e \rightarrowtail 0$ per $ t\rig
 \end{vwcol}
 
 Da cui, applicando il \nameref{th:valFinale} otteniamo:
-\begin{empheq}[box=\mathCalc]{equation}\label{eq:dinamicaErroreRifCost}
-	\lim\limits_{t \rightarrowtail \inf} e(t) = \lim\limits_{s \rightarrowtail 0} s \cdot W_{er}(s) \cdot r(s) = s \cdot \frac{K_r}{1 + P_m(s)C(s)}
+\begin{empheq}[box=\mathCalc]{equation} \label{eq:dinamicaErroreRifCostFunxTrasf}
+	\lim\limits_{t \rightarrowtail \infty} e(t) = \lim\limits_{s \rightarrowtail 0} s \cdot W_{er}(s) \cdot r(s) = s \cdot \frac{K_r / s}{1 + P_m(s)C(s)}
 \end{empheq}
-% Riscrivere C e P in forma generale mettendo in evidenza den, num, K e s^rho, poi fare i calcoli e mostrare i risultati.
-Svolgendo i calcoli abbiamo che:
+
+\begin{oss} \label{oss:Fattorizzazione}
+	Al fine di semplificare il design del controllore, fattorizziamo ora $ P_m(s) $ e $ C(s) $ nella seguente forma, tralasciando così i dettagli dei termini non utili ai fini del design del controllore.
+	\begin{vwcol}[widths={0.45,0.55}, sep=8mm, rule=0px]
+		\vspace{-6mm}
+		\begin{empheq}[box=\mathStep]{equation*}
+			C(s) = K_c \cdot \frac{s^{\rho_{c_n}} \cdot C_n}{s^{\rho_{c_d}} \cdot C_d} = 
+			\frac{K_c}{s^{\rho_{c}}} \cdot \frac{C_n}{C_d}
+		\end{empheq}
+		\newpage
+		\begin{spacing}{1.25}
+			{\footnotesize
+				\begin{itemize}[itemsep=-1mm]
+					\item $ K_c $ Guadagno statico Controllore.
+					\item $ C_n $ Polinomio numeratore \underline{senza Zeri in 0}.
+					\item $ C_d $ Polinomio denominatore \underline{senza Poli 0}.
+					\item $ \rho_c $ è il grado del polo in 0 ($ \rho_{c_d} - \rho_{c_n} $).
+				\end{itemize}
+			}
+		\end{spacing}
+	\end{vwcol}
+	
+	\noindent\rule[0.5ex]{\linewidth}{0.5pt}
+	
+	\begin{vwcol}[widths={0.45,0.55}, sep=8mm, rule=0px]
+		\vspace{-6mm}
+		\begin{empheq}[box=\mathStep]{equation*}
+			P_m(s) = K_p \cdot \frac{s^{\rho_{p_n}} \cdot P_n}{s^{\rho_{p_d}} \cdot P_d} = 
+			\frac{K_p}{s^{\rho_{p}}} \cdot \frac{P_n}{P_d}
+		\end{empheq}
+		\newpage
+		\begin{spacing}{1.25}
+			{\footnotesize
+				\begin{itemize}[itemsep=-1mm]
+					\item $ K_c $ Guadagno statico Controllore.
+					\item $ C_n $ Polinomio numeratore \underline{senza Zeri in 0}.
+					\item $ C_d $ Polinomio denominatore \underline{senza Poli 0}.
+					\item $ \rho_p $ è il grado del polo in 0 ($ \rho_{p_d} - \rho_{p_n} $).
+				\end{itemize}
+			}
+		\end{spacing}
+	\end{vwcol}
+\end{oss}
+\newpage
+Partendo da questa forma, svolgiamo i calcoli dell'equazione  \ref{eq:dinamicaErroreRifCostFunxTrasf}:
 \begin{center}
-	{\large $ 1 + P_m(s)C(s) =  1 + \frac{C_{n}(s)}{C_{d}(s)} \cdot \frac{s M_{Tp} \cdot R_p}{( s L_p + R_p)(s L_T + R_T)} =  \frac{C_{d}(s)( s L_p + R_p)(s L_T + R_T) + s C_{n}(s) M_{Tp} }{C_{d}(s)( s L_p + R_p)(s L_T + R_T)}$ 
-}
+	{\large $ 
+			1 + P_m(s)C(s) =  1 + \frac{K_c}{s^{\rho_{c}}} \frac{C_n}{C_d}\cdot \frac{K_p}{s^{\rho_{p}}}  \frac{P_n}{P_d}=
+			\frac{s^{\rho_{c} + \rho_{p}} C_d P_d + K_c K_p C_n P_n}{s^{\rho_{c} + \rho_{p}} C_d P_d}
+		$
+	}
 \end{center}
-Da cui:
+Da cui otteniamo che:
 \begin{center}
-	{\large 
-		$ \cancel{s} \cdot \frac{K_r/\cancel{s}}{1 + P_m(s)C(s)} =
-		  K_r \cdot \left(\frac{C_{d}(s)( s L_p + R_p)(s L_T + R_T) + s C_{n}(s) M_{Tp} }{C_{d}(s)( s L_p + R_p)(s L_T + R_T)}\right)^{-1} =
-		   K_r \cdot \frac{C_{d}(s)( s L_p + R_p)(s L_T + R_T)}{C_{d}(s)( s L_p + R_p)(s L_T + R_T) + {\color{blue}s C_{n}(s) M_{Tp}} }$ 
+	{\large
+		$ s \cdot W_{er}(s) \cdot r(s) =
+			\cancel{s} \cdot \frac{K_r/\cancel{s}}{1 + P_m(s)C(s)} =
+			K_r \cdot \left(\frac{s^{\rho_{c} + \rho_{p}} C_d P_d + K_c K_p C_n P_n}{s^{\rho_{c} + \rho_{p}} C_d P_d}\right)^{-1} \Rightarrow$
 	}
 \end{center}
 
+\begin{empheq}[box=\mathStep]{equation*}
+	\lim\limits_{t \rightarrowtail \infty} e(t) = \lim\limits_{s \rightarrowtail 0} s \cdot W_{er}(s) \cdot r(s) = \lim\limits_{s \rightarrowtail 0}
+	K_r \cdot \frac{{\color{fireenginered}s^{\rho_{c} + \rho_{p}}} \cdot C_d P_d}{{\color{fireenginered}s^{\rho_{c} + \rho_{p}}} \cdot C_d P_d + K_c K_p C_n P_n}
+\end{empheq}
+Tenendo presente che $ C_d,P_d,C_n,P_n \rightarrowtail 1 $ per $ s \rightarrowtail 0 $, poiché gli Zeri sono stati fattorizzati fuori (vedi osservazione \ref{oss:Fattorizzazione}), abbiamo che gli esiti per l'errore a \textit{Steady state}(Stato Stazionario) dipendono solo dal grado di {\color{fireenginered}$ \rho = \rho_{c} + \rho_{p} $ con $ \rho \in \mathbb{Z} $} e sono pari a:
 
-
+\begin{center}
+	$ \lim\limits_{t \rightarrowtail \infty} e(t) =
+	\left \{ \begin{array}{l c c}
+		0                   & se & \rho \geq 1  \\
+		\frac{K_r}{K_c K_p} & se & \rho = 0     \\
+		\infty                & se & \rho \leq 0 
+	\end{array}
+	\right.
+$
+\end{center}
+Essendo $ \rho_{p} = -1 $ a causa dello Zero in 0, abbiamo che il controllore dovrà necessariamente avere $ \rho_{c} = 2 $ per ottenere $ \rho = 1 $
 \section{Simulazione \textit{Qualitativa} su Simulink}
 
 
