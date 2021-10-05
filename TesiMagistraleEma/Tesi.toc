@@ -65,39 +65,40 @@
 \contentsline {section}{\numberline {4.3}Controllo a errore nullo}{56}{section.4.3}%
 \contentsline {subsection}{\numberline {4.3.1}Design di controllore adottato}{58}{subsection.4.3.1}%
 \contentsline {section}{\numberline {4.4}Simulazione \textit {Qualitativa} su Simulink}{59}{section.4.4}%
-\contentsline {chapter}{\numberline {5}Sviluppo Controllo reale}{60}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Codifica del controllore}{60}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Tuning delle costanti}{60}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Esperimenti}{60}{section.5.3}%
-\contentsline {chapter}{\numberline {6}Conclusioni e sviluppi futuri}{61}{chapter.6}%
-\contentsline {chapter}{\numberline {7}Software, Toolchain, Strumenti}{62}{chapter.7}%
-\contentsline {chapter}{Appendice A - Codice Arduino}{63}{chapter*.55}%
-\contentsline {section}{\numberline {8.1}Set-up Registri}{63}{section.8.1}%
-\contentsline {subsection}{\numberline {8.1.1}Tic Timer}{63}{subsection.8.1.1}%
-\contentsline {subsection}{\numberline {8.1.2}Frequenza PWM}{63}{subsection.8.1.2}%
-\contentsline {subsubsection}{Offset Calculation}{64}{section*.56}%
-\contentsline {section}{\numberline {8.2}Generatore di Segnale}{65}{section.8.2}%
-\contentsline {subsection}{\numberline {8.2.1}Segnali Base}{65}{subsection.8.2.1}%
-\contentsline {subsubsection}{Rampa}{65}{section*.57}%
-\contentsline {subsection}{\numberline {8.2.2}Segnali Composti}{66}{subsection.8.2.2}%
-\contentsline {subsubsection}{Onda Triangloare}{66}{section*.58}%
-\contentsline {subsubsection}{Onda Trapezoidale (RapidShot)}{66}{section*.59}%
-\contentsline {section}{\numberline {8.3}Codici Controllore}{67}{section.8.3}%
-\contentsline {subsubsection}{Setup dell'esperimento}{67}{section*.60}%
-\contentsline {subsubsection}{Loop di Controllo}{67}{section*.61}%
-\contentsline {chapter}{Appendice B - Codice EMP}{68}{chapter*.62}%
-\contentsline {section}{\numberline {9.4}Pacchetti in EMP}{68}{section.9.4}%
-\contentsline {subsection}{\numberline {9.4.1}Definizione di 2 Pacchetti}{68}{subsection.9.4.1}%
-\contentsline {subsection}{\numberline {9.4.2}Pacchetti Multipli}{69}{subsection.9.4.2}%
-\contentsline {chapter}{Appendice C - Matlab Post Elaboration}{70}{chapter*.63}%
-\contentsline {section}{\numberline {10.5}Importazione dei Dati}{70}{section.10.5}%
-\contentsline {subsection}{\numberline {10.5.1}Parsing Tabelle}{70}{subsection.10.5.1}%
-\contentsline {subsection}{\numberline {10.5.2}Conversione dei Dati}{71}{subsection.10.5.2}%
-\contentsline {section}{\numberline {10.6}Stima Parametri}{72}{section.10.6}%
-\contentsline {subsection}{\numberline {10.6.1}Stima parametri automatica}{72}{subsection.10.6.1}%
-\contentsline {subsection}{\numberline {10.6.2}Stima parametri manuale}{72}{subsection.10.6.2}%
-\contentsline {subsection}{\numberline {10.6.3}Plot dell'esperimento}{73}{subsection.10.6.3}%
-\contentsline {chapter}{Elenco delle figure}{75}{chapter*.64}%
-\contentsline {chapter}{Elenco delle tabelle}{76}{chapter*.65}%
-\contentsline {chapter}{Elenco dei codici}{77}{chapter*.66}%
-\contentsline {chapter}{Bibliografia}{79}{chapter*.67}%
+\contentsline {subsection}{\numberline {4.4.1}Design Base di controllo}{60}{subsection.4.4.1}%
+\contentsline {chapter}{\numberline {5}Sviluppo Controllo reale}{61}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Codifica del controllore}{61}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Tuning delle costanti}{61}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Esperimenti}{61}{section.5.3}%
+\contentsline {chapter}{\numberline {6}Conclusioni e sviluppi futuri}{62}{chapter.6}%
+\contentsline {chapter}{\numberline {7}Software, Toolchain, Strumenti}{63}{chapter.7}%
+\contentsline {chapter}{Appendice A - Codice Arduino}{64}{chapter*.56}%
+\contentsline {section}{\numberline {8.1}Set-up Registri}{64}{section.8.1}%
+\contentsline {subsection}{\numberline {8.1.1}Tic Timer}{64}{subsection.8.1.1}%
+\contentsline {subsection}{\numberline {8.1.2}Frequenza PWM}{64}{subsection.8.1.2}%
+\contentsline {subsubsection}{Offset Calculation}{65}{section*.57}%
+\contentsline {section}{\numberline {8.2}Generatore di Segnale}{66}{section.8.2}%
+\contentsline {subsection}{\numberline {8.2.1}Segnali Base}{66}{subsection.8.2.1}%
+\contentsline {subsubsection}{Rampa}{66}{section*.58}%
+\contentsline {subsection}{\numberline {8.2.2}Segnali Composti}{67}{subsection.8.2.2}%
+\contentsline {subsubsection}{Onda Triangloare}{67}{section*.59}%
+\contentsline {subsubsection}{Onda Trapezoidale (RapidShot)}{67}{section*.60}%
+\contentsline {section}{\numberline {8.3}Codici Controllore}{68}{section.8.3}%
+\contentsline {subsubsection}{Setup dell'esperimento}{68}{section*.61}%
+\contentsline {subsubsection}{Loop di Controllo}{68}{section*.62}%
+\contentsline {chapter}{Appendice B - Codice EMP}{69}{chapter*.63}%
+\contentsline {section}{\numberline {9.4}Pacchetti in EMP}{69}{section.9.4}%
+\contentsline {subsection}{\numberline {9.4.1}Definizione di 2 Pacchetti}{69}{subsection.9.4.1}%
+\contentsline {subsection}{\numberline {9.4.2}Pacchetti Multipli}{70}{subsection.9.4.2}%
+\contentsline {chapter}{Appendice C - Matlab Post Elaboration}{71}{chapter*.64}%
+\contentsline {section}{\numberline {10.5}Importazione dei Dati}{71}{section.10.5}%
+\contentsline {subsection}{\numberline {10.5.1}Parsing Tabelle}{71}{subsection.10.5.1}%
+\contentsline {subsection}{\numberline {10.5.2}Conversione dei Dati}{72}{subsection.10.5.2}%
+\contentsline {section}{\numberline {10.6}Stima Parametri}{73}{section.10.6}%
+\contentsline {subsection}{\numberline {10.6.1}Stima parametri automatica}{73}{subsection.10.6.1}%
+\contentsline {subsection}{\numberline {10.6.2}Stima parametri manuale}{73}{subsection.10.6.2}%
+\contentsline {subsection}{\numberline {10.6.3}Plot dell'esperimento}{74}{subsection.10.6.3}%
+\contentsline {chapter}{Elenco delle figure}{76}{chapter*.65}%
+\contentsline {chapter}{Elenco delle tabelle}{77}{chapter*.66}%
+\contentsline {chapter}{Elenco dei codici}{78}{chapter*.67}%
+\contentsline {chapter}{Bibliografia}{80}{chapter*.68}%

@@ -1,0 +1,38 @@
+close all
+
+figure(1)
+plotSim(out.cBaseSim,[-0.1 15], "cBaseSim")
+
+figure(2)
+plotSim(out.cSim,[-0.1 15], "cSim")
+
+
+function plotSim(out ,yLim, nameSave)
+t = out.time;
+u = out.signals.values(:,1);
+v2 = out.signals.values(:,2);
+I1 = out.signals.values(:,3);
+e = out.signals.values(:,4);
+
+grid on
+hold on
+plot(t,u,'LineWidth',2)
+plot(t,v2/max(v2),'LineWidth',2)
+plot(t,I1/max(I1),'LineWidth',2)
+plot(t,e/max(),'LineWidth',1)
+
+legend('PWM%','V_{secondary_{NORM}}','I_{primary_{NORM}}', 'e');
+
+xlabel("time [s]")
+% xlim(xLim);
+ylim(yLim);
+
+% Figure Export and Save
+savePath = "./img/";
+[~,~] = mkdir(savePath);
+set(gcf, 'PaperUnits', 'normalized')
+set(gcf, 'PaperPosition', [0 0 1 1])
+set(gcf,'PaperOrientation','landscape');
+saveas(gcf,savePath + "Simulation-" + nameSave + '.png')
+saveas(gcf,savePath + "Simulation-" + nameSave + '.pdf')
+end
