@@ -228,7 +228,7 @@ Al contrario il secondo punta ad analizzare la risposta del sistema al variare d
 In entrambi i casi, la tensione $ V_{2_{ref}} = 0.5V$ 
 
 \noindent
-{\footnotesize NOTA BENE: I grafici riportati hanno il \textbf{\underline{segnale di errore zoomato di un fattore 10}} per meglio mettere in evidenza il comportamento dell'errore}
+{\footnotesize NOTA BENE: I grafici riportati hanno il \textbf{\underline{segnale di errore è zoomato di un fattore 10}} per meglio mettere in evidenza il comportamento dell'errore}
 
 \newpage
 
@@ -246,6 +246,81 @@ In questo caso però la saturazione è stata eliminata al fine di mettere maggio
 
 \newpage
 \subsection{Design Avanzato di controllo}
-Usando ora il controllore proposto nell'equazione \ref{eq:controllerDesign} analizziamo ora gli effetti della presenza dei vari termini:
+Usando ora il controllore proposto nell'equazione \ref{eq:controllerDesign} analizziamo ora gli effetti della presenza dei vari termini, e il loro effetto qualitativo sulla risposta e l'andamento dell'errore.\\
+Ricordiamo nuovamente che il {\color{red}\textbf{\underline{segnale di errore è zoomato di un fattore 10}}} per meglio mettere in evidenza il comportamento dell'errore.
+
+\subsubsection{Analisi controllo Avanzato per $ K_p $=0 $ K_1 $=0 $ K_2 $=100}
+\begin{figure}[H]
+	\centering
+	\caption[Controllo Avanzato $ K_p $=0 $ K_1 $=0 $ K_2 $=100] {Controllo Avanzato $ K_p $=0 $ K_1 $=0 $ K_2 $=100}
+	\includegraphics[width=1\textwidth]{ModelloMatematico/Simulation-cSim-Kp=0-K1=0-K2=100.pdf}
+\end{figure}
+\noindent
+L'aumento del coefficiente per il doppio integratore ha l'effetto di creare risposte più tempestive, ma da atto a dei fenomeni oscillatori smorzati
+
+\subsubsection{Analisi controllo Avanzato per $ K_p $=0 $ K_1 $=10 $ K_2 $=100}
+In questa seconda simulazione si è aggiunto un al controllore il termine integrale:
+\begin{figure}[H]
+	\centering
+	\caption[Controllo Avanzato $ K_p $=0 $ K_1 $=10 $ K_2 $=100]{Controllo Avanzato $ K_p $=0 $ K_1 $=10 $ K_2 $=100}
+	\includegraphics[width=1\textwidth]{ModelloMatematico/Simulation-cSim-Kp=0-K1=10-K2=100.pdf}
+\end{figure}
+\noindent
+L'effetto del termine integrale è quindi smorzare il transitorio oscillatorio, per poi inseguire il riferimento con un andamento esponenziale.\\
+In questo secondo esperimento abbiamo già migliorato molto le performance dal controllo base, avendo visibilmente migliorato il \underline{Tempo di assestamento} del sistema e lasciando 600ms di esperimento con errore ampiamente trascurabile.
+\newpage
+\subsubsection{Analisi controllo Avanzato per $ K_p $=0 $ K_1 $=100 $ K_2 $=500}
+Abbiamo adesso aumentato i coefficienti del doppio e singolo integratore per vedere come migliorano le performance del sistema ad un loro aumento coordinato:
+\begin{figure}[H]
+	\centering
+	\caption[Controllo Avanzato $ K_p $=0 $ K_1 $=100 $ K_2 $=500]{Controllo Avanzato $ K_p $=0 $ K_1 $=100 $ K_2 $=500}
+	\includegraphics[width=1\textwidth]{ModelloMatematico/Simulation-cSim-Kp=0-K1=100-K2=500.pdf}
+\end{figure}
+\noindent
+L'effetto è un ulteriore miglioramento sul \underline{Tempo di assestamento} e una una discesa più pronunciata dell'errore verso lo 0, ma abbiamo pagato questo incremento prestazionale con il ritorno degli effetti oscillatori smorzati, ed esse sono anche a frequenze maggiori, non proprio desiderabile. 
+
+\newpage
+
+\subsubsection{Analisi controllo Avanzato per $ K_p $=0.2 $ K_1 $=100 $ K_2 $=500}
+Aggiungiamo quindi al caso precedente un termine proporzionale all'errore, così da rispondere subito alle variazioni del riferimento: 
+\begin{figure}[H]
+	\centering
+	\caption[Controllo Avanzato $ K_p $=0.2 $ K_1 $=100 $ K_2 $=500]{Controllo Avanzato $ K_p $=0.2 $ K_1 $=100 $ K_2 $=500}
+	\includegraphics[width=1\textwidth]{ModelloMatematico/Simulation-cSim-Kp=0.2-K1=100-K2=500}
+\end{figure}
+\noindent
+Essendo $ K_p $ istantaneo con la variazione del riferimento, abbiamo che l'inseguimento di $ V_{2_{ref}} $ inizia prima, riducendo il margine di fase dovuto al caricamento degli integratori, ciò riduce il fenomeno di wind-up presente precedentemente e causa delle oscillazioni attorno al riferimento, e permette di tornare al comportamento del 2° esperimento, con performance nettamente superiori.
+
+\newpage
+
+\subsubsection{Analisi controllo Avanzato per $ K_p $=0.8 $ K_1 $=100 $ K_2 $=500}
+In quest'ultimo esperimento analizziamo l'effetto dell'aumento del termine proporzionale sulla dinamica:
+\begin{figure}[H]
+	\centering
+	\caption[Controllo Avanzato $ K_p $=0.8 $ K_1 $=100 $ K_2 $=500]{Controllo Avanzato $ K_p $=0.8 $ K_1 $=100 $ K_2 $=500}
+	\includegraphics[width=1\textwidth]{ModelloMatematico/Simulation-cSim-Kp=0.8-K1=100-K2=500.pdf}
+\end{figure}
+\noindent
+Rispetto al caso precedente, l'errore iniziale si è molto ridotto, passando da un fuori scala in entrambi i segni, a un errore di -0.019 di picco negativo (il picco positivo è per definizione 0.5 essendo il riferimento dato come gradino).\\
+Al contrario, superata questa prima fase, il resto della dinamica è fondamentalmente identica al caso precedente.
+
+\newpage
+
+\section{Conclusioni per il design Avanzato}
+In conclusione possiamo dire che il controllore "\textit{PID-style}" definito nell'equazione \ref{eq:controllerDesign} permette di ottenere gli obiettivi di controllo prefissati, e i suoi coefficienti hanno un effetto sulle performance ottenibili.\\
+La loro variazione ha il seguente effetto qualitativo:
+\begin{description}
+	\item[{\boldmath$ K_2 $}] Permette di raggiungere gli obiettivi di inseguimento con errore nullo, un suo aumento migliora la risposta ma causa delle oscillazioni smorzate a frequenze via via più elevate (Raggiungimento degli obiettivi di controllo).
+	\item[{\boldmath$ K_1 $}] Se dimensionato opportunamente rende più marcato lo smorzamento delle oscillazioni dovute a $ K_2 $ fino a tornare ad un andamento esponenziale (Migliora Tempo di Assestamento).
+	\item[{\boldmath$ K_p $}] Migliorare le performance nei primi istanti di controllo, prima che gli integratori possano arrivare a convergenza (Miglioramento del Tempo di risposta).
+\end{description}
+
+\begin{center}
+	\rule{0.5\linewidth}{0.5px}
+\end{center}
+\noindent
+I valori calcolati sul modello, non possono essere implementati 1:1 nel caso reale, a causa delle \nonLinearita che sono state trascurate nella creazione del modello, e per tutti i problemi dovuti al tempo di campionamento e attuazione del sistema che è pari a $ 2Khz $.\\
+Non di meno, le osservazioni qui riportate continuano ad essere valide anche sul sistema reale, ed essendo le \nonLinearita presenti soprattutto nei pressi della \textit{Dead-zone} e della \textit{Saturazione} e assimilabili a del disturbo non troppo ampio, avremo modo di mostrare che il controllore così progettato è anche robusto per errori di attuazione e misura.
+
 
 

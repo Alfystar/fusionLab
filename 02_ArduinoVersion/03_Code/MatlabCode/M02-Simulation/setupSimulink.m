@@ -7,7 +7,7 @@ load('TransformerSysEst.mat')
 numP = cell2mat(numP);
 denP = cell2mat(denP);
 
-Kp=1;
+Kp=0.8;
 K1=100;
 K2=500;
 

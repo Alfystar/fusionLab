@@ -49,33 +49,34 @@
 \BOOKMARK [2][-]{subsection.4.3.1}{Design di controllore adottato}{section.4.3}% 49
 \BOOKMARK [1][-]{section.4.4}{Simulazione Qualitativa su Simulink}{chapter.4}% 50
 \BOOKMARK [2][-]{subsection.4.4.1}{Design Base di controllo}{section.4.4}% 51
-\BOOKMARK [0][-]{chapter.5}{Sviluppo Controllo reale}{}% 52
-\BOOKMARK [1][-]{section.5.1}{Codifica del controllore}{chapter.5}% 53
-\BOOKMARK [1][-]{section.5.2}{Tuning delle costanti}{chapter.5}% 54
-\BOOKMARK [1][-]{section.5.3}{Esperimenti}{chapter.5}% 55
-\BOOKMARK [0][-]{chapter.6}{Conclusioni e sviluppi futuri}{}% 56
-\BOOKMARK [0][-]{chapter.7}{Software, Toolchain, Strumenti}{}% 57
-\BOOKMARK [0][-]{chapter*.56}{Appendice A - Codice Arduino}{}% 58
-\BOOKMARK [1][-]{section.8.1}{Set-up Registri}{chapter*.56}% 59
-\BOOKMARK [2][-]{subsection.8.1.1}{Tic Timer}{section.8.1}% 60
-\BOOKMARK [2][-]{subsection.8.1.2}{Frequenza PWM}{section.8.1}% 61
-\BOOKMARK [1][-]{section.8.2}{Generatore di Segnale}{chapter*.56}% 62
-\BOOKMARK [2][-]{subsection.8.2.1}{Segnali Base}{section.8.2}% 63
-\BOOKMARK [2][-]{subsection.8.2.2}{Segnali Composti}{section.8.2}% 64
-\BOOKMARK [1][-]{section.8.3}{Codici Controllore}{chapter*.56}% 65
-\BOOKMARK [0][-]{chapter*.63}{Appendice B - Codice EMP}{}% 66
-\BOOKMARK [1][-]{section.9.4}{Pacchetti in EMP}{chapter*.63}% 67
-\BOOKMARK [2][-]{subsection.9.4.1}{Definizione di 2 Pacchetti}{section.9.4}% 68
-\BOOKMARK [2][-]{subsection.9.4.2}{Pacchetti Multipli}{section.9.4}% 69
-\BOOKMARK [0][-]{chapter*.64}{Appendice C - Matlab Post Elaboration}{}% 70
-\BOOKMARK [1][-]{section.10.5}{Importazione dei Dati}{chapter*.64}% 71
-\BOOKMARK [2][-]{subsection.10.5.1}{Parsing Tabelle}{section.10.5}% 72
-\BOOKMARK [2][-]{subsection.10.5.2}{Conversione dei Dati}{section.10.5}% 73
-\BOOKMARK [1][-]{section.10.6}{Stima Parametri}{chapter*.64}% 74
-\BOOKMARK [2][-]{subsection.10.6.1}{Stima parametri automatica}{section.10.6}% 75
-\BOOKMARK [2][-]{subsection.10.6.2}{Stima parametri manuale}{section.10.6}% 76
-\BOOKMARK [2][-]{subsection.10.6.3}{Plot dell'esperimento}{section.10.6}% 77
-\BOOKMARK [0][-]{chapter*.65}{Elenco delle figure}{}% 78
-\BOOKMARK [0][-]{chapter*.66}{Elenco delle tabelle}{}% 79
-\BOOKMARK [0][-]{chapter*.67}{Elenco dei codici}{}% 80
-\BOOKMARK [0][-]{chapter*.68}{Bibliografia}{}% 81
+\BOOKMARK [2][-]{subsection.4.4.2}{Design Avanzato di controllo}{section.4.4}% 52
+\BOOKMARK [1][-]{section.4.5}{Conclusioni per il design Avanzato}{chapter.4}% 53
+\BOOKMARK [0][-]{chapter.5}{Sviluppo Controllo reale}{}% 54
+\BOOKMARK [1][-]{section.5.1}{Codifica del controllore}{chapter.5}% 55
+\BOOKMARK [1][-]{section.5.2}{Tuning delle costanti}{chapter.5}% 56
+\BOOKMARK [1][-]{section.5.3}{Esperimenti}{chapter.5}% 57
+\BOOKMARK [0][-]{chapter.6}{Conclusioni e sviluppi futuri}{}% 58
+\BOOKMARK [0][-]{chapter*.61}{Appendice A - Codice Arduino}{}% 59
+\BOOKMARK [1][-]{section.7.1}{Set-up Registri}{chapter*.61}% 60
+\BOOKMARK [2][-]{subsection.7.1.1}{Tic Timer}{section.7.1}% 61
+\BOOKMARK [2][-]{subsection.7.1.2}{Frequenza PWM}{section.7.1}% 62
+\BOOKMARK [1][-]{section.7.2}{Generatore di Segnale}{chapter*.61}% 63
+\BOOKMARK [2][-]{subsection.7.2.1}{Segnali Base}{section.7.2}% 64
+\BOOKMARK [2][-]{subsection.7.2.2}{Segnali Composti}{section.7.2}% 65
+\BOOKMARK [1][-]{section.7.3}{Codici Controllore}{chapter*.61}% 66
+\BOOKMARK [0][-]{chapter*.68}{Appendice B - Codice EMP}{}% 67
+\BOOKMARK [1][-]{section.8.4}{Pacchetti in EMP}{chapter*.68}% 68
+\BOOKMARK [2][-]{subsection.8.4.1}{Definizione di 2 Pacchetti}{section.8.4}% 69
+\BOOKMARK [2][-]{subsection.8.4.2}{Pacchetti Multipli}{section.8.4}% 70
+\BOOKMARK [0][-]{chapter*.69}{Appendice C - Matlab Post Elaboration}{}% 71
+\BOOKMARK [1][-]{section.9.5}{Importazione dei Dati}{chapter*.69}% 72
+\BOOKMARK [2][-]{subsection.9.5.1}{Parsing Tabelle}{section.9.5}% 73
+\BOOKMARK [2][-]{subsection.9.5.2}{Conversione dei Dati}{section.9.5}% 74
+\BOOKMARK [1][-]{section.9.6}{Stima Parametri}{chapter*.69}% 75
+\BOOKMARK [2][-]{subsection.9.6.1}{Stima parametri automatica}{section.9.6}% 76
+\BOOKMARK [2][-]{subsection.9.6.2}{Stima parametri manuale}{section.9.6}% 77
+\BOOKMARK [2][-]{subsection.9.6.3}{Plot dell'esperimento}{section.9.6}% 78
+\BOOKMARK [0][-]{chapter*.70}{Elenco delle figure}{}% 79
+\BOOKMARK [0][-]{chapter*.71}{Elenco delle tabelle}{}% 80
+\BOOKMARK [0][-]{chapter*.72}{Elenco dei codici}{}% 81
+\BOOKMARK [0][-]{chapter*.73}{Bibliografia}{}% 82

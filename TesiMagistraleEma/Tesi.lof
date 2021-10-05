@@ -38,6 +38,10 @@
 \contentsline {figure}{\numberline {4.2}{\ignorespaces Sistema da controllare ingresso-uscita reale}}{54}{figure.4.2}%
 \contentsline {figure}{\numberline {4.3}{\ignorespaces Modelli simulati su Simulink}}{59}{figure.4.3}%
 \contentsline {figure}{\numberline {4.4}{\ignorespaces Modelli simulati su Simulink}}{60}{figure.4.4}%
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Controllo Avanzato $ K_p $=0 $ K_1 $=0 $ K_2 $=100}}{61}{figure.4.5}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Controllo Avanzato $ K_p $=0 $ K_1 $=10 $ K_2 $=100}}{62}{figure.4.6}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Controllo Avanzato $ K_p $=0 $ K_1 $=100 $ K_2 $=500}}{63}{figure.4.7}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Controllo Avanzato $ K_p $=0.2 $ K_1 $=100 $ K_2 $=500}}{64}{figure.4.8}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Controllo Avanzato $ K_p $=0.8 $ K_1 $=100 $ K_2 $=500}}{65}{figure.4.9}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
