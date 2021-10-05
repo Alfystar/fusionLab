@@ -13,7 +13,7 @@ Il modello stimato è $ P_{pos} $ (eq \ref{eq:FuncTrasfTotPos}), per rendere pi�
 
 \newpage
 
-\section{Metodo Di stima automatico}
+\section{Metodo di stima automatico}
 Il metodo di stima automatico passa per l'uso del \cite*{IdentificationToolbox} di Matlab, ed è usato allo scopo di ottenere una funzione di trasferimento SISO tra l'ingresso del duty-cycle (PWM) e la tensione sul secondario V2. Avendo a disposizione anche i dati della corrente sul primario, anche se poco sensibili, si è deciso di dividere la stima in 2 fasi: prima si è stimato il modello della corrente nel primario, e a causa della sua scarsa sensibilità di misura (risultato \ref{result:Istep}) si è usato il segnale ricostruito come ingresso per la stima della dinamica della tensione sul secondario.\\
 Il numero di \textit{Poli} e \textit{Zeri} di entrambe le funzioni di trasferimento sono state scelte partendo dall'analisi teorica descritta nella sezione \nameref{subsec:ModelloFisico}, e il codice è presente in appendice a \nameref{lst:autoEst}.
 
