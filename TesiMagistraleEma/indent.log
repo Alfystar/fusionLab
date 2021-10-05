@@ -1,9 +1,9 @@
 INFO: latexindent version 3.8.3, 2020-11-06, a script to indent .tex files
       latexindent lives here: /usr/share/texlive/texmf-dist/scripts/latexindent/
-      Mon Oct  4 19:03:27 2021
-      Filename: capitolo-ModelloMatematico.tex
+      Tue Oct  5 18:12:52 2021
+      Filename: capitolo-StimaModello.tex
 INFO: Processing switches:
-      -w|--overwrite: Overwrite mode active, will make a back up of capitolo-ModelloMatematico.tex first
+      -w|--overwrite: Overwrite mode active, will make a back up of capitolo-StimaModello.tex first
 INFO: Directory for backup files and indent.log: .
 INFO: YAML settings read: defaultSettings.yaml
       Reading defaultSettings.yaml from /usr/share/texlive/texmf-dist/scripts/latexindent/defaultSettings.yaml
@@ -12,17 +12,19 @@ INFO: YAML settings read: indentconfig.yaml or .indentconfig.yaml
       To specify user settings you would put indentconfig.yaml here: /home/alfy/indentconfig.yaml
       Alternatively, you can use the hidden file .indentconfig.yaml as: /home/alfy/.indentconfig.yaml
 INFO: Backup procedure (-w flag active):
-      ./capitolo-ModelloMatematico.bak0 already exists, incrementing by 1... (see maxNumberOfBackUps and onlyOneBackUp)
-      ./capitolo-ModelloMatematico.bak1 already exists, incrementing by 1... (see maxNumberOfBackUps and onlyOneBackUp)
-      copying capitolo-ModelloMatematico.tex to ./capitolo-ModelloMatematico.bak2
-      Backup file: ./capitolo-ModelloMatematico.bak2
-      capitolo-ModelloMatematico.tex will be overwritten after indentation
+      ./capitolo-StimaModello.bak0 already exists, incrementing by 1... (see maxNumberOfBackUps and onlyOneBackUp)
+      ./capitolo-StimaModello.bak1 already exists, incrementing by 1... (see maxNumberOfBackUps and onlyOneBackUp)
+      ./capitolo-StimaModello.bak2 already exists, incrementing by 1... (see maxNumberOfBackUps and onlyOneBackUp)
+      ./capitolo-StimaModello.bak3 already exists, incrementing by 1... (see maxNumberOfBackUps and onlyOneBackUp)
+      copying capitolo-StimaModello.tex to ./capitolo-StimaModello.bak4
+      Backup file: ./capitolo-StimaModello.bak4
+      capitolo-StimaModello.tex will be overwritten after indentation
 INFO: Phase 1: searching for objects
 INFO: Phase 2: finding surrounding indentation
 INFO: Phase 3: indenting objects
 INFO: Phase 4: final indentation check
 INFO: Output routine:
-      Overwriting file capitolo-ModelloMatematico.tex
+      Overwriting file capitolo-StimaModello.tex
       --------------
 INFO: Please direct all communication/issues to:
       https://github.com/cmhughes/latexindent.pl

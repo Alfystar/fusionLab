@@ -5,6 +5,7 @@ The style file: biblatex.bst
 A level-1 auxiliary file: Introduzione.aux
 A level-1 auxiliary file: capitolo-HW.aux
 A level-1 auxiliary file: capitolo-Architettura.aux
+A level-1 auxiliary file: capitolo-StimaModello.aux
 A level-1 auxiliary file: capitolo-ModelloMatematico.aux
 A level-1 auxiliary file: capitolo-Controllo.aux
 A level-1 auxiliary file: conclusioni.aux
@@ -29,44 +30,44 @@ Database file #2: BibliografiaTesi.bib
 Biblatex version: 3.16
 Reallocated wiz_functions (elt_size=4) to 9000 items from 6000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 14 entries,
+You've used 15 entries,
             6393 wiz_defined-function locations,
-            1301 strings with 11425 characters,
-and the built_in function-call counts, 58682 in all, are:
-= -- 3622
-> -- 1250
-< -- 536
-+ -- 1153
-- -- 375
-* -- 3361
-:= -- 4911
+            1307 strings with 11574 characters,
+and the built_in function-call counts, 62183 in all, are:
+= -- 3794
+> -- 1349
+< -- 569
++ -- 1201
+- -- 403
+* -- 3560
+:= -- 5159
 add.period$ -- 0
-call.type$ -- 14
-change.case$ -- 353
+call.type$ -- 15
+change.case$ -- 371
 chr.to.int$ -- 48
-cite$ -- 26
-duplicate$ -- 6637
-empty$ -- 5794
-format.name$ -- 661
-if$ -- 12739
+cite$ -- 28
+duplicate$ -- 7046
+empty$ -- 6162
+format.name$ -- 719
+if$ -- 13527
 int.to.chr$ -- 0
-int.to.str$ -- 38
+int.to.str$ -- 43
 missing$ -- 0
-newline$ -- 374
-num.names$ -- 725
-pop$ -- 4409
+newline$ -- 397
+num.names$ -- 784
+pop$ -- 4738
 preamble$ -- 1
-purify$ -- 387
+purify$ -- 407
 quote$ -- 0
-skip$ -- 2676
+skip$ -- 2872
 stack$ -- 0
-substring$ -- 4914
-swap$ -- 1847
-text.length$ -- 326
-text.prefix$ -- 13
+substring$ -- 5081
+swap$ -- 1967
+text.length$ -- 350
+text.prefix$ -- 14
 top$ -- 1
-type$ -- 432
+type$ -- 462
 warning$ -- 0
-while$ -- 698
+while$ -- 732
 width$ -- 0
-write$ -- 361
+write$ -- 383

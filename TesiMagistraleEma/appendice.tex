@@ -131,8 +131,8 @@ int triangleSignal(uint64_t t, int msQuartPeriod) {
 }
 \end{lstlisting}
 
-\subsubsection{Onda Trapezoidale}
-\begin{lstlisting}[style=cppStyle,caption={Onda Trapezoidale Periodica},label=lst:ondaTrapezoidale] 
+\subsubsection{Onda Trapezoidale (RapidShot)}
+\begin{lstlisting}[style=cppStyle,caption={Onda Trapezoidale Periodica (RapidShot)},label=lst:ondaTrapezoidale] 
 int rapidShot(uint64_t t) {
 	static uint64_t startTic = 0;
 	int pwmRapidShot;
@@ -378,5 +378,97 @@ end
 function u = map (var, varMin, varMax, outMin , outMax)
 	u = ((var-varMin)/(varMax-varMin));
 	u = (u * outMax) + ((1-u)*outMin);
+end
+\end{lstlisting}
+
+
+\section{Stima Parametri}
+
+\subsection{Stima parametri automatica}
+\begin{lstlisting}[style=matlabStyle,caption={Stima corrente Primario automatica},label=lst:autoEst] 
+% ##############################################
+% ########### PWM-I2 Auto Estimation ###########
+% ##############################################
+% DAT = iddata(Y,U,Ts) 
+PrimaryFrameData = iddata(experiment.Isense_read, experiment.PWMDead, Info.dt);
+
+% ########### PWM-I1 Estimation ###########
+% DAT = iddata(Y,U,Ts) 
+InPriRiseFrameData = iddata(experiment.Isense_read(1:1200), experiment.PWMDead(1:1200), Info.dt);
+
+% SYS = tfest(DATA, NP, NZ, IODELAY)
+tfExtPWM_I1 = tfest(InPriRiseFrameData, 1, 0, NaN)
+% lsim(SYS,U,T)
+yExtPWM_I1Fit = lsim(tfExtPWM_I1,experiment.PWMDead(1:1200),t(1:1200));
+
+% ########### Primary - Secondary Rise Estimation ###########
+% DAT = iddata(Y,U,Ts) 
+PriSecRiseFrameData = iddata(experiment.V2_read(1:1200), yExtPWM_I1Fit, Info.dt);
+tfExtI1_V2 = tfest(PriSecRiseFrameData, 1, 1, NaN)
+
+% ########### Simulation ###########
+yExtPWM_I1 = lsim(tfExtPWM_I1,experiment.PWMDead,t);
+yExtI1_V2 = lsim(tfExtI1_V2,yExtPWM_I1,t);
+
+figure(1)
+plotTable(experiment,Info,[0.2,1.2],[-inf,inf], [yExtPWM_I1, yExtI1_V2], {'yExtPWM-I1', 'yExtI1-V2'}, 'autoExt');
+\end{lstlisting}
+
+\subsection{Stima parametri manuale}
+\begin{lstlisting}[style=matlabStyle,caption={Stima parametri manuale},label=lst:manualEst] 
+% ##############################################
+% ########## PWM-I2 Manual Estimation ##########
+% ##############################################
+fPWM_I1 = tf(8.4,[0.022 1]);
+yfPWM_I1 = lsim(fPWM_I1,experiment.PWMDead,t);
+
+fI1_V2 = tf([0.0085 0],[1/2800 1]);
+yfI1_V2 = lsim(fI1_V2,yfPWM_I1,t);
+
+figure(2)
+plotTable(experiment,Info,[0.2,1.2],[-inf,inf], [yfPWM_I1, yfI1_V2], {'yfPWM-I1','yfI1_V2'},'manualExt');
+\end{lstlisting}
+
+\newpage
+
+\subsection{Plot dell'esperimento}
+\begin{lstlisting}[style=matlabStyle,caption={Plot dell'esperimento},label=lst:plotTable] 
+function plotTable(table, Info,xLim, yLim, ySim, ySimLegend , nameSave)
+	V2Mean = Info.V2_mean;
+	IsenseMean = Info.Isense_mean;
+	dt = Info.dt;
+	vRef = Info.V2Ref_set;
+	
+	name = Info.Properties.Description;
+	[len , ~ ] = size(table);
+	
+	t = [0:len-1]' * dt;
+	
+	clf
+	grid on
+	hold on
+	plot(t,table.PWMDead,'LineWidth',2)
+	plot(t,table.V2_readFilter,'LineWidth',2)
+	plot(t,table.Isense_readFilter,'LineWidth',2)
+	for y = ySim
+		plot(t,y,'LineWidth',1);
+	end
+	legNorm = {'PWM%-DeadFilter','V_{secondary}','I_{primary}'};
+	
+	legend(cat(2,legNorm,ySimLegend));
+	
+	title("Experiment: "+name+ "   SampleTime: " + mat2str(dt * 1000000) + "us")
+	xlabel("time [s]")
+	xlim(xLim);
+	ylim(yLim);
+	
+	% Figure Export and Save
+	savePath = "./img/";
+	[~,~] = mkdir(savePath);
+	set(gcf, 'PaperUnits', 'normalized')
+	set(gcf, 'PaperPosition', [0 0 1 1])
+	set(gcf,'PaperOrientation','landscape');
+	saveas(gcf,savePath + name + '-' + nameSave + '.png')
+	saveas(gcf,savePath + name + '-' + nameSave + '.pdf')
 end
 \end{lstlisting}

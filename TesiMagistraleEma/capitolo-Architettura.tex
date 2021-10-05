@@ -317,6 +317,6 @@ Partendo da questa equivalenza, per la corrente del primario usiamo l'equazione 
 	V_2 = V_{read} - V_{2_{offset}}
 \end{empheq}
 
-\subsection{Filtraggio senza distorsioni di fase}
+\subsection{Filtraggio senza distorsioni di fase} \label{subsec:filtraggio}
 Essendo i dati letti affetti naturalmente da rumore, essi vengono post-filtrati per rendere i dati più puliti e mettere in evidenza le tendenze del sistema. Questo filtraggio è stato realizzato usando un \textit{Filtro digitale a senza distorsione di fase}(\cite{zeroPhaseShiftFilter}), come fa intuire il nome, la caratteristica di questo filtro è che non introduce nessun ritardo o anticipazione al segnale filtrato, permettendo di confrontarlo direttamente con i dati puri, eliminando rumori a bassa ed alta frequenza.\\
 Questo filtraggio viene eseguito direttamente nell'importazione della tabella salvata con la struttura vista nella sezione \nameref{subsec:experimentStorage}, di cui il codice è in appendice \nameref{subsec:tabParsing}.

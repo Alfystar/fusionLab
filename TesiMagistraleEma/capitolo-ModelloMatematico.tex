@@ -6,7 +6,7 @@
 \vspace*{1cm}
 
 \section{Obiettivo di controllo}
-Come accennato nella sezione "\nameref{sub:parametriMisurati}" (\ref{sub:parametriMisurati}), attraverso il controllo e attuazione della corrente nel Primario del trasformatore, si punta controllare la corrente presente sul primario del trasformatore, e sempre come detto nella sezione \ref{sub:parametriMisurati}, non essendo possibile misurare la corrente di plasma direttamente, si usa la sua misura indiretta che passa per la $ F_{em} $.\\
+Come accennato nella sezione "\nameref{sub:parametriMisurati}", attraverso il controllo e attuazione della corrente nel Primario del trasformatore, si punta controllare la corrente presente sul primario del trasformatore, e sempre come detto nella sezione "\nameref{sub:parametriMisurati}", non essendo possibile misurare la corrente di plasma direttamente, si usa la sua misura indiretta che passa per la $ F_{em} $.\\
 In questa tesi l'obiettivo che ci si è ripromessi di raggiungere è la creazione di un controllo ad errore nullo sulla corrente di plasma.\vspace{-4mm}
 \begin{figure}[h]
 	\centering
@@ -66,7 +66,7 @@ Questi 2 Teoremi chiave, permettono di risolvere comodamente le equazioni differ
 
 \newpage
 
-\section{Controllo a errore nullo}
+\section{Controllo a errore nullo} \label{sec:inseguitoreErroreNullo}
 Definiamo ora $ P_m(s) $ come l'impianto Reale misurato tra la corrente di riferimento $ I_{ref} $ del primario, e la tensione del campo elettrico $ V_2 $ sul secondario.\\
 Ne segue che la funzione di trasferimento complessiva è pari a:
 \begin{empheq}[box=\mathCalc]{equation}\label{eq:impiantoMisurato}
@@ -79,7 +79,7 @@ Essendo il nostro obiettivo quello di portare $ e \rightarrowtail 0$ per $ t\rig
 		W_{er}(s) = \frac{e(s)}{r(s)} = \frac{1}{1 + P_m(s)C(s)}
 	\end{empheq}
 	\newpage
-	{\color{red}(Sensitivity transfer function)}
+	{\color{red} Sensitivity transfer function}
 \end{vwcol}
 \vspace{5mm}
 \begin{vwcol}[widths={0.5,0.5}, sep=8mm, rule=0px]
@@ -140,13 +140,11 @@ Da cui, applicando il \nameref{th:valFinale} otteniamo:
 \end{oss}
 \newpage
 Partendo da questa forma, svolgiamo i calcoli dell'equazione  \ref{eq:dinamicaErroreRifCostFunxTrasf}:
-\begin{center}
-	{\large $ 
+\begin{empheq}[box=\mathCalc]{equation} \label{eq:guadagnoAnelloPlusOne}
 			1 + P_m(s)C(s) =  1 + \frac{K_c}{s^{\rho_{c}}} \frac{C_n}{C_d}\cdot \frac{K_p}{s^{\rho_{p}}}  \frac{P_n}{P_d}=
 			\frac{s^{\rho_{c} + \rho_{p}} C_d P_d + K_c K_p C_n P_n}{s^{\rho_{c} + \rho_{p}} C_d P_d}
-		$
-	}
-\end{center}
+\end{empheq}
+
 Da cui otteniamo che:
 \begin{center}
 	{\large
@@ -160,10 +158,10 @@ Da cui otteniamo che:
 	\lim\limits_{t \rightarrowtail \infty} e(t) = \lim\limits_{s \rightarrowtail 0} s \cdot W_{er}(s) \cdot r(s) = \lim\limits_{s \rightarrowtail 0}
 	K_r \cdot \frac{{\color{fireenginered}s^{\rho_{c} + \rho_{p}}} \cdot C_d P_d}{{\color{fireenginered}s^{\rho_{c} + \rho_{p}}} \cdot C_d P_d + K_c K_p C_n P_n}
 \end{empheq}
-Tenendo presente che $ C_d,P_d,C_n,P_n \rightarrowtail 1 $ per $ s \rightarrowtail 0 $, poiché gli Zeri sono stati fattorizzati fuori (vedi osservazione \ref{oss:Fattorizzazione}), abbiamo che gli esiti per l'errore a \textit{Steady state}(Stato Stazionario) dipendono solo dal grado di {\color{fireenginered}$ \rho = \rho_{c} + \rho_{p} $ con $ \rho \in \mathbb{Z} $} e sono pari a:
+Tenendo presente che $ C_d,P_d,C_n,P_n \rightarrowtail 1 $ per $ s \rightarrowtail 0 $, poiché gli Zeri sono stati fattorizzati fuori assieme al guadagno Statico (vedi osservazione \ref{oss:Fattorizzazione}), abbiamo che gli esiti per l'errore a \textit{Steady state}(Stato Stazionario) dipendono solo dal grado di {\color{fireenginered}$ \rho = \rho_{c} + \rho_{p} $ con $ \rho \in \mathbb{Z} $} e sono pari a:
 
-\begin{center}
-	$ \lim\limits_{t \rightarrowtail \infty} e(t) =
+\begin{center}	\label{eq:esitiErrore}
+	$ e_\infty = \lim\limits_{t \rightarrowtail \infty} e(t) =
 	\left \{ \begin{array}{l c c}
 		0                   & se & \rho \geq 1  \\
 		\frac{K_r}{K_c K_p} & se & \rho = 0     \\
@@ -172,9 +170,50 @@ Tenendo presente che $ C_d,P_d,C_n,P_n \rightarrowtail 1 $ per $ s \rightarrowta
 	\right.
 $
 \end{center}
-Essendo $ \rho_{p} = -1 $ a causa dello Zero in 0, abbiamo che il controllore dovrà necessariamente avere $ \rho_{c} = 2 $ per ottenere $ \rho = 1 $
-\section{Simulazione \textit{Qualitativa} su Simulink}
+Essendo {\color{fireenginered}$ \rho_{p} = -1 $} a causa dello Zero in 0, abbiamo che il controllore dovrà necessariamente avere {\color{fireenginered}$ \rho_{c} = 2 $} per ottenere {\color{fireenginered}$ \rho = 1 $}. Il grado minimo di controllore di cui necessitiamo è quindi:
+\begin{empheq}[box=\mathStep]{equation*}
+	C(s) = \frac{1}{s^2}
+\end{empheq}
+Questo controllore base è complicabile a piacere aggiungendo altri Poli e Zeri stabili, con l'obiettivo di migliorarne le performance della risposta del sistema.
+\begin{oss}
+	Il controllore descritto in \ref{eq:controllerStructure}, anche se stabilizza il sistema e lo rende un \underline{inseguitore ad errore nullo}, \textbf{non è stabile}.\\
+	Esso infatti ha 2 poli in 0, rendendolo un polo \underline{non semplice} e quindi causa di instabilità polinomiale.\\
+	Questa conseguenza non è evitabile, ed è bene accetta poiché permette di inseguire con errore nullo, per la durata dell'esperimento, il riferimento.\\
+	Bisognerà ovviamente tenerne conto in fase di realizzazione poiché con il procedere del tempo dell'esperimento, i numeri dello stato diventeranno sempre maggiori, e ciò potrà portare a problemi di overflow numerici.
+\end{oss}
 
+\newpage
+\noindent
+La dinamica $ e_\infty $ riportata (\ref{eq:esitiErrore}) è valida se il sistema a ciclo chiuso $ W_{V_2 r}(s) $ risulta Asintoticamente Stabile, analizziamo quindi la sua stabilità:\\
+\begin{vwcol}[widths={8cm,8cm}, sep=0mm, rule=1px]
+	\vspace{-7.15mm}
+	\begin{empheq}[box=\mathStep]{equation*}
+		W_{V_2 r}(s) = \frac{V_2(s)}{r(s)} = \frac{P_m(s)C(s)}{1 + P_m(s)C(s)}
+	\end{empheq}
+	\newpage
+	{\color{red} Complementary Sensitivity \\ Transfer Function}
+\end{vwcol}
+\noindent
+E la stabilità di questa funzione è data dai poli del suo denominatore, che abbiamo già calcolato \ref{eq:guadagnoAnelloPlusOne}, e la cui formula è:
+
+\begin{center}
+	{\large $ Den(W_{V_2 r}) = {\color{fireenginered}s^{\rho_{c} + \rho_{p}}} C_d P_d = {\color{fireenginered}s^{\rho}} C_d P_d$} \hspace{8mm} ($ C_d $ e $ P_d $ senza poli nell'origine \footnote{Nota Bene: $ P_d $ e $ C_d $ sono il risultato della fattorizzazione vista sopra nell'osservazione \ref{oss:Fattorizzazione}, non possono quindi esserci poli nell'origine in questi 2 termini \textbf{per costruzione}})
+\end{center}
+Partendo dalla conoscenza che $ P_d $ è sicuramente composta da poli stabili nel semipiano $ \mathbb{C^-} $ (vedi sezione \nameref{TrasformatoreModelloTokamak}), da cui segue che qualunque polo stabile per il controllore ($ C_d $) non destabilizza il sistema e rende valida la dinamica $ e_\infty $ riportata prima (\ref{eq:esitiErrore}), e anzi, il numeratore del controllore può tranquillamente essere instabile, se dovesse servire.
+
+\subsection{Design di controllore adottato}
+In questa tesi la forma di controllore che si è scelto di usare è la seguente:
+\begin{empheq}[box=\mathCalc]{equation} \label{eq:controllerDesign}
+	C(s) = \frac{K_2}{s^2} + \frac{K_1}{s} + K_p = \frac{K_2 + s K_1 + s^2 K_p}{s^2} 
+\end{empheq}
+\noindent
+La scelta è dovuta alla sua somiglianza con un più classico PID, che in questo caso non sarebbe bastato a raggiungere le specifiche (vedi sezione \nameref{sec:inseguitoreErroreNullo}), ma come per lui, tramite un lavoro di \textit{Tuning} dei coefficienti è possibile ottenere delle buone prestazioni per il sistema a ciclo chiuso.\\
+Ulteriore vantaggio di questa struttura è che permettere un semplice controllo switching, variando i coefficienti del numeratore, in base alla fase dell'esperimento.
+
+\newpage
+
+\section{Simulazione \textit{Qualitativa} su Simulink}
+Partendo dal modello stimato che si è ottenuto nel capitolo "\nameref{cap:stimaModello}" in cui si è giunti al modello nell'equazione \ref{eq:StimaModelloInOut}, puntiamo ora a testare il controllo base che abbiamo teorizzato e successivamente la sua evoluzione "\textit{PID-style}"
 
 
 

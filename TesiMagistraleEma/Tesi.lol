@@ -1,32 +1,19 @@
-\defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {2.1}Pacchetti Companion $\Rightarrow $ \textbf {$\mu $Controllore}\xspace }{42}{lstlisting.2.1}%
-\defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {2.2}Pacchetti \textbf {$\mu $Controllore}\xspace $\Rightarrow $ Companion}{42}{lstlisting.2.2}%
-\defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {7.1}Tic Timer}{53}{lstlisting.7.1}%
-\defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {7.2}Frequenza PWM}{53}{lstlisting.7.2}%
-\defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {7.3}Macro per calcolo Offset}{54}{lstlisting.7.3}%
-\defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {7.4}Rampa Saturata}{55}{lstlisting.7.4}%
-\defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {7.5}Onda Triangolare Periodica}{56}{lstlisting.7.5}%
-\defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {7.6}Onda Trapezoidale Periodica}{56}{lstlisting.7.6}%
-\defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {7.7}Loop di Controllo}{57}{lstlisting.7.7}%
-\defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {7.8}Loop di Controllo}{57}{lstlisting.7.8}%
-\defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {8.9}Esempio di definizione Pacchetto in EMP}{58}{lstlisting.8.9}%
-\defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {8.10}Definizione Pacchetti Multipli}{59}{lstlisting.8.10}%
-\defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {8.11}Definizione Pacchetti Multipli}{59}{lstlisting.8.11}%
-\defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {9.12}Parsing delle tabelle}{60}{lstlisting.9.12}%
-\defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {9.13}Parsing delle tabelle}{61}{lstlisting.9.13}%
-\defcounter {refsection}{0}\relax 
-\contentsline {lstlisting}{\numberline {9.14}Parsing delle tabelle}{61}{lstlisting.9.14}%
+\contentsline {lstlisting}{\numberline {2.1}Pacchetti Companion $\Rightarrow $ \textbf {$\mu $Controllore}\xspace }{43}{lstlisting.2.1}%
+\contentsline {lstlisting}{\numberline {2.2}Pacchetti \textbf {$\mu $Controllore}\xspace $\Rightarrow $ Companion}{43}{lstlisting.2.2}%
+\contentsline {lstlisting}{\numberline {8.1}Tic Timer}{63}{lstlisting.8.1}%
+\contentsline {lstlisting}{\numberline {8.2}Frequenza PWM}{63}{lstlisting.8.2}%
+\contentsline {lstlisting}{\numberline {8.3}Macro per calcolo Offset}{64}{lstlisting.8.3}%
+\contentsline {lstlisting}{\numberline {8.4}Rampa Saturata}{65}{lstlisting.8.4}%
+\contentsline {lstlisting}{\numberline {8.5}Onda Triangolare Periodica}{66}{lstlisting.8.5}%
+\contentsline {lstlisting}{\numberline {8.6}Onda Trapezoidale Periodica (RapidShot)}{66}{lstlisting.8.6}%
+\contentsline {lstlisting}{\numberline {8.7}Loop di Controllo}{67}{lstlisting.8.7}%
+\contentsline {lstlisting}{\numberline {8.8}Loop di Controllo}{67}{lstlisting.8.8}%
+\contentsline {lstlisting}{\numberline {9.9}Esempio di definizione Pacchetto in EMP}{68}{lstlisting.9.9}%
+\contentsline {lstlisting}{\numberline {9.10}Definizione Pacchetti Multipli}{69}{lstlisting.9.10}%
+\contentsline {lstlisting}{\numberline {9.11}Definizione Pacchetti Multipli}{69}{lstlisting.9.11}%
+\contentsline {lstlisting}{\numberline {10.12}Parsing delle tabelle}{70}{lstlisting.10.12}%
+\contentsline {lstlisting}{\numberline {10.13}Parsing delle tabelle}{71}{lstlisting.10.13}%
+\contentsline {lstlisting}{\numberline {10.14}Parsing delle tabelle}{71}{lstlisting.10.14}%
+\contentsline {lstlisting}{\numberline {10.15}Stima corrente Primario automatica}{72}{lstlisting.10.15}%
+\contentsline {lstlisting}{\numberline {10.16}Stima parametri manuale}{72}{lstlisting.10.16}%
+\contentsline {lstlisting}{\numberline {10.17}Plot dell'esperimento}{73}{lstlisting.10.17}%

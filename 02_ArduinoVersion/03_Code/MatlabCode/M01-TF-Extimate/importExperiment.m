@@ -72,6 +72,8 @@ d = designfilt('lowpassfir', ...
     'PassbandRipple',1,'StopbandAttenuation',60, ...
     'DesignMethod','equiripple');
 tCon.V2_readFilter = filtfilt(d,tCon.V2_read);
+tCon.Isense_readFilter = filtfilt(d,tCon.Isense_read);
+
 end
 
 function u = pwm2duty(pwmList, downDead, upDead)
