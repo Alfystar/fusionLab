@@ -1,6 +1,6 @@
 INFO: latexindent version 3.8.3, 2020-11-06, a script to indent .tex files
       latexindent lives here: /usr/share/texlive/texmf-dist/scripts/latexindent/
-      Thu Oct  7 16:09:44 2021
+      Thu Oct  7 18:35:27 2021
       Filename: capitolo-Controllo.tex
 INFO: Processing switches:
       -w|--overwrite: Overwrite mode active, will make a back up of capitolo-Controllo.tex first
@@ -13,8 +13,9 @@ INFO: YAML settings read: indentconfig.yaml or .indentconfig.yaml
       Alternatively, you can use the hidden file .indentconfig.yaml as: /home/alfy/.indentconfig.yaml
 INFO: Backup procedure (-w flag active):
       ./capitolo-Controllo.bak0 already exists, incrementing by 1... (see maxNumberOfBackUps and onlyOneBackUp)
-      copying capitolo-Controllo.tex to ./capitolo-Controllo.bak1
-      Backup file: ./capitolo-Controllo.bak1
+      ./capitolo-Controllo.bak1 already exists, incrementing by 1... (see maxNumberOfBackUps and onlyOneBackUp)
+      copying capitolo-Controllo.tex to ./capitolo-Controllo.bak2
+      Backup file: ./capitolo-Controllo.bak2
       capitolo-Controllo.tex will be overwritten after indentation
 INFO: Phase 1: searching for objects
 INFO: Phase 2: finding surrounding indentation

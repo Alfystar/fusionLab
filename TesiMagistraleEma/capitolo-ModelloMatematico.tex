@@ -57,7 +57,7 @@ Prima di procedere con il calcolo del controllore per i nostri scopi, è bene ri
 \begin{teorema}[Teorema del valore finale \label{th:valFinale}]
 	Se una funzione reale $ f  $ ha trasformata razionale $ F(s) $ con grado del denominatore maggiore del grado del numeratore e \underline{radici del denominatore (\textbf{poli}) nell’origine e o a parte reale negativa},\\
 	allora:
-	\begin{empheq}[box=\mathResult]{equation} \label{eq:valIniziale}
+	\begin{empheq}[box=\mathResult]{equation} \label{eq:valFinale}
 		\lim\limits_{t \rightarrowtail \infty} f(t) = \lim\limits_{s \rightarrowtail 0} s \cdot F(s)
 	\end{empheq}
 \end{teorema}
@@ -309,7 +309,7 @@ Al contrario, superata questa prima fase, il resto della dinamica è fondamental
 
 \newpage
 
-\section{Conclusioni per il design Avanzato}
+\section{Conclusioni per il design Avanzato} \label{sec:designControlloreConclusioni}
 In conclusione possiamo dire che il controllore "\textit{PID-style}" definito nell'equazione \ref{eq:controllerDesign} permette di ottenere gli obiettivi di controllo prefissati, e i suoi coefficienti hanno un effetto sulle performance ottenibili.\\
 La loro variazione ha il seguente effetto qualitativo:
 \begin{description}

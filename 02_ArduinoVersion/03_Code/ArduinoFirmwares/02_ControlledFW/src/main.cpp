@@ -37,7 +37,7 @@ packLinux2Ard pRead;
 packArd2Linux pWrite;
 struct setUpPack pMean;
 
-doubleIntCTRL Ctrl = doubleIntCTRL();
+iiCTRL Ctrl = iiCTRL();
 
 void serialExe(packLinux2Ard *p) {
   packArd2Linux send;

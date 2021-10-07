@@ -75,37 +75,38 @@
 \contentsline {section}{\numberline {4.5}Conclusioni per il design Avanzato}{66}{section.4.5}%
 \contentsline {chapter}{\numberline {5}Sviluppo Controllo reale}{67}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Discretizzazione Zero-Order Hold (Z.O.H.)}{68}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Codifica del controllore}{69}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Tuning delle costanti}{69}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Esperimenti}{69}{section.5.4}%
-\contentsline {chapter}{\numberline {6}Conclusioni e sviluppi futuri}{70}{chapter.6}%
-\contentsline {chapter}{Appendice A - Codice Arduino}{71}{chapter*.61}%
-\contentsline {section}{\numberline {7.1}Set-up Registri}{71}{section.7.1}%
-\contentsline {subsection}{\numberline {7.1.1}Tic Timer}{71}{subsection.7.1.1}%
-\contentsline {subsection}{\numberline {7.1.2}Frequenza PWM}{71}{subsection.7.1.2}%
-\contentsline {subsubsection}{Offset Calculation}{72}{section*.62}%
-\contentsline {section}{\numberline {7.2}Generatore di Segnale}{73}{section.7.2}%
-\contentsline {subsection}{\numberline {7.2.1}Segnali Base}{73}{subsection.7.2.1}%
-\contentsline {subsubsection}{Rampa}{73}{section*.63}%
-\contentsline {subsection}{\numberline {7.2.2}Segnali Composti}{74}{subsection.7.2.2}%
-\contentsline {subsubsection}{Onda Triangloare}{74}{section*.64}%
-\contentsline {subsubsection}{Onda Trapezoidale (RapidShot)}{74}{section*.65}%
-\contentsline {section}{\numberline {7.3}Codici Controllore}{75}{section.7.3}%
-\contentsline {subsubsection}{Setup dell'esperimento}{75}{section*.66}%
-\contentsline {subsubsection}{Loop di Controllo}{75}{section*.67}%
-\contentsline {chapter}{Appendice B - Codice EMP}{76}{chapter*.68}%
-\contentsline {section}{\numberline {8.4}Pacchetti in EMP}{76}{section.8.4}%
-\contentsline {subsection}{\numberline {8.4.1}Definizione di 2 Pacchetti}{76}{subsection.8.4.1}%
-\contentsline {subsection}{\numberline {8.4.2}Pacchetti Multipli}{77}{subsection.8.4.2}%
-\contentsline {chapter}{Appendice C - Matlab Post Elaboration}{78}{chapter*.69}%
-\contentsline {section}{\numberline {9.5}Importazione dei Dati}{78}{section.9.5}%
-\contentsline {subsection}{\numberline {9.5.1}Parsing Tabelle}{78}{subsection.9.5.1}%
-\contentsline {subsection}{\numberline {9.5.2}Conversione dei Dati}{79}{subsection.9.5.2}%
-\contentsline {section}{\numberline {9.6}Stima Parametri}{80}{section.9.6}%
-\contentsline {subsection}{\numberline {9.6.1}Stima parametri automatica}{80}{subsection.9.6.1}%
-\contentsline {subsection}{\numberline {9.6.2}Stima parametri manuale}{80}{subsection.9.6.2}%
-\contentsline {subsection}{\numberline {9.6.3}Plot dell'esperimento}{81}{subsection.9.6.3}%
-\contentsline {chapter}{Elenco delle figure}{83}{chapter*.70}%
-\contentsline {chapter}{Elenco delle tabelle}{84}{chapter*.71}%
-\contentsline {chapter}{Elenco dei codici}{85}{chapter*.72}%
-\contentsline {chapter}{Bibliografia}{87}{chapter*.73}%
+\contentsline {section}{\numberline {5.2}Codifica del controllore}{70}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Tuning delle costanti}{70}{section.5.3}%
+\contentsline {section}{\numberline {5.4}Esperimenti}{70}{section.5.4}%
+\contentsline {chapter}{\numberline {6}Conclusioni e sviluppi futuri}{71}{chapter.6}%
+\contentsline {chapter}{Appendice A - Codice Arduino}{72}{chapter*.61}%
+\contentsline {section}{\numberline {7.1}Set-up Registri}{72}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}Tic Timer}{72}{subsection.7.1.1}%
+\contentsline {subsection}{\numberline {7.1.2}Frequenza PWM}{72}{subsection.7.1.2}%
+\contentsline {subsubsection}{Offset Calculation}{73}{section*.62}%
+\contentsline {section}{\numberline {7.2}Generatore di Segnale}{74}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Segnali Base}{74}{subsection.7.2.1}%
+\contentsline {subsubsection}{Rampa}{74}{section*.63}%
+\contentsline {subsection}{\numberline {7.2.2}Segnali Composti}{75}{subsection.7.2.2}%
+\contentsline {subsubsection}{Onda Triangloare}{75}{section*.64}%
+\contentsline {subsubsection}{Onda Trapezoidale (RapidShot)}{75}{section*.65}%
+\contentsline {section}{\numberline {7.3}Codici Controllore}{76}{section.7.3}%
+\contentsline {subsubsection}{Setup dell'esperimento}{76}{section*.66}%
+\contentsline {subsubsection}{Loop di Controllo}{76}{section*.67}%
+\contentsline {subsection}{\numberline {7.3.1}Classe Controllore}{77}{subsection.7.3.1}%
+\contentsline {chapter}{Appendice B - Codice EMP}{79}{chapter*.68}%
+\contentsline {section}{\numberline {8.4}Pacchetti in EMP}{79}{section.8.4}%
+\contentsline {subsection}{\numberline {8.4.1}Definizione di 2 Pacchetti}{79}{subsection.8.4.1}%
+\contentsline {subsection}{\numberline {8.4.2}Pacchetti Multipli}{80}{subsection.8.4.2}%
+\contentsline {chapter}{Appendice C - Matlab Post Elaboration}{81}{chapter*.69}%
+\contentsline {section}{\numberline {9.5}Importazione dei Dati}{81}{section.9.5}%
+\contentsline {subsection}{\numberline {9.5.1}Parsing Tabelle}{81}{subsection.9.5.1}%
+\contentsline {subsection}{\numberline {9.5.2}Conversione dei Dati}{82}{subsection.9.5.2}%
+\contentsline {section}{\numberline {9.6}Stima Parametri}{83}{section.9.6}%
+\contentsline {subsection}{\numberline {9.6.1}Stima parametri automatica}{83}{subsection.9.6.1}%
+\contentsline {subsection}{\numberline {9.6.2}Stima parametri manuale}{83}{subsection.9.6.2}%
+\contentsline {subsection}{\numberline {9.6.3}Plot dell'esperimento}{84}{subsection.9.6.3}%
+\contentsline {chapter}{Elenco delle figure}{86}{chapter*.70}%
+\contentsline {chapter}{Elenco delle tabelle}{87}{chapter*.71}%
+\contentsline {chapter}{Elenco dei codici}{89}{chapter*.72}%
+\contentsline {chapter}{Bibliografia}{91}{chapter*.73}%

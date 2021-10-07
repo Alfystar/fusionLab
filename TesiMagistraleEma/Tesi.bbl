@@ -445,5 +445,31 @@
     \endverb
     \field{year}{27 Jun 2012}
   \endentry
+
+  \entry{FormeCanoniche}{inproceedings}{}
+    \name{author}{1}{}{%
+      {{hash=ZR}{%
+         family={Zanasi},
+         familyi={Z\bibinitperiod},
+         given={Roberto},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {Università di Modena e Reggio Emilia}%
+    }
+    \strng{namehash}{ZR1}
+    \strng{fullhash}{ZR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{Z}
+    \field{sortinithash}{Z}
+    \field{title}{Forme Canoniche Spazio di Stato}
+    \verb{url}
+    \verb http://www.dii.unimo.it/~zanasi/didattica/Teoria_dei_Sistemi/Luc_TDS_
+    \verb 2006_Forme_Canoniche.pdf
+    \endverb
+    \field{year}{4 Gen 2010}
+  \endentry
 \enddatalist
 \endinput

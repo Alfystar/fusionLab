@@ -35,8 +35,9 @@ Il sistema $ H(s) $ durante gli intervalli $ T_s $  evolve avendo una costante i
 Ora che abbiamo descritto qualitativamente cosa avviene usando una discretizzazione ZOH, vediamo ora come diventa $ H_d(s) $ nello spazio di stato in termini matematici. Il procedimento di discretizzazione necessita di passare attraverso lo spazio di stato dei 3 sistemi dinamici che compongono il controllore \ref{eq:controllerDesign} e usando le formule del professore \cite{Discretizzazione}, si ottengono i risultati seguenti risultati:
 \begin{table}[H]
 	\centering
-	\caption[Funzioni di trasferimento nello spazio di Stato, da Tempo Continuo a Tempo Discreto]{Funzioni di trasferimento nello spazio di Stato, da $ \mathbb{T} = \mathbb{R} \rightarrow \mathbb{T} = \mathbb{Z} $}
-	{\LARGE \begin{tabular}[t]{||c||c||c||}
+	\caption[Funzioni di trasferimento nello spazio di Stato, da Tempo Continuo a Tempo Discreto]{Funzioni di trasferimento nello spazio di Stato, da $ \mathbb{T} = \mathbb{R} \rightarrow \mathbb{T} = \mathbb{Z} $}\label{tab:discretizzazione}
+	{\Large
+		\begin{tabular}[t]{||c||c||c||}
 			\hline
 			                                                                          &                                        &                         \\[-3mm]
 			$ C_{I^2}(s) = \frac{K_2}{s^2}$                                           & $ C_I(s) = \frac{K_1}{s}$              & $ C_p(s) = K_p $        \\[2mm]
@@ -79,8 +80,8 @@ Ora che abbiamo descritto qualitativamente cosa avviene usando una discretizzazi
 						1 & 0
 					\end{pmatrix} \cdot x_k
 				\end{matrix}\right. $
-			}                                                                         & {\normalsize
-					$ \left\{\begin{matrix}
+			}                                                                         & 
+		{\normalsize $ \left\{\begin{matrix}
 							x^+ = & x_k & + K_1 T_s \cdot u_k \\
 							y_k = & x_k
 						\end{matrix}\right.$
@@ -89,22 +90,30 @@ Ora che abbiamo descritto qualitativamente cosa avviene usando una discretizzazi
 			$\left\{\begin{matrix}
 					y_k        = K_p \cdot u_k
 				\end{matrix}\right. $                                                                                                  \\[9mm]
-
 			                                                                          &                                        &                         \\[-3mm]
-			$ C_{I^2}(z)|_{T_s} = K_2 \cdot \frac{T_s}{2} \cdot \frac{z+1}{(z -1)^2}$ & $ C_I(z)|_{T_s} = \frac{K_1 T_s}{z-1}$ & $ C_p(z)|_{T_s} = K_p $ \\[2mm]
+$ C_{I^2}(z)|_{T_s} = K_2 \cdot \frac{T_s}{2} \cdot \frac{z+1}{(z -1)^2}$ & $ C_I(z)|_{T_s} = \frac{K_1 T_s}{z-1}$ & $ C_p(z)|_{T_s} = K_p $ \\[2mm]
+
 			\hline
-		\end{tabular}}
-\end{table}
+		\end{tabular}
+	}%\Large
+\end{table}\vspace{-3mm}
 \noindent
-I calcoli della trasformata Zeta, sono presenti solo per completezza e sono stati ottenuti usando la classica formula:
-{\large \begin{center}
-	$ G(z) = C_d \left(z I - A_d\right)^{-1} B_d + D_d $
+Si può notare che in tutti e 3 i sistemi si è scelta una realizzazione della funzione di trasferimento nello Spazio di Stato tempo continuo in \textit{Forma Compagna di Osservabilità} (\cite{FormeCanoniche}).\\
+Questa scelta non è stata casuale e ha lo scopo di semplificare in futuro la codifica per un sistema di controllo \textbf{Switching nei Coefficienti}, volto a migliorarne ulteriormente le prestazioni, senza dover scalare lo stato in base al cambio dei coefficienti.\\
+Questa comoda proprietà è dovuta alla struttura della matrice $ C $, la quale, per variazioni \textbf{istantanee} dei coefficienti $ K_2,K_1,K_p$, non propaga gli effetti sull'uscita $ y(t) $, l'effetto della variazione arriverà in un secondo momento grazie all'integrazione dello stato, che ovviamente evolverà diversamente da prima a causa delle variazioni dei coefficienti. Per avere un idea qualitativa degli effetti dei coefficienti sul sistema complessivo, rifarsi alla sezione "\nameref{sec:designControlloreConclusioni}".\\
+I calcoli della trasformata Zeta, sono presenti solo per completezza e sono stati ottenuti usando la classica formula:\vspace{-5mm}
+\begin{center}
+{\Large 		$ G(z) = C_d \left(z I - A_d\right)^{-1} B_d + D_d $}
 \end{center}
-}
-%lst:controlLoop
+\noindent
+Per i nostri scopi noi siamo interessati alle matrici $ A_d,B_d,C_d,D_d $ della conversione, così da implementare esattamente la discretizzazione di ordine Zero del sistema dinamico.\\
+
 
 \section{Codifica del controllore}
-
-\section{Tuning delle costanti}
+La codifica del controllore \ref{eq:controllerDesign} avviene attraverso le matrici $ A_d,B_d,C_d,D_d $ riportate in tabella \ref{tab:discretizzazione}, con queste matrici è stato costruito la classe di controllo \verb|iiCTRL| riportata in appendice nel codice del controllore (\nameref{lst:controlClassH} e \nameref{lst:controlClassCpp}).\\
+La classe viene chiamata all'interno del \nameref{lst:controlLoop} ogni istante di campionamento, e permette la modifica a richiesta del riferimento da inseguire.\\
+Al suo interno ha già la logica di \textit{Safe-Shutdown} da attivare quando il controllo ha raggiunto la saturazione per un tempo superiore ai 200ms, risulta infatti rischioso tenere connesso il trasformatore, poiché le correnti che scorrono sono dell'ordine dei 10A, e in ogni caso raggiungere gli obiettivi di controllo necessita di un rampa di corrente sul primario, che non si può ottenere se si è già saturato.\\
+Questo contatore viene ripristinato a 0 all'arrivo di un nuovo riferimento da inseguire, causando di fatto il ripristino dell'esperimento.\\
 
 \section{Esperimenti}
+

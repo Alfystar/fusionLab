@@ -65,19 +65,20 @@
 \BOOKMARK [2][-]{subsection.7.2.1}{Segnali Base}{section.7.2}% 65
 \BOOKMARK [2][-]{subsection.7.2.2}{Segnali Composti}{section.7.2}% 66
 \BOOKMARK [1][-]{section.7.3}{Codici Controllore}{chapter*.61}% 67
-\BOOKMARK [0][-]{chapter*.68}{Appendice B - Codice EMP}{}% 68
-\BOOKMARK [1][-]{section.8.4}{Pacchetti in EMP}{chapter*.68}% 69
-\BOOKMARK [2][-]{subsection.8.4.1}{Definizione di 2 Pacchetti}{section.8.4}% 70
-\BOOKMARK [2][-]{subsection.8.4.2}{Pacchetti Multipli}{section.8.4}% 71
-\BOOKMARK [0][-]{chapter*.69}{Appendice C - Matlab Post Elaboration}{}% 72
-\BOOKMARK [1][-]{section.9.5}{Importazione dei Dati}{chapter*.69}% 73
-\BOOKMARK [2][-]{subsection.9.5.1}{Parsing Tabelle}{section.9.5}% 74
-\BOOKMARK [2][-]{subsection.9.5.2}{Conversione dei Dati}{section.9.5}% 75
-\BOOKMARK [1][-]{section.9.6}{Stima Parametri}{chapter*.69}% 76
-\BOOKMARK [2][-]{subsection.9.6.1}{Stima parametri automatica}{section.9.6}% 77
-\BOOKMARK [2][-]{subsection.9.6.2}{Stima parametri manuale}{section.9.6}% 78
-\BOOKMARK [2][-]{subsection.9.6.3}{Plot dell'esperimento}{section.9.6}% 79
-\BOOKMARK [0][-]{chapter*.70}{Elenco delle figure}{}% 80
-\BOOKMARK [0][-]{chapter*.71}{Elenco delle tabelle}{}% 81
-\BOOKMARK [0][-]{chapter*.72}{Elenco dei codici}{}% 82
-\BOOKMARK [0][-]{chapter*.73}{Bibliografia}{}% 83
+\BOOKMARK [2][-]{subsection.7.3.1}{Classe Controllore}{section.7.3}% 68
+\BOOKMARK [0][-]{chapter*.68}{Appendice B - Codice EMP}{}% 69
+\BOOKMARK [1][-]{section.8.4}{Pacchetti in EMP}{chapter*.68}% 70
+\BOOKMARK [2][-]{subsection.8.4.1}{Definizione di 2 Pacchetti}{section.8.4}% 71
+\BOOKMARK [2][-]{subsection.8.4.2}{Pacchetti Multipli}{section.8.4}% 72
+\BOOKMARK [0][-]{chapter*.69}{Appendice C - Matlab Post Elaboration}{}% 73
+\BOOKMARK [1][-]{section.9.5}{Importazione dei Dati}{chapter*.69}% 74
+\BOOKMARK [2][-]{subsection.9.5.1}{Parsing Tabelle}{section.9.5}% 75
+\BOOKMARK [2][-]{subsection.9.5.2}{Conversione dei Dati}{section.9.5}% 76
+\BOOKMARK [1][-]{section.9.6}{Stima Parametri}{chapter*.69}% 77
+\BOOKMARK [2][-]{subsection.9.6.1}{Stima parametri automatica}{section.9.6}% 78
+\BOOKMARK [2][-]{subsection.9.6.2}{Stima parametri manuale}{section.9.6}% 79
+\BOOKMARK [2][-]{subsection.9.6.3}{Plot dell'esperimento}{section.9.6}% 80
+\BOOKMARK [0][-]{chapter*.70}{Elenco delle figure}{}% 81
+\BOOKMARK [0][-]{chapter*.71}{Elenco delle tabelle}{}% 82
+\BOOKMARK [0][-]{chapter*.72}{Elenco dei codici}{}% 83
+\BOOKMARK [0][-]{chapter*.73}{Bibliografia}{}% 84

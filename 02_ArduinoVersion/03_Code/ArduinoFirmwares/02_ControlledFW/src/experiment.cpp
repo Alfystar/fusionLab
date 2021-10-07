@@ -137,42 +137,37 @@ int rapidShotEps(uint64_t t) {
   return pwmRapidShot;
 }
 
-doubleIntCTRL::doubleIntCTRL() : doubleIntCTRL(0, 0.8, 0.05) {}
-doubleIntCTRL::doubleIntCTRL(float kp, float k1, float k2) {
-  this->kp = kp;
-  this->k1 = k1;
-  this->k2 = k2;
+iiCTRL::iiCTRL() : iiCTRL(0.05, 0.8, 0) {}
+iiCTRL::iiCTRL(float k2, float k1, float kp) {
+  changeK(k2, k1, kp);
   setNewRef(0, 0);
 }
-void doubleIntCTRL::setNewRef(uint64_t ticSet, int v2AdcNewRef) {
+void iiCTRL::setNewRef(uint64_t ticSet, int v2AdcNewRef) {
   V2currRef = v2AdcNewRef;
-//  tcStart = ticSet;
-//  tcEnd = ticConvert(1000) + ticSet;
   ticSatCount = 0;
   stateReset(0);
 }
 
-int doubleIntCTRL::ctrlStep(uint64_t t, int v2Adc) {
-
-  if( ticSatCount >= ticConvert(200))
+int iiCTRL::ctrlStep(uint64_t t, int v2Adc) {
+  //Saturation Check
+  if (ticSatCount >= ticConvert(200))
     return 0;
-
-  //La finestra temporale crea problemi
-//  if (t < tcStart || t > tcEnd)
-//    return 0;
-
+  //Error Calc (ADC value), u_k per i sistema dinamico
   lastErr = (V2currRef - v2Adc);
-
+  // Caso speciale: Riferimento a 0 => spengo tutto
   if (V2currRef == 0)
     return 0;
-  digitalWrite(13, !digitalRead(13));
+  // #### Space State Update ####
+  // State update Cii(s)
+  xCii1 = xCii1 + Ts * xCii2 + sq(Ts) / 2 * k2 * lastErr;
+  xCii2 = xCii2 + Ts * k2 * lastErr;
+  // State update Ci(s)
+  xCi1 = 0;
+  float yCp = kp * lastErr;
 
-
-  dIntegral2 = dIntegral2 + dIntegral1;
-  dIntegral1 = dIntegral1 + lastErr;
-
-  lastCtrl = (int)(((float)lastErr * kp + k1 * (float)dIntegral1 + k2 * (float)dIntegral2));
-  lastCtrl = constrain(lastCtrl, -1000, 1000);
+  // #### Output calc ####
+  lastCtrl = xCii1 + xCi1 + yCp; // y_k
+  lastCtrl = constrain(lastCtrl, -1000, 1000); // Limitazione +-1000
   if (abs(lastCtrl) == 1000) {
     ticSatCount++;
     stateReset(lastCtrl);
@@ -180,9 +175,22 @@ int doubleIntCTRL::ctrlStep(uint64_t t, int v2Adc) {
     ticSatCount = 0;
   return lastCtrl;
 }
-void doubleIntCTRL::stateReset(int setOutput) {
-  float rap = (float)dIntegral2 / (float)dIntegral1;
-  dIntegral1 = (int)((float)setOutput / (rap * k2 + k1));
-  dIntegral2 = (int)(rap * (float)dIntegral1);
-
+void iiCTRL::stateReset(int setOutput) {
+  // Idea Stati proporzionali
+  //  float rap = (float)dIntegral2 / (float)dIntegral1;
+  //  dIntegral1 = (int)((float)setOutput / (rap * k2 + k1));
+  //  dIntegral2 = (int)(rap * (float)dIntegral1);
+  // Riassegno tutto l'output su Cii(s)
+  float rap = xCii1 / xCi1;
+  xCii1 = setOutput;
+  xCii2 = 0;
+  xCi1 = 0;
 }
+void iiCTRL::changeK(float k2, float k1, float kp) {
+  changeK2(k2);
+  changeK1(k1);
+  changeKp(kp);
+}
+void iiCTRL::changeK2(float k2) { this->k2 = k2; }
+void iiCTRL::changeK1(float k1) { this->k1 = k1; }
+void iiCTRL::changeKp(float kp) { this->kp = kp; }

@@ -8,7 +8,10 @@ experiment("experimentControlled/01-RandomCapture.txt",[2900,4800],[-11,11])
 experiment("experimentControlled/02-Bi-FrontCapture.txt",[450,1200],[-11,11])
 experiment("experimentControlled/03-PosNeg-capture.txt",[450,1150],[-11,11])
 
-
+% TODO: Usando imporExperimentOriginal, modificare importExperiment creato
+% per la simulazione (per avere le cose allineate)
+% E modificare PlotTable per usare lo stesso stile di visualizzazione delle
+% simulazioni
 
 %% Functions block
 
