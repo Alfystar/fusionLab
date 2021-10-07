@@ -2,19 +2,19 @@ clear variables
 close all
 
 % Esperimenti Tesi
-% experiment("experiment/T1-Triangolare.txt", 900)
-% experiment("experiment/T2-RapidShot.txt", [200, 1200])
-% experiment("experiment/T3-ControllBackup-100Ohm.txt", [90, 260],[-6,12])
+experiment("experiment/T1-Triangolare.txt", 900)
+experiment("experiment/T2-RapidShot.txt", [200, 1200])
+experiment("experiment/T3-ControllBackup-100Ohm.txt", [90, 260],[-6,12])
 
 % General Experiment Block
-experiment("experiment/capture.txt", [0, inf],[-12,12])
-% experiment("experiment/PerfTest-K-Test0.txt", [90, 260],[-12,12])
-% experiment("experiment/PerfTest-K-Test1.txt", [90, 260],[-12,12])
-% experiment("experiment/PerfTest-K-Test2.txt", [90, 260],[-12,12])
-% experiment("experiment/PerfTest-K-Test3.txt", [90, 260],[-12,12])
+% experiment("experiment/capture.txt", [0, inf],[-12,12])
+experiment("experiment/PerfTest-K-Test0.txt", [90, 260],[-12,12])
+experiment("experiment/PerfTest-K-Test1.txt", [90, 260],[-12,12])
+experiment("experiment/PerfTest-K-Test2.txt", [90, 260],[-12,12])
+experiment("experiment/PerfTest-K-Test3.txt", [90, 260],[-12,12])
 
 
-% experiment("experiment/E01-EstimateShot.txt", [0, inf],[-12,12])
+experiment("experiment/E01-EstimateShot.txt", [0, inf],[-12,12])
 
 % #############################
 % #      Functions Block      #

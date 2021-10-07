@@ -76,8 +76,7 @@
 \contentsline {chapter}{\numberline {5}Sviluppo Controllo reale}{67}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Discretizzazione Zero-Order Hold (Z.O.H.)}{68}{section.5.1}%
 \contentsline {section}{\numberline {5.2}Codifica del controllore}{70}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Tuning delle costanti}{70}{section.5.3}%
-\contentsline {section}{\numberline {5.4}Esperimenti}{70}{section.5.4}%
+\contentsline {section}{\numberline {5.3}Esperimenti}{70}{section.5.3}%
 \contentsline {chapter}{\numberline {6}Conclusioni e sviluppi futuri}{71}{chapter.6}%
 \contentsline {chapter}{Appendice A - Codice Arduino}{72}{chapter*.61}%
 \contentsline {section}{\numberline {7.1}Set-up Registri}{72}{section.7.1}%

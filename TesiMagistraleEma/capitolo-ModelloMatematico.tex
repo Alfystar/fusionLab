@@ -240,7 +240,7 @@ Usando il controllo base e senza saturazione, abbiamo una risposta che conferma 
 \begin{figure}[H]
 	\centering
 	\caption[Modelli simulati su Simulink]{Modelli simulati su Simulink}
-	\includegraphics[width=1\textwidth]{ModelloMatematico/Simulation-cBaseSim.png}
+	\includegraphics[width=1\textwidth]{ModelloMatematico/Simulation-cBaseSim.pdf}
 \end{figure}
 
 \noindent
@@ -256,7 +256,7 @@ Ricordiamo nuovamente che il {\color{red}\textbf{\underline{segnale di errore è
 \begin{figure}[H]
 	\centering
 	\caption[Controllo Avanzato $ K_p $=0 $ K_1 $=0 $ K_2 $=100] {Controllo Avanzato $ K_p $=0 $ K_1 $=0 $ K_2 $=100}
-	\includegraphics[width=1\textwidth]{ModelloMatematico/Simulation-cSim-Kp=0-K1=0-K2=100.pdf}
+	\includegraphics[width=1\textwidth]{ModelloMatematico/Simulation-cSim-K_p=0-K_1=0-K_2=100.pdf}
 \end{figure}
 \noindent
 L'aumento del coefficiente per il doppio integratore ha l'effetto di creare risposte più tempestive, ma da atto a dei fenomeni oscillatori smorzati
@@ -266,7 +266,7 @@ In questa seconda simulazione si è aggiunto un al controllore il termine integr
 \begin{figure}[H]
 	\centering
 	\caption[Controllo Avanzato $ K_p $=0 $ K_1 $=10 $ K_2 $=100]{Controllo Avanzato $ K_p $=0 $ K_1 $=10 $ K_2 $=100}
-	\includegraphics[width=1\textwidth]{ModelloMatematico/Simulation-cSim-Kp=0-K1=10-K2=100.pdf}
+	\includegraphics[width=1\textwidth]{ModelloMatematico/Simulation-cSim-K_p=0-K_1=10-K_2=100.pdf}
 \end{figure}
 \noindent
 L'effetto del termine integrale è quindi smorzare il transitorio oscillatorio, per poi inseguire il riferimento con un andamento esponenziale.\\
@@ -277,7 +277,7 @@ Abbiamo adesso aumentato i coefficienti del doppio e singolo integratore per ved
 \begin{figure}[H]
 	\centering
 	\caption[Controllo Avanzato $ K_p $=0 $ K_1 $=100 $ K_2 $=500]{Controllo Avanzato $ K_p $=0 $ K_1 $=100 $ K_2 $=500}
-	\includegraphics[width=1\textwidth]{ModelloMatematico/Simulation-cSim-Kp=0-K1=100-K2=500.pdf}
+	\includegraphics[width=1\textwidth]{ModelloMatematico/Simulation-cSim-K_p=0-K_1=100-K_2=500.pdf}
 \end{figure}
 \noindent
 L'effetto è un ulteriore miglioramento sul \underline{Tempo di assestamento} e una una discesa più pronunciata dell'errore verso lo 0, ma abbiamo pagato questo incremento prestazionale con il ritorno degli effetti oscillatori smorzati, ed esse sono anche a frequenze maggiori, non proprio desiderabile. 
@@ -289,7 +289,7 @@ Aggiungiamo quindi al caso precedente un termine proporzionale all'errore, così
 \begin{figure}[H]
 	\centering
 	\caption[Controllo Avanzato $ K_p $=0.2 $ K_1 $=100 $ K_2 $=500]{Controllo Avanzato $ K_p $=0.2 $ K_1 $=100 $ K_2 $=500}
-	\includegraphics[width=1\textwidth]{ModelloMatematico/Simulation-cSim-Kp=0.2-K1=100-K2=500}
+	\includegraphics[width=1\textwidth]{ModelloMatematico/Simulation-cSim-K_p=0.2-K_1=100-K_2=500}
 \end{figure}
 \noindent
 Essendo $ K_p $ istantaneo con la variazione del riferimento, abbiamo che l'inseguimento di $ V_{2_{ref}} $ inizia prima, riducendo il margine di fase dovuto al caricamento degli integratori, ciò riduce il fenomeno di wind-up presente precedentemente e causa delle oscillazioni attorno al riferimento, e permette di tornare al comportamento del 2° esperimento, con performance nettamente superiori.
@@ -301,7 +301,7 @@ In quest'ultimo esperimento analizziamo l'effetto dell'aumento del termine propo
 \begin{figure}[H]
 	\centering
 	\caption[Controllo Avanzato $ K_p $=0.8 $ K_1 $=100 $ K_2 $=500]{Controllo Avanzato $ K_p $=0.8 $ K_1 $=100 $ K_2 $=500}
-	\includegraphics[width=1\textwidth]{ModelloMatematico/Simulation-cSim-Kp=0.8-K1=100-K2=500.pdf}
+	\includegraphics[width=1\textwidth]{ModelloMatematico/Simulation-cSim-K_p=0.8-K_1=100-K_2=500.pdf}
 \end{figure}
 \noindent
 Rispetto al caso precedente, l'errore iniziale si è molto ridotto, passando da un fuori scala in entrambi i segni, a un errore di -0.019 di picco negativo (il picco positivo è per definizione 0.5 essendo il riferimento dato come gradino).\\
