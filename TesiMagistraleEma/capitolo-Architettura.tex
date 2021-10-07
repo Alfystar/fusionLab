@@ -10,7 +10,7 @@
 \section{Architettura ad alto livello}\label{sec:architettura}
 Il progetto finale ha come obiettivo la realizzazione di un architettura di controllo per le bobine poloidali presenti nei reattori tokamak.
 
-\begin{figure}[h] \label{fig:archietturaControllo}
+\begin{figure}[H] \label{fig:archietturaControllo}
 	\centering
 	\caption[Schema finale dell'archiettettura di controllo]{Architettura di controllo}
 	\includegraphics[width=1\textwidth]{Architettura/SystemArchitetture.png}
@@ -19,7 +19,7 @@ Il progetto finale ha come obiettivo la realizzazione di un architettura di cont
 \noindent
 Lo schema proposto realizza l'obiettivo per una singola bobina, il progetto finale prevederà la ripetizione in serie del medesimo schema per il numero di bobine necessarie.\\
 Dallo schema risulta evidente che tutti i componenti visti nel capitolo "\nameref{cap:Hardware}" si relazionano con lo stesso \microControllore: l'\ArduinoUno.
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\caption[Scheda Arduino Uno]{Scheda Arduino Uno}
 	\includegraphics[width=0.6\textwidth]{Architettura/ArduinoUno.png}
@@ -36,7 +36,7 @@ Nella sua forma finale, il progetto prevede la riproduzione in serie di questo s
 \section*{EMP - Libreria di Comunicazione Seriale\\Embedded Message Pack }\label{sec:EMP}
 \addcontentsline{toc}{section}{\protect\numberline{\thesection} EMP - Libreria di Comunicazione Seriale}
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\includegraphics[width=1\textwidth]{EMP/EMP-Logo-Background.png}
 \end{figure}
@@ -54,7 +54,7 @@ Il raggiungimento dei suoi obiettivi, si sposa con la possibilità di supportare
 Il protocollo di comunicazione che permette l’invio di \textbf{pacchetti diversi} e \textbf{senza fasi di negoziazione} alla base della libreria è \textbf{COBS}(\cite{COBS}).\\
 Si tratta di un algoritmo per la codifica di byte, progettato per essere al tempo stesso efficiente e non ambiguo, che permette la definizione di \textit{data-pack frame} \textbf{Auto-delimiti} .
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\caption[Esempio di COBS]{Esempio di COBS}
 	\includegraphics[width=1\textwidth]{EMP/Cobs_encoding_with_example.png}
@@ -72,7 +72,7 @@ L'algoritmo di codifica consiste nel:
 	\item Sostituire tutti gli \zeroByte con la distanza dal successivo \zeroByte nella stringa, ignorando l'ultimo
 \end{enumerate}
 
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\caption[Esempio di COBS con distanza]{Esempio di COBS con distanza}
 	\includegraphics[width=1\textwidth]{EMP/Cobs_encoding_with_example-dist.png}
@@ -134,7 +134,7 @@ L’aver usato COBS come sistema di codifica per la trasmissione, garantisce che
 \newpage
 \subsection{Struttura del codice}
 Lo sviluppo del codice è qui riassunto nel \textbf{Class Diagram} fatto in UML, del codice:\\
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\caption[Class Diagram UML di EMP]{Class Diagram UML}
 	\includegraphics[width=1\textwidth]{EMP/EMP-Hierarchy.png}
@@ -165,7 +165,7 @@ Il riempimento corretto dei dati nel pacchetto, il calcolo della size utile e il
 \newpage
 \subsection{Code Flow}\label{sub:codeFlow}
 Vediamo ora come la libreria si frappone tra 2 device che vogliono comunicare mediante questo sequence diagram:\\
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\caption[Sequence Diagram UML di EMP]{Sequence Diagram UML}
 	\includegraphics[width=1\textwidth]{EMP/Message Pack Sending Flow.png}
@@ -177,7 +177,7 @@ Come si può osservare, eccetto il riempire i dati, inviarli e attendere che arr
 
 \subsection{Test di Codifica/Decodifica su ogni Device}
 La serie di passi descritta nel \nameref{sub:codeFlow} è stato testato su i vari dispositivi per cui la libreria è stata sviluppata usando il seguente schema:
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\caption[EMP Benchmark Testing Flow]{Testing Flow}
 	\includegraphics[width=0.8\textwidth]{EMP/TestFlow.png}
@@ -193,7 +193,7 @@ Come descritto in figura \ref{fig:archietturaControllo}, il sistema controlla in
 Per comunicare i Sample (e ricevere le Reference) è stata infatti sviluppata \citefield{EMP}{title}(Sezione \ref{sec:EMP}).\\
 Come visto nella sezione "\nameref{sub:parametriMisurati}", il circuito di misura è quello riportato in figura \ref{fig:circuitoDiMisura}.\\
 E, come per il \nameref{CurrentSense}, in realtà anche il voltmetro $V_2$ possiede un offset a $\frac{V_{cc}}{2}$, aggiunto per poter misurare tanto le correnti positive, quanto quelle negative.
-\begin{figure}[h]
+\begin{figure}[H]
 	\centering
 	\caption[Circuito equivalente del Plasma con l'offset delle Misure]{Circuito reale con Misure}
 	\includegraphics[width=1\textwidth]{Trasformatore/PlasmaCircuit-MisureCircuitOffset.png}
@@ -264,7 +264,7 @@ Successivamente la scheda evolve per tic di 0.5ms, dove nel tempo morto resta in
 \subsection{Storage su file delle informazioni}\label{subsec:experimentStorage}
 Le informazioni ricevute dal Companion, vengono salvate all'interno di un file di testo contenente 2 tabelle, disposte una sotto l'altra.\\
 La prima delle 2, tabula i dati del pacchetto \verb|struct setUpPack|, il quale risulta utile per poter interpretare i dati successivamente.
-\begin{table}[h]
+\begin{table}[H]
 	\centering
 	\caption[Salvataggio di "struct setUpPack"]{Salvataggio di "struct setUpPack"}
 	\begin{tabular}[t]{|c|c|c|}
@@ -278,7 +278,7 @@ La prima delle 2, tabula i dati del pacchetto \verb|struct setUpPack|, il quale 
 
 \noindent
 La seconda invece è lo streaming dei dati \verb|raw|, ottenuti dalla scheda:
-\begin{table}[h]
+\begin{table}[H]
 	\centering
 	\caption[Salvataggio di "struct sample" $\forall$ dt]{Salvataggio di "struct sample" $\forall$ dt}
 	\begin{tabular}[t]{|c|c|c|c|}

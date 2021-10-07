@@ -44,4 +44,6 @@
 \contentsline {figure}{\numberline {4.8}{\ignorespaces Controllo Avanzato $ K_p $=0.2 $ K_1 $=100 $ K_2 $=500}}{64}{figure.4.8}%
 \contentsline {figure}{\numberline {4.9}{\ignorespaces Controllo Avanzato $ K_p $=0.8 $ K_1 $=100 $ K_2 $=500}}{65}{figure.4.9}%
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Discretizzazione Zero-Order Hold $ H_d(z) $ del sistema Tempo continuo $ H(s) $}}{68}{figure.5.1}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Effetto sui segnali discretizzati con il metodo Zero-Order Hold}}{68}{figure.5.2}%
 \addvspace {10\p@ }

@@ -69,6 +69,32 @@
     \field{year}{31 May 2019}
   \endentry
 
+  \entry{PerfAndRobust}{inproceedings}{}
+    \name{author}{1}{}{%
+      {{hash=CD}{%
+         family={Carnevale},
+         familyi={C\bibinitperiod},
+         given={Daniele},
+         giveni={D\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {Università di Torvergata}%
+    }
+    \strng{namehash}{CD1}
+    \strng{fullhash}{CD1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{C}
+    \field{sortinithash}{C}
+    \field{title}{Performances and robustness}
+    \verb{url}
+    \verb https://drive.google.com/file/d/15sorq07mvLST4o6OCxF3DakUI8L3cFU_/vie
+    \verb w
+    \endverb
+    \field{year}{19 Oct 2017}
+  \endentry
+
   \entry{CRC8}{report}{}
     \field{labeltitlesource}{title}
     \field{sortinit}{C}
@@ -110,7 +136,7 @@
     \verb 2FCorso+RdO+2015%2FSLIDES+%26+AUDIO%2F13+Diagnostiche+Magnetiche+%28C
     \verb ianfarani%29%2FMagnetic+Diagnostics+2.2+-+Cianfarani.pdf
     \endverb
-    \field{year}{11 apr 2013}
+    \field{year}{11 Apr 2013}
   \endentry
 
   \entry{IBT-2}{manual}{}
@@ -392,6 +418,32 @@
     \list{institution}{1}{%
       {UNIVERSITA' DEGLI STUDI DI NAPOLI, FEDERICO II}%
     }
+  \endentry
+
+  \entry{Discretizzazione}{inproceedings}{}
+    \name{author}{1}{}{%
+      {{hash=ZR}{%
+         family={Zanasi},
+         familyi={Z\bibinitperiod},
+         given={Roberto},
+         giveni={R\bibinitperiod},
+      }}%
+    }
+    \list{organization}{1}{%
+      {Università di Modena e Reggio Emilia}%
+    }
+    \strng{namehash}{ZR1}
+    \strng{fullhash}{ZR1}
+    \field{labelnamesource}{author}
+    \field{labeltitlesource}{title}
+    \field{sortinit}{Z}
+    \field{sortinithash}{Z}
+    \field{title}{Discretizzazione di un sistema tempo continuo}
+    \verb{url}
+    \verb http://www.dii.unimo.it/~zanasi/didattica/Teoria_dei_Sistemi/Luc_TDS_
+    \verb 2006_Discretizzazione_di_un_sistema_continuo.pdf
+    \endverb
+    \field{year}{27 Jun 2012}
   \endentry
 \enddatalist
 \endinput
