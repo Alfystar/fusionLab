@@ -1,6 +1,6 @@
 \BOOKMARK [0][-]{chapter*.2}{Ringraziamenti}{}% 1
 \BOOKMARK [0][-]{chapter*.3}{Introduzione}{}% 2
-\BOOKMARK [1][-]{section*.4}{Fusione Termonucleare}{chapter*.3}% 3
+\BOOKMARK [1][-]{section*.4}{Fusione Termonucleare, di cosa si tratta}{chapter*.3}% 3
 \BOOKMARK [1][-]{section*.5}{Struttura di un Tokamak}{chapter*.3}% 4
 \BOOKMARK [1][-]{section*.6}{Obiettivi della Tesi}{chapter*.3}% 5
 \BOOKMARK [0][-]{chapter.1}{Elementi Costitutivi}{}% 6
@@ -16,22 +16,22 @@
 \BOOKMARK [2][-]{subsection.1.2.2}{Criticit\340}{section.1.2}% 16
 \BOOKMARK [2][-]{subsection.1.2.3}{Funzionamento Interno}{section.1.2}% 17
 \BOOKMARK [2][-]{subsection.1.2.4}{Connessione elettrica}{section.1.2}% 18
-\BOOKMARK [2][-]{subsection.1.2.5}{Misura}{section.1.2}% 19
+\BOOKMARK [2][-]{subsection.1.2.5}{Dalla misura alla corrente}{section.1.2}% 19
 \BOOKMARK [1][-]{section.1.3}{Driver di Corrente - IBT-2}{chapter.1}% 20
 \BOOKMARK [2][-]{subsection.1.3.1}{Schema Elettrico}{section.1.3}% 21
 \BOOKMARK [2][-]{subsection.1.3.2}{Connessione di Controllo}{section.1.3}% 22
 \BOOKMARK [2][-]{subsection.1.3.3}{Benchmark del Driver}{section.1.3}% 23
 \BOOKMARK [0][-]{chapter.2}{Architettura di Sistema}{}% 24
 \BOOKMARK [1][-]{section.2.1}{Architettura ad alto livello}{chapter.2}% 25
-\BOOKMARK [1][-]{section*.38}{ EMP - Libreria di Comunicazione Seriale}{chapter.2}% 26
-\BOOKMARK [1][-]{section*.43}{ Protocollo - COBS}{chapter.2}% 27
-\BOOKMARK [2][-]{subsection.2.1.1}{Metodo di codifica}{section*.43}% 28
-\BOOKMARK [2][-]{subsection.2.1.2}{Caratteristiche chiave}{section*.43}% 29
-\BOOKMARK [2][-]{subsection.2.1.3}{Integrit\340 dei pacchetti}{section*.43}% 30
-\BOOKMARK [2][-]{subsection.2.1.4}{Struttura del codice}{section*.43}% 31
-\BOOKMARK [2][-]{subsection.2.1.5}{Logica di Comunicazione}{section*.43}% 32
-\BOOKMARK [2][-]{subsection.2.1.6}{Code Flow}{section*.43}% 33
-\BOOKMARK [2][-]{subsection.2.1.7}{Test di Codifica/Decodifica su ogni Device}{section*.43}% 34
+\BOOKMARK [1][-]{section*.48}{ EMP - Libreria di Comunicazione Seriale}{chapter.2}% 26
+\BOOKMARK [1][-]{section*.50}{ Protocollo - COBS}{chapter.2}% 27
+\BOOKMARK [2][-]{subsection.2.1.1}{Metodo di codifica}{section*.50}% 28
+\BOOKMARK [2][-]{subsection.2.1.2}{Caratteristiche chiave}{section*.50}% 29
+\BOOKMARK [2][-]{subsection.2.1.3}{Integrit\340 dei pacchetti}{section*.50}% 30
+\BOOKMARK [2][-]{subsection.2.1.4}{Struttura del codice}{section*.50}% 31
+\BOOKMARK [2][-]{subsection.2.1.5}{Logica di Comunicazione}{section*.50}% 32
+\BOOKMARK [2][-]{subsection.2.1.6}{Code Flow}{section*.50}% 33
+\BOOKMARK [2][-]{subsection.2.1.7}{Test di Codifica/Decodifica su ogni Device}{section*.50}% 34
 \BOOKMARK [1][-]{section.2.2}{Online Sampling}{chapter.2}% 35
 \BOOKMARK [2][-]{subsection.2.2.1}{Interconnessione Controllore Companion}{section.2.2}% 36
 \BOOKMARK [2][-]{subsection.2.2.2}{Storage su file delle informazioni}{section.2.2}% 37
@@ -41,7 +41,7 @@
 \BOOKMARK [0][-]{chapter.3}{Stima del modello del sistema}{}% 41
 \BOOKMARK [1][-]{section.3.1}{Metodo di stima automatico}{chapter.3}% 42
 \BOOKMARK [1][-]{section.3.2}{Tuning dei coefficienti}{chapter.3}% 43
-\BOOKMARK [1][-]{section.3.3}{Benchmark}{chapter.3}% 44
+\BOOKMARK [1][-]{section.3.3}{Benchmark della stima}{chapter.3}% 44
 \BOOKMARK [0][-]{chapter.4}{Modello teorico di Controllo}{}% 45
 \BOOKMARK [1][-]{section.4.1}{Obiettivo di controllo}{chapter.4}% 46
 \BOOKMARK [1][-]{section.4.2}{Teorema del valore iniziale e del valore finale}{chapter.4}% 47
@@ -59,28 +59,28 @@
 \BOOKMARK [2][-]{subsection.5.3.2}{Inseguimento Triangolare}{section.5.3}% 59
 \BOOKMARK [2][-]{subsection.5.3.3}{Cambio riferimento in corsa}{section.5.3}% 60
 \BOOKMARK [0][-]{chapter.6}{Conclusioni e sviluppi futuri}{}% 61
-\BOOKMARK [0][-]{chapter*.63}{Appendice A - Codice Arduino}{}% 62
-\BOOKMARK [1][-]{section.7.1}{Set-up Registri}{chapter*.63}% 63
+\BOOKMARK [0][-]{chapter*.70}{Appendice A - Codice Arduino}{}% 62
+\BOOKMARK [1][-]{section.7.1}{Set-up Registri}{chapter*.70}% 63
 \BOOKMARK [2][-]{subsection.7.1.1}{Tic Timer}{section.7.1}% 64
 \BOOKMARK [2][-]{subsection.7.1.2}{Frequenza PWM}{section.7.1}% 65
-\BOOKMARK [1][-]{section.7.2}{Generatore di Segnale}{chapter*.63}% 66
+\BOOKMARK [1][-]{section.7.2}{Generatore di Segnale}{chapter*.70}% 66
 \BOOKMARK [2][-]{subsection.7.2.1}{Segnali Base}{section.7.2}% 67
 \BOOKMARK [2][-]{subsection.7.2.2}{Segnali Composti}{section.7.2}% 68
-\BOOKMARK [1][-]{section.7.3}{Codici Controllore}{chapter*.63}% 69
+\BOOKMARK [1][-]{section.7.3}{Codici Controllore}{chapter*.70}% 69
 \BOOKMARK [2][-]{subsection.7.3.1}{Classe Controllore}{section.7.3}% 70
-\BOOKMARK [0][-]{chapter*.70}{Appendice B - Codice EMP}{}% 71
-\BOOKMARK [1][-]{section.8.4}{Pacchetti in EMP}{chapter*.70}% 72
+\BOOKMARK [0][-]{chapter*.77}{Appendice B - Codice EMP}{}% 71
+\BOOKMARK [1][-]{section.8.4}{Pacchetti in EMP}{chapter*.77}% 72
 \BOOKMARK [2][-]{subsection.8.4.1}{Definizione di 2 Pacchetti}{section.8.4}% 73
 \BOOKMARK [2][-]{subsection.8.4.2}{Pacchetti Multipli}{section.8.4}% 74
-\BOOKMARK [0][-]{chapter*.71}{Appendice C - Matlab Post Elaboration}{}% 75
-\BOOKMARK [1][-]{section.9.5}{Importazione dei Dati}{chapter*.71}% 76
+\BOOKMARK [0][-]{chapter*.78}{Appendice C - Matlab Post Elaboration}{}% 75
+\BOOKMARK [1][-]{section.9.5}{Importazione dei Dati}{chapter*.78}% 76
 \BOOKMARK [2][-]{subsection.9.5.1}{Parsing Tabelle}{section.9.5}% 77
 \BOOKMARK [2][-]{subsection.9.5.2}{Conversione dei Dati}{section.9.5}% 78
-\BOOKMARK [1][-]{section.9.6}{Stima Parametri}{chapter*.71}% 79
+\BOOKMARK [1][-]{section.9.6}{Stima Parametri}{chapter*.78}% 79
 \BOOKMARK [2][-]{subsection.9.6.1}{Stima parametri automatica}{section.9.6}% 80
 \BOOKMARK [2][-]{subsection.9.6.2}{Stima parametri manuale}{section.9.6}% 81
 \BOOKMARK [2][-]{subsection.9.6.3}{Plot dell'esperimento}{section.9.6}% 82
-\BOOKMARK [0][-]{chapter*.72}{Elenco delle figure}{}% 83
-\BOOKMARK [0][-]{chapter*.73}{Elenco delle tabelle}{}% 84
-\BOOKMARK [0][-]{chapter*.74}{Elenco dei codici}{}% 85
-\BOOKMARK [0][-]{chapter*.75}{Bibliografia}{}% 86
+\BOOKMARK [0][-]{chapter*.79}{Elenco delle figure}{}% 83
+\BOOKMARK [0][-]{chapter*.80}{Elenco delle tabelle}{}% 84
+\BOOKMARK [0][-]{chapter*.81}{Elenco dei codici}{}% 85
+\BOOKMARK [0][-]{chapter*.82}{Bibliografia}{}% 86

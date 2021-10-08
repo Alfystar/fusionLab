@@ -8,26 +8,24 @@
 			\item \nameref{CurrentDriver}
 		\end{enumerate}
 	}
-	Verranno analizzate le loro caratteristiche chiavi per mettere in luce il perché della scelta, e si evidenzieranno eventuali problemi che affliggono in componenti, problemi di cui si è tenuto conto nello sviluppo del progetto per poterli annullare. 
+	Essi verranno analizzati al fine di mettere in luce i loro punti di forza, ovvero i motivi che hanno portato alla loro scelta, e si evidenzieranno eventuali problemi che affliggono in componenti, problemi di cui si è tenuto conto nello sviluppo del progetto per poterli annullare e/o compensare. 
 \end{minipage}
 
-%\vspace*{1cm}
 \newpage
 
 \section{Trasformatore, un Modello di Tokamak}\label{TrasformatoreModelloTokamak}
 
-Come visto nell'introduzione, la tesi ha come obiettivo la prototipazione del sistema di controllo per le bobine poloidali presenti in impianti tokamak.\\
-
+Come visto nell'introduzione, la tesi ha come obiettivo la prototipazione del sistema di controllo per le bobine magnetiche presenti in impianti tokamak.
 \begin{figure}[H]
 	\centering
 	\caption[Schema interno di un Tokamak]{Interno Tokamak}
 	\includegraphics[width=1\textwidth]{Trasformatore/tokamak_scheme.jpg}
 \end{figure}
-
 \noindent
-Le bobine (poloidali e toroidali) servono a controllare il plasma presente nel \textit{Vessel} dell'impianto e confinare il Plasma all'interno di un flusso compresso dentro la camera, le alte temperature e la forte compressione a cui è sottoposto il Plasma, permette di realizzare eventi di \textbf{Fusione Nucleare} tra gli atomi di idrogeno a base del plasma.\\
-L'interazione tra le \textbf{Bobine e Plasma}, ha un modello matematico non dissimile da quello di \textbf{Trasformatore Elettrico} nella relazione \textit{Primario-Secondario} (con i dovuti paragoni e le ovvie \nonLinearita presenti nel caso di un impianto Tokamak reale qui semplificate a costanti).\\
-Grazie a questa similitudine è stato possibile replicare in sicurezza la fisica presente all'interno di un Tokamak, nell'ambiente controllato del laboratorio.\\
+Le bobine (poloidali e toroidali) servono a controllare il Plasma presente nel \textit{Vessel} dell'impianto e confinare il Plasma all'interno di un flusso compresso dentro la camera, le alte temperature e la forte compressione a cui è sottoposto il Plasma, permette di realizzare eventi di \textbf{Fusione Nucleare Controllata} tra gli atomi di idrogeno che compongono il Plasma usato dentro il Tokamak.\\
+Essendo però impossibile usare in un ambiente controllato un vero Tokamak, specie in un laboratorio universitario, si è usato un sistema fisico equivalente per ricreare l'interazione tra le \textbf{Bobine e il Plasma}.\\
+Il modello equivalente in questione è quello di \textbf{Trasformatore Elettrico} nella relazione \textit{Primario-Secondario} (con ovviamente alcune approssimazioni e la semplificazione di varie \nonLinearita sui suoi parametri, a delle costanti).\\
+Grazie a questa similitudine è stato possibile replicare in sicurezza la fisica presente all'interno di un Tokamak, nell'ambiente controllato del laboratorio usando una batteria in grado di erogare molti Ampere come fonte di alimentazione dell'esperimento.\\
 
 \subsection{Richiami di elettronica}
 Prima di modellare ed analizzare l'esperimento della tesi, è necessario richiamare qualche proprietà/concetto di elettronica per poter comprendere i passaggi matematici e fisici:
@@ -50,54 +48,72 @@ Prima di modellare ed analizzare l'esperimento della tesi, è necessario richiam
 \end{teorema}
 
 \begin{teorema}[Seconda legge di Kirchhoff (legge delle maglie)\label{th:KirchhoffMaglie}]
-	La somma algebrica delle f.e.m. agenti lungo i rami di una maglia è uguale alla somma algebrica dei prodotti delle intensità di corrente di ramo per le rispettive resistenze (del ramo).
+	La somma algebrica delle f.e.m. (Forze Elettro Motrici) agenti lungo i rami di una maglia è uguale alla somma algebrica dei prodotti delle intensità di corrente di ramo per le rispettive resistenze (del ramo).
 	\begin{empheq}[box=\mathStep]{equation} \label{eq:KirchhoffMaglie}
 		\sum_{\forall k} V_k = \sum_{\forall k} f_{em_k}
 	\end{empheq}
 \end{teorema}
-\vspace{-5mm}
+\vspace{-3mm}
 \noindent
 Oltre ai teoremi di Kirchhoff, che ci serviranno per ricavare le equazioni della dinamica, enunciamo ora le proprietà degli induttori, indispensabili per poter definire la loro relazione Corrente/Tensione.
 
 \begin{de}[Induttore Ideale\label{def:induttoreIdeale}]
-	Un Induttore Ideale si oppone solo alle variazioni di corrente, variando la tensione ai suoi capi di conseguenza, non presenta nessuna resistenza elettrica in caso di correnti costanti ai suoi capi.\\
-	Il suo valore è dato dal \textbf{coefficiente di autoinduzione}, tipicamente espresso con il simbolo $L$, la cui unità di è l'Henry [$H$].\\
+	Un \textit{Induttore Ideale} si oppone \underline{solo} alle variazioni di corrente, variando la tensione ai suoi capi di conseguenza, non presenta nessuna resistenza elettrica in caso di correnti costanti ai suoi capi.\\
+	Il suo valore è detto \textbf{coefficiente di autoinduzione}, tipicamente espresso con il simbolo $L$, la cui unità di è l'Henry [$H$].\\
 	Un Induttore accumula energia all'interno di un campo magnetico, e questa relazione è descritta dall'equazione:
-	\begin{empheq}[box=\mathStep]{equation} \label{eq:flussoMagnetico}
-		\Phi _{B}=Li
-	\end{empheq}
-	$ \Phi _{B} $ := \textbf{Flusso magnetico}; $L$ := \textbf{Coefficiente di autoinduzione}\\
-	Dalla legge di Faraday(ignorando momentaneamente la conservazione dell'energia, ovvero la legge di Lenz), applicata alla circuitazione del circuito costituito dalla induttanza stessa, si ha:
-	\begin{empheq}[box=\mathStep]{equation}
-		\displaystyle {\frac {d\Phi _{B}}{dt}}=V
-	\end{empheq}
-	Dove V è il potenziale indotto ai morsetti del circuito in questione. Perciò, derivando l'equazione \ref{eq:flussoMagnetico} ad entrambi i membri rispetto al tempo, si ottiene:
+	\begin{vwcol}[widths={0.4,0.6}, sep=8mm, rule=0px]
+		\vspace{-3mm}
+		\begin{empheq}[box=\mathStep]{equation} \label{eq:flussoMagnetico}
+			\Phi _{B}=Li
+		\end{empheq}
+		\newpage % con wcol, le colonne sono "pagine"
+		\hfill\\[-2mm]
+		$ \Phi _{B} $ := \textbf{Flusso magnetico}\\
+		$L$ := \textbf{Coefficiente di autoinduzione}
+	\end{vwcol}
+	\noindent
+	Applicando la legge di Faraday (ignorando momentaneamente la conservazione dell'energia, ovvero la legge di Lenz) alla circuitazione del circuito costituito dalla sola induttanza, si ottiene:
+	\begin{vwcol}[widths={0.4,0.6}, sep=8mm, rule=0px]
+		\vspace{-3mm}
+		\begin{empheq}[box=\mathStep]{equation}
+			V = \frac {d\Phi _{B}}{dt}
+		\end{empheq}
+		\newpage % con wcol, le colonne sono "pagine"
+		\hfill\break \hfill\\[-2mm]
+		$ V $ := \textbf{Potenziale indotto} ai morsetti del circuito
+	\end{vwcol}
+	\noindent
+	Derivando ora l'equazione \ref{eq:flussoMagnetico} ad entrambi i membri rispetto al tempo, si ottiene:
 	\begin{empheq}[box=\mathStep]{equation}
 		\displaystyle \frac {d\Phi _{B}}{dt}=L{\frac  {di}{dt}}+i{\frac  {dL}{dt}}
 	\end{empheq}
-	In molti casi fisici, però, l'induttanza può essere considerata costante rispetto al tempo (o tempo-invariante), da cui:
+	In molti casi fisici, però, l'induttanza può essere considerata costante rispetto al tempo (o tempo-invariante), da cui la formula che useremo risulta pari a:
 	\begin{empheq}[box=\mathStep]{equation}
 		\displaystyle {\frac {d\Phi _{B}}{dt}}=L{\frac {di}{dt}}
 	\end{empheq}
-	Combinando le equazioni precedenti si ha:
+	Combinando le equazioni precedenti si ottengono quindi i legami ingresso uscita rispetto alla tensione e alla corrente:
 	\begin{empheq}[box=\mathCalc]{equation}
 		{\displaystyle V(t)={L{\frac {di(t)}{dt}}}} \Leftrightarrow i(t) = \frac{1}{L} \int V(t) dt
 	\end{empheq}
 \end{de}
-
 \noindent
-Nel calcolo della \ref{eq:flussoMagnetico}, abbiamo omesso la legge di Lenz, poichè per parametrizzare l'induttore il segno "-" complica inutilmente i calcoli essendo assegnato dalla polarizzazione del circuito esaminato.\\
-Essa al contrario, prende un importanza notevole in presenza di fenomeni di \textbf{Induttanza}:
+Nel calcolo della \ref{eq:flussoMagnetico}, abbiamo omesso la legge di Lenz, poichè per parametrizzare l'induttore il segno '$ - $' complica inutilmente i calcoli essendo in realtà assegnato dalla polarizzazione del circuito mentre si svolgono i calcoli.\\
+La legge di Lenze prende molta importanza invece durante il fenomeno dell'\textbf{Induttanza}, ovvero quando 2 induttori vengono collegati per mezzo di un campo magnetico tra loro:
 \begin{de} [Induttanza\label{def:induttanza}]
 	L'induttanza è la proprietà dei circuiti elettrici tale per cui la corrente (intesa variabile nel tempo) che li attraversa induce una \textbf{Forza ElettroMotrice} (f.e.m.) Indotta che si oppone alla variazione di corrente, per la legge di Lenz.
 	In questi scenari (vedi Trasformatore Elettrico ad esempio), 2 ciruiti sono accoppiati magneticamente tra di loro attraverso 2 induttori, si ottiene quindi che, la variazione del flusso magnetico da parte del primo induttore, crea una \textbf{Forza ElettroMotrice} (f.e.m.) indotta contraria:
-	\begin{empheq}[box=\mathCalc]{equation}
-		{\displaystyle -{\frac {d\Phi _{B}}{dt}}={\mathcal {E}}=V}
-	\end{empheq}
-	Dove $ \mathcal{E} $ è la \textbf{Forza ElettroMotrice} (f.e.m.) indotta.
+	\begin{vwcol}[widths={0.4,0.6}, sep=8mm, rule=0px]
+		\vspace{-3mm}
+		\begin{empheq}[box=\mathCalc]{equation}
+			{\displaystyle -{\frac {d\Phi _{B}}{dt}}={\mathcal {E}}=V}
+		\end{empheq}
+		\newpage % con wcol, le colonne sono "pagine"
+		\hfill\break \hfill\\[2mm]
+		$ \mathcal{E} $ := \textbf{Forza ElettroMotrice} (f.e.m.) indotta
+	\end{vwcol}
 \end{de}
 \noindent
-Per finire, unendo insieme i concetti di \nameref{def:induttoreIdeale} e \nameref{def:induttanza} è possibile ottenere la descrizione matematica di un Trasformatore Monofase Ideale (\cite{Transformatore}\footnote{Senso di misura del secondario opposto nell'articolo a quello qui presentato}):
+Per concludere uniamo insieme i concetti di \nameref{def:induttoreIdeale} e \nameref{def:induttanza} così da ottenere la descrizione matematica di un Trasformatore Monofase Ideale (\cite{Transformatore}\footnote{Senso di misura del secondario opposto nell'articolo a quello presentato nella tesi}):
 \begin{figure}[H]
 	\centering
 	\caption[Trasformatore ideale con Campo magnetico]{Trasformatore Ideale}
@@ -105,16 +121,25 @@ Per finire, unendo insieme i concetti di \nameref{def:induttoreIdeale} e \namere
 \end{figure}
 
 \begin{de}[Trasformatore Ideale Monofase\label{def:trasformatoreIdeale}]
-	Il Trasformatore è una macchina elettrica, basata sul fenomeno dell'induzione elettromagnetica, destinata a trasformare, tra il circuito primario (ingresso) e il circuito secondario (uscita) del trasformatore, i fattori tensione e corrente della potenza elettrica.\\
-	Trasferisce quindi energia elettrica da un circuito elettrico a un altro che ha una tensione diversa, accoppiandoli induttivamente, senza che siano a contatto tra loro gli avvolgimenti del trasformatore.
-	Il trasformatore è una macchina reversibile.\\
+	Il Trasformatore è una macchina elettrica, basata sul fenomeno dell'induzione elettromagnetica, il cui scopo è trasformare tra il circuito primario (ingresso) e il circuito secondario (uscita) la tensione e corrente in ingresso in un altra scala mantenendo inalterata la potenza elettrica.\\
+	Permette quindi il trasferimento per mezzo magnetico, di energia tra 2 circuiti fisicamente disaccoppiati, accoppiandoli induttivamente.
 	
-	Il Trasformatore è costruito affinché il circuito Primario e il Secondario condividano lo stesso campo magnetico, e quindi lo stesso flusso $\Phi _{B}$.\\
-	Nel caso ideale, quindi, si ha che:\\
-	\begin{empheq}[box=\mathCalc]{equation}
-		\Phi_{B} = \Phi_{B_P} - \Phi_{B_S}
-	\end{empheq}
-	Siccome tale flusso varia nel tempo, induce nei due avvolgimenti le f.e.m.(\nameref{def:induttanza}):
+	In un Trasformatore il circuito Primario e il Secondario condividono lo stesso campo magnetico, e conseguentemente lo stesso flusso $\Phi _{B}$.\\
+	Nel caso ideale, quindi, si ha che:
+	\begin{vwcol}[widths={0.4,0.6}, sep=8mm, rule=0px]
+		\vspace{-3mm}
+		\begin{empheq}[box=\mathCalc]{equation}
+			\Phi_{B} = \Phi_{B_P} - \Phi_{B_S}
+		\end{empheq}
+		\newpage % con wcol, le colonne sono "pagine"
+		\hfill\break \hfill\\[-2mm]\noindent
+		{\footnotesize
+			Il '$ - $'  tra i campi magnetici è dovuto al verso delle correnti\\
+			che creano 2 campi magnetici tra loro contrapposti
+		}
+	\end{vwcol}
+	\noindent
+	Siccome tale flusso varia nel tempo, induce nei due avvolgimenti delle f.e.m. (vedi \nameref{def:induttanza}):
 	\begin{empheq}[box=\mathCalc]{equation}
 		e_p = N_1 \frac{d \Phi_{B}}{dt} ; e_s = -N_2 \frac{d \Phi_{B}}{dt}
 	\end{empheq}
@@ -139,12 +164,11 @@ Per finire, unendo insieme i concetti di \nameref{def:induttoreIdeale} e \namere
 \end{de}
 
 \noindent
-Arrivati a questo punto abbiamo gli strumenti necessari per poter modellare matematicamente l'esperimento.
+Arrivati a questo punto abbiamo gli strumenti necessari per poter modellare matematicamente l'esperimento in esame nella tesi.
 \newpage
 
 \subsection{Modellazione Fisica} \label{subsec:ModelloFisico}
-%La fisica che descrive la dinamica di un Plasma passa per la soluzione della \textbf{Equazioni alle derivate parziali di Grad-Shafranov} (\textit{Grad-Shafranov PDE}).
-Usando i concetti esposti, vediamo ora una buona approssimazione con modello lineare della dinamica tra \textbf{Bobina e Plasma}.\\
+Usando i concetti esposti, vediamo ora una buona approssimazione, passante per un modello lineare a parametri costanti della dinamica tra \textbf{Bobina e Plasma}.\\
 Come descritto nell'articolo di \cite{TokamakCircuit}, è possibile modellare la dinamica \textbf{Bobina - Plasma} come fosse il circuito di un
 \nameref{def:trasformatoreIdeale}:
 \begin{figure}[H]
@@ -161,14 +185,14 @@ Come descritto nell'articolo di \cite{TokamakCircuit}, è possibile modellare la
 	\item $R_p$\tab:= Resistenza di Plasma
 	\item $M_{Tp}$\tab:= Coefficiente di Induttanza Trasformatore $\rightarrow$ Plasma
 \end{leg}
-\paragraph{Difformità dalla realtà} Nella realtà $R_p$ e $M_{Tp}$ sono dei parametri che variano in funzione dello stato del plasma (Temperatura, Energia, Evoluzione dell'esperimento, ecc\ldots), ma per ovvie ragioni di difficoltà nel riprodurre in laboratorio simili \nonLinearita, noi prenderemo per costanti questi parametri.
+\paragraph{Difformità dalla realtà} Nella realtà $R_p$ e $M_{Tp}$ sono dei parametri che variano in funzione dello stato del Plasma (Temperatura, Energia, Evoluzione dell'esperimento, ecc\ldots), ma per ovvie ragioni di difficoltà nel riprodurre in laboratorio simili \nonLinearita, noi prenderemo per costanti questi parametri.
 
 \subsection{Semplificazione Primario - Secondario}
 Sempre dallo stesso articolo di \cite{TokamakCircuit}, si evince che è possibile modellare questa relazione tra i 2 circuiti prendendo in considerazione \textbf{solo} le forze di induzione dovute alla corrente che il Primario trasferisce sul Secondario, ciò permette di semplificare ulteriormente il circuito trascurando le correnti indotte dal Plasma dentro la Bobina del Primario.\\
 Usando queste osservazioni si ottiene quindi il circuito equivalente:
 \begin{figure}[H]	\label{fig:PlasmaSemplificato}
 	\centering
-	\caption[Circuito Equivalente Bobina/Plasma all'interno di un Tokamak trascurando l'induzione del plasma verso la bobina]{Circuito equivalente Bobina/Plasma semplificato}
+	\caption[Circuito Equivalente Bobina/Plasma all'interno di un Tokamak trascurando l'induzione del Plasma verso la bobina]{Circuito equivalente Bobina/Plasma semplificato}
 	\includegraphics[width=1\textwidth]{Trasformatore/PlasmaCircuit-EquivalentCalc.png}
 \end{figure}
 
@@ -180,73 +204,98 @@ Usando queste osservazioni si ottiene quindi il circuito equivalente:
 	\item $I_p$\tab:= Corrente di Plasma
 	\item $R_p$\tab:= Resistenza di Plasma
 	\item $M_{Tp}$\tab:= Coefficiente di Induttanza Trasformatore $\rightarrow$ Plasma
-	\begin{itemize} [topsep=-1mm,itemsep=0mm]
+	\begin{itemize} [topsep=-1mm,itemsep=0mm,label=$ \circ $]
 		\item $L_T$\tab:= Induttanza equivalente Trasformatore
 		\item $L_p$\tab:= Induttanza equivalente Plasma
 	\end{itemize}
 \end{leg}
 \noindent
-Usando questa semplificazione dall'equazione \ref{eq:tensioneTrasformatore} del trasformatore ignoriamo che la tensione sul Primario è influenzata dal Secondario; in questa condizione il circuito del Primario evolve come sistema indipendente rispetto al Secondario, e la sua evoluzione influenza il Secondario.
+Usando questa semplificazione dall'equazione \ref{eq:tensioneTrasformatore} del trasformatore ignoriamo che la tensione sul Primario è influenzata dal Secondario; in questa condizione il circuito del Primario evolve come sistema indipendente rispetto al Secondario, e la sua evoluzione influenza il Secondario senza risentirne.
 
 \newpage
 \subsection{Dal circuito alla dinamica}\label{subsec:dinamicaCircuito}
-Analizziamo ora la dinamica del circuito \ref{fig:PlasmaSemplificato}.
+Analizziamo ora la dinamica del circuito semplificato \ref{fig:PlasmaSemplificato} analizzando le 2 maglie del circuito:
 \subsubsection{Dinamica di Plasma}
-\vspace{-5mm}
-Iniziando dal calcolare la dinamica nella corrente di Plasma usando la \nameref{th:KirchhoffMaglie}:
+\vspace{-2mm}
+Per calcolare la dinamica della corrente di Plasma usando la \nameref{th:KirchhoffMaglie} sulla maglia del secondario:
 \begin{empheq}[box=\mathStep]{equation*}
 	F_{em} = L_p \dot I_p + I_p R_p
 \end{empheq}
-Sappiamo in oltre che la $F_{em}$, grazie all'\nameref{def:induttanza} del circuito è pari a: 
+Grazie al principio dell'\nameref{def:induttanza} siamo in grado di risalire al termine generatrice della $F_{em}$: 
 \begin{empheq}[box=\mathStep]{equation*}
 	F_{em} = -M_{Tp} \dot I_T
 \end{empheq}
-Da cui otteniamo:
-\begin{empheq}[box=\mathCalc]{equation} \label{eq:correntePlasmaDinamica}
-	-M_{Tp} \dot I_T = L_p \dot I_p + I_p R_p
-\end{empheq}
-{\footnotesize Da notare la somiglianza con l'equazione del trasformatore \ref{eq:tensioneTrasformatore}}.\\
-Dalla eq \ref{eq:correntePlasmaDinamica} possiamo notare che rendere la corrente di Plasma costante, equivale a fissare una $F_{em}$ di riferimento costante, ed essendo problematico misurare la corrente direttamente nel plasma reale, usiamo la \textbf{Tensione di Loop}, che nel caso del trasformatore equivale alla tensione di uscita del Trasformatore.
+Perciò, unendo insieme i blocchi otteniamo:
+\begin{vwcol}[widths={0.6,0.4}, sep=5mm, rule=0px]
+	\vspace{-3mm}
+	\begin{empheq}[box=\mathCalc]{equation} \label{eq:correntePlasmaDinamica}
+		-M_{Tp} \dot I_T = L_p \dot I_p + I_p R_p
+	\end{empheq}
+	\newpage % con wcol, le colonne sono "pagine"
+	\hfill\\[-1mm]\noindent
+	\begin{spacing}{1.25}
+		{\footnotesize
+			Da notare la somiglianza con\\
+			l'equazione del trasformatore \ref{eq:tensioneTrasformatore}
+		}
+	\end{spacing}
+\end{vwcol}\vspace{-3mm}
+\noindent
+\begin{oss}
+	Dalla eq \ref{eq:correntePlasmaDinamica} è interessante notare che rendere la corrente di Plasma costante, equivale a fissare una $F_{em}$ di costante.\\
+	In un Tokamak reale, anche se l'obiettivo è controllare la corrente di Plasma, misurarla direttamente risulta essere problematico, a tale scopo nei Tokamak reali, viene usata la \textbf{Tensione di Loop} (\cite{MagneticDiagnostics}) come indicatore della $ I_p $, che nel nostro caso coincide esattamente con la $ F_{em} $ del secondario (problematica discussa in seguito, vedi \nameref{sub:parametriMisurati}).
+\end{oss}
+
 
 \subsubsection{Dinamica del Trasformatore}
-\vspace{-5mm}
-Vediamo ora la dinamica della corrente del Trasformatore, in funzione della \textit{Tensione di controllo}:\\
-Sempre grazie alla \nameref{th:KirchhoffMaglie} scriviamo:
+\vspace{-3mm}
+Vediamo ora la dinamica della corrente del Trasformatore, in funzione della \textit{Tensione di controllo}.\\
+Il calcolo avviene seguendo gli stessi procedimenti della corrente di Plasma, usando sempre il \nameref{th:KirchhoffMaglie}, e si ottiene come equazione di maglia:
 \begin{empheq}[box=\mathCalc]{equation} \label{eq:correnteTrasformatoreDinamica}
 	V(t) = L_T \dot I_T + I_T R_T
 \end{empheq}
 
 \subsection{Funzione di Trasferimento}
-Nella sezione \ref{subsec:dinamicaCircuito} abbiamo ottenuto la dinamica istantanea dei 2 rami del circuito \ref{fig:PlasmaSemplificato}, ricaveremo ora le funzioni di trasferimento dei 2 rami e troveremo la dinamica del Trasformatore.
+Nella sezione "\nameref{subsec:dinamicaCircuito}" abbiamo ottenuto la dinamica istantanea dei 2 rami del circuito \ref{fig:PlasmaSemplificato}.\\
+Vogliamo ora ricavare le funzioni di trasferimento dei 2 rami e trovare così la funzione di trasferimento Ingresso uscita del Trasformatore.
 \subsubsection{Funzione di Trasferimento Plasma}
-\vspace{-5mm}
-Partendo dall'equazione \ref{eq:correntePlasmaDinamica}, supponendo condizioni iniziali nulle, abbiamo:
-\begin{empheq}[box=\mathStep]{equation*}
-	s I_p L_p  + I_p R_p = -s I_T M_{Tp} \Rightarrow I_p( s L_p + R_p) = -s I_T M_{Tp} \Rightarrow I_p(s) = \frac{-s M_{Tp}}{( s L_p + R_p)} I_T(s)
-\end{empheq}
-La cui, funzione di trasferimento risulta essere:
+\vspace{-3mm}
+Volendo calcolare la funzione di trasferimento per le dinamiche forzate, partiamo dall'equazione \ref{eq:correntePlasmaDinamica} risolvendola per condizioni iniziali nulle.
+\begin{center}
+{\large 	
+	$ s I_p L_p  + I_p R_p = -s I_T M_{Tp} \Rightarrow I_p( s L_p + R_p) = -s I_T M_{Tp} \Rightarrow$ \\ 
+	$ I_p(s) = \frac{-s M_{Tp}}{( s L_p + R_p)} I_T(s) $
+}
+\end{center}
+\noindent
+Arrivando così a scrivere come funzione di trasferimento per il Plasma (Secondario):
 \begin{empheq}[box=\mathCalc]{equation} \label{eq:correntePlasmaLaplace}
 	\frac{I_p(s)}{I_T(s)}  = \frac{-s M_{Tp}}{( s L_p + R_p)}
 \end{empheq}
 
 \subsubsection{Funzione di Trasferimento Trasformatore}
 \vspace{-5mm}
-Similmente, partendo dall'equazione \ref{eq:correnteTrasformatoreDinamica} si ricava:
-\begin{empheq}[box=\mathStep]{equation*}
-	s I_T L_T  + I_T R_T = V(s) \Rightarrow I_T( s L_T + R_T) = V(s) \Rightarrow I_T(s) = \frac{1}{(s L_T + R_T)} V(s)
-\end{empheq}
-
-La cui, funzione di trasferimento risulta essere:
+Similmente a quanto fatto per Plasma, partendo dall'equazione \ref{eq:correnteTrasformatoreDinamica} in condizioni iniziali nulle abbiamo:
+\begin{center}
+{\large 	
+	$ s I_T L_T  + I_T R_T = V(s) \Rightarrow I_T( s L_T + R_T) = V(s) \Rightarrow $\\
+		$ I_T(s) = \frac{1}{(s L_T + R_T)} V(s)$
+	}
+\end{center}
+\noindent
+Ottenendo così la funzione di trasferimento del Trasformatore (Primario):
 \begin{empheq}[box=\mathCalc]{equation} \label{eq:correnteTrasformatoreLaplace}
 	\frac{I_T(s)}{V(s)}  = \frac{1}{(s L_T + R_T)}
 \end{empheq}
-
+\newpage
 \begin{oss} \label{oss:Iref}
-	La funzione di trasferimento che abbiamo ottenuto rispecchia il circuito dell'esperimento, noi però abbiamo un sistema che si controlla in corrente e che ha un uscita in corrente potremmo allora riassegnare l'ingresso come:
+	La funzione di trasferimento che abbiamo ottenuto rispecchia il circuito dell'esperimento lasciandoci come variabile di controllo la $ V(t) $.\\
+	A livello teorico però, noi controlliamo la corrente sul primario e puntiamo a osservare una corrente sul secondario,abbiamo quindi un sistema che si controlla in corrente e che ha un uscita in corrente.\\
+	Sarebbe quindi utile e opportuno allora riassegnare l'ingresso di tensione mettendo in evidenza la variabile virtuale $ I_{ref} $:
 	\begin{empheq}[box=\mathCalc]{equation*}
 		V(t)=I_{ref}(t) \cdot R_T \Rightarrow I_{ref}(t) = \frac{V(t)}{R_T}
 	\end{empheq}
-	Ottenendo così: 
+	Ottenendo quindi come funzione di trasferimento del Trasformatore (Primario): 
 	\begin{empheq}[box=\mathStep]{equation}
 		I_T(s) = \frac{R_T}{(s L_T + R_T)} I_{ref}(s) = \frac{1}{(s \frac{L_T}{R_T} + 1)} I_{ref}(t)
 	\end{empheq}
@@ -262,16 +311,15 @@ Connettendo in serie i 2 blocchi e tenendo conto dell'osservazione \ref{oss:Iref
 \end{empheq}
 
 \noindent
-Che vista come schema a blocchi diventa:
+Che vista come schema a blocchi diventa:\vspace{-2mm}
 \begin{figure}[H]
 	\centering
 	\caption[Schema a Blocchi della funzione di trasferimento della corrente di Plasma]{Schema a Blocchi Corrente di Plasma}
+	\vspace{2mm}
 	\includegraphics[width=1\textwidth]{Trasformatore/PlasmaCircuit-SchemaBlocchi.png}
-\end{figure}
-
+\end{figure}\vspace{-6mm}
 \noindent
-Essendo in uscita il segno delle correnti inverso dall'ingresso, possiamo eliminare questo fastidioso problema di segno in molti modi, quello che si è usato da qui in avanti nella realizzazione della tesi e degli esperimenti, è stato banalmente invertire i poli del Secondario del trasformatore, ottenendo quindi come funzione di trasferimento:
-
+Essendo il segno di uscita del segnale inverso rispetto al segnale d'ingresso, eliminiamo questo fastidio aggiungendo matematicamente un '$ - $' e a livello di prototipo invertendo i fili sul Secondario. Così facendo otteniamo come funzione di trasferimento complessiva:
 \begin{empheq}[box=\mathCalc]{equation} \label{eq:FuncTrasfTotPos}
 	P_{pos}(s) = -P(s) = \frac{s M_{Tp}}{( s L_p + R_p)(s L_T + R_T)} = \frac{-I_p(s)}{I_{ref}(s)}
 \end{empheq}
@@ -279,11 +327,9 @@ Essendo in uscita il segno delle correnti inverso dall'ingresso, possiamo elimin
 \subsection{Misura del campo Elettrico del Plasma come indice per la Corrente} \label{sub:parametriMisurati}
 Riprendendo l'equazione della corrente di Plasma \ref{eq:correntePlasmaDinamica}, abbiamo che il campo elettrico indotto sul Plasma, ovvero la $F_{em}$, dipende direttamente dallo stato della corrente di Plasma $I_p$.\\
 Da essa abbiamo che per $I_p$ costanti, anche la $F_{em}$ è costante.\\
-Nel caso del trasformatore si potrebbe fisicamente misurare la corrente di plasma, simulata dalla corrente sul secondario, ma nel caso di un impianto reale, risulta evidente che è impossibile.\\
-Proprio per questo, come descritto da \cite{MagneticDiagnostics},a pagina 12, si usa come indice di misura Tensione di giro $V_{loop}$ ($\Rightarrow F_{em}$ nel nostro esperimento).
-
-\newpage
-Perciò il circuito reale usato nell'esperimento della tesi, comprensivo di misure è:\\
+Nel caso del trasformatore si potrebbe fisicamente misurare la corrente di Plasma, simulata dalla corrente sul secondario, ma nel caso di un impianto reale, risulta evidente che è impossibile.\\
+Proprio per questo, come descritto da \cite{MagneticDiagnostics},a pagina 12, si usa come indice di misura Tensione di giro $V_{loop}$ ($\Rightarrow F_{em}$ nel nostro esperimento).\\
+Perciò il circuito reale usato nell'esperimento della tesi, comprensivo di misure è:
 \begin{figure}[H] \label{fig:circuitoDiMisura}
 	\centering
 	\caption[Circuito reale di misura dell'esperimento]{Circuito di misura}
@@ -302,7 +348,7 @@ Abbiamo quindi, tra ingresso e uscite i parametri di:
 
 
 \section{Trasduttore di Corrente}\label{CurrentSense}
-Come detto nell'introduzione, l'obiettivo della tesi è di controllare la corrente sul secondario usando il campo elettrico del secondario, la misura della corrente scorrente sul primario in tale ottica non sarebbe una misura di interesse. Essendo però un lavoro di ricerca, si è preferito poter misurare la corrente effettivamente circolante nel Primario del trasformatore, così da poter meglio interpretare i dati di misura senza ambiguità.\\
+Come già discusso precedentemente, l'obiettivo della tesi è di controllare la corrente sul secondario usando il campo elettrico del secondario, la misura della corrente scorrente sul primario in tale ottica non sarebbe una misura di interesse. Essendo però un lavoro di ricerca, si è preferito poter misurare la corrente effettivamente circolante nel Primario del trasformatore, così da poter meglio interpretare i dati misurati senza ambiguità.
 \begin{figure}[H]
 	\centering
 	\caption[Sensore di Corrente \citefield{ACS770}{series}]{Sensore di Corrente}
@@ -310,11 +356,11 @@ Come detto nell'introduzione, l'obiettivo della tesi è di controllare la corren
 \end{figure}
 %\vspace{-1cm}
 \subsection{Sensore scelto}
-Per misurare la corrente del primario, si è posizionato in serie allo stesso il sensore di Corrente \cite{ACS770}.\\
-La famiglia di sensori ha in generale le seguenti caratteristiche:
+Per misurare la corrente del primario, si è usato il sensore di Corrente \cite{ACS770}. La famiglia di sensori ha in generale le seguenti caratteristiche:
 \begin{table}[H]
-	\caption[\cite{ACS770}  Riassunto caratteristiche]{Riassunto caratteristiche}
 	\centering
+    \label{tab:ACS770ParametriGenerali}
+	\caption[\cite{ACS770}  Riassunto caratteristiche]{Riassunto caratteristiche}
 	\begin{tabular}[t]{|l r|}
 		\hline
 		Bandwidth:                             & 120 kHz                               \\
@@ -324,14 +370,13 @@ La famiglia di sensori ha in generale le seguenti caratteristiche:
 		Extremely stable output offset voltage &                                       \\
 		\hline
 	\end{tabular}
-	
 \end{table}
-
 \noindent
-In oltre, delle tante varianti presenti, si è scelto di usare la \citefield{ACS770}{series}, le cui caratteristiche chiave sono:
+In oltre, delle tante varianti esistenti, si è scelto di usare la \citefield{ACS770}{series}, le cui caratteristiche chiave sono:
 
 \begin{table}[H]
 	\centering
+	\label{tab:ACS770ParametriParticolari}
 	\caption[\citefield{ACS770}{series} Particolarità]{\citefield{ACS770}{series} Particolarità}
 	\begin{tabular}[t]{|l r|}
 		\hline
@@ -343,13 +388,16 @@ In oltre, delle tante varianti presenti, si è scelto di usare la \citefield{ACS
 	\end{tabular}
 	
 \end{table}
-
 \noindent
-L'ampio margine di misura, e la robustezza alle variazioni di temperatura rendono rendono il dispositivo perfetto per misurare i nostri esperimenti.\\
-L'ampio margine di misura permette di comprendere tutti i possibili valori di corrente ottenibili in laboratorio, rendendo il prototipo adatto a scopi futuri.
-\subsection{Criticità}
-Unico punto dolente è il suo principio di funzionamento: essendo il sensore basato su un l'effetto Hall, ovvero una misura diretta del campo magnetico indotto dalla corrente nel conduttore, è importante tenere distante il sensore dal Trasformatore Centrale che nei suoi momenti di massimo flusso di corrente, genera ovviamente un campo magnetico non indifferente.
+Le caratteristiche più importanti di questo trasduttore sono l'ampio margine di misura, e la robustezza alle variazioni di temperatura, che insieme rendono il dispositivo perfetto per misurare le energie dei nostri esperimenti attuali, e lo rendono \textit{future-proof} per esperimenti futuri quando si useranno energie superiori.
 
+\subsection{Criticità}
+Unico punto dolente, ma comune al tutti i sensori a effetto induttivo, è proprio il suo principio di funzionamento: essendo il sensore basato su un l'effetto Hall, ovvero una misura diretta del campo magnetico indotto dalla corrente nel conduttore, lo rende soggetto alle variazioni di campo magnetico prodotte propri dal Trasformatore Centrale, che nei suoi momenti di massimo flusso, genera ovviamente un campo magnetico non indifferente.
+\begin{figure}[H]
+	\centering
+	\caption[Metodo di misura di corrente mediante effetto Hall]{Misura di corrente per effetto Hall}
+	\includegraphics[width=0.5\textwidth]{ACS770/effettoHall.png}
+\end{figure}
 \newpage
 \subsection{Funzionamento Interno}
 \vspace{-5mm}
@@ -359,10 +407,9 @@ Unico punto dolente è il suo principio di funzionamento: essendo il sensore bas
 	\includegraphics[width=1\textwidth]{ACS770/ACS770-SchemaBlocchi.png}
 \end{figure}
 \noindent
-Tra le caratteristiche chiave dell'\cite{ACS770}, troviamo il disaccoppiamento fisico tra la corrente da misurare e il circuito di misura.\\
-Questa caratteristica chiave, garantisce la salvaguardia del circuito logico a valle, dai possibili eventi catastrofici a monte.\\
-Esso è in oltre fornito di sensori di temperatura e sistemi di \textit{Signal Recovery} che permettono all'Hardware stesso di compensare parzialmente \nonLinearita termiche e nella misura dell'effetto Hall, ottenendo un output assimilabile a un segnale lineare:\newpage
-\vspace{-5mm}
+Tra le caratteristiche chiave dell'\cite{ACS770}, troviamo il disaccoppiamento fisico tra la corrente da misurare e il circuito di misura (ben visibile nello schema a blocchi). Questa caratteristica chiave, garantisce la salvaguardia del circuito logico a valle, dai possibili eventi catastrofici a monte.\\
+Esso è in oltre fornito di sensori di temperatura e sistemi di \textit{Signal Recovery} che permettono all'Hardware stesso di compensare parzialmente \nonLinearita termiche della misura per effetto Hall, ottenendo un output assimilabile a un segnale lineare:
+\newpage
 \begin{figure}[H]
 	\centering
 	\caption[\citefield{ACS770}{series} Sensibilità rispetto Temperatura]{Sensibilità}
@@ -370,12 +417,13 @@ Esso è in oltre fornito di sensori di temperatura e sistemi di \textit{Signal R
 \end{figure}
 \vspace{-5mm}
 \noindent
-Come si può vedere dal grafico, gli errori sono tanto più marcati quanto maggiore è la corrente da misurare, ma leggendo dal datasheet risulta che il costruttore avverte che l'errore dipende si fortemente dalle temperature di esercizio dell'esperimento, come è possibile vedere nel seguente grafico:\\\vspace{-18mm}
+Come si può vedere dal grafico, gli errori sono tanto più marcati quanto maggiore è la corrente da misurare, ma leggendo dal datasheet risulta che il costruttore avverte che l'errore dipende si fortemente dalle temperature di esercizio dell'esperimento, come riportato nel grafico:\\\vspace{-12mm}
 \begin{figure}[H]
 	\centering
 	\caption[\citefield{ACS770}{series} \nonLinearita]{Temperatura/NonLinearità}
-	\includegraphics[width=0.64\textwidth]{ACS770/ACS770-NonLin.png}
-\end{figure}
+	\vspace{1mm}
+	\includegraphics[width=0.8\textwidth]{ACS770/ACS770-NonLin.png}
+\end{figure}\vspace{-8mm}
 
 \noindent
 Esso però non è mai, neanche negli esperimenti più sfortunati, superiore al $\pm2\%$.\\
@@ -385,47 +433,35 @@ Anzi, alle temperature $\approx$ 25°, si mantiene contenuto tra $\pm0.5\%$.
 
 \subsection{Connessione elettrica}
 
-La connessione del sensore è particolarmente semplice, richiedendo esternamente solo un alimentazione stabilizzata e portando subito in uscita la misura.
+La connessione del sensore è particolarmente semplice, richiedendo esternamente solo un alimentazione stabilizzata e portando subito in uscita la misura di corrente sotto forma di tensione.
 \begin{figure}[H]
 	\centering
 	\caption[\citefield{ACS770}{series} Schema di collegamento dal Datasheet]{Collegamento dal Datasheet}
 	\includegraphics[width=0.85\textwidth]{ACS770/ACS770-Schema.png}
-\end{figure}
-
+\end{figure} \vspace{-8mm}
 \noindent
-Rispetto allo schema proposto dal datasheet, però, si è anche deciso di omettere il filtro passa-basso sulla \textbf{VIOUT}, questa scelta è stata presa per minimizzare il più possibile ritardi di misura della corrente istantanea, poiché le dinamiche del sistema sul secondario, come visto, sono di tipo derivativo, e quindi estremamente rapide.
+Rispetto allo schema proposto dal datasheet, però, si è deciso di omettere il filtro passa-basso sulla \textbf{VIOUT}, questa scelta è stata presa per minimizzare il più possibile ritardi di misura della corrente istantanea desiderabile poiché le dinamiche del sistema sul secondario, come visto, sono di tipo derivativo, e quindi estremamente rapide.\\
+Questa scelta è stato possibile prenderla poiché la corrente per alimentare l'esperimento proviene da una batteria con un alta capacità di scarica istantanea (fino a 1000A), da cui l'assenza di disturbi sul segnale di corrente e la possibilità di prendere questa scelta.
 
-\subsection{Misura}
-Il trasduttore, misura della corrente sotto forma di tensione, la quale varia in base alla \textbf{Sensibilità} del modello in uso. 
-Avendo noi il \citefield{ACS770}{series}, il datasheet riporta:
-\begin{table}[H]
-	\centering
-	\caption[\citefield{ACS770}{series} Parametri di \textbf{Interesse}]{Parametri di \textbf{Interesse}}
-	\begin{tabular}[t]{|l r|}
-		\hline
-		Primary Sampled Current: & $\pm$ 100 A   \\
-		Sensitivity Sens (Typ.)  & 20(mV/A)      \\
-		Current Directionality   & Bidirectional \\
-		\hline
-	\end{tabular}
-\end{table}
-
-\noindent
-Ciò implica che la corrente misurata, è calcolabile come:\\
+\subsection{Dalla misura alla corrente}
+Il trasduttore è basato sull'effetto Hall, il quale permette di misurare una corrente attraverso il campo magnetico che crea, e riporta questa misura sotto sotto forma di tensione.\\
+I sensori della famiglia \cite{ACS770} propongono vari modelli che differiscono tra loro principalmente per la \textbf{Sensibilità} di misura e la lettura di corrente \textit{Bi-direzionale} o \textit{Mono-direzionale} , in funzione della scala di misura che si vuole avere e della presenza di corrente alternata o continua.
+Per i nostri scopi abbiamo preso il modello: '\citefield{ACS770}{series}', di cui i parametri sono riportati in tabella \ref{tab:ACS770ParametriParticolari}.\\
+Usando la sensibilità riportata in tabella, abbiamo che la formula di conversione per ottenere la corrente letta è:
 {\large \begin{center}
 	$I_{read} = \frac{V_{Read}[V]}{V_{sense}[V/A]}$
 \end{center}
 }
 
 \paragraph{Rimozione Offset}
-Essendo però il device ad alimentazione singola (0--5V), ma la corrente misurabile Bi-direzionale, sorge la necessità di spostare gli 0A a una tensione superiore agli 0V.\\
+Essendo però l'ACS770 ad alimentazione singola (0--5V), ma la corrente misurabile \textbf{Bi-Direzionale}, sorge la necessità di spostare il riferimento della corrente nulla ad una tensione superiore allo 0V.\\
 Il datasheet riporta che $V_{offset} = \frac{Vcc}{2}\approx$ 2.5V. Da cui deriva che la vera misura di corrente è:
 {\LARGE
 \begin{empheq}[box=\mathCalc]{equation} \label{eq:Iread}
-	I_{read} = \frac{V_{Read}-V_{offset}}{V_{sense}} \frac{V}{[V/A]}
+	I_{read} = \frac{V_{Read}-V_{offset}}{V_{sense}} \frac{[V]}{[V/A]}
 \end{empheq}
 }
-
+\noindent
 Al fine di poter misurare l'offset effettivo, durante il set-up viene eseguito a esperimento fermo una misura dell'offset attuale, usando la \nameref{lst:offsetCalc}.\\
 Il risultato della computazione, oltre ad essere usato nel controllo è inviato al computer per la post elaborazione dei dati nei grafici.
 
@@ -487,9 +523,8 @@ Al suo interno il driver è composto da 2 Half-Bridge \cite{BTS7960b}, connesse 
 \end{figure}\vspace{-5mm}
 
 \noindent
-Il \microC è protetto dal carico connesso all'interno del \citefield{BTS7960b}{series}, lasciando al \microC solo il compito di controllare i segnali.
-
-
+Il \microC è protetto dal carico connesso all'interno del \citefield{BTS7960b}{series}, lasciando al \microC solo il compito di controllare i segnali che commutano lo stato dei 2 Half-Bridge.
+\newpage
 \subsection{Connessione di Controllo}
 Il driver permette 2 modalità di funzionamento:
 \begin{description}
@@ -504,29 +539,28 @@ Per il nostro esperimento si è scelto di usare il collegamento \textbf{\underli
 
 \newpage
 \subsection{Benchmark del Driver}
-Il driver sulla carta à buone prestazioni, ma non sono descritte le sue \nonLinearita, per farle risaltare si sono effettuati 2 esperimenti usando differenti input di controllo:
+Il driver sulla carta ha buone prestazioni, dal datasheet non risaltano \nonLinearita, esse invece sono presenti e per farle risaltare si sono effettuati 2 segnali di input:
 \begin{enumerate}
-	\item \nameref{lst:ondaTriangloare} \\ \vspace{-11mm}
+	\item \nameref{lst:ondaTriangloare} \vspace{-3mm}
 	      \begin{figure}[H]
 		      \caption[Esperimento con Onda Triangolare]{Onda Triangolare}
 		      \centering
 		      \includegraphics[height=0.5\textheight]{IBT-2/T1-Triangolare.pdf}
 	      \end{figure}\vspace{-10mm}
-	      \paragraph{Dead-Zone Inferiore} L'onda triangolare si presta bene per far risaltare la problematica della Dead-Zone Inferiore, infatti in tutti gli intorni in cui il segnale passa per 0, è possibile vedere come la corrente non vari minimamente, è però possibile notare che i 2 lati non sono simmetrici tra di loro, questo è facilmente spiegabile dal fatto che il primo ha una condizione iniziale $ \neq $ 0 e di fatto stiamo ancora osservando l'esaurimento del transitorio, la soglia di Dead-Zone Inferiore è quindi calcolata vedendo il primo valore di PWM  per cui il sistema risponde a destra degli 0.      
+	      \paragraph{Dead-Zone Inferiore} L'onda triangolare si presta bene per far risaltare la problematica della Dead-Zone Inferiore, infatti in tutti gli intorni in cui il segnale passa per 0, è possibile vedere come tanto la corrente quanto la tensione sul secondario non vari minimamente, indice evidente dell'assenza di corrente e quindi della presenza della \textbf{Dead-Zone}.\\
+	      Per calcolare la soglia di \textbf{Dead-Zone Inferiore} è sufficiente vedere il primo valore di PWM  per cui il sistema risponde dopo il passaggio per 0.      
 	      \newpage
-	\item \nameref{lst:ondaTrapezoidale} \\
+	\item \nameref{lst:ondaTrapezoidale}  \vspace{-3mm}
 	      \begin{figure}[H]
 		      \centering
-		      \caption[Esperimento con Onda Trapezoidale]{Onda Trapezoidale}
+		      \caption[Esperimento con Onda Trapezoidale (\textit{Rapid Shot})]{Onda Trapezoidale (\textit{Rapid Shot})}
 		      \includegraphics[height=0.5\textheight]{IBT-2/T2-RapidShot.pdf}
-	      \end{figure}  \vspace{-10mm}
-	      \paragraph{Dead-Zone Superiore} Con questo secondo segnale, si vuole mettere in evidenza il ritardo durante la discesa della rampa, pari a circa 20ms {\small \textit{(guarda 900ms)}}, questo ritardo è in realtà dovuto da una seconda Dead-Zone presente però ai Duty-Cycle alti del PWM.
-	      
-	      %	      \vspace{-5mm}
-	      %	      \paragraph{Disturbo 50Hz} Essendo in oltre presente un segnale costante per un pò, quando i transitori terminano risulta evidente la presenza della 50hz nel segnale della corrente proveniente dall'alimentatore, questo disturbo è però dovuto alla fonte della corrente, ovvero la 220Vac del laboratorio, il medesimo esperimento realizzato con una batteria ovviamente non ha simili disturbi, ma in fase di test del driver, si è preferito usare un alimentatore da laboratorio.
+	      \end{figure}  \vspace{-15mm}
+	      \paragraph{Dead-Zone Superiore} Usando il segnale \textit{Rapid Shot} mettiamo in evidenza la presenza della \textit{Dead-Zone Superiore}, visibile sotto forma di ritardo di attuazione nella rampa di discesa.\\
+	      Il ritardo è pari a circa 20ms {\small \textit{(guarda 900ms)}}, e come detto è causato dalla seconda Dead-Zone presente nel driver.
 \end{enumerate}
 \noindent
-Sapendo della presenza di queste 2 Dead-Zone, andando a vedere l'inizio della risposta del secondario, essendo il primario troppo poco sensibile come abbiamo avuto modo di analizzare nella sezione "\nameref{CurrentSense}", è possibile risalire ai valori limite della Dead-Zone di questo Ponte-H:
+Il driver soffre di questi problemi poichè per i Duty-Cycle \textit{Alti} e \textit{Bassi} nel PWM, prima uno e poi l'altro Half-Bridge, non fa in tempo a commutare che il segnale ha nuovamente cambiato valore, causando di fatto questa assenza di attuazione e quindi la Dead-Zone. Sapendo della presenza di queste 2 Dead-Zone, risaliamo ai loro valori di soglia andando a vedere l'inizio della risposta del secondario per entrambi i fronti:\vspace{-4mm}
 \begin{table}[H]
 	\centering
 	\caption[Fasce della Dead-Zone]{Fasce della Dead-Zone}

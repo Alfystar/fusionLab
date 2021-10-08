@@ -3,112 +3,109 @@
 \babel@toc {italian}{}
 \contentsline {chapter}{Ringraziamenti}{1}{chapter*.2}%
 \contentsline {chapter}{Introduzione}{2}{chapter*.3}%
-\contentsline {section}{Fusione Termonucleare}{2}{section*.4}%
-\contentsline {section}{Struttura di un Tokamak}{4}{section*.5}%
-\contentsline {section}{Obiettivi della Tesi}{5}{section*.6}%
-\contentsline {chapter}{\numberline {1}Elementi Costitutivi}{6}{chapter.1}%
-\contentsline {section}{\numberline {1.1}Trasformatore, un Modello di Tokamak}{7}{section.1.1}%
-\contentsline {subsection}{\numberline {1.1.1}Richiami di elettronica}{8}{subsection.1.1.1}%
-\contentsline {subsection}{\numberline {1.1.2}Modellazione Fisica}{12}{subsection.1.1.2}%
-\contentsline {paragraph}{Difformità dalla realtà}{12}{section*.18}%
-\contentsline {subsection}{\numberline {1.1.3}Semplificazione Primario - Secondario}{13}{subsection.1.1.3}%
-\contentsline {subsection}{\numberline {1.1.4}Dal circuito alla dinamica}{14}{subsection.1.1.4}%
-\contentsline {subsubsection}{Dinamica di Plasma}{14}{section*.19}%
-\contentsline {subsubsection}{Dinamica del Trasformatore}{14}{section*.21}%
-\contentsline {subsection}{\numberline {1.1.5}Funzione di Trasferimento}{14}{subsection.1.1.5}%
-\contentsline {subsubsection}{Funzione di Trasferimento Plasma}{15}{section*.23}%
-\contentsline {subsubsection}{Funzione di Trasferimento Trasformatore}{15}{section*.25}%
-\contentsline {subsubsection}{Funzione di Trasferimento Complessiva}{15}{section*.28}%
-\contentsline {subsection}{\numberline {1.1.6}Misura del campo Elettrico del Plasma come indice per la Corrente}{16}{subsection.1.1.6}%
-\contentsline {section}{\numberline {1.2}Trasduttore di Corrente}{18}{section.1.2}%
-\contentsline {subsection}{\numberline {1.2.1}Sensore scelto}{18}{subsection.1.2.1}%
-\contentsline {subsection}{\numberline {1.2.2}Criticità}{19}{subsection.1.2.2}%
-\contentsline {subsection}{\numberline {1.2.3}Funzionamento Interno}{20}{subsection.1.2.3}%
-\contentsline {subsection}{\numberline {1.2.4}Connessione elettrica}{22}{subsection.1.2.4}%
-\contentsline {subsection}{\numberline {1.2.5}Misura}{22}{subsection.1.2.5}%
-\contentsline {paragraph}{Rimozione Offset}{23}{section*.31}%
-\contentsline {paragraph}{Analisi Sensibilità}{23}{section*.33}%
-\contentsline {section}{\numberline {1.3}Driver di Corrente - IBT-2}{24}{section.1.3}%
-\contentsline {subsection}{\numberline {1.3.1}Schema Elettrico}{25}{subsection.1.3.1}%
-\contentsline {subsection}{\numberline {1.3.2}Connessione di Controllo}{25}{subsection.1.3.2}%
-\contentsline {subsection}{\numberline {1.3.3}Benchmark del Driver}{27}{subsection.1.3.3}%
-\contentsline {paragraph}{Dead-Zone Inferiore}{27}{section*.36}%
-\contentsline {paragraph}{Dead-Zone Superiore}{28}{section*.37}%
-\contentsline {chapter}{\numberline {2}Architettura di Sistema}{29}{chapter.2}%
-\contentsline {section}{\numberline {2.1}Architettura ad alto livello}{29}{section.2.1}%
-\contentsline {section}{\numberline {2.1} EMP - Libreria di Comunicazione Seriale}{31}{section*.38}%
-\contentsline {paragraph}{\citefield {EMP}{title}}{31}{section*.39}%
-\contentsline {paragraph}{Multiple-Package}{31}{section*.40}%
-\contentsline {paragraph}{Zero Tempo di negoziazione}{32}{section*.41}%
-\contentsline {paragraph}{Responsabilità}{32}{section*.42}%
-\contentsline {section}{\numberline {2.1} Protocollo - COBS}{32}{section*.43}%
-\contentsline {subsection}{\numberline {2.1.1}Metodo di codifica}{32}{subsection.2.1.1}%
-\contentsline {subsection}{\numberline {2.1.2}Caratteristiche chiave}{33}{subsection.2.1.2}%
-\contentsline {subsection}{\numberline {2.1.3}Integrità dei pacchetti}{35}{subsection.2.1.3}%
-\contentsline {subsection}{\numberline {2.1.4}Struttura del codice}{36}{subsection.2.1.4}%
-\contentsline {subsection}{\numberline {2.1.5}Logica di Comunicazione}{37}{subsection.2.1.5}%
-\contentsline {subsection}{\numberline {2.1.6}Code Flow}{38}{subsection.2.1.6}%
-\contentsline {subsection}{\numberline {2.1.7}Test di Codifica/Decodifica su ogni Device}{39}{subsection.2.1.7}%
-\contentsline {section}{\numberline {2.2}Online Sampling}{40}{section.2.2}%
-\contentsline {subsection}{\numberline {2.2.1}Interconnessione \textbf {$\mu $Controllore}\xspace $\Leftrightarrow $ Companion}{41}{subsection.2.2.1}%
-\contentsline {subsection}{\numberline {2.2.2}Storage su file delle informazioni}{42}{subsection.2.2.2}%
-\contentsline {section}{\numberline {2.3}Post Elaborazione con Matlab}{43}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Conversioni Dati}{43}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}Filtraggio senza distorsioni di fase}{43}{subsection.2.3.2}%
-\contentsline {chapter}{\numberline {3}Stima del modello del sistema}{44}{chapter.3}%
-\contentsline {section}{\numberline {3.1}Metodo di stima automatico}{45}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Tuning dei coefficienti}{47}{section.3.2}%
-\contentsline {section}{\numberline {3.3}Benchmark}{48}{section.3.3}%
-\contentsline {chapter}{\numberline {4}Modello teorico di Controllo}{51}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Obiettivo di controllo}{51}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Teorema del valore iniziale e del valore finale}{53}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Controllo a errore nullo}{54}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Design di controllore adottato}{56}{subsection.4.3.1}%
-\contentsline {section}{\numberline {4.4}Simulazione \textit {Qualitativa} su Simulink}{57}{section.4.4}%
-\contentsline {subsection}{\numberline {4.4.1}Design Base di controllo}{58}{subsection.4.4.1}%
-\contentsline {subsection}{\numberline {4.4.2}Design Avanzato di controllo}{59}{subsection.4.4.2}%
-\contentsline {subsubsection}{Analisi controllo Avanzato per $ K_p $=0 $ K_1 $=0 $ K_2 $=100}{59}{section*.56}%
-\contentsline {subsubsection}{Analisi controllo Avanzato per $ K_p $=0 $ K_1 $=10 $ K_2 $=100}{60}{section*.57}%
-\contentsline {subsubsection}{Analisi controllo Avanzato per $ K_p $=0 $ K_1 $=100 $ K_2 $=500}{61}{section*.58}%
-\contentsline {subsubsection}{Analisi controllo Avanzato per $ K_p $=0.2 $ K_1 $=100 $ K_2 $=500}{62}{section*.59}%
-\contentsline {subsubsection}{Analisi controllo Avanzato per $ K_p $=0.8 $ K_1 $=100 $ K_2 $=500}{63}{section*.60}%
-\contentsline {section}{\numberline {4.5}Conclusioni per il design Avanzato}{64}{section.4.5}%
-\contentsline {chapter}{\numberline {5}Sviluppo Controllo reale}{65}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Discretizzazione Zero-Order Hold (Z.O.H.)}{67}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Codifica del controllore}{69}{section.5.2}%
-\contentsline {section}{\numberline {5.3}Esperimenti}{69}{section.5.3}%
-\contentsline {subsection}{\numberline {5.3.1}Inseguimento singolo}{70}{subsection.5.3.1}%
-\contentsline {subsection}{\numberline {5.3.2}Inseguimento Triangolare}{71}{subsection.5.3.2}%
-\contentsline {subsection}{\numberline {5.3.3}Cambio riferimento in corsa}{72}{subsection.5.3.3}%
-\contentsline {chapter}{\numberline {6}Conclusioni e sviluppi futuri}{73}{chapter.6}%
-\contentsline {chapter}{Appendice A - Codice Arduino}{75}{chapter*.63}%
-\contentsline {section}{\numberline {7.1}Set-up Registri}{75}{section.7.1}%
-\contentsline {subsection}{\numberline {7.1.1}Tic Timer}{75}{subsection.7.1.1}%
-\contentsline {subsection}{\numberline {7.1.2}Frequenza PWM}{75}{subsection.7.1.2}%
-\contentsline {subsubsection}{Offset Calculation}{76}{section*.64}%
-\contentsline {section}{\numberline {7.2}Generatore di Segnale}{77}{section.7.2}%
-\contentsline {subsection}{\numberline {7.2.1}Segnali Base}{77}{subsection.7.2.1}%
-\contentsline {subsubsection}{Rampa}{77}{section*.65}%
-\contentsline {subsection}{\numberline {7.2.2}Segnali Composti}{78}{subsection.7.2.2}%
-\contentsline {subsubsection}{Onda Triangloare}{78}{section*.66}%
-\contentsline {subsubsection}{Onda Trapezoidale (RapidShot)}{78}{section*.67}%
-\contentsline {section}{\numberline {7.3}Codici Controllore}{79}{section.7.3}%
-\contentsline {subsubsection}{Setup dell'esperimento}{79}{section*.68}%
-\contentsline {subsubsection}{Loop di Controllo}{79}{section*.69}%
-\contentsline {subsection}{\numberline {7.3.1}Classe Controllore}{80}{subsection.7.3.1}%
-\contentsline {chapter}{Appendice B - Codice EMP}{83}{chapter*.70}%
-\contentsline {section}{\numberline {8.4}Pacchetti in EMP}{83}{section.8.4}%
-\contentsline {subsection}{\numberline {8.4.1}Definizione di 2 Pacchetti}{83}{subsection.8.4.1}%
-\contentsline {subsection}{\numberline {8.4.2}Pacchetti Multipli}{84}{subsection.8.4.2}%
-\contentsline {chapter}{Appendice C - Matlab Post Elaboration}{85}{chapter*.71}%
-\contentsline {section}{\numberline {9.5}Importazione dei Dati}{85}{section.9.5}%
-\contentsline {subsection}{\numberline {9.5.1}Parsing Tabelle}{85}{subsection.9.5.1}%
-\contentsline {subsection}{\numberline {9.5.2}Conversione dei Dati}{86}{subsection.9.5.2}%
-\contentsline {section}{\numberline {9.6}Stima Parametri}{87}{section.9.6}%
-\contentsline {subsection}{\numberline {9.6.1}Stima parametri automatica}{87}{subsection.9.6.1}%
-\contentsline {subsection}{\numberline {9.6.2}Stima parametri manuale}{87}{subsection.9.6.2}%
-\contentsline {subsection}{\numberline {9.6.3}Plot dell'esperimento}{88}{subsection.9.6.3}%
-\contentsline {chapter}{Elenco delle figure}{91}{chapter*.72}%
-\contentsline {chapter}{Elenco delle tabelle}{92}{chapter*.73}%
-\contentsline {chapter}{Elenco dei codici}{94}{chapter*.74}%
-\contentsline {chapter}{Bibliografia}{96}{chapter*.75}%
+\contentsline {section}{Fusione Termonucleare, di cosa si tratta}{2}{section*.4}%
+\contentsline {section}{Struttura di un Tokamak}{5}{section*.5}%
+\contentsline {section}{Obiettivi della Tesi}{7}{section*.6}%
+\contentsline {chapter}{\numberline {1}Elementi Costitutivi}{8}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Trasformatore, un Modello di Tokamak}{9}{section.1.1}%
+\contentsline {subsection}{\numberline {1.1.1}Richiami di elettronica}{10}{subsection.1.1.1}%
+\contentsline {subsection}{\numberline {1.1.2}Modellazione Fisica}{14}{subsection.1.1.2}%
+\contentsline {paragraph}{Difformità dalla realtà}{14}{section*.25}%
+\contentsline {subsection}{\numberline {1.1.3}Semplificazione Primario - Secondario}{15}{subsection.1.1.3}%
+\contentsline {subsection}{\numberline {1.1.4}Dal circuito alla dinamica}{16}{subsection.1.1.4}%
+\contentsline {subsubsection}{Dinamica di Plasma}{16}{section*.26}%
+\contentsline {subsubsection}{Dinamica del Trasformatore}{16}{section*.31}%
+\contentsline {subsection}{\numberline {1.1.5}Funzione di Trasferimento}{17}{subsection.1.1.5}%
+\contentsline {subsubsection}{Funzione di Trasferimento Plasma}{17}{section*.33}%
+\contentsline {subsubsection}{Funzione di Trasferimento Trasformatore}{17}{section*.35}%
+\contentsline {subsubsection}{Funzione di Trasferimento Complessiva}{18}{section*.38}%
+\contentsline {subsection}{\numberline {1.1.6}Misura del campo Elettrico del Plasma come indice per la Corrente}{19}{subsection.1.1.6}%
+\contentsline {section}{\numberline {1.2}Trasduttore di Corrente}{20}{section.1.2}%
+\contentsline {subsection}{\numberline {1.2.1}Sensore scelto}{20}{subsection.1.2.1}%
+\contentsline {subsection}{\numberline {1.2.2}Criticità}{21}{subsection.1.2.2}%
+\contentsline {subsection}{\numberline {1.2.3}Funzionamento Interno}{22}{subsection.1.2.3}%
+\contentsline {subsection}{\numberline {1.2.4}Connessione elettrica}{24}{subsection.1.2.4}%
+\contentsline {subsection}{\numberline {1.2.5}Dalla misura alla corrente}{24}{subsection.1.2.5}%
+\contentsline {paragraph}{Rimozione Offset}{25}{section*.41}%
+\contentsline {paragraph}{Analisi Sensibilità}{25}{section*.43}%
+\contentsline {section}{\numberline {1.3}Driver di Corrente - IBT-2}{26}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Schema Elettrico}{27}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Connessione di Controllo}{28}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.3}Benchmark del Driver}{29}{subsection.1.3.3}%
+\contentsline {paragraph}{Dead-Zone Inferiore}{29}{section*.46}%
+\contentsline {paragraph}{Dead-Zone Superiore}{30}{section*.47}%
+\contentsline {chapter}{\numberline {2}Architettura di Sistema}{31}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Architettura ad alto livello}{31}{section.2.1}%
+\contentsline {section}{\numberline {2.1} EMP - Libreria di Comunicazione Seriale}{33}{section*.48}%
+\contentsline {paragraph}{\cite *{EMP}}{33}{section*.49}%
+\contentsline {section}{\numberline {2.1} Protocollo - COBS}{34}{section*.50}%
+\contentsline {subsection}{\numberline {2.1.1}Metodo di codifica}{34}{subsection.2.1.1}%
+\contentsline {subsection}{\numberline {2.1.2}Caratteristiche chiave}{35}{subsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.1.3}Integrità dei pacchetti}{36}{subsection.2.1.3}%
+\contentsline {subsection}{\numberline {2.1.4}Struttura del codice}{37}{subsection.2.1.4}%
+\contentsline {subsection}{\numberline {2.1.5}Logica di Comunicazione}{38}{subsection.2.1.5}%
+\contentsline {subsection}{\numberline {2.1.6}Code Flow}{39}{subsection.2.1.6}%
+\contentsline {subsection}{\numberline {2.1.7}Test di Codifica/Decodifica su ogni Device}{40}{subsection.2.1.7}%
+\contentsline {section}{\numberline {2.2}Online Sampling}{41}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Interconnessione \textbf {$\mu $Controllore}\xspace $\Leftrightarrow $ Companion}{42}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Storage su file delle informazioni}{43}{subsection.2.2.2}%
+\contentsline {section}{\numberline {2.3}Post Elaborazione con Matlab}{44}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Conversioni Dati}{44}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Filtraggio senza distorsioni di fase}{44}{subsection.2.3.2}%
+\contentsline {chapter}{\numberline {3}Stima del modello del sistema}{45}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Metodo di stima automatico}{46}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Tuning dei coefficienti}{48}{section.3.2}%
+\contentsline {section}{\numberline {3.3}Benchmark della stima}{49}{section.3.3}%
+\contentsline {chapter}{\numberline {4}Modello teorico di Controllo}{52}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Obiettivo di controllo}{52}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Teorema del valore iniziale e del valore finale}{54}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Controllo a errore nullo}{55}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Design di controllore adottato}{57}{subsection.4.3.1}%
+\contentsline {section}{\numberline {4.4}Simulazione \textit {Qualitativa} su Simulink}{58}{section.4.4}%
+\contentsline {subsection}{\numberline {4.4.1}Design Base di controllo}{59}{subsection.4.4.1}%
+\contentsline {subsection}{\numberline {4.4.2}Design Avanzato di controllo}{60}{subsection.4.4.2}%
+\contentsline {subsubsection}{Analisi controllo Avanzato per $ K_p $=0 $ K_1 $=0 $ K_2 $=100}{60}{section*.63}%
+\contentsline {subsubsection}{Analisi controllo Avanzato per $ K_p $=0 $ K_1 $=10 $ K_2 $=100}{61}{section*.64}%
+\contentsline {subsubsection}{Analisi controllo Avanzato per $ K_p $=0 $ K_1 $=100 $ K_2 $=500}{62}{section*.65}%
+\contentsline {subsubsection}{Analisi controllo Avanzato per $ K_p $=0.2 $ K_1 $=100 $ K_2 $=500}{63}{section*.66}%
+\contentsline {subsubsection}{Analisi controllo Avanzato per $ K_p $=0.8 $ K_1 $=100 $ K_2 $=500}{64}{section*.67}%
+\contentsline {section}{\numberline {4.5}Conclusioni per il design Avanzato}{65}{section.4.5}%
+\contentsline {chapter}{\numberline {5}Sviluppo Controllo reale}{66}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Discretizzazione Zero-Order Hold (Z.O.H.)}{68}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Codifica del controllore}{70}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Esperimenti}{70}{section.5.3}%
+\contentsline {subsection}{\numberline {5.3.1}Inseguimento singolo}{71}{subsection.5.3.1}%
+\contentsline {subsection}{\numberline {5.3.2}Inseguimento Triangolare}{72}{subsection.5.3.2}%
+\contentsline {subsection}{\numberline {5.3.3}Cambio riferimento in corsa}{73}{subsection.5.3.3}%
+\contentsline {chapter}{\numberline {6}Conclusioni e sviluppi futuri}{74}{chapter.6}%
+\contentsline {chapter}{Appendice A - Codice Arduino}{76}{chapter*.70}%
+\contentsline {section}{\numberline {7.1}Set-up Registri}{76}{section.7.1}%
+\contentsline {subsection}{\numberline {7.1.1}Tic Timer}{76}{subsection.7.1.1}%
+\contentsline {subsection}{\numberline {7.1.2}Frequenza PWM}{76}{subsection.7.1.2}%
+\contentsline {subsubsection}{Offset Calculation}{77}{section*.71}%
+\contentsline {section}{\numberline {7.2}Generatore di Segnale}{78}{section.7.2}%
+\contentsline {subsection}{\numberline {7.2.1}Segnali Base}{78}{subsection.7.2.1}%
+\contentsline {subsubsection}{Rampa}{78}{section*.72}%
+\contentsline {subsection}{\numberline {7.2.2}Segnali Composti}{79}{subsection.7.2.2}%
+\contentsline {subsubsection}{Onda Triangloare}{79}{section*.73}%
+\contentsline {subsubsection}{Onda Trapezoidale (RapidShot)}{79}{section*.74}%
+\contentsline {section}{\numberline {7.3}Codici Controllore}{80}{section.7.3}%
+\contentsline {subsubsection}{Setup dell'esperimento}{80}{section*.75}%
+\contentsline {subsubsection}{Loop di Controllo}{80}{section*.76}%
+\contentsline {subsection}{\numberline {7.3.1}Classe Controllore}{81}{subsection.7.3.1}%
+\contentsline {chapter}{Appendice B - Codice EMP}{84}{chapter*.77}%
+\contentsline {section}{\numberline {8.4}Pacchetti in EMP}{84}{section.8.4}%
+\contentsline {subsection}{\numberline {8.4.1}Definizione di 2 Pacchetti}{84}{subsection.8.4.1}%
+\contentsline {subsection}{\numberline {8.4.2}Pacchetti Multipli}{85}{subsection.8.4.2}%
+\contentsline {chapter}{Appendice C - Matlab Post Elaboration}{86}{chapter*.78}%
+\contentsline {section}{\numberline {9.5}Importazione dei Dati}{86}{section.9.5}%
+\contentsline {subsection}{\numberline {9.5.1}Parsing Tabelle}{86}{subsection.9.5.1}%
+\contentsline {subsection}{\numberline {9.5.2}Conversione dei Dati}{87}{subsection.9.5.2}%
+\contentsline {section}{\numberline {9.6}Stima Parametri}{88}{section.9.6}%
+\contentsline {subsection}{\numberline {9.6.1}Stima parametri automatica}{88}{subsection.9.6.1}%
+\contentsline {subsection}{\numberline {9.6.2}Stima parametri manuale}{88}{subsection.9.6.2}%
+\contentsline {subsection}{\numberline {9.6.3}Plot dell'esperimento}{89}{subsection.9.6.3}%
+\contentsline {chapter}{Elenco delle figure}{92}{chapter*.79}%
+\contentsline {chapter}{Elenco delle tabelle}{93}{chapter*.80}%
+\contentsline {chapter}{Elenco dei codici}{95}{chapter*.81}%
+\contentsline {chapter}{Bibliografia}{97}{chapter*.82}%

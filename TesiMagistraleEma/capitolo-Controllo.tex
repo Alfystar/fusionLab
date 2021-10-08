@@ -19,20 +19,19 @@ In fine, essendo l'obiettivo di controllo realizzato da una rampa, dopo un certo
 
 \newpage
 \section{Discretizzazione Zero-Order Hold (Z.O.H.)}
-Un oggetto del tipo \textit{\textbf{Zero-Order Hold} (Z.O.H.)} altro non è che un convertitore Digitale$ \rightarrow $Analogico che permette di interfacciare dei segnali \textbf{Tempo Discreto} $\mathbb{T} =  \mathbb{Z} $ che evolvono $\forall \Delta T_s $\footnote{$ T_s $ = Sampling Time} con sistemi dinamici \textbf{Tempo Continuo} $\mathbb{T} =  \mathbb{R} $.
-
+Un oggetto del tipo \textit{\textbf{Zero-Order Hold} (Z.O.H.)} altro non è che un convertitore Digitale$ \rightarrow $Analogico che permette di interfacciare dei segnali \textbf{Tempo Discreto} $\mathbb{T} =  \mathbb{Z} $ che evolvono $\forall \Delta T_s $\footnote{$ T_s $ = Sampling Time} con sistemi dinamici \textbf{Tempo Continuo} $\mathbb{T} =  \mathbb{R} $.\vspace{-4mm}
 \begin{figure}[H]
 	\centering
-	\caption[Discretizzazione Zero-Order Hold  $ H_d(z) $ del sistema Tempo continuo $ H(s) $]{Discretizzazione ZOH $ H_d(z) $ per il sistema Tempo continuo $ H(s) $}
-	\includegraphics[width=1\textwidth]{Controllo/zoh-apply.png}
+	\caption[Discretizzazione Zero-Order Hold  $ H_d(z) $ del sistema Tempo continuo $ H(s) $]{Discretizzazione ZOH $ H_d(z) $ per il sistema Tempo continuo $ H(s) $}\vspace{4mm}
+	\includegraphics[width=1\textwidth]{Controllo/zoh-apply-Big.png}
 \end{figure}
 \noindent
 Questa interconnessione "\textit{congela}" l'ultimo segnale discreto $ u(k T_s) $ ricevuto e lo ripropone come un segnale costante in ingresso al sistema continuo che evolve in maniera indipendente.\\
 L'uscita $ y(k T_s) $ è la discretizzazione di $ y(t) $, campionata ogni $ T_s $ .
-\begin{figure}[H]
+\begin{figure}[H]\vspace{-3mm}
 	\centering
-	\caption[Effetto sui segnali discretizzati con il metodo Zero-Order Hold]{Segnali discretizzati con il metodo Zero-Order Hold}
-	\includegraphics[width=1\textwidth]{Controllo/SegnaliDiscretiContinui.png}
+	\caption[Effetto sui segnali discretizzati con il metodo Zero-Order Hold]{Segnali discretizzati con il metodo Zero-Order Hold}\vspace{2mm}
+	\includegraphics[width=1\textwidth]{Controllo/SegnaliDiscretiContinui-v2-Big.png}
 \end{figure}
 \noindent
 Il sistema $ H(s) $ durante gli intervalli $ T_s $  evolve avendo una costante in ingresso, e al successivo istante di campionamento l'uscita raggiunta viene campionata e mantenuta per ul successivo $ T_s $, e questo procedimento all'infinito.
