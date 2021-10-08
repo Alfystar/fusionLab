@@ -334,7 +334,7 @@ void iiCTRL::changeKp(float kp) { this->kp = kp; }
 
 
 \chapter*{Appendice B\\ EMP Code} \label{EMPCode}
-\addcontentsline{toc}{chapter}{Appendice B - Codice EMP} 
+\addcontentsline{toc}{chapter}{Appendice B - Codice EMP}
 \setcounter{chapter}{\thechapter + 1}
 
 \section{Pacchetti in EMP}
@@ -467,7 +467,7 @@ function tCon = tableConvert(table,Info)
 	tCon.V2_readFilter = filtfilt(d,tCon.V2_read);
 end
 \end{lstlisting}
- Usando come funzioni accessorie:
+Usando come funzioni accessorie:
 \begin{lstlisting}[style=matlabStyle,caption={Parsing delle tabelle},label=lst:deadzoneRemove] 
 function u = pwm2duty(pwmList, downDead, upDead)
 	u = zeros(length(pwmList),1);

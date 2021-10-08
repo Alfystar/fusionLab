@@ -124,7 +124,7 @@ Da cui, applicando il \nameref{th:valFinale} otteniamo:
 	\begin{vwcol}[widths={9cm,4cm}, sep=0mm, rule=0px]
 		\vspace{-10mm}
 		\begin{empheq}[box=\mathStep]{equation*}
-						P(s) = K_p \cdot \frac{s^{\rho_{p_n}} \cdot \prod_{i=1}^{\#Zeri\neq0} \left ( \frac{s}{z_i} + 1 \right )}{s^{\rho_{p_d}} \cdot \prod_{i=1}^{\#Zeri\neq0} \left ( \frac{s}{p_i} + 1 \right )} = 
+			P(s) = K_p \cdot \frac{s^{\rho_{p_n}} \cdot \prod_{i=1}^{\#Zeri\neq0} \left ( \frac{s}{z_i} + 1 \right )}{s^{\rho_{p_d}} \cdot \prod_{i=1}^{\#Zeri\neq0} \left ( \frac{s}{p_i} + 1 \right )} = 
 			\frac{K_p}{s^{\rho_{p}}} \cdot \frac{P_n(s)}{P_d(s)}
 		\end{empheq}
 		\newpage
@@ -143,8 +143,8 @@ Da cui, applicando il \nameref{th:valFinale} otteniamo:
 \newpage
 Partendo da questa forma, svolgiamo i calcoli dell'equazione  \ref{eq:dinamicaErroreRifCostFunxTrasf}:
 \begin{empheq}[box=\mathCalc]{equation} \label{eq:guadagnoAnelloPlusOne}
-			1 + P_m(s)C(s) =  1 + \frac{K_c}{s^{\rho_{c}}} \frac{C_n}{C_d}\cdot \frac{K_p}{s^{\rho_{p}}}  \frac{P_n}{P_d}=
-			\frac{s^{\rho_{c} + \rho_{p}} C_d P_d + K_c K_p C_n P_n}{s^{\rho_{c} + \rho_{p}} C_d P_d}
+	1 + P_m(s)C(s) =  1 + \frac{K_c}{s^{\rho_{c}}} \frac{C_n}{C_d}\cdot \frac{K_p}{s^{\rho_{p}}}  \frac{P_n}{P_d}=
+	\frac{s^{\rho_{c} + \rho_{p}} C_d P_d + K_c K_p C_n P_n}{s^{\rho_{c} + \rho_{p}} C_d P_d}
 \end{empheq}
 
 Da cui otteniamo che:
@@ -164,13 +164,13 @@ Tenendo presente che $ C_d,P_d,C_n,P_n \rightarrowtail 1 $ per $ s \rightarrowta
 
 \begin{center}	\label{eq:esitiErrore}
 	$ e_\infty = \lim\limits_{t \rightarrowtail \infty} e(t) =
-	\left \{ \begin{array}{l c c}
-		0                   & se & \rho \geq 1  \\
-		\frac{K_r}{K_c K_p} & se & \rho = 0     \\
-		\infty                & se & \rho \leq 0 
-	\end{array}
-	\right.
-$
+		\left \{ \begin{array}{l c c}
+			0                   & se & \rho \geq 1  \\
+			\frac{K_r}{K_c K_p} & se & \rho = 0     \\
+			\infty              & se & \rho \leq 0 
+		\end{array}
+		\right.
+	$
 \end{center}
 Essendo {\color{fireenginered}$ \rho_{p} = -1 $} a causa dello Zero in 0, abbiamo che il controllore dovrà necessariamente avere {\color{fireenginered}$ \rho_{c} = 2 $} per ottenere {\color{fireenginered}$ \rho = 1 $}. Il grado minimo di controllore di cui necessitiamo è quindi:
 \begin{empheq}[box=\mathStep]{equation}	\label{eq:contollerDesignBase}
@@ -207,7 +207,7 @@ Partendo dalla conoscenza che $ P_d $ è sicuramente composta da poli stabili ne
 \subsection{Design di controllore adottato}
 In questa tesi la forma di controllore che si è scelto di usare è la seguente:
 \begin{empheq}[box=\mathCalc]{equation} \label{eq:controllerDesign}
-	C(s) = \frac{K_2}{s^2} + \frac{K_1}{s} + K_p = \frac{K_2 + s K_1 + s^2 K_p}{s^2} 
+	C(s) = \frac{K_2}{s^2} + \frac{K_1}{s} + K_p = \frac{K_2 + s K_1 + s^2 K_p}{s^2}
 \end{empheq}
 \noindent
 La scelta è dovuta alla sua somiglianza con un più classico PID, che in questo caso non sarebbe bastato a raggiungere le specifiche (vedi sezione \nameref{sec:inseguitoreErroreNullo}), ma come per lui, tramite un lavoro di \textit{Tuning} dei coefficienti è possibile ottenere delle buone prestazioni per il sistema a ciclo chiuso.\\
@@ -228,7 +228,7 @@ Di seguito i 2 sistemi di controllo usati su Simulink per generare la simulazion
 \noindent
 Il primo ci serve solo per mostrare l'andamento del sistema con un controllo che punta solo a ottenere gli obiettivi di controllo.\\
 Al contrario il secondo punta ad analizzare la risposta del sistema al variare dei coefficienti con lo scopo preciso di migliorarne le prestazioni.
-In entrambi i casi, la tensione $ V_{2_{ref}} = 0.5V$ 
+In entrambi i casi, la tensione $ V_{2_{ref}} = 0.5V$
 
 \noindent
 {\footnotesize NOTA BENE: I grafici riportati hanno il \textbf{\underline{segnale di errore è zoomato di un fattore 10}} per meglio mettere in evidenza il comportamento dell'errore}
