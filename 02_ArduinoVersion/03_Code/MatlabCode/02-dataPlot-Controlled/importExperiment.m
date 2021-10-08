@@ -58,7 +58,7 @@ dt = Info.dt;
 tCon = table;
 
 
-tCon.PWMDead = pwm2duty(tCon.PWM,120,210);
+tCon.PWMDead = pwm2duty(tCon.PWM,40,225);
 tCon.PWM=tCon.PWM/255;
 tCon.V2_read = (table.V2_read - V2Mean) * vScale;
 tCon.Isense_read = (table.Isense_read - IsenseMean) * IScale;

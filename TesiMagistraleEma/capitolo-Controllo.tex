@@ -5,7 +5,13 @@
 	}
 \end{minipage}
 
-\vspace*{1cm}
+%\vspace*{1cm}
+
+\begin{figure}[H]
+	\centering
+	\caption[Impianto Reale]{Impianto Reale}
+	\includegraphics[width=1\textwidth]{ImpiantoReale.jpg}
+\end{figure}
 \noindent
 Essendo un \microControllore un computer non eccessivamente potente, è necessario realizzare la funzione di trasferimento del il controllo (equazione \ref{eq:controllerDesign}) mediante un sistema a tempo discreto.\\
 Per semplificarci l'implementazione, invece di creare un unico sistema del 2° ordine, si è optato per sommare tra loro le tre funzioni di trasferimento semplici che compongono il controllore, così da semplificare il debugging e permettere un più semplice controllo sullo stato dei componenti, utile per saturare gli integratori una volta che l'uscita ha superato la soglia di attuabilità (\textit{Saturazione}).\\
@@ -13,7 +19,7 @@ In fine, essendo l'obiettivo di controllo realizzato da una rampa, dopo un certo
 
 \newpage
 \section{Discretizzazione Zero-Order Hold (Z.O.H.)}
-Un oggetto del tipo \textit{\textbf{Zero-Order Hold} (Z.O.H.)} altro non è che un convertitore Digitale$ \rightarrow $Analogico che permette di interfacciare dei segnali \textbf{Tempo Discreto} $\mathbb{T} =  \mathbb{Z} $ che evolvono $\forall \Delta t $ con sistemi dinamici \textbf{Tempo Continuo} $\mathbb{T} =  \mathbb{R} $.
+Un oggetto del tipo \textit{\textbf{Zero-Order Hold} (Z.O.H.)} altro non è che un convertitore Digitale$ \rightarrow $Analogico che permette di interfacciare dei segnali \textbf{Tempo Discreto} $\mathbb{T} =  \mathbb{Z} $ che evolvono $\forall \Delta T_s $\footnote{$ T_s $ = Sampling Time} con sistemi dinamici \textbf{Tempo Continuo} $\mathbb{T} =  \mathbb{R} $.
 
 \begin{figure}[H]
 	\centering
@@ -22,7 +28,7 @@ Un oggetto del tipo \textit{\textbf{Zero-Order Hold} (Z.O.H.)} altro non è che 
 \end{figure}
 \noindent
 Questa interconnessione "\textit{congela}" l'ultimo segnale discreto $ u(k T_s) $ ricevuto e lo ripropone come un segnale costante in ingresso al sistema continuo che evolve in maniera indipendente.\\
-L'uscita $ y(k T_s) $ è la discretizzazione di $ y(t) $, campionata ogni $ T_s $ \footnote{$ T_s $ = Sampling Time}.
+L'uscita $ y(k T_s) $ è la discretizzazione di $ y(t) $, campionata ogni $ T_s $ .
 \begin{figure}[H]
 	\centering
 	\caption[Effetto sui segnali discretizzati con il metodo Zero-Order Hold]{Segnali discretizzati con il metodo Zero-Order Hold}
@@ -107,13 +113,47 @@ I calcoli della trasformata Zeta, sono presenti solo per completezza e sono stat
 \end{center}
 \noindent
 Per i nostri scopi noi siamo interessati alle matrici $ A_d,B_d,C_d,D_d $ della conversione, così da implementare esattamente la discretizzazione di ordine Zero del sistema dinamico.\\
-
-
-\section{Codifica del controllore}
+\vspace{-6mm}
+\section{Codifica del controllore}\vspace{-4mm}
 La codifica del controllore \ref{eq:controllerDesign} avviene attraverso le matrici $ A_d,B_d,C_d,D_d $ riportate in tabella \ref{tab:discretizzazione}, con queste matrici è stato costruito la classe di controllo \verb|iiCTRL| riportata in appendice nel codice del controllore (\nameref{lst:controlClassH} e \nameref{lst:controlClassCpp}).\\
 La classe viene chiamata all'interno del \nameref{lst:controlLoop} ogni istante di campionamento, e permette la modifica a richiesta del riferimento da inseguire.\\
-Al suo interno ha già la logica di \textit{Safe-Shutdown} da attivare quando il controllo ha raggiunto la saturazione per un tempo superiore ai 200ms, risulta infatti rischioso tenere connesso il trasformatore, poiché le correnti che scorrono sono dell'ordine dei 10A, e in ogni caso raggiungere gli obiettivi di controllo necessita di un rampa di corrente sul primario, che non si può ottenere se si è già saturato.\\
-Questo contatore viene ripristinato a 0 all'arrivo di un nuovo riferimento da inseguire, causando di fatto il ripristino dell'esperimento.\\
+All'interno della classe è già codificata una la logica di \textit{Safe-Shutdown}, essa viene attivata quando il controllo ha raggiunto la saturazione per un tempo superiore ai 200ms, risulta infatti rischioso e dispendioso tenere connesso il trasformatore, poiché le correnti che scorrono sono dell'ordine dei 10A, e in ogni caso raggiungere gli obiettivi di controllo necessita di una rampa di corrente sul primario, che non si può ottenere se si è già saturato.\\
+Questo contatore viene ripristinato a 0 all'arrivo di un nuovo riferimento da inseguire, causando di fatto il ripristino dell'esperimento.
+
+%\newpage
 
 \section{Esperimenti}
+Di seguito vengono riportati diversi spari catturati dal sistema in funzione, nella sua interezza, usando al posto di \MARTe, un programma scritto in C++ per Linux chiamato \textit{MARTe2Moc}, quando il resto del sistema verrà controllato, gli stessi input di comando inviati da questa imitazione saranno ricevuti dal \microControllore e attuati in maniera identica.
 
+\subsection{Inseguimento singolo}
+In questo "\textit{sparo}" viene impostato il riferimento a $ V_{2_{ref}}=0.5V $ e il controllo insegue prontamente il riferimento, mantenendo l'errore entro margini molto stretti e con una decrescita esponenziale.\vspace{-2mm}
+\begin{figure}[H]
+	\centering
+	\caption[Esperimento singolo $ V_{2_{ref}}=0.5V $]{Esperimento singolo $ V_{2_{ref}}=0.5V $}
+	\includegraphics[width=1\textwidth]{Controllo/02-Bi-FrontCapture.pdf}
+\end{figure}\vspace{-8mm}
+\noindent
+Come abbiamo avuto modo di vedere nel capitolo "\nameref{cap:stimaModello}", il modello lineare che abbiamo trovato, taglia tutta una serie di \nonLinearita presenti invece nell'impianto e particolarmente evidenti nei pressi della \textbf{Dead-Zone} e della \textbf{Saturazione}, ma il controllo in catena chiusa riesce a gestire questi problemi e il sistema sin dall'inizio tende a 0 esponenzialmente.\\
+Passati i 200ms in saturazione il controllo automaticamente va a 0, realizzando la logica di \textit{Safe-Shutdown} descritta prima. Negli istanti subito successivi è possibile vedere come la tensione sul secondario vada fuori scala e si saturi attorno a $ -2.2V $, questo è concorde con i limiti di misura che abbiamo sul prototipo, e impone che le pendenze massime ineseguibili siano non superiori ai $ \pm2V $.
+
+\subsection{Inseguimento Triangolare}
+In questo secondo esperimento, \textit{MARTe2Moc} è stato programmato per invertire il segno del riferimento ogni volta che il controllo arriva in saturazione, l'obiettivo del test è vedere la risposta del controllo nei pressi della \textbf{Dead-Zone} e in corrispondenza di inversione di polarità, il continuo ribaltamento del $ V_{2_{ref}} $ impedisce di arrivare in saturazione troppo a lungo, rendendo l'esperimento periodico e illimitato nel tempo.\vspace{-2mm}
+\begin{figure}[H]
+	\centering
+	\caption[Inseguimento Triangolare $ V_{2_{ref}}=\pm0.5V $]{Inseguimento Triangolare $ V_{2_{ref}}=\pm0.5V $}
+	\includegraphics[width=1\textwidth]{Controllo/03-PosNeg-capture.pdf}
+\end{figure}\vspace{-8mm}
+\noindent
+Come è possibile vedere, nei pressi della \textbf{Dead-Zone} la presenza della zona morta fa si che l'errore cresca di $ 0.02V $, ma questo errore viene rapidamente ripreso e portato in 0.\\
+
+\newpage
+
+\subsection{Cambio riferimento in corsa}
+In questo terzo esperimento, \textit{MARTe2Moc} è stato programmato per inviare un nuovo riferimento casuale ogni 500ms, nel grafico riportato vi è stato prima un inseguimento "\textit{ripido}", seguito da uno molto morbido che è stato interrotto ben prima del raggiungimento della saturazione da un altro riferimento dello stesso segno negativo ma più ripido:\vspace{-2mm}
+\begin{figure}[H]
+	\centering
+	\caption[Cambio di $ V_{2_{ref}} $ prima della saturazione]{Cambio di $ V_{2_{ref}} $ prima della saturazione}
+	\includegraphics[width=1\textwidth]{Controllo/01-RandomCapture.pdf}
+\end{figure}\vspace{-8mm}
+\noindent
+Risulta evidente che il sistema accetta bene i cambi di riferimenti, bisogna solo correggere il problema nella classe che implementa il controllore modificando che il cambio di riferimento non influisca sullo stato automaticamente.

@@ -62,14 +62,14 @@ clf
 subplot(2,1,1)
 grid on
 hold on
-plot(t,table.PWM)
-plot(t,table.V2_read)
-plot(t,table.Isense_read)
+plot(t,table.PWM * 10, 'LineWidth',2)
+plot(t,table.V2_read, 'LineWidth',2)
+plot(t,table.Isense_read, 'LineWidth',2)
 if(vRef ~=0)
-    plot(t,table.error)
-    legend("PWM%", "V_{secondary}", "I_{primary}", "e")
+    plot(t,table.error * 10)
+    legend("PWM% x10", "V_{secondary}", "I_{primary}", "e x10")
 else
-    legend("PWM%", "V_{secondary}", "I_{primary}")
+    legend("PWM% x10", "V_{secondary}", "I_{primary}")
 end
 title("Experiment: "+name+ "   SampleTime: " + mat2str(dt * 1000000) + "µs")
 xlabel("time [ms]")
@@ -80,20 +80,20 @@ subplot(2,1,2)
 
 grid on
 hold on
-plot(t,table.PWM)
+plot(t,table.PWM* 10,'LineWidth',2)
 
 V2_readPlotFilt = filtfilt(d,table.V2_read);
-plot(t,V2_readPlotFilt)
+plot(t,V2_readPlotFilt,'LineWidth',2)
 
 iSensePlotFilt = filtfilt(d,table.Isense_read);
-plot(t,iSensePlotFilt)
+plot(t,iSensePlotFilt,'LineWidth',2)
 
 if(vRef ~=0)
     errPlotFilt = filtfilt(d,table.error);
-    plot(t,errPlotFilt)
-    legend("PWM%", "V_{secondary}", "I_{primary}", "e")
+    plot(t,errPlotFilt * 10)
+    legend("PWM% x10", "V_{secondary}", "I_{primary}", "e x10")
 else
-    legend("PWM%", "V_{secondary}", "I_{primary}")
+    legend("PWM% x10", "V_{secondary}", "I_{primary}")
 end
 title("Data Filtering")
 xlabel("time [ms]")
@@ -125,11 +125,9 @@ IsenseMean = Info.Isense_mean;
 dt = Info.dt;
 vRef = Info.V2Ref_set;
 
-zoom = 10;
-
 tableRescale = table;
-tableRescale.PWM = table.PWM/255 * zoom;
+tableRescale.PWM = table.PWM/255;
 tableRescale.V2_read = (table.V2_read - V2Mean) * vScale;
 tableRescale.Isense_read = (table.Isense_read - IsenseMean) * IScale;
-tableRescale.error = (tableRescale.V2_read - vRef*vScale) * zoom;
+tableRescale.error = (tableRescale.V2_read - vRef*vScale);
 end

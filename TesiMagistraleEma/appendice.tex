@@ -274,18 +274,21 @@ iiCTRL::iiCTRL(float k2, float k1, float kp) {
 void iiCTRL::setNewRef(uint64_t ticSet, int v2AdcNewRef) {
 	V2currRef = v2AdcNewRef;
 	ticSatCount = 0;
-	stateReset(0);
 }
 
 int iiCTRL::ctrlStep(uint64_t t, int v2Adc) {
 	//Saturation Check
-	if (ticSatCount >= ticConvert(200))
-	return 0;
+	if (ticSatCount >= ticConvert(200)){
+		stateReset(0);
+		return 0;
+	}
 	//Error Calc (ADC value), u_k per i sistema dinamico
 	lastErr = (V2currRef - v2Adc);
 	// Caso speciale: Riferimento a 0 => spengo tutto
-	if (V2currRef == 0)
-	return 0;
+	if (V2currRef == 0){
+		stateReset(0);
+		return 0;
+	}
 	// #### Space State Update ####
 	// State update Cii(s)
 	xCii1 = xCii1 + Ts * xCii2 + sq(Ts) / 2 * k2 * lastErr;

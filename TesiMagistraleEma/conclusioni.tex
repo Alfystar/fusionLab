@@ -1,3 +1,21 @@
 \chapter{Conclusioni e sviluppi futuri}
+\section*{Conclusioni}
+In conclusione, con questo prototipo si è dimostrato e realizzato un controllore \textit{PID-style} a doppio Polo nell'origine, è un design di controllore perfetto da usare per governare la corrente di una bobina in un impianto Tokamak.\\
+La realizzazione di questo prototipo però, come per ogni progetto pratico, ha dovuto confrontarsi con vari problemi di \nonLinearita, problemi implementativi, limiti di attuazione e campionamento, etc...\\
+La risoluzione di questi problemi ha portato a compromessi e semplificazioni volte a catturare gli aspetti principali dell'esperimento, trascurando quelli secondari.\\
+Il controllo così creato, oltre a funzionare bene nella teoria, risulta robusto alle variazioni dal modello lineare presenti nella realtà ma trascurate durante la modellizzazione del sistema, e ciò rende un simile design di controllo general-purple per impianti tokamak, poiché i coefficienti trovati nel corso di questa tesi permettono l'ottimizzazione per questo impianto in particolare, ma porterebbero a convergenza un qualunque impianto Tokamak avente la stessa struttura nella dinamica.\\
 
-Inserire qui le conclusioni trovate con la tesi, ed eventualmente eventuali idee per sviluppi futuri.
+\section*{Sviluppi Futuri}
+Anche se per i fini della tesi il progetto termina qui, il progetto in se ancora avanza, e tra gli sviluppi futuri abbiamo:
+\begin{itemize}
+	\item L'intenzione di portare un controllo \textbf{Switching} nella legge di Up-date, variando i coefficienti del controllore \ref{eq:controllerDesign}\\
+	In tal senso il controllore implementato nel \microControllore, ottenuto dal modello nello spazio di stato in Forma Compagna di Osservatore (\cite{FormeCanoniche}) già rende il sistema pronto per questo tipo di modifica a livello di codice, è necessario tuttavia studiare e simulare per quali soglie lo switch dei parametri può incrementare le performance, prima di poter implementare una simile tecnica.
+	\item Attualmente è in cantiere la realizzazione all'interno di \MARTe della libreria \cite*{EMP} per permettere l'integrazione di questo firmware con l'ecosistema \MARTe.
+	\item Risulta di interesse eseguire un upgrade del \microControllore dal'\ArduinoUno a una scheda più performante, e che permetta comunicazioni, campionamenti e PWM a velocità superiori, permetterebbe di superare l'attuale soglia di $ 2Khz $ di controllo, e realizzare dei controlli molto più performanti con tempi di campionamento molto inferiori, e quindi ritardi di fase ancora più azzerati.
+	\item In fine, per raggiungere performance superiori è necessario avere un motore superiore, in questo caso il ponte-H, trovarne uno con una dinamica più lineare e che possa funzionare a frequenze maggiori di PWM permetterebbe di avere un controllo sul Primario molto più fine e potente, portando a migliorare le prestazioni in maniera sensibile e tangibile.
+	
+\end{itemize}
+
+
+
+

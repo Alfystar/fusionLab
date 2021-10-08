@@ -12,14 +12,14 @@ t = [0:len-1]' * dt;
 clf
 grid on
 hold on
-plot(t,table.PWMDead,'LineWidth',2)
+plot(t,table.PWMDead*10,'LineWidth',2)
 % plot(t,table.PWM)
 plot(t,table.V2_readFilter,'LineWidth',2)
 % plot(t,table.V2_readFilter)
 plot(t,table.Isense_readFilter,'LineWidth',2)
 plot(t,table.eFilter * 10)
 
-legend("PWM%", "V_{secondary_{filter}}", "I_{primary_{filter}}", "e_{filter} x 10")
+legend("PWM% x10", "V_{secondary_{filter}}", "I_{primary_{filter}}", "e_{filter} x10")
 
 title("Experiment: "+name+ "   SampleTime: " + mat2str(dt * 1000000) + "µs")
 xlabel("time [s]")
