@@ -1,30 +1,34 @@
 \chapter{Sviluppo Controllo reale}\label{cap:controlDevelop}
 
 \begin{minipage}{12cm}\textit{
-		In questo capitolo vedremo come è implementato nella realtà il controllore descritto nel capitolo \nameref{cap:controlModel} all'interno del \microControllore, tareremo i suoi coefficienti e mostreremo come si comporta in un esperimento reale con tutti i problemi ad esso connessi (\nonLinearita del \cite*{IBT-2}, errori di quantizzazione, discretizzazione del controllo, ecc...)
+		In questo capitolo vedremo come implementare nella realtà il controllore che abbiamo teorizzato all'interno del \microControllore, tareremo i suoi coefficienti e mostreremo come si comporta in un esperimento reale con tutti i problemi ad esso connessi (\nonLinearita del \cite*{IBT-2}, errori di quantizzazione, discretizzazione del controllo, ecc...)
 	}
 \end{minipage}
 
-%\vspace*{1cm}
+\vspace*{1cm}
 
 \begin{figure}[H]
 	\centering
 	\caption[Impianto Reale]{Impianto Reale}
 	\includegraphics[width=1\textwidth]{ImpiantoReale.jpg}
 \end{figure}
+
+\newpage
 \noindent
 Essendo un \microControllore un computer non eccessivamente potente, è necessario realizzare la funzione di trasferimento del il controllo (equazione \ref{eq:controllerDesign}) mediante un sistema a tempo discreto.\\
-Per semplificarci l'implementazione, invece di creare un unico sistema del 2° ordine, si è optato per sommare tra loro le tre funzioni di trasferimento semplici che compongono il controllore, così da semplificare il debugging e permettere un più semplice controllo sullo stato dei componenti, utile per saturare gli integratori una volta che l'uscita ha superato la soglia di attuabilità (\textit{Saturazione}).\\
-In fine, essendo l'obiettivo di controllo realizzato da una rampa, dopo un certo tempo in saturazione, per evitare lo spreco di energia da parte della batteria che alimenta il sistema, il codice disattiva il controllo, resetta tutti gli stati e mette il riferimento a 0. Questo stato non è permanente ma persiste fino al raggiungimento di un nuovo input di controllo mediante \cite*{EMP}.
+Per semplificarci l'implementazione, invece di creare un unico sistema del 2° ordine, si è optato per sommare tra loro le tre funzioni di trasferimento base che lo compongono.\\
+Questa scelta è stata presa al fine di semplificare il debugging e permettere un più semplice controllo sullo stato dei sistemi dinamici, possibilità utile nell'ottica di voler saturare gli stati dei singoli integratori una volta che l'uscita ha superato la soglia di attuabilità (\textit{Saturazione}).\\
+In fine, essendo l'obiettivo di controllo realizzato da una rampa, dopo un certo tempo in saturazione, per evitare lo spreco di energia da parte della batteria che alimenta il sistema, il codice ha implementato al suo interno un \textit{Safe-Shutdown} che spegne il Ponte-H e resetta tutti gli stati del controllore, oltre che riportare il riferimento da inseguire a 0.\\
+Questo stato non è permanente ma persiste fino all'arrivo di un nuovo riferimento da parte del companion esterno, qui simulato dal programma linux \textit{MARTe2Moc}, che comunica con il \microControllore attraverso \cite*{EMP}.
 
 \newpage
 \section{Discretizzazione Zero-Order Hold (Z.O.H.)}
-Un oggetto del tipo \textit{\textbf{Zero-Order Hold} (Z.O.H.)} altro non è che un convertitore Digitale$ \rightarrow $Analogico che permette di interfacciare dei segnali \textbf{Tempo Discreto} $\mathbb{T} =  \mathbb{Z} $ che evolvono $\forall \Delta T_s $\footnote{$ T_s $ = Sampling Time} con sistemi dinamici \textbf{Tempo Continuo} $\mathbb{T} =  \mathbb{R} $.\vspace{-4mm}
+Un oggetto del tipo \textit{\textbf{Zero-Order Hold} (Z.O.H.)} altro non è che un convertitore Digitale$ \rightarrow $Analogico che permette di interfacciare dei segnali \textbf{Tempo Discreto} $\mathbb{T} =  \mathbb{Z} $ che evolvono $\forall \Delta T_s $\footnote{$ T_s $ = Sampling Time} con sistemi dinamici \textbf{Tempo Continuo} $\mathbb{T} =  \mathbb{R} $.\vspace{-2mm}
 \begin{figure}[H]
 	\centering
 	\caption[Discretizzazione Zero-Order Hold  $ H_d(z) $ del sistema Tempo continuo $ H(s) $]{Discretizzazione ZOH $ H_d(z) $ per il sistema Tempo continuo $ H(s) $}\vspace{4mm}
 	\includegraphics[width=1\textwidth]{Controllo/zoh-apply-Big.png}
-\end{figure}
+\end{figure}\vspace{-6mm}
 \noindent
 Questa interconnessione "\textit{congela}" l'ultimo segnale discreto $ u(k T_s) $ ricevuto e lo ripropone come un segnale costante in ingresso al sistema continuo che evolve in maniera indipendente.\\
 L'uscita $ y(k T_s) $ è la discretizzazione di $ y(t) $, campionata ogni $ T_s $ .

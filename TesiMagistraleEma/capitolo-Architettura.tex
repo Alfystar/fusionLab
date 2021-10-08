@@ -43,12 +43,14 @@ Nella sua forma finale, il progetto prevede la riproduzione in serie di questo s
 \paragraph{\cite*{EMP}} nasce con l’obiettivo di standardizzare un protocollo e creare una libreria C++ basata su classi Template, che permetta di automatizzare tutto il lavoro di programmazione necessario all’invio e alla ricezione di pacchetti pre pre-Concordati tra 2 Device connessi in una rete Peer2Peer (Nessuna pretesa di networking).\\
 Il raggiungimento dei suoi obiettivi porta con se la possibilità di supportare altre features interessanti:
 \begin{spacing}{1.25}
-\begin{description}
-	\item[Multiple-Package] Il protocollo di comunicazione usato (\cite{COBS}) permette di far gestire ad EMP il trasporto, attraverso lo stesso mezzo, di \textit{\textbf{pacchetti di tipologia e dimensione diversa}} senza inviare più byte di quelli strettamente necessario.\\($\Rightarrow$ \textbf{Alta Efficienza})
-	
-	\item[Zero Tempo di negoziazione] Il protocollo di comunicazione usato (\cite{COBS}), rende EMP adatto ad un uso ‘Streaming’, questo perché non è necessario alcuna fase di sincronizzazione iniziale o durante la trasmissione in caso di perdita di dati, in aggiunta a ciò, EMP è in grado di scartare pacchetti errati in maniera trasparente all’utilizzatore. Tutto questo grazie al protocollo che \textbf{Auto-delimita i singoli pacchetti}.\\($\Rightarrow$ \textbf{Trasparenza Totale})
-	\item[Responsabilità minime] Le uniche responsabilità a carico degli utilizzatori sono il riempimento dei pacchetti e la definizione degli stessi tra i 2 estremi della comunicazione.\\($\Rightarrow$ \textbf{Semplicità d'uso})
-\end{description}
+	\begin{description}
+		\item[Multiple-Package] Il protocollo di comunicazione usato (\cite{COBS}) permette di far gestire ad EMP il trasporto, attraverso lo stesso mezzo, di \textit{\textbf{pacchetti di tipologia e dimensione diversa}} senza inviare più byte di quelli strettamente necessario.\\
+		      $\Rightarrow$ \textbf{Alta Efficienza}
+		\item[Zero Tempo di negoziazione] Il protocollo di comunicazione usato (\cite{COBS}), rende EMP adatto ad un uso ‘Streaming’, questo perché non è necessario alcuna fase di sincronizzazione iniziale o durante la trasmissione in caso di perdita di dati, in aggiunta a ciò, EMP è in grado di scartare pacchetti errati in maniera trasparente all’utilizzatore. Tutto questo grazie al protocollo che \textbf{Auto-delimita i singoli pacchetti}.\\
+		      $\Rightarrow$ \textbf{Trasparenza Totale}
+		\item[Responsabilità minime] Le uniche responsabilità a carico degli utilizzatori sono il riempimento dei pacchetti e la definizione degli stessi tra i 2 estremi della comunicazione.\\
+		      $\Rightarrow$ \textbf{Semplicità d'uso}
+	\end{description}
 \end{spacing}
 
 \subsection*{Consistent Overhead Byte Stuffing (COBS)}
@@ -92,9 +94,9 @@ Questo può essere facilmente risolto in più modi:
 \begin{spacing}{1.5}
 	\begin{description}
 		\item[Lunghezza Univoca] Ogni possibile pacchetto ha una lunghezza diversa da tutti gli altri\\
-		$\Rightarrow$ la lunghezza implica il contenuto
+		      $\Rightarrow$ la lunghezza implica il contenuto
 		\item[Aggiunta di un campo Tipologia] Aggiungendo al’inizio della trasmissione un \textit{type byte}\\
-		$\Rightarrow$ pre-concordare una codifica dei tipi
+		      $\Rightarrow$ pre-concordare una codifica dei tipi
 	\end{description}
 \end{spacing}
 \noindent

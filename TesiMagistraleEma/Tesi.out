@@ -46,7 +46,7 @@
 \BOOKMARK [1][-]{section.4.1}{Obiettivo di controllo}{chapter.4}% 46
 \BOOKMARK [1][-]{section.4.2}{Teorema del valore iniziale e del valore finale}{chapter.4}% 47
 \BOOKMARK [1][-]{section.4.3}{Controllo a errore nullo}{chapter.4}% 48
-\BOOKMARK [2][-]{subsection.4.3.1}{Design di controllore adottato}{section.4.3}% 49
+\BOOKMARK [2][-]{subsection.4.3.1}{Design di controllore PID-style}{section.4.3}% 49
 \BOOKMARK [1][-]{section.4.4}{Simulazione Qualitativa su Simulink}{chapter.4}% 50
 \BOOKMARK [2][-]{subsection.4.4.1}{Design Base di controllo}{section.4.4}% 51
 \BOOKMARK [2][-]{subsection.4.4.2}{Design Avanzato di controllo}{section.4.4}% 52

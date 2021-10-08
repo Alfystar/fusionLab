@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.9.11)  8 OCT 2021 19:52
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.9.11)  9 OCT 2021 01:02
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2096,7 +2096,7 @@ pt>
 File: Pictures//EMP/Cobs_encoding_with_example.png Graphic file (type png)
 <use Pictures//EMP/Cobs_encoding_with_example.png>
 Package pdftex.def Info: Pictures//EMP/Cobs_encoding_with_example.png  used on 
-input line 62.
+input line 64.
 (pdftex.def)             Requested size: 435.0pt x 36.41945pt.
 <Pictures//EMP/Cobs_encoding_with_example-dist.png, id=952, 512.022pt x 79.716p
 t>
@@ -2104,10 +2104,10 @@ File: Pictures//EMP/Cobs_encoding_with_example-dist.png Graphic file (type png)
 
 <use Pictures//EMP/Cobs_encoding_with_example-dist.png>
 Package pdftex.def Info: Pictures//EMP/Cobs_encoding_with_example-dist.png  use
-d on input line 81.
+d on input line 83.
 (pdftex.def)             Requested size: 435.0pt x 67.72728pt.
 LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 8
-5.
+7.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
@@ -2117,10 +2117,10 @@ coding_with_example-dist.png>] [35] [36]
 File: Pictures//EMP/EMP-Hierarchy.png Graphic file (type png)
 <use Pictures//EMP/EMP-Hierarchy.png>
 Package pdftex.def Info: Pictures//EMP/EMP-Hierarchy.png  used on input line 14
-2.
+4.
 (pdftex.def)             Requested size: 435.0pt x 297.98708pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 144--147
+Underfull \hbox (badness 10000) in paragraph at lines 146--149
 
  []
 
@@ -2130,10 +2130,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 144--147
 File: Pictures//EMP/Message Pack Sending Flow.png Graphic file (type png)
 <use Pictures//EMP/Message Pack Sending Flow.png>
 Package pdftex.def Info: Pictures//EMP/Message Pack Sending Flow.png  used on i
-nput line 172.
+nput line 174.
 (pdftex.def)             Requested size: 435.0pt x 357.65059pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 174--177
+Underfull \hbox (badness 10000) in paragraph at lines 176--179
 
  []
 
@@ -2141,7 +2141,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 174--177
 <Pictures//EMP/TestFlow.png, id=1017, 2473.24pt x 1682.285pt>
 File: Pictures//EMP/TestFlow.png Graphic file (type png)
 <use Pictures//EMP/TestFlow.png>
-Package pdftex.def Info: Pictures//EMP/TestFlow.png  used on input line 183.
+Package pdftex.def Info: Pictures//EMP/TestFlow.png  used on input line 185.
 (pdftex.def)             Requested size: 348.00133pt x 236.6991pt.
  [40 <./Pictures//EMP/TestFlow.png>]
 <Pictures//Trasformatore/PlasmaCircuit-MisureCircuitOffset.png, id=1033, 3733.9
@@ -2150,10 +2150,10 @@ File: Pictures//Trasformatore/PlasmaCircuit-MisureCircuitOffset.png Graphic fil
 e (type png)
 <use Pictures//Trasformatore/PlasmaCircuit-MisureCircuitOffset.png>
 Package pdftex.def Info: Pictures//Trasformatore/PlasmaCircuit-MisureCircuitOff
-set.png  used on input line 199.
+set.png  used on input line 201.
 (pdftex.def)             Requested size: 435.0pt x 185.90619pt.
 
-Overfull \hbox (6.64215pt too wide) in paragraph at lines 192--200
+Overfull \hbox (6.64215pt too wide) in paragraph at lines 194--202
 \T1/cmr/m/n/10 Per co-mu-ni-ca-re i Sam-ple (e ri-ce-ve-re le Re-fe-ren-ce) è s
 ta-ta usa-ta Em-bed-ded Mes-sa-ge Pack(EMP)(Sezione
  []
@@ -2161,27 +2161,27 @@ ta-ta usa-ta Em-bed-ded Mes-sa-ge Pack(EMP)(Sezione
 [41 <./Pictures//Trasformatore/PlasmaCircuit-MisureCircuitOffset.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 205.
+(hyperref)                removing `math shift' on input line 207.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mu' on input line 205.
+(hyperref)                removing `\mu' on input line 207.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 205.
+(hyperref)                removing `math shift' on input line 207.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 205.
+(hyperref)                removing `math shift' on input line 207.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\Leftrightarrow' on input line 205.
+(hyperref)                removing `\Leftrightarrow' on input line 207.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 205.
+(hyperref)                removing `math shift' on input line 207.
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
@@ -2193,7 +2193,7 @@ File: lstlang1.sty 2020/03/24 1.8d listings language file
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 )
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 207.
+nput line 209.
  [42] [43])
 [44]
 \openout2 = `capitolo-StimaModello.aux'.
@@ -2245,7 +2245,7 @@ E01-EstimateShot-manual-2.pdf> <./Pictures//Stime/E01-EstimateShot-manual-3.pdf
 
  (./capitolo-ModelloMatematico.tex
 Capitolo 4.
-<Pictures//ModelloMatematico/SchemiBlocchi.png, id=1295, 3006.23125pt x 496.856
+<Pictures//ModelloMatematico/SchemiBlocchi.png, id=1294, 3006.23125pt x 496.856
 25pt>
 File: Pictures//ModelloMatematico/SchemiBlocchi.png Graphic file (type png)
 <use Pictures//ModelloMatematico/SchemiBlocchi.png>
@@ -2258,7 +2258,7 @@ Package pdftex.def Info: Pictures//ModelloMatematico/SchemiBlocchi.png  used on
 
 
  <./Pictures//ModelloMatematico/SchemiBlocchi.png>]
-<Pictures//ModelloMatematico/SchemiBlocchi-SchemaBlocchiV2Out.png, id=1305, 350
+<Pictures//ModelloMatematico/SchemiBlocchi-SchemaBlocchiV2Out.png, id=1303, 350
 8.10625pt x 496.85625pt>
 File: Pictures//ModelloMatematico/SchemiBlocchi-SchemaBlocchiV2Out.png Graphic 
 file (type png)
@@ -2274,96 +2274,96 @@ Package mdframed Info: mdframed detected package amsthm
  changed the theorem header of amsthm
 (mdframed)              on input line 57.
  [54]
-Underfull \hbox (badness 10000) in paragraph at lines 75--85
+Underfull \hbox (badness 10000) in paragraph at lines 74--84
 
  []
 
 
-Overfull \vbox (15.44814pt too high) detected at line 85
+Overfull \vbox (15.44814pt too high) detected at line 84
  []
 
 
-Underfull \hbox (badness 10000) detected at line 85
+Underfull \hbox (badness 10000) detected at line 84
 [] []|[] []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 85
+Underfull \vbox (badness 10000) detected at line 84
  []
 
 
-Overfull \hbox (228.88112pt too wide) detected at line 85
+Overfull \hbox (228.88112pt too wide) detected at line 84
 [] []|[] []
  []
 
 
-Overfull \vbox (13.86479pt too high) detected at line 94
+Overfull \vbox (13.86479pt too high) detected at line 93
  []
 
 
-Underfull \hbox (badness 10000) detected at line 94
+Underfull \hbox (badness 10000) detected at line 93
 [] []|[] []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 94
+Underfull \vbox (badness 10000) detected at line 93
  []
 
 
-Overfull \hbox (228.88112pt too wide) detected at line 94
+Overfull \hbox (228.88112pt too wide) detected at line 93
 [] []|[] []
  []
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 101.
+(mdframed)              on input line 100.
 
-Underfull \hbox (badness 10000) in paragraph at lines 102--120
+Underfull \hbox (badness 10000) in paragraph at lines 101--119
 
  []
 
 
-Overfull \hbox (42.9628pt too wide) detected at line 120
+Overfull \hbox (42.9628pt too wide) detected at line 119
 []
  []
 
 
-Overfull \hbox (73.4155pt too wide) detected at line 120
+Overfull \hbox (73.4155pt too wide) detected at line 119
 []
  []
 
 
-Overfull \hbox (2.28362pt too wide) detected at line 120
+Overfull \hbox (2.28362pt too wide) detected at line 119
 []
  []
 
 
-Overfull \hbox (300.38899pt too wide) detected at line 120
+Overfull \hbox (300.38899pt too wide) detected at line 119
 [] []|[] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 122--123
+Underfull \hbox (badness 10000) in paragraph at lines 121--122
 
  []
 
 
-Overfull \hbox (43.6337pt too wide) detected at line 141
+Overfull \hbox (43.6337pt too wide) detected at line 140
 []
  []
 
 
-Overfull \hbox (74.0864pt too wide) detected at line 141
+Overfull \hbox (74.0864pt too wide) detected at line 140
 []
  []
 
 
-Overfull \hbox (2.95451pt too wide) detected at line 141
+Overfull \hbox (2.95451pt too wide) detected at line 140
 []
  []
 
 
-Overfull \hbox (300.38899pt too wide) detected at line 141
+Overfull \hbox (300.38899pt too wide) detected at line 140
 [] []|[] []
  []
 
@@ -2406,15 +2406,20 @@ Overfull \hbox (20.24408pt too wide) in paragraph at lines 198--198
  []
 
 [57]
-<Pictures//ModelloMatematico/systemSimulink.png, id=1387, 1594.45688pt x 798.73
+<Pictures//ModelloMatematico/systemSimulink.png, id=1391, 1594.45688pt x 798.73
 407pt>
 File: Pictures//ModelloMatematico/systemSimulink.png Graphic file (type png)
 <use Pictures//ModelloMatematico/systemSimulink.png>
 Package pdftex.def Info: Pictures//ModelloMatematico/systemSimulink.png  used o
 n input line 225.
 (pdftex.def)             Requested size: 435.0pt x 217.90361pt.
- [58 <./Pictures//ModelloMatematico/systemSimulink.png (PNG copy)>]
-<Pictures//ModelloMatematico/Simulation-cBaseSim.pdf, id=1395, 794.97pt x 614.2
+
+Underfull \hbox (badness 10000) in paragraph at lines 227--231
+
+ []
+
+[58 <./Pictures//ModelloMatematico/systemSimulink.png (PNG copy)>]
+<Pictures//ModelloMatematico/Simulation-cBaseSim.pdf, id=1399, 794.97pt x 614.2
 95pt>
 File: Pictures//ModelloMatematico/Simulation-cBaseSim.pdf Graphic file (type pd
 f)
@@ -2422,9 +2427,8 @@ f)
 Package pdftex.def Info: Pictures//ModelloMatematico/Simulation-cBaseSim.pdf  u
 sed on input line 243.
 (pdftex.def)             Requested size: 435.0pt x 336.14796pt.
-
-[59 <./Pictures//ModelloMatematico/Simulation-cBaseSim.pdf>]
-<Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=0-K_2=100.pdf, id=1422, 
+ [59 <./Pictures//ModelloMatematico/Simulation-cBaseSim.pdf>]
+<Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=0-K_2=100.pdf, id=1426, 
 794.97pt x 614.295pt>
 File: Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=0-K_2=100.pdf Graph
 ic file (type pdf)
@@ -2432,7 +2436,7 @@ ic file (type pdf)
 Package pdftex.def Info: Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=
 0-K_2=100.pdf  used on input line 259.
 (pdftex.def)             Requested size: 435.0pt x 336.14796pt.
-<Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=10-K_2=100.pdf, id=1423,
+<Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=10-K_2=100.pdf, id=1427,
  794.97pt x 614.295pt>
 File: Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=10-K_2=100.pdf Grap
 hic file (type pdf)
@@ -2442,7 +2446,7 @@ Package pdftex.def Info: Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=
 (pdftex.def)             Requested size: 435.0pt x 336.14796pt.
  [60 <./Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=0-K_2=100.pdf>] [
 61 <./Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=10-K_2=100.pdf>]
-<Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=100-K_2=500.pdf, id=1488
+<Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=100-K_2=500.pdf, id=1492
 , 794.97pt x 614.295pt>
 File: Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=100-K_2=500.pdf Gra
 phic file (type pdf)
@@ -2452,7 +2456,7 @@ Package pdftex.def Info: Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=
 (pdftex.def)             Requested size: 435.0pt x 336.14796pt.
  [62 <./Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=100-K_2=500.pdf>]
 <Pictures//ModelloMatematico/Simulation-cSim-K_p=0.2-K_1=100-K_2=500.pdf, id=15
-20, 794.97pt x 614.295pt>
+24, 794.97pt x 614.295pt>
 File: Pictures//ModelloMatematico/Simulation-cSim-K_p=0.2-K_1=100-K_2=500.pdf G
 raphic file (type pdf)
 <use Pictures//ModelloMatematico/Simulation-cSim-K_p=0.2-K_1=100-K_2=500.pdf>
@@ -2462,7 +2466,7 @@ Package pdftex.def Info: Pictures//ModelloMatematico/Simulation-cSim-K_p=0.2-K_
  [63 <./Pictures//ModelloMatematico/Simulation-cSim-K_p=0.2-K_1=100-K_2=500.pdf
 >]
 <Pictures//ModelloMatematico/Simulation-cSim-K_p=0.8-K_1=100-K_2=500.pdf, id=15
-52, 794.97pt x 614.295pt>
+56, 794.97pt x 614.295pt>
 File: Pictures//ModelloMatematico/Simulation-cSim-K_p=0.8-K_1=100-K_2=500.pdf G
 raphic file (type pdf)
 <use Pictures//ModelloMatematico/Simulation-cSim-K_p=0.8-K_1=100-K_2=500.pdf>
@@ -2481,7 +2485,7 @@ LaTeX Font Info:    Font shape `U/lasy/b/n' in size <5> not available
 
 (./capitolo-Controllo.tex
 Capitolo 5.
-<Pictures//ImpiantoReale.jpg, id=1595, 1284.8pt x 722.7pt>
+<Pictures//ImpiantoReale.jpg, id=1598, 1284.8pt x 722.7pt>
 File: Pictures//ImpiantoReale.jpg Graphic file (type jpg)
 <use Pictures//ImpiantoReale.jpg>
 Package pdftex.def Info: Pictures//ImpiantoReale.jpg  used on input line 13.
@@ -2492,58 +2496,58 @@ Package pdftex.def Info: Pictures//ImpiantoReale.jpg  used on input line 13.
 
 
  <./Pictures//ImpiantoReale.jpg>] [67]
-<Pictures//Controllo/zoh-apply-Big.png, id=1610, 3528.18124pt x 1003.75pt>
+<Pictures//Controllo/zoh-apply-Big.png, id=1613, 3528.18124pt x 1003.75pt>
 File: Pictures//Controllo/zoh-apply-Big.png Graphic file (type png)
 <use Pictures//Controllo/zoh-apply-Big.png>
 Package pdftex.def Info: Pictures//Controllo/zoh-apply-Big.png  used on input l
-ine 26.
+ine 30.
 (pdftex.def)             Requested size: 435.0pt x 123.75305pt.
-<Pictures//Controllo/SegnaliDiscretiContinui-v2-Big.png, id=1611, 5737.435pt x 
+<Pictures//Controllo/SegnaliDiscretiContinui-v2-Big.png, id=1614, 5737.435pt x 
 1003.75pt>
 File: Pictures//Controllo/SegnaliDiscretiContinui-v2-Big.png Graphic file (type
  png)
 <use Pictures//Controllo/SegnaliDiscretiContinui-v2-Big.png>
 Package pdftex.def Info: Pictures//Controllo/SegnaliDiscretiContinui-v2-Big.png
-  used on input line 34.
+  used on input line 38.
 (pdftex.def)             Requested size: 435.0pt x 76.08974pt.
  [68 <./Pictures//Controllo/zoh-apply-Big.png> <./Pictures//Controllo/SegnaliDi
 scretiContinui-v2-Big.png>]
 
-LaTeX Font Warning: Command \small invalid in math mode on input line 76.
+LaTeX Font Warning: Command \small invalid in math mode on input line 80.
 
 
-LaTeX Font Warning: Command \small invalid in math mode on input line 79.
+LaTeX Font Warning: Command \small invalid in math mode on input line 83.
 
 
-Overfull \hbox (0.56879pt too wide) in paragraph at lines 45--104
+Overfull \hbox (0.56879pt too wide) in paragraph at lines 49--108
  [][] 
  []
 
 [69]
-<Pictures//Controllo/02-Bi-FrontCapture.pdf, id=1641, 794.97pt x 614.295pt>
+<Pictures//Controllo/02-Bi-FrontCapture.pdf, id=1644, 794.97pt x 614.295pt>
 File: Pictures//Controllo/02-Bi-FrontCapture.pdf Graphic file (type pdf)
 <use Pictures//Controllo/02-Bi-FrontCapture.pdf>
 Package pdftex.def Info: Pictures//Controllo/02-Bi-FrontCapture.pdf  used on in
-put line 132.
+put line 136.
 (pdftex.def)             Requested size: 435.0pt x 336.14796pt.
  [70]
-<Pictures//Controllo/03-PosNeg-capture.pdf, id=1649, 794.97pt x 614.295pt>
+<Pictures//Controllo/03-PosNeg-capture.pdf, id=1652, 794.97pt x 614.295pt>
 File: Pictures//Controllo/03-PosNeg-capture.pdf Graphic file (type pdf)
 <use Pictures//Controllo/03-PosNeg-capture.pdf>
 Package pdftex.def Info: Pictures//Controllo/03-PosNeg-capture.pdf  used on inp
-ut line 143.
+ut line 147.
 (pdftex.def)             Requested size: 435.0pt x 336.14796pt.
  [71 <./Pictures//Controllo/02-Bi-FrontCapture.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 145--147
+Underfull \hbox (badness 10000) in paragraph at lines 149--151
 
  []
 
 [72 <./Pictures//Controllo/03-PosNeg-capture.pdf>]
-<Pictures//Controllo/01-RandomCapture.pdf, id=1705, 794.97pt x 614.295pt>
+<Pictures//Controllo/01-RandomCapture.pdf, id=1708, 794.97pt x 614.295pt>
 File: Pictures//Controllo/01-RandomCapture.pdf Graphic file (type pdf)
 <use Pictures//Controllo/01-RandomCapture.pdf>
 Package pdftex.def Info: Pictures//Controllo/01-RandomCapture.pdf  used on inpu
-t line 155.
+t line 159.
 (pdftex.def)             Requested size: 435.0pt x 336.14796pt.
 ) [73 <./Pictures//Controllo/01-RandomCapture.pdf>]
 \openout2 = `conclusioni.aux'.
@@ -2626,21 +2630,27 @@ netiche + %28Cianfarani % 29 % 2FMagnetic +
 (./capitolo-ModelloMatematico.aux) (./capitolo-Controllo.aux)
 (./conclusioni.aux) (./appendice.aux))
 Package rerunfilecheck Info: File `Tesi.out' has not changed.
-(rerunfilecheck)             Checksum: E846BC7897F87B03B2043AD9B2E88C71;6249.
+(rerunfilecheck)             Checksum: AACCB460B8858DA92F70D4A50C922F0D;6250.
 Package logreq Info: Writing requests to 'Tesi.run.xml'.
 \openout1 = `Tesi.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 41771 strings out of 479304
- 832748 string characters out of 5869779
- 1878948 words of memory out of 5000000
- 57157 multiletter control sequences out of 15000+600000
- 440334 words of font info for 134 fonts, out of 8000000 for 9000
+ 41775 strings out of 479304
+ 832793 string characters out of 5869779
+ 1878906 words of memory out of 5000000
+ 57158 multiletter control sequences out of 15000+600000
+ 441033 words of font info for 135 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  117i,25n,127p,1855b,2468s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{Hfootnote.3} has been referenced but does not exi
+pdfTeX warning (dest): name{Hfootnote.5} has been referenced but does not exi
 st, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.4} has been referenced but does not exist
+, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.3} has been referenced but does not exist
+, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.2} has been referenced but does not exist
 , replaced by a fixed one
@@ -2676,26 +2686,26 @@ s/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /public/amsfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
 public/amsfonts/symbols/msam7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pu
 blic/amsfonts/symbols/msbm10.pfb></usr/share/texmf/fonts/type1/public/cm-super/
-sfbi1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbi1440.pfb></usr/s
-hare/texmf/fonts/type1/public/cm-super/sfbx0800.pfb></usr/share/texmf/fonts/typ
-e1/public/cm-super/sfbx1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/s
-fbx1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/sh
-are/texmf/fonts/type1/public/cm-super/sfbx2074.pfb></usr/share/texmf/fonts/type
-1/public/cm-super/sfbx2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/sf
-cc1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0500.pfb></usr/sha
-re/texmf/fonts/type1/public/cm-super/sfrm0600.pfb></usr/share/texmf/fonts/type1
-/public/cm-super/sfrm0700.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfr
-m0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0900.pfb></usr/shar
-e/texmf/fonts/type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/
-public/cm-super/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm
-1440.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1728.pfb></usr/share
-/texmf/fonts/type1/public/cm-super/sfti0900.pfb></usr/share/texmf/fonts/type1/p
-ublic/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1
-000.pfb>
-Output written on Tesi.pdf (103 pages, 11544349 bytes).
+sfbi1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbi1200.pfb></usr/s
+hare/texmf/fonts/type1/public/cm-super/sfbi1440.pfb></usr/share/texmf/fonts/typ
+e1/public/cm-super/sfbx0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/s
+fbx1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx1200.pfb></usr/sh
+are/texmf/fonts/type1/public/cm-super/sfbx1440.pfb></usr/share/texmf/fonts/type
+1/public/cm-super/sfbx2074.pfb></usr/share/texmf/fonts/type1/public/cm-super/sf
+bx2488.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfcc1000.pfb></usr/sha
+re/texmf/fonts/type1/public/cm-super/sfrm0500.pfb></usr/share/texmf/fonts/type1
+/public/cm-super/sfrm0600.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfr
+m0700.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/shar
+e/texmf/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf/fonts/type1/
+public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm
+1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1440.pfb></usr/share
+/texmf/fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/texmf/fonts/type1/p
+ublic/cm-super/sfti0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfti1
+000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb>
+Output written on Tesi.pdf (103 pages, 11575250 bytes).
 PDF statistics:
- 2772 PDF objects out of 2984 (max. 8388607)
- 2493 compressed objects within 25 object streams
- 898 named destinations out of 1000 (max. 500000)
+ 2778 PDF objects out of 2984 (max. 8388607)
+ 2498 compressed objects within 25 object streams
+ 900 named destinations out of 1000 (max. 500000)
  1090 words of extra memory for PDF output out of 10000 (max. 10000000)
 

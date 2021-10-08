@@ -60,7 +60,7 @@
 \contentsline {section}{\numberline {4.1}Obiettivo di controllo}{52}{section.4.1}%
 \contentsline {section}{\numberline {4.2}Teorema del valore iniziale e del valore finale}{54}{section.4.2}%
 \contentsline {section}{\numberline {4.3}Controllo a errore nullo}{55}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Design di controllore adottato}{57}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.1}Design di controllore \textit {PID-style}}{57}{subsection.4.3.1}%
 \contentsline {section}{\numberline {4.4}Simulazione \textit {Qualitativa} su Simulink}{58}{section.4.4}%
 \contentsline {subsection}{\numberline {4.4.1}Design Base di controllo}{59}{subsection.4.4.1}%
 \contentsline {subsection}{\numberline {4.4.2}Design Avanzato di controllo}{60}{subsection.4.4.2}%
