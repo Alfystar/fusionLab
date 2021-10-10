@@ -114,13 +114,11 @@ La funzione di trasferimento del sistema tra il segnale di PWM e arrivando alla 
 Nel seguito della tesi, questa funzione di trasferimento, con questi coefficienti, verrà usata nelle simulazioni del controllore, e ci permetterà di avere un idea qualitativa di come si comporterà il controllo una volta implementato nella realtà.\\
 Come potevamo aspettarci dall'analisi teorica, i poli di $ \tilde{P}_{p_{wm} V_2} $ sono:
 \begin{itemize}
+	\item $ K_p \approx \num{9.1e3} $
+	\item $ z_1 = 0 $ \tab\tab\tab(dalla teoria del capitolo \nameref{TrasformatoreModelloTokamak})
 	\item $ s_1\approx-2752.77 $
 	\item $ s_2\approx-47.2251 $
 \end{itemize}
 \noindent
 Il ché, come ci aspettavamo dalla teoria vista nella sezione '\nameref{TrasformatoreModelloTokamak}', fa si che il sistema sia Asintoticamente Stabile poiché i poli appartengono entrambi a $ \mathbb{C}^- $, e nel caso particolare sono 2 poli semplici, il ché, anche se probabile, non era scontato.
-
-
-
-
 

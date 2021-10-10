@@ -35,6 +35,9 @@
 \definecolor{dollarbill}{rgb}{0.52, 0.73, 0.4}
 \definecolor{fawn}{rgb}{0.9, 0.67, 0.44}
 \definecolor{darkturquoise}{rgb}{0.0, 0.81, 0.82}
+\definecolor{cambridgeblue}{rgb}{0.64, 0.76, 0.68}
+\definecolor{calpolypomonagreen}{rgb}{0.12, 0.3, 0.17}
+\definecolor{cadmiumgreen}{rgb}{0.0, 0.42, 0.24}
 %% My special Word Package ----------
 \usepackage{specialWord}
 
@@ -176,7 +179,7 @@ backend=bibtex]{biblatex}
 \newtheorem{obs}{Osservazione}[section]
 \newenvironment{oss}
 {\begin{mdframed}[backgroundcolor=fawn!40]\begin{obs}\begin{normalfont}}
-			{\hfill $\square \!\!\!\!\checkmark$ \end{normalfont}\end{obs}\end{mdframed}}
+			{\phantom{. .}\hfill$\square \!\!\!\!\checkmark$ \end{normalfont}\end{obs}\end{mdframed}}
 
 \newtheorem{pro}{Problema}[chapter]
 \newenvironment{prob}
@@ -238,10 +241,8 @@ backend=bibtex]{biblatex}
 \begin{document}
 
 \dedicate{{
-			Ai miei cari nonni, che sempre hanno saputo esserci per me \\
-			e alla mia professoressa Beniamina, non c'è giorno che non pensi a te \\
-			\\
-			A voi dedico questa tesi e questo traguardo, e mi affido per i traguardi di domani.
+		Dedico questo traguardo ai miei cari nonni, e alla mia professoressa Beniamina\\
+		che sempre hanno saputo esserci per me e a voi affido i traguardi di domani.
 		}}
 \corso{DELL'AUTOMAZIONE}
 \titoloTesi{

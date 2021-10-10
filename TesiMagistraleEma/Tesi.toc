@@ -3,7 +3,7 @@
 \babel@toc {italian}{}
 \contentsline {chapter}{Ringraziamenti}{1}{chapter*.2}%
 \contentsline {chapter}{Introduzione}{2}{chapter*.3}%
-\contentsline {section}{Fusione Termonucleare, di cosa si tratta}{2}{section*.4}%
+\contentsline {section}{Cos'è la Fusione Termonucleare?}{2}{section*.4}%
 \contentsline {section}{Struttura di un Tokamak}{5}{section*.5}%
 \contentsline {section}{Obiettivi della Tesi}{7}{section*.6}%
 \contentsline {chapter}{\numberline {1}Elementi Costitutivi}{8}{chapter.1}%
@@ -64,11 +64,11 @@
 \contentsline {section}{\numberline {4.4}Simulazione \textit {Qualitativa} su Simulink}{59}{section.4.4}%
 \contentsline {subsection}{\numberline {4.4.1}Design Base di controllo}{60}{subsection.4.4.1}%
 \contentsline {subsection}{\numberline {4.4.2}Design Avanzato di controllo}{61}{subsection.4.4.2}%
-\contentsline {subsubsection}{Analisi controllo Avanzato per $ K_p $=0 $ K_1 $=0 $ K_2 $=100}{61}{section*.63}%
-\contentsline {subsubsection}{Analisi controllo Avanzato per $ K_p $=0 $ K_1 $=10 $ K_2 $=100}{62}{section*.64}%
-\contentsline {subsubsection}{Analisi controllo Avanzato per $ K_p $=0 $ K_1 $=100 $ K_2 $=500}{63}{section*.65}%
-\contentsline {subsubsection}{Analisi controllo Avanzato per $ K_p $=0.2 $ K_1 $=100 $ K_2 $=500}{64}{section*.66}%
-\contentsline {subsubsection}{Analisi controllo Avanzato per $ K_p $=0.8 $ K_1 $=100 $ K_2 $=500}{65}{section*.67}%
+\contentsline {subsubsection}{Analisi controllo Avanzato per $ K_p $=0 $ K_1 $=0 $ K_2 $=100}{61}{section*.64}%
+\contentsline {subsubsection}{Analisi controllo Avanzato per $ K_p $=0 $ K_1 $=10 $ K_2 $=100}{61}{section*.65}%
+\contentsline {subsubsection}{Analisi controllo Avanzato per $ K_p $=0 $ K_1 $=100 $ K_2 $=500}{63}{section*.66}%
+\contentsline {subsubsection}{Analisi controllo Avanzato per $ K_p $=0.2 $ K_1 $=100 $ K_2 $=500}{64}{section*.67}%
+\contentsline {subsubsection}{Analisi controllo Avanzato per $ K_p $=0.8 $ K_1 $=100 $ K_2 $=500}{65}{section*.68}%
 \contentsline {section}{\numberline {4.5}Conclusioni per il design Avanzato}{66}{section.4.5}%
 \contentsline {chapter}{\numberline {5}Sviluppo Controllo reale}{67}{chapter.5}%
 \contentsline {section}{\numberline {5.1}Discretizzazione Zero-Order Hold (Z.O.H.)}{69}{section.5.1}%
@@ -78,26 +78,26 @@
 \contentsline {subsection}{\numberline {5.3.2}Inseguimento Triangolare}{73}{subsection.5.3.2}%
 \contentsline {subsection}{\numberline {5.3.3}Cambio riferimento in corsa}{74}{subsection.5.3.3}%
 \contentsline {chapter}{\numberline {6}Conclusioni e sviluppi futuri}{75}{chapter.6}%
-\contentsline {chapter}{Appendice A - Codice Arduino}{77}{chapter*.70}%
+\contentsline {chapter}{Appendice A - Codice Arduino}{77}{chapter*.71}%
 \contentsline {section}{\numberline {7.1}Set-up Registri}{77}{section.7.1}%
 \contentsline {subsection}{\numberline {7.1.1}Tic Timer}{77}{subsection.7.1.1}%
 \contentsline {subsection}{\numberline {7.1.2}Frequenza PWM}{77}{subsection.7.1.2}%
-\contentsline {subsubsection}{Offset Calculation}{78}{section*.71}%
+\contentsline {subsubsection}{Offset Calculation}{78}{section*.72}%
 \contentsline {section}{\numberline {7.2}Generatore di Segnale}{79}{section.7.2}%
 \contentsline {subsection}{\numberline {7.2.1}Segnali Base}{79}{subsection.7.2.1}%
-\contentsline {subsubsection}{Rampa}{79}{section*.72}%
+\contentsline {subsubsection}{Rampa}{79}{section*.73}%
 \contentsline {subsection}{\numberline {7.2.2}Segnali Composti}{80}{subsection.7.2.2}%
-\contentsline {subsubsection}{Onda Triangloare}{80}{section*.73}%
-\contentsline {subsubsection}{Onda Trapezoidale (RapidShot)}{80}{section*.74}%
+\contentsline {subsubsection}{Onda Triangloare}{80}{section*.74}%
+\contentsline {subsubsection}{Onda Trapezoidale (RapidShot)}{80}{section*.75}%
 \contentsline {section}{\numberline {7.3}Codici Controllore}{81}{section.7.3}%
-\contentsline {subsubsection}{Setup dell'esperimento}{81}{section*.75}%
-\contentsline {subsubsection}{Loop di Controllo}{81}{section*.76}%
+\contentsline {subsubsection}{Setup dell'esperimento}{81}{section*.76}%
+\contentsline {subsubsection}{Loop di Controllo}{81}{section*.77}%
 \contentsline {subsection}{\numberline {7.3.1}Classe Controllore}{82}{subsection.7.3.1}%
-\contentsline {chapter}{Appendice B - Codice EMP}{84}{chapter*.77}%
+\contentsline {chapter}{Appendice B - Codice EMP}{84}{chapter*.78}%
 \contentsline {section}{\numberline {8.4}Pacchetti in EMP}{84}{section.8.4}%
 \contentsline {subsection}{\numberline {8.4.1}Definizione di 2 Pacchetti}{84}{subsection.8.4.1}%
 \contentsline {subsection}{\numberline {8.4.2}Pacchetti Multipli}{85}{subsection.8.4.2}%
-\contentsline {chapter}{Appendice C - Matlab Post Elaboration}{86}{chapter*.78}%
+\contentsline {chapter}{Appendice C - Matlab Post Elaboration}{86}{chapter*.79}%
 \contentsline {section}{\numberline {9.5}Importazione dei Dati}{86}{section.9.5}%
 \contentsline {subsection}{\numberline {9.5.1}Parsing Tabelle}{86}{subsection.9.5.1}%
 \contentsline {subsection}{\numberline {9.5.2}Conversione dei Dati}{87}{subsection.9.5.2}%
@@ -105,7 +105,7 @@
 \contentsline {subsection}{\numberline {9.6.1}Stima parametri automatica}{88}{subsection.9.6.1}%
 \contentsline {subsection}{\numberline {9.6.2}Stima parametri manuale}{88}{subsection.9.6.2}%
 \contentsline {subsection}{\numberline {9.6.3}Plot dell'esperimento}{89}{subsection.9.6.3}%
-\contentsline {chapter}{Elenco delle figure}{92}{chapter*.79}%
-\contentsline {chapter}{Elenco delle tabelle}{93}{chapter*.80}%
-\contentsline {chapter}{Elenco dei codici}{95}{chapter*.81}%
-\contentsline {chapter}{Bibliografia}{97}{chapter*.82}%
+\contentsline {chapter}{Elenco delle figure}{92}{chapter*.80}%
+\contentsline {chapter}{Elenco delle tabelle}{93}{chapter*.81}%
+\contentsline {chapter}{Elenco dei codici}{95}{chapter*.82}%
+\contentsline {chapter}{Bibliografia}{97}{chapter*.83}%

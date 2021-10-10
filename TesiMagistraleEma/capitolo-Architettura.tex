@@ -42,22 +42,22 @@ Nella sua forma finale, il progetto prevede la riproduzione in serie di questo s
 	\includegraphics[width=0.8\textwidth]{EMP/EMP-Logo-Background.png}
 \end{figure}\vspace{-10mm}
 \paragraph{\cite*{EMP}} nasce con l’obiettivo di standardizzare un protocollo di comunicazione tra 2 dispositivi, richiedendo all'utilizzatore della libreria di definire la struttura dei pacchetti che vuole trasferire, e demandando ricezione, trasmissione e verifica di integrità alla libreria.\\
-L'obiettivo è stato raggiunto puntando anche ad un alta efficienza nel codice prodotto e all'uso di buffer e memorie allocate in compilazione, senza quindi fare uso della memoria dinamica.\\
-Lo scenario di utilizzo è tra i 2 estremi di un link di comunicaziine (una rete Peer2Peer ) e non ha nessuna pretesa di networking, scenario tipico è la comunicazione USB, UART, bluetooth, con moduli XBEE, etc...\\
-Il protocollo usato per codificare la comunicazione è \cite{COBS} e oltre a permettere il raggiungimento dei suoi obiettivi permette anche di supportare altre features interessanti:
+La realizzazione della libreria è stata guidata dall'obiettivo di avere un'alta efficienza computazionale e un footprint di memoria uso minimo e allocabile in fase di compilazione, eliminando la necessità di memoria dinamica.\\
+Lo scenario di utilizzo principale è il mettere in comunicazione 2 sistemi agli estremi di un link (rete Peer2Peer ) e non ha nessuna pretesa di networking, possibili link di comunicazione adatti sono: USB, UART, Bluetooth, moduli XBEE, etc...\\
+In oltre la libreria è in grado di aggiungere un layer software per la verifica di integrità, testata attraverso un codice \cite*{CRC8} aggiunto alla fine della comunicazione dal trasmettitore, e usato dal ricevitore per decidere se scartare o tenere il pacchetto ricevuto.\\
+Il protocollo usato per codificare la comunicazione è \cite*{COBS}, il quale permette di raggiungere gli obiettivi di efficienza e rapidità computazionale e porta con se la possibilità di poter supportare altre features interessanti:
 \begin{spacing}{1.25}
 	\begin{description}
 		\item[Multiple-Package] Il protocollo di comunicazione usato (\cite{COBS}) permette di far gestire ad EMP il trasporto, attraverso lo stesso mezzo, di \textit{\textbf{pacchetti di tipologia e dimensione diversa}} senza inviare più byte di quelli strettamente necessario.\\
-		      $\Rightarrow$ \textbf{Alta Efficienza}
+		\phantom{.}\hfill$\Rightarrow$ \textbf{Alta Efficienza}
 		\item[Zero Tempo di negoziazione] Il protocollo di comunicazione usato (\cite{COBS}), rende EMP adatto ad un uso ‘Streaming’, questo perché non è necessario alcuna fase di sincronizzazione iniziale o durante la trasmissione in caso di perdita di dati, in aggiunta a ciò, EMP è in grado di scartare pacchetti errati in maniera trasparente all’utilizzatore. Tutto questo grazie al protocollo che \textbf{Auto-delimita i singoli pacchetti}.\\
-		      $\Rightarrow$ \textbf{Trasparenza Totale}
-		\item[Responsabilità minime] Le uniche responsabilità a carico degli utilizzatori sono il riempimento dei pacchetti e la definizione degli stessi tra i 2 estremi della comunicazione.\\
-		      $\Rightarrow$ \textbf{Semplicità d'uso}
+		\phantom{.}\hfill$\Rightarrow$ \textbf{Trasparenza Totale}
+
 	\end{description}
 \end{spacing}
-
-Tutte queste possibilità sono state sfruttate nella realizzazione di \cite*{EMP} e attraverso l'uso della libreria sfruttarle è davvero semplice.
-
+\noindent
+Entrambe queste features aggiuntive sono presenti all'interno di \cite*{EMP} e attraverso l'uso della libreria sfruttarle è davvero semplice, le uniche responsabilità a carico degli utilizzatori è la definizione dei pacchetti che sarà possibile scambiare in fase di compilazione del codice e il riempimento corretto dei pacchetti.\\
+\phantom{.}\hfill$\Rightarrow$ \textbf{Semplicità d'uso}\\
 Vedremo ora di approfondire come avviene la codifica del pacchetto, così da capire come sia possibile realizzare queste funzionalità accessorie, per poi spostarci ad analizzare la struttura del codice della libreria e una rapida descrizione della direzione di sviluppo che si è presa. 
 
 \newpage
@@ -74,7 +74,7 @@ Si tratta di un algoritmo per la codifica di byte, progettato per essere al temp
 \end{figure}
 
 \subsection{Metodo di codifica}
-L'algoritmo di COBS trasforma una stringa arbitraria di byte, ciascuno dei quali ha un Range di valori da \textbf{[0:255]} in una nuova stringa di byte dove però ogni byte va da \textbf{[{\color{red}1}:255]}. La dimensione della nuova stringa è sempre pari alla dimensione della precedente + 1.\\
+L'algoritmo di COBS trasforma una stringa arbitraria di byte, ciascuno dei quali ha un Range di valori da \textbf{[0:255]} in una nuova stringa di byte dove però ogni byte va da \textbf{[{\color{red}1}:255]}. La dimensione della nuova stringa è sempre pari alla dimensione della precedente +1.\\
 L'obiettivo di questo metodo di codifica è di eliminare tutti i possibili byte \zeroByte dal pacchetto in maniera reversibile.\\
 Questo processo rende il carattere \textbf{\zeroByte (byte zero)} ottimo candidato per essere usato come terminatore di stringa (di byte) durante l'invio, rendendo un pacchetto COBS-Encoded mai ambiguo e sempre \textbf{Auto-delimitato}.\\
 L'algoritmo di codifica consiste nel:\vspace{-5mm}
@@ -103,25 +103,26 @@ Questo può essere facilmente risolto in più modi:
 \begin{spacing}{1.5}
 	\begin{description}
 		\item[Lunghezza Univoca] Ogni possibile pacchetto ha una lunghezza diversa da tutti gli altri\\
-		      $\Rightarrow$ la lunghezza implica il contenuto
+		      	\phantom{.}\hfill$\Rightarrow$ La lunghezza implica il contenuto
 		\item[Aggiunta di un campo Tipologia] Aggiungendo al’inizio della trasmissione un \textit{type byte}\\
-		      $\Rightarrow$ pre-concordare una codifica dei tipi
+		      	\phantom{.}\hfill$\Rightarrow$ I tipi vengono Preconcordati/Standardizzati
 	\end{description}
 \end{spacing}
 \noindent
 Il metodo più universale è sicuramente l'aggiunta di un campo fisso per il tipo, di cui un esempio è visibile nell'appendice al listato \ref{lst:EMPmultiplePack} (\nameref{lst:EMPmultiplePack}).\\
-In ogni caso, la codifica \cite*{COBS} aggiunge 2 byte extra al pacchetto che si vuole inviare, e tanto per la codifica quanto per la decodifica in ricezione, il \textbf{costo} è sempre pari a \textbf{O(n)}.\vspace{-10mm}
+In ogni caso, la codifica \cite*{COBS} aggiunge 2 byte extra al pacchetto che si vuole inviare, e tanto per la codifica quanto per la decodifica in ricezione, il \textbf{costo} è sempre pari a \textbf{O(n)}.\\
+L’aver usato \cite*{COBS} come sistema di codifica per la trasmissione, garantisce che la decodifica debba avvenire solo per byte compresi tra 2 zeri, e se questa decodifica presenta un errore, toglie ogni ambiguità sul da farsi. Il Pacchetto può essere solo scartato e si torna in attesa del successivo 0 mentre si memorizzano i byte ricevuti nel mentre.\vspace{-8mm}
 \begin{multicols}{2}
 	\begin{center}
 		{\large \color{dkgreen}Vantaggi:}
 	\end{center}
 	\begin{spacing}{1.25}
 		\begin{enumerate}[itemsep=-1mm]
-			\item Pacchetti {\color{Azure}\textbf{Self-Delimited}}
-			\item Canale {\color{Azure}\textbf{Multi-Packet ready}}
-			\item Protocollo {\color{Azure}\textbf{Senza Negoziazioni}}
-			\item All’utilizzatore è richiesto solo di Pre-Concordare il formato del pacchetto con l’altro lato dello stream
-			\item Prerequisiti implementativi minimale (mezzo di comunicazione a bytes di tipo \textit{peer2peer} asincrono)
+			\item Pacchetti {\color{cadmiumgreen}\textbf{Self-Delimited}}
+			\item Canale {\color{cadmiumgreen}\textbf{Multi-Packet ready}}
+			\item Protocollo {\color{cadmiumgreen}\textbf{Senza Negoziazioni}}
+			\item Responsabilità minime per l'utilizzatore
+			\item Prerequisiti implementativi minimale (mezzo di comunicazione \textit{peer2peer} asincrono)
 		\end{enumerate}
 	\end{spacing}
 	\vfill
@@ -138,11 +139,10 @@ In ogni caso, la codifica \cite*{COBS} aggiunge 2 byte extra al pacchetto che si
 	\vspace*{\fill}
 \end{multicols}
 
-\subsection{Integrità dei pacchetti}
+\subsection{Integrità dei pacchetti}\vspace{-2mm}
 Per aumentare ulteriormente i campi d’uso e garantire un layer minimale di \textbf{integrità} sui pacchetti in transito, la libreria è in grado di include in maniera trasparente anche un un check di errore calcolato usando \cite{CRC8}, aggiunto in trasmissione e rimosso in ricezione. L'aggiunta e la verifica del CRC8 viene fatta sul pacchetto non ancora \textit{COBS-Encodato}, ciò garantisce la possibilità di inviare il pacchetto a prescindere da quale sia il risultato del CRC8, e viene quindi verificato dopo aver de-\textit{COBS-Encodato} il pacchetto in ricezione.\\
-Questa features può essere agevolmente attiva o disattivata in fase di compilazione, ma necessita di essere la medesima in entrambi i lati della libreria.\\
+Questa features può essere agevolmente attiva o disattivata in fase di compilazione, ma necessita di essere attiva o disattiva contemporaneamente su entrambi i lati del link.\\
 Se attiva essa è in grado di far capire se il pacchetto ha subito degli errori (ovviamente nei limiti del CRC8) e in tal caso scarta il pacchetto ricevuto in maniera totalmente trasparente all'utilizzatore che non ne vien notificato.\\
-L’aver usato COBS come sistema di codifica per la trasmissione, garantisce che la decodifica debba avvenire solo per byte compresi tra 2 zeri, e se questa decodifica presenta un errore, toglie ogni ambiguità sul da farsi. Il Pacchetto può essere solo scartato e si torna in attesa del successivo 0 mentre si memorizzano i byte ricevuti nel mentre.
 
 \newpage
 \subsection{Struttura del codice}
@@ -154,7 +154,7 @@ Lo sviluppo del codice è qui riassunto nel \textbf{Class Diagram} fatto in UML,
 \end{figure}
 \noindent
 Senza entrare eccessivamente nel dettaglio di \citefield{EMP}{title}, essendo tutto reperibile nella versione più aggiornata all'interno del repository di \cite*{EMP}, osserviamo che il codice è diviso in 2 macro blocchi (\textbf{MPCore}, \textbf{MP}) più una classe di supporto per il buffer circolare.\\
-Questa organizzazione del codice è stata pensata per far compilare su tutte le piattaforme di interesse lo stesso \textit{codice attivo}(codifica e decodifica dei pacchetti + accumulo), e demandare le particolarizzazioni dovute alle varie piattaforme o al mezzo di comunicazione usato nel caso specifico a delle classi figlie.\\
+Questa organizzazione del codice è stata pensata per far compilare su tutte le piattaforme di interesse lo stesso \textit{codice attivo} (codifica e decodifica dei pacchetti+accumulo), e demandare le particolarizzazioni dovute alle varie piattaforme o al mezzo di comunicazione usato nel caso specifico a delle classi figlie.\\
 \begin{spacing}{1.25}
 	\begin{description}
 		\item[MPCore] Il \textit{Codice attivo} è presente all'interno del package \textbf{MPCore}. Tutto il codice contenuto in questo package è scritto in C++11 e per essere compilato necessita di un set minimale di librerie standard, sicuramente presenti in ogni piattaforma di sviluppo.
@@ -276,7 +276,7 @@ Le informazioni ricevute dal Companion, vengono salvate all'interno di un file d
 La prima delle 2, tabula i dati del pacchetto \verb|struct setUpPack|, il quale risulta utile per poter interpretare i dati successivamente.
 \begin{table}[H]
 	\centering
-	\caption[Salvataggio di "struct setUpPack"]{Salvataggio di "struct setUpPack"}
+	\caption[Salvataggio di 'struct setUpPack']{Salvataggio di 'struct setUpPack'}
 	\begin{tabular}[t]{|c|c|c|}
 		\hline
 		$ V_{2_{mean}} $ & $ I_{sense_{mean}}$ & dt  \\
@@ -290,7 +290,7 @@ La prima delle 2, tabula i dati del pacchetto \verb|struct setUpPack|, il quale 
 La seconda invece è lo streaming dei dati \verb|raw|, ottenuti dalla scheda:
 \begin{table}[H]
 	\centering
-	\caption[Salvataggio di "struct sample" $\forall$ dt]{Salvataggio di "struct sample" $\forall$ dt}
+	\caption[Salvataggio di 'struct sample' $\forall$ dt]{Salvataggio di 'struct sample' $\forall$ dt}
 	\begin{tabular}[t]{|c|c|c|c|}
 		\hline
 		PWM   & $ V_{2_{read}}$ & $ I_{sense_{read}}$ & e     \\
@@ -323,7 +323,7 @@ Per ottenere la tensione reale letta il cambio è molto semplice:
 
 \noindent
 Partendo da questa equivalenza, per la corrente del primario usiamo l'equazione \ref{eq:Iread}, mentre la tensione sul secondario necessita solo della cancellazione dell'offset:
-\begin{empheq}[box=\mathCalc]{equation} \label{eq:V2Read}
+\begin{empheq}[box=\mathStep]{equation} \label{eq:V2Read}
 	V_2 = V_{read} - V_{2_{offset}}
 \end{empheq}
 
