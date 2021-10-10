@@ -55,7 +55,7 @@ Prima di modellare ed analizzare l'esperimento della tesi, è necessario richiam
 \end{teorema}
 \vspace{-3mm}
 \noindent
-Oltre ai teoremi di Kirchhoff, che ci serviranno per ricavare le equazioni della dinamica, enunciamo ora le proprietà degli induttori, indispensabili per poter definire la loro relazione Corrente/Tensione.
+Oltre ai teoremi di Kirchhoff, che ci serviranno per ricavare le equazioni della dinamica, enunciamo ora le proprietà degli induttori, indispensabili per poter parametrizzare il Trasformatore.
 
 \begin{de}[Induttore Ideale\label{def:induttoreIdeale}]
 	Un \textit{Induttore Ideale} si oppone \underline{solo} alle variazioni di corrente, variando la tensione ai suoi capi di conseguenza, non presenta nessuna resistenza elettrica in caso di correnti costanti ai suoi capi.\\
@@ -98,10 +98,10 @@ Oltre ai teoremi di Kirchhoff, che ci serviranno per ricavare le equazioni della
 \end{de}
 \noindent
 Nel calcolo della \ref{eq:flussoMagnetico}, abbiamo omesso la legge di Lenz, poichè per parametrizzare l'induttore il segno '$ - $' complica inutilmente i calcoli essendo in realtà assegnato dalla polarizzazione del circuito mentre si svolgono i calcoli.\\
-La legge di Lenze prende molta importanza invece durante il fenomeno dell'\textbf{Induttanza}, ovvero quando 2 induttori vengono collegati per mezzo di un campo magnetico tra loro:
+La legge di Lenze prende molta importanza invece durante il fenomeno dell'\textbf{Induttanza}, ovvero quando 2 induttori vengono collegati tra loro per mezzo di un campo magnetico:
 \begin{de} [Induttanza\label{def:induttanza}]
-	L'induttanza è la proprietà dei circuiti elettrici tale per cui la corrente (intesa variabile nel tempo) che li attraversa induce una \textbf{Forza ElettroMotrice} (f.e.m.) Indotta che si oppone alla variazione di corrente, per la legge di Lenz.
-	In questi scenari (vedi Trasformatore Elettrico ad esempio), 2 ciruiti sono accoppiati magneticamente tra di loro attraverso 2 induttori, si ottiene quindi che, la variazione del flusso magnetico da parte del primo induttore, crea una \textbf{Forza ElettroMotrice} (f.e.m.) indotta contraria:
+	L'induttanza è la proprietà dei circuiti elettrici tale per cui la corrente (intesa variabile nel tempo) che li attraversa induce una \textbf{Forza ElettroMotrice} (f.e.m.) \textit{Indotta} che si oppone alla variazione di corrente (legge di Lenz).\\
+	In questi scenari (vedi Trasformatore Elettrico ad esempio), 2 ciruiti sono accoppiati magneticamente tra di loro attraverso 2 induttori, si ottiene quindi che, la variazione del flusso magnetico da parte del primo induttore, crea una \textbf{Forza ElettroMotrice} (f.e.m.) \textit{indotta} contraria nell'altro circuito:
 	\begin{vwcol}[widths={0.4,0.6}, sep=8mm, rule=0px]
 		\vspace{-3mm}
 		\begin{empheq}[box=\mathCalc]{equation}
@@ -128,7 +128,7 @@ Per concludere uniamo insieme i concetti di \nameref{def:induttoreIdeale} e \nam
 	Nel caso ideale, quindi, si ha che:
 	\begin{vwcol}[widths={0.4,0.6}, sep=8mm, rule=0px]
 		\vspace{-3mm}
-		\begin{empheq}[box=\mathCalc]{equation}
+		\begin{empheq}[box=\mathStep]{equation}
 			\Phi_{B} = \Phi_{B_P} - \Phi_{B_S}
 		\end{empheq}
 		\newpage % con wcol, le colonne sono "pagine"
@@ -140,7 +140,7 @@ Per concludere uniamo insieme i concetti di \nameref{def:induttoreIdeale} e \nam
 	\end{vwcol}
 	\noindent
 	Siccome tale flusso varia nel tempo, induce nei due avvolgimenti delle f.e.m. (vedi \nameref{def:induttanza}):
-	\begin{empheq}[box=\mathCalc]{equation}
+	\begin{empheq}[box=\mathStep]{equation}
 		e_p = N_1 \frac{d \Phi_{B}}{dt} ; e_s = -N_2 \frac{d \Phi_{B}}{dt}
 	\end{empheq}
 	I segni non sono entrambi concordi a causa del verso del flusso, che nel primario è concorde e nel secondario discorde (e qui torna la forza di Lenz).\\
@@ -192,7 +192,7 @@ Sempre dallo stesso articolo di \cite{TokamakCircuit}, si evince che è possibil
 Usando queste osservazioni si ottiene quindi il circuito equivalente:
 \begin{figure}[H]	\label{fig:PlasmaSemplificato}
 	\centering
-	\caption[Circuito Equivalente Bobina/Plasma all'interno di un Tokamak trascurando l'induzione del Plasma verso la bobina]{Circuito equivalente Bobina/Plasma semplificato}
+	\caption[Circuito Semplificato Bobina/Plasma]{Circuito equivalente Bobina/Plasma semplificato}
 	\includegraphics[width=1\textwidth]{Trasformatore/PlasmaCircuit-EquivalentCalc.png}
 \end{figure}
 
@@ -292,11 +292,11 @@ Ottenendo così la funzione di trasferimento del Trasformatore (Primario):
 	La funzione di trasferimento che abbiamo ottenuto rispecchia il circuito dell'esperimento lasciandoci come variabile di controllo la $ V(t) $.\\
 	A livello teorico però, noi controlliamo la corrente sul primario e puntiamo a osservare una corrente sul secondario,abbiamo quindi un sistema che si controlla in corrente e che ha un uscita in corrente.\\
 	Sarebbe quindi utile e opportuno allora riassegnare l'ingresso di tensione mettendo in evidenza la variabile virtuale $ I_{ref} $:
-	\begin{empheq}[box=\mathCalc]{equation*}
+	\begin{empheq}[box=\mathStep]{equation*}
 		V(t)=I_{ref}(t) \cdot R_T \Rightarrow I_{ref}(t) = \frac{V(t)}{R_T}
 	\end{empheq}
 	Ottenendo quindi come funzione di trasferimento del Trasformatore (Primario): 
-	\begin{empheq}[box=\mathStep]{equation}
+	\begin{empheq}[box=\mathCalc]{equation}
 		I_T(s) = \frac{R_T}{(s L_T + R_T)} I_{ref}(s) = \frac{1}{(s \frac{L_T}{R_T} + 1)} I_{ref}(t)
 	\end{empheq}
 	In questa forma possiamo osservare che, per $I_{ref}(t)=I_{ref}$ costante, superato il transitorio, si ottiene $I_T = I_{ref}$, da cui abbiamo che la corrente sul trasformatore viene attuata con un certo ritardo dovuto alla costante di tempo $\tau = \frac{L_T}{R_T}$
@@ -348,7 +348,7 @@ Abbiamo quindi, tra ingresso e uscite i parametri di:
 
 
 \section{Trasduttore di Corrente}\label{CurrentSense}
-Come già discusso precedentemente, l'obiettivo della tesi è di controllare la corrente sul secondario usando il campo elettrico del secondario, la misura della corrente scorrente sul primario in tale ottica non sarebbe una misura di interesse. Essendo però un lavoro di ricerca, si è preferito poter misurare la corrente effettivamente circolante nel Primario del trasformatore, così da poter meglio interpretare i dati misurati senza ambiguità.
+Come già discusso precedentemente, l'obiettivo della tesi è di controllare la corrente sul secondario. In tale ottica la misura della corrente sul Primario potrebbe non essere una misura di interesse. Essendo però un lavoro di ricerca, si è preferito poter misurare la corrente effettivamente circolante nel Primario del trasformatore, così da poter meglio interpretare i dati misurati senza ambiguità.
 \begin{figure}[H]
 	\centering
 	\caption[Sensore di Corrente \citefield{ACS770}{series}]{Sensore di Corrente}
@@ -417,16 +417,16 @@ Esso è in oltre fornito di sensori di temperatura e sistemi di \textit{Signal R
 \end{figure}
 \vspace{-5mm}
 \noindent
-Come si può vedere dal grafico, gli errori sono tanto più marcati quanto maggiore è la corrente da misurare, ma leggendo dal datasheet risulta che il costruttore avverte che l'errore dipende si fortemente dalle temperature di esercizio dell'esperimento, come riportato nel grafico:\\\vspace{-12mm}
+Come si può vedere dal grafico, gli errori sono tanto più marcati quanto maggiore è la corrente da misurare ed in oltre questo errore ha una forte dipendenza dalla temperature dell'esperimento:\\\vspace{-12mm}
 \begin{figure}[H]
 	\centering
 	\caption[\citefield{ACS770}{series} \nonLinearita]{Temperatura/NonLinearità}
 	\vspace{1mm}
-	\includegraphics[width=0.8\textwidth]{ACS770/ACS770-NonLin.png}
-\end{figure}\vspace{-8mm}
+	\includegraphics[width=0.9\textwidth]{ACS770/ACS770-NonLin.png}
+\end{figure}\vspace{-6mm}
 
 \noindent
-Esso però non è mai, neanche negli esperimenti più sfortunati, superiore al $\pm2\%$.\\
+Il quale però non è mai, neanche negli esperimenti più sfortunati, superiore al $\pm2\%$.\\
 Anzi, alle temperature $\approx$ 25°, si mantiene contenuto tra $\pm0.5\%$.
 
 \newpage
@@ -448,16 +448,17 @@ Il trasduttore è basato sull'effetto Hall, il quale permette di misurare una co
 I sensori della famiglia \cite{ACS770} propongono vari modelli che differiscono tra loro principalmente per la \textbf{Sensibilità} di misura e la lettura di corrente \textit{Bi-direzionale} o \textit{Mono-direzionale} , in funzione della scala di misura che si vuole avere e della presenza di corrente alternata o continua.
 Per i nostri scopi abbiamo preso il modello: '\citefield{ACS770}{series}', di cui i parametri sono riportati in tabella \ref{tab:ACS770ParametriParticolari}.\\
 Usando la sensibilità riportata in tabella, abbiamo che la formula di conversione per ottenere la corrente letta è:
-{\large \begin{center}
-	$I_{read} = \frac{V_{Read}[V]}{V_{sense}[V/A]}$
+ \begin{center}
+ 	{\large $I_{read} = \frac{V_{Read}[V]}{V_{sense}[V/A]}$ }
 \end{center}
-}
+
 
 \paragraph{Rimozione Offset}
 Essendo però l'ACS770 ad alimentazione singola (0--5V), ma la corrente misurabile \textbf{Bi-Direzionale}, sorge la necessità di spostare il riferimento della corrente nulla ad una tensione superiore allo 0V.\\
 Il datasheet riporta che $V_{offset} = \frac{Vcc}{2}\approx$ 2.5V. Da cui deriva che la vera misura di corrente è:
-{\LARGE
-\begin{empheq}[box=\mathCalc]{equation} \label{eq:Iread}
+
+{\large
+\begin{empheq}[box=\mathCalc]{equation}\label{eq:Iread}
 	I_{read} = \frac{V_{Read}-V_{offset}}{V_{sense}} \frac{[V]}{[V/A]}
 \end{empheq}
 }
@@ -477,8 +478,6 @@ Il che equivale a una \textbf{Sensibilità di Corrente} del $\mu$Controllore par
 \begin{empheq}[box=\mathResult]{equation} \label{result:Istep}
 	I_{step} =\frac{ V_{step}}{V_{sense}} = 244,379 mA
 \end{empheq}
-\noindent
-Il ché rende la misura buona per osservare cosa stia accadendo, ma sicuramente non sufficientemente densa da poterla usare come parametro ingresso di controllo.
 
 \newpage
 

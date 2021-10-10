@@ -309,10 +309,6 @@ int iiCTRL::ctrlStep(uint64_t t, int v2Adc) {
 }
 
 void iiCTRL::stateReset(int setOutput) {
-	// Idea Stati proporzionali
-	//  float rap = (float)dIntegral2 / (float)dIntegral1;
-	//  dIntegral1 = (int)((float)setOutput / (rap * k2 + k1));
-	//  dIntegral2 = (int)(rap * (float)dIntegral1);
 	// Riassegno tutto l'output su Cii(s)
 	float rap = xCii1 / xCi1;
 	xCii1 = setOutput;

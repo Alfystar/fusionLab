@@ -23,10 +23,18 @@
 \definecolor{NavyBlue}{HTML}{000080}
 \definecolor{Azure}{HTML}{007FFF}
 \definecolor{ProcessBlue}{HTML}{0085CA}
+\definecolor{cobalt}{rgb}{0.0, 0.28, 0.67}
 \definecolor{columbiablue}{rgb}{0.61, 0.87, 1.0}
+\definecolor{celestialblue}{rgb}{0.29, 0.59, 0.82}
 \definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
 \definecolor{mylilas}{RGB}{170,55,241}
 \definecolor{fireenginered}{rgb}{0.81, 0.09, 0.13}
+\definecolor{aquamarine}{rgb}{0.5, 1.0, 0.83}
+\definecolor{babyblue}{rgb}{0.54, 0.81, 0.94}
+\definecolor{darkseagreen}{rgb}{0.56, 0.74, 0.56}
+\definecolor{dollarbill}{rgb}{0.52, 0.73, 0.4}
+\definecolor{fawn}{rgb}{0.9, 0.67, 0.44}
+\definecolor{darkturquoise}{rgb}{0.0, 0.81, 0.82}
 %% My special Word Package ----------
 \usepackage{specialWord}
 
@@ -37,8 +45,8 @@
 	colorlinks=true,
 	linkcolor=Azure, %black, %blue,
 	filecolor=black, %magenta,      
-	urlcolor=cyan,
-	citecolor=cyan,
+	urlcolor=cobalt,
+	citecolor=Azure,
 	pdftitle={Tesi Magistrale Alfano},
 	pdfpagemode=FullScreen,
 }
@@ -130,13 +138,13 @@ backend=bibtex]{biblatex}
 \newtcbox{\mathResult}[1][]{
 	nobeforeafter, math upper, tcbox raise base,
 	enhanced, colframe=blue!30!black,
-	colback=Azure!20, boxrule=1pt,#1
+	colback=columbiablue, boxrule=1pt,#1
 }
 
 \newtcbox{\mathStep}[1][]{
 	nobeforeafter, math upper, tcbox raise base,
 	enhanced, colframe=blue!30!black,
-	colback=ProcessBlue!40, boxrule=1pt,#1
+	colback=white, boxrule=1pt,#1
 }
 
 % Package per Liste -----------------------------------------
@@ -167,7 +175,7 @@ backend=bibtex]{biblatex}
 
 \newtheorem{obs}{Osservazione}[section]
 \newenvironment{oss}
-{\begin{mdframed}[backgroundcolor=columbiablue!10]\begin{obs}\begin{normalfont}}
+{\begin{mdframed}[backgroundcolor=fawn!40]\begin{obs}\begin{normalfont}}
 			{\hfill $\square \!\!\!\!\checkmark$ \end{normalfont}\end{obs}\end{mdframed}}
 
 \newtheorem{pro}{Problema}[chapter]
@@ -230,7 +238,7 @@ backend=bibtex]{biblatex}
 \begin{document}
 
 \dedicate{{
-			Questa tesi è dedicata ai miei cari nonni, che sempre hanno saputo esserci per me \\
+			Ai miei cari nonni, che sempre hanno saputo esserci per me \\
 			e alla mia professoressa Beniamina, non c'è giorno che non pensi a te \\
 			\\
 			A voi dedico questa tesi e questo traguardo, e mi affido per i traguardi di domani.

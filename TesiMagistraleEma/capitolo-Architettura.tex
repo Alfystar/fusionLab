@@ -1,14 +1,14 @@
 \chapter{Architettura di Sistema}\label{cap:Architettura}
 
 \begin{minipage}{12cm}\textit{
-		In questo capitolo verranno affrontati gli aspetti progettuali e i problemi realizzativi per poter campionare l'esperimento e trasferire i dati campionati a un dispositivo esterno collegato alla scheda principale (l'Arduino).
+		In questo capitolo verranno affrontati gli aspetti progettuali e i problemi realizzativi per poter campionare l'esperimento e trasferire i dati campionati a un dispositivo esterno collegato alla scheda principale.
 	}
 \end{minipage}
 
 \vspace*{1cm}
 
 \section{Architettura ad alto livello}\label{sec:architettura}
-Il progetto finale ha come obiettivo la realizzazione di un architettura di controllo per le bobine poloidali presenti nei reattori tokamak.
+Il progetto finale ha come obiettivo la realizzazione di un architettura di controllo per le bobine poloidali presenti nei reattori Tokamak.
 
 \begin{figure}[H] \label{fig:archietturaControllo}
 	\centering
@@ -18,15 +18,16 @@ Il progetto finale ha come obiettivo la realizzazione di un architettura di cont
 
 \noindent
 Lo schema proposto realizza l'obiettivo per una singola bobina, il progetto finale prevederà la ripetizione in serie del medesimo schema per il numero di bobine necessarie.\\
-Dallo schema risulta evidente che tutti i componenti visti nel capitolo "\nameref{cap:Hardware}" si relazionano con lo stesso \microControllore: l'\ArduinoUno.
+Dallo schema risulta evidente che tutti i componenti visti nel capitolo "\nameref{cap:Hardware}" si relazionano con lo stesso \microControllore: l'\ArduinoUno.\vspace{-4mm}
 \begin{figure}[H]
 	\centering
 	\caption[Scheda Arduino Uno]{Scheda Arduino Uno}
-	\includegraphics[width=0.5\textwidth]{Architettura/ArduinoUno.png}
-\end{figure}
+	\includegraphics[width=0.45\textwidth]{Architettura/ArduinoUno.png}
+\end{figure}\vspace{-6mm}
 
 \noindent
-Per riportare i dati fuori e ricevere il riferimento da inseguire nella $V_2$, è stata realizzata dal sottoscritto la libreria \cite*{EMP}, la quale è scritta in C++ ed usa il concetto di classi template per poter essere ottimizzata al massimo in fase di compilazione, nel suo sviluppo si è tenuto conto della necessità di essere Cross-Platform, il chè ha portato a uno sviluppo che usa per librerie esterne solo quelle davvero universali, e definisce per il resto al suo interno.\\
+Per riportare i dati fuori e ricevere il riferimento da inseguire nella $V_2$, è stata realizzata dal sottoscritto la libreria \cite*{EMP}.\\
+La libreria è scritta in C++ ed usa fortemente il concetto di classi template per permettere ai compilatori di ottimizzarla al massimo durante la compilazione della libreria. Tra le necessità a cui deve venire in contro la libreria troviamo prima fra tutte la necessità di poter essere compilata Cross-Platform, il ché ha portato a sviluppare il codice usando il minor numero possibile di librerie esterne, le quali solo davvero universali e alla base di qualunque Toolchain, e definire il resto al suo interno.\\
 Il suo compito specifico, in questo progetto, è di mettere in comunicazione l'\ArduinoUno con un nodo \MARTe installato su di una \Rasp.\\
 Quest'ultimo nodo ha il compito di mettere in rete il feedback dell'esperimento, e comunicare all'\ArduinoUno eventuali cambio di riferimento. Questo ultimo tratto è realizzato mediante il protocollo \textbf{SDN}, che viaggia sopra Ethernet e dà garanzie Real-time.\\
 Nella sua forma finale, il progetto prevede la riproduzione in serie di questo schema di controllo per arrivare a controllare tutte le bobine poloidali presenti in un tokamak.
@@ -40,8 +41,10 @@ Nella sua forma finale, il progetto prevede la riproduzione in serie di questo s
 	\centering
 	\includegraphics[width=0.8\textwidth]{EMP/EMP-Logo-Background.png}
 \end{figure}\vspace{-10mm}
-\paragraph{\cite*{EMP}} nasce con l’obiettivo di standardizzare un protocollo e creare una libreria C++ basata su classi Template, che permetta di automatizzare tutto il lavoro di programmazione necessario all’invio e alla ricezione di pacchetti pre pre-Concordati tra 2 Device connessi in una rete Peer2Peer (Nessuna pretesa di networking).\\
-Il raggiungimento dei suoi obiettivi porta con se la possibilità di supportare altre features interessanti:
+\paragraph{\cite*{EMP}} nasce con l’obiettivo di standardizzare un protocollo di comunicazione tra 2 dispositivi, richiedendo all'utilizzatore della libreria di definire la struttura dei pacchetti che vuole trasferire, e demandando ricezione, trasmissione e verifica di integrità alla libreria.\\
+L'obiettivo è stato raggiunto puntando anche ad un alta efficienza nel codice prodotto e all'uso di buffer e memorie allocate in compilazione, senza quindi fare uso della memoria dinamica.\\
+Lo scenario di utilizzo è tra i 2 estremi di un link di comunicaziine (una rete Peer2Peer ) e non ha nessuna pretesa di networking, scenario tipico è la comunicazione USB, UART, bluetooth, con moduli XBEE, etc...\\
+Il protocollo usato per codificare la comunicazione è \cite{COBS} e oltre a permettere il raggiungimento dei suoi obiettivi permette anche di supportare altre features interessanti:
 \begin{spacing}{1.25}
 	\begin{description}
 		\item[Multiple-Package] Il protocollo di comunicazione usato (\cite{COBS}) permette di far gestire ad EMP il trasporto, attraverso lo stesso mezzo, di \textit{\textbf{pacchetti di tipologia e dimensione diversa}} senza inviare più byte di quelli strettamente necessario.\\
@@ -52,6 +55,12 @@ Il raggiungimento dei suoi obiettivi porta con se la possibilità di supportare 
 		      $\Rightarrow$ \textbf{Semplicità d'uso}
 	\end{description}
 \end{spacing}
+
+Tutte queste possibilità sono state sfruttate nella realizzazione di \cite*{EMP} e attraverso l'uso della libreria sfruttarle è davvero semplice.
+
+Vedremo ora di approfondire come avviene la codifica del pacchetto, così da capire come sia possibile realizzare queste funzionalità accessorie, per poi spostarci ad analizzare la struttura del codice della libreria e una rapida descrizione della direzione di sviluppo che si è presa. 
+
+\newpage
 
 \subsection*{Consistent Overhead Byte Stuffing (COBS)}
 \addcontentsline{toc}{section}{\protect\numberline{\thesection} Protocollo - COBS}
