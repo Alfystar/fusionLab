@@ -138,6 +138,7 @@ int rapidShotEps(uint64_t t) {
 }
 
 iiCTRL::iiCTRL() : iiCTRL(20000, 4000, 0.3) {}
+
 iiCTRL::iiCTRL(float k2, float k1, float kp) {
   changeK(k2, k1, kp);
   setNewRef(0, 0);

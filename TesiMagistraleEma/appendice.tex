@@ -264,7 +264,7 @@ La classe \verb|iiCTRL| implementa il controllore \ref{eq:controllerDesign} e us
 \newpage
 
 \begin{lstlisting}[style=cppStyle,caption={Source Classe controllore C(s)},label=lst:controlClassCpp] 
-iiCTRL::iiCTRL() : iiCTRL(0.05, 0.8, 0) {}
+iiCTRL::iiCTRL() : iiCTRL(20000, 4000, 0.3) {}
 
 iiCTRL::iiCTRL(float k2, float k1, float kp) {
 	changeK(k2, k1, kp);
@@ -291,10 +291,10 @@ int iiCTRL::ctrlStep(uint64_t t, int v2Adc) {
 	}
 	// #### Space State Update ####
 	// State update Cii(s)
-	xCii1 = xCii1 + Ts * xCii2 + sq(Ts) / 2 * k2 * lastErr;
+	xCii1 = xCii1 + Ts * xCii2 + (sq(Ts) / 2.0) * k2 * lastErr;
 	xCii2 = xCii2 + Ts * k2 * lastErr;
 	// State update Ci(s)
-	xCi1 = 0;
+	xCi1 = xCi1 + Ts * k1 * lastErr;
 	float yCp = kp * lastErr;
 	
 	// #### Output calc ####

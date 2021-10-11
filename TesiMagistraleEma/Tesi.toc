@@ -77,6 +77,7 @@
 \contentsline {subsection}{\numberline {5.3.1}Inseguimento singolo}{72}{subsection.5.3.1}%
 \contentsline {subsection}{\numberline {5.3.2}Inseguimento Triangolare}{73}{subsection.5.3.2}%
 \contentsline {subsection}{\numberline {5.3.3}Cambio riferimento in corsa}{74}{subsection.5.3.3}%
+\contentsline {section}{\numberline {5.4}Rumorosità nel controllo}{74}{section.5.4}%
 \contentsline {chapter}{\numberline {6}Conclusioni e sviluppi futuri}{75}{chapter.6}%
 \contentsline {chapter}{Appendice A - Codice Arduino}{77}{chapter*.71}%
 \contentsline {section}{\numberline {7.1}Set-up Registri}{77}{section.7.1}%

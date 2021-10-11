@@ -136,8 +136,7 @@ In questo "\textit{sparo}" viene impostato il riferimento a $ V_{2_{ref}}=0.5V $
 	\includegraphics[width=1\textwidth]{Controllo/02-Bi-FrontCapture.pdf}
 \end{figure}\vspace{-8mm}
 \noindent
-Come abbiamo avuto modo di vedere nel capitolo "\nameref{cap:stimaModello}", il modello lineare che abbiamo trovato, taglia tutta una serie di \nonLinearita presenti invece nell'impianto e particolarmente evidenti nei pressi della \textbf{Dead-Zone} e della \textbf{Saturazione}, ma il controllo in catena chiusa riesce a gestire questi problemi e il sistema sin dall'inizio tende a 0 esponenzialmente.\\
-Passati i 200ms in saturazione il controllo automaticamente va a 0, realizzando la logica di \textit{Safe-Shutdown} descritta prima. Negli istanti subito successivi è possibile vedere come la tensione sul secondario vada fuori scala e si saturi attorno a $ -2.2V $, questo è concorde con i limiti di misura che abbiamo sul prototipo, e impone che le pendenze massime ineseguibili siano non superiori ai $ \pm2V $.
+Come abbiamo avuto modo di vedere nel capitolo "\nameref{cap:stimaModello}", il modello lineare che abbiamo trovato, taglia tutta una serie di \nonLinearita presenti invece nell'impianto e particolarmente evidenti nei pressi della \textbf{Dead-Zone} e della \textbf{Saturazione}, ma il controllo in catena chiusa riesce a gestire questi problemi e il sistema sin dall'inizio tende a 0 esponenzialmente, la presenza del termine proporzionale permette di reagire immediatamente alla variazione del riferimento, mantenendo l'errore minimo sin dall'inizio.
 
 \subsection{Inseguimento Triangolare}
 In questo secondo esperimento, \textit{MARTe2Moc} è stato programmato per invertire il segno del riferimento ogni volta che il controllo arriva in saturazione, l'obiettivo del test è vedere la risposta del controllo nei pressi della \textbf{Dead-Zone} e in corrispondenza di inversione di polarità, il continuo ribaltamento del $ V_{2_{ref}} $ impedisce di arrivare in saturazione troppo a lungo, rendendo l'esperimento periodico e illimitato nel tempo.\vspace{-2mm}
@@ -147,16 +146,19 @@ In questo secondo esperimento, \textit{MARTe2Moc} è stato programmato per inver
 	\includegraphics[width=1\textwidth]{Controllo/03-PosNeg-capture.pdf}
 \end{figure}\vspace{-8mm}
 \noindent
-Come è possibile vedere, nei pressi della \textbf{Dead-Zone} la presenza della zona morta fa si che l'errore cresca di $ 0.02V $, ma questo errore viene rapidamente ripreso e portato in 0.\\
+Come è possibile vedere, nei pressi della \textbf{Dead-Zone} la presenza della zona morta fa si che l'errore cresca, ma questa crescita è non superiore a $ 0.02V $, mostrando quanto robusto sia questo design di controllo anche in presenza delle \nonLinearita non modellate nel modello.\\
 
 \newpage
 
 \subsection{Cambio riferimento in corsa}
-In questo terzo esperimento, \textit{MARTe2Moc} è stato programmato per inviare un nuovo riferimento casuale ogni 500ms, nel grafico riportato vi è stato prima un inseguimento "\textit{ripido}", seguito da uno molto morbido che è stato interrotto ben prima del raggiungimento della saturazione da un altro riferimento dello stesso segno negativo ma più ripido:\vspace{-2mm}
+In questo terzo esperimento, \textit{MARTe2Moc} è stato programmato per inviare un nuovo riferimento casuale, nel grafico riportato vi è stato prima un inseguimento "\textit{lento}", seguito da uno "\textit{ripido}", con una pronta risposta che ha saputo inseguire il cambio mantenendo trascurabile l'errore:\vspace{-2mm}
 \begin{figure}[H]
 	\centering
 	\caption[Cambio di $ V_{2_{ref}} $ prima della saturazione]{Cambio di $ V_{2_{ref}} $ prima della saturazione}
 	\includegraphics[width=1\textwidth]{Controllo/01-RandomCapture.pdf}
-\end{figure}\vspace{-8mm}
-\noindent
-Risulta evidente che il sistema accetta bene i cambi di riferimenti, bisogna solo correggere il problema nella classe che implementa il controllore modificando che il cambio di riferimento non influisca sullo stato automaticamente.
+\end{figure}\vspace{-16mm}
+
+
+\section{Rumorosità nel controllo}
+Essendo il controllo in realtà discreto, e soltanto nel range PWM $\in \left[120,200\right] $, è quindi costretto a salire e scendere localmente ad alta frequenza, questo andamento è particolarmente visibile nei pressi delle \nonLinearita da noi trascurate.\\
+Il poter avere un controllo in realtà più smooth permetterebbe di migliorare queste oscillazioni e potenzialmente migliorare ulteriormente le performance (già ottime) del sistema aumentando ancora i coefficienti del controllore.
