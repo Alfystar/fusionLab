@@ -14,7 +14,7 @@
 #include <globalDef.h>
 
 #define upLimitSat 220  // 219.9 from matlab graph
-#define downLimitSat 41 // 40.8 from matlab graph
+#define downLimitSat 120 // 40.8 from matlab graph
 
 void setMotFreq(pwmFreq freq);
 

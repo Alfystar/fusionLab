@@ -22,15 +22,31 @@
   <component name="ChangeListManager">
     <list default="true" id="31dadc64-383b-4374-b0e1-edbf6e357369" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/../../ArduinoFirmwares/02_ControlledFW/platformio.ini" beforeDir="false" afterPath="$PROJECT_DIR$/../../ArduinoFirmwares/02_ControlledFW/platformio.ini" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ArduinoFirmwares/02_ControlledFW/src/Motor/DCdriver.h" beforeDir="false" afterPath="$PROJECT_DIR$/../../ArduinoFirmwares/02_ControlledFW/src/Motor/DCdriver.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ArduinoFirmwares/02_ControlledFW/src/experiment.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/../../ArduinoFirmwares/02_ControlledFW/src/experiment.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../otherRepo/EMP" beforeDir="false" afterPath="$PROJECT_DIR$/../../otherRepo/EMP" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MatlabCode/02-dataPlot-Controlled/experimentControlled/01-RandomCapture.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../MatlabCode/02-dataPlot-Controlled/experimentControlled/01-RandomCapture.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MatlabCode/02-dataPlot-Controlled/experimentControlled/02-Bi-FrontCapture.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../MatlabCode/02-dataPlot-Controlled/experimentControlled/02-Bi-FrontCapture.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MatlabCode/02-dataPlot-Controlled/experimentControlled/03-PosNeg-capture.txt" beforeDir="false" afterPath="$PROJECT_DIR$/../../MatlabCode/02-dataPlot-Controlled/experimentControlled/03-PosNeg-capture.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MatlabCode/02-dataPlot-Controlled/experimentControlled/Marte2Moc" beforeDir="false" afterPath="$PROJECT_DIR$/../../MatlabCode/02-dataPlot-Controlled/experimentControlled/Marte2Moc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MatlabCode/02-dataPlot-Controlled/img/01-RandomCapture.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../../MatlabCode/02-dataPlot-Controlled/img/01-RandomCapture.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MatlabCode/02-dataPlot-Controlled/img/01-RandomCapture.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../MatlabCode/02-dataPlot-Controlled/img/01-RandomCapture.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MatlabCode/02-dataPlot-Controlled/img/02-Bi-FrontCapture.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../../MatlabCode/02-dataPlot-Controlled/img/02-Bi-FrontCapture.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MatlabCode/02-dataPlot-Controlled/img/02-Bi-FrontCapture.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../MatlabCode/02-dataPlot-Controlled/img/02-Bi-FrontCapture.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MatlabCode/02-dataPlot-Controlled/img/03-PosNeg-capture.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../../MatlabCode/02-dataPlot-Controlled/img/03-PosNeg-capture.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MatlabCode/02-dataPlot-Controlled/img/03-PosNeg-capture.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../MatlabCode/02-dataPlot-Controlled/img/03-PosNeg-capture.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MatlabCode/02-dataPlot-Controlled/img/capture.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/../../MatlabCode/02-dataPlot-Controlled/img/capture.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MatlabCode/02-dataPlot-Controlled/img/capture.png" beforeDir="false" afterPath="$PROJECT_DIR$/../../MatlabCode/02-dataPlot-Controlled/img/capture.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MatlabCode/02-dataPlot-Controlled/importExperiment.m" beforeDir="false" afterPath="$PROJECT_DIR$/../../MatlabCode/02-dataPlot-Controlled/importExperiment.m" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../MatlabCode/02-dataPlot-Controlled/plotExperiment.m" beforeDir="false" afterPath="$PROJECT_DIR$/../../MatlabCode/02-dataPlot-Controlled/plotExperiment.m" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Release" />
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
   </component>
@@ -58,11 +74,6 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunManager" selected="CMake Application.Marte2Moc">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="EMPlibs" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Marte2Moc" TARGET_NAME="EMPlibs" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -74,6 +85,11 @@
       </method>
     </configuration>
     <configuration name="Marte2Moc" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Marte2Moc" TARGET_NAME="Marte2Moc" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Marte2Moc" RUN_TARGET_NAME="Marte2Moc">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -118,6 +134,7 @@
       <workItem from="1632401847946" duration="5010000" />
       <workItem from="1632474591087" duration="7571000" />
       <workItem from="1632769411611" duration="413000" />
+      <workItem from="1633960200731" duration="4330000" />
     </task>
     <servers />
   </component>
@@ -134,5 +151,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

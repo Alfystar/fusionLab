@@ -14,6 +14,8 @@
 // Signal include
 #include <signal.h>
 
+#define randSign() (1 - 2 * (rand() & 1))
+
 EMP::MP_Uart<packArd2Linux, packLinux2Ard, LinuxMP_ConfMed(true)> *uart;
 void uartOpen() {
   std::cout << "Uart Start" << std::endl;
@@ -50,20 +52,19 @@ void intHandler(int dummy) {
   exit(-1);
 }
 
-
-enum refFunxType { BiFronte, Random, Triangolo };
+enum refFunxType { BiFronte, Random, Triangolo, Inc };
 packArd2Linux pRead;
 packLinux2Ard pWrite;
 struct setUpPack setUp;
 struct timespec now, old, diff;
 refFunxType refSelect;
 
-
 void help() {
   cout << "I possibili comandi sono:\n"
        << "b  := BiFronte (default)\n"
        << "r  := Random\n"
        << "t  := Triangolo\n"
+       << "i  := Incrementali\n"
        << "h  := this guide\n";
 }
 int main(int argc, char *argv[]) {
@@ -75,6 +76,8 @@ int main(int argc, char *argv[]) {
       refSelect = Random;
     if (strcmp(argv[1], "t") == 0)
       refSelect = Triangolo;
+    if (strcmp(argv[1], "i") == 0)
+      refSelect = Inc;
     if (strcmp(argv[1], "h") == 0) {
       help();
       exit(-1);
@@ -103,7 +106,6 @@ int main(int argc, char *argv[]) {
   } while (pRead.type != setUpPackType);
   setUp = pRead.setUp;
 
-
   outfile << "V2_mean\tIsense_mean\tdt" << std::endl;
   outfile << pRead.setUp.V2_mean << "\t" << pRead.setUp.Isense_mean << "\t" << pRead.setUp.dt << std::endl;
   outfile << "PWM\tV2_read\tIsense_read\te" << std::endl;
@@ -117,6 +119,9 @@ int main(int argc, char *argv[]) {
   ulong ticExp = 0;
   ulong ticSat = 0;
   int swingSign = 1;
+  ulong waitTicStart = 0;
+  ulong newRandTic = (10 + (rand() % 500));
+  float oldRef = 0;
   while (true) {
     // ~~~~~~~~~~~ Sample wait ~~~~~~~~~~~
     do {
@@ -130,12 +135,16 @@ int main(int argc, char *argv[]) {
     outfile << pRead.read.pwm << "\t" << pRead.read.V2_read << "\t" << pRead.read.Isense_read << "\t" << pRead.read.err
             << std::endl;
     timeSpecPrint(diff, "diff");
-    ticExp++;
+
+    if (waitTicStart < ticConvert(100)) {
+      waitTicStart++;
+      continue;
+    }
 
     // ~~~~~~~~~~~ Reference Logic ~~~~~~~~~~~
     switch (refSelect) {
     case BiFronte:
-      if (ticExp > ticConvert(200)) {
+      if (ticExp % ticConvert(500) == 0) {
         ticExp = 0;
         memset(&pWrite, 0, sizeof(pWrite));
         pWrite.type = newRefType;
@@ -146,18 +155,21 @@ int main(int argc, char *argv[]) {
       }
       break;
     case Random:
-      if (ticExp > ticConvert(200)) {
+      if (ticExp % ticConvert(newRandTic) == 0) {
+        newRandTic = (10 + (rand() % 500));
         ticExp = 0;
         memset(&pWrite, 0, sizeof(pWrite));
         pWrite.type = newRefType;
-        float randRef = ((rand() % 1200) - 600) / 1000.0; // +- 0.6 ref
+        // +- 0.8V ref & abs(vRef)>=0.35
+        float randRef = max((rand() % 800), 350) / 1000.0;
+        randRef = randRef * randSign();
         pWrite.ref.newRef = volt2adc(randRef);
 
         uart->packSend(&pWrite, sizeof(LinuxSendType) + sizeof(struct newRef));
       }
       break;
     case Triangolo:
-      if (ticExp == ticConvert(200)) {
+      if (ticExp == 0) {
         memset(&pWrite, 0, sizeof(pWrite));
         pWrite.type = newRefType;
         pWrite.ref.newRef = volt2adc(0.5) * swingSign;
@@ -179,7 +191,24 @@ int main(int argc, char *argv[]) {
         uart->packSend(&pWrite, sizeof(LinuxSendType) + sizeof(struct newRef));
       }
       break;
+    case Inc:
+      if (ticExp % ticConvert(newRandTic) == 0) {
+        newRandTic = (rand() % 100);
+        ticExp = 0;
+        memset(&pWrite, 0, sizeof(pWrite));
+        pWrite.type = newRefType;
+        oldRef += (rand() % 400) / 1000.0 * swingSign;
+        if (abs(oldRef) > 0.8) {
+          oldRef = 0;
+          swingSign *= -1;
+        }
+        pWrite.ref.newRef = volt2adc(oldRef);
+
+        uart->packSend(&pWrite, sizeof(LinuxSendType) + sizeof(struct newRef));
+      }
+      break;
     }
+    ticExp++;
   }
   outfile.close();
   delete uart;

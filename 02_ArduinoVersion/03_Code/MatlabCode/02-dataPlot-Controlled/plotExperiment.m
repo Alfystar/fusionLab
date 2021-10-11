@@ -4,8 +4,8 @@ close all
 % experiment("experimentControlled/capture.txt")
 
 
-experiment("experimentControlled/01-RandomCapture.txt",[2.9,4.8],[-11,11])
-experiment("experimentControlled/02-Bi-FrontCapture.txt",[0.95,1.35],[-11,11])
+experiment("experimentControlled/01-RandomCapture.txt",[1.5,1.8],[-11,11])
+experiment("experimentControlled/02-Bi-FrontCapture.txt",[1.05,1.35],[-11,11])
 experiment("experimentControlled/03-PosNeg-capture.txt",[0.45,1.15],[-11,11])
 
 
