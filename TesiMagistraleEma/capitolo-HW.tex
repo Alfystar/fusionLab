@@ -264,13 +264,13 @@ Volendo calcolare la funzione di trasferimento per le dinamiche forzate, partiam
 \begin{center}
 	{\large
 		$ s I_p L_p  + I_p R_p = -s I_T M_{Tp} \Rightarrow I_p( s L_p + R_p) = -s I_T M_{Tp} \Rightarrow$ \\ 
-		$ I_p(s) = \frac{-s M_{Tp}}{( s L_p + R_p)} I_T(s) $
+		$ I_p(s) = \frac{-s M_{Tp}}{ s L_p + R_p} I_T(s) $
 	}
 \end{center}
 \noindent
 Arrivando così a scrivere come funzione di trasferimento per il Plasma (Secondario):
 \begin{empheq}[box=\mathCalc]{equation} \label{eq:correntePlasmaLaplace}
-	\frac{I_p(s)}{I_T(s)}  = \frac{-s M_{Tp}}{( s L_p + R_p)}
+	\frac{I_p(s)}{I_T(s)}  = \frac{-s M_{Tp}}{ s L_p + R_p}
 \end{empheq}
 
 \subsubsection{Funzione di Trasferimento Trasformatore}
@@ -279,13 +279,13 @@ Similmente a quanto fatto per Plasma, partendo dall'equazione \ref{eq:correnteTr
 \begin{center}
 	{\large
 		$ s I_T L_T  + I_T R_T = V(s) \Rightarrow I_T( s L_T + R_T) = V(s) \Rightarrow $\\
-		$ I_T(s) = \frac{1}{(s L_T + R_T)} V(s)$
+		$ I_T(s) = \frac{1}{s L_T + R_T} V(s)$
 	}
 \end{center}
 \noindent
 Ottenendo così la funzione di trasferimento del Trasformatore (Primario):
 \begin{empheq}[box=\mathCalc]{equation} \label{eq:correnteTrasformatoreLaplace}
-	\frac{I_T(s)}{V(s)}  = \frac{1}{(s L_T + R_T)}
+	\frac{I_T(s)}{V(s)}  = \frac{1}{s L_T + R_T}
 \end{empheq}
 \newpage
 \begin{oss} \label{oss:Iref}
