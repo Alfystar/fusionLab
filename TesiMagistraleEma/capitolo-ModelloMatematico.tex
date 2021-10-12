@@ -190,7 +190,7 @@ Da cui, il design base del controllore è: \vspace{-4mm}
 Questo controllore base è complicabile a piacere aggiungendo altri Poli e Zeri stabili, con l'obiettivo di migliorarne le performance della risposta del sistema.
 \begin{oss}
 	Il controllore descritto in \ref{eq:contollerDesignBase}, anche permette un inseguimento con errore nullo dell'uscita, \textbf{non è stabile}! Esso infatti ha 2 poli in 0, rendendolo un polo \textit{non semplice} e quindi causa di instabilità polinomiale.\\
-	L'uso di un simile controllore, anche se permette un inseguimento a errore nullo, non rende il sistema \textbf{Input-to-state \underline{un}stabile} $ \Rightarrow $ il sistema è polinomialmente instabile.\\
+	L'uso di un simile controllore, anche se permette un inseguimento a errore nullo, rende il sistema \textbf{Input-to-state \underline{un}stabile} $ \Rightarrow $ Il sistema è polinomialmente instabile.\\
 	Questa conseguenza è inevitabile ma bene accetta, la presenza di saturazione nell'attuazione evita il problema di stati infiniti.\\
 	Bisognerà ovviamente tenerne conto in fase di realizzazione poiché con il procedere del tempo dell'esperimento, i numeri dello stato diventeranno sempre maggiori, e ciò potrà portare a problemi di overflow numerici che devono essere gestiti in fase di progettazione del codice.
 \end{oss}
