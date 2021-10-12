@@ -290,8 +290,7 @@ Ottenendo così la funzione di trasferimento del Trasformatore (Primario):
 \newpage
 \begin{oss} \label{oss:Iref}
 	La funzione di trasferimento che abbiamo ottenuto rispecchia il circuito dell'esperimento lasciandoci come variabile di controllo la $ V(t) $.\\
-	A livello teorico però, noi controlliamo la corrente sul primario e puntiamo a osservare una corrente sul secondario,abbiamo quindi un sistema che si controlla in corrente e che ha un uscita in corrente.\\
-	Sarebbe quindi utile e opportuno allora riassegnare l'ingresso di tensione mettendo in evidenza la variabile virtuale $ I_{ref} $:
+	In un impianto reale però al posto di una tensione abbiamo un generatore di corrente che insegue un riferimento con un certo ritardo, possiamo ottenere anche nel nostro esperimento il controllo in funzione della corrente di riferimento assegnando:
 	\begin{empheq}[box=\mathStep]{equation*}
 		V(t)=I_{ref}(t) \cdot R_T \Rightarrow I_{ref}(t) = \frac{V(t)}{R_T}
 	\end{empheq}
@@ -311,7 +310,7 @@ Connettendo in serie i 2 blocchi e tenendo conto dell'osservazione \ref{oss:Iref
 \end{empheq}
 
 \noindent
-Che vista come schema a blocchi diventa:\vspace{-2mm}
+Quindi il primo blocco è solo relativo al funzionamento del sistema in feedback del controllore di corrente modellato da un modello del primo ordine asintoticamente stabile.\vspace{-2mm}
 \begin{figure}[H]
 	\centering
 	\caption[Schema a Blocchi della funzione di trasferimento della corrente di Plasma]{Schema a Blocchi Corrente di Plasma}
@@ -324,22 +323,23 @@ Essendo il segno di uscita del segnale inverso rispetto al segnale d'ingresso, e
 	P_{pos}(s) = -P(s) = \frac{s M_{Tp}}{( s L_p + R_p)(s L_T + R_T)} = \frac{-I_p(s)}{I_{ref}(s)}
 \end{empheq}
 
-\subsection{Misura del campo Elettrico del Plasma come indice per la Corrente} \label{sub:parametriMisurati}
-Riprendendo l'equazione della corrente di Plasma \ref{eq:correntePlasmaDinamica}, abbiamo che il campo elettrico indotto sul Plasma, ovvero la $F_{em}$, dipende direttamente dallo stato della corrente di Plasma $I_p$.\\
+\subsection{Misura del campo Elettrico del Plasma} \label{sub:parametriMisurati}
+Riprendendo l'equazione della corrente di Plasma \ref{eq:correntePlasmaDinamica}, abbiamo che il campo elettrico indotto sul Plasma, ovvero la $F_{em}$, dipende direttamente dalla derivata della corrente $ I_T $ e dalla stessa Corrente di Plasma.\\
 Da essa abbiamo che per $I_p$ costanti, anche la $F_{em}$ è costante.\\
 Nel caso del trasformatore si potrebbe fisicamente misurare la corrente di Plasma, simulata dalla corrente sul secondario, ma nel caso di un impianto reale, risulta evidente che è impossibile.\\
-Proprio per questo, come descritto da \cite{MagneticDiagnostics},a pagina 12, si usa come indice di misura Tensione di giro $V_{loop}$ ($\Rightarrow F_{em}$ nel nostro esperimento).\\
+Proprio per questo, come descritto da \cite{MagneticDiagnostics}, a pagina 12, si usa come misura Tensione di giro $V_{loop}$ ($\Rightarrow F_{em}$ nel nostro esperimento).\\
 Perciò il circuito reale usato nell'esperimento della tesi, comprensivo di misure è:
 \begin{figure}[H] \label{fig:circuitoDiMisura}
 	\centering
 	\caption[Circuito reale di misura dell'esperimento]{Circuito di misura}
-	\includegraphics[width=1\textwidth]{Trasformatore/PlasmaCircuit-MisureCircuit.png}
+	\includegraphics[width=1\textwidth]{Trasformatore/PlasmaCircuit-MisureCircuit-Current.drawio.png}
+%	\includegraphics[width=1\textwidth]{Trasformatore/PlasmaCircuit-MisureCircuit.png}
 \end{figure}
 
 Abbiamo quindi, tra ingresso e uscite i parametri di:
 \begin{itemize}
 	\item $I_T$ misurata dal sensore di corrente $ A_1 $ \nameref{CurrentSense}.
-	\item $F_{em}$ misura dal voltmetro $V_2$ (che è realizzata da un Pin analogico del \microControllore) e che rappresenta un indice per  la corrente $I_p$ quando essa è costante (eq \ref{eq:correntePlasmaDinamica}).
+	\item $F_{em}$ misura dal voltmetro $V_2$ (che è realizzata da un Pin analogico del \microC).
 	\item $V(t)$ generata in base alla legge di controllo, e attuata mediante PWM (\cite{modulazionePWM}) dal driver di corrente \nameref{CurrentDriver}.
 \end{itemize}
 

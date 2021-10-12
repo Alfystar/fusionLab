@@ -1,7 +1,7 @@
 \BOOKMARK [0][-]{chapter*.2}{Ringraziamenti}{}% 1
 \BOOKMARK [0][-]{chapter*.3}{Introduzione}{}% 2
-\BOOKMARK [1][-]{section*.4}{Cos'\350 la Fusione Termonucleare?}{chapter*.3}% 3
-\BOOKMARK [1][-]{section*.5}{Struttura di un Tokamak}{chapter*.3}% 4
+\BOOKMARK [1][-]{section*.4}{Struttura di un Tokamak}{chapter*.3}% 3
+\BOOKMARK [1][-]{section*.5}{Cos'\350 la Fusione Termonucleare?}{chapter*.3}% 4
 \BOOKMARK [1][-]{section*.6}{Obiettivi della Tesi}{chapter*.3}% 5
 \BOOKMARK [0][-]{chapter.1}{Elementi Costitutivi}{}% 6
 \BOOKMARK [1][-]{section.1.1}{Trasformatore, un Modello di Tokamak}{chapter.1}% 7
@@ -10,7 +10,7 @@
 \BOOKMARK [2][-]{subsection.1.1.3}{Semplificazione Primario - Secondario}{section.1.1}% 10
 \BOOKMARK [2][-]{subsection.1.1.4}{Dal circuito alla dinamica}{section.1.1}% 11
 \BOOKMARK [2][-]{subsection.1.1.5}{Funzione di Trasferimento}{section.1.1}% 12
-\BOOKMARK [2][-]{subsection.1.1.6}{Misura del campo Elettrico del Plasma come indice per la Corrente}{section.1.1}% 13
+\BOOKMARK [2][-]{subsection.1.1.6}{Misura del campo Elettrico del Plasma}{section.1.1}% 13
 \BOOKMARK [1][-]{section.1.2}{Trasduttore di Corrente}{chapter.1}% 14
 \BOOKMARK [2][-]{subsection.1.2.1}{Sensore scelto}{section.1.2}% 15
 \BOOKMARK [2][-]{subsection.1.2.2}{Criticit\340}{section.1.2}% 16
@@ -33,7 +33,7 @@
 \BOOKMARK [2][-]{subsection.2.1.6}{Code Flow}{section*.50}% 33
 \BOOKMARK [2][-]{subsection.2.1.7}{Test di Codifica/Decodifica su ogni Device}{section*.50}% 34
 \BOOKMARK [1][-]{section.2.2}{Online Sampling}{chapter.2}% 35
-\BOOKMARK [2][-]{subsection.2.2.1}{Interconnessione Controllore Companion}{section.2.2}% 36
+\BOOKMARK [2][-]{subsection.2.2.1}{Interconnessione C PC}{section.2.2}% 36
 \BOOKMARK [2][-]{subsection.2.2.2}{Storage su file delle informazioni}{section.2.2}% 37
 \BOOKMARK [1][-]{section.2.3}{Post Elaborazione con Matlab}{chapter.2}% 38
 \BOOKMARK [2][-]{subsection.2.3.1}{Conversioni Dati}{section.2.3}% 39
@@ -49,8 +49,8 @@
 \BOOKMARK [2][-]{subsection.4.3.1}{Design di controllore PID-style}{section.4.3}% 49
 \BOOKMARK [1][-]{section.4.4}{Simulazione Qualitativa su Simulink}{chapter.4}% 50
 \BOOKMARK [2][-]{subsection.4.4.1}{Design Base di controllo}{section.4.4}% 51
-\BOOKMARK [2][-]{subsection.4.4.2}{Design Avanzato di controllo}{section.4.4}% 52
-\BOOKMARK [1][-]{section.4.5}{Conclusioni per il design Avanzato}{chapter.4}% 53
+\BOOKMARK [2][-]{subsection.4.4.2}{Design avanzato di controllo}{section.4.4}% 52
+\BOOKMARK [1][-]{section.4.5}{Conclusioni per il design proposto}{chapter.4}% 53
 \BOOKMARK [0][-]{chapter.5}{Sviluppo Controllo reale}{}% 54
 \BOOKMARK [1][-]{section.5.1}{Discretizzazione Zero-Order Hold \(Z.O.H.\)}{chapter.5}% 55
 \BOOKMARK [1][-]{section.5.2}{Codifica del controllore}{chapter.5}% 56

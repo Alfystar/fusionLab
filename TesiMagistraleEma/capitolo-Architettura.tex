@@ -200,8 +200,8 @@ Ad ora, sulle 3 Piattaforme di sviluppo (Linux, Arduino, STM32) i test sono stat
 
 \newpage
 \section{Online Sampling}
-Come descritto in figura \ref{fig:archietturaControllo}, il sistema controlla internamente la corrente, ma comunica con il mondo fuori l'attuale stato della bobina.\\
-Per comunicare i Sample (e ricevere le Reference) è stata usata \citefield{EMP}{title}(Sezione \ref{sec:EMP}).\\
+Come descritto in figura \ref{fig:archietturaControllo}, il sistema controlla internamente la corrente, e comunica all'esterno il valore di tensione $ V_2 $ \\
+Per comunicare i campionamento (e ricevere i nuovi riferimenti) è stata usata \cite*{EMP}.\\
 Come visto nella sezione '\nameref{sub:parametriMisurati}', il circuito di misura è quello riportato in figura \ref{fig:circuitoDiMisura}.\\
 E, come per il \nameref{CurrentSense}, in realtà anche il voltmetro $V_2$ possiede un offset a $\frac{V_{cc}}{2}$, aggiunto per poter misurare tanto le correnti positive, quanto quelle negative.\vspace{-2mm}
 \begin{figure}[H]
@@ -210,12 +210,12 @@ E, come per il \nameref{CurrentSense}, in realtà anche il voltmetro $V_2$ possi
 	\includegraphics[width=1\textwidth]{Trasformatore/PlasmaCircuit-MisureCircuitOffset.png}
 \end{figure}
 \noindent
-Controllo e misure avvengo alla massima frequenza che l'Arduino riesce effettivamente a gestire, ovvero 0.5ms (2Khz), nei quali campiona lo stato del sistema, attua il nuovo valore del PWM  calcolato per il controllo $V(t)$, e invia i dati attraverso \cite*{EMP}.
+Controllo e misure avvengo alla massima frequenza che l'Arduino riesce effettivamente a gestire, ovvero 0.5ms (2Khz), nei quali vengono effettuate le misure e l'attuazione del nuovo valore per il PWM calcolato per infine vengono inviati i attraverso EMP.
 
 \newpage
-\subsection{Interconnessione \microControllore $\Leftrightarrow$ Companion}
+\subsection{Interconnessione \microC $\Leftrightarrow$ PC}
 Per raggiungere gli obiettivi descritti nella sezione dell'\nameref{sec:architettura}, i seguenti pacchetti multipli sono stati concordati tra le 2 parti:
-\begin{lstlisting}[style=cppStyle,caption={Pacchetti Companion $\Rightarrow$ \microControllore   },label=lst:Companion2ArdPack]
+\begin{lstlisting}[style=cppStyle,caption={Pacchetti PC $\Rightarrow$ \microC},label=lst:Companion2ArdPack]
 // #######################################################
 // ########        Companion to Arduino           ########
 // #######################################################
@@ -239,7 +239,7 @@ struct _packLinux2Ard {
 typedef struct _packLinux2Ard packLinux2Ard;
 \end{lstlisting}
 
-\begin{lstlisting}[style=cppStyle,caption={Pacchetti \microControllore $\Rightarrow$ Companion },label=lst:Ard2CompanionPack] 
+\begin{lstlisting}[style=cppStyle,caption={Pacchetti \microC$\Rightarrow$ PC },label=lst:Ard2CompanionPack] 
 // #######################################################
 // ########        Arduino to Companion           ########
 // #######################################################
@@ -267,7 +267,7 @@ struct _packArd2Linux {
 typedef struct _packArd2Linux packArd2Linux;
 \end{lstlisting}
 \noindent
-Essi permettono al Companion di conoscere tutto quello che sta succedendo nel \microC, con un piccolo ritardo dovuto alla trasmissione ed eventuali ritardi interni (nel caso di Linux dovuti allo scheduler).
+Essi permettono al PC di conoscere tutto quello che sta succedendo nel \microC, con un piccolo ritardo dovuto alla trasmissione ed eventuali ritardi interni (nel caso di Linux dovuti allo scheduler).
 Le informazioni riguardanti offset e parametri dell'esperimento (\verb|struct setUpPack|), sono raccolti a esperimento fermo, in particolare all'accensione della scheda nel \nameref{lst:controlSetup}.\\
 Successivamente la scheda evolve per tic di 0.5ms, dove nel tempo morto resta in ascolto di eventuali pacchetti di richiesta da parte del Companion all'interno del \nameref{lst:controlLoop}.
 

@@ -189,9 +189,9 @@ Da cui, il design base del controllore è: \vspace{-4mm}
 \end{empheq}\vspace{-2mm}
 Questo controllore base è complicabile a piacere aggiungendo altri Poli e Zeri stabili, con l'obiettivo di migliorarne le performance della risposta del sistema.
 \begin{oss}
-	Il controllore descritto in \ref{eq:contollerDesignBase}, anche se stabilizza il sistema e lo rende un \underline{inseguitore ad errore nullo}, \textbf{non è stabile}! Esso infatti ha 2 poli in 0, rendendolo un polo \textit{non semplice} e quindi causa di instabilità polinomiale.\\
-	L'uso di un simile controllore, anche se stabilizza l'uscita del sistema a ciclo chiuso, lo rende al contempo \textbf{Input-to-state \underline{un}stability}.\\
-	Questa conseguenza è inevitabile ma bene accetta poiché permette di inseguire con errore nullo, per la durata dell'esperimento, il riferimento, e la presenza di saturazione nell'attuazione evita il problema.\\
+	Il controllore descritto in \ref{eq:contollerDesignBase}, anche permette un inseguimento con errore nullo dell'uscita, \textbf{non è stabile}! Esso infatti ha 2 poli in 0, rendendolo un polo \textit{non semplice} e quindi causa di instabilità polinomiale.\\
+	L'uso di un simile controllore, anche se permette un inseguimento a errore nullo, non rende il sistema \textbf{Input-to-state \underline{un}stabile} $ \Rightarrow $ il sistema è polinomialmente instabile.\\
+	Questa conseguenza è inevitabile ma bene accetta, la presenza di saturazione nell'attuazione evita il problema di stati infiniti.\\
 	Bisognerà ovviamente tenerne conto in fase di realizzazione poiché con il procedere del tempo dell'esperimento, i numeri dello stato diventeranno sempre maggiori, e ciò potrà portare a problemi di overflow numerici che devono essere gestiti in fase di progettazione del codice.
 \end{oss}
 
@@ -260,13 +260,13 @@ Queste performance possono e devono essere ampliamene migliorate poiché raggiun
 In questo caso però la saturazione è stata eliminata al fine di mettere maggiormente in evidenza che asintoticamente il controllo proposto realizza le richieste di controllo di avere un inseguitore con errore nullo asintotico.
 
 \newpage
-\subsection{Design Avanzato di controllo}
+\subsection{Design avanzato di controllo}
 Usando ora il controllore proposto nell'equazione \ref{eq:controllerDesign} analizziamo ora gli effetti della presenza dei vari termini, e il loro effetto qualitativo sulla risposta e l'andamento dell'errore.
 \begin{mdframed}[backgroundcolor=fawn]
 Ricordiamo nuovamente che il {\color{cadmiumgreen}\textbf{\underline{segnale di errore è zoomato di un fattore 10}}} per meglio mettere in evidenza il comportamento dell'errore.
 \end{mdframed}
 
-\subsubsection{Analisi controllo Avanzato per $ K_p $=0 $ K_1 $=0 $ K_2 $=100}
+\subsubsection{Analisi controllo avanzato per $ K_p $=0 $ K_1 $=0 $ K_2 $=100}
 \begin{figure}[H]
 	\centering
 	\caption[Controllo Avanzato $ K_p $=0 $ K_1 $=0 $ K_2 $=100] {Controllo Avanzato $ K_p $=0 $ K_1 $=0 $ K_2 $=100}
@@ -275,7 +275,7 @@ Ricordiamo nuovamente che il {\color{cadmiumgreen}\textbf{\underline{segnale di 
 \noindent
 L'aumento del coefficiente per il doppio integratore ha l'effetto di creare risposte più tempestive, ma da atto a dei fenomeni oscillatori smorzati
 
-\subsubsection{Analisi controllo Avanzato per $ K_p $=0 $ K_1 $=10 $ K_2 $=100}
+\subsubsection{Analisi controllo avanzato per $ K_p $=0 $ K_1 $=10 $ K_2 $=100}
 In questa seconda simulazione si è aggiunto un al controllore il termine integrale:
 \begin{figure}[H]
 	\centering
@@ -286,7 +286,7 @@ In questa seconda simulazione si è aggiunto un al controllore il termine integr
 L'effetto del termine integrale è quindi smorzare il transitorio oscillatorio, per poi inseguire il riferimento con un andamento esponenziale.\\
 In questo secondo esperimento abbiamo già migliorato molto le performance dal controllo base, avendo visibilmente migliorato il \underline{Tempo di assestamento} del sistema e lasciando 600ms di esperimento con errore ampiamente trascurabile.
 \newpage
-\subsubsection{Analisi controllo Avanzato per $ K_p $=0 $ K_1 $=100 $ K_2 $=500}
+\subsubsection{Analisi controllo avanzato per $ K_p $=0 $ K_1 $=100 $ K_2 $=500}
 Abbiamo adesso aumentato i coefficienti del doppio e singolo integratore per vedere come migliorano le performance del sistema ad un loro aumento coordinato:
 \begin{figure}[H]
 	\centering
@@ -298,7 +298,7 @@ L'effetto è un ulteriore miglioramento sul \underline{Tempo di assestamento} e 
 
 \newpage
 
-\subsubsection{Analisi controllo Avanzato per $ K_p $=0.2 $ K_1 $=100 $ K_2 $=500}
+\subsubsection{Analisi controllo avanzato per $ K_p $=0.2 $ K_1 $=100 $ K_2 $=500}
 Aggiungiamo quindi al caso precedente un termine proporzionale all'errore, così da rispondere subito alle variazioni del riferimento:
 \begin{figure}[H]
 	\centering
@@ -310,7 +310,7 @@ Essendo $ K_p $ istantaneo con la variazione del riferimento, abbiamo che l'inse
 
 \newpage
 
-\subsubsection{Analisi controllo Avanzato per $ K_p $=0.8 $ K_1 $=100 $ K_2 $=500}
+\subsubsection{Analisi controllo avanzato per $ K_p $=0.8 $ K_1 $=100 $ K_2 $=500}
 In quest'ultimo esperimento analizziamo l'effetto dell'aumento del termine proporzionale sulla dinamica:
 \begin{figure}[H]
 	\centering
@@ -323,7 +323,7 @@ Al contrario, superata questa prima fase, il resto della dinamica è fondamental
 
 \newpage
 
-\section{Conclusioni per il design Avanzato} \label{sec:designControlloreConclusioni}
+\section{Conclusioni per il design proposto} \label{sec:designControlloreConclusioni}
 In conclusione possiamo dire che il controllore "\textit{PID-style}" definito nell'equazione \ref{eq:controllerDesign} permette di ottenere gli obiettivi di controllo prefissati a prescindere dai coefficienti usati, e la possibilità di raggiungere delle performance di tutto rispetto ottimizzando opportunamente i coefficienti.\\
 Qui di seguito una descrizione qualitativa degli effetti da aspettarsi con una loro variazione:
 \begin{description}
