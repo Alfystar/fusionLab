@@ -44,24 +44,24 @@
 %% Link Package	---------------------
 \usepackage[hyphens]{url}
 \usepackage{hyperref}
-%\hypersetup{
-%	colorlinks=true,
-%	linkcolor=black, %black, %blue,
-%	filecolor=black, %magenta,      
-%	urlcolor=black,
-%	citecolor=black,
-%	pdftitle={Tesi Magistrale Alfano},
-%	pdfpagemode=FullScreen,
-%}
 \hypersetup{
 	colorlinks=true,
-	linkcolor=Azure, %black, %blue,
+	linkcolor=black, %black, %blue,
 	filecolor=black, %magenta,      
-	urlcolor=cobalt,
-	citecolor=Azure,
+	urlcolor=black,
+	citecolor=black,
 	pdftitle={Tesi Magistrale Alfano},
 	pdfpagemode=FullScreen,
 }
+%\hypersetup{
+%	colorlinks=true,
+%	linkcolor=Azure, %black, %blue,
+%	filecolor=black, %magenta,      
+%	urlcolor=cobalt,
+%	citecolor=Azure,
+%	pdftitle={Tesi Magistrale Alfano},
+%	pdfpagemode=FullScreen,
+%}
 
 
 %% Graphics Package ---------------------------------------
@@ -143,20 +143,20 @@ backend=bibtex]{biblatex}
 \usepackage[most]{tcolorbox}
 \newtcbox{\mathCalc}[1][]{
 	nobeforeafter, math upper, tcbox raise base,
-	enhanced, colframe=blue!30!black,
-	colback=cyan!20, boxrule=1pt,#1
+	enhanced, colframe=black,  %enhanced, colframe=blue!30!black,
+	colback=white, boxrule=1pt,#1 % colback=cyan!20, boxrule=1pt,#1
 }
 
 \newtcbox{\mathResult}[1][]{
 	nobeforeafter, math upper, tcbox raise base,
-	enhanced, colframe=blue!30!black,
-	colback=columbiablue, boxrule=1pt,#1
+	enhanced, colframe=black,  %enhanced, colframe=blue!30!black,
+	colback=white, boxrule=1pt,#1 %colback=columbiablue, boxrule=1pt,#1
 }
 
 \newtcbox{\mathStep}[1][]{
 	nobeforeafter, math upper, tcbox raise base,
-	enhanced, colframe=blue!30!black,
-	colback=white, boxrule=1pt,#1
+	enhanced, colframe=black,  % 	enhanced, colframe=blue!30!black,
+	colback=white, boxrule=1pt,#1 %colback=white, boxrule=1pt,#1
 }
 
 % Package per Liste -----------------------------------------
@@ -186,8 +186,12 @@ backend=bibtex]{biblatex}
 \usepackage{setspace}
 
 \newtheorem{obs}{Osservazione}[section]
+%\newenvironment{oss}
+%{\begin{mdframed}[backgroundcolor=fawn!40]\begin{obs}\begin{normalfont}}
+%			{\phantom{. .}\hfill$\square \!\!\!\!\checkmark$ \end{normalfont}\end{obs}\end{mdframed}}
+		
 \newenvironment{oss}
-{\begin{mdframed}[backgroundcolor=fawn!40]\begin{obs}\begin{normalfont}}
+{\begin{mdframed}[backgroundcolor=black!5]\begin{obs}\begin{normalfont}}
 			{\phantom{. .}\hfill$\square \!\!\!\!\checkmark$ \end{normalfont}\end{obs}\end{mdframed}}
 
 \newtheorem{pro}{Problema}[chapter]
@@ -201,8 +205,11 @@ backend=bibtex]{biblatex}
 		{\hfill $\blacksquare$ \end{teor}\end{mdframed}}
 
 \newtheorem{defn}{Definizione}[section]
+%\newenvironment{de}[1][defName]
+%{\begin{mdframed}[backgroundcolor=blue!10] \begin{defn}[#1]\hfill\begin{spacing}{1.0}\begin{normalfont}}
+%				{\hfill $\clubsuit$ \end{normalfont}\end{spacing}\end{defn}\end{mdframed}}
 \newenvironment{de}[1][defName]
-{\begin{mdframed}[backgroundcolor=blue!10] \begin{defn}[#1]\hfill\begin{spacing}{1.0}\begin{normalfont}}
+{\begin{mdframed}[backgroundcolor=black!10] \begin{defn}[#1]\hfill\begin{spacing}{1.0}\begin{normalfont}}
 				{\hfill $\clubsuit$ \end{normalfont}\end{spacing}\end{defn}\end{mdframed}}
 
 \newenvironment{leg}

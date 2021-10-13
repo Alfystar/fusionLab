@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.9.11)  13 OCT 2021 00:17
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.9.11)  13 OCT 2021 10:16
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -326,7 +326,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip55
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 64.
+Package hyperref Info: Option `colorlinks' set `true' on input line 55.
 
 (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.sty
 Package: biblatex 2020/12/31 v3.16 programmable bibliographies (PK/MW)
@@ -1533,24 +1533,24 @@ LaTeX Warning: Unused global option(s):
 (./conclusioni.aux) (./appendice.aux))
 \openout1 = `Tesi.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 250.
-LaTeX Font Info:    ... okay on input line 250.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 250.
-LaTeX Font Info:    ... okay on input line 250.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 250.
-LaTeX Font Info:    ... okay on input line 250.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 250.
-LaTeX Font Info:    ... okay on input line 250.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 250.
-LaTeX Font Info:    ... okay on input line 250.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 250.
-LaTeX Font Info:    ... okay on input line 250.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 250.
-LaTeX Font Info:    ... okay on input line 250.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 250.
-LaTeX Font Info:    ... okay on input line 250.
-LaTeX Info: Redefining \it@ocap on input line 250.
-LaTeX Info: Redefining \it@ccap on input line 250.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 257.
+LaTeX Font Info:    ... okay on input line 257.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 257.
+LaTeX Font Info:    ... okay on input line 257.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 257.
+LaTeX Font Info:    ... okay on input line 257.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 257.
+LaTeX Font Info:    ... okay on input line 257.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 257.
+LaTeX Font Info:    ... okay on input line 257.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 257.
+LaTeX Font Info:    ... okay on input line 257.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 257.
+LaTeX Font Info:    ... okay on input line 257.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 257.
+LaTeX Font Info:    ... okay on input line 257.
+LaTeX Info: Redefining \it@ocap on input line 257.
+LaTeX Info: Redefining \it@ccap on input line 257.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -1574,7 +1574,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-Package hyperref Info: Link coloring ON on input line 250.
+Package hyperref Info: Link coloring ON on input line 257.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -1587,9 +1587,9 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count525
 )
-LaTeX Info: Redefining \ref on input line 250.
-LaTeX Info: Redefining \pageref on input line 250.
-LaTeX Info: Redefining \nameref on input line 250.
+LaTeX Info: Redefining \ref on input line 257.
+LaTeX Info: Redefining \pageref on input line 257.
+LaTeX Info: Redefining \nameref on input line 257.
 
 (./Tesi.out) (./Tesi.out)
 \@outlinefile=\write7
@@ -1622,11 +1622,11 @@ Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'Tesi.bbl' found.
 
 (./Tesi.bbl)
-Package biblatex Info: Reference section=0 on input line 250.
-Package biblatex Info: Reference segment=0 on input line 250.
+Package biblatex Info: Reference section=0 on input line 257.
+Package biblatex Info: Reference segment=0 on input line 257.
 \c@lstlisting=\count526
  ABD: EverySelectfont initializing macros
-LaTeX Info: Redefining \selectfont on input line 250.
+LaTeX Info: Redefining \selectfont on input line 257.
 
 (/usr/share/texlive/texmf-dist/tex/latex/siunitx/siunitx-abbreviations.cfg
 File: siunitx-abbreviations.cfg 2017/11/26 v2.7k siunitx: Abbreviated units
@@ -1635,46 +1635,46 @@ File: siunitx-abbreviations.cfg 2017/11/26 v2.7k siunitx: Abbreviated units
 -English.dict
 Dictionary: translator-basic-dictionary, Language: English 
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 250
+LaTeX Font Info:    Trying to load font information for U+msa on input line 257
 .
  (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 250
+LaTeX Font Info:    Trying to load font information for U+msb on input line 257
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for U+lasy on input line 25
-0.
+7.
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-Package epstopdf Info: Source file: <Pictures/TorVergata_logo_cmyk.eps>
-(epstopdf)                    date: 2021-09-27 11:23:21
-(epstopdf)                    size: 32065 bytes
-(epstopdf)             Output file: <Pictures/TorVergata_logo_cmyk-eps-converte
-d-to.pdf>
-(epstopdf)                    date: 2021-09-27 11:27:03
-(epstopdf)                    size: 12231 bytes
-(epstopdf)             Command: <repstopdf --outfile=Pictures/TorVergata_logo_c
-myk-eps-converted-to.pdf Pictures/TorVergata_logo_cmyk.eps>
-(epstopdf)             \includegraphics on input line 266.
+Package epstopdf Info: Source file: <Pictures/TorVergata_logo_nero.ai.eps>
+(epstopdf)                    date: 2021-10-13 09:59:59
+(epstopdf)                    size: 32051 bytes
+(epstopdf)             Output file: <Pictures/TorVergata_logo_nero.ai-eps-conve
+rted-to.pdf>
+(epstopdf)                    date: 2021-10-13 10:01:10
+(epstopdf)                    size: 12274 bytes
+(epstopdf)             Command: <repstopdf --outfile=Pictures/TorVergata_logo_n
+ero.ai-eps-converted-to.pdf Pictures/TorVergata_logo_nero.ai.eps>
+(epstopdf)             \includegraphics on input line 273.
 Package epstopdf Info: Output file is already uptodate.
-<Pictures/TorVergata_logo_cmyk-eps-converted-to.pdf, id=392, 454.69875pt x 104.
-39pt>
-File: Pictures/TorVergata_logo_cmyk-eps-converted-to.pdf Graphic file (type pdf
-)
-<use Pictures/TorVergata_logo_cmyk-eps-converted-to.pdf>
-Package pdftex.def Info: Pictures/TorVergata_logo_cmyk-eps-converted-to.pdf  us
-ed on input line 266.
+<Pictures/TorVergata_logo_nero.ai-eps-converted-to.pdf, id=392, 454.69875pt x 1
+04.39pt>
+File: Pictures/TorVergata_logo_nero.ai-eps-converted-to.pdf Graphic file (type 
+pdf)
+<use Pictures/TorVergata_logo_nero.ai-eps-converted-to.pdf>
+Package pdftex.def Info: Pictures/TorVergata_logo_nero.ai-eps-converted-to.pdf 
+ used on input line 273.
 (pdftex.def)             Requested size: 371.8216pt x 85.35826pt.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./Pictures/TorVergata_logo
-_cmyk-eps-converted-to.pdf>] [2] (./Tesi.toc [1
+_nero.ai-eps-converted-to.pdf>] [2] (./Tesi.toc [1
 
 ] [2] [3])
 \tf@toc=\write8
@@ -1761,7 +1761,7 @@ Package pdftex.def Info: Pictures//Introduzione/ArchitetturaComplessiva.png  us
 ed on input line 107.
 (pdftex.def)             Requested size: 435.0pt x 245.4302pt.
 )
-Underfull \hbox (badness 10000) in paragraph at lines 109--310
+Underfull \hbox (badness 10000) in paragraph at lines 109--317
 
  []
 
@@ -2117,7 +2117,7 @@ LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 9
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
 ) [37 <./Pictures//EMP/Cobs_encoding_with_example.png> <./Pictures//EMP/Cobs_en
 coding_with_example-dist.png>] [38]
-Underfull \hbox (badness 10000) in paragraph at lines 143--146
+Underfull \hbox (badness 10000) in paragraph at lines 170--173
 
  []
 
@@ -2125,11 +2125,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 143--146
 <Pictures//EMP/EMP-Hierarchy.png, id=1013, 1363.0122pt x 933.7284pt>
 File: Pictures//EMP/EMP-Hierarchy.png Graphic file (type png)
 <use Pictures//EMP/EMP-Hierarchy.png>
-Package pdftex.def Info: Pictures//EMP/EMP-Hierarchy.png  used on input line 15
-3.
+Package pdftex.def Info: Pictures//EMP/EMP-Hierarchy.png  used on input line 18
+0.
 (pdftex.def)             Requested size: 435.0pt x 297.98708pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 155--158
+Underfull \hbox (badness 10000) in paragraph at lines 182--185
 
  []
 
@@ -2139,10 +2139,10 @@ Underfull \hbox (badness 10000) in paragraph at lines 155--158
 File: Pictures//EMP/Message Pack Sending Flow.png Graphic file (type png)
 <use Pictures//EMP/Message Pack Sending Flow.png>
 Package pdftex.def Info: Pictures//EMP/Message Pack Sending Flow.png  used on i
-nput line 183.
+nput line 210.
 (pdftex.def)             Requested size: 435.0pt x 357.65059pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 185--188
+Underfull \hbox (badness 10000) in paragraph at lines 212--215
 
  []
 
@@ -2150,7 +2150,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 185--188
 <Pictures//EMP/TestFlow.png, id=1038, 2473.24pt x 1682.285pt>
 File: Pictures//EMP/TestFlow.png Graphic file (type png)
 <use Pictures//EMP/TestFlow.png>
-Package pdftex.def Info: Pictures//EMP/TestFlow.png  used on input line 194.
+Package pdftex.def Info: Pictures//EMP/TestFlow.png  used on input line 221.
 (pdftex.def)             Requested size: 348.00133pt x 236.6991pt.
  [43 <./Pictures//EMP/TestFlow.png>]
 <Pictures//Trasformatore/PlasmaCircuit-MisureCircuitOffset.png, id=1054, 3733.9
@@ -2159,32 +2159,32 @@ File: Pictures//Trasformatore/PlasmaCircuit-MisureCircuitOffset.png Graphic fil
 e (type png)
 <use Pictures//Trasformatore/PlasmaCircuit-MisureCircuitOffset.png>
 Package pdftex.def Info: Pictures//Trasformatore/PlasmaCircuit-MisureCircuitOff
-set.png  used on input line 210.
+set.png  used on input line 237.
 (pdftex.def)             Requested size: 435.0pt x 185.90619pt.
  [44 <./Pictures//Trasformatore/PlasmaCircuit-MisureCircuitOffset.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 216.
+(hyperref)                removing `math shift' on input line 243.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\mu' on input line 216.
+(hyperref)                removing `\mu' on input line 243.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 216.
+(hyperref)                removing `math shift' on input line 243.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 216.
+(hyperref)                removing `math shift' on input line 243.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\Leftrightarrow' on input line 216.
+(hyperref)                removing `\Leftrightarrow' on input line 243.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 216.
+(hyperref)                removing `math shift' on input line 243.
 
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
@@ -2196,7 +2196,7 @@ File: lstlang1.sty 2020/03/24 1.8d listings language file
 File: lstmisc.sty 2020/03/24 1.8d (Carsten Heinz)
 )
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 218.
+nput line 245.
  [45] [46])
 [47]
 \openout2 = `capitolo-StimaModello.aux'.
@@ -2277,105 +2277,101 @@ Package mdframed Info: mdframed detected package amsthm
  changed the theorem header of amsthm
 (mdframed)              on input line 57.
  [57]
-Underfull \hbox (badness 10000) in paragraph at lines 74--84
+Underfull \hbox (badness 10000) in paragraph at lines 74--85
 
  []
 
 
-Overfull \vbox (15.44814pt too high) detected at line 84
+Overfull \vbox (15.44814pt too high) detected at line 85
  []
 
 
-Underfull \hbox (badness 10000) detected at line 84
+Underfull \hbox (badness 10000) detected at line 85
 [] []|[] []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 84
+Underfull \vbox (badness 10000) detected at line 85
  []
 
 
-Overfull \hbox (228.88112pt too wide) detected at line 84
+Overfull \hbox (228.88112pt too wide) detected at line 85
 [] []|[] []
  []
 
 
-Overfull \vbox (13.86479pt too high) detected at line 93
+Overfull \vbox (13.86479pt too high) detected at line 94
  []
 
 
-Underfull \hbox (badness 10000) detected at line 93
+Underfull \hbox (badness 10000) detected at line 94
 [] []|[] []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 93
+Underfull \vbox (badness 10000) detected at line 94
  []
 
 
-Overfull \hbox (228.88112pt too wide) detected at line 93
+Overfull \hbox (228.88112pt too wide) detected at line 94
 [] []|[] []
  []
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 100.
+(mdframed)              on input line 101.
 
-Underfull \hbox (badness 10000) in paragraph at lines 101--119
+Underfull \hbox (badness 10000) in paragraph at lines 102--120
 
  []
 
 
-Overfull \hbox (42.9628pt too wide) detected at line 119
+Overfull \hbox (42.9628pt too wide) detected at line 120
 []
  []
 
 
-Overfull \hbox (73.4155pt too wide) detected at line 119
+Overfull \hbox (73.4155pt too wide) detected at line 120
 []
  []
 
 
-Overfull \hbox (2.28362pt too wide) detected at line 119
+Overfull \hbox (2.28362pt too wide) detected at line 120
 []
  []
 
 
-Overfull \hbox (300.38899pt too wide) detected at line 119
+Overfull \hbox (300.38899pt too wide) detected at line 120
 [] []|[] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 121--122
+Underfull \hbox (badness 10000) in paragraph at lines 122--123
 
  []
 
 
-Overfull \hbox (43.6337pt too wide) detected at line 140
+Overfull \hbox (43.6337pt too wide) detected at line 141
 []
  []
 
 
-Overfull \hbox (74.0864pt too wide) detected at line 140
+Overfull \hbox (74.0864pt too wide) detected at line 141
 []
  []
 
 
-Overfull \hbox (2.95451pt too wide) detected at line 140
+Overfull \hbox (2.95451pt too wide) detected at line 141
 []
  []
 
 
-Overfull \hbox (300.38899pt too wide) detected at line 140
+Overfull \hbox (300.38899pt too wide) detected at line 141
 [] []|[] []
  []
 
-[58]
-Package mdframed Info: mdframed detected package amsthm 
- changed the theorem header of amsthm
-(mdframed)              on input line 191.
- [59]
-Underfull \hbox (badness 10000) in paragraph at lines 199--209
+[58] [59]
+Underfull \hbox (badness 10000) in paragraph at lines 209--220
 
  []
 
@@ -2383,114 +2379,114 @@ Underfull \hbox (badness 10000) in paragraph at lines 199--209
 Package vwcol Warning: 
   Total width of columns plus their separations is greater than the linewidth
   (by 455.24408pt - 435.0pt = 20.24408pt)
-This warning occurred on input line 209.
+This warning occurred on input line 220.
 
 
-Overfull \vbox (15.44814pt too high) detected at line 209
+Overfull \vbox (15.44814pt too high) detected at line 220
  []
 
 
-Underfull \hbox (badness 10000) detected at line 209
+Underfull \hbox (badness 10000) detected at line 220
 [] []|[] []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 209
+Underfull \vbox (badness 10000) detected at line 220
  []
 
 
-Overfull \hbox (207.37796pt too wide) detected at line 209
+Overfull \hbox (207.37796pt too wide) detected at line 220
 [] []|[] []
  []
 
 
-Overfull \hbox (20.24408pt too wide) in paragraph at lines 209--209
+Overfull \hbox (20.24408pt too wide) in paragraph at lines 220--220
 []  
  []
 
 [60]
-<Pictures//ModelloMatematico/systemSimulink.png, id=1414, 1594.45688pt x 798.73
+<Pictures//ModelloMatematico/systemSimulink.png, id=1412, 1594.45688pt x 798.73
 407pt>
 File: Pictures//ModelloMatematico/systemSimulink.png Graphic file (type png)
 <use Pictures//ModelloMatematico/systemSimulink.png>
 Package pdftex.def Info: Pictures//ModelloMatematico/systemSimulink.png  used o
-n input line 236.
+n input line 253.
 (pdftex.def)             Requested size: 435.0pt x 217.90361pt.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 242.
+(mdframed)              on input line 259.
  [61 <./Pictures//ModelloMatematico/systemSimulink.png (PNG copy)>]
-<Pictures//ModelloMatematico/Simulation-cBaseSim.pdf, id=1423, 794.97pt x 614.2
+<Pictures//ModelloMatematico/Simulation-cBaseSim.pdf, id=1421, 794.97pt x 614.2
 95pt>
 File: Pictures//ModelloMatematico/Simulation-cBaseSim.pdf Graphic file (type pd
 f)
 <use Pictures//ModelloMatematico/Simulation-cBaseSim.pdf>
 Package pdftex.def Info: Pictures//ModelloMatematico/Simulation-cBaseSim.pdf  u
-sed on input line 255.
+sed on input line 272.
 (pdftex.def)             Requested size: 435.0pt x 336.14796pt.
 
 [62 <./Pictures//ModelloMatematico/Simulation-cBaseSim.pdf>]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 265.
-<Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=0-K_2=100.pdf, id=1450, 
+(mdframed)              on input line 282.
+<Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=0-K_2=100.pdf, id=1448, 
 794.97pt x 614.295pt>
 File: Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=0-K_2=100.pdf Graph
 ic file (type pdf)
 <use Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=0-K_2=100.pdf>
 Package pdftex.def Info: Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=
-0-K_2=100.pdf  used on input line 273.
+0-K_2=100.pdf  used on input line 290.
 (pdftex.def)             Requested size: 435.0pt x 336.14796pt.
-<Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=10-K_2=100.pdf, id=1451,
+<Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=10-K_2=100.pdf, id=1449,
  794.97pt x 614.295pt>
 File: Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=10-K_2=100.pdf Grap
 hic file (type pdf)
 <use Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=10-K_2=100.pdf>
 Package pdftex.def Info: Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=
-10-K_2=100.pdf  used on input line 283.
+10-K_2=100.pdf  used on input line 300.
 (pdftex.def)             Requested size: 435.0pt x 336.14796pt.
  [63 <./Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=0-K_2=100.pdf>] [
 64 <./Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=10-K_2=100.pdf>]
-<Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=100-K_2=500.pdf, id=1515
+<Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=100-K_2=500.pdf, id=1513
 , 794.97pt x 614.295pt>
 File: Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=100-K_2=500.pdf Gra
 phic file (type pdf)
 <use Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=100-K_2=500.pdf>
 Package pdftex.def Info: Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=
-100-K_2=500.pdf  used on input line 294.
+100-K_2=500.pdf  used on input line 311.
 (pdftex.def)             Requested size: 435.0pt x 336.14796pt.
  [65 <./Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=100-K_2=500.pdf>]
 <Pictures//ModelloMatematico/Simulation-cSim-K_p=0.2-K_1=100-K_2=500.pdf, id=15
-47, 794.97pt x 614.295pt>
+45, 794.97pt x 614.295pt>
 File: Pictures//ModelloMatematico/Simulation-cSim-K_p=0.2-K_1=100-K_2=500.pdf G
 raphic file (type pdf)
 <use Pictures//ModelloMatematico/Simulation-cSim-K_p=0.2-K_1=100-K_2=500.pdf>
 Package pdftex.def Info: Pictures//ModelloMatematico/Simulation-cSim-K_p=0.2-K_
-1=100-K_2=500.pdf  used on input line 306.
+1=100-K_2=500.pdf  used on input line 323.
 (pdftex.def)             Requested size: 435.0pt x 336.14796pt.
  [66 <./Pictures//ModelloMatematico/Simulation-cSim-K_p=0.2-K_1=100-K_2=500.pdf
 >]
 <Pictures//ModelloMatematico/Simulation-cSim-K_p=0.8-K_1=100-K_2=500.pdf, id=15
-79, 794.97pt x 614.295pt>
+77, 794.97pt x 614.295pt>
 File: Pictures//ModelloMatematico/Simulation-cSim-K_p=0.8-K_1=100-K_2=500.pdf G
 raphic file (type pdf)
 <use Pictures//ModelloMatematico/Simulation-cSim-K_p=0.8-K_1=100-K_2=500.pdf>
 Package pdftex.def Info: Pictures//ModelloMatematico/Simulation-cSim-K_p=0.8-K_
-1=100-K_2=500.pdf  used on input line 318.
+1=100-K_2=500.pdf  used on input line 335.
 (pdftex.def)             Requested size: 435.0pt x 336.14796pt.
  [67 <./Pictures//ModelloMatematico/Simulation-cSim-K_p=0.8-K_1=100-K_2=500.pdf
 >]
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 330.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 347.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <5> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 330.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 347.
 ) [68]
 \openout2 = `capitolo-Controllo.aux'.
 
 
 (./capitolo-Controllo.tex
 Capitolo 5.
-<Pictures//ImpiantoReale.jpg, id=1622, 1284.8pt x 722.7pt>
+<Pictures//ImpiantoReale.jpg, id=1620, 1284.8pt x 722.7pt>
 File: Pictures//ImpiantoReale.jpg Graphic file (type jpg)
 <use Pictures//ImpiantoReale.jpg>
 Package pdftex.def Info: Pictures//ImpiantoReale.jpg  used on input line 13.
@@ -2501,13 +2497,13 @@ Package pdftex.def Info: Pictures//ImpiantoReale.jpg  used on input line 13.
 
 
  <./Pictures//ImpiantoReale.jpg>] [70]
-<Pictures//Controllo/zoh-apply-Big.png, id=1636, 3528.18124pt x 1003.75pt>
+<Pictures//Controllo/zoh-apply-Big.png, id=1634, 3528.18124pt x 1003.75pt>
 File: Pictures//Controllo/zoh-apply-Big.png Graphic file (type png)
 <use Pictures//Controllo/zoh-apply-Big.png>
 Package pdftex.def Info: Pictures//Controllo/zoh-apply-Big.png  used on input l
 ine 30.
 (pdftex.def)             Requested size: 435.0pt x 123.75305pt.
-<Pictures//Controllo/SegnaliDiscretiContinui-v2-Big.png, id=1637, 5737.435pt x 
+<Pictures//Controllo/SegnaliDiscretiContinui-v2-Big.png, id=1635, 5737.435pt x 
 1003.75pt>
 File: Pictures//Controllo/SegnaliDiscretiContinui-v2-Big.png Graphic file (type
  png)
@@ -2529,14 +2525,14 @@ Overfull \hbox (0.56879pt too wide) in paragraph at lines 49--108
  []
 
 [72]
-<Pictures//Controllo/02-Bi-FrontCapture.pdf, id=1667, 794.97pt x 614.295pt>
+<Pictures//Controllo/02-Bi-FrontCapture.pdf, id=1665, 794.97pt x 614.295pt>
 File: Pictures//Controllo/02-Bi-FrontCapture.pdf Graphic file (type pdf)
 <use Pictures//Controllo/02-Bi-FrontCapture.pdf>
 Package pdftex.def Info: Pictures//Controllo/02-Bi-FrontCapture.pdf  used on in
 put line 136.
 (pdftex.def)             Requested size: 435.0pt x 336.14796pt.
  [73]
-<Pictures//Controllo/03-PosNeg-capture.pdf, id=1676, 794.97pt x 614.295pt>
+<Pictures//Controllo/03-PosNeg-capture.pdf, id=1674, 794.97pt x 614.295pt>
 File: Pictures//Controllo/03-PosNeg-capture.pdf Graphic file (type pdf)
 <use Pictures//Controllo/03-PosNeg-capture.pdf>
 Package pdftex.def Info: Pictures//Controllo/03-PosNeg-capture.pdf  used on inp
@@ -2548,7 +2544,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 148--150
  []
 
 [75 <./Pictures//Controllo/03-PosNeg-capture.pdf>]
-<Pictures//Controllo/01-RandomCapture.pdf, id=1730, 794.97pt x 614.295pt>
+<Pictures//Controllo/01-RandomCapture.pdf, id=1728, 794.97pt x 614.295pt>
 File: Pictures//Controllo/01-RandomCapture.pdf Graphic file (type pdf)
 <use Pictures//Controllo/01-RandomCapture.pdf>
 Package pdftex.def Info: Pictures//Controllo/01-RandomCapture.pdf  used on inpu
@@ -2616,7 +2612,7 @@ File: lstlang1.sty 2020/03/24 1.8d listings language file
 \openout11 = `Tesi.lol'.
 
  [97]
-Overfull \hbox (11.14105pt too wide) in paragraph at lines 364--364
+Overfull \hbox (11.14105pt too wide) in paragraph at lines 371--371
 \T1/cmtt/m/n/10 RdO + 2015 % 2FSLIDES + %26 + AUDIO % 2F13 + Diagnostiche + Mag
 netiche + %28Cianfarani % 29 % 2FMagnetic +
  []
@@ -2641,10 +2637,10 @@ Package logreq Info: Writing requests to 'Tesi.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 41776 strings out of 479304
- 832881 string characters out of 5869779
- 1851456 words of memory out of 5000000
- 57160 multiletter control sequences out of 15000+600000
+ 41774 strings out of 479304
+ 832875 string characters out of 5869779
+ 1851056 words of memory out of 5000000
+ 57159 multiletter control sequences out of 15000+600000
  438138 words of font info for 125 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  117i,25n,127p,1855b,2468s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2709,10 +2705,10 @@ er/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1440.pfb></us
 r/share/texmf/fonts/type1/public/cm-super/sfti0900.pfb></usr/share/texmf/fonts/
 type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-supe
 r/sftt1000.pfb>
-Output written on Tesi.pdf (105 pages, 11427158 bytes).
+Output written on Tesi.pdf (105 pages, 11424245 bytes).
 PDF statistics:
- 2779 PDF objects out of 2984 (max. 8388607)
- 2499 compressed objects within 25 object streams
- 902 named destinations out of 1000 (max. 500000)
+ 2777 PDF objects out of 2984 (max. 8388607)
+ 2497 compressed objects within 25 object streams
+ 901 named destinations out of 1000 (max. 500000)
  1098 words of extra memory for PDF output out of 10000 (max. 10000000)
 
