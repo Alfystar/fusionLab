@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.9.11)  13 OCT 2021 10:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.9.11)  13 OCT 2021 11:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1652,29 +1652,29 @@ LaTeX Font Info:    Trying to load font information for U+lasy on input line 25
 (/usr/share/texlive/texmf-dist/tex/latex/base/ulasy.fd
 File: ulasy.fd 1998/08/17 v2.2e LaTeX symbol font definitions
 )
-Package epstopdf Info: Source file: <Pictures/TorVergata_logo_nero.ai.eps>
-(epstopdf)                    date: 2021-10-13 09:59:59
-(epstopdf)                    size: 32051 bytes
-(epstopdf)             Output file: <Pictures/TorVergata_logo_nero.ai-eps-conve
-rted-to.pdf>
-(epstopdf)                    date: 2021-10-13 10:01:10
-(epstopdf)                    size: 12274 bytes
-(epstopdf)             Command: <repstopdf --outfile=Pictures/TorVergata_logo_n
-ero.ai-eps-converted-to.pdf Pictures/TorVergata_logo_nero.ai.eps>
+Package epstopdf Info: Source file: <Pictures/TorVergata_logo_cmyk.eps>
+(epstopdf)                    date: 2021-09-27 11:23:21
+(epstopdf)                    size: 32065 bytes
+(epstopdf)             Output file: <Pictures/TorVergata_logo_cmyk-eps-converte
+d-to.pdf>
+(epstopdf)                    date: 2021-09-27 11:27:03
+(epstopdf)                    size: 12231 bytes
+(epstopdf)             Command: <repstopdf --outfile=Pictures/TorVergata_logo_c
+myk-eps-converted-to.pdf Pictures/TorVergata_logo_cmyk.eps>
 (epstopdf)             \includegraphics on input line 273.
 Package epstopdf Info: Output file is already uptodate.
-<Pictures/TorVergata_logo_nero.ai-eps-converted-to.pdf, id=392, 454.69875pt x 1
-04.39pt>
-File: Pictures/TorVergata_logo_nero.ai-eps-converted-to.pdf Graphic file (type 
-pdf)
-<use Pictures/TorVergata_logo_nero.ai-eps-converted-to.pdf>
-Package pdftex.def Info: Pictures/TorVergata_logo_nero.ai-eps-converted-to.pdf 
- used on input line 273.
+<Pictures/TorVergata_logo_cmyk-eps-converted-to.pdf, id=392, 454.69875pt x 104.
+39pt>
+File: Pictures/TorVergata_logo_cmyk-eps-converted-to.pdf Graphic file (type pdf
+)
+<use Pictures/TorVergata_logo_cmyk-eps-converted-to.pdf>
+Package pdftex.def Info: Pictures/TorVergata_logo_cmyk-eps-converted-to.pdf  us
+ed on input line 273.
 (pdftex.def)             Requested size: 371.8216pt x 85.35826pt.
  [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./Pictures/TorVergata_logo
-_nero.ai-eps-converted-to.pdf>] [2] (./Tesi.toc [1
+_cmyk-eps-converted-to.pdf>] [2] (./Tesi.toc [1
 
 ] [2] [3])
 \tf@toc=\write8
@@ -1704,7 +1704,7 @@ l.20 \newpage
               [2
 
 ]
-<Pictures//Introduzione/K-DEMO_device_core_design_features.jpg, id=528, 827.09p
+<Pictures//Introduzione/K-DEMO_device_core_design_features.jpg, id=529, 827.09p
 t x 543.02875pt>
 File: Pictures//Introduzione/K-DEMO_device_core_design_features.jpg Graphic fil
 e (type jpg)
@@ -1745,14 +1745,14 @@ Overfull \hbox (146.43481pt too wide) detected at line 52
 [] []|[] []
  []
 
-<Pictures//Introduzione/toro-big.png, id=538, 1505.625pt x 964.60374pt>
+<Pictures//Introduzione/toro-big.png, id=539, 1505.625pt x 964.60374pt>
 File: Pictures//Introduzione/toro-big.png Graphic file (type png)
 <use Pictures//Introduzione/toro-big.png>
 Package pdftex.def Info: Pictures//Introduzione/toro-big.png  used on input lin
 e 59.
 (pdftex.def)             Requested size: 282.74734pt x 181.14241pt.
 [4 <./Pictures//Introduzione/toro-big.png>] [5] [6] [7] [8]
-<Pictures//Introduzione/ArchitetturaComplessiva.png, id=569, 1518.4228pt x 856.
+<Pictures//Introduzione/ArchitetturaComplessiva.png, id=570, 1518.4228pt x 856.
 70062pt>
 File: Pictures//Introduzione/ArchitetturaComplessiva.png Graphic file (type png
 )
@@ -1777,7 +1777,7 @@ Capitolo 1.
 
 
 ]
-<Pictures//Trasformatore/tokamak_scheme.jpg, id=586, 803.0pt x 451.6875pt>
+<Pictures//Trasformatore/tokamak_scheme.jpg, id=587, 803.0pt x 451.6875pt>
 File: Pictures//Trasformatore/tokamak_scheme.jpg Graphic file (type jpg)
 <use Pictures//Trasformatore/tokamak_scheme.jpg>
 Package pdftex.def Info: Pictures//Trasformatore/tokamak_scheme.jpg  used on in
@@ -1876,7 +1876,7 @@ Underfull \vbox (badness 10000) detected at line 113
 
 [13]
 Package mdframed Info: Not enough space on this page on input line 114.
-<Pictures//Trasformatore/trasformatore.png, id=637, 1927.2pt x 1447.4075pt>
+<Pictures//Trasformatore/trasformatore.png, id=638, 1927.2pt x 1447.4075pt>
 File: Pictures//Trasformatore/trasformatore.png Graphic file (type png)
 <use Pictures//Trasformatore/trasformatore.png>
 Package pdftex.def Info: Pictures//Trasformatore/trasformatore.png  used on inp
@@ -1920,7 +1920,7 @@ Package mdframed Info: Not enough space on this page on input line 164.
 [14 <./Pictures//Trasformatore/trasformatore.png>]
 Package mdframed Info: Not enough space on this page on input line 164.
  [15]
-<Pictures//Trasformatore/PlasmaCircuit-PlasmaCircuit.png, id=662, 2629.825pt x 
+<Pictures//Trasformatore/PlasmaCircuit-PlasmaCircuit.png, id=663, 2629.825pt x 
 1289.81876pt>
 File: Pictures//Trasformatore/PlasmaCircuit-PlasmaCircuit.png Graphic file (typ
 e png)
@@ -1931,7 +1931,7 @@ g  used on input line 177.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 180.
-<Pictures//Trasformatore/PlasmaCircuit-EquivalentCalc.png, id=664, 3031.325pt x
+<Pictures//Trasformatore/PlasmaCircuit-EquivalentCalc.png, id=665, 3031.325pt x
  1294.8375pt>
 File: Pictures//Trasformatore/PlasmaCircuit-EquivalentCalc.png Graphic file (ty
 pe png)
@@ -1972,7 +1972,7 @@ Package mdframed Info: mdframed detected package amsthm
  changed the theorem header of amsthm
 (mdframed)              on input line 291.
 Package mdframed Info: Not enough space on this page on input line 302.
-<Pictures//Trasformatore/PlasmaCircuit-SchemaBlocchi.png, id=726, 1485.55pt x 3
+<Pictures//Trasformatore/PlasmaCircuit-SchemaBlocchi.png, id=727, 1485.55pt x 3
 11.1625pt>
 File: Pictures//Trasformatore/PlasmaCircuit-SchemaBlocchi.png Graphic file (typ
 e png)
@@ -1980,7 +1980,7 @@ e png)
 Package pdftex.def Info: Pictures//Trasformatore/PlasmaCircuit-SchemaBlocchi.pn
 g  used on input line 318.
 (pdftex.def)             Requested size: 435.0pt x 91.11317pt.
-<Pictures//Trasformatore/PlasmaCircuit-MisureCircuit-Current.drawio.png, id=729
+<Pictures//Trasformatore/PlasmaCircuit-MisureCircuit-Current.drawio.png, id=730
 , 3814.25pt x 1395.2125pt>
 File: Pictures//Trasformatore/PlasmaCircuit-MisureCircuit-Current.drawio.png Gr
 aphic file (type png)
@@ -1990,34 +1990,34 @@ rrent.drawio.png  used on input line 335.
 (pdftex.def)             Requested size: 435.0pt x 159.11548pt.
  [20 <./Pictures//Trasformatore/PlasmaCircuit-SchemaBlocchi.png>]
 [21 <./Pictures//Trasformatore/PlasmaCircuit-MisureCircuit-Current.drawio.png>]
-<Pictures//ACS770/ACS770-Fig.png, id=756, 703.87968pt x 280.04625pt>
+<Pictures//ACS770/ACS770-Fig.png, id=757, 703.87968pt x 280.04625pt>
 File: Pictures//ACS770/ACS770-Fig.png Graphic file (type png)
 <use Pictures//ACS770/ACS770-Fig.png>
 Package pdftex.def Info: Pictures//ACS770/ACS770-Fig.png  used on input line 35
 5.
 (pdftex.def)             Requested size: 435.0pt x 173.06708pt.
 [22 <./Pictures//ACS770/ACS770-Fig.png>]
-<Pictures//ACS770/effettoHall.png, id=767, 365.365pt x 374.39874pt>
+<Pictures//ACS770/effettoHall.png, id=768, 365.365pt x 374.39874pt>
 File: Pictures//ACS770/effettoHall.png Graphic file (type png)
 <use Pictures//ACS770/effettoHall.png>
 Package pdftex.def Info: Pictures//ACS770/effettoHall.png  used on input line 3
 99.
 (pdftex.def)             Requested size: 217.5pt x 222.8757pt.
  [23 <./Pictures//ACS770/effettoHall.png>]
-<Pictures//ACS770/ACS770-SchemaBlocchi.png, id=775, 737.00343pt x 525.46312pt>
+<Pictures//ACS770/ACS770-SchemaBlocchi.png, id=776, 737.00343pt x 525.46312pt>
 File: Pictures//ACS770/ACS770-SchemaBlocchi.png Graphic file (type png)
 <use Pictures//ACS770/ACS770-SchemaBlocchi.png>
 Package pdftex.def Info: Pictures//ACS770/ACS770-SchemaBlocchi.png  used on inp
 ut line 407.
 (pdftex.def)             Requested size: 435.0pt x 310.14082pt.
  [24 <./Pictures//ACS770/ACS770-SchemaBlocchi.png (PNG copy)>]
-<Pictures//ACS770/ACS770-Sensibilità.png, id=782, 642.14906pt x 555.57562pt>
+<Pictures//ACS770/ACS770-Sensibilità.png, id=783, 642.14906pt x 555.57562pt>
 File: Pictures//ACS770/ACS770-Sensibilità.png Graphic file (type png)
 <use Pictures//ACS770/ACS770-Sensibilità.png>
 Package pdftex.def Info: Pictures//ACS770/ACS770-Sensibilità.png  used on inpu
 t line 416.
 (pdftex.def)             Requested size: 282.74734pt x 244.63205pt.
-<Pictures//ACS770/ACS770-NonLin.png, id=783, 735.74875pt x 439.6425pt>
+<Pictures//ACS770/ACS770-NonLin.png, id=784, 735.74875pt x 439.6425pt>
 File: Pictures//ACS770/ACS770-NonLin.png Graphic file (type png)
 <use Pictures//ACS770/ACS770-NonLin.png>
 Package pdftex.def Info: Pictures//ACS770/ACS770-NonLin.png  used on input line
@@ -2025,20 +2025,20 @@ Package pdftex.def Info: Pictures//ACS770/ACS770-NonLin.png  used on input line
 (pdftex.def)             Requested size: 391.49734pt x 233.94188pt.
  [25 <./Pictures//ACS770/ACS770-Sensibilità.png (PNG copy)> <./Pictures//ACS77
 0/ACS770-NonLin.png>]
-<Pictures//ACS770/ACS770-Schema.png, id=792, 463.7325pt x 281.55188pt>
+<Pictures//ACS770/ACS770-Schema.png, id=793, 463.7325pt x 281.55188pt>
 File: Pictures//ACS770/ACS770-Schema.png Graphic file (type png)
 <use Pictures//ACS770/ACS770-Schema.png>
 Package pdftex.def Info: Pictures//ACS770/ACS770-Schema.png  used on input line
  440.
 (pdftex.def)             Requested size: 369.75266pt x 224.49857pt.
  [26 <./Pictures//ACS770/ACS770-Schema.png (PNG copy)>] [27]
-<Pictures//IBT-2/TopView.png, id=816, 1083.29718pt x 538.26094pt>
+<Pictures//IBT-2/TopView.png, id=817, 1083.29718pt x 538.26094pt>
 File: Pictures//IBT-2/TopView.png Graphic file (type png)
 <use Pictures//IBT-2/TopView.png>
 Package pdftex.def Info: Pictures//IBT-2/TopView.png  used on input line 491.
 (pdftex.def)             Requested size: 435.0pt x 216.1383pt.
  [28 <./Pictures//IBT-2/TopView.png>]
-<Pictures//IBT-2/elettricScheme.png, id=828, 563.60562pt x 396.48125pt>
+<Pictures//IBT-2/elettricScheme.png, id=829, 563.60562pt x 396.48125pt>
 File: Pictures//IBT-2/elettricScheme.png Graphic file (type png)
 <use Pictures//IBT-2/elettricScheme.png>
 Package pdftex.def Info: Pictures//IBT-2/elettricScheme.png  used on input line
@@ -2050,14 +2050,14 @@ Overfull \hbox (5.677pt too wide) in paragraph at lines 521--522
  []
 
 [29 <./Pictures//IBT-2/elettricScheme.png>] [30]
-<Pictures//IBT-2/T1-Triangolare.pdf, id=841, 794.97pt x 614.295pt>
+<Pictures//IBT-2/T1-Triangolare.pdf, id=842, 794.97pt x 614.295pt>
 File: Pictures//IBT-2/T1-Triangolare.pdf Graphic file (type pdf)
 <use Pictures//IBT-2/T1-Triangolare.pdf>
 Package pdftex.def Info: Pictures//IBT-2/T1-Triangolare.pdf  used on input line
  547.
 (pdftex.def)             Requested size: 401.18375pt x 310.0pt.
  [31 <./Pictures//IBT-2/T1-Triangolare.pdf>]
-<Pictures//IBT-2/T2-RapidShot.pdf, id=885, 794.97pt x 614.295pt>
+<Pictures//IBT-2/T2-RapidShot.pdf, id=886, 794.97pt x 614.295pt>
 File: Pictures//IBT-2/T2-RapidShot.pdf Graphic file (type pdf)
 <use Pictures//IBT-2/T2-RapidShot.pdf>
 Package pdftex.def Info: Pictures//IBT-2/T2-RapidShot.pdf  used on input line 5
@@ -2069,13 +2069,13 @@ Package pdftex.def Info: Pictures//IBT-2/T2-RapidShot.pdf  used on input line 5
 
 (./capitolo-Architettura.tex
 Capitolo 2.
-<Pictures//Architettura/SystemArchitetture.png, id=933, 963.6pt x 542.025pt>
+<Pictures//Architettura/SystemArchitetture.png, id=934, 963.6pt x 542.025pt>
 File: Pictures//Architettura/SystemArchitetture.png Graphic file (type png)
 <use Pictures//Architettura/SystemArchitetture.png>
 Package pdftex.def Info: Pictures//Architettura/SystemArchitetture.png  used on
  input line 16.
 (pdftex.def)             Requested size: 435.0pt x 244.68643pt.
-<Pictures//Architettura/ArduinoUno.png, id=935, 416.55624pt x 327.2225pt>
+<Pictures//Architettura/ArduinoUno.png, id=936, 416.55624pt x 327.2225pt>
 File: Pictures//Architettura/ArduinoUno.png Graphic file (type png)
 <use Pictures//Architettura/ArduinoUno.png>
 Package pdftex.def Info: Pictures//Architettura/ArduinoUno.png  used on input l
@@ -2088,21 +2088,21 @@ ine 25.
 
  <./Pictures//Architettura/SystemArchitetture.png>] [34 <./Pictures//Architettu
 ra/ArduinoUno.png>]
-<Pictures//EMP/EMP-Logo-Background.png, id=949, 385.44pt x 243.15843pt>
+<Pictures//EMP/EMP-Logo-Background.png, id=950, 385.44pt x 243.15843pt>
 File: Pictures//EMP/EMP-Logo-Background.png Graphic file (type png)
 <use Pictures//EMP/EMP-Logo-Background.png>
 Package pdftex.def Info: Pictures//EMP/EMP-Logo-Background.png  used on input l
 ine 42.
 (pdftex.def)             Requested size: 348.00133pt x 219.5381pt.
  [35 <./Pictures//EMP/EMP-Logo-Background.png>] [36]
-<Pictures//EMP/Cobs_encoding_with_example.png, id=971, 1498.59875pt x 125.46875
+<Pictures//EMP/Cobs_encoding_with_example.png, id=972, 1498.59875pt x 125.46875
 pt>
 File: Pictures//EMP/Cobs_encoding_with_example.png Graphic file (type png)
 <use Pictures//EMP/Cobs_encoding_with_example.png>
 Package pdftex.def Info: Pictures//EMP/Cobs_encoding_with_example.png  used on 
 input line 73.
 (pdftex.def)             Requested size: 435.0pt x 36.41945pt.
-<Pictures//EMP/Cobs_encoding_with_example-dist.png, id=972, 512.022pt x 79.716p
+<Pictures//EMP/Cobs_encoding_with_example-dist.png, id=973, 512.022pt x 79.716p
 t>
 File: Pictures//EMP/Cobs_encoding_with_example-dist.png Graphic file (type png)
 
@@ -2122,7 +2122,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 170--173
  []
 
 [39]
-<Pictures//EMP/EMP-Hierarchy.png, id=1013, 1363.0122pt x 933.7284pt>
+<Pictures//EMP/EMP-Hierarchy.png, id=1014, 1363.0122pt x 933.7284pt>
 File: Pictures//EMP/EMP-Hierarchy.png Graphic file (type png)
 <use Pictures//EMP/EMP-Hierarchy.png>
 Package pdftex.def Info: Pictures//EMP/EMP-Hierarchy.png  used on input line 18
@@ -2134,7 +2134,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 182--185
  []
 
 [40 <./Pictures//EMP/EMP-Hierarchy.png (PNG copy)>] [41]
-<Pictures//EMP/Message Pack Sending Flow.png, id=1028, 646.0938pt x 531.1845pt>
+<Pictures//EMP/Message Pack Sending Flow.png, id=1029, 646.0938pt x 531.1845pt>
 
 File: Pictures//EMP/Message Pack Sending Flow.png Graphic file (type png)
 <use Pictures//EMP/Message Pack Sending Flow.png>
@@ -2147,13 +2147,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 212--215
  []
 
 [42 <./Pictures//EMP/Message Pack Sending Flow.png (PNG copy)>]
-<Pictures//EMP/TestFlow.png, id=1038, 2473.24pt x 1682.285pt>
+<Pictures//EMP/TestFlow.png, id=1039, 2473.24pt x 1682.285pt>
 File: Pictures//EMP/TestFlow.png Graphic file (type png)
 <use Pictures//EMP/TestFlow.png>
 Package pdftex.def Info: Pictures//EMP/TestFlow.png  used on input line 221.
 (pdftex.def)             Requested size: 348.00133pt x 236.6991pt.
  [43 <./Pictures//EMP/TestFlow.png>]
-<Pictures//Trasformatore/PlasmaCircuit-MisureCircuitOffset.png, id=1054, 3733.9
+<Pictures//Trasformatore/PlasmaCircuit-MisureCircuitOffset.png, id=1055, 3733.9
 5pt x 1595.9625pt>
 File: Pictures//Trasformatore/PlasmaCircuit-MisureCircuitOffset.png Graphic fil
 e (type png)
@@ -2209,33 +2209,33 @@ Capitolo 3.
 
 
 ]
-<Pictures//Stime/T2-RapidShot-autoExt.pdf, id=1151, 794.97pt x 614.295pt>
+<Pictures//Stime/T2-RapidShot-autoExt.pdf, id=1152, 794.97pt x 614.295pt>
 File: Pictures//Stime/T2-RapidShot-autoExt.pdf Graphic file (type pdf)
 <use Pictures//Stime/T2-RapidShot-autoExt.pdf>
 Package pdftex.def Info: Pictures//Stime/T2-RapidShot-autoExt.pdf  used on inpu
 t line 46.
 (pdftex.def)             Requested size: 435.0pt x 336.14796pt.
  [49] [50 <./Pictures//Stime/T2-RapidShot-autoExt.pdf>]
-<Pictures//Stime/T2-RapidShot-manualExt.pdf, id=1194, 794.97pt x 614.295pt>
+<Pictures//Stime/T2-RapidShot-manualExt.pdf, id=1195, 794.97pt x 614.295pt>
 File: Pictures//Stime/T2-RapidShot-manualExt.pdf Graphic file (type pdf)
 <use Pictures//Stime/T2-RapidShot-manualExt.pdf>
 Package pdftex.def Info: Pictures//Stime/T2-RapidShot-manualExt.pdf  used on in
 put line 78.
 (pdftex.def)             Requested size: 435.0pt x 336.14796pt.
  [51 <./Pictures//Stime/T2-RapidShot-manualExt.pdf>]
-<Pictures//Stime/E01-EstimateShot-manual-1.pdf, id=1226, 794.97pt x 614.295pt>
+<Pictures//Stime/E01-EstimateShot-manual-1.pdf, id=1227, 794.97pt x 614.295pt>
 File: Pictures//Stime/E01-EstimateShot-manual-1.pdf Graphic file (type pdf)
 <use Pictures//Stime/E01-EstimateShot-manual-1.pdf>
 Package pdftex.def Info: Pictures//Stime/E01-EstimateShot-manual-1.pdf  used on
  input line 89.
 (pdftex.def)             Requested size: 391.49734pt x 302.52567pt.
-<Pictures//Stime/E01-EstimateShot-manual-2.pdf, id=1227, 794.97pt x 614.295pt>
+<Pictures//Stime/E01-EstimateShot-manual-2.pdf, id=1228, 794.97pt x 614.295pt>
 File: Pictures//Stime/E01-EstimateShot-manual-2.pdf Graphic file (type pdf)
 <use Pictures//Stime/E01-EstimateShot-manual-2.pdf>
 Package pdftex.def Info: Pictures//Stime/E01-EstimateShot-manual-2.pdf  used on
  input line 95.
 (pdftex.def)             Requested size: 391.49734pt x 302.52567pt.
-<Pictures//Stime/E01-EstimateShot-manual-3.pdf, id=1228, 794.97pt x 614.295pt>
+<Pictures//Stime/E01-EstimateShot-manual-3.pdf, id=1229, 794.97pt x 614.295pt>
 File: Pictures//Stime/E01-EstimateShot-manual-3.pdf Graphic file (type pdf)
 <use Pictures//Stime/E01-EstimateShot-manual-3.pdf>
 Package pdftex.def Info: Pictures//Stime/E01-EstimateShot-manual-3.pdf  used on
@@ -2248,7 +2248,7 @@ E01-EstimateShot-manual-2.pdf> <./Pictures//Stime/E01-EstimateShot-manual-3.pdf
 
  (./capitolo-ModelloMatematico.tex
 Capitolo 4.
-<Pictures//ModelloMatematico/SchemiBlocchi.png, id=1315, 3006.23125pt x 496.856
+<Pictures//ModelloMatematico/SchemiBlocchi.png, id=1316, 3006.23125pt x 496.856
 25pt>
 File: Pictures//ModelloMatematico/SchemiBlocchi.png Graphic file (type png)
 <use Pictures//ModelloMatematico/SchemiBlocchi.png>
@@ -2261,7 +2261,7 @@ Package pdftex.def Info: Pictures//ModelloMatematico/SchemiBlocchi.png  used on
 
 
  <./Pictures//ModelloMatematico/SchemiBlocchi.png>]
-<Pictures//ModelloMatematico/SchemiBlocchi-SchemaBlocchiV2Out.png, id=1325, 350
+<Pictures//ModelloMatematico/SchemiBlocchi-SchemaBlocchiV2Out.png, id=1326, 350
 8.10625pt x 496.85625pt>
 File: Pictures//ModelloMatematico/SchemiBlocchi-SchemaBlocchiV2Out.png Graphic 
 file (type png)
@@ -2405,7 +2405,7 @@ Overfull \hbox (20.24408pt too wide) in paragraph at lines 220--220
  []
 
 [60]
-<Pictures//ModelloMatematico/systemSimulink.png, id=1412, 1594.45688pt x 798.73
+<Pictures//ModelloMatematico/systemSimulink.png, id=1413, 1594.45688pt x 798.73
 407pt>
 File: Pictures//ModelloMatematico/systemSimulink.png Graphic file (type png)
 <use Pictures//ModelloMatematico/systemSimulink.png>
@@ -2416,7 +2416,7 @@ Package mdframed Info: mdframed detected package amsthm
  changed the theorem header of amsthm
 (mdframed)              on input line 259.
  [61 <./Pictures//ModelloMatematico/systemSimulink.png (PNG copy)>]
-<Pictures//ModelloMatematico/Simulation-cBaseSim.pdf, id=1421, 794.97pt x 614.2
+<Pictures//ModelloMatematico/Simulation-cBaseSim.pdf, id=1422, 794.97pt x 614.2
 95pt>
 File: Pictures//ModelloMatematico/Simulation-cBaseSim.pdf Graphic file (type pd
 f)
@@ -2429,7 +2429,7 @@ sed on input line 272.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
 (mdframed)              on input line 282.
-<Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=0-K_2=100.pdf, id=1448, 
+<Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=0-K_2=100.pdf, id=1449, 
 794.97pt x 614.295pt>
 File: Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=0-K_2=100.pdf Graph
 ic file (type pdf)
@@ -2437,7 +2437,7 @@ ic file (type pdf)
 Package pdftex.def Info: Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=
 0-K_2=100.pdf  used on input line 290.
 (pdftex.def)             Requested size: 435.0pt x 336.14796pt.
-<Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=10-K_2=100.pdf, id=1449,
+<Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=10-K_2=100.pdf, id=1450,
  794.97pt x 614.295pt>
 File: Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=10-K_2=100.pdf Grap
 hic file (type pdf)
@@ -2447,7 +2447,7 @@ Package pdftex.def Info: Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=
 (pdftex.def)             Requested size: 435.0pt x 336.14796pt.
  [63 <./Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=0-K_2=100.pdf>] [
 64 <./Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=10-K_2=100.pdf>]
-<Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=100-K_2=500.pdf, id=1513
+<Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=100-K_2=500.pdf, id=1514
 , 794.97pt x 614.295pt>
 File: Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=100-K_2=500.pdf Gra
 phic file (type pdf)
@@ -2457,7 +2457,7 @@ Package pdftex.def Info: Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=
 (pdftex.def)             Requested size: 435.0pt x 336.14796pt.
  [65 <./Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=100-K_2=500.pdf>]
 <Pictures//ModelloMatematico/Simulation-cSim-K_p=0.2-K_1=100-K_2=500.pdf, id=15
-45, 794.97pt x 614.295pt>
+46, 794.97pt x 614.295pt>
 File: Pictures//ModelloMatematico/Simulation-cSim-K_p=0.2-K_1=100-K_2=500.pdf G
 raphic file (type pdf)
 <use Pictures//ModelloMatematico/Simulation-cSim-K_p=0.2-K_1=100-K_2=500.pdf>
@@ -2467,7 +2467,7 @@ Package pdftex.def Info: Pictures//ModelloMatematico/Simulation-cSim-K_p=0.2-K_
  [66 <./Pictures//ModelloMatematico/Simulation-cSim-K_p=0.2-K_1=100-K_2=500.pdf
 >]
 <Pictures//ModelloMatematico/Simulation-cSim-K_p=0.8-K_1=100-K_2=500.pdf, id=15
-77, 794.97pt x 614.295pt>
+78, 794.97pt x 614.295pt>
 File: Pictures//ModelloMatematico/Simulation-cSim-K_p=0.8-K_1=100-K_2=500.pdf G
 raphic file (type pdf)
 <use Pictures//ModelloMatematico/Simulation-cSim-K_p=0.8-K_1=100-K_2=500.pdf>
@@ -2486,7 +2486,7 @@ LaTeX Font Info:    Font shape `U/lasy/b/n' in size <5> not available
 
 (./capitolo-Controllo.tex
 Capitolo 5.
-<Pictures//ImpiantoReale.jpg, id=1620, 1284.8pt x 722.7pt>
+<Pictures//ImpiantoReale.jpg, id=1621, 1284.8pt x 722.7pt>
 File: Pictures//ImpiantoReale.jpg Graphic file (type jpg)
 <use Pictures//ImpiantoReale.jpg>
 Package pdftex.def Info: Pictures//ImpiantoReale.jpg  used on input line 13.
@@ -2497,13 +2497,13 @@ Package pdftex.def Info: Pictures//ImpiantoReale.jpg  used on input line 13.
 
 
  <./Pictures//ImpiantoReale.jpg>] [70]
-<Pictures//Controllo/zoh-apply-Big.png, id=1634, 3528.18124pt x 1003.75pt>
+<Pictures//Controllo/zoh-apply-Big.png, id=1635, 3528.18124pt x 1003.75pt>
 File: Pictures//Controllo/zoh-apply-Big.png Graphic file (type png)
 <use Pictures//Controllo/zoh-apply-Big.png>
 Package pdftex.def Info: Pictures//Controllo/zoh-apply-Big.png  used on input l
 ine 30.
 (pdftex.def)             Requested size: 435.0pt x 123.75305pt.
-<Pictures//Controllo/SegnaliDiscretiContinui-v2-Big.png, id=1635, 5737.435pt x 
+<Pictures//Controllo/SegnaliDiscretiContinui-v2-Big.png, id=1636, 5737.435pt x 
 1003.75pt>
 File: Pictures//Controllo/SegnaliDiscretiContinui-v2-Big.png Graphic file (type
  png)
@@ -2525,14 +2525,14 @@ Overfull \hbox (0.56879pt too wide) in paragraph at lines 49--108
  []
 
 [72]
-<Pictures//Controllo/02-Bi-FrontCapture.pdf, id=1665, 794.97pt x 614.295pt>
+<Pictures//Controllo/02-Bi-FrontCapture.pdf, id=1666, 794.97pt x 614.295pt>
 File: Pictures//Controllo/02-Bi-FrontCapture.pdf Graphic file (type pdf)
 <use Pictures//Controllo/02-Bi-FrontCapture.pdf>
 Package pdftex.def Info: Pictures//Controllo/02-Bi-FrontCapture.pdf  used on in
 put line 136.
 (pdftex.def)             Requested size: 435.0pt x 336.14796pt.
  [73]
-<Pictures//Controllo/03-PosNeg-capture.pdf, id=1674, 794.97pt x 614.295pt>
+<Pictures//Controllo/03-PosNeg-capture.pdf, id=1675, 794.97pt x 614.295pt>
 File: Pictures//Controllo/03-PosNeg-capture.pdf Graphic file (type pdf)
 <use Pictures//Controllo/03-PosNeg-capture.pdf>
 Package pdftex.def Info: Pictures//Controllo/03-PosNeg-capture.pdf  used on inp
@@ -2544,7 +2544,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 148--150
  []
 
 [75 <./Pictures//Controllo/03-PosNeg-capture.pdf>]
-<Pictures//Controllo/01-RandomCapture.pdf, id=1728, 794.97pt x 614.295pt>
+<Pictures//Controllo/01-RandomCapture.pdf, id=1729, 794.97pt x 614.295pt>
 File: Pictures//Controllo/01-RandomCapture.pdf Graphic file (type pdf)
 <use Pictures//Controllo/01-RandomCapture.pdf>
 Package pdftex.def Info: Pictures//Controllo/01-RandomCapture.pdf  used on inpu
@@ -2637,11 +2637,11 @@ Package logreq Info: Writing requests to 'Tesi.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 41774 strings out of 479304
- 832875 string characters out of 5869779
- 1851056 words of memory out of 5000000
- 57159 multiletter control sequences out of 15000+600000
- 438138 words of font info for 125 fonts, out of 8000000 for 9000
+ 41776 strings out of 479304
+ 832881 string characters out of 5869779
+ 1850995 words of memory out of 5000000
+ 57160 multiletter control sequences out of 15000+600000
+ 438906 words of font info for 126 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  117i,25n,127p,1855b,2468s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.6} has been referenced but does not exi
@@ -2702,13 +2702,13 @@ per/sfrm0700.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></u
 sr/share/texmf/fonts/type1/public/cm-super/sfrm0900.pfb></usr/share/texmf/fonts
 /type1/public/cm-super/sfrm1000.pfb></usr/share/texmf/fonts/type1/public/cm-sup
 er/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1440.pfb></us
-r/share/texmf/fonts/type1/public/cm-super/sfti0900.pfb></usr/share/texmf/fonts/
-type1/public/cm-super/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-supe
-r/sftt1000.pfb>
-Output written on Tesi.pdf (105 pages, 11424245 bytes).
+r/share/texmf/fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/texmf/fonts/
+type1/public/cm-super/sfti0900.pfb></usr/share/texmf/fonts/type1/public/cm-supe
+r/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb>
+Output written on Tesi.pdf (105 pages, 11427633 bytes).
 PDF statistics:
- 2777 PDF objects out of 2984 (max. 8388607)
- 2497 compressed objects within 25 object streams
+ 2781 PDF objects out of 2984 (max. 8388607)
+ 2500 compressed objects within 25 object streams
  901 named destinations out of 1000 (max. 500000)
  1098 words of extra memory for PDF output out of 10000 (max. 10000000)
 
