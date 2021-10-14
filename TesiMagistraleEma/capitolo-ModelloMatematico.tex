@@ -79,8 +79,7 @@ Essendo il nostro obiettivo quello di portare $ e \rightarrowtail 0$ per $ t\rig
 		W_{er}(s) = \frac{e(s)}{r(s)} = \frac{1}{1 + P_m(s)C(s)}
 	\end{empheq}
 	\newpage
-	%{\color{red} Sensitivity transfer function}\\[-6mm]
-		 Sensitivity transfer function\\[-6mm]
+	{\color{red} Sensitivity transfer function}\\[-6mm]
 	{\footnotesize (\cite{PerfAndRobust})}
 \end{vwcol}
 \vspace{5mm}
@@ -157,46 +156,46 @@ Da cui otteniamo che:
 \end{center}\vspace{-4mm}
 
 % ######### Versione Bianco e Nero #########
-\begin{empheq}[box=\mathStep]{equation*}
-	\lim\limits_{t \rightarrowtail \infty} e(t) = \lim\limits_{s \rightarrowtail 0} s \cdot W_{er}(s) \cdot r(s) = \lim\limits_{s \rightarrowtail 0}
-	K_r \cdot \frac{{s^{\rho_{c} + \rho_{p}}} \cdot C_d P_d}{{s^{\rho_{c} + \rho_{p}}} \cdot C_d P_d + K_c K_p C_n P_n}
-\end{empheq}
-
-\noindent
-Tenendo presente che $ C_d,P_d,C_n,P_n \rightarrowtail 1 $ per $ s \rightarrowtail 0 $, poiché gli Zeri sono stati fattorizzati fuori assieme al guadagno Statico (vedi osservazione \ref{oss:Fattorizzazione}), abbiamo che gli esiti per l'errore a \textit{Steady state} (Stato Stazionario) dipendono solo dal grado di $ s^\rho $ con  {$ \rho = \rho_{c} + \rho_{p} $} e {$\rho \in \mathbb{Z} $}: \vspace{-6mm}
-
-\begin{empheq}[box=\mathStep]{equation}\label{eq:esitiErrore}
-	e_\infty = \lim\limits_{t \rightarrowtail \infty} e(t) =
-	\left \{ \begin{array}{l c c}
-			0                   & se & \rho \geq 1 \\
-			\frac{K_r}{K_c K_p} & se & \rho = 0    \\
-			\infty              & se & \rho < 0
-		\end{array}
-	\right.
-\end{empheq}
-\noindent
-Essendo {$ \rho_{p} = -1 $} a causa dello Zero nell'origine dovuto al Trasformatore, segue che il controllore dovrà necessariamente avere 2 poli nell'origine ($ \rho_{c} = 2 $) per ottenere {$ \rho = 1 $}.\\
-Da cui, il design base del controllore è: \vspace{-4mm}
-% ######### Versione Colorata #########
 %\begin{empheq}[box=\mathStep]{equation*}
 %	\lim\limits_{t \rightarrowtail \infty} e(t) = \lim\limits_{s \rightarrowtail 0} s \cdot W_{er}(s) \cdot r(s) = \lim\limits_{s \rightarrowtail 0}
-%	K_r \cdot \frac{{\color{fireenginered}s^{\rho_{c} + \rho_{p}}} \cdot C_d P_d}{{\color{fireenginered}s^{\rho_{c} + \rho_{p}}} \cdot C_d P_d + K_c K_p C_n P_n}
+%	K_r \cdot \frac{{s^{\rho_{c} + \rho_{p}}} \cdot C_d P_d}{{s^{\rho_{c} + \rho_{p}}} \cdot C_d P_d + K_c K_p C_n P_n}
 %\end{empheq}
 %
-%Tenendo presente che $ C_d,P_d,C_n,P_n \rightarrowtail 1 $ per $ s \rightarrowtail 0 $, poiché gli Zeri sono stati fattorizzati fuori assieme al guadagno Statico (vedi osservazione \ref{oss:Fattorizzazione}), abbiamo che gli esiti per l'errore a \textit{Steady state} (Stato Stazionario) dipendono solo dal grado di $ s^\rho $ con  {\color{fireenginered}$ \rho = \rho_{c} + \rho_{p} $} e {\color{fireenginered}$\rho \in \mathbb{Z} $}: \vspace{-6mm}
+%\noindent
+%Tenendo presente che $ C_d,P_d,C_n,P_n \rightarrowtail 1 $ per $ s \rightarrowtail 0 $, poiché gli Zeri sono stati fattorizzati fuori assieme al guadagno Statico (vedi osservazione \ref{oss:Fattorizzazione}), abbiamo che gli esiti per l'errore a \textit{Steady state} (Stato Stazionario) dipendono solo dal grado di $ s^\rho $ con  {$ \rho = \rho_{c} + \rho_{p} $} e {$\rho \in \mathbb{Z} $}: \vspace{-6mm}
 %
 %\begin{empheq}[box=\mathStep]{equation}\label{eq:esitiErrore}
 %	e_\infty = \lim\limits_{t \rightarrowtail \infty} e(t) =
 %	\left \{ \begin{array}{l c c}
-%		0                   & se & \rho \geq 1 \\
-%		\frac{K_r}{K_c K_p} & se & \rho = 0    \\
-%		\infty              & se & \rho < 0
-%	\end{array}
+%			0                   & se & \rho \geq 1 \\
+%			\frac{K_r}{K_c K_p} & se & \rho = 0    \\
+%			\infty              & se & \rho < 0
+%		\end{array}
 %	\right.
 %\end{empheq}
 %\noindent
-%Essendo {\color{fireenginered}$ \rho_{p} = -1 $} a causa dello Zero nell'origine dovuto al Trasformatore, segue che il controllore dovrà necessariamente avere 2 poli nell'origine ($ \rho_{c} = 2 $) per ottenere {\color{fireenginered}$ \rho = 1 $}.\\
+%Essendo {$ \rho_{p} = -1 $} a causa dello Zero nell'origine dovuto al Trasformatore, segue che il controllore dovrà necessariamente avere 2 poli nell'origine ($ \rho_{c} = 2 $) per ottenere {$ \rho = 1 $}.\\
 %Da cui, il design base del controllore è: \vspace{-4mm}
+% ######### Versione Colorata #########
+\begin{empheq}[box=\mathStep]{equation*}
+	\lim\limits_{t \rightarrowtail \infty} e(t) = \lim\limits_{s \rightarrowtail 0} s \cdot W_{er}(s) \cdot r(s) = \lim\limits_{s \rightarrowtail 0}
+	K_r \cdot \frac{{\color{fireenginered}s^{\rho_{c} + \rho_{p}}} \cdot C_d P_d}{{\color{fireenginered}s^{\rho_{c} + \rho_{p}}} \cdot C_d P_d + K_c K_p C_n P_n}
+\end{empheq}
+
+Tenendo presente che $ C_d,P_d,C_n,P_n \rightarrowtail 1 $ per $ s \rightarrowtail 0 $, poiché gli Zeri sono stati fattorizzati fuori assieme al guadagno Statico (vedi osservazione \ref{oss:Fattorizzazione}), abbiamo che gli esiti per l'errore a \textit{Steady state} (Stato Stazionario) dipendono solo dal grado di $ s^\rho $ con  {\color{fireenginered}$ \rho = \rho_{c} + \rho_{p} $} e {\color{fireenginered}$\rho \in \mathbb{Z} $}: \vspace{-6mm}
+
+\begin{empheq}[box=\mathStep]{equation}\label{eq:esitiErrore}
+	e_\infty = \lim\limits_{t \rightarrowtail \infty} e(t) =
+	\left \{ \begin{array}{l c c}
+		0                   & se & \rho \geq 1 \\
+		\frac{K_r}{K_c K_p} & se & \rho = 0    \\
+		\infty              & se & \rho < 0
+	\end{array}
+	\right.
+\end{empheq}
+\noindent
+Essendo {\color{fireenginered}$ \rho_{p} = -1 $} a causa dello Zero nell'origine dovuto al Trasformatore, segue che il controllore dovrà necessariamente avere 2 poli nell'origine ($ \rho_{c} = 2 $) per ottenere {\color{fireenginered}$ \rho = 1 $}.\\
+Da cui, il design base del controllore è: \vspace{-4mm}
 % ######### End #########
 \begin{empheq}[box=\mathStep]{equation}	\label{eq:contollerDesignBase}
 	C(s) = \frac{1}{s^2}
@@ -221,12 +220,12 @@ La dinamica $ e_\infty $ riportata nel sistema \ref{eq:esitiErrore} è valida $\
 \noindent
 E la stabilità di questa funzione è data dai poli del suo denominatore, che abbiamo già calcolato nell'eq \ref{eq:guadagnoAnelloPlusOne}:
 
-%\begin{center}
-%	{\large $ Den(W_{V_2 r}) = {\color{fireenginered}s^{\rho_{c} + \rho_{p}}} C_d P_d = {\color{fireenginered}s^{\rho}} C_d P_d$} \hspace{8mm} ($ C_d(s) $ e $ P_d(s) $ polinomi  senza radici nell'origine \footnote{Nota Bene: $ P_d $ e $ C_d $ sono il risultato della fattorizzazione vista sopra nell'osservazione \ref{oss:Fattorizzazione}, non possono quindi esserci poli nell'origine in questi 2 termini \textbf{per costruzione}})
-%\end{center}
 \begin{center}
-	{\large $ Den(W_{V_2 r}) = {s^{\rho_{c} + \rho_{p}}} C_d P_d = {s^{\rho}} C_d P_d$} \hspace{8mm} ($ C_d(s) $ e $ P_d(s) $ polinomi  senza radici nell'origine \footnote{Nota Bene: $ P_d $ e $ C_d $ sono il risultato della fattorizzazione vista sopra nell'osservazione \ref{oss:Fattorizzazione}, non possono quindi esserci poli nell'origine in questi 2 termini \textbf{per costruzione}})
+	{\large $ Den(W_{V_2 r}) = {\color{fireenginered}s^{\rho_{c} + \rho_{p}}} C_d P_d = {\color{fireenginered}s^{\rho}} C_d P_d$} \hspace{8mm} ($ C_d(s) $ e $ P_d(s) $ polinomi  senza radici nell'origine \footnote{Nota Bene: $ P_d $ e $ C_d $ sono il risultato della fattorizzazione vista sopra nell'osservazione \ref{oss:Fattorizzazione}, non possono quindi esserci poli nell'origine in questi 2 termini \textbf{per costruzione}})
 \end{center}
+%\begin{center}
+%	{\large $ Den(W_{V_2 r}) = {s^{\rho_{c} + \rho_{p}}} C_d P_d = {s^{\rho}} C_d P_d$} \hspace{8mm} ($ C_d(s) $ e $ P_d(s) $ polinomi  senza radici nell'origine \footnote{Nota Bene: $ P_d $ e $ C_d $ sono il risultato della fattorizzazione vista sopra nell'osservazione \ref{oss:Fattorizzazione}, non possono quindi esserci poli nell'origine in questi 2 termini \textbf{per costruzione}})
+%\end{center}
 
 
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.9.11)  13 OCT 2021 11:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (TeX Live 2020/Debian) (preloaded format=pdflatex 2021.9.11)  14 OCT 2021 10:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -326,7 +326,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 )
 \Hy@SectionHShift=\skip55
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 55.
+Package hyperref Info: Option `colorlinks' set `true' on input line 64.
 
 (/usr/share/texlive/texmf-dist/tex/latex/biblatex/biblatex.sty
 Package: biblatex 2020/12/31 v3.16 programmable bibliographies (PK/MW)
@@ -2277,101 +2277,101 @@ Package mdframed Info: mdframed detected package amsthm
  changed the theorem header of amsthm
 (mdframed)              on input line 57.
  [57]
-Underfull \hbox (badness 10000) in paragraph at lines 74--85
+Underfull \hbox (badness 10000) in paragraph at lines 74--84
 
  []
 
 
-Overfull \vbox (15.44814pt too high) detected at line 85
+Overfull \vbox (15.44814pt too high) detected at line 84
  []
 
 
-Underfull \hbox (badness 10000) detected at line 85
+Underfull \hbox (badness 10000) detected at line 84
 [] []|[] []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 85
+Underfull \vbox (badness 10000) detected at line 84
  []
 
 
-Overfull \hbox (228.88112pt too wide) detected at line 85
+Overfull \hbox (228.88112pt too wide) detected at line 84
 [] []|[] []
  []
 
 
-Overfull \vbox (13.86479pt too high) detected at line 94
+Overfull \vbox (13.86479pt too high) detected at line 93
  []
 
 
-Underfull \hbox (badness 10000) detected at line 94
+Underfull \hbox (badness 10000) detected at line 93
 [] []|[] []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 94
+Underfull \vbox (badness 10000) detected at line 93
  []
 
 
-Overfull \hbox (228.88112pt too wide) detected at line 94
+Overfull \hbox (228.88112pt too wide) detected at line 93
 [] []|[] []
  []
 
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 101.
+(mdframed)              on input line 100.
 
-Underfull \hbox (badness 10000) in paragraph at lines 102--120
+Underfull \hbox (badness 10000) in paragraph at lines 101--119
 
  []
 
 
-Overfull \hbox (42.9628pt too wide) detected at line 120
+Overfull \hbox (42.9628pt too wide) detected at line 119
 []
  []
 
 
-Overfull \hbox (73.4155pt too wide) detected at line 120
+Overfull \hbox (73.4155pt too wide) detected at line 119
 []
  []
 
 
-Overfull \hbox (2.28362pt too wide) detected at line 120
+Overfull \hbox (2.28362pt too wide) detected at line 119
 []
  []
 
 
-Overfull \hbox (300.38899pt too wide) detected at line 120
+Overfull \hbox (300.38899pt too wide) detected at line 119
 [] []|[] []
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 122--123
+Underfull \hbox (badness 10000) in paragraph at lines 121--122
 
  []
 
 
-Overfull \hbox (43.6337pt too wide) detected at line 141
+Overfull \hbox (43.6337pt too wide) detected at line 140
 []
  []
 
 
-Overfull \hbox (74.0864pt too wide) detected at line 141
+Overfull \hbox (74.0864pt too wide) detected at line 140
 []
  []
 
 
-Overfull \hbox (2.95451pt too wide) detected at line 141
+Overfull \hbox (2.95451pt too wide) detected at line 140
 []
  []
 
 
-Overfull \hbox (300.38899pt too wide) detected at line 141
+Overfull \hbox (300.38899pt too wide) detected at line 140
 [] []|[] []
  []
 
 [58] [59]
-Underfull \hbox (badness 10000) in paragraph at lines 209--220
+Underfull \hbox (badness 10000) in paragraph at lines 208--219
 
  []
 
@@ -2379,28 +2379,28 @@ Underfull \hbox (badness 10000) in paragraph at lines 209--220
 Package vwcol Warning: 
   Total width of columns plus their separations is greater than the linewidth
   (by 455.24408pt - 435.0pt = 20.24408pt)
-This warning occurred on input line 220.
+This warning occurred on input line 219.
 
 
-Overfull \vbox (15.44814pt too high) detected at line 220
+Overfull \vbox (15.44814pt too high) detected at line 219
  []
 
 
-Underfull \hbox (badness 10000) detected at line 220
+Underfull \hbox (badness 10000) detected at line 219
 [] []|[] []
  []
 
 
-Underfull \vbox (badness 10000) detected at line 220
+Underfull \vbox (badness 10000) detected at line 219
  []
 
 
-Overfull \hbox (207.37796pt too wide) detected at line 220
+Overfull \hbox (207.37796pt too wide) detected at line 219
 [] []|[] []
  []
 
 
-Overfull \hbox (20.24408pt too wide) in paragraph at lines 220--220
+Overfull \hbox (20.24408pt too wide) in paragraph at lines 219--219
 []  
  []
 
@@ -2410,11 +2410,11 @@ Overfull \hbox (20.24408pt too wide) in paragraph at lines 220--220
 File: Pictures//ModelloMatematico/systemSimulink.png Graphic file (type png)
 <use Pictures//ModelloMatematico/systemSimulink.png>
 Package pdftex.def Info: Pictures//ModelloMatematico/systemSimulink.png  used o
-n input line 253.
+n input line 252.
 (pdftex.def)             Requested size: 435.0pt x 217.90361pt.
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 259.
+(mdframed)              on input line 258.
  [61 <./Pictures//ModelloMatematico/systemSimulink.png (PNG copy)>]
 <Pictures//ModelloMatematico/Simulation-cBaseSim.pdf, id=1422, 794.97pt x 614.2
 95pt>
@@ -2422,20 +2422,20 @@ File: Pictures//ModelloMatematico/Simulation-cBaseSim.pdf Graphic file (type pd
 f)
 <use Pictures//ModelloMatematico/Simulation-cBaseSim.pdf>
 Package pdftex.def Info: Pictures//ModelloMatematico/Simulation-cBaseSim.pdf  u
-sed on input line 272.
+sed on input line 271.
 (pdftex.def)             Requested size: 435.0pt x 336.14796pt.
 
 [62 <./Pictures//ModelloMatematico/Simulation-cBaseSim.pdf>]
 Package mdframed Info: mdframed detected package amsthm 
  changed the theorem header of amsthm
-(mdframed)              on input line 282.
+(mdframed)              on input line 281.
 <Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=0-K_2=100.pdf, id=1449, 
 794.97pt x 614.295pt>
 File: Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=0-K_2=100.pdf Graph
 ic file (type pdf)
 <use Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=0-K_2=100.pdf>
 Package pdftex.def Info: Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=
-0-K_2=100.pdf  used on input line 290.
+0-K_2=100.pdf  used on input line 289.
 (pdftex.def)             Requested size: 435.0pt x 336.14796pt.
 <Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=10-K_2=100.pdf, id=1450,
  794.97pt x 614.295pt>
@@ -2443,7 +2443,7 @@ File: Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=10-K_2=100.pdf Grap
 hic file (type pdf)
 <use Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=10-K_2=100.pdf>
 Package pdftex.def Info: Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=
-10-K_2=100.pdf  used on input line 300.
+10-K_2=100.pdf  used on input line 299.
 (pdftex.def)             Requested size: 435.0pt x 336.14796pt.
  [63 <./Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=0-K_2=100.pdf>] [
 64 <./Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=10-K_2=100.pdf>]
@@ -2453,7 +2453,7 @@ File: Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=100-K_2=500.pdf Gra
 phic file (type pdf)
 <use Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=100-K_2=500.pdf>
 Package pdftex.def Info: Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=
-100-K_2=500.pdf  used on input line 311.
+100-K_2=500.pdf  used on input line 310.
 (pdftex.def)             Requested size: 435.0pt x 336.14796pt.
  [65 <./Pictures//ModelloMatematico/Simulation-cSim-K_p=0-K_1=100-K_2=500.pdf>]
 <Pictures//ModelloMatematico/Simulation-cSim-K_p=0.2-K_1=100-K_2=500.pdf, id=15
@@ -2462,7 +2462,7 @@ File: Pictures//ModelloMatematico/Simulation-cSim-K_p=0.2-K_1=100-K_2=500.pdf G
 raphic file (type pdf)
 <use Pictures//ModelloMatematico/Simulation-cSim-K_p=0.2-K_1=100-K_2=500.pdf>
 Package pdftex.def Info: Pictures//ModelloMatematico/Simulation-cSim-K_p=0.2-K_
-1=100-K_2=500.pdf  used on input line 323.
+1=100-K_2=500.pdf  used on input line 322.
 (pdftex.def)             Requested size: 435.0pt x 336.14796pt.
  [66 <./Pictures//ModelloMatematico/Simulation-cSim-K_p=0.2-K_1=100-K_2=500.pdf
 >]
@@ -2472,14 +2472,14 @@ File: Pictures//ModelloMatematico/Simulation-cSim-K_p=0.8-K_1=100-K_2=500.pdf G
 raphic file (type pdf)
 <use Pictures//ModelloMatematico/Simulation-cSim-K_p=0.8-K_1=100-K_2=500.pdf>
 Package pdftex.def Info: Pictures//ModelloMatematico/Simulation-cSim-K_p=0.8-K_
-1=100-K_2=500.pdf  used on input line 335.
+1=100-K_2=500.pdf  used on input line 334.
 (pdftex.def)             Requested size: 435.0pt x 336.14796pt.
  [67 <./Pictures//ModelloMatematico/Simulation-cSim-K_p=0.8-K_1=100-K_2=500.pdf
 >]
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <7> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 347.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 346.
 LaTeX Font Info:    Font shape `U/lasy/b/n' in size <5> not available
-(Font)              Font shape `U/lasy/m/n' tried instead on input line 347.
+(Font)              Font shape `U/lasy/m/n' tried instead on input line 346.
 ) [68]
 \openout2 = `capitolo-Controllo.aux'.
 
@@ -2637,10 +2637,10 @@ Package logreq Info: Writing requests to 'Tesi.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 41776 strings out of 479304
- 832881 string characters out of 5869779
- 1850995 words of memory out of 5000000
- 57160 multiletter control sequences out of 15000+600000
+ 41777 strings out of 479304
+ 832896 string characters out of 5869779
+ 1851402 words of memory out of 5000000
+ 57161 multiletter control sequences out of 15000+600000
  438906 words of font info for 126 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  117i,25n,127p,1855b,2468s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2705,7 +2705,7 @@ er/sfrm1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1440.pfb></us
 r/share/texmf/fonts/type1/public/cm-super/sfrm1728.pfb></usr/share/texmf/fonts/
 type1/public/cm-super/sfti0900.pfb></usr/share/texmf/fonts/type1/public/cm-supe
 r/sfti1000.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1000.pfb>
-Output written on Tesi.pdf (105 pages, 11427633 bytes).
+Output written on Tesi.pdf (105 pages, 11442166 bytes).
 PDF statistics:
  2781 PDF objects out of 2984 (max. 8388607)
  2500 compressed objects within 25 object streams

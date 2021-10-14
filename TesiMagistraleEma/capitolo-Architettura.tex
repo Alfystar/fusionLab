@@ -112,42 +112,15 @@ Questo può essere facilmente risolto in più modi:
 Il metodo più universale è sicuramente l'aggiunta di un campo fisso per il tipo, di cui un esempio è visibile nell'appendice al listato \ref{lst:EMPmultiplePack} (\nameref{lst:EMPmultiplePack}).\\
 In ogni caso, la codifica \cite*{COBS} aggiunge 2 byte extra al pacchetto che si vuole inviare, e tanto per la codifica quanto per la decodifica in ricezione, il \textbf{costo} è sempre pari a \textbf{O(n)}.\\
 L’aver usato \cite*{COBS} come sistema di codifica per la trasmissione, garantisce che la decodifica debba avvenire solo per byte compresi tra 2 zeri, e se questa decodifica presenta un errore, toglie ogni ambiguità sul da farsi. Il Pacchetto può essere solo scartato e si torna in attesa del successivo 0 mentre si memorizzano i byte ricevuti nel mentre.\vspace{-8mm}
-\begin{multicols}{2}
-	\begin{center}
-		{\large Vantaggi:}
-	\end{center}
-	\begin{spacing}{1.25}
-		\begin{enumerate}[itemsep=-1mm]
-			\item Pacchetti \textbf{Self-Delimited}
-			\item Canale \textbf{Multi-Packet ready}
-			\item Protocollo \textbf{Senza Negoziazioni}
-			\item Responsabilità minime per l'utilizzatore
-			\item Prerequisiti implementativi minimale (mezzo di comunicazione \textit{peer2peer} asincrono)
-		\end{enumerate}
-	\end{spacing}
-	\vfill
-	\columnbreak
-	\begin{center}
-		{\large Svantaggi:}
-	\end{center}
-	\begin{spacing}{1.25}
-		\begin{enumerate}[itemsep=-1mm]
-			\item Aggiunge 2 byte fissi
-			\item Richiede O(n) elaborazione sia in codifica che decodifica
-		\end{enumerate}
-	\end{spacing}
-	\vspace*{\fill}
-\end{multicols}
-% Versione a colori
 %\begin{multicols}{2}
 %	\begin{center}
-%		{\large \color{dkgreen}Vantaggi:}
+%		{\large Vantaggi:}
 %	\end{center}
 %	\begin{spacing}{1.25}
 %		\begin{enumerate}[itemsep=-1mm]
-%			\item Pacchetti {\color{cadmiumgreen}\textbf{Self-Delimited}}
-%			\item Canale {\color{cadmiumgreen}\textbf{Multi-Packet ready}}
-%			\item Protocollo {\color{cadmiumgreen}\textbf{Senza Negoziazioni}}
+%			\item Pacchetti \textbf{Self-Delimited}
+%			\item Canale \textbf{Multi-Packet ready}
+%			\item Protocollo \textbf{Senza Negoziazioni}
 %			\item Responsabilità minime per l'utilizzatore
 %			\item Prerequisiti implementativi minimale (mezzo di comunicazione \textit{peer2peer} asincrono)
 %		\end{enumerate}
@@ -155,7 +128,7 @@ L’aver usato \cite*{COBS} come sistema di codifica per la trasmissione, garant
 %	\vfill
 %	\columnbreak
 %	\begin{center}
-%		{\large \color{red} Svantaggi:}
+%		{\large Svantaggi:}
 %	\end{center}
 %	\begin{spacing}{1.25}
 %		\begin{enumerate}[itemsep=-1mm]
@@ -165,6 +138,33 @@ L’aver usato \cite*{COBS} come sistema di codifica per la trasmissione, garant
 %	\end{spacing}
 %	\vspace*{\fill}
 %\end{multicols}
+% Versione a colori
+\begin{multicols}{2}
+	\begin{center}
+		{\large \color{dkgreen}Vantaggi:}
+	\end{center}
+	\begin{spacing}{1.25}
+		\begin{enumerate}[itemsep=-1mm]
+			\item Pacchetti {\color{cadmiumgreen}\textbf{Self-Delimited}}
+			\item Canale {\color{cadmiumgreen}\textbf{Multi-Packet ready}}
+			\item Protocollo {\color{cadmiumgreen}\textbf{Senza Negoziazioni}}
+			\item Responsabilità minime per l'utilizzatore
+			\item Prerequisiti implementativi minimale (mezzo di comunicazione \textit{peer2peer} asincrono)
+		\end{enumerate}
+	\end{spacing}
+	\vfill
+	\columnbreak
+	\begin{center}
+		{\large \color{red} Svantaggi:}
+	\end{center}
+	\begin{spacing}{1.25}
+		\begin{enumerate}[itemsep=-1mm]
+			\item Aggiunge 2 byte fissi
+			\item Richiede O(n) elaborazione sia in codifica che decodifica
+		\end{enumerate}
+	\end{spacing}
+	\vspace*{\fill}
+\end{multicols}
 
 \subsection{Integrità dei pacchetti}\vspace{-2mm}
 Per aumentare ulteriormente i campi d’uso e garantire un layer minimale di \textbf{integrità} sui pacchetti in transito, la libreria è in grado di include in maniera trasparente anche un un check di errore calcolato usando \cite{CRC8}, aggiunto in trasmissione e rimosso in ricezione. L'aggiunta e la verifica del CRC8 viene fatta sul pacchetto non ancora \textit{COBS-Encodato}, ciò garantisce la possibilità di inviare il pacchetto a prescindere da quale sia il risultato del CRC8, e viene quindi verificato dopo aver de-\textit{COBS-Encodato} il pacchetto in ricezione.\\
@@ -344,13 +344,13 @@ I dati salvati su Hard Disk, come visto della sezione \nameref{subsec:experiment
 
 \subsection{Conversioni Dati}
 Per ottenere la tensione reale letta il cambio è molto semplice:
-\begin{empheq}[box=\mathStep]{equation*}
+\begin{empheq}[box=\mathResult]{equation*}
 	V_{read} = ADC_{Read} \cdot V_{step}= ADC_{Read} \frac{Vcc}{2^{10}-1} = ADC \cdot 4,887mV
 \end{empheq}
 
 \noindent
 Partendo da questa equivalenza, per la corrente del primario usiamo l'equazione \ref{eq:Iread}, mentre la tensione sul secondario necessita solo della cancellazione dell'offset:
-\begin{empheq}[box=\mathStep]{equation} \label{eq:V2Read}
+\begin{empheq}[box=\mathResult]{equation} \label{eq:V2Read}
 	V_2 = V_{read} - V_{2_{offset}}
 \end{empheq}
 
